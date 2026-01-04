@@ -77,5 +77,37 @@ window.QUIZ_BANK = {
       ],
       correct: "List, Kanban, Calendar, Pivot, Graph, Activity"
     }
+  ],
+  materi3: [
+    {
+      question: "Layanan Google apa yang harus diaktifkan di Google Cloud Console untuk sinkronisasi kalender?",
+      options: [
+        "Google Drive API",
+        "Google Calendar API",
+        "Gmail API",
+        "Google Maps API"
+      ],
+      correct: "Google Calendar API"
+    },
+    {
+      question: "Apa yang harus ditambahkan pada 'Authorized redirect URIs' di Google Cloud Console?",
+      options: [
+        "Cukup URL database Odoo saja",
+        "URL database ditambah /google_calendar/sync",
+        "URL database ditambah /google_account/authentication",
+        "Email Gmail pengguna"
+      ],
+      correct: "URL database ditambah /google_account/authentication"
+    },
+    {
+      question: "Kapan sebaiknya opsi 'Pause Synchronization' di Odoo digunakan?",
+      options: [
+        "Saat ingin menghapus seluruh kredensial Google",
+        "Saat melakukan testing di database sandbox agar tidak mengirim spam email",
+        "Saat ingin mengganti password Google",
+        "Odoo tidak memiliki opsi Pause Synchronization"
+      ],
+      correct: "Saat melakukan testing di database sandbox agar tidak mengirim spam email"
+    }
   ]
 };

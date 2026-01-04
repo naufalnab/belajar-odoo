@@ -60,7 +60,7 @@
 
           <div class="materi-card-header">
             <span class="badge">Materi 2</span>
-            <span class="materi-status">🔒</span>
+            <span class="materi-status" id="status-materi2">🔒</span>
           </div>
 
           <h2>Antarmuka & Navigasi</h2>
@@ -70,7 +70,7 @@
             <div class="materi-progress-bar" id="progress-materi2"></div>
           </div>
 
-          <small>Terkunci</small>
+          <small id="label-materi2">Terkunci</small>
         </div>
 
         <div class="step-card materi-card locked" id="card-materi3">
@@ -78,7 +78,7 @@
 
           <div class="materi-card-header">
             <span class="badge">Materi 3</span>
-            <span class="materi-status">🔒</span>
+            <span class="materi-status" id="status-materi3">🔒</span>
           </div>
 
           <h2>User & Hak Akses</h2>
@@ -88,7 +88,7 @@
             <div class="materi-progress-bar" id="progress-materi3"></div>
           </div>
 
-          <small>Terkunci</small>
+          <small id="label-materi3">Terkunci</small>
         </div>
       </section>
     </main>
@@ -106,70 +106,70 @@
       });
 
       function initDashboard() {
-        // 1. Cek Materi 1
-        const m1Steps = JSON.parse(localStorage.getItem("materi1_steps")) || []; // Key dari lms-core.js
-        const m1Quiz = JSON.parse(localStorage.getItem("materi1_quiz")); // Key dari lms-core.js
+        // --- KONFIGURASI ---
+        // Daftar materi dan link tujuannya
+        const modules = [
+          {
+            id: "materi1",
+            link: "./materi-1/index.html",
+            nextCard: "card-materi2",
+          },
+          {
+            id: "materi2",
+            link: "./materi-2/index.html",
+            nextCard: "card-materi3",
+          },
+          { id: "materi3", link: "./materi-3/index.html", nextCard: null },
+        ];
 
-        // Hitung % Progress Checkbox Materi 1
-        const m1Total = m1Steps.length || 1; // Hindari bagi 0
-        const m1Checked = m1Steps.filter(Boolean).length;
-        const m1Percent = Math.round((m1Checked / m1Total) * 100);
+        let completedCount = 0;
 
-        // Render Bar Materi 1
-        updateCardUI("materi1", m1Percent, m1Quiz?.passed);
+        // --- LOOPING CEK STATUS SETIAP MATERI ---
+        modules.forEach((mod) => {
+          // 1. Ambil data dari LocalStorage
+          const steps =
+            JSON.parse(localStorage.getItem(`${mod.id}_steps`)) || [];
+          const quiz = JSON.parse(localStorage.getItem(`${mod.id}_quiz`));
 
-        // LOGIKA UNLOCK MATERI 2
-        if (m1Quiz && m1Quiz.passed) {
-          unlockCard("card-materi2", "./materi-2/index.html"); // Buka materi 2 jika materi 1 lulus
-        }
+          // 2. Hitung Persentase Progress
+          // Jika steps kosong (belum pernah dibuka), percent 0.
+          // Jika ada isinya, hitung yg true.
+          const totalSteps = steps.length > 0 ? steps.length : 1;
+          const checkedSteps = steps.filter(Boolean).length;
+          let percent = Math.round((checkedSteps / totalSteps) * 100);
 
-        // LOGIKA GLOBAL PROGRESS
-        // Misal total materi = 3
-        let completedModules = 0;
-        if (m1Quiz?.passed) completedModules++;
-        // if (m2Quiz?.passed) completedModules++; (Nanti dilanjut untuk materi lain)
+          // Jika array steps kosong tapi quiz lulus (kasus jarang), force 100%
+          if (quiz?.passed) {
+            percent = 100;
+            completedCount++; // Tambah ke counter global
+          }
 
-        const globalPercent = Math.round((completedModules / 3) * 100);
+          // 3. Update Tampilan Card (Bar & Label)
+          updateCardUI(mod.id, percent, quiz?.passed);
 
-        const globalBar = document.getElementById("globalProgressBar");
-        const globalText = document.getElementById("globalProgressPercent");
+          // 4. Logika Buka Gembok (Unlock Next Materi)
+          // Jika materi ini LULUS dan ada materi selanjutnya (nextCard)
+          if (quiz?.passed && mod.nextCard) {
+            // Cari link materi selanjutnya dari array modules
+            const nextModule = modules.find(
+              (m) => `card-${m.id}` === mod.nextCard
+            );
+            const nextLink = nextModule ? nextModule.link : "#";
 
-        if (globalBar) {
-          globalBar.style.width = globalPercent + "%";
+            unlockCard(mod.nextCard, nextLink);
+          }
+        });
 
-          // Warna Global Bar (Opsional, jika ingin warna berubah)
-          globalBar.className = "dashboard-bar-fill"; // Reset class
-          if (globalPercent < 40) globalBar.classList.add("red");
-          else if (globalPercent < 70) globalBar.classList.add("yellow");
-          else globalBar.classList.add("green");
-        }
-
-        if (globalText) {
-          globalText.innerText = globalPercent + "%";
-
-          // Warna Teks Persentase
-          globalText.classList.remove("red", "yellow", "green");
-          // Text color logic (bisa disesuaikan dengan CSS variable text color)
-          if (globalPercent >= 100)
-            globalText.style.color = "var(--success-color)";
-        }
-
-        if (globalLabel) {
-          globalLabel.innerText = globalPercent + "%";
-          globalLabel.style.left = globalPercent + "%";
-
-          // Warna Label
-          globalLabel.className = "progress-label"; // reset
-          if (globalPercent < 40) globalLabel.classList.add("red");
-          else if (globalPercent < 70) globalLabel.classList.add("yellow");
-          else globalLabel.classList.add("green");
-        }
+        // --- UPDATE GLOBAL PROGRESS BAR ---
+        // Total materi hardcoded 3 sesuai HTML
+        const globalPercent = Math.round((completedCount / 3) * 100);
+        renderGlobalProgress(globalPercent);
       }
 
       function updateCardUI(materiId, percent, isPassed) {
         const bar = document.getElementById(`progress-${materiId}`);
         const label = document.getElementById(`label-${materiId}`);
-        const status = document.getElementById(`status-${materiId}`);
+        const status = document.getElementById(`status-${materiId}`); // Hanya ada di materi 1 biasanya, tapi aman dicek
 
         if (bar) bar.style.width = percent + "%";
 
@@ -177,16 +177,24 @@
           if (label) {
             label.innerText = "🎓 Lulus Quiz";
             label.style.color = "var(--success-color)";
+            label.style.fontWeight = "bold";
           }
           if (status) status.innerText = "✅";
         } else {
-          if (label) label.innerText = `${percent}% Selesai`;
+          // Jika belum lulus, tampilkan % saja (kecuali kalau masih terkunci/0%)
+          if (label && percent > 0) {
+            label.innerText = `${percent}% Selesai`;
+            label.style.color = "var(--secondary-color)";
+          }
         }
       }
 
       function unlockCard(cardId, linkUrl) {
         const card = document.getElementById(cardId);
         if (!card) return;
+
+        // Cek jika sudah tidak terkunci, jangan lakukan apa-apa (biar gak numpuk event listener)
+        if (!card.classList.contains("locked")) return;
 
         // Hapus class locked
         card.classList.remove("locked");
@@ -195,15 +203,40 @@
         const overlay = card.querySelector(".lock-overlay");
         if (overlay) overlay.remove();
 
-        // Ubah status icon
-        const status = card.querySelector(".materi-status");
-        if (status) status.innerText = "🔓";
+        // Ubah status icon gembok jadi terbuka
+        const headerStatus = card.querySelector(".materi-status");
+        if (headerStatus) headerStatus.innerText = "🔓";
+
+        // Ubah teks label kecil dari "Terkunci" menjadi "Belum dimulai" jika belum ada progress
+        const label = card.querySelector("small");
+        if (label && label.innerText === "Terkunci") {
+          label.innerText = "Silakan mulai";
+        }
 
         // Jadikan bisa diklik (Redirect)
         card.style.cursor = "pointer";
-        card.addEventListener("click", () => {
+        card.onclick = () => {
           window.location.href = linkUrl;
-        });
+        };
+      }
+
+      function renderGlobalProgress(percent) {
+        const globalBar = document.getElementById("globalProgressBar");
+        const globalText = document.getElementById("globalProgressPercent");
+
+        if (globalBar) {
+          globalBar.style.width = percent + "%";
+          // Reset class warna
+          globalBar.className = "dashboard-bar-fill";
+          if (percent < 40) globalBar.classList.add("red");
+          else if (percent < 70) globalBar.classList.add("yellow");
+          else globalBar.classList.add("green");
+        }
+
+        if (globalText) {
+          globalText.innerText = percent + "%";
+          if (percent >= 100) globalText.style.color = "var(--success-color)";
+        }
       }
     </script>
   </body>

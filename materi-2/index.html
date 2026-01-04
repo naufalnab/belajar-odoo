@@ -476,10 +476,12 @@
       <div id="nextActionArea" class="next-action-area" style="display: none">
         <h3>🎉 Materi 2 Selesai!</h3>
         <p>
-          Anda sudah memahami navigasi dasar Odoo. Silakan kembali ke Dashboard
-          untuk melihat progres Anda.
+          Anda sudah memahami navigasi dasar Odoo. Siap untuk melakukan
+          sinkronisasi kalender?
         </p>
-        <a href="../index.html" class="btn-next"> Kembali ke Dashboard ➔ </a>
+        <a href="../materi-3/index.html" class="btn-next">
+          Lanjut ke Materi 3 ➔
+        </a>
       </div>
 
       <footer class="footer">
@@ -501,28 +503,34 @@
         initMateriProgress("materi2");
         renderQuiz("materi2", ".quiz-container");
 
-        // Cek lulus
+        // Cek jika sudah lulus sebelumnya saat halaman dimuat
         const savedResult = loadQuizResult("materi2");
         if (savedResult && savedResult.passed) {
           showNextButton();
         }
       });
 
-      // Logic munculin tombol dashboard setelah lulus
+      // Fungsi untuk memunculkan tombol secara instan saat kuis lulus
       const originalOnQuizPassed = window.onQuizPassed;
       window.onQuizPassed = function (materiId, score) {
         if (originalOnQuizPassed) originalOnQuizPassed(materiId, score);
+
         showNextButton();
+
+        // Scroll otomatis agar user melihat tombolnya
         setTimeout(() => {
-          document
-            .getElementById("nextActionArea")
-            .scrollIntoView({ behavior: "smooth", block: "center" });
+          document.getElementById("nextActionArea").scrollIntoView({
+            behavior: "smooth",
+            block: "center",
+          });
         }, 500);
       };
 
       function showNextButton() {
         const area = document.getElementById("nextActionArea");
-        if (area) area.style.display = "block";
+        if (area) {
+          area.style.display = "block";
+        }
       }
     </script>
   </body>
