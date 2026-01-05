@@ -78,36 +78,124 @@ window.QUIZ_BANK = {
       correct: "List, Kanban, Calendar, Pivot, Graph, Activity"
     }
   ],
+
+  /* =====================================================
+     MATERI 3 — SINKRONISASI GOOGLE CALENDAR
+     ===================================================== */
   materi3: [
     {
-      question: "Layanan Google apa yang harus diaktifkan di Google Cloud Console untuk sinkronisasi kalender?",
+      question: "Dua kredensial apa yang perlu Anda salin dari Google Console dan dimasukkan ke database Odoo untuk menyelesaikan sinkronisasi?",
       options: [
-        "Google Drive API",
-        "Google Calendar API",
-        "Gmail API",
-        "Google Maps API"
+        "Client ID dan API Key",
+        "Client ID dan Client Secret",
+        "Client Secret dan URI",
+        "URI dan API Key"
       ],
-      correct: "Google Calendar API"
+      correct: "Client ID dan Client Secret"
     },
     {
-      question: "Apa yang harus ditambahkan pada 'Authorized redirect URIs' di Google Cloud Console?",
+      question: "Agar bisa memilih Tipe User 'Internal', jenis akun Gmail apa yang harus Anda gunakan?",
       options: [
-        "Cukup URL database Odoo saja",
-        "URL database ditambah /google_calendar/sync",
-        "URL database ditambah /google_account/authentication",
-        "Email Gmail pengguna"
+        "Semua jenis akun Gmail bisa jadi user Internal",
+        "Hanya akun Gmail pribadi yang bisa jadi user Internal",
+        "Hanya akun Google Workspace (Bisnis/Sekolah) yang bisa jadi user Internal",
+        "Hanya akun pembuat project yang bisa jadi user Internal"
       ],
-      correct: "URL database ditambah /google_account/authentication"
+      correct: "Hanya akun Google Workspace (Bisnis/Sekolah) yang bisa jadi user Internal"
     },
     {
-      question: "Kapan sebaiknya opsi 'Pause Synchronization' di Odoo digunakan?",
+      question: "Apa fungsi dari 'Authorized Redirect URIs' yang kita isi?",
       options: [
-        "Saat ingin menghapus seluruh kredensial Google",
-        "Saat melakukan testing di database sandbox agar tidak mengirim spam email",
-        "Saat ingin mengganti password Google",
-        "Odoo tidak memiliki opsi Pause Synchronization"
+        "Mengarahkan user yang tidak diinginkan keluar dari database",
+        "Membuat jalur balik ke Google untuk menghubungkan Odoo dengan login OAuth yang baru dibuat",
+        "Mengalihkan user ke Odoo saat mereka berada di Google Developer Console",
+        "Otomatis membuat Client ID saat user login"
       ],
-      correct: "Saat melakukan testing di database sandbox agar tidak mengirim spam email"
+      correct: "Membuat jalur balik ke Google untuk menghubungkan Odoo dengan login OAuth yang baru dibuat"
+    },
+    {
+      question: "Di halaman mana Anda bisa menemukan tombol 'Publish App' untuk project ini?",
+      options: [
+        "Di halaman utama 'Overview'",
+        "Di halaman 'Branding'",
+        "Di halaman 'Data Access'",
+        "Di halaman 'Audience'"
+      ],
+      correct: "Di halaman 'Audience'"
+    }
+  ],
+
+  /* =====================================================
+     MATERI 4 — SINKRONISASI OUTLOOK (AZURE)
+     ===================================================== */
+  /* =====================================================
+     MATERI 4 — FILTER & TAMPILAN (REVISI)
+     ===================================================== */
+  materi4: [
+    {
+      question: "Bagaimana cara pengguna memfilter penawaran (quotations) dari bulan sebelumnya?",
+      options: [
+        "Dengan mengganti salesperson",
+        "Dengan memilih filter Kanban",
+        "Dengan memilih Create Date > Bulan Sebelumnya (Previous Month)",
+        "Dengan menerapkan tampilan default"
+      ],
+      correct: "Dengan memilih Create Date > Bulan Sebelumnya (Previous Month)"
+    },
+    {
+      question: "Setelah menggeser (drag-and-drop) pesanan penjualan ke salesperson lain di tampilan Kanban, di mana pengguna dapat mengonfirmasi perubahan tersebut di dalam dokumen?",
+      options: [
+        "Tab Settings",
+        "Menu Filters",
+        "Tab Order Lines",
+        "Tab Other Info"
+      ],
+      correct: "Tab Other Info"
+    },
+    {
+      question: "Apa yang dimungkinkan oleh opsi 'Add Custom Filters'?",
+      options: [
+        "Mengekspor filter ke dalam file",
+        "Mengedit hak akses pengguna",
+        "Memfilter menggunakan 'field' apa pun di Odoo, seperti Abandoned Carts atau tanggal spesifik",
+        "Membagikan filter ke luar sistem Odoo"
+      ],
+      correct: "Memfilter menggunakan 'field' apa pun di Odoo, seperti Abandoned Carts atau tanggal spesifik"
+    }
+  ],
+  /* =====================================================
+     MATERI 5 — MULTI-COMPANY
+     ===================================================== */
+  materi5: [
+    {
+      question: "Apa indikator utama bahwa Anda harus membuat Company baru alih-alih hanya membuat Branch?",
+      options: [
+        "Lokasi kantor berbeda kota",
+        "Entitas memiliki Tax ID (NPWP) dan laporan pajak terpisah",
+        "Jumlah karyawan lebih dari 50 orang",
+        "Menjual produk yang berbeda jenis"
+      ],
+      correct: "Entitas memiliki Tax ID (NPWP) dan laporan pajak terpisah"
+    },
+    {
+      question: "Dua kolom apa yang sangat krusial dan tidak bisa diubah setelah transaksi pertama dibuat?",
+      options: [
+        "Company Name dan Address",
+        "Phone dan Email",
+        "Country dan Currency",
+        "Parent Company dan Logo"
+      ],
+      correct: "Country dan Currency"
+    },
+    {
+      question: "Bagaimana cara membuat sebuah produk agar bisa diakses dan dijual oleh semua perusahaan (Global Shared)?",
+      options: [
+        "Menduplikasi produk untuk setiap perusahaan",
+        "Mengisi field Company dengan 'All Companies'",
+        "Mengosongkan field Company pada form produk",
+        "Memberikan hak akses Administrator ke semua sales"
+      ],
+      correct: "Mengosongkan field Company pada form produk"
     }
   ]
 };
