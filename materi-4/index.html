@@ -49,17 +49,23 @@
       </section>
 
       <section class="step-card">
-        <h2>2. Mengelompokkan Data (Group By)</h2>
+        <h2>2. Menambahkan Salesperson Baru</h2>
         <div class="content">
-          <p>Fitur Group By membantu Anda melihat data dalam kategori tertentu agar lebih rapi.</p>
+          <p>Agar fitur pengelompokan (Group By) lebih terlihat efeknya, mari kita buat satu user tambahan sebagai Salesperson.</p>
           <ol class="instruction-list">
-            <li>Buka menu dropdown pencarian lagi, lalu pilih tab <strong>Group By</strong>.</li>
-            <li>Pilih <strong>Salesperson</strong>. Sekarang data akan dikelompokkan berdasarkan nama penjual.</li>
-            <li>Anda bisa menggabungkan Group By dengan Filter (misal: Filter "Sales Order" + Group By "Salesperson").</li>
+            <li>Buka menu utama (Home), masuk ke <strong>Settings</strong>.</li>
+            <li>Klik menu <strong>Users & Companies</strong> > <strong>Users</strong> di bagian atas.</li>
+            <li>Klik tombol <strong>New</strong>.</li>
+            <li>Isi Nama: misal <strong>Budi Sales</strong> (Login bebas, misal: <em>budi@test.com</em>).</li>
+            <li><strong>PENTING:</strong> Di tab <em>Access Rights</em>, cari bagian <strong>Sales</strong> dan pilih <strong>User: All Documents</strong>.</li>
+            <li>Klik ikon awan (Save) untuk menyimpan.</li>
           </ol>
+          <div class="alert warning">
+             Jika hak akses Sales tidak diisi, user ini tidak akan muncul sebagai opsi Salesperson.
+          </div>
           <div class="image-placeholder">
-            <img src="../assets/images/materi-4-step-2-groupby.png" alt="Group By Odoo" onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
-            <span class="placeholder-text">📸 Screenshot: Data yang dikelompokkan berdasarkan Salesperson</span>
+            <img src="../assets/images/materi-4-step-2-add-user.png" alt="Add Salesperson" onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+            <span class="placeholder-text">📸 Screenshot: Form User baru dengan sorotan pada Access Rights > Sales</span>
           </div>
         </div>
         <div class="step-footer">
@@ -69,18 +75,39 @@
       </section>
 
       <section class="step-card">
-        <h2>3. Menyimpan Filter Favorit</h2>
+        <h2>3. Mengelompokkan Data (Group By)</h2>
+        <div class="content">
+          <p>Sekarang, mari kita kelompokkan data penjualan berdasarkan Salesperson yang baru kita buat.</p>
+          <ol class="instruction-list">
+            <li>Kembali ke aplikasi <strong>Sales</strong>.</li>
+            <li>Buka menu dropdown pencarian, pilih tab <strong>Group By</strong>.</li>
+            <li>Pilih <strong>Salesperson</strong>.</li>
+            <li>Data sekarang terpisah menjadi beberapa kelompok (Admin, Budi Sales, dll).</li>
+          </ol>
+          <div class="image-placeholder">
+            <img src="../assets/images/materi-4-step-3-groupby.png" alt="Group By Odoo" onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+            <span class="placeholder-text">📸 Screenshot: Data Sales yang dikelompokkan (header biru per nama user)</span>
+          </div>
+        </div>
+        <div class="step-footer">
+          <label>Selesai</label>
+          <input type="checkbox" class="mark-done" />
+        </div>
+      </section>
+
+      <section class="step-card">
+        <h2>4. Menyimpan Filter Favorit</h2>
         <div class="content">
           <p>Jangan habiskan waktu mencari filter yang sama setiap hari. Simpan saja!</p>
           <ol class="instruction-list">
             <li>Setelah mengatur filter/grup yang Anda suka, klik tab <strong>Favorites</strong> di menu dropdown.</li>
-            <li>Klik <strong>Save current search</strong>. Beri nama, misalnya <code>Laporan Penjual</code>.</li>
-            <li>Centang <strong>Use by default</strong> jika Anda ingin filter ini aktif otomatis setiap kali membuka menu tersebut.</li>
+            <li>Klik <strong>Save current search</strong>. Beri nama, misalnya <code>Laporan Tim</code>.</li>
+            <li>Centang <strong>Use by default</strong> jika ingin filter ini aktif otomatis.</li>
             <li>Klik <strong>Save</strong>.</li>
           </ol>
           <div class="image-placeholder">
-            <img src="../assets/images/materi-4-step-3-favorites.png" alt="Save Favorites" onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
-            <span class="placeholder-text">📸 Screenshot: Cara menyimpan filter sebagai Default</span>
+            <img src="../assets/images/materi-4-step-4-favorites.png" alt="Save Favorites" onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+            <span class="placeholder-text">📸 Screenshot: Menu Favorites > Save current search</span>
           </div>
         </div>
         <div class="step-footer">
@@ -90,72 +117,64 @@
       </section>
 
       <section class="step-card">
-        <h2>4. Mengenal Jenis-Jenis Tampilan (Views)</h2>
+        <h2>5. Mengenal Jenis-Jenis Tampilan (Views)</h2>
         <div class="content">
-          <p>Odoo memiliki berbagai cara untuk menampilkan data yang sama. Tombol navigasi ini berada di pojok kanan atas.</p>
+          <p>Odoo memiliki berbagai cara untuk menampilkan data. Navigasi ini ada di pojok kanan atas.</p>
 
           <h3>A. List View (Daftar)</h3>
           <p>Tampilan tabel standar. Cocok untuk melihat detail banyak data sekaligus.</p>
           <div class="image-placeholder">
-            <img src="../assets/images/materi-4-step-4a-list.png" alt="List View" onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+            <img src="../assets/images/materi-4-step-5a-list.png" alt="List View" onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
             <span class="placeholder-text">📸 Screenshot: Tampilan List View (Tabel)</span>
           </div>
-
           <div style="margin-top: 30px;"></div>
 
           <h3>B. Kanban View (Kartu)</h3>
-          <p>Tampilan visual berbasis kartu. Anda bisa melakukan <strong>Drag & Drop</strong> untuk memindahkan status dokumen.</p>
+          <p>Tampilan visual kartu. Coba <strong>Drag & Drop</strong> kartu pesanan dari kolom Admin ke kolom Budi Sales (pastikan Group By Salesperson aktif).</p>
           <div class="image-placeholder">
-            <img src="../assets/images/materi-4-step-4b-kanban.png" alt="Kanban View" onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+            <img src="../assets/images/materi-4-step-5b-kanban.png" alt="Kanban View" onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
             <span class="placeholder-text">📸 Screenshot: Tampilan Kanban (Kartu-kartu)</span>
           </div>
-
           <div style="margin-top: 30px;"></div>
 
           <h3>C. Calendar View</h3>
-          <p>Melihat jadwal dokumen berdasarkan tanggal (misal: Tanggal Order atau Deadline).</p>
+          <p>Melihat jadwal dokumen berdasarkan tanggal.</p>
           <div class="image-placeholder">
-            <img src="../assets/images/materi-4-step-4c-calendar.png" alt="Calendar View" onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+            <img src="../assets/images/materi-4-step-5c-calendar.png" alt="Calendar View" onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
             <span class="placeholder-text">📸 Screenshot: Tampilan Kalender</span>
           </div>
-
           <div style="margin-top: 30px;"></div>
 
           <h3>D. Pivot View</h3>
-          <p>Tabel analisis data (seperti Pivot Table di Excel) untuk membuat laporan ringkasan dengan cepat.</p>
+          <p>Tabel analisis data (seperti Excel Pivot) untuk laporan ringkasan.</p>
           <div class="image-placeholder">
-            <img src="../assets/images/materi-4-step-4d-pivot.png" alt="Pivot View" onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+            <img src="../assets/images/materi-4-step-5d-pivot.png" alt="Pivot View" onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
             <span class="placeholder-text">📸 Screenshot: Tampilan Pivot Table</span>
           </div>
-
           <div style="margin-top: 30px;"></div>
 
           <h3>E. Graph View</h3>
-          <p>Visualisasi data dalam bentuk grafik (Bar Chart, Line Chart, atau Pie Chart).</p>
+          <p>Visualisasi data (Bar, Line, Pie Chart).</p>
           <div class="image-placeholder">
-            <img src="../assets/images/materi-4-step-4e-graph.png" alt="Graph View" onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
-            <span class="placeholder-text">📸 Screenshot: Tampilan Grafik (Bar/Pie Chart)</span>
+            <img src="../assets/images/materi-4-step-5e-graph.png" alt="Graph View" onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+            <span class="placeholder-text">📸 Screenshot: Tampilan Grafik</span>
           </div>
-
           <div style="margin-top: 30px;"></div>
 
           <h3>F. Activity View (Aktivitas)</h3>
-          <p>Melihat jadwal tugas (To-Do, Email, Call) yang terkait dengan dokumen.
-             <br>🔴 <strong>Merah:</strong> Terlambat (Overdue)
-             <br>🟢 <strong>Hijau:</strong> Akan datang (Future)
-             <br>🟡 <strong>Kuning:</strong> Hari ini (Today)
+          <p>Melihat jadwal tugas (To-Do, Email, Call).
+             <br>🔴 Merah: Terlambat | 🟢 Hijau: Akan datang | 🟡 Kuning: Hari ini
           </p>
           <div class="image-placeholder">
-            <img src="../assets/images/materi-4-step-4f-activity.png" alt="Activity View" onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
-            <span class="placeholder-text">📸 Screenshot: Tampilan Activity (Grid dengan warna status)</span>
+            <img src="../assets/images/materi-4-step-5f-activity.png" alt="Activity View" onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+            <span class="placeholder-text">📸 Screenshot: Tampilan Activity (Grid warna-warni)</span>
           </div>
-
           <div style="margin-top: 30px;"></div>
 
           <h3>G. Map View (Peta)</h3>
-          <p>Menampilkan lokasi alamat partner atau transaksi dalam peta interaktif (Google Maps/OpenStreetMap).</p>
+          <p>Menampilkan lokasi partner di peta.</p>
           <div class="image-placeholder">
-            <img src="../assets/images/materi-4-step-4g-map.png" alt="Map View" onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+            <img src="../assets/images/materi-4-step-5g-map.png" alt="Map View" onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
             <span class="placeholder-text">📸 Screenshot: Tampilan Peta dengan pin lokasi</span>
           </div>
         

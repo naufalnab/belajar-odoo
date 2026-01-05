@@ -166,36 +166,39 @@ window.QUIZ_BANK = {
   /* =====================================================
      MATERI 5 — MULTI-COMPANY
      ===================================================== */
+  /* =====================================================
+     MATERI 5 — MULTI-COMPANY (REVISI SESUAI REQUEST)
+     ===================================================== */
   materi5: [
     {
-      question: "Apa indikator utama bahwa Anda harus membuat Company baru alih-alih hanya membuat Branch?",
+      question: "Kapan membuat perusahaan tambahan (Multi-Company) adalah pilihan terbaik?",
       options: [
-        "Lokasi kantor berbeda kota",
-        "Entitas memiliki Tax ID (NPWP) dan laporan pajak terpisah",
-        "Jumlah karyawan lebih dari 50 orang",
-        "Menjual produk yang berbeda jenis"
+        "Ketika entitas baru menggunakan daftar harga (pricelist) yang berbeda",
+        "Ketika unit baru memiliki Tax ID (NPWP) sendiri atau pelaporan pajak yang terpisah",
+        "Ketika saya hanya perlu membatasi visibilitas dokumen",
+        "Ketika mata uangnya tetap sama"
       ],
-      correct: "Entitas memiliki Tax ID (NPWP) dan laporan pajak terpisah"
+      correct: "Ketika unit baru memiliki Tax ID (NPWP) sendiri atau pelaporan pajak yang terpisah"
     },
     {
-      question: "Dua kolom apa yang sangat krusial dan tidak bisa diubah setelah transaksi pertama dibuat?",
+      question: "Dua kolom mana yang WAJIB diisi dengan benar sebelum perusahaan baru memposting transaksi pertamanya (karena mengubahnya nanti bisa merusak buku besar/ledger)?",
       options: [
-        "Company Name dan Address",
-        "Phone dan Email",
-        "Country dan Currency",
-        "Parent Company dan Logo"
+        "Taxes (Pajak) dan Company",
+        "Country (Negara) dan Currency (Mata Uang)",
+        "Country (Negara) dan Fiscal Localization",
+        "Chart of Accounts dan Currency"
       ],
-      correct: "Country dan Currency"
+      correct: "Country (Negara) dan Currency (Mata Uang)"
     },
     {
-      question: "Bagaimana cara membuat sebuah produk agar bisa diakses dan dijual oleh semua perusahaan (Global Shared)?",
+      question: "Apa yang bisa dilakukan fitur Multi-Company yang TIDAK bisa dilakukan oleh hak akses, fitur branches, atau database terpisah?",
       options: [
-        "Menduplikasi produk untuk setiap perusahaan",
-        "Mengisi field Company dengan 'All Companies'",
-        "Mengosongkan field Company pada form produk",
-        "Memberikan hak akses Administrator ke semua sales"
+        "Membatasi akses karyawan ke dokumen tertentu",
+        "Berbagi sumber daya seperti produk, vendor, dan pelanggan",
+        "Menghindari pajak karena Odoo akan melakukannya untuk saya",
+        "Mengelola beberapa entitas yang tidak berbagi buku besar (ledger) yang sama tetapi tetap bisa melakukan pelaporan konsolidasi"
       ],
-      correct: "Mengosongkan field Company pada form produk"
+      correct: "Mengelola beberapa entitas yang tidak berbagi buku besar (ledger) yang sama tetapi tetap bisa melakukan pelaporan konsolidasi"
     }
   ]
 };
