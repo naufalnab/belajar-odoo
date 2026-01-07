@@ -107,6 +107,20 @@
           </div>
           <small id="label-materi5">Terkunci</small>
         </div>
+
+        <div class="step-card materi-card locked" id="card-materi6">
+          <div class="lock-overlay">🔒 Selesaikan Materi 5</div>
+          <div class="materi-card-header">
+            <span class="badge">Materi 6</span>
+            <span class="materi-status" id="status-materi6">🔒</span>
+          </div>
+          <h2>Transaksi Inter-Company</h2>
+          <p>Otomatisasi SO/PO & Invoice antar cabang</p>
+          <div class="materi-progress">
+            <div class="materi-progress-bar" id="progress-materi6"></div>
+          </div>
+          <small id="label-materi6">Terkunci</small>
+        </div>
       </section>
     </main>
 
@@ -129,8 +143,9 @@
           { id: "materi1", link: "./materi-1/index.html", nextCard: "card-materi2" },
           { id: "materi2", link: "./materi-2/index.html", nextCard: "card-materi3" },
           { id: "materi3", link: "./materi-3/index.html", nextCard: "card-materi4" },
-          { id: "materi4", link: "./materi-4/index.html", nextCard: "card-materi5" }, // Sambungkan ke materi 5
-          { id: "materi5", link: "./materi-5/index.html", nextCard: null } // Akhir baru
+          { id: "materi4", link: "./materi-4/index.html", nextCard: "card-materi5" },
+          { id: "materi5", link: "./materi-5/index.html", nextCard: "card-materi6" },
+          { id: "materi6", link: "./materi-6/index.html", nextCard: null }
         ];
 
         let completedCount = 0;

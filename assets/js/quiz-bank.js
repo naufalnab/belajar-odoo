@@ -200,5 +200,43 @@ window.QUIZ_BANK = {
       ],
       correct: "Mengelola beberapa entitas yang tidak berbagi buku besar (ledger) yang sama tetapi tetap bisa melakukan pelaporan konsolidasi"
     }
+  ],
+  /* =====================================================
+     MATERI 6 — CHATTER & ACTIVITIES
+     ===================================================== */
+  /* =====================================================
+     MATERI 6 — TRANSAKSI ANTAR-PERUSAHAAN
+     ===================================================== */
+  materi6: [
+    {
+      question: "Saya mulai dengan membuat dan memposting faktur (invoice) secara manual di perusahaan penjual (Minji Dimsum) tanpa mengonfirmasi pesanan penjualan (Sales Order) terlebih dahulu. Dokumen komersial apa yang akan dibuat otomatis oleh Odoo di perusahaan pembeli (Pembelajar Belajar)?",
+      options: [
+        "Tagihan vendor (vendor bill) yang terhubung",
+        "Tagihan vendor dan pesanan pembelian (purchase order) yang terhubung",
+        "Penawaran (quotation) yang terhubung",
+        "Tidak ada dokumen komersial"
+      ],
+      correct: "Tidak ada dokumen komersial"
+    },
+    {
+      question: "Manakah pernyataan yang BENAR mengenai interaksi tagihan (bills) dan faktur (invoices) dalam alur antar-perusahaan Odoo?",
+      options: [
+        "Mengonfirmasi tagihan vendor di pembeli secara otomatis membuat faktur yang sesuai di penjual",
+        "Mengonfirmasi tagihan vendor di pembeli TIDAK membuat dokumen apa pun di penjual; penjual harus menerbitkan faktur terlebih dahulu",
+        "Tagihan dan faktur dibuat secara bersamaan, terlepas dari sisi mana yang memulai transaksi",
+        "Tagihan pembeli hanya akan membuat faktur penjual jika 'Create Purchase Orders' dinonaktifkan"
+      ],
+      correct: "Mengonfirmasi tagihan vendor di pembeli TIDAK membuat dokumen apa pun di penjual; penjual harus menerbitkan faktur terlebih dahulu"
+    },
+    {
+      question: "Bagaimana cara memastikan penawaran harga (quotation) dari Minji Dimsum diterbitkan dalam mata uang IDR saat menjual ke Pembelajar Belajar?",
+      options: [
+        "Menetapkan daftar harga (pricelist) IDR milik Minji Dimsum ke data kontak (partner record) Pembelajar Belajar",
+        "Mengatur mata uang Jurnal Pembelian ke IDR",
+        "Mengubah mata uang default perusahaan ke IDR",
+        "Memetakan 'IDR ke USD' dalam posisi fiskal sehingga Odoo mengonversi pada faktur"
+      ],
+      correct: "Menetapkan daftar harga (pricelist) IDR milik Minji Dimsum ke data kontak (partner record) Pembelajar Belajar"
+    }
   ]
 };

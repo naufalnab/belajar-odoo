@@ -16,7 +16,9 @@
     <div class="progress-wrapper">
       <div class="progress-container" id="progressContainer">
         <div class="progress-bar" id="progressBar"></div>
-        <span class="progress-label" id="progressLabel" style="top: 24px;">0%</span>
+        <span class="progress-label" id="progressLabel" style="top: 24px"
+          >0%</span
+        >
       </div>
     </div>
 
@@ -47,6 +49,13 @@
           Panduan langkah demi langkah membuat database Odoo dari nol hingga
           siap digunakan.
         </p>
+        <div class="image-placeholder">
+          <img
+            src="../assets/images/materi-1-infographic.png"
+            alt="Start Odoo"
+            onerror="this.style.display='none'; this.parentElement.classList.add('missing');"
+          />
+        </div>
       </header>
 
       <section class="step-card">
@@ -97,8 +106,8 @@
           </ul>
 
           <div class="image-placeholder">
-            <img 
-              src="../assets/images/materi-1-step-2-country.png" 
+            <img
+              src="../assets/images/materi-1-step-2-country.png"
               alt="Pilih Negara"
               onerror="this.style.display='none'; this.parentElement.classList.add('missing');"
             />
@@ -122,8 +131,8 @@
           </ol>
 
           <div class="image-placeholder">
-            <img 
-              src="../assets/images/materi-1-step-3-logo.png" 
+            <img
+              src="../assets/images/materi-1-step-3-logo.png"
               alt="Upload Logo"
               onerror="this.style.display='none'; this.parentElement.classList.add('missing');"
             />
@@ -144,16 +153,16 @@
           </div>
 
           <div class="image-placeholder">
-            <img 
-              src="../assets/images/materi-1-step-3-activation.png" 
+            <img
+              src="../assets/images/materi-1-step-3-activation.png"
               alt="Aktivasi Email"
               onerror="this.style.display='none'; this.parentElement.classList.add('missing');"
             />
           </div>
 
           <div class="image-placeholder">
-            <img 
-              src="../assets/images/materi-1-step-3-activation-b.png" 
+            <img
+              src="../assets/images/materi-1-step-3-activation-b.png"
               alt="Banner Aktivasi"
               onerror="this.style.display='none'; this.parentElement.classList.add('missing');"
             />
@@ -176,29 +185,29 @@
           </ol>
 
           <div class="image-placeholder">
-            <img 
-              src="../assets/images/materi-1-step-4-users.png" 
+            <img
+              src="../assets/images/materi-1-step-4-users.png"
               alt="Menu User"
               onerror="this.style.display='none'; this.parentElement.classList.add('missing');"
             />
           </div>
           <div class="image-placeholder">
-            <img 
-              src="../assets/images/materi-1-step-4-users-a.png" 
+            <img
+              src="../assets/images/materi-1-step-4-users-a.png"
               alt="List User"
               onerror="this.style.display='none'; this.parentElement.classList.add('missing');"
             />
           </div>
           <div class="image-placeholder">
-            <img 
-              src="../assets/images/materi-1-step-4-users-b.png" 
+            <img
+              src="../assets/images/materi-1-step-4-users-b.png"
               alt="Form User"
               onerror="this.style.display='none'; this.parentElement.classList.add('missing');"
             />
           </div>
           <div class="image-placeholder">
-            <img 
-              src="../assets/images/materi-1-step-4-users-c.png" 
+            <img
+              src="../assets/images/materi-1-step-4-users-c.png"
               alt="Simpan User"
               onerror="this.style.display='none'; this.parentElement.classList.add('missing');"
             />
@@ -221,8 +230,8 @@
           </ul>
 
           <div class="image-placeholder">
-            <img 
-              src="../assets/images/materi-1-step-5-apps.png" 
+            <img
+              src="../assets/images/materi-1-step-5-apps.png"
               alt="Install Apps"
               onerror="this.style.display='none'; this.parentElement.classList.add('missing');"
             />
@@ -251,8 +260,8 @@
           </div>
 
           <div class="image-placeholder">
-            <img 
-              src="../assets/images/materi-1-step-6-demodata.png" 
+            <img
+              src="../assets/images/materi-1-step-6-demodata.png"
               alt="Load Demo Data"
               onerror="this.style.display='none'; this.parentElement.classList.add('missing');"
             />
@@ -272,8 +281,7 @@
 
         <h2>📝 Quiz Materi 1</h2>
 
-        <div class="quiz-container">
-          </div>
+        <div class="quiz-container"></div>
 
         <div class="step-footer">
           <button class="quiz-submit-btn" onclick="checkQuiz()">
@@ -283,17 +291,24 @@
         </div>
       </section>
 
-      <div id="nextActionArea" class="next-action-area" style="display: none;">
+      <div id="nextActionArea" class="next-action-area" style="display: none">
         <h3>🎉 Selamat! Anda Lulus Materi 1</h3>
-        <p>Anda telah menguasai dasar pembuatan database Odoo. Siap untuk level berikutnya?</p>
+        <p>
+          Anda telah menguasai dasar pembuatan database Odoo. Siap untuk level
+          berikutnya?
+        </p>
         <a href="../materi-2/index.html" class="btn-next">
           Lanjut ke Materi 2 ➔
         </a>
       </div>
 
       <footer class="footer">
-        <a href="../index.html" style="text-decoration: none; color: #666; font-weight: 600;">← Kembali ke Dashboard Utama</a>
-        <p style="margin-top: 15px;">© 2026 PembelajarBelajar</p>
+        <a
+          href="../index.html"
+          style="text-decoration: none; color: #666; font-weight: 600"
+          >← Kembali ke Dashboard Utama</a
+        >
+        <p style="margin-top: 15px">© 2026 PembelajarBelajar</p>
       </footer>
     </main>
 
@@ -305,7 +320,7 @@
       document.addEventListener("DOMContentLoaded", () => {
         initMateriProgress("materi1");
         renderQuiz("materi1", ".quiz-container");
-        
+
         // Cek apakah user SUDAH lulus sebelumnya saat halaman dimuat
         const savedResult = loadQuizResult("materi1");
         if (savedResult && savedResult.passed) {
@@ -317,18 +332,19 @@
       // Kita "membajak" fungsi onQuizPassed asli dari lms-core.js
       // agar bisa memunculkan tombol Next secara langsung tanpa reload
       const originalOnQuizPassed = window.onQuizPassed;
-      
-      window.onQuizPassed = function(materiId, score) {
+
+      window.onQuizPassed = function (materiId, score) {
         // 1. Jalankan fungsi asli (simpan score, update badge, unlock materi 2)
         if (originalOnQuizPassed) originalOnQuizPassed(materiId, score);
 
         // 2. Tampilkan tombol Next dengan animasi
         showNextButton();
-        
+
         // 3. Scroll otomatis ke tombol tersebut agar user sadar
         setTimeout(() => {
-          document.getElementById("nextActionArea").scrollIntoView({ 
-            behavior: 'smooth', block: 'center' 
+          document.getElementById("nextActionArea").scrollIntoView({
+            behavior: "smooth",
+            block: "center",
           });
         }, 500);
       };
@@ -336,7 +352,7 @@
       function showNextButton() {
         const area = document.getElementById("nextActionArea");
         if (area) {
-            area.style.display = "block";
+          area.style.display = "block";
         }
       }
     </script>
