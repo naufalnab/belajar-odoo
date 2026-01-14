@@ -1,13 +1,7 @@
 /* =========================================================
-   QUIZ ENGINE
+   QUIZ ENGINE (REVISI: ULANG JIKA BELUM 100%)
    PembelajarBelajar LMS
    ========================================================= */
-
-/*
-  Dependency:
-  - quiz-bank.js  (QUIZ_BANK)
-  - lms-core.js   (onQuizPassed, onQuizFailed)
-*/
 
 /* ===================== STATE ===================== */
 
@@ -17,11 +11,6 @@ let quizRendered = false;
 
 /* ===================== PUBLIC API ===================== */
 
-/**
- * Render quiz ke container tertentu
- * @param {string} quizId - contoh: "materi1"
- * @param {string} containerSelector - contoh: "#materi-1-quiz .quiz-container"
- */
 function renderQuiz(quizId, containerSelector) {
   if (!window.QUIZ_BANK || !QUIZ_BANK[quizId]) {
     console.error("Quiz tidak ditemukan:", quizId);
@@ -32,36 +21,52 @@ function renderQuiz(quizId, containerSelector) {
   currentQuestions = QUIZ_BANK[quizId];
 
   const container = document.querySelector(containerSelector);
-  if (!container) {
-    console.error("Quiz container tidak ditemukan:", containerSelector);
-    return;
-  }
+  if (!container) return;
 
   container.innerHTML = "";
   quizRendered = true;
 
   const saved = loadSavedQuizResult(quizId);
-  const isPassed = saved?.passed === true;
+  // Cek apakah sudah lulus sempurna (100%)
+  const isPerfect = saved?.score === 100;
 
   currentQuestions.forEach((q, index) => {
-    container.appendChild(createQuestionElement(q, index, isPassed, saved));
+    // Kunci jawaban hanya jika sudah 100%
+    container.appendChild(createQuestionElement(q, index, isPerfect, saved));
   });
 
-  if (isPassed) {
-    lockQuizUI(container, saved.score);
+  resetButtonState();
+
+  if (saved) {
+    // Tampilkan hasil sebelumnya
+    showQuizResult(saved.score);
+    updateQuizProgress(saved.score);
+
+    // LOGIKA RENDER:
+    if (saved.score === 100) {
+      // Jika 100%, kunci total
+      lockQuizUI(container, saved.score);
+    } else {
+      // Jika di bawah 100% (meskipun lulus), tawarkan ulang
+      enableRetryMode();
+    }
   }
 }
 
-/**
- * Dipanggil tombol "Periksa Jawaban"
- */
 function checkQuiz() {
+  const submitBtn = document.querySelector(".quiz-submit-btn");
+  
+  // Jika tombol sedang dalam mode "Ulangi", reset quiz
+  if (submitBtn && submitBtn.getAttribute("data-mode") === "retry") {
+    resetQuiz();
+    return;
+  }
+
   if (!quizRendered) return;
 
+  // Cek apakah ada yang kosong
   const unanswered = currentQuestions.some((q, index) => {
-    return !document.querySelector(
-      `input[name="quiz_q_${index}"]:checked`
-    );
+    return !document.querySelector(`input[name="quiz_q_${index}"]:checked`);
   });
 
   if (unanswered) {
@@ -69,13 +74,10 @@ function checkQuiz() {
     return;
   }
 
+  // Hitung Skor
   let correct = 0;
-
   currentQuestions.forEach((q, index) => {
-    const selected = document.querySelector(
-      `input[name="quiz_q_${index}"]:checked`
-    );
-
+    const selected = document.querySelector(`input[name="quiz_q_${index}"]:checked`);
     const questionBox = document.getElementById(`quiz-question-${index}`);
 
     if (selected.value === q.correct) {
@@ -87,16 +89,71 @@ function checkQuiz() {
   });
 
   const score = Math.round((correct / currentQuestions.length) * 100);
+  
   showQuizResult(score);
-
   updateQuizProgress(score);
 
+  // LOGIKA UTAMA:
+  // 1. Cek apakah lulus passing grade (70) untuk buka materi selanjutnya
   if (score >= LMS_CONFIG.passingScore) {
-    onQuizPassed(currentQuizId, score);
-    disableQuizAfterPass(score);
+    onQuizPassed(currentQuizId, score); 
   } else {
     onQuizFailed(currentQuizId, score);
   }
+
+  // 2. Cek apakah Perfect (100) untuk mengunci kuis
+  if (score === 100) {
+    disableQuizAfterPass(score); // Kunci dan sembunyikan tombol
+  } else {
+    enableRetryMode(); // Ubah tombol jadi "Ulangi"
+  }
+}
+
+/* ===================== RETRY LOGIC ===================== */
+
+function enableRetryMode() {
+  const submitBtn = document.querySelector(".quiz-submit-btn");
+  if (!submitBtn) return;
+
+  submitBtn.innerText = "🔄 Ulangi Quiz (Kejar 100%)";
+  submitBtn.style.backgroundColor = "#ffc107"; // Kuning
+  submitBtn.style.color = "#333";
+  submitBtn.style.display = "inline-block"; // Pastikan muncul
+  submitBtn.setAttribute("data-mode", "retry");
+}
+
+function resetQuiz() {
+  // Reset Radio
+  const radios = document.querySelectorAll("input[type=radio]");
+  radios.forEach(r => {
+    r.checked = false;
+    r.disabled = false; // Pastikan bisa diklik lagi
+  });
+
+  // Hapus warna border
+  const questions = document.querySelectorAll(".quiz-question");
+  questions.forEach(q => q.style.borderLeft = "none");
+
+  // Sembunyikan hasil
+  const resultBox = document.getElementById("quizResult");
+  if (resultBox) resultBox.style.display = "none";
+
+  // Reset bar
+  const bar = document.getElementById("quizProgressBar");
+  if (bar) bar.style.width = "0%";
+
+  resetButtonState();
+}
+
+function resetButtonState() {
+  const submitBtn = document.querySelector(".quiz-submit-btn");
+  if (!submitBtn) return;
+
+  submitBtn.innerText = "Periksa Jawaban";
+  submitBtn.style.backgroundColor = "";
+  submitBtn.style.color = "";
+  submitBtn.style.display = "inline-block";
+  submitBtn.removeAttribute("data-mode");
 }
 
 /* ===================== RENDER HELPERS ===================== */
@@ -122,6 +179,7 @@ function createQuestionElement(question, index, locked, savedResult) {
     input.name = `quiz_q_${index}`;
     input.value = option;
 
+    // Kunci input HANYA jika locked (100%)
     if (locked) input.disabled = true;
 
     if (savedResult && savedResult.answers) {
@@ -138,12 +196,15 @@ function createQuestionElement(question, index, locked, savedResult) {
 
   wrapper.appendChild(ul);
 
-  if (locked && savedResult) {
+  // Tampilkan jawaban benar/salah jika ada history, meskipun belum 100%
+  if (savedResult && savedResult.answers) {
     const selected = savedResult.answers[index];
-    if (selected === question.correct) {
-      markQuestion(wrapper, true);
-    } else {
-      markQuestion(wrapper, false);
+    if (selected) {
+        if (selected === question.correct) {
+            markQuestion(wrapper, true);
+        } else {
+            markQuestion(wrapper, false);
+        }
     }
   }
 
@@ -158,51 +219,42 @@ function showQuizResult(score) {
 
   box.style.display = "block";
 
-  if (score >= LMS_CONFIG.passingScore) {
-    box.innerHTML = `✅ <strong>LULUS</strong><br>Skor Anda: <strong>${score}%</strong>`;
+  if (score === 100) {
+    box.innerHTML = `🌟 <strong>SEMPURNA!</strong><br>Skor Anda: <strong>100%</strong>`;
+    box.className = "alert success";
+  } else if (score >= LMS_CONFIG.passingScore) {
+    // Kasus 70-99%
+    box.innerHTML = `✅ <strong>LULUS</strong><br>Skor Anda: <strong>${score}%</strong><br><small>Anda boleh lanjut, atau ulangi agar 100%.</small>`;
+    box.className = "alert warning"; // Kuning/Warning biar sadar belum sempurna
   } else {
-    box.innerHTML =
-      `❌ <strong>BELUM LULUS</strong><br>` +
-      `Skor Anda: <strong>${score}%</strong><br>` +
-      `Silakan pelajari ulang materi.`;
+    box.innerHTML = `❌ <strong>BELUM LULUS</strong><br>Skor Anda: <strong>${score}%</strong>`;
+    box.className = "alert danger";
   }
 }
 
-/* ===================== VISUAL ===================== */
-
 function markQuestion(element, correct) {
-  element.style.borderLeft = correct
-    ? "5px solid #28a745"
-    : "5px solid #dc3545";
+  element.style.borderLeft = correct ? "5px solid #28a745" : "5px solid #dc3545";
 }
 
 function updateQuizProgress(score) {
   const bar = document.getElementById("quizProgressBar");
-  if (!bar) return;
-
-  bar.style.width = score + "%";
+  if (bar) bar.style.width = score + "%";
 }
 
 /* ===================== SAVE / LOAD ===================== */
 
 function saveQuizAttempt(score) {
   const answers = [];
-
   currentQuestions.forEach((_, index) => {
-    const selected = document.querySelector(
-      `input[name="quiz_q_${index}"]:checked`
-    );
+    const selected = document.querySelector(`input[name="quiz_q_${index}"]:checked`);
     answers[index] = selected ? selected.value : null;
   });
 
-  localStorage.setItem(
-    `${currentQuizId}_quiz`,
-    JSON.stringify({
-      score,
-      passed: score >= LMS_CONFIG.passingScore,
-      answers,
-    })
-  );
+  localStorage.setItem(`${currentQuizId}_quiz`, JSON.stringify({
+    score,
+    passed: score >= LMS_CONFIG.passingScore,
+    answers,
+  }));
 }
 
 function loadSavedQuizResult(quizId) {
@@ -213,37 +265,34 @@ function loadSavedQuizResult(quizId) {
 /* ===================== LOCK AFTER PASS ===================== */
 
 function disableQuizAfterPass(score) {
-  saveQuizAttempt(score);
-
+  saveQuizAttempt(score); // Simpan status terakhir
+  
   const container = document.querySelector(".quiz-container");
   if (!container) return;
 
   lockQuizUI(container, score);
+  
+  // Sembunyikan tombol HANYA jika 100%
+  const submitBtn = document.querySelector(".quiz-submit-btn");
+  if(submitBtn) submitBtn.style.display = 'none';
 }
 
 function lockQuizUI(container, score) {
   container.classList.add("locked");
-
-  const overlay = document.createElement("div");
-  overlay.className = "lock-overlay";
-  overlay.innerHTML = `🎓 Quiz sudah lulus (${score}%)`;
-
-  container.appendChild(overlay);
-
+  if (!container.querySelector(".lock-overlay")) {
+    const overlay = document.createElement("div");
+    overlay.className = "lock-overlay";
+    overlay.innerHTML = `🏆 Quiz Selesai (${score}%)`;
+    container.appendChild(overlay);
+  }
   const radios = container.querySelectorAll("input[type=radio]");
   radios.forEach(r => (r.disabled = true));
 }
 
-/* ===================== AUTO LOAD RESULT ===================== */
+/* ===================== AUTO LOAD ===================== */
 
 document.addEventListener("DOMContentLoaded", () => {
-  const resultBox = document.getElementById("quizResult");
-
   if (currentQuizId) {
-    const saved = loadSavedQuizResult(currentQuizId);
-    if (saved) {
-      updateQuizProgress(saved.score);
-      showQuizResult(saved.score);
-    }
+    // Tidak perlu load manual di sini karena renderQuiz sudah menanganinya
   }
 });

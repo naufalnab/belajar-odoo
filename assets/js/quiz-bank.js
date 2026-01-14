@@ -77,5 +77,166 @@ window.QUIZ_BANK = {
       ],
       correct: "List, Kanban, Calendar, Pivot, Graph, Activity"
     }
+  ],
+
+  /* =====================================================
+     MATERI 3 — SINKRONISASI GOOGLE CALENDAR
+     ===================================================== */
+  materi3: [
+    {
+      question: "Dua kredensial apa yang perlu Anda salin dari Google Console dan dimasukkan ke database Odoo untuk menyelesaikan sinkronisasi?",
+      options: [
+        "Client ID dan API Key",
+        "Client ID dan Client Secret",
+        "Client Secret dan URI",
+        "URI dan API Key"
+      ],
+      correct: "Client ID dan Client Secret"
+    },
+    {
+      question: "Agar bisa memilih Tipe User 'Internal', jenis akun Gmail apa yang harus Anda gunakan?",
+      options: [
+        "Semua jenis akun Gmail bisa jadi user Internal",
+        "Hanya akun Gmail pribadi yang bisa jadi user Internal",
+        "Hanya akun Google Workspace (Bisnis/Sekolah) yang bisa jadi user Internal",
+        "Hanya akun pembuat project yang bisa jadi user Internal"
+      ],
+      correct: "Hanya akun Google Workspace (Bisnis/Sekolah) yang bisa jadi user Internal"
+    },
+    {
+      question: "Apa fungsi dari 'Authorized Redirect URIs' yang kita isi?",
+      options: [
+        "Mengarahkan user yang tidak diinginkan keluar dari database",
+        "Membuat jalur balik ke Google untuk menghubungkan Odoo dengan login OAuth yang baru dibuat",
+        "Mengalihkan user ke Odoo saat mereka berada di Google Developer Console",
+        "Otomatis membuat Client ID saat user login"
+      ],
+      correct: "Membuat jalur balik ke Google untuk menghubungkan Odoo dengan login OAuth yang baru dibuat"
+    },
+    {
+      question: "Di halaman mana Anda bisa menemukan tombol 'Publish App' untuk project ini?",
+      options: [
+        "Di halaman utama 'Overview'",
+        "Di halaman 'Branding'",
+        "Di halaman 'Data Access'",
+        "Di halaman 'Audience'"
+      ],
+      correct: "Di halaman 'Audience'"
+    }
+  ],
+
+  /* =====================================================
+     MATERI 4 — SINKRONISASI OUTLOOK (AZURE)
+     ===================================================== */
+  /* =====================================================
+     MATERI 4 — FILTER & TAMPILAN (REVISI)
+     ===================================================== */
+  materi4: [
+    {
+      question: "Bagaimana cara pengguna memfilter penawaran (quotations) dari bulan sebelumnya?",
+      options: [
+        "Dengan mengganti salesperson",
+        "Dengan memilih filter Kanban",
+        "Dengan memilih Create Date > Bulan Sebelumnya (Previous Month)",
+        "Dengan menerapkan tampilan default"
+      ],
+      correct: "Dengan memilih Create Date > Bulan Sebelumnya (Previous Month)"
+    },
+    {
+      question: "Setelah menggeser (drag-and-drop) pesanan penjualan ke salesperson lain di tampilan Kanban, di mana pengguna dapat mengonfirmasi perubahan tersebut di dalam dokumen?",
+      options: [
+        "Tab Settings",
+        "Menu Filters",
+        "Tab Order Lines",
+        "Tab Other Info"
+      ],
+      correct: "Tab Other Info"
+    },
+    {
+      question: "Apa yang dimungkinkan oleh opsi 'Add Custom Filters'?",
+      options: [
+        "Mengekspor filter ke dalam file",
+        "Mengedit hak akses pengguna",
+        "Memfilter menggunakan 'field' apa pun di Odoo, seperti Abandoned Carts atau tanggal spesifik",
+        "Membagikan filter ke luar sistem Odoo"
+      ],
+      correct: "Memfilter menggunakan 'field' apa pun di Odoo, seperti Abandoned Carts atau tanggal spesifik"
+    }
+  ],
+  /* =====================================================
+     MATERI 5 — MULTI-COMPANY
+     ===================================================== */
+  /* =====================================================
+     MATERI 5 — MULTI-COMPANY (REVISI SESUAI REQUEST)
+     ===================================================== */
+  materi5: [
+    {
+      question: "Kapan membuat perusahaan tambahan (Multi-Company) adalah pilihan terbaik?",
+      options: [
+        "Ketika entitas baru menggunakan daftar harga (pricelist) yang berbeda",
+        "Ketika unit baru memiliki Tax ID (NPWP) sendiri atau pelaporan pajak yang terpisah",
+        "Ketika saya hanya perlu membatasi visibilitas dokumen",
+        "Ketika mata uangnya tetap sama"
+      ],
+      correct: "Ketika unit baru memiliki Tax ID (NPWP) sendiri atau pelaporan pajak yang terpisah"
+    },
+    {
+      question: "Dua kolom mana yang WAJIB diisi dengan benar sebelum perusahaan baru memposting transaksi pertamanya (karena mengubahnya nanti bisa merusak buku besar/ledger)?",
+      options: [
+        "Taxes (Pajak) dan Company",
+        "Country (Negara) dan Currency (Mata Uang)",
+        "Country (Negara) dan Fiscal Localization",
+        "Chart of Accounts dan Currency"
+      ],
+      correct: "Country (Negara) dan Currency (Mata Uang)"
+    },
+    {
+      question: "Apa yang bisa dilakukan fitur Multi-Company yang TIDAK bisa dilakukan oleh hak akses, fitur branches, atau database terpisah?",
+      options: [
+        "Membatasi akses karyawan ke dokumen tertentu",
+        "Berbagi sumber daya seperti produk, vendor, dan pelanggan",
+        "Menghindari pajak karena Odoo akan melakukannya untuk saya",
+        "Mengelola beberapa entitas yang tidak berbagi buku besar (ledger) yang sama tetapi tetap bisa melakukan pelaporan konsolidasi"
+      ],
+      correct: "Mengelola beberapa entitas yang tidak berbagi buku besar (ledger) yang sama tetapi tetap bisa melakukan pelaporan konsolidasi"
+    }
+  ],
+  /* =====================================================
+     MATERI 6 — CHATTER & ACTIVITIES
+     ===================================================== */
+  /* =====================================================
+     MATERI 6 — TRANSAKSI ANTAR-PERUSAHAAN
+     ===================================================== */
+  materi6: [
+    {
+      question: "Saya mulai dengan membuat dan memposting faktur (invoice) secara manual di perusahaan penjual (Minji Dimsum) tanpa mengonfirmasi pesanan penjualan (Sales Order) terlebih dahulu. Dokumen komersial apa yang akan dibuat otomatis oleh Odoo di perusahaan pembeli (Pembelajar Belajar)?",
+      options: [
+        "Tagihan vendor (vendor bill) yang terhubung",
+        "Tagihan vendor dan pesanan pembelian (purchase order) yang terhubung",
+        "Penawaran (quotation) yang terhubung",
+        "Tidak ada dokumen komersial"
+      ],
+      correct: "Tidak ada dokumen komersial"
+    },
+    {
+      question: "Manakah pernyataan yang BENAR mengenai interaksi tagihan (bills) dan faktur (invoices) dalam alur antar-perusahaan Odoo?",
+      options: [
+        "Mengonfirmasi tagihan vendor di pembeli secara otomatis membuat faktur yang sesuai di penjual",
+        "Mengonfirmasi tagihan vendor di pembeli TIDAK membuat dokumen apa pun di penjual; penjual harus menerbitkan faktur terlebih dahulu",
+        "Tagihan dan faktur dibuat secara bersamaan, terlepas dari sisi mana yang memulai transaksi",
+        "Tagihan pembeli hanya akan membuat faktur penjual jika 'Create Purchase Orders' dinonaktifkan"
+      ],
+      correct: "Mengonfirmasi tagihan vendor di pembeli TIDAK membuat dokumen apa pun di penjual; penjual harus menerbitkan faktur terlebih dahulu"
+    },
+    {
+      question: "Bagaimana cara memastikan penawaran harga (quotation) dari Minji Dimsum diterbitkan dalam mata uang IDR saat menjual ke Pembelajar Belajar?",
+      options: [
+        "Menetapkan daftar harga (pricelist) IDR milik Minji Dimsum ke data kontak (partner record) Pembelajar Belajar",
+        "Mengatur mata uang Jurnal Pembelian ke IDR",
+        "Mengubah mata uang default perusahaan ke IDR",
+        "Memetakan 'IDR ke USD' dalam posisi fiskal sehingga Odoo mengonversi pada faktur"
+      ],
+      correct: "Menetapkan daftar harga (pricelist) IDR milik Minji Dimsum ke data kontak (partner record) Pembelajar Belajar"
+    }
   ]
 };
