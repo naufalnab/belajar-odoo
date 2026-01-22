@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modul Sales | PembelajarBelajar</title>
+
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+    <header class="header">
+        <h1>💼 Modul Sales</h1>
+        <p class="subtitle">
+            Kuasai manajemen penjualan, promosi, dan strategi loyalty Odoo.
+        </p>
+
+        <div class="dashboard-progress-wrapper">
+            <div class="dashboard-progress-header">
+                <span>Progres Modul Sales</span>
+                <span class="dashboard-percent-text" id="globalProgressPercent">0%</span>
+            </div>
+
+            <div class="dashboard-bar-container">
+                <div class="dashboard-bar-fill" id="globalProgressBar"></div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container" style="margin-top: 60px">
+        <section class="materi-dashboard">
+            <!-- Materi 1 -->
+            <a href="./sales/sales-materi-1/index.html" class="step-card materi-card" id="card-materi1">
+                <div class="materi-card-header">
+                    <span class="badge">Materi 1</span>
+                    <span class="materi-status" id="status-materi1">🔓</span>
+                </div>
+                <h2>Promotion Basics & Discounts</h2>
+                <p>Cara membuat kode diskon dan program promosi.</p>
+                <div class="materi-progress">
+                    <div class="materi-progress-bar" id="progress-materi1"></div>
+                </div>
+                <small id="label-materi1">Belum dimulai</small>
+            </a>
+
+            <!-- Materi 2 (Placeholder) -->
+            <a href="./sales/sales-materi-2/index.html" class="step-card materi-card locked" id="card-materi2">
+                <div class="lock-overlay">🔒 Selesaikan Materi 1</div>
+                <div class="materi-card-header">
+                    <span class="badge">Materi 2</span>
+                    <span class="materi-status" id="status-materi2">🔒</span>
+                </div>
+                <h2>Loyalty Points & Coupons</h2>
+                <p>Membangun sistem poin reward untuk pelanggan.</p>
+                <div class="materi-progress">
+                    <div class="materi-progress-bar" id="progress-materi2"></div>
+                </div>
+                <small id="label-materi2">Terkunci</small>
+            </a>
+
+            <!-- Materi 3 (Placeholder) -->
+            <div class="step-card materi-card locked" id="card-materi3">
+                <div class="lock-overlay">🔒 Selesaikan Materi 2</div>
+                <div class="materi-card-header">
+                    <span class="badge">Materi 3</span>
+                    <span class="materi-status" id="status-materi3">🔒</span>
+                </div>
+                <h2>Pricelists (Daftar Harga)</h2>
+                <p>Mengatur harga berbeda untuk pelanggan berbeda.</p>
+                <div class="materi-progress">
+                    <div class="materi-progress-bar" id="progress-materi3"></div>
+                </div>
+                <small id="label-materi3">Terkunci</small>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <a href="./index.html" style="text-decoration: none; color: #666; font-weight: 600">← Kembali ke Dashboard
+            Utama</a>
+    </footer>
+
+    <script src="./assets/js/lms-core.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            initDashboard();
+        });
+
+        function initDashboard() {
+            // --- KONFIGURASI ALUR MATERI SALES ---
+            const modules = [
+                { id: "materi1", link: "./sales/sales-materi-1/index.html", nextCard: "card-materi2" },
+                { id: "materi2", link: "#", nextCard: "card-materi3" },
+                { id: "materi3", link: "#", nextCard: null }
+            ];
+
+            // Gunakan local storage key yang unik untuk modul ini (misal prefix: sales_)
+            // Tapi untuk kesederhanaan, LMS core kita mungkin perlu sedikit penyesuaian.
+            // Untuk sekarang kita pakai 'sales_materiX' sebagai ID di lms-core tapi UI card tetap materiX.
+            // TAPI: lms-core kita simpan berdasarkan `mod.id` + `_steps`.
+            // Jadi agar tidak bentrok dengan Getting Started, kita harus pakai ID unik di array modules.
+
+            const uniqueModules = [
+                { id: "sales_materi1", uiId: "materi1", link: "./sales/sales-materi-1/index.html", nextCard: "card-materi2" },
+                { id: "sales_materi2", uiId: "materi2", link: "./sales/sales-materi-2/index.html", nextCard: "card-materi3" },
+                { id: "sales_materi3", uiId: "materi3", link: "#", nextCard: null }
+            ];
+
+            let completedCount = 0;
+            const totalModules = uniqueModules.length;
+
+            uniqueModules.forEach((mod) => {
+                const steps = JSON.parse(localStorage.getItem(`${mod.id}_steps`)) || [];
+                const quiz = JSON.parse(localStorage.getItem(`${mod.id}_quiz`));
+
+                const totalSteps = steps.length > 0 ? steps.length : 1;
+                const checkedSteps = steps.filter(Boolean).length;
+                let percent = Math.round((checkedSteps / totalSteps) * 100);
+
+                if (quiz?.passed) {
+                    percent = 100;
+                    completedCount++;
+                }
+
+                updateCardUI(mod.uiId, percent, quiz?.passed);
+
+                if (quiz?.passed && mod.nextCard) {
+                    const nextModule = uniqueModules.find(m => `card-${m.uiId}` === mod.nextCard);
+                    const nextLink = nextModule ? nextModule.link : "#";
+                    unlockCard(mod.nextCard, nextLink);
+                }
+            });
+
+            const globalPercent = Math.round((completedCount / totalModules) * 100);
+            renderGlobalProgress(globalPercent);
+        }
+
+        function updateCardUI(uiId, percent, isPassed) {
+            const bar = document.getElementById(`progress-${uiId}`);
+            const label = document.getElementById(`label-${uiId}`);
+            const status = document.getElementById(`status-${uiId}`);
+
+            if (bar) bar.style.width = percent + "%";
+
+            if (isPassed) {
+                if (label) {
+                    label.innerText = "🎓 Lulus Quiz";
+                    label.style.color = "var(--success-color)";
+                    label.style.fontWeight = "bold";
+                }
+                if (status) status.innerText = "✅";
+            } else {
+                if (label && percent > 0) {
+                    label.innerText = `${percent}% Selesai`;
+                    label.style.color = "var(--secondary-color)";
+                }
+            }
+        }
+
+        function unlockCard(cardId, linkUrl) {
+            const card = document.getElementById(cardId);
+            if (!card) return;
+            if (!card.classList.contains("locked")) return;
+
+            card.classList.remove("locked");
+            const overlay = card.querySelector(".lock-overlay");
+            if (overlay) overlay.remove();
+
+            const statusIcon = card.querySelector(".materi-status");
+            if (statusIcon) statusIcon.innerText = "🔓";
+
+            const label = card.querySelector("small");
+            if (label && label.innerText === "Terkunci") {
+                label.innerText = "Silakan mulai";
+            }
+
+            card.style.cursor = "pointer";
+            card.onclick = () => {
+                if (linkUrl !== "#") window.location.href = linkUrl;
+            };
+        }
+
+        function renderGlobalProgress(percent) {
+            const globalBar = document.getElementById("globalProgressBar");
+            const globalText = document.getElementById("globalProgressPercent");
+
+            if (globalBar) {
+                globalBar.style.width = percent + "%";
+                globalBar.className = "dashboard-bar-fill";
+                if (percent < 40) globalBar.classList.add("red");
+                else if (percent < 70) globalBar.classList.add("yellow");
+                else globalBar.classList.add("green");
+            }
+
+            if (globalText) {
+                globalText.innerText = percent + "%";
+                if (percent >= 100) globalText.style.color = "var(--success-color)";
+            }
+        }
+    </script>
+</body>
+
+</html>
