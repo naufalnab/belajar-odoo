@@ -68,6 +68,7 @@
                 <ol class="instruction-list">
                     <li>Navigasi ke <strong>Products</strong> > <strong>Discount & Loyalty</strong>.</li>
                     <li>Klik <strong>New</strong> atau pilih program yang sudah ada.</li>
+                    <li><strong>Program Name:</strong> Berikan nama program (contoh: <code>Loyalty Program</code>).</li>
                     <li><strong>Program Type:</strong> Pilih "<strong>Loyalty Cards</strong>". Ini memungkinkan
                         pelanggan mengumpulkan poin untuk pembelian masa depan.</li>
                     <li><strong>Points Unit:</strong> Kita boleh mengubah nama unit poin (contoh: diubah dari "Points"
@@ -93,9 +94,12 @@
 
                 <h3>Syarat Umum</h3>
                 <ul class="instruction-list">
-                    <li>Klik pada aturan standar (default).</li>
+                    <li>Klik pada aturan yang sudah muncul (contoh: <em>If minimum...</em>) atau klik tombol <strong>Add
+                            a rule</strong>.</li>
                     <li>Tetapkan <strong>Minimum Quantity</strong> (contoh: 1) dan <strong>Minimum Purchase
                             Amount</strong> (contoh: Rp 0).</li>
+                    <li>Pada bagian <strong>Grant</strong>, pilih <strong>per Rp spent</strong> agar pelanggan mendapat
+                        poin sesuai nominal belanja (contoh: 1 poin per Rp 1 dibelanjakan).</li>
                     <li>Pelanggan perlu mempunyai akun untuk mengumpulkan poin. Odoo akan membuat atau melacak akun
                         secara otomatis jika penjualan dikonfirmasi.</li>
                 </ul>
@@ -105,7 +109,7 @@
                     <li>Kita bisa menambah aturan baru untuk produk tertentu yang ingin dihabiskan stoknya (contoh:
                         "Acoustic Block Screens").</li>
                     <li>Pilih produk tersebut dalam kolom <strong>Products</strong>.</li>
-                    <li>Berikan poin yang lebih tinggi (contoh: <code>420</code> poin) untuk pembelian produk ini
+                    <li>Berikan poin yang lebih tinggi (contoh: <code>500.000</code> poin) untuk pembelian produk ini
                         dibandingkan produk lain.</li>
                 </ul>
 
@@ -130,9 +134,11 @@
                     <li><strong>Reward Type:</strong> Pilih <strong>Discount</strong> (atau Free Product).</li>
                     <li><strong>Discount:</strong> Tetapkan persentase diskon (contoh: <code>10</code> %).</li>
                     <li><strong>In exchange for:</strong> Tetapkan biaya poin untuk mendapatkan hadiah ini (contoh:
-                        <code>100</code> poin).</li>
+                        <code>100.000</code> poin).
+                    </li>
                     <li><strong>Apply on:</strong> Tetapkan kepada <strong>Order</strong> (keseluruhan pesanan),
-                        <strong>Cheapest Product</strong>, atau <strong>Specific Product</strong>.</li>
+                        <strong>Cheapest Product</strong>, atau <strong>Specific Product</strong>.
+                    </li>
                     <li><strong>Max Discount:</strong> Kita boleh menetapkan batas maksimum diskon dalam nilai mata
                         uang.</li>
                 </ol>
@@ -174,12 +180,15 @@
         </section>
 
         <section class="step-card">
-            <h2>6. Menyemak Baki Mata Pelanggan</h2>
+            <h2>6. Mengecek Saldo Poin Pelanggan</h2>
             <div class="content">
                 <p>Kita bisa melihat berapa banyak poin yang dimiliki pelanggan.</p>
                 <ol class="instruction-list">
-                    <li>Klik pada nama pelanggan dalam formulir pesanan untuk membuka profil mereka.</li>
-                    <li>Klik pada Smart Button "<strong>Loyalty Cards</strong>" di bagian atas.</li>
+                    <li>Di halaman <strong>Quotation</strong>, lihat field <strong>Customer</strong>.</li>
+                    <li>Klik pada <strong>nama pelanggan</strong> (contoh: "Deco Addict") untuk membuka formulir detail
+                        kontak mereka.</li>
+                    <li>Di halaman profil pelanggan, klik Smart Button "<strong>Loyalty Cards</strong>" yang terletak di
+                        bagian atas kanan.</li>
                     <li>Kita bisa melihat jumlah poin terkumpul dan riwayat transaksi poin mereka.</li>
                 </ol>
 
