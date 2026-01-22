@@ -433,6 +433,15 @@ body.dark .progress-label::after {
 /* =====================================================
    DASHBOARD / MENU UTAMA
 ===================================================== */
+.dashboard-section-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin: 40px 0 20px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #eee;
+}
+
 .materi-dashboard {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
