@@ -221,7 +221,7 @@
         <div id="nextActionArea" class="next-action-area" style="display: none">
             <h3>🎉 Materi Sales 1 Selesai!</h3>
             <p>
-                Anda berhasil membuat sistem promosi diskon pertama Anda.
+                kita berhasil membuat sistem promosi diskon pertama kita.
             </p>
             <a href="../../sales.html" class="btn-next">
                 Kembali ke Modul Sales ➔
@@ -254,19 +254,19 @@
             if (!window.quizData[MATERI_ID]) {
                 window.quizData[MATERI_ID] = [
                     {
-                        question: "Di menu mana kita mengaktifkan fitur Diskon & Loyalty?",
-                        options: ["Sales > Products", "Configuration > Settings", "Reporting > Sales"],
-                        answer: 1 // Configuration > Settings
+                        question: "Jenis program promosi apa yang akan kita gunakan untuk membuat satu kode promosi yang didistribusikan secara luas?",
+                        options: ["Coupons", "Promotions", "Discount Code", "Mass Distribution Promo"],
+                        answer: 2 // Discount Code
                     },
                     {
-                        question: "Tipe program apa yang dipilih untuk membuat Kode Promo manual?",
-                        options: ["Loyalty Cards", "Discount Code", "Buy X Get Y"],
-                        answer: 1 // Discount Code
+                        question: "Bagaimana cara mengatur agar promosi tersedia di toko online kita?",
+                        options: ["Aktifkan 'Online Promotions' di pengaturan Sales", "Aktifkan 'Internet Promo' di pengaturan Website", "Buat tersedia di aplikasi Point of Sale", "Buat tersedia di aplikasi Website"],
+                        answer: 3 // Make it available on the Website app
                     },
                     {
-                        question: "Jika kita ingin diskon berlaku untuk total belanjaan, kita pilih Apply On...?",
-                        options: ["Specific Product", "Cheapest Product", "Order"],
-                        answer: 2 // Order
+                        question: "Bagaimana cara mengatur agar promosi tidak pernah kadaluarsa?",
+                        options: ["Biarkan kolom Validity (Start/End Date) kosong", "Set Validity ke tanggal hari ini", "Set Expiration Date ke tanggal hari ini", "Ini tidak mungkin dilakukan di Odoo Sales"],
+                        answer: 0 // Leave the Validity field blank
                     }
                 ];
             }

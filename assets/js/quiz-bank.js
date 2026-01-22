@@ -84,7 +84,7 @@ window.QUIZ_BANK = {
      ===================================================== */
   materi3: [
     {
-      question: "Dua kredensial apa yang perlu Anda salin dari Google Console dan dimasukkan ke database Odoo untuk menyelesaikan sinkronisasi?",
+      question: "Dua kredensial apa yang perlu kita salin dari Google Console dan dimasukkan ke database Odoo untuk menyelesaikan sinkronisasi?",
       options: [
         "Client ID dan API Key",
         "Client ID dan Client Secret",
@@ -94,7 +94,7 @@ window.QUIZ_BANK = {
       correct: "Client ID dan Client Secret"
     },
     {
-      question: "Agar bisa memilih Tipe User 'Internal', jenis akun Gmail apa yang harus Anda gunakan?",
+      question: "Agar bisa memilih Tipe User 'Internal', jenis akun Gmail apa yang harus kita gunakan?",
       options: [
         "Semua jenis akun Gmail bisa jadi user Internal",
         "Hanya akun Gmail pribadi yang bisa jadi user Internal",
@@ -114,7 +114,7 @@ window.QUIZ_BANK = {
       correct: "Membuat jalur balik ke Google untuk menghubungkan Odoo dengan login OAuth yang baru dibuat"
     },
     {
-      question: "Di halaman mana Anda bisa menemukan tombol 'Publish App' untuk project ini?",
+      question: "Di halaman mana kita bisa menemukan tombol 'Publish App' untuk project ini?",
       options: [
         "Di halaman utama 'Overview'",
         "Di halaman 'Branding'",

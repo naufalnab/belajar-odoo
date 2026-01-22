@@ -55,7 +55,7 @@ function renderQuiz(quizId, containerSelector) {
 
 function checkQuiz() {
   const submitBtn = document.querySelector(".quiz-submit-btn");
-  
+
   // Jika tombol sedang dalam mode "Ulangi", reset quiz
   if (submitBtn && submitBtn.getAttribute("data-mode") === "retry") {
     resetQuiz();
@@ -89,14 +89,14 @@ function checkQuiz() {
   });
 
   const score = Math.round((correct / currentQuestions.length) * 100);
-  
+
   showQuizResult(score);
   updateQuizProgress(score);
 
   // LOGIKA UTAMA:
   // 1. Cek apakah lulus passing grade (70) untuk buka materi selanjutnya
   if (score >= LMS_CONFIG.passingScore) {
-    onQuizPassed(currentQuizId, score); 
+    onQuizPassed(currentQuizId, score);
   } else {
     onQuizFailed(currentQuizId, score);
   }
@@ -200,11 +200,11 @@ function createQuestionElement(question, index, locked, savedResult) {
   if (savedResult && savedResult.answers) {
     const selected = savedResult.answers[index];
     if (selected) {
-        if (selected === question.correct) {
-            markQuestion(wrapper, true);
-        } else {
-            markQuestion(wrapper, false);
-        }
+      if (selected === question.correct) {
+        markQuestion(wrapper, true);
+      } else {
+        markQuestion(wrapper, false);
+      }
     }
   }
 
@@ -220,14 +220,14 @@ function showQuizResult(score) {
   box.style.display = "block";
 
   if (score === 100) {
-    box.innerHTML = `🌟 <strong>SEMPURNA!</strong><br>Skor Anda: <strong>100%</strong>`;
+    box.innerHTML = `🌟 <strong>SEMPURNA!</strong><br>Skor kita: <strong>100%</strong>`;
     box.className = "alert success";
   } else if (score >= LMS_CONFIG.passingScore) {
     // Kasus 70-99%
-    box.innerHTML = `✅ <strong>LULUS</strong><br>Skor Anda: <strong>${score}%</strong><br><small>Anda boleh lanjut, atau ulangi agar 100%.</small>`;
+    box.innerHTML = `✅ <strong>LULUS</strong><br>Skor kita: <strong>${score}%</strong><br><small>kita boleh lanjut, atau ulangi agar 100%.</small>`;
     box.className = "alert warning"; // Kuning/Warning biar sadar belum sempurna
   } else {
-    box.innerHTML = `❌ <strong>BELUM LULUS</strong><br>Skor Anda: <strong>${score}%</strong>`;
+    box.innerHTML = `❌ <strong>BELUM LULUS</strong><br>Skor kita: <strong>${score}%</strong>`;
     box.className = "alert danger";
   }
 }
@@ -266,15 +266,15 @@ function loadSavedQuizResult(quizId) {
 
 function disableQuizAfterPass(score) {
   saveQuizAttempt(score); // Simpan status terakhir
-  
+
   const container = document.querySelector(".quiz-container");
   if (!container) return;
 
   lockQuizUI(container, score);
-  
+
   // Sembunyikan tombol HANYA jika 100%
   const submitBtn = document.querySelector(".quiz-submit-btn");
-  if(submitBtn) submitBtn.style.display = 'none';
+  if (submitBtn) submitBtn.style.display = 'none';
 }
 
 function lockQuizUI(container, score) {
