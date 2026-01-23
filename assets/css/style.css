@@ -741,3 +741,31 @@ body.dark .alert.info {
   color: #aaddff;
   border-color: #16525e;
 }
+/* =========================================
+   TECHNICAL TABLE (SMTP CONFIG)
+   ========================================= */
+.technical-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  font-size: 0.9em;
+  color: inherit; /* Ikuti warna parent */
+}
+
+.technical-table tr {
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+.technical-table td {
+  padding: 6px 4px;
+}
+
+.technical-table td:first-child {
+  font-weight: 600;
+  width: 35%;
+}
+
+/* Dark Mode Adjustment for Table */
+body.dark .technical-table tr {
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
