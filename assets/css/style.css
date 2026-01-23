@@ -433,6 +433,15 @@ body.dark .progress-label::after {
 /* =====================================================
    DASHBOARD / MENU UTAMA
 ===================================================== */
+.dashboard-section-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin: 40px 0 20px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #eee;
+}
+
 .materi-dashboard {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -731,4 +740,32 @@ body.dark .alert.info {
   background-color: #0d3c45; /* Biru Gelap */
   color: #aaddff;
   border-color: #16525e;
+}
+/* =========================================
+   TECHNICAL TABLE (SMTP CONFIG)
+   ========================================= */
+.technical-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  font-size: 0.9em;
+  color: inherit; /* Ikuti warna parent */
+}
+
+.technical-table tr {
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+.technical-table td {
+  padding: 6px 4px;
+}
+
+.technical-table td:first-child {
+  font-weight: 600;
+  width: 35%;
+}
+
+/* Dark Mode Adjustment for Table */
+body.dark .technical-table tr {
+  border-bottom: 1px solid rgba(255,255,255,0.1);
 }

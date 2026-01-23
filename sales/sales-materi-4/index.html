@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Materi 4: Gift Cards | Modul Sales</title>
+    <link rel="stylesheet" href="../../assets/css/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="progress-wrapper">
+        <div class="progress-container" id="progressContainer">
+            <div class="progress-bar" id="progressBar"></div>
+            <span class="progress-label" id="progressLabel" style="top: 24px">0%</span>
+        </div>
+    </div>
+
+    <main class="container">
+        <button class="dark-toggle" onclick="toggleDark()">🌙</button>
+
+        <header class="header">
+            <div id="materiBadge" class="materi-badge" style="display: none">
+                🎓 Materi 4 Sales Lulus
+            </div>
+            <span class="badge">Sales - Materi 4</span>
+            <h1>Gift Cards (Kartu Hadiah)</h1>
+            <p class="subtitle">
+                Cara membuat, mengonfigurasi, dan mengelola program Kartu Hadiah serta penggunaannya oleh pelanggan.
+            </p>
+
+            <div class="image-placeholder">
+                <img src="../../assets/images/sales/sales-materi-4-hero.png" alt="Gift Card Hero"
+                    onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+                <span class="placeholder-text">📸 Ilustrasi: Gift Card Overview</span>
+            </div>
+        </header>
+
+        <section class="step-card">
+            <h2>1. Konfigurasi Awal</h2>
+            <div class="content">
+                <p>Pastikan fitur Gift Card sudah aktif di pengaturan.</p>
+                <ol class="instruction-list">
+                    <li>Pergi ke aplikasi <strong>Sales</strong> > <strong>Configuration</strong> >
+                        <strong>Settings</strong>.
+                    </li>
+                    <li>Di bagian <strong>Pricing</strong>, pastikan pengaturan "<strong>Promotions, Loyalty & Gift
+                            Card</strong>" diaktifkan (dicentang).</li>
+                    <li>Klik <strong>Save</strong> jika kita membuat perubahan.</li>
+                </ol>
+
+                <div class="image-placeholder">
+                    <img src="../../assets/images/sales/sales-materi-4-step-1.png" alt="Gift Card Settings"
+                        onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+                    <span class="placeholder-text">📸 Screenshot: Sales Settings > Pricing</span>
+                </div>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>2. Melihat Program Kartu Hadiah</h2>
+            <div class="content">
+                <p>Kita bisa melihat program yang sudah ada atau membuat yang baru.</p>
+                <ol class="instruction-list">
+                    <li>Navigasi ke <strong>Products</strong> > <strong>Gift cards & eWallet</strong>.</li>
+                    <li>Di sini kita dapat melihat daftar program yang ada.</li>
+                    <li>Periksa kolom <strong>Program Type</strong> untuk memastikan jenisnya adalah "Gift Card".</li>
+                    <li>Buka salah satu program untuk melihat detailnya. Di bagian atas kanan, terdapat Smart Button
+                        "<strong>Gift Cards</strong>" yang menunjukkan jumlah kartu yang telah dibuat.</li>
+                </ol>
+
+                <div class="image-placeholder">
+                    <img src="../../assets/images/sales/sales-materi-4-step-2.png" alt="Gift Card List"
+                        onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+                    <span class="placeholder-text">📸 Screenshot: Daftar Program Gift Cards</span>
+                </div>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>3. Membuat Program Baru</h2>
+            <div class="content">
+                <p>Mari kita buat program Gift Card baru.</p>
+                <ol class="instruction-list">
+                    <li>Klik <strong>New</strong> di pojok kiri atas.</li>
+                    <li><strong>Program Name:</strong> Berikan nama yang jelas (contoh: "Gift Card Lebaran" atau
+                        "Voucher Hadiah Umum").</li>
+                    <li><strong>Program Type:</strong> Pastikan terpilih sebagai <strong>Gift Card</strong>.</li>
+                    <li><strong>Gift Card Products:</strong> Biarkan pada pengaturan default (ini merujuk pada produk
+                        kartu yang dibeli pelanggan).</li>
+                    <li><strong>Print Report:</strong> (Khusus Point of Sale) Pilih format laporan yang akan dicetak
+                        untuk pelanggan di toko fisik.</li>
+                </ol>
+
+                <div class="important-note">
+                    <strong>Pengaturan Lanjutan:</strong> Kita dapat mengatur mata uang (Currency), perusahaan
+                    (Company), dan ketersediaan aplikasi (Available On: Sales, Website, Point of Sale). Pastikan
+                    <strong>Sales</strong> dan <strong>Website</strong> dicentang.
+                </div>
+
+                <div class="image-placeholder">
+                    <img src="../../assets/images/sales/sales-materi-4-step-3.png" alt="Create Gift Card Program"
+                        onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+                    <span class="placeholder-text">📸 Screenshot: Form Pembuatan Gift Card Program</span>
+                </div>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>4. Menghasilkan Kartu Hadiah (Generate)</h2>
+            <div class="content">
+                <p>Kita bisa membuat kartu secara massal atau untuk pelanggan tertentu.</p>
+                <ol class="instruction-list">
+                    <li>Klik tombol <strong>Generate Gift Cards</strong> di kiri atas.</li>
+                    <li>Pilih target penerima:
+                        <ul>
+                            <li><strong>Anonymous Customers:</strong> Untuk membuat sejumlah kartu tanpa penerima
+                                spesifik di awal.
+                                <ul>
+                                    <li><strong>Quantity to generate:</strong> Masukkan jumlah kartu (contoh: 100).</li>
+                                    <li><strong>Gift Card Value:</strong> Masukkan nilai uang (contoh: 100000).</li>
+                                </ul>
+                            </li>
+                            <li><strong>Selected Customers:</strong> Untuk mengirim ke pelanggan tertentu yang sudah ada
+                                di database. Odoo akan menyesuaikan jumlah kartu dengan jumlah pelanggan yang dipilih.
+                            </li>
+                        </ul>
+                    </li>
+                    <li><strong>Valid Until:</strong> Tentukan masa berlaku kartu (contoh: 3 bulan dari sekarang).</li>
+                    <li><strong>Tags:</strong> Tambahkan label deskripsi (contoh: "Gift Card Lebaran").</li>
+                    <li>Klik <strong>Generate Gift Card</strong>.</li>
+                </ol>
+
+                <div class="image-placeholder">
+                    <img src="../../assets/images/sales/sales-materi-4-step-4.png" alt="Generate Gift Cards"
+                        onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+                    <span class="placeholder-text">📸 Screenshot: Pop-up Generate Gift Cards</span>
+                </div>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>5. Mencetak atau Menyalin Kade Kartu</h2>
+            <div class="content">
+                <p>Karena kita tidak menggunakan email, kita bisa memberikan kode kartu secara manual ke pelanggan.</p>
+                <ol class="instruction-list">
+                    <li>Setelah dibuat, klik <strong>Smart Button</strong> di bagian atas yang menunjukkan jumlah kartu
+                        (contoh: "100 Gift Cards").</li>
+                    <li>Pilih salah satu kartu dari daftar.</li>
+                    <li>Kita bisa melakukan dua cara:
+                        <ul>
+                            <li><strong>Print PDF:</strong> Klik tombol <strong>Print</strong> > <strong>Gift
+                                    Card</strong> untuk mengunduh PDF kartu yang bisa dicetak/dikirim via WhatsApp.</li>
+                            <li><strong>Salin Kode:</strong> Salin teks pada kolom <strong>Code</strong> (contoh:
+                                <code>0476 0982 1234</code>) dan berikan ke pelanggan.
+                            </li>
+                        </ul>
+                    </li>
+                </ol>
+
+                <div class="alert-info">
+                    <strong>Catatan:</strong> Kode unik inilah yang nanti dipakai pelanggan saat belanja. Pastikan kode
+                    ini tersampaikan ke pelanggan.
+                </div>
+
+                <div class="image-placeholder">
+                    <img src="../../assets/images/sales/sales-materi-4-step-5.png" alt="Print Gift Card"
+                        onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+                    <span class="placeholder-text">📸 Screenshot: Tampilan Kode Gift Card & Menu Print</span>
+                </div>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>6. Penggunaan oleh Pelanggan</h2>
+            <div class="content">
+                <p>Begini cara pelanggan menggunakan kartu hadiah yang mereka terima.</p>
+                <ol class="instruction-list">
+                    <li>Pelanggan menerima <strong>Kode 16 digit</strong> (dari PDF atau chat WhatsApp).</li>
+                    <li>Pelanggan berbelanja di situs web e-commerce dan memasukkan produk ke keranjang.</li>
+                    <li>Di halaman keranjang (Cart), pelanggan memasukkan kode di kolom "Did you get a promo code?" atau
+                        "<strong>Gift card or discount code</strong>".</li>
+                    <li>Klik <strong>Apply</strong>.</li>
+                    <li>Nilai kartu hadiah akan memotong total belanja. Pelanggan dapat melanjutkan ke proses checkout.
+                    </li>
+                </ol>
+
+                <div class="image-placeholder">
+                    <img src="../../assets/images/sales/sales-materi-4-step-6.png" alt="Apply Gift Card"
+                        onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+                    <span class="placeholder-text">📸 Screenshot: Website Cart dengan Potongan Gift Card</span>
+                </div>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card quiz-card" id="sales-materi-4-quiz">
+            <div class="quiz-progress-wrapper">
+                <div class="quiz-progress-bar" id="quizProgressBar"></div>
+            </div>
+
+            <h2>📝 Quiz Sales Materi 4</h2>
+
+            <div class="quiz-container">
+                <!-- Quiz akan di-render oleh JS -->
+            </div>
+
+            <div class="step-footer">
+                <button class="quiz-submit-btn" onclick="checkQuiz()">
+                    Periksa Jawaban
+                </button>
+                <div id="quizResult" style="display: none"></div>
+            </div>
+        </section>
+
+        <div id="nextActionArea" class="next-action-area" style="display: none">
+            <h3>🎉 Materi Sales 4 Selesai!</h3>
+            <p>
+                Kita telah menguasai manajemen Gift Cards.
+            </p>
+            <a href="../../sales.html" class="btn-next">
+                Kembali ke Modul Sales ➔
+            </a>
+        </div>
+
+        <footer class="footer">
+            <a href="../../sales.html" style="text-decoration: none; color: #666; font-weight: 600">← Kembali ke Modul
+                Sales</a>
+        </footer>
+    </main>
+
+    <!-- Load JS -->
+    <script src="../../assets/js/quiz-bank.js"></script>
+    <script src="../../assets/js/lms-core.js"></script>
+    <script src="../../assets/js/quiz-engine.js"></script>
+
+    <script>
+        // ID Unik untuk modul Sales Materi 4
+        const MATERI_ID = "sales_materi4";
+
+        document.addEventListener("DOMContentLoaded", () => {
+            initMateriProgress(MATERI_ID);
+
+            // Inject quiz data if not exists (Basic questions inferred from content)
+            if (!window.quizData[MATERI_ID]) {
+                window.quizData[MATERI_ID] = [
+                    {
+                        question: "Di menu mana kita bisa mengaktifkan fitur Gift Card?",
+                        options: [
+                            "Inventory > Settings",
+                            "Sales > Configuration > Settings",
+                            "Accounting > Configuration",
+                            "Website > Settings"
+                        ],
+                        answer: 1
+                    },
+                    {
+                        question: "Opsi apa yang dipilih jika ingin membuat banyak kartu hadiah tanpa penerima spesifik di awal?",
+                        options: [
+                            "Selected Customers",
+                            "Specific Partners",
+                            "Anonymous Customers",
+                            "Public Users"
+                        ],
+                        answer: 2
+                    },
+                    {
+                        question: "Bagaimana cara pelanggan menggunakan Gift Card di Website?",
+                        options: [
+                            "Menunjukkan layar HP ke kasir",
+                            "Mengirim email ke customer service",
+                            "Memasukkan kode di kolom 'Gift card or discount code' di Keranjang",
+                            "Otomatis terpotong tanpa memasukkan kode"
+                        ],
+                        answer: 2
+                    }
+                ];
+            }
+
+            renderQuiz(MATERI_ID, ".quiz-container");
+
+            if (loadQuizResult(MATERI_ID)?.passed) {
+                showNextButton();
+            }
+        });
+
+        const originalOnQuizPassed = window.onQuizPassed;
+        window.onQuizPassed = function (materiId, score) {
+            if (originalOnQuizPassed) originalOnQuizPassed(materiId, score);
+            showNextButton();
+        };
+
+        function showNextButton() {
+            const area = document.getElementById("nextActionArea");
+            if (area) {
+                area.style.display = "block";
+                setTimeout(() => {
+                    area.scrollIntoView({ behavior: "smooth", block: "center" });
+                }, 500);
+            }
+        }
+
+        function toggleDark() {
+            document.body.classList.toggle("dark");
+            localStorage.setItem("darkMode", document.body.classList.contains("dark"));
+        }
+        if (localStorage.getItem("darkMode") === "true") {
+            document.body.classList.add("dark");
+        }
+    </script>
+</body>
+
+</html>

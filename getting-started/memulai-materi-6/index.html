@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Materi 6: Transaksi Antar-Perusahaan | PembelajarBelajar</title>
+  <link rel="stylesheet" href="../../assets/css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+  <div class="progress-wrapper">
+    <div class="progress-container" id="progressContainer">
+      <div class="progress-bar" id="progressBar"></div>
+      <span class="progress-label" id="progressLabel" style="top: 24px">0%</span>
+    </div>
+  </div>
+
+  <main class="container">
+    <button class="dark-toggle" onclick="toggleDark()">🌙</button>
+
+    <header class="header">
+      <div id="materiBadge" class="materi-badge" style="display: none">
+        🎓 Materi 6 Lulus
+      </div>
+      <span class="badge">Materi 6</span>
+      <h1>Transaksi Antar-Perusahaan</h1>
+      <p class="subtitle">
+        Otomatisasi pembuatan dokumen (SO/PO dan Invoice/Bill) antar
+        perusahaan dalam satu database.
+      </p>
+
+      <div class="image-placeholder" style="margin-top: 20px">
+        <img src="../../assets/images/getting-started/materi-6-infographic.png" alt="Ilustrasi Materi 6"
+          onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+        <span class="placeholder-text">📸 Ilustrasi Utama: Alur Transaksi Otomatis</span>
+      </div>
+    </header>
+
+    <section class="step-card">
+      <h2>1. Mengaktifkan Fitur Inter-Company</h2>
+      <div class="content">
+        <p>
+          Agar <strong>Pembelajar Belajar</strong> bisa otomatis mengirim
+          dokumen ke <strong>Minji Dimsum</strong>, kita harus mengaktifkan
+          aturannya.
+        </p>
+
+        <div class="alert warning">
+          <strong>Prasyarat:</strong> Pastikan modul
+          <strong>Purchase</strong> dan
+          <strong>Accounting/Invoicing</strong> sudah terinstal.
+        </div>
+
+        <ol class="instruction-list">
+          <li>
+            Masuk sebagai Administrator. Buka <strong>Settings</strong> >
+            <strong>General Settings</strong>.
+          </li>
+          <li>Cari bagian <strong>Inter-Company Transactions</strong>.</li>
+          <li>Centang kotak <strong>Inter-Company Transactions</strong>.</li>
+          <li>
+            <strong>Klik SAVE terlebih dahulu</strong> (tombol ungu di kiri
+            atas) agar opsi muncul.
+          </li>
+          <li>
+            Setelah reload, centang opsi:
+            <ul>
+              <li><strong>Create Purchase Orders</strong></li>
+              <li><strong>Create Vendor Bills</strong></li>
+            </ul>
+          </li>
+          <li>Klik <strong>Save</strong> kembali.</li>
+        </ol>
+
+        <div class="deep-dive">
+          <h3>💡 Pahami Logika Penamaan Odoo</h3>
+          <p>
+            Mungkin kita bingung, kenapa namanya
+            <em>"Create Vendor Bills"</em> dan bukan
+            <em>"Create Invoice"</em>? Odoo menamai pengaturan berdasarkan
+            <strong>HASIL (Output)</strong> yang dibuat sistem.
+          </p>
+          <ul>
+            <li>
+              <strong>Logika:</strong> Saat <em>Pembelajar Belajar</em> buat
+              Invoice (Pemicu) &rarr; Sistem otomatis membuat Tagihan Vendor
+              (Hasil) di <em>Minji Dimsum</em>.
+            </li>
+            <li>
+              <strong>Maka namanya:</strong> <em>Create Vendor Bills</em>.
+            </li>
+          </ul>
+        </div>
+
+        <div class="image-placeholder">
+          <img src="../../assets/images/getting-started/materi-6-step-1-settings.png" alt="Inter-Company Settings"
+            onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+          <span class="placeholder-text">📸 Screenshot: Settings Inter-Company (Pastikan sudah Save agar
+            opsi muncul)</span>
+        </div>
+      </div>
+      <div class="step-footer">
+        <label>Selesai</label>
+        <input type="checkbox" class="mark-done" />
+      </div>
+    </section>
+
+    <section class="step-card">
+      <h2>2. Pengaturan Partner (Kontak)</h2>
+      <div class="content">
+        <p>
+          Agar transaksi lintas perusahaan lancar, kontak perusahaan cabang
+          harus bisa diakses oleh semua pihak.
+        </p>
+
+        <div class="alert danger">
+          <strong>⚠️ Perhatian Sangat Penting:</strong>
+          Jangan kunci kontak ini ke satu perusahaan saja!
+          <br />Field <strong>Company</strong> harus <strong>KOSONG</strong>.
+          Jika diisi, kita akan mendapat error
+          <em>"Invalid Operation"</em> saat transaksi otomatis.
+        </div>
+
+        <ol class="instruction-list">
+          <li>
+            Pastikan kita sedang berada di perusahaan
+            <strong>Pembelajar Belajar</strong>.
+          </li>
+          <li>Buka aplikasi <strong>Contacts</strong>.</li>
+          <li>Cari kontak bernama <strong>Minji Dimsum</strong>.</li>
+          <li>
+            Klik tab <strong>Sales & Purchase</strong> (sebelah tab Contacts).
+          </li>
+          <li>Scroll ke bagian <strong>Misc</strong>.</li>
+          <li>
+            <strong>Pastikan field Company KOSONG.</strong> (Hapus jika terisi
+            "Minji Dimsum").
+          </li>
+          <li>
+            Pastikan <strong>Account Receivable/Payable</strong> di tab
+            Accounting sudah terisi.
+          </li>
+        </ol>
+        <div class="image-placeholder">
+          <img src="../../assets/images/getting-started/materi-6-step-2-partner.png" alt="Partner Configuration"
+            onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+          <span class="placeholder-text">📸 Screenshot: Field Company KOSONG di bagian Misc</span>
+        </div>
+      </div>
+      <div class="step-footer">
+        <label>Selesai</label>
+        <input type="checkbox" class="mark-done" />
+      </div>
+    </section>
+
+    <section class="step-card">
+      <h2>3. Alur Sales Order ke Purchase Order</h2>
+      <div class="content">
+        <p>
+          Skenario: <strong>Pembelajar Belajar</strong> ingin membeli stok
+          dari <strong>Minji Dimsum</strong>.
+        </p>
+
+        <div class="alert warning">
+          <strong>Logika Odoo:</strong> Karena kita mengaktifkan fitur
+          <em>"Create Purchase Order"</em> (SO &rarr; PO), maka kita harus
+          memulai transaksi dari sisi Penjual (Minji Dimsum) yang membuat
+          Sales Order.
+        </div>
+
+        <ul class="instruction-list">
+          <li>
+            Pindah ke perusahaan <strong>Minji Dimsum</strong> (Gunakan
+            Switcher di pojok kanan atas).
+          </li>
+          <li>
+            Buka aplikasi <strong>Sales</strong> dan buat
+            <strong>Sales Order</strong> baru.
+          </li>
+          <li>Pilih Customer: <strong>Pembelajar Belajar</strong>.</li>
+          <li>Isi produk yang ingin dibeli.</li>
+          <div class="image-placeholder">
+            <img src="../../assets/images/getting-started/materi-6-step-3-so.png" alt="Auto Created PO"
+              onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+            <span class="placeholder-text">📸 Screenshot: Daftar SO di Minji Dimsum</span>
+          </div>
+        </ul>
+
+        <div class="alert danger">
+          <strong>⚠️ Error: "Please create a warehouse"?</strong><br />
+          Jika muncul error ini saat klik Confirm, itu karena perusahaan baru
+          (Minji Dimsum) belum memiliki gudang.
+          <ol style="margin-top: 10px; margin-left: 15px; margin-bottom: 0">
+            <li>
+              Klik tombol ungu <strong>Go to Warehouses</strong> pada pesan
+              error (atau buka Inventory > Configuration > Warehouses).
+            </li>
+            <li>Klik <strong>New</strong>.</li>
+            <li>
+              Isi <strong>Warehouse:</strong> <code>Gudang Minji</code> dan
+              <strong>Short Name:</strong> <code>WM</code>.
+            </li>
+            <li>Klik <strong>Save</strong> (Awan).</li>
+            <li>
+              Kembali ke Sales Order tadi, lalu coba klik
+              <strong>Confirm</strong> lagi.
+            </li>
+            <div class="image-placeholder">
+              <img src="../../assets/images/getting-started/materi-6-step-3-warehouse.png" alt="Auto Created PO"
+                onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+              <span class="placeholder-text">📸 Screenshot: Daftar PO di Pembelajar Belajar (Draft) yang
+                dikirim dari Minji Dimsum</span>
+            </div>
+          </ol>
+        </div>
+
+        <ul class="instruction-list">
+          <li>Klik <strong>Confirm</strong>.</li>
+          <li>
+            Sekarang, kembali ke perusahaan
+            <strong>Pembelajar Belajar</strong>.
+          </li>
+          <li>
+            Buka aplikasi <strong>Purchase</strong>. Lihatlah!
+            <strong>Purchase Order (PO)</strong> pembelian stok sudah
+            terbentuk otomatis.
+          </li>
+        </ul>
+
+        <div class="image-placeholder">
+          <img src="../../assets/images/getting-started/materi-6-step-3-po.png" alt="Auto Created PO"
+            onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+          <span class="placeholder-text">📸 Screenshot: Daftar PO di Pembelajar Belajar (Draft) yang
+            dikirim dari Minji Dimsum</span>
+        </div>
+      </div>
+      <div class="step-footer">
+        <label>Selesai</label>
+        <input type="checkbox" class="mark-done" />
+      </div>
+    </section>
+
+    <section class="step-card">
+      <h2>4. Alur Invoice ke Vendor Bill</h2>
+      <div class="content">
+        <p>Sekarang Minji Dimsum menagih pembayaran ke Pembelajar Belajar.</p>
+
+        <div class="alert warning">
+          <strong>⚠️ Persiapan Penting:</strong>
+          Sebelum melakukan langkah ini, pastikan kita mencentang
+          <strong>KEDUA Perusahaan</strong> di pojok kanan atas layar (Mode
+          Multi-Company). <br /><small>Jika hanya satu perusahaan yang aktif, kita akan mendapat error
+            <em>"Invalid Operation"</em> karena sistem tidak memiliki akses
+            untuk membuat dokumen di perusahaan sebelah.</small>
+        </div>
+
+        <ul class="instruction-list">
+          <li>
+            Pastikan kita berada di perusahaan
+            <strong>Minji Dimsum</strong> (sebagai perusahaan utama).
+          </li>
+          <li>
+            Buka Sales Order yang tadi dibuat, klik
+            <strong>Create Invoice</strong>.
+          </li>
+          <li>Klik <strong>Confirm</strong> (Post).</li>
+        </ul>
+
+        <div class="alert info">
+          <strong>Sukses?</strong> Jika berhasil, Odoo akan otomatis
+          membuatkan Tagihan (Vendor Bill) di perusahaan pembeli.
+        </div>
+
+        <ul class="instruction-list">
+          <li>
+            Pindah ke perusahaan <strong>Pembelajar Belajar</strong> (Pusat).
+          </li>
+          <li>
+            Buka aplikasi <strong>Accounting</strong> >
+            <strong>Vendor Bills</strong>.
+          </li>
+          <li>
+            Tagihan (Bill) dari Minji Dimsum sudah masuk otomatis dan siap
+            dibayar!
+          </li>
+          <li>
+            <strong>Catatan:</strong> Pembelajar Belajar tinggal memvalidasi
+            Bill tersebut untuk mengakui utang usaha.
+          </li>
+        </ul>
+
+        <div class="image-placeholder">
+          <img src="../../assets/images/getting-started/materi-6-step-4-invoice-bill.png" alt="Auto Created Bill"
+            onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+          <span class="placeholder-text">📸 Screenshot: Vendor Bill di Pembelajar Belajar yang terbentuk
+            dari Invoice Minji Dimsum</span>
+        </div>
+      </div>
+      <div class="step-footer">
+        <label>Selesai</label>
+        <input type="checkbox" class="mark-done" />
+      </div>
+    </section>
+
+    <section class="step-card quiz-card" id="materi-6-quiz">
+      <div class="quiz-progress-wrapper">
+        <div class="quiz-progress-bar" id="quizProgressBar"></div>
+      </div>
+      <h2>📝 Quiz Materi 6</h2>
+      <div class="quiz-container"></div>
+      <div class="step-footer">
+        <button class="quiz-submit-btn" onclick="checkQuiz()">
+          Periksa Jawaban
+        </button>
+        <div id="quizResult" style="display: none"></div>
+      </div>
+    </section>
+
+    <div id="nextActionArea" class="next-action-area" style="display: none">
+      <h3>🎉 Materi 6 Selesai!</h3>
+      <p>
+        kita telah menguasai otomatisasi transaksi antara Pembelajar Belajar
+        dan Minji Dimsum.
+      </p>
+      <a href="../materi-7/index.html" class="btn-next">Lanjut ke Materi 7 ➔</a>
+    </div>
+
+    <footer class="footer">
+      <a href="../index.html" style="text-decoration: none; color: #666; font-weight: 600">← Kembali ke Dashboard</a>
+    </footer>
+  </main>
+
+  <script src="../../assets/js/quiz-bank.js"></script>
+  <script src="../../assets/js/lms-core.js"></script>
+  <script src="../../assets/js/quiz-engine.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      initMateriProgress("materi6");
+      renderQuiz("materi6", ".quiz-container");
+      if (loadQuizResult("materi6")?.passed) {
+        const area = document.getElementById("nextActionArea");
+        if (area) area.style.display = "block";
+      }
+    });
+
+    const originalOnQuizPassed = window.onQuizPassed;
+    window.onQuizPassed = function (materiId, score) {
+      if (originalOnQuizPassed) originalOnQuizPassed(materiId, score);
+      const area = document.getElementById("nextActionArea");
+      if (area) {
+        area.style.display = "block";
+        setTimeout(() => {
+          area.scrollIntoView({ behavior: "smooth", block: "center" });
+        }, 500);
+      }
+    };
+
+    function toggleDark() {
+      document.body.classList.toggle("dark");
+      localStorage.setItem(
+        "darkMode",
+        document.body.classList.contains("dark")
+      );
+    }
+    if (localStorage.getItem("darkMode") === "true")
+      document.body.classList.add("dark");
+  </script>
+</body>
+
+</html>

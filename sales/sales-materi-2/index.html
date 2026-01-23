@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Materi 2: Loyalty Points & Coupons | Modul Sales</title>
+    <link rel="stylesheet" href="../../assets/css/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="progress-wrapper">
+        <div class="progress-container" id="progressContainer">
+            <div class="progress-bar" id="progressBar"></div>
+            <span class="progress-label" id="progressLabel" style="top: 24px">0%</span>
+        </div>
+    </div>
+
+    <main class="container">
+        <button class="dark-toggle" onclick="toggleDark()">🌙</button>
+
+        <header class="header">
+            <div id="materiBadge" class="materi-badge" style="display: none">
+                🎓 Materi 2 Sales Lulus
+            </div>
+            <span class="badge">Sales - Materi 2</span>
+            <h1>Loyalty Points & Coupons</h1>
+            <p class="subtitle">
+                Cara membuat dan mengonfigurasi program kupon di Odoo Sales.
+            </p>
+
+            <div class="image-placeholder">
+                <img src="../../assets/images/sales/sales-materi-2-hero.png" alt="Coupons Hero"
+                    onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+                <span class="placeholder-text">📸 Ilustrasi: Coupons & Loyalty</span>
+            </div>
+        </header>
+
+        <section class="step-card">
+            <h2>1. Konfigurasi Awal</h2>
+            <div class="content">
+                <p>Pastikan fitur kupon sudah aktif di pengaturan.</p>
+                <ol class="instruction-list">
+                    <li>Buka menu <strong>Sales</strong> > <strong>Configuration</strong> > <strong>Settings</strong>.
+                    </li>
+                    <li>Cari opsi "<strong>Discounts, Loyalty & Gift Card</strong>" dan pastikan
+                        <strong>diaktifkan</strong>.
+                    </li>
+                    <li>Simpan pengaturan jika ada perubahan.</li>
+                </ol>
+
+                <div class="image-placeholder">
+                    <img src="../../assets/images/sales/sales-materi-2-step-1.png" alt="Sales Settings Coupons"
+                        onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+                    <span class="placeholder-text">📸 Screenshot: Sales > Configuration > Settings</span>
+                </div>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>2. Membuat Program Kupon Baru</h2>
+            <div class="content">
+                <p>Kupon memerlukan kode unik untuk ditukarkan.</p>
+                <ol class="instruction-list">
+                    <li>Pergi ke <strong>Products</strong> > <strong>Discount & Loyalty</strong>.</li>
+                    <li>Klik <strong>New</strong>.</li>
+                    <li><strong>Program Name:</strong> Berikan nama (contoh: <code>20% Discount</code>).</li>
+                    <li><strong>Program Type:</strong> Pilih <strong>Coupons</strong>.</li>
+                </ol>
+                <div class="alert info">
+                    <strong>Catatan:</strong> Kode kupon biasanya untuk pelanggan tertentu dan sekali pakai, sedangkan
+                    kode promosi untuk umum dan dapat digunakan berkali-kali.
+                </div>
+
+                <div class="image-placeholder">
+                    <img src="../../assets/images/sales/sales-materi-2-step-2.png" alt="New Coupon Program"
+                        onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+                    <span class="placeholder-text">📸 Screenshot: Form pembuatan Program Kupon</span>
+                </div>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>3. Menetapkan Aturan (Conditional Rules)</h2>
+            <div class="content">
+                <p>Syarat apa yang harus dipenuhi?</p>
+                <ol class="instruction-list">
+                    <li>Klik <strong>Add</strong> di bagian <em>Rules</em>.</li>
+                    <li><strong>Minimum Quantity:</strong> Isi dengan <code>2</code> (pelanggan harus membeli setidaknya
+                        2 produk).</li>
+                    <li>kita juga dapat menetapkan syarat lain seperti jumlah pembelian minimum, atau membatasi pada
+                        produk/kategori tertentu.</li>
+                    <li>Klik <strong>Save & Close</strong>.</li>
+                </ol>
+
+                <div class="image-placeholder">
+                    <img src="../../assets/images/sales/sales-materi-2-step-3.png" alt="Coupon Rules"
+                        onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+                    <span class="placeholder-text">📸 Screenshot: Konfigurasi Rules</span>
+                </div>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>4. Menetapkan Hadiah (Rewards)</h2>
+            <div class="content">
+                <p>Berapa besar diskon atau hadiahnya?</p>
+                <ol class="instruction-list">
+                    <li>Klik pada hadiah yang sudah ada untuk mengedit.</li>
+                    <li><strong>Reward Type:</strong> Pilih <strong>Discount</strong>.</li>
+                    <li><strong>Discount:</strong> Ubah nilai menjadi <code>20</code> %.</li>
+                    <li><strong>Apply On:</strong> Pilih <strong>Order</strong> (diskon untuk keseluruhan pesanan).</li>
+                    <li>Klik <strong>Save & Close</strong>.</li>
+                </ol>
+
+                <div class="image-placeholder">
+                    <img src="../../assets/images/sales/sales-materi-2-step-4.png" alt="Coupon Rewards"
+                        onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+                    <span class="placeholder-text">📸 Screenshot: Konfigurasi Rewards</span>
+                </div>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>5. Menghasilkan Kupon (Generate Coupons)</h2>
+            <div class="content">
+                <p>Setelah program disimpan, kita perlu membuat kode kuponnya.</p>
+                <ol class="instruction-list">
+                    <li>Klik tombol <strong>Generate Coupons</strong> di bagian kiri atas.</li>
+                    <li>Pilih salah satu metode:</li>
+                </ol>
+
+                <h3>A. Anonymous Customers</h3>
+                <ul>
+                    <li>Tentukan jumlah kupon yang ingin dibuat.</li>
+                    <li>Odoo akan membuat kupon tersebut untuk kita bagikan sendiri.</li>
+                </ul>
+
+                <h3>B. Selected Customers</h3>
+                <ul>
+                    <li><strong>Customers:</strong> Pilih pelanggan khusus (contoh: "Mitchell Admin").</li>
+                    <li>Jika dibiarkan kosong, kupon akan dibuat untuk semua pelanggan dalam database.</li>
+                    <li><strong>Expiration Date:</strong> Dapat mengatur tanggal kedaluwarsa (opsional).</li>
+                    <li>Klik <strong>Generate and Send Coupons</strong>. Odoo akan mengirimkan email berisi kode kupon
+                        langsung kepada pelanggan.</li>
+                </ul>
+
+                <div class="image-placeholder">
+                    <img src="../../assets/images/sales/sales-materi-2-step-5.png" alt="Generate Coupons Popup"
+                        onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+                    <span class="placeholder-text">📸 Screenshot: Popup Generate Coupons</span>
+                </div>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>6. Penukaran Kupon</h2>
+            <div class="content">
+                <p>Bagaimana pelanggan menggunakan kuponnya?</p>
+                <ol class="instruction-list">
+                    <li>Pelanggan menerima email berisi kode.</li>
+                    <li>Pelanggan mengunjungi situs web e-commerce dan menambahkan produk ke keranjang (mematuhi syarat
+                        minimum 2 unit).</li>
+                    <li>Masukkan kode di kolom <strong>Discount code or gift card</strong>.</li>
+                    <li>Diskon 20% akan dipotong dari total pesanan.</li>
+                </ol>
+                <div class="alert info">
+                    <strong>Catatan:</strong> Kode kupon tidak terikat dengan akun pengguna tertentu; kode tersebut
+                    dapat diberikan kepada orang lain untuk digunakan.
+                </div>
+
+                <div class="image-placeholder">
+                    <img src="../../assets/images/sales/sales-materi-2-step-6.png" alt="Redeeming Coupon"
+                        onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+                    <span class="placeholder-text">📸 Screenshot: Tampilan Checkout dengan Kupon</span>
+                </div>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card quiz-card" id="sales-materi-2-quiz">
+            <div class="quiz-progress-wrapper">
+                <div class="quiz-progress-bar" id="quizProgressBar"></div>
+            </div>
+
+            <h2>📝 Quiz Sales Materi 2</h2>
+
+            <div class="quiz-container">
+                <!-- Quiz akan di-render oleh JS -->
+            </div>
+
+            <div class="step-footer">
+                <button class="quiz-submit-btn" onclick="checkQuiz()">
+                    Periksa Jawaban
+                </button>
+                <div id="quizResult" style="display: none"></div>
+            </div>
+        </section>
+
+        <div id="nextActionArea" class="next-action-area" style="display: none">
+            <h3>🎉 Materi Sales 2 Selesai!</h3>
+            <p>
+                kita telah memahami cara kerja Program Kupon di Odoo.
+            </p>
+            <a href="../../sales.html" class="btn-next">
+                Kembali ke Modul Sales ➔
+            </a>
+        </div>
+
+        <footer class="footer">
+            <a href="../../sales.html" style="text-decoration: none; color: #666; font-weight: 600">← Kembali ke Modul
+                Sales</a>
+        </footer>
+    </main>
+
+    <!-- Load JS -->
+    <script src="../../assets/js/quiz-bank.js"></script>
+    <script src="../../assets/js/lms-core.js"></script>
+    <script src="../../assets/js/quiz-engine.js"></script>
+
+    <script>
+        // ID Unik untuk modul Sales Materi 2
+        const MATERI_ID = "sales_materi2";
+
+        document.addEventListener("DOMContentLoaded", () => {
+            initMateriProgress(MATERI_ID);
+
+            // Inject dummy quiz data for Materi 2
+            window.quizData[MATERI_ID] = [
+                {
+                    question: "Pengaturan apa yang perlu diaktifkan agar kupon dapat digunakan?",
+                    options: ["Promotions, Loyalty & Gift Card", "Loyalty Programs", "Discounts", "Coupon Codes"],
+                    answer: 0
+                },
+                {
+                    question: "Apa fungsi dari opsi 'Limit Usage'?",
+                    options: ["Membatasi jumlah kupon yang dibuat", "Membatasi jumlah kupon yang didistribusikan ke semua pelanggan", "Membatasi jumlah kupon yang dapat digunakan oleh pelanggan individu", "Membatasi diskon yang diterapkan dengan kupon"],
+                    answer: 2
+                },
+                {
+                    question: "Di mana aturan kapan kupon bisa digunakan dapat diatur?",
+                    options: ["Conditional rules", "Restrictions", "Usage categories", "Discount settings"],
+                    answer: 0
+                }
+            ];
+
+            renderQuiz(MATERI_ID, ".quiz-container");
+
+            if (loadQuizResult(MATERI_ID)?.passed) {
+                showNextButton();
+            }
+        });
+
+        const originalOnQuizPassed = window.onQuizPassed;
+        window.onQuizPassed = function (materiId, score) {
+            if (originalOnQuizPassed) originalOnQuizPassed(materiId, score);
+            showNextButton();
+        };
+
+        function showNextButton() {
+            const area = document.getElementById("nextActionArea");
+            if (area) {
+                area.style.display = "block";
+                setTimeout(() => {
+                    area.scrollIntoView({ behavior: "smooth", block: "center" });
+                }, 500);
+            }
+        }
+
+        function toggleDark() {
+            document.body.classList.toggle("dark");
+            localStorage.setItem("darkMode", document.body.classList.contains("dark"));
+        }
+        if (localStorage.getItem("darkMode") === "true") {
+            document.body.classList.add("dark");
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>
+    <?= htmlspecialchars($p["nama_paket"]) ?> - Attayibah
+  </title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/css/style.css" />
+</head>
+
+<body class="bg-light">
+  <div class="container py-5">
+    <a href="index.php#paket" class="btn btn-sm btn-outline-secondary mb-3">← Kembali</a>
+
+    <div class="row g-4">
+      <div class="col-md-6">
+        <?php
+          $clean = strtok($p["link_gambar"], "?");
+          $clean = rtrim($clean, "/");
+          $embed = $clean . "/embed/captioned/";
+          ?>
+        <iframe src="<?= $embed ?>" width="100%" height="500" style="border: none; border-radius: 12px"></iframe>
+      </div>
+
+      <div class="col-md-6">
+        <h2 class="fw-bold">
+          <?= htmlspecialchars($p["nama_paket"]) ?>
+        </h2>
+
+        <p class="text-muted mb-2">
+          ✈️
+          <?= $p["bkitara_keberangkatan"] ?><br />
+          📅
+          <?= date("d M Y", strtotime($p["tanggal_berangkat"])) ?>
+        </p>
+
+        <hr />
+
+        <h5 class="fw-bold">💰 Estimasi Biaya</h5>
+        <ul>
+          <li>
+            Quad: Rp
+            <?= number_format($p["harga_quad"], 0, ",", ".") ?>
+          </li>
+          <li>
+            Triple: Rp
+            <?= number_format($p["harga_triple"], 0, ",", ".") ?>
+          </li>
+          <li>
+            Double: Rp
+            <?= number_format($p["harga_double"], 0, ",", ".") ?>
+          </li>
+        </ul>
+
+        <h5 class="fw-bold mt-3">🏨 Hotel</h5>
+        <ul>
+          <li>
+            Mekkah:
+            <?= $p["hotel_mekkah"] ?>
+            (
+            <?= $p["jarak_mekkah_meter"] ?>
+            m)
+          </li>
+          <li>
+            Madinah:
+            <?= $p["hotel_madinah"] ?>
+            (
+            <?= $p["jarak_madinah_meter"] ?>
+            m)
+          </li>
+        </ul>
+        <input type="hidden" id="wa_number" value="" />
+
+        <a onclick="captureLead()" target="_blank" href="https://wa.me/6285179859935?text=<?= $wa_text ?>"
+          class="btn btn-gold btn-lg w-100 mt-3">
+          📲 Konsultasi Paket Umrah
+        </a>
+      </div>
+    </div>
+  </div>
+  <script>
+    function captureLead() {
+      fetch("lead_capture.php", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body:
+          "nomor_wa=" +
+          encodeURIComponent(document.getElementById("wa_number").value) +
+          "&source=website_paket",
+      });
+    }
+  </script>
+</body>
+
+</html>

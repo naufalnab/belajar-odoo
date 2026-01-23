@@ -12,9 +12,9 @@
 
 <body>
   <header class="header">
-    <h1>📚 Dashboard Pembelajaran</h1>
+    <h1>🚀 Getting Started</h1>
     <p class="subtitle">
-      Pantau progres belajarmu dan lanjutkan ke materi berikutnya
+      Panduan awal memulai perjalananmu dengan Odoo
     </p>
 
     <div class="dashboard-progress-wrapper">
@@ -30,55 +30,109 @@
   </header>
 
   <main class="container" style="margin-top: 60px">
-    <h3 class="dashboard-section-title">Menu Utama</h3>
     <section class="materi-dashboard">
-      <!-- Card: Getting Started -->
-      <a href="./getting-started.html" class="step-card materi-card">
+      <a href="./getting-started/memulai-materi-1/index.html" class="step-card materi-card" id="card-materi1">
         <div class="materi-card-header">
-          <span class="badge">Fundamental</span>
-          <span class="materi-status">�</span>
+          <span class="badge">Materi 1</span>
+          <span class="materi-status" id="status-materi1">🔓</span>
         </div>
-        <h2>Getting Started</h2>
-        <p>Panduan instalasi, konfigurasi awal, dan dasar Odoo.</p>
-        <small style="color: var(--secondary-color); font-weight: bold;">Mulai Belajar ➔</small>
+        <h2>Pembuatan Database di Odoo</h2>
+        <p>Setup database & konfigurasi awal</p>
+        <div class="materi-progress">
+          <div class="materi-progress-bar" id="progress-materi1"></div>
+        </div>
+        <small id="label-materi1">Belum dimulai</small>
       </a>
 
-      <!-- Card: Sales -->
-      <a href="./sales.html" class="step-card materi-card">
+      <div class="step-card materi-card locked" id="card-materi2">
+        <div class="lock-overlay">🔒 Selesaikan Materi 1</div>
         <div class="materi-card-header">
-          <span class="badge">Fundamental</span>
-          <span class="materi-status"></span>
+          <span class="badge">Materi 2</span>
+          <span class="materi-status" id="status-materi2">🔒</span>
         </div>
-        <h2>Sales</h2>
-        <p>Manajemen penawaran, order, dan faktur penjualan.</p>
-        <small style="color: var(--secondary-color); font-weight: bold;">Mulai Belajar ➔</small>
-      </a>
-
-      <!-- Card: Website -->
-      <div class="step-card materi-card locked" style="opacity: 0.6; background: #f9f9f9;">
-        <div class="materi-card-header">
-          <span class="badge">Coming Soon</span>
-          <span class="materi-status">🔒</span>
+        <h2>Antarmuka & Navigasi</h2>
+        <p>Mengenal menu & fitur dasar Odoo</p>
+        <div class="materi-progress">
+          <div class="materi-progress-bar" id="progress-materi2"></div>
         </div>
-        <h2>Website</h2>
-        <p>Membangun website builder dan e-commerce.</p>
+        <small id="label-materi2">Terkunci</small>
       </div>
 
-      <!-- Card: CRM -->
-      <div class="step-card materi-card locked" style="opacity: 0.6; background: #f9f9f9;">
+      <div class="step-card materi-card locked" id="card-materi3">
+        <div class="lock-overlay">🔒 Selesaikan Materi 2</div>
         <div class="materi-card-header">
-          <span class="badge">Coming Soon</span>
-          <span class="materi-status">🔒</span>
+          <span class="badge">Materi 3</span>
+          <span class="materi-status" id="status-materi3">🔒</span>
         </div>
-        <h2>CRM</h2>
-        <p>Mengelola leads, opportunities, dan pipeline sales.</p>
+        <h2>Google Calendar Sync</h2>
+        <p>Menghubungkan Odoo dengan Google API</p>
+        <div class="materi-progress">
+          <div class="materi-progress-bar" id="progress-materi3"></div>
+        </div>
+        <small id="label-materi3">Terkunci</small>
+      </div>
+
+      <div class="step-card materi-card locked" id="card-materi4">
+        <div class="lock-overlay">🔒 Selesaikan Materi 3</div>
+        <div class="materi-card-header">
+          <span class="badge">Materi 4</span>
+          <span class="materi-status" id="status-materi4">🔒</span>
+        </div>
+        <h2>Outlook Calendar Sync</h2>
+        <p>Integrasi Microsoft Azure & Outlook</p>
+        <div class="materi-progress">
+          <div class="materi-progress-bar" id="progress-materi4"></div>
+        </div>
+        <small id="label-materi4">Terkunci</small>
+      </div>
+
+      <div class="step-card materi-card locked" id="card-materi5">
+        <div class="lock-overlay">🔒 Selesaikan Materi 4</div>
+        <div class="materi-card-header">
+          <span class="badge">Materi 5</span>
+          <span class="materi-status" id="status-materi5">🔒</span>
+        </div>
+        <h2>Multi-Company</h2>
+        <p>Manajemen cabang & entitas berbeda</p>
+        <div class="materi-progress">
+          <div class="materi-progress-bar" id="progress-materi5"></div>
+        </div>
+        <small id="label-materi5">Terkunci</small>
+      </div>
+
+      <div class="step-card materi-card locked" id="card-materi6">
+        <div class="lock-overlay">🔒 Selesaikan Materi 5</div>
+        <div class="materi-card-header">
+          <span class="badge">Materi 6</span>
+          <span class="materi-status" id="status-materi6">🔒</span>
+        </div>
+        <h2>Transaksi Inter-Company</h2>
+        <p>Otomatisasi SO/PO & Invoice antar cabang</p>
+        <div class="materi-progress">
+          <div class="materi-progress-bar" id="progress-materi6"></div>
+        </div>
+        <small id="label-materi6">Terkunci</small>
+      </div>
+
+      <div class="step-card materi-card locked" id="card-materi7">
+        <div class="lock-overlay">🔒 Selesaikan Materi 6</div>
+        <div class="materi-card-header">
+          <span class="badge">Materi 7</span>
+          <span class="materi-status" id="status-materi7">🔒</span>
+        </div>
+        <h2>Calendar & Meeting</h2>
+        <p>Jadwal meeting & video call dari Chatter</p>
+        <div class="materi-progress">
+          <div class="materi-progress-bar" id="progress-materi7"></div>
+        </div>
+        <small id="label-materi7">Terkunci</small>
       </div>
     </section>
+
   </main>
 
   <footer class="footer">
-    <p>PembelajarBelajar &copy; 2026</p>
-    <small>Belajar Odoo dengan alur terstruktur</small>
+    <a href="./index.html" style="text-decoration: none; color: #666; font-weight: 600">← Kembali ke Dashboard Utama</a>
   </footer>
 
   <script src="./assets/js/lms-core.js"></script>
