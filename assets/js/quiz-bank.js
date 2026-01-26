@@ -274,6 +274,76 @@ window.QUIZ_BANK = {
       ],
       correct: "Pada tombol pintar Next Meeting dan Planned Activities di Chatter"
     }
-  ]
+  ],
 
+  /* =====================================================
+     MODULE 8 — SCHEDULE ACTIVITIES
+     ===================================================== */
+  materi8: [
+    {
+      question: "Ikon Activities hijau pada record menandakan apa?",
+      options: [
+        "Kegiatan terlewat (Overdue)",
+        "Tidak ada kegiatan terjadwal",
+        "Kegiatan jatuh tempo hari ini",
+        "Ada kegiatan mendatang yang terjadwal (Upcoming)"
+      ],
+      correct: "Ada kegiatan mendatang yang terjadwal (Upcoming)"
+    },
+    {
+      question: "Apa arti angka di sebelah ikon jam di bilah navigasi kanan atas?",
+      options: [
+        "Total kegiatan yang telah selesai",
+        "Jumlah kegiatan yang terlambat atau jatuh tempo hari ini",
+        "Jumlah pengguna yang ditugaskan",
+        "Total kegiatan yang dibuat minggu ini"
+      ],
+      correct: "Jumlah kegiatan yang terlambat atau jatuh tempo hari ini"
+    },
+    {
+      question: "Di mana Anda dapat membuat, menandai selesai, atau mengedit kegiatan secara langsung dalam sebuah record?",
+      options: [
+        "Di menu Pengaturan",
+        "Di Dashboard Pelaporan",
+        "Di bagian Chatter",
+        "Di Penukar Aplikasi"
+      ],
+      correct: "Di bagian Chatter"
+    }
+  ],
+  /* =====================================================
+     MODULE 9 — CONTACTS
+     ===================================================== */
+  materi9: [
+    {
+      question: "Tampilan Odoo manakah yang menampilkan foto kontak dan menawarkan tata letak yang lebih visual?",
+      options: [
+        "Tampilan Peta (Map View)",
+        "Tampilan Kanban (Kanban View)",
+        "Tampilan Pivot (Pivot View)",
+        "Tampilan Aktivitas (Activity View)"
+      ],
+      correct: "Tampilan Kanban (Kanban View)"
+    },
+    {
+      question: "Pada pop-up Buat Kontak, opsi apa saja yang dapat Anda pilih untuk tipe alamat?",
+      options: [
+        "Contact, Invoice Address, Delivery Address, Other",
+        "Personal, Business, Residential, Mailing",
+        "Primary, Secondary, Corporate, Private",
+        "Customer, Vendor, Partner, Lead"
+      ],
+      correct: "Contact, Invoice Address, Delivery Address, Other"
+    },
+    {
+      question: "Apa yang dapat dilihat atau diakses pengguna menggunakan Smart Buttons di bagian atas halaman kontak?",
+      options: [
+        "Pengaturan database",
+        "Dokumen terkait dari aplikasi Odoo lainnya (Linked records)",
+        "Kontak yang diarsipkan",
+        "Catatan internal"
+      ],
+      correct: "Dokumen terkait dari aplikasi Odoo lainnya (Linked records)"
+    }
+  ]
 };
