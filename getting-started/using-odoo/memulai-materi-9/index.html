@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Materi 9: Mengelola Kontak (Contacts) | PembelajarBelajar</title>
+    <link rel="stylesheet" href="../../../assets/css/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="progress-wrapper">
+        <div class="progress-container" id="progressContainer">
+            <div class="progress-bar" id="progressBar"></div>
+            <span class="progress-label" id="progressLabel" style="top: 24px">0%</span>
+        </div>
+    </div>
+
+    <main class="container">
+        <button class="dark-toggle" onclick="toggleDark()">🌙</button>
+
+        <header class="header">
+            <div id="materiBadge" class="materi-badge" style="display: none">
+                🎓 Materi 9 Lulus
+            </div>
+            <span class="badge">Materi 9</span>
+            <h1>Mengelola Kontak (Contacts)</h1>
+            <p class="subtitle">
+                Pusat data pelanggan, vendor, dan partner bisnis Anda dengan tampilan visual yang intuitif.
+            </p>
+
+            <div class="image-placeholder" style="margin-top: 20px">
+                <img src="../../../assets/images/getting-started/materi-9/infographic.png" alt="Ilustrasi Odoo Contacts"
+                    onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+                <span class="placeholder-text">📸 Ilustrasi Utama: Tampilan Kanban Kontak</span>
+            </div>
+        </header>
+
+        <section class="step-card">
+            <h2>1. Tampilan Visual (Kanban View)</h2>
+            <div class="content">
+                <p>
+                    Saat Anda membuka aplikasi <strong>Contacts</strong>, tampilan default yang muncul adalah
+                    <strong>Kanban View</strong>.
+                </p>
+                <p>
+                    Mengapa tampilan ini spesial?
+                </p>
+                <ul>
+                    <li><strong>Lebih Visual:</strong> Anda bisa langsung melihat foto profil kontak.</li>
+                    <li><strong>Ringkas:</strong> Menampilkan informasi utama (Nama, Email, Kota) dalam bentuk kartu.
+                    </li>
+                </ul>
+                <div class="alert info">
+                    <strong>Tips:</strong> Jika Anda butuh melihat data dalam bentuk tabel baris, Anda bisa beralih ke
+                    <strong>List View</strong> (ikon garis-garis) di pojok kanan atas.
+                </div>
+
+                <div class="image-placeholder">
+                    <img src="../../../assets/images/getting-started/materi-9/step-1-kanban.png" alt="Kanban View"
+                        onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+                    <span class="placeholder-text">📸 Screenshot: Kanban View vs List View</span>
+                </div>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>2. Membuat Kontak Baru</h2>
+            <div class="content">
+                <p>Saat Anda menekan tombol <strong>New</strong> untuk membuat kontak, hal pertama yang harus Anda pilih
+                    adalah jenis kontaknya:</p>
+
+                <div class="deep-dive">
+                    <h3>👤 Individual vs 🏢 Company</h3>
+                    <ul>
+                        <li><strong>Individual (Person):</strong> Pilih ini untuk orang perorangan (karyawan, kontak
+                            sales, direktur).
+                            <br><em>Contoh Nama: Budi Santoso, Siti Aminah.</em>
+                            <br><em>Tips: Jika Anda mengisi kolom "Company Name" di bawah nama individual, alamat akan
+                                otomatis mengikuti alamat perusahaan tersebut.</em>
+                        </li>
+                        <li><strong>Company:</strong> Pilih ini untuk entitas perusahaan/organisasi.
+                            <br><em>Contoh Nama: PT Maju Jaya, CV Sejahtera Abadi.</em>
+                            <br><em>Tips: Perusahaan adalah "induk". Satu perusahaan bisa menaungi banyak kontak
+                                individual.</em>
+                        </li>
+                    </ul>
+                    <div class="alert info">
+                        <strong>Latihan Saat Ini:</strong><br>
+                        Untuk materi ini, silakan pilih <strong>Individual</strong>. Masukkan nama teman atau tokoh
+                        fiktif, misalnya: <em>Kevin Sanjaya</em>.
+                    </div>
+                </div>
+
+                <p><strong>Penjelasan Kolom Utama:</strong></p>
+                <ul class="technical-list">
+                    <li><strong>Address:</strong> Alamat utama (kantor/rumah). <br><em>Contoh: Jl. Sudirman No. 45,
+                            Jakarta Pusat.</em></li>
+                    <li><strong>VAT (NPWP):</strong> Nomor pokok wajib pajak. <br><em>Contoh: 01.234.567.8-123.000.</em>
+                    </li>
+                    <li><strong>Job Position:</strong> Jabatan (hanya muncul jika memilih Individual). <br><em>Contoh:
+                            Sales Manager, IT Staff.</em></li>
+                    <li><strong>Phone/Mobile:</strong> Kontak telepon utama. <br><em>Contoh: 021-5551234 (Phone) atau
+                            0812-3456-7890 (Mobile).</em></li>
+                    <li><strong>Email:</strong> Alamat email utama (penting untuk login portal atau kirim penawaran).
+                        <br><em>Contoh: budi@perusahaan.com.</em>
+                    </li>
+                </ul>
+
+                <div class="image-placeholder">
+                    <img src="../../../assets/images/getting-started/materi-9/step-2-new-contact.png"
+                        alt="Form Kontak Baru"
+                        onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+                    <span class="placeholder-text">📸 Screenshot: Form Kontak Utama (Individual/Company)</span>
+                </div>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>3. Menambahkan Alamat Lain</h2>
+            <div class="content">
+                <p>Selain alamat utama di atas, Anda bisa menambahkan alamat spesifik lainnya (seperti Gudang atau
+                    Kantor Cabang) melalui tab <strong>Contacts</strong> di bagian bawah form.</p>
+
+                <div class="alert info">
+                    <strong>Tidak menemukan opsinya?</strong><br>
+                    Anda harus mengklik tombol <strong>Add</strong> (atau <em>Add Contact</em>) terlebih dahulu di dalam
+                    tab tersebut. Setelah itu, pop-up akan muncul dan Anda bisa memilih <strong>Address Type</strong>.
+                </div>
+                <p>Ada beberapa opsi <strong>Address Type</strong> yang tersedia:</p>
+                <ul class="technical-list">
+                    <li><strong>Contact:</strong> Kontak umum (default). <br><em>Contoh: Budi Santoso (PIC Project), Tim
+                            IT Support.</em></li>
+                    <li><strong>Invoice Address:</strong> Alamat khusus untuk penagihan (faktur). <br><em>Contoh: Kantor
+                            Pusat (Divisi Keuangan) di Jalur Sudirman.</em></li>
+                    <li><strong>Delivery Address:</strong> Alamat khusus untuk pengiriman barang. <br><em>Contoh: Gudang
+                            Logistik Cikarang Pintu 4.</em></li>
+                    <li><strong>Other:</strong> Alamat lain-lain. <br><em>Contoh: Kantor Cabang Surabaya (Marketing
+                            Office).</em></li>
+                    <li><strong>Private Address:</strong> Alamat pribadi (hanya untuk karyawan). <br><em>Contoh: Rumah
+                            Budi di Tebet (untuk data HRD).</em></li>
+                </ul>
+
+                <div class="image-placeholder">
+                    <img src="../../../assets/images/getting-started/materi-9/step-3-address-type.png"
+                        alt="Address Types"
+                        onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+                    <span class="placeholder-text">📸 Screenshot: Pop-up Address Type</span>
+                </div>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>4. Smart Buttons</h2>
+            <div class="content">
+                <p>Di bagian atas setiap halaman kontak, terdapat deretan tombol yang disebut <strong>Smart
+                        Buttons</strong>.</p>
+                <p>Tombol-tombol ini berfungsi sebagai jalan pintas untuk melihat dokumen Odoo lain yang terkait dengan
+                    kontak tersebut, seperti:</p>
+                <ul>
+                    <li><strong>Sales:</strong> Melihat riwayat penawaran/penjualan.</li>
+                    <li><strong>Invoiced:</strong> Total tagihan yang sudah ditagihkan.</li>
+                    <li><strong>Meetings:</strong> Jadwal pertemuan yang pernah dibuat.</li>
+                </ul>
+
+                <div class="image-placeholder">
+                    <img src="../../../assets/images/getting-started/materi-9/step-4-smart-buttons.png"
+                        alt="Smart Buttons"
+                        onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+                    <span class="placeholder-text">📸 Screenshot: Deretan Smart Buttons di atas form kontak</span>
+                </div>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card quiz-card" id="materi-9-quiz">
+            <div class="quiz-progress-wrapper">
+                <div class="quiz-progress-bar" id="quizProgressBar"></div>
+            </div>
+            <h2>📝 Quiz Materi 9</h2>
+            <div class="quiz-container"></div>
+            <div class="step-footer">
+                <button class="quiz-submit-btn" onclick="checkQuiz()">
+                    Periksa Jawaban
+                </button>
+                <div id="quizResult" style="display: none"></div>
+            </div>
+        </section>
+
+        <div id="nextActionArea" class="next-action-area" style="display: none">
+            <h3>🎉 Materi 9 Selesai!</h3>
+            <p>
+                Anda telah memahami dasar-dasar pengelolaan kontak di Odoo.
+            </p>
+            <a href="../memulai-materi-10/index.html" class="btn-next">Lanjut ke Materi 10 ➔</a>
+        </div>
+
+        <footer class="footer">
+            <a href="../../../getting-started.html" style="text-decoration: none; color: #666; font-weight: 600">←
+                Kembali ke
+                Dashboard</a>
+        </footer>
+    </main>
+
+    <script src="../../../assets/js/quiz-bank.js"></script>
+    <script src="../../../assets/js/lms-core.js"></script>
+    <script src="../../../assets/js/quiz-engine.js"></script>
+
+    <script>
+        // Inisialisasi Materi 9
+        document.addEventListener("DOMContentLoaded", () => {
+            initMateriProgress("materi9");
+            renderQuiz("materi9", ".quiz-container");
+
+            if (loadQuizResult("materi9")?.passed) {
+                const area = document.getElementById("nextActionArea");
+                if (area) area.style.display = "block";
+            }
+        });
+
+        const originalOnQuizPassed = window.onQuizPassed;
+        window.onQuizPassed = function (materiId, score) {
+            if (originalOnQuizPassed) originalOnQuizPassed(materiId, score);
+            const area = document.getElementById("nextActionArea");
+            if (area) {
+                area.style.display = "block";
+                setTimeout(() => {
+                    area.scrollIntoView({ behavior: "smooth", block: "center" });
+                }, 500);
+            }
+        };
+
+        function toggleDark() {
+            document.body.classList.toggle("dark");
+            localStorage.setItem(
+                "darkMode",
+                document.body.classList.contains("dark")
+            );
+        }
+        if (localStorage.getItem("darkMode") === "true")
+            document.body.classList.add("dark");
+    </script>
+</body>
+
+</html>

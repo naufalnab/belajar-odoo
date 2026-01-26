@@ -345,5 +345,40 @@ window.QUIZ_BANK = {
       ],
       correct: "Dokumen terkait dari aplikasi Odoo lainnya (Linked records)"
     }
+  ],
+  /* =====================================================
+     MATERI 10 — IMPORT DAN EXPORT DATA
+     ===================================================== */
+  materi10: [
+    {
+      question: "Tombol apa yang muncul ketika Anda memilih beberapa record sekaligus di tampilan List?",
+      options: [
+        "Import",
+        "Export",
+        "Actions",
+        "Edit"
+      ],
+      correct: "Actions"
+    },
+    {
+      question: "Opsi mana yang harus dicentang agar file yang diekspor kompatibel untuk diimpor kembali?",
+      options: [
+        "Save Template",
+        "I want to update data",
+        "Import Mode",
+        "Field Mapping"
+      ],
+      correct: "I want to update data"
+    },
+    {
+      question: "Untuk mulai mengimpor data, di mana Anda harus mengklik?",
+      options: [
+        "Tombol Import di menu",
+        "Ikon Gear → Import Records",
+        "File → Upload",
+        "Tools → Load File"
+      ],
+      correct: "Ikon Gear → Import Records"
+    }
   ]
 };
