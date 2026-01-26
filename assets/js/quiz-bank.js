@@ -238,5 +238,42 @@ window.QUIZ_BANK = {
       ],
       correct: "Menetapkan daftar harga (pricelist) IDR milik Minji Dimsum ke data kontak (partner record) Pembelajar Belajar"
     }
+  ],
+
+  /* =====================================================
+     MODULE 7 — MEETING SCHEDULING (CALENDAR)
+     ===================================================== */
+  materi7: [
+    {
+      question: "Di mana meeting dapat dijadwalkan di Odoo selain melalui aplikasi Kalender?",
+      options: [
+        "Hanya dari Dashboard",
+        "Dari bagian Chatter pada sebuah record",
+        "Dari aplikasi Email",
+        "Hanya melalui modul Kontak"
+      ],
+      correct: "Dari bagian Chatter pada sebuah record"
+    },
+    {
+      question: "Manakah dari berikut ini opsi privasi yang tersedia untuk meeting di Odoo?",
+      options: [
+        "Rahasia, Dibagikan, Dibatasi",
+        "Khusus Tim, Departemen, Global",
+        "Tersembunyi, Terlihat, Undangan saja",
+        "Publik, Privat, Khusus Pengguna Internal"
+      ],
+      correct: "Publik, Privat, Khusus Pengguna Internal"
+    },
+    {
+      question: "Setelah meeting disimpan, di mana meeting tersebut dapat dilihat dari dalam record CRM?",
+      options: [
+        "Pada tombol pintar Next Meeting dan Planned Activities di Chatter",
+        "Hanya di aplikasi Kalender utama",
+        "Di dalam menu Pengaturan aplikasi CRM",
+        "Hanya di layar Dashboard"
+      ],
+      correct: "Pada tombol pintar Next Meeting dan Planned Activities di Chatter"
+    }
   ]
+
 };
