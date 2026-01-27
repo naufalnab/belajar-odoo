@@ -415,5 +415,77 @@ window.QUIZ_BANK = {
       ],
       correct: "Catatan muncul di Chatter dan memberi notifikasi kepada pengguna internal yang di-tag"
     }
+  ],
+
+  /* =====================================================
+     MATERI 12 — CANNED RESPONSES
+     ===================================================== */
+  materi12: [
+    {
+      question: "Apa tujuan utama Canned Responses di Odoo?",
+      options: [
+        "Untuk mengotomatiskan kampanye pemasaran email",
+        "Untuk melacak skor kepuasan pelanggan",
+        "Untuk menghemat waktu dan memastikan komunikasi yang konsisten",
+        "Untuk menetapkan tiket secara otomatis"
+      ],
+      correct: "Untuk menghemat waktu dan memastikan komunikasi yang konsisten"
+    },
+    {
+      question: "Di mana Canned Responses dikelola di Odoo?",
+      options: [
+        "Aplikasi Helpdesk",
+        "Aplikasi Discuss",
+        "Aplikasi CRM",
+        "Aplikasi Live Chat"
+      ],
+      correct: "Aplikasi Discuss"
+    },
+    {
+      question: "Apa yang terjadi jika Anda membiarkan kolom \"Authorized Group\" kosong?",
+      options: [
+        "Itu muncul di semua aplikasi",
+        "Itu akan dihapus secara otomatis",
+        "Semua orang bisa menggunakannya",
+        "Hanya Anda (pembuat) yang dapat menggunakan Canned Response tersebut"
+      ],
+      correct: "Hanya Anda (pembuat) yang dapat menggunakan Canned Response tersebut"
+    }
+  ],
+
+  /* =====================================================
+     MATERI 13 — DIGEST EMAILS
+     ===================================================== */
+  materi13: [
+    {
+      question: "Seberapa sering email digest dapat dikirim di Odoo?",
+      options: [
+        "Harian",
+        "Mingguan",
+        "Bulanan & Triwulanan",
+        "Semua jawaban benar"
+      ],
+      correct: "Semua jawaban benar"
+    },
+    {
+      question: "Bagaimana cara menambahkan KPI tambahan ke Digest Emails Anda?",
+      options: [
+        "Tambah dari menu 'Additional KPIs'",
+        "Install aplikasi yang relevan untuk KPI tersebut (misal: eCommerce, CRM)",
+        "Masuk mode developer, lalu pilih dari menu 'hidden KPIs'",
+        "Anda tidak bisa menambah KPI tambahan"
+      ],
+      correct: "Install aplikasi yang relevan untuk KPI tersebut (misal: eCommerce, CRM)"
+    },
+    {
+      question: "Manakah yang BUKAN merupakan opsi untuk mengirim digest emails?",
+      options: [
+        "Gunakan tombol 'Send Now' untuk mengirim segera",
+        "Tunggu 'Next Send Date' agar terkirim otomatis",
+        "Ubah periodisitas (frekuensi) agar dikirim lebih cepat atau lambat",
+        "Gunakan tombol 'Schedule' untuk menjadwalkan ke jam tertentu di masa depan secara manual"
+      ],
+      correct: "Gunakan tombol 'Schedule' untuk menjadwalkan ke jam tertentu di masa depan secara manual"
+    }
   ]
 };

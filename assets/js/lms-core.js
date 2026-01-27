@@ -7,7 +7,7 @@
 
 const LMS_CONFIG = {
   passingScore: 70,
-  totalMateri: 8, // ganti sesuai jumlah materi
+  totalMateri: 13, // ganti sesuai jumlah materi
 };
 
 /* ===================== UTIL ===================== */

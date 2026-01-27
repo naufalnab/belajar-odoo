@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Materi 12: Canned Responses | PembelajarBelajar</title>
+    <link rel="stylesheet" href="../../../assets/css/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="progress-wrapper">
+        <div class="progress-container" id="progressContainer">
+            <div class="progress-bar" id="progressBar"></div>
+            <span class="progress-label" id="progressLabel" style="top: 24px">0%</span>
+        </div>
+    </div>
+
+    <main class="container">
+        <button class="dark-toggle" onclick="toggleDark()">🌙</button>
+
+        <header class="header">
+            <div id="materiBadge" class="materi-badge" style="display: none">
+                🎓 Materi 12 Lulus
+            </div>
+            <span class="badge">Materi 12</span>
+            <h1>Canned Responses (Jawaban Cepat)</h1>
+            <p class="subtitle">
+                Hemat waktu mengetik dengan template jawaban yang siap pakai.
+            </p>
+
+            <div class="image-placeholder" style="margin-top: 20px">
+                <img src="../../../assets/images/getting-started/materi-12/infographic.png"
+                    alt="Ilustrasi Canned Responses"
+                    onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+                <span class="placeholder-text">📸 Ilustrasi Utama: Seseorang memilih jawaban dari daftar cepat</span>
+            </div>
+        </header>
+
+        <section class="step-card">
+            <h2>1. Apa itu Canned Responses?</h2>
+            <div class="content">
+                <p>
+                    <strong>Canned Responses</strong> (Jawaban Cepat) adalah fitur di Odoo yang memungkinkan Anda
+                    menyimpan template teks singkat maupun panjang untuk digunakan berulang kali.
+                </p>
+                <div class="deep-dive">
+                    <h3>🚀 Tujuan Utama</h3>
+                    <p>
+                        Menghemat waktu dan memastikan <strong>konsistensi komunikasi</strong>. Anda tidak perlu
+                        mengetik jawaban yang sama berulang kali untuk pertanyaan umum pelanggan.
+                    </p>
+                </div>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>2. Cara Membuat & Mengelola</h2>
+            <div class="content">
+                <p>
+                    Canned Responses dikelola melalu aplikasi <strong>Discuss</strong> atau <strong>Live Chat</strong>.
+                </p>
+                <ol>
+                    <li>Buka aplikasi <strong>Discuss</strong> (atau Messaging).</li>
+                    <li>Saya sarankan mencari menu konfigurasi Canned Responses (biasanya di Settings atau tab khusus).
+                    </li>
+                    <li>Klik <strong>New</strong> untuk membuat baru.</li>
+                </ol>
+
+                <table class="technical-table">
+                    <tr>
+                        <td>Shortcut</td>
+                        <td>Kata kunci pemicu (misal: <em>hello</em>).</td>
+                    </tr>
+                    <tr>
+                        <td>Substitution</td>
+                        <td>Isi pesan lengkap yang akan menggantikan shortcut.</td>
+                    </tr>
+                </table>
+
+                <div class="image-placeholder">
+                    <img src="../../../assets/images/getting-started/materi-12/step-2-create.png"
+                        alt="Form Canned Response"
+                        onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+                    <span class="placeholder-text">📸 Screenshot: Form pembuatan Canned Response baru</span>
+                </div>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>3. Cara Menggunakan (Shortcut :)</h2>
+            <div class="content">
+                <p>
+                    Untuk menggunakan jawaban cepat saat chatting atau menulis Log Note:
+                </p>
+                <ul>
+                    <li>Ketik tanda titik dua <code>:</code> diikuti dengan kata kunci shortcut.</li>
+                    <li>Contoh: Ketik <code>:hello</code>, lalu pilih opsi yang muncul.</li>
+                    <li>Teks akan otomatis berubah menjadi kalimat lengkap yang sudah Anda atur.</li>
+                </ul>
+
+                <div class="image-placeholder">
+                    <img src="../../../assets/images/getting-started/materi-12/step-3-usage.png"
+                        alt="Menggunakan Shortcut"
+                        onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+                    <span class="placeholder-text">📸 Screenshot: Mengetik ":" dan memilih suggestion</span>
+                </div>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>4. Pengaturan Akses (Authorized Group)</h2>
+            <div class="content">
+                <p>
+                    Saat membuat Canned Response, ada kolom bernama <strong>Authorized Group</strong>.
+                </p>
+                <div class="alert warning">
+                    <strong>Penting:</strong>
+                    <ul>
+                        <li>Jika <strong>dikosongkan</strong>: Canned Response tersebut bersifat
+                            <strong>PRIBADI</strong> (hanya bisa digunakan oleh pembuatnya).</li>
+                        <li>Jika <strong>diisi grup tertentu</strong> (misal: All Internal Users): Maka bisa digunakan
+                            oleh semua orang dalam grup tersebut.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card quiz-card" id="materi-12-quiz">
+            <div class="quiz-progress-wrapper">
+                <div class="quiz-progress-bar" id="quizProgressBar"></div>
+            </div>
+            <h2>📝 Quiz Materi 12</h2>
+            <div class="quiz-container"></div>
+            <div class="step-footer">
+                <button class="quiz-submit-btn" onclick="checkQuiz()">
+                    Periksa Jawaban
+                </button>
+                <div id="quizResult" style="display: none"></div>
+            </div>
+        </section>
+
+        <div id="nextActionArea" class="next-action-area" style="display: none">
+            <h3>🎉 Materi 12 Selesai!</h3>
+            <p>
+                Anda kini bisa membalas pesan secepat kilat!
+            </p>
+            <a href="../../../getting-started.html" class="btn-next">Kembali ke Dashboard Utama ➔</a>
+        </div>
+
+        <footer class="footer">
+            <a href="../../../getting-started.html" style="text-decoration: none; color: #666; font-weight: 600">←
+                Kembali ke
+                Dashboard</a>
+        </footer>
+    </main>
+
+    <script src="../../../assets/js/quiz-bank.js"></script>
+    <script src="../../../assets/js/lms-core.js"></script>
+    <script src="../../../assets/js/quiz-engine.js"></script>
+
+    <script>
+        // Inisialisasi Materi 12
+        document.addEventListener("DOMContentLoaded", () => {
+            initMateriProgress("materi12");
+            renderQuiz("materi12", ".quiz-container");
+
+            if (loadQuizResult("materi12")?.passed) {
+                const area = document.getElementById("nextActionArea");
+                if (area) area.style.display = "block";
+            }
+        });
+
+        const originalOnQuizPassed = window.onQuizPassed;
+        window.onQuizPassed = function (materiId, score) {
+            if (originalOnQuizPassed) originalOnQuizPassed(materiId, score);
+            const area = document.getElementById("nextActionArea");
+            if (area) {
+                area.style.display = "block";
+                setTimeout(() => {
+                    area.scrollIntoView({ behavior: "smooth", block: "center" });
+                }, 500);
+            }
+        };
+
+        function toggleDark() {
+            document.body.classList.toggle("dark");
+            localStorage.setItem(
+                "darkMode",
+                document.body.classList.contains("dark")
+            );
+        }
+        if (localStorage.getItem("darkMode") === "true")
+            document.body.classList.add("dark");
+    </script>
+</body>
+
+</html>
