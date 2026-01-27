@@ -238,5 +238,182 @@ window.QUIZ_BANK = {
       ],
       correct: "Menetapkan daftar harga (pricelist) IDR milik Minji Dimsum ke data kontak (partner record) Pembelajar Belajar"
     }
+  ],
+
+  /* =====================================================
+     MODULE 7 — MEETING SCHEDULING (CALENDAR)
+     ===================================================== */
+  materi7: [
+    {
+      question: "Di mana meeting dapat dijadwalkan di Odoo selain melalui aplikasi Kalender?",
+      options: [
+        "Hanya dari Dashboard",
+        "Dari bagian Chatter pada sebuah record",
+        "Dari aplikasi Email",
+        "Hanya melalui modul Kontak"
+      ],
+      correct: "Dari bagian Chatter pada sebuah record"
+    },
+    {
+      question: "Manakah dari berikut ini opsi privasi yang tersedia untuk meeting di Odoo?",
+      options: [
+        "Rahasia, Dibagikan, Dibatasi",
+        "Khusus Tim, Departemen, Global",
+        "Tersembunyi, Terlihat, Undangan saja",
+        "Publik, Privat, Khusus Pengguna Internal"
+      ],
+      correct: "Publik, Privat, Khusus Pengguna Internal"
+    },
+    {
+      question: "Setelah meeting disimpan, di mana meeting tersebut dapat dilihat dari dalam record CRM?",
+      options: [
+        "Pada tombol pintar Next Meeting dan Planned Activities di Chatter",
+        "Hanya di aplikasi Kalender utama",
+        "Di dalam menu Pengaturan aplikasi CRM",
+        "Hanya di layar Dashboard"
+      ],
+      correct: "Pada tombol pintar Next Meeting dan Planned Activities di Chatter"
+    }
+  ],
+
+  /* =====================================================
+     MODULE 8 — SCHEDULE ACTIVITIES
+     ===================================================== */
+  materi8: [
+    {
+      question: "Ikon Activities hijau pada record menandakan apa?",
+      options: [
+        "Kegiatan terlewat (Overdue)",
+        "Tidak ada kegiatan terjadwal",
+        "Kegiatan jatuh tempo hari ini",
+        "Ada kegiatan mendatang yang terjadwal (Upcoming)"
+      ],
+      correct: "Ada kegiatan mendatang yang terjadwal (Upcoming)"
+    },
+    {
+      question: "Apa arti angka di sebelah ikon jam di bilah navigasi kanan atas?",
+      options: [
+        "Total kegiatan yang telah selesai",
+        "Jumlah kegiatan yang terlambat atau jatuh tempo hari ini",
+        "Jumlah pengguna yang ditugaskan",
+        "Total kegiatan yang dibuat minggu ini"
+      ],
+      correct: "Jumlah kegiatan yang terlambat atau jatuh tempo hari ini"
+    },
+    {
+      question: "Di mana Anda dapat membuat, menandai selesai, atau mengedit kegiatan secara langsung dalam sebuah record?",
+      options: [
+        "Di menu Pengaturan",
+        "Di Dashboard Pelaporan",
+        "Di bagian Chatter",
+        "Di Penukar Aplikasi"
+      ],
+      correct: "Di bagian Chatter"
+    }
+  ],
+  /* =====================================================
+     MODULE 9 — CONTACTS
+     ===================================================== */
+  materi9: [
+    {
+      question: "Tampilan Odoo manakah yang menampilkan foto kontak dan menawarkan tata letak yang lebih visual?",
+      options: [
+        "Tampilan Peta (Map View)",
+        "Tampilan Kanban (Kanban View)",
+        "Tampilan Pivot (Pivot View)",
+        "Tampilan Aktivitas (Activity View)"
+      ],
+      correct: "Tampilan Kanban (Kanban View)"
+    },
+    {
+      question: "Pada pop-up Buat Kontak, opsi apa saja yang dapat Anda pilih untuk tipe alamat?",
+      options: [
+        "Contact, Invoice Address, Delivery Address, Other",
+        "Personal, Business, Residential, Mailing",
+        "Primary, Secondary, Corporate, Private",
+        "Customer, Vendor, Partner, Lead"
+      ],
+      correct: "Contact, Invoice Address, Delivery Address, Other"
+    },
+    {
+      question: "Apa yang dapat dilihat atau diakses pengguna menggunakan Smart Buttons di bagian atas halaman kontak?",
+      options: [
+        "Pengaturan database",
+        "Dokumen terkait dari aplikasi Odoo lainnya (Linked records)",
+        "Kontak yang diarsipkan",
+        "Catatan internal"
+      ],
+      correct: "Dokumen terkait dari aplikasi Odoo lainnya (Linked records)"
+    }
+  ],
+  /* =====================================================
+     MATERI 10 — IMPORT DAN EXPORT DATA
+     ===================================================== */
+  materi10: [
+    {
+      question: "Tombol apa yang muncul ketika Anda memilih beberapa record sekaligus di tampilan List?",
+      options: [
+        "Import",
+        "Export",
+        "Actions",
+        "Edit"
+      ],
+      correct: "Actions"
+    },
+    {
+      question: "Opsi mana yang harus dicentang agar file yang diekspor kompatibel untuk diimpor kembali?",
+      options: [
+        "Save Template",
+        "I want to update data",
+        "Import Mode",
+        "Field Mapping"
+      ],
+      correct: "I want to update data"
+    },
+    {
+      question: "Untuk mulai mengimpor data, di mana Anda harus mengklik?",
+      options: [
+        "Tombol Import di menu",
+        "Ikon Gear → Import Records",
+        "File → Upload",
+        "Tools → Load File"
+      ],
+      correct: "Ikon Gear → Import Records"
+    }
+  ],
+  /* =====================================================
+     MATERI 11 — CHATTER BASIC
+     ===================================================== */
+  materi11: [
+    {
+      question: "Jenis informasi apa yang ditampilkan di Chatter?",
+      options: [
+        "Hanya pesan dan email",
+        "Perubahan field, pesan, catatan, dan aktivitas terjadwal",
+        "Hanya acara kalender",
+        "Pengaturan dan konfigurasi sistem"
+      ],
+      correct: "Perubahan field, pesan, catatan, dan aktivitas terjadwal"
+    },
+    {
+      question: "Apa yang terjadi ketika Anda mengklik ikon bintang pada entri Chatter?",
+      options: [
+        "Menandai pesan sebagai telah dibaca",
+        "Mengirim pesan ke manajer Anda",
+        "Menghapus entri Chatter",
+        "Menyimpan entri tersebut ke folder Starred di aplikasi Discuss"
+      ],
+      correct: "Menyimpan entri tersebut ke folder Starred di aplikasi Discuss"
+    },
+    {
+      question: "Apa yang terjadi ketika Anda mengklik Log setelah menulis catatan?",
+      options: [
+        "Catatan muncul di Chatter dan memberi notifikasi kepada pengguna internal yang di-tag",
+        "Catatan dikirim sebagai email",
+        "Record ditutup secara otomatis",
+        "Catatan disembunyikan dari semua pengikut"
+      ],
+      correct: "Catatan muncul di Chatter dan memberi notifikasi kepada pengguna internal yang di-tag"
+    }
   ]
 };

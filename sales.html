@@ -32,7 +32,8 @@
     <main class="container" style="margin-top: 60px">
         <section class="materi-dashboard">
             <!-- Materi 1 -->
-            <a href="./sales/sales-materi-1/index.html" class="step-card materi-card" id="card-materi1">
+            <!-- Materi 1 -->
+            <a href="./sales/promotions/sales-materi-1/index.html" class="step-card materi-card" id="card-materi1">
                 <div class="materi-card-header">
                     <span class="badge">Materi 1</span>
                     <span class="materi-status" id="status-materi1">🔓</span>
@@ -46,7 +47,8 @@
             </a>
 
             <!-- Materi 2 (Placeholder) -->
-            <a href="./sales/sales-materi-2/index.html" class="step-card materi-card locked" id="card-materi2">
+            <a href="./sales/promotions/sales-materi-2/index.html" class="step-card materi-card locked"
+                id="card-materi2">
                 <div class="lock-overlay">🔒 Selesaikan Materi 1</div>
                 <div class="materi-card-header">
                     <span class="badge">Materi 2</span>
@@ -61,7 +63,8 @@
             </a>
 
             <!-- Materi 3 (Placeholder) -->
-            <a href="./sales/sales-materi-3/index.html" class="step-card materi-card locked" id="card-materi3">
+            <a href="./sales/promotions/sales-materi-3/index.html" class="step-card materi-card locked"
+                id="card-materi3">
                 <div class="lock-overlay">🔒 Selesaikan Materi 2</div>
                 <div class="materi-card-header">
                     <span class="badge">Materi 3</span>
@@ -93,7 +96,7 @@
         function initDashboard() {
             // --- KONFIGURASI ALUR MATERI SALES ---
             const modules = [
-                { id: "materi1", link: "./sales/sales-materi-1/index.html", nextCard: "card-materi2" },
+                { id: "materi1", link: "./sales/promotions/sales-materi-1/index.html", nextCard: "card-materi2" },
                 { id: "materi2", link: "#", nextCard: "card-materi3" },
                 { id: "materi3", link: "#", nextCard: null }
             ];
@@ -105,10 +108,10 @@
             // Jadi agar tidak bentrok dengan Getting Started, kita harus pakai ID unik di array modules.
 
             const uniqueModules = [
-                { id: "sales_materi1", uiId: "materi1", link: "./sales/sales-materi-1/index.html", nextCard: "card-materi2" },
-                { id: "sales_materi2", uiId: "materi2", link: "./sales/sales-materi-2/index.html", nextCard: "card-materi3" },
-                { id: "sales_materi3", uiId: "materi3", link: "./sales/sales-materi-3/index.html", nextCard: "card-materi4" },
-                { id: "sales_materi4", uiId: "materi4", link: "./sales/sales-materi-4/index.html", nextCard: null }
+                { id: "sales_materi1", uiId: "materi1", link: "./sales/promotions/sales-materi-1/index.html", nextCard: "card-materi2" },
+                { id: "sales_materi2", uiId: "materi2", link: "./sales/promotions/sales-materi-2/index.html", nextCard: "card-materi3" },
+                { id: "sales_materi3", uiId: "materi3", link: "./sales/promotions/sales-materi-3/index.html", nextCard: "card-materi4" },
+                { id: "sales_materi4", uiId: "materi4", link: "./sales/promotions/sales-materi-4/index.html", nextCard: null }
             ];
 
             let completedCount = 0;

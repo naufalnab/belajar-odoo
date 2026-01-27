@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Materi 8: Schedule Activities | PembelajarBelajar</title>
+    <link rel="stylesheet" href="../../../assets/css/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="progress-wrapper">
+        <div class="progress-container" id="progressContainer">
+            <div class="progress-bar" id="progressBar"></div>
+            <span class="progress-label" id="progressLabel" style="top: 24px">0%</span>
+        </div>
+    </div>
+
+    <main class="container">
+        <button class="dark-toggle" onclick="toggleDark()">🌙</button>
+
+        <header class="header">
+            <div id="materiBadge" class="materi-badge" style="display: none">
+                🎓 Materi 8 Lulus
+            </div>
+            <span class="badge">Materi 8</span>
+            <h1>Schedule Activities</h1>
+            <p class="subtitle">
+                Kelola komunikasi tim dan jadwal kegiatan langsung dari dokumen Odoo
+            </p>
+
+            <div class="image-placeholder" style="margin-top: 20px">
+                <img src="../../../assets/images/getting-started/materi-8/infographic.png" alt="Ilustrasi Odoo Chatter"
+                    onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+                <span class="placeholder-text">📸 Ilustrasi Utama: Tampilan Chatter & Activities</span>
+            </div>
+        </header>
+
+        <section class="step-card">
+            <h2>1. Mengenal Chatter</h2>
+            <div class="content">
+                <p>
+                    <strong>Chatter</strong> adalah area komunikasi yang ada di sebelah kanan (atau bawah) setiap
+                    record/dokumen di Odoo.
+                    Ini adalah pusat sejarah dari dokumen tersebut.
+                </p>
+                <p>Ada dua fungsi utama komunikasi di sini:</p>
+                <ul>
+                    <li><strong>Send Message:</strong> Mengirim email kepada pelanggan atau pihak eksternal. Balasan
+                        mereka akan otomatis masuk ke Chatter ini.</li>
+                    <li><strong>Log Note:</strong> Catatan internal untuk tim. Pesan ini <em>tidak</em> akan terkirim ke
+                        pelanggan.</li>
+                </ul>
+
+                <div class="alert info">
+                    <strong>Tips:</strong> Gunakan <strong>Log Note</strong> untuk diskusi internal rahasia atau catatan
+                    penting tentang perubahan dokumen.
+                </div>
+
+                <div class="image-placeholder">
+                    <img src="../../../assets/images/getting-started/materi-8/step-1-chatter-overview.png"
+                        alt="Chatter Overview"
+                        onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+                    <span class="placeholder-text">📸 Screenshot: Tab Send Message vs Log Note</span>
+                </div>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>2. Mengelola Activities (Kegiatan)</h2>
+            <div class="content">
+                <p>Jangan andalkan ingatan! Gunakan fitur <strong>Activities</strong> untuk menjadwalkan pekerjaan
+                    selanjutnya.</p>
+
+                <ol class="instruction-list">
+                    <li>Klik tombol <strong>Activities</strong> di bagian Chatter (biasanya ikon jam).</li>
+                    <li>Pilih <strong>Activity Type</strong>: <em>Email, Call, To-Do, Meeting,</em> dll.</li>
+                    <li>Tentukan <strong>Due Date</strong> (Tanggal Jatuh Tempo) dan berikan ringkasan singkat.</li>
+                    <li>Assign ke diri sendiri atau rekan tim.</li>
+                </ol>
+
+                <div class="deep-dive">
+                    <h3>🎨 Arti Warna Ikon Activity</h3>
+                    <ul>
+                        <li>🔴 <strong>Merah (Overdue):</strong> Kegiatan sudah melewati batas waktu (Terlambat).</li>
+                        <li>🟡 <strong>Kuning (Today):</strong> Kegiatan yang jatuh tempo hari ini.</li>
+                        <li>🟢 <strong>Hijau (Future):</strong> Kegiatan yang dijadwalkan untuk masa mendatang.</li>
+                        <li>⚪ <strong>Abu-abu (Clock):</strong> Belum ada jadwal kegiatan pada dokumen ini.</li>
+                    </ul>
+                </div>
+
+                <div class="image-placeholder">
+                    <img src="../../../assets/images/getting-started/materi-8/step-2-schedule-activity.png"
+                        alt="Schedule Activity"
+                        onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+                    <span class="placeholder-text">📸 Screenshot: Form Schedule Activity</span>
+                </div>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>3. Memantau Semua Kegiatan (Systray)</h2>
+            <div class="content">
+                <p>Bagaimana cara melihat semua tugas saya tanpa membuka dokumen satu per satu?</p>
+                <p>
+                    Perhatikan bagian pojok kanan atas layar (disebut <em>Systray</em>). Di sana terdapat ikon
+                    <strong>Jam (Clock Icon)</strong>.
+                </p>
+                <div class="alert info">
+                    <strong>Apa arti angka di sebelahnya?</strong><br>
+                    Angka tersebut adalah jumlah kegiatan yang <strong>Mendesak</strong> (yaitu kegiatan yang sudah
+                    <strong>Terlambat/Overdue</strong> atau kegiatan yang <strong>Jatuh Tempo Hari Ini</strong>).
+                </div>
+                <p>
+                    Klik ikon tersebut untuk melihat ringkasan kegiatan Anda berdasarkan tipe dokumen (misal: 3 Calls di
+                    CRM, 2 To-Do di Sales).
+                </p>
+
+                <div class="image-placeholder">
+                    <img src="../../../assets/images/getting-started/materi-8/step-3-systray.png"
+                        alt="Systray Activity Menu"
+                        onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+                    <span class="placeholder-text">📸 Screenshot: Menu Activities di Navbar Atas</span>
+                </div>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>4. Membuat Tipe Aktivitas Custom</h2>
+            <div class="content">
+                <p>Jika tipe bawaan Odoo belum cukup, Anda bisa membuat tipe sendiri:</p>
+                <ol>
+                    <li>Buka modul <strong>Settings</strong>.</li>
+                    <li>Cari bagian <strong>Discuss</strong> dan klik <strong>Activity Types</strong>.</li>
+                    <li>Klik <strong>New</strong> dan tentukan nama (misal: "Discovery Call").</li>
+                    <li>Anda bisa mengatur <strong>Chaining Type</strong> agar satu aktivitas otomatis memicu aktivitas
+                        berikutnya setelah selesai.</li>
+                </ol>
+
+                <div class="image-placeholder">
+                    <img src="../../../assets/images/getting-started/materi-8/step-4-custom-activity.png"
+                        alt="Custom Activity Types"
+                        onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+                    <span class="placeholder-text">📸 Screenshot: Menu Activity Types di Settings</span>
+                </div>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card quiz-card" id="materi-8-quiz">
+            <div class="quiz-progress-wrapper">
+                <div class="quiz-progress-bar" id="quizProgressBar"></div>
+            </div>
+            <h2>📝 Quiz Materi 8</h2>
+            <div class="quiz-container"></div>
+            <div class="step-footer">
+                <button class="quiz-submit-btn" onclick="checkQuiz()">
+                    Periksa Jawaban
+                </button>
+                <div id="quizResult" style="display: none"></div>
+            </div>
+        </section>
+
+        <div id="nextActionArea" class="next-action-area" style="display: none">
+            <h3>🎉 Materi 8 Selesai!</h3>
+            <p>
+                Komunikasi tim Anda kini lebih terstruktur. Lanjutkan ke pengelolaan kontak.
+            </p>
+            <a href="../../../getting-started/using-odoo/memulai-materi-9/index.html" class="btn-next">Lanjut ke Materi
+                9 ➔</a>
+        </div>
+
+        <footer class="footer">
+            <a href="../../../getting-started.html" style="text-decoration: none; color: #666; font-weight: 600">←
+                Kembali ke
+                Dashboard</a>
+        </footer>
+    </main>
+
+    <script src="../../../assets/js/quiz-bank.js"></script>
+    <script src="../../../assets/js/lms-core.js"></script>
+    <script src="../../../assets/js/quiz-engine.js"></script>
+
+    <script>
+        // Inisialisasi Materi 8
+        document.addEventListener("DOMContentLoaded", () => {
+            initMateriProgress("materi8");
+            renderQuiz("materi8", ".quiz-container");
+
+            if (loadQuizResult("materi8")?.passed) {
+                const area = document.getElementById("nextActionArea");
+                if (area) area.style.display = "block";
+            }
+        });
+
+        const originalOnQuizPassed = window.onQuizPassed;
+        window.onQuizPassed = function (materiId, score) {
+            if (originalOnQuizPassed) originalOnQuizPassed(materiId, score);
+            const area = document.getElementById("nextActionArea");
+            if (area) {
+                area.style.display = "block";
+                setTimeout(() => {
+                    area.scrollIntoView({ behavior: "smooth", block: "center" });
+                }, 500);
+            }
+        };
+
+        function toggleDark() {
+            document.body.classList.toggle("dark");
+            localStorage.setItem(
+                "darkMode",
+                document.body.classList.contains("dark")
+            );
+        }
+        if (localStorage.getItem("darkMode") === "true")
+            document.body.classList.add("dark");
+    </script>
+</body>
+
+</html>

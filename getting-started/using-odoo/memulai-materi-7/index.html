@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Materi 7: Penjadwalan Meeting (Calendar) | PembelajarBelajar</title>
+  <link rel="stylesheet" href="../../../assets/css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+  <div class="progress-wrapper">
+    <div class="progress-container" id="progressContainer">
+      <div class="progress-bar" id="progressBar"></div>
+      <span class="progress-label" id="progressLabel" style="top: 24px">0%</span>
+    </div>
+  </div>
+
+  <main class="container">
+    <button class="dark-toggle" onclick="toggleDark()">🌙</button>
+
+    <header class="header">
+      <div id="materiBadge" class="materi-badge" style="display: none">
+        🎓 Materi 7 Lulus
+      </div>
+      <span class="badge">Materi 7</span>
+      <h1>Penjadwalan Meeting & Calendar</h1>
+      <p class="subtitle">
+        Kelola jadwal pertemuan, undangan, dan integrasi video call langsung
+        dari Chatter.
+      </p>
+
+      <div class="image-placeholder" style="margin-top: 20px">
+        <img src="../../../assets/images/getting-started/materi-7/infographic.png" alt="Ilustrasi Odoo Calendar"
+          onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+        <span class="placeholder-text">📸 Ilustrasi Utama: Tampilan Calendar & Meeting</span>
+      </div>
+    </header>
+
+    <section class="step-card">
+      <h2>1. Membuat Jadwal dari Chatter</h2>
+      <div class="content">
+        <p>
+          kita tidak perlu selalu membuka aplikasi Calendar. kita bisa
+          menjadwalkan meeting langsung dari dokumen apa pun.
+        </p>
+
+        <div class="alert info">
+          <strong>Data CRM Kosong?</strong>
+          <br />Jika tampilan CRM kita masih kosong, buatlah data contoh:
+          <ol style="margin-top: 5px; margin-bottom: 0; padding-left: 20px">
+            <li>
+              Klik tombol <strong>New</strong> (Ungu) di pojok kiri atas.
+            </li>
+            <li>
+              Isi judul (misal: <em>Proyek Website</em>), lalu klik
+              <strong>Add</strong>.
+            </li>
+            <li>
+              <strong>Klik pada kartu tersebut</strong> untuk membuka
+              detailnya.
+            </li>
+          </ol>
+          <br />
+          <small><em>Catatan: Di Odoo terbaru, kartu yang ada di dalam Pipeline ini
+              disebut sebagai <strong>Opportunity</strong> (Peluang).</em></small>
+        </div>
+
+        <ol class="instruction-list">
+          <li>
+            Buka record (dokumen) yang relevan, misalnya sebuah
+            <strong>Opportunity</strong> (Kartu Pipeline) di CRM.
+          </li>
+          <li>
+            Scroll ke bawah ke bagian <strong>Chatter</strong> (riwayat
+            komunikasi).
+          </li>
+          <li>
+            Klik tombol <strong>Activities</strong> (ikon jam/kegiatan).
+          </li>
+          <li>Pilih <strong>Activity Type: Meeting</strong>.</li>
+          <li>
+            Klik tombol <strong>Schedule</strong> (atau <em>Jadwalkan</em>).
+          </li>
+          <li>
+            Odoo akan langsung membawa kita ke tampilan kalender untuk memilih
+            waktu.
+          </li>
+        </ol>
+
+        <div class="deep-dive">
+          <h3>💡 Integrasi Otomatis</h3>
+          <p>
+            Saat kita membuat meeting lewat Chatter, dokumen asal (misal:
+            Opportunity "Meja Kantor 500 Unit") akan otomatis tertaut di
+            undangan meeting. Peserta bisa langsung klik link tersebut untuk
+            melihat konteks rapat.
+          </p>
+        </div>
+
+        <div class="image-placeholder">
+          <img src="../../../assets/images/getting-started/materi-7/step-1-chatter.png" alt="Schedule via Chatter"
+            onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+          <span class="placeholder-text">📸 Screenshot: Tombol Activity > Meeting di Chatter</span>
+        </div>
+      </div>
+      <div class="step-footer">
+        <label>Selesai</label>
+        <input type="checkbox" class="mark-done" />
+      </div>
+    </section>
+
+    <section class="step-card">
+      <h2>2. Mengatur Detail Meeting & Video Call</h2>
+      <div class="content">
+        <p>Setelah masuk tampilan kalender, saatnya mengatur detail acara.</p>
+        <ol class="instruction-list">
+          <li>Klik pada slot waktu yang kosong di kalender.</li>
+          <li>Masukkan <strong>Subject</strong> (Judul Meeting).</li>
+          <li>
+            Tambahkan <strong>Attendees</strong> (Peserta).
+            <ul>
+              <li>
+                Jika peserta adalah user internal, jadwal mereka akan muncul
+                (tumpang tindih) untuk membantu kita mencari waktu kosong
+                bersama.
+              </li>
+            </ul>
+          </li>
+          <li>
+            Klik <strong>More Options</strong> untuk pengaturan lengkap.
+          </li>
+          <li>
+            Untuk meeting online, klik tombol
+            <strong>Odoo Meeting</strong> (ikon kamera). Ini akan membuat link
+            video call otomatis via <em>Odoo Discuss</em>.
+          </li>
+        </ol>
+
+        <div class="image-placeholder">
+          <img src="../../../assets/images/getting-started/materi-7/step-2-details.png" alt="Meeting Details"
+            onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+          <span class="placeholder-text">📸 Screenshot: Form Meeting Details & Tombol Odoo Meeting</span>
+        </div>
+      </div>
+      <div class="step-footer">
+        <label>Selesai</label>
+        <input type="checkbox" class="mark-done" />
+      </div>
+    </section>
+
+    <section class="step-card">
+      <h2>3. Opsi Privasi & Pengingat</h2>
+      <div class="content">
+        <p>kita bisa mengatur pengingat agar tidak lupa jadwal meeting.</p>
+
+        <div class="alert info">
+          <strong>⚠️ Mengapa Opsi Privasi Hilang?</strong>
+          <br />Jika kita melihat screenshot, kita tidak memiliki kolom
+          <strong>Privacy</strong>, itu normal! <br /><strong>Alasannya:</strong>
+          Karena meeting ini dibuat dari CRM (terhubung ke Opportunity), Odoo
+          otomatis mengaturnya sebagai <strong>Shared/Internal</strong> agar
+          rekan tim sales kita bisa melihat jadwal tersebut. <br /><em>Opsi Privasi biasanya hanya muncul untuk meeting
+            personal yang
+            tidak terikat dokumen bisnis.</em>
+        </div>
+
+        <p><strong>Wajib Diisi: Reminders (Pengingat)</strong></p>
+        <ul class="instruction-list">
+          <li>Masuk ke tab <strong>Options</strong>.</li>
+          <li>Cari bagian <strong>Reminders</strong>.</li>
+          <li>
+            Pilih jenis notifikasi (misal:
+            <em>Notification 15 Minutes</em> atau <em>Email 1 Hour</em>).
+          </li>
+          <li>Klik <strong>Save</strong> (ikon Awan/Simpan).</li>
+        </ul>
+
+        <div class="image-placeholder">
+          <img src="../../../assets/images/getting-started/materi-7/step-3-privacy.png" alt="Privacy Settings"
+            onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+          <span class="placeholder-text">📸 Screenshot: Tab Options > Reminders</span>
+        </div>
+      </div>
+      <div class="step-footer">
+        <label>Selesai</label>
+        <input type="checkbox" class="mark-done" />
+      </div>
+    </section>
+
+    <section class="step-card quiz-card" id="materi-7-quiz">
+      <div class="quiz-progress-wrapper">
+        <div class="quiz-progress-bar" id="quizProgressBar"></div>
+      </div>
+      <h2>📝 Quiz Materi 7</h2>
+      <div class="quiz-container"></div>
+      <div class="step-footer">
+        <button class="quiz-submit-btn" onclick="checkQuiz()">
+          Periksa Jawaban
+        </button>
+        <div id="quizResult" style="display: none"></div>
+      </div>
+    </section>
+
+    <div id="nextActionArea" class="next-action-area" style="display: none">
+      <h3>🎉 Materi 7 Selesai!</h3>
+      <p>
+        kita kini bisa mengelola waktu tim dengan lebih efisien menggunakan
+        Odoo Calendar.
+      </p>
+      <a href="../../../getting-started/using-odoo/memulai-materi-8/index.html" class="btn-next">Lanjut ke Materi 8 ➔</a>
+    </div>
+
+    <footer class="footer">
+      <a href="../../../getting-started.html" style="text-decoration: none; color: #666; font-weight: 600">← Kembali ke
+        Dashboard</a>
+    </footer>
+  </main>
+
+  <script src="../../../assets/js/quiz-bank.js"></script>
+  <script src="../../../assets/js/lms-core.js"></script>
+  <script src="../../../assets/js/quiz-engine.js"></script>
+
+  <script>
+    // Inisialisasi Materi 7
+    document.addEventListener("DOMContentLoaded", () => {
+      initMateriProgress("materi7");
+      renderQuiz("materi7", ".quiz-container");
+
+      if (loadQuizResult("materi7")?.passed) {
+        const area = document.getElementById("nextActionArea");
+        if (area) area.style.display = "block";
+      }
+    });
+
+    const originalOnQuizPassed = window.onQuizPassed;
+    window.onQuizPassed = function (materiId, score) {
+      if (originalOnQuizPassed) originalOnQuizPassed(materiId, score);
+      const area = document.getElementById("nextActionArea");
+      if (area) {
+        area.style.display = "block";
+        setTimeout(() => {
+          area.scrollIntoView({ behavior: "smooth", block: "center" });
+        }, 500);
+      }
+    };
+
+    function toggleDark() {
+      document.body.classList.toggle("dark");
+      localStorage.setItem(
+        "darkMode",
+        document.body.classList.contains("dark")
+      );
+    }
+    if (localStorage.getItem("darkMode") === "true")
+      document.body.classList.add("dark");
+  </script>
+</body>
+
+</html>

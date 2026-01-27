@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Materi 3: Sinkronisasi Google Calendar | PembelajarBelajar</title>
+  <link rel="stylesheet" href="../../../assets/css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+  <div class="progress-wrapper">
+    <div class="progress-container" id="progressContainer">
+      <div class="progress-bar" id="progressBar"></div>
+      <span class="progress-label" id="progressLabel" style="top: 24px">0%</span>
+    </div>
+  </div>
+
+  <main class="container">
+    <button class="dark-toggle" onclick="toggleDark()">🌙</button>
+
+    <header class="header">
+      <div id="materiBadge" class="materi-badge" style="display: none">
+        🎓 Materi 3 Lulus
+      </div>
+      <span class="badge">Materi 3</span>
+      <h1>Sinkronisasi Google Calendar</h1>
+      <p class="subtitle">
+        Hubungkan jadwal Odoo kita dengan Google Calendar agar tetap sinkron
+        di semua perangkat.
+      </p>
+      <div class="image-placeholder">
+        <img src="../../../assets/images/getting-started/materi-3/infographic.png" alt="Form Nama Project"
+          onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+        <span class="placeholder-text">📸 Screenshot: Input nama project & tombol Create</span>
+      </div>
+    </header>
+
+    <section class="step-card">
+      <h2>1. Membuat Project di Google API Console</h2>
+      <div class="content">
+        <p>
+          Langkah pertama adalah membuat "wadah" di Google Cloud untuk
+          menampung izin akses Odoo.
+        </p>
+
+        <h3>A. Buat Project Baru</h3>
+        <ol class="instruction-list">
+          <li>
+            Buka
+            <a href="https://console.cloud.google.com/" target="_blank">Google Cloud Console</a>.
+          </li>
+          <li>
+            Klik dropdown nama project di bagian atas (sebelah logo Google
+            Cloud).
+          </li>
+          <li>
+            Pada jendela yang muncul, klik tombol
+            <strong>New Project</strong> di pojok kanan atas.
+          </li>
+        </ol>
+        <div class="image-placeholder">
+          <img src="../../../assets/images/getting-started/materi-3/step-1a-new-project.png" alt="Tombol New Project"
+            onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+          <span class="placeholder-text">📸 Screenshot: Jendela "Select a Project" & Tombol New
+            Project</span>
+        </div>
+
+        <div style="margin-top: 30px"></div>
+
+        <h3>B. Beri Nama Project</h3>
+        <ol class="instruction-list">
+          <li>
+            Isi kolom <strong>Project Name</strong> dengan nama:
+            <code>Odoo Calendar Project</code>.
+          </li>
+          <li>Biarkan "Location" apa adanya (biasanya 'No Organization').</li>
+          <li>
+            Klik tombol <strong>Create</strong> dan tunggu beberapa detik
+            hingga notifikasi selesai.
+          </li>
+        </ol>
+        <div class="image-placeholder">
+          <img src="../../../assets/images/getting-started/materi-3/step-1b-create-name.png" alt="Form Nama Project"
+            onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+          <span class="placeholder-text">📸 Screenshot: Input nama project & tombol Create</span>
+        </div>
+
+        <div style="margin-top: 30px"></div>
+
+        <h3>C. Aktifkan Google Calendar API</h3>
+        <ol class="instruction-list">
+          <li>
+            Pastikan project yang baru dibuat sudah terpilih di bagian atas.
+          </li>
+          <li>
+            Klik menu navigasi (garis tiga) >
+            <strong>APIs & Services</strong> > <strong>Library</strong>.
+          </li>
+          <li>Ketik <code>Google Calendar API</code> di kolom pencarian.</li>
+          <li>
+            Klik hasilnya, lalu tekan tombol biru bertuliskan
+            <strong>Enable</strong>.
+          </li>
+        </ol>
+        <div class="image-placeholder">
+          <img src="../../../assets/images/getting-started/materi-3/step-1c-enable-api.png" alt="Enable API"
+            onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+          <span class="placeholder-text">📸 Screenshot: Halaman detail API & Tombol Enable</span>
+        </div>
+      </div>
+      <div class="step-footer">
+        <label>Selesai</label>
+        <input type="checkbox" class="mark-done" />
+      </div>
+    </section>
+
+    <section class="step-card">
+      <h2>2. Konfigurasi OAuth (Google Auth Platform)</h2>
+      <div class="content">
+        <p>
+          Ikuti langkah-langkah di wizard "Google Auth Platform" secara
+          berurutan.
+        </p>
+
+        <h3>A. App Information</h3>
+        <ol class="instruction-list">
+          <li>
+            Klik tombol biru <strong>Get started</strong> di tengah layar.
+          </li>
+          <div class="image-placeholder">
+            <img src="../../../assets/images/getting-started/materi-3/step-2a1-branding.png" alt="Tombol Get Started"
+              onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+            <span class="placeholder-text">📸 Screenshot: Tampilan awal (Get Started)</span>
+          </div>
+
+          <li>Isi <strong>App name</strong>: <code>Odoo Calendar</code>.</li>
+          <li>Isi <strong>User support email</strong> dengan email kita.</li>
+          <li>Klik <strong>Next</strong>.</li>
+        </ol>
+        <div class="image-placeholder">
+          <img src="../../../assets/images/getting-started/materi-3/step-2a2-branding.png" alt="App Information"
+            onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+          <span class="placeholder-text">📸 Screenshot: Pengisian Nama Aplikasi & Email</span>
+        </div>
+
+        <div style="margin-top: 30px"></div>
+
+        <h3>B. Audience</h3>
+        <ol class="instruction-list">
+          <li>Pilih opsi: <strong>External</strong>.</li>
+          <li>Klik <strong>Next</strong>.</li>
+        </ol>
+        <div class="image-placeholder">
+          <img src="../../../assets/images/getting-started/materi-3/step-2b1-external.png" alt="Pilih External"
+            onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+          <span class="placeholder-text">📸 Screenshot: Memilih opsi "External"</span>
+        </div>
+
+        <div style="margin-top: 30px"></div>
+
+        <h3>C. Contact Information & Finish</h3>
+        <ol class="instruction-list">
+          <li>
+            Pada kolom <strong>Email addresses</strong>, masukkan kembali
+            email kita.
+          </li>
+          <li>Klik <strong>Next</strong>.</li>
+          <li>
+            Pada halaman <strong>Finish</strong>, tinjau data lalu klik tombol
+            <strong>Create</strong>.
+          </li>
+        </ol>
+        <div class="image-placeholder">
+          <img src="../../../assets/images/getting-started/materi-3/step-2c-contact.png" alt="Contact Information"
+            onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+          <span class="placeholder-text">📸 Screenshot: Mengisi Email di Contact Information</span>
+        </div>
+
+        <div style="margin-top: 30px"></div>
+
+        <h3>D. Test Users & Publish (Masuk dari Sidebar)</h3>
+        <div class="alert warning">
+          ⚠️ <strong>Wajib:</strong> kita sekarang berada di halaman
+          <strong>Overview</strong>. kita harus masuk ke menu Audience untuk
+          menyelesaikan setup.
+        </div>
+        <ol class="instruction-list">
+          <li>
+            Lihat menu di sebelah kiri (Sidebar), klik menu
+            <strong>Audience</strong>.
+          </li>
+          <li>Scroll ke bagian <strong>Test users</strong>.</li>
+          <li>
+            Klik <strong>Add Users</strong>, masukkan email Google kita, lalu
+            Simpan.
+          </li>
+          <div class="image-placeholder">
+            <img src="../../../assets/images/getting-started/materi-3/step-2d-1-contact.png" alt="Contact Information"
+              onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+            <span class="placeholder-text">📸 Screenshot: Mengisi Email di Contact Information</span>
+          </div>
+          <li>
+            Cari tombol <strong>PUBLISH APP</strong> (biasanya di bagian
+            "Verification Status").
+          </li>
+          <li>
+            Konfirmasi hingga status berubah menjadi
+            <strong>In production</strong>.
+          </li>
+        </ol>
+        <div class="image-placeholder">
+          <img src="../../../assets/images/getting-started/materi-3/step-2d-publish.png" alt="Menu Audience Sidebar"
+            onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+          <span class="placeholder-text">📸 Screenshot: Klik menu 'Audience' di kiri, lalu tambah Test
+            Users</span>
+        </div>
+      </div>
+      <div class="step-footer">
+        <label>Selesai</label>
+        <input type="checkbox" class="mark-done" />
+      </div>
+    </section>
+
+    <section class="step-card">
+      <h2>3. Membuat Client ID & Client Secret</h2>
+      <div class="content">
+        <p>Dapatkan "kunci" untuk dimasukkan ke Odoo.</p>
+        <ol class="instruction-list">
+          <li>
+            Klik menu <strong>Credentials</strong> >
+            <strong>Create Credentials</strong> >
+            <strong>OAuth client ID</strong>.
+          </li>
+
+          <div class="image-placeholder">
+            <img src="../../../assets/images/getting-started/materi-3/step-3-credentials-1.png" alt="Create Credentials"
+              onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+            <span class="placeholder-text">📸 Screenshot: Pengisian Authorized Redirect URIs</span>
+          </div>
+          <li>Application type: <strong>Web application</strong>.</li>
+          <div class="image-placeholder">
+            <img src="../../../assets/images/getting-started/materi-3/step-3-credentials-2.png" alt="Create Credentials"
+              onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+            <span class="placeholder-text">📸 Screenshot: Pengisian Authorized Redirect URIs</span>
+          </div>
+          <li>
+            <strong>Authorized JavaScript Origins:</strong> Masukkan URL
+            database Odoo kita (Contoh: <code>https://naufal.odoo.com</code>).
+          </li>
+          <li>
+            <strong>Authorized redirect URIs:</strong> Masukkan URL database
+            diikuti kode berikut: <br />
+            <code>/google_account/authentication</code>
+          </li>
+          <li>Klik <strong>Create</strong>.</li>
+        </ol>
+
+        <div class="image-placeholder">
+          <img src="../../../assets/images/getting-started/materi-3/step-3-credentials.png" alt="Create Credentials"
+            onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+          <span class="placeholder-text">📸 Screenshot: Pengisian Authorized Redirect URIs</span>
+        </div>
+
+        <div class="alert warning">
+          Simpan <strong>Client ID</strong> dan
+          <strong>Client Secret</strong> yang muncul. Jangan bagikan kode ini
+          kepada siapapun!
+        </div>
+      </div>
+      <div class="step-footer">
+        <label>Selesai</label>
+        <input type="checkbox" class="mark-done" />
+      </div>
+    </section>
+
+    <section class="step-card">
+      <h2>4. Pengaturan di Sisi Odoo</h2>
+      <div class="content">
+        <p>Sekarang, masukkan kunci dari Google ke dalam Odoo.</p>
+        <ol class="instruction-list">
+          <li>Buka aplikasi <strong>Calendar</strong> di Odoo.</li>
+          <li>Masuk ke menu <strong>Configuration > Settings</strong>.</li>
+          <li>Centang opsi <strong>Google Calendar</strong>.</li>
+          <li>
+            Masukkan <strong>Client ID</strong> dan
+            <strong>Client Secret</strong> yang kita dapatkan tadi.
+          </li>
+          <li>Klik <strong>Save</strong>.</li>
+        </ol>
+
+        <div class="image-placeholder">
+          <img src="../../../assets/images/getting-started/materi-3/step-4-odoo-settings.png" alt="Odoo Calendar Settings"
+            onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+          <span class="placeholder-text">📸 Screenshot: Odoo Calendar Settings
+            (materi-3-step-4-odoo-settings.png)</span>
+        </div>
+      </div>
+      <div class="step-footer">
+        <label>Selesai</label>
+        <input type="checkbox" class="mark-done" />
+      </div>
+    </section>
+
+    <section class="step-card">
+      <h2>5. Melakukan Sinkronisasi</h2>
+      <div class="content">
+        <p>
+          Langkah terakhir adalah mengaktifkan sinkronisasi di tampilan
+          kalender.
+        </p>
+        <ul class="instruction-list">
+          <li>Kembali ke tampilan kalender utama Odoo.</li>
+          <li>
+            Klik tombol <strong>Sync with Google</strong> yang baru muncul di
+            sisi kanan.
+          </li>
+          <li>Pilih akun Google kita dan berikan izin akses.</li>
+        </ul>
+
+        <div class="image-placeholder">
+          <img src="../../../assets/images/getting-started/materi-3/step-5-sync.png" alt="Tombol Sync"
+            onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+          <span class="placeholder-text">📸 Screenshot: Tombol Sync with Google di Kalender</span>
+        </div>
+
+        <div class="alert danger">
+          <strong>Hati-hati:</strong> Jika kita menghapus atau mengubah jadwal
+          di Odoo, perubahan tersebut akan langsung terkirim ke Google
+          Calendar peserta meeting. Gunakan database tes untuk eksperimen!
+        </div>
+      </div>
+      <div class="step-footer">
+        <label>Selesai</label>
+        <input type="checkbox" class="mark-done" />
+      </div>
+    </section>
+
+    <section class="step-card quiz-card" id="materi-3-quiz">
+      <div class="quiz-progress-wrapper">
+        <div class="quiz-progress-bar" id="quizProgressBar"></div>
+      </div>
+      <h2>📝 Quiz Materi 3</h2>
+      <div class="quiz-container"></div>
+      <div class="step-footer">
+        <button class="quiz-submit-btn" onclick="checkQuiz()">
+          Periksa Jawaban
+        </button>
+        <div id="quizResult" style="display: none"></div>
+      </div>
+    </section>
+
+    <div id="nextActionArea" class="next-action-area" style="display: none">
+      <h3>🎉 Materi 3 Selesai!</h3>
+      <p>
+        kita telah berhasil menghubungkan Odoo dengan layanan eksternal via
+        API.
+      </p>
+      <a href="../memulai-materi-4/index.html" class="btn-next">
+        Lanjut ke Materi 4 ➔
+      </a>
+    </div>
+
+    <footer class="footer">
+      <a href="../../../getting-started.html" style="text-decoration: none; color: #666; font-weight: 600">← Kembali ke Dashboard</a>
+    </footer>
+  </main>
+
+  <script src="../../../assets/js/quiz-bank.js"></script>
+  <script src="../../../assets/js/lms-core.js"></script>
+  <script src="../../../assets/js/quiz-engine.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      initMateriProgress("materi3");
+      renderQuiz("materi3", ".quiz-container");
+
+      if (loadQuizResult("materi3")?.passed) {
+        const area = document.getElementById("nextActionArea");
+        if (area) area.style.display = "block";
+      }
+    });
+
+    const originalOnQuizPassed = window.onQuizPassed;
+    window.onQuizPassed = function (materiId, score) {
+      if (originalOnQuizPassed) originalOnQuizPassed(materiId, score);
+
+      const area = document.getElementById("nextActionArea");
+      if (area) {
+        area.style.display = "block";
+        setTimeout(() => {
+          area.scrollIntoView({ behavior: "smooth", block: "center" });
+        }, 500);
+      }
+    };
+
+    function toggleDark() {
+      document.body.classList.toggle("dark");
+      localStorage.setItem(
+        "darkMode",
+        document.body.classList.contains("dark")
+      );
+    }
+    if (localStorage.getItem("darkMode") === "true")
+      document.body.classList.add("dark");
+  </script>
+</body>
+
+</html>

@@ -31,7 +31,8 @@
 
   <main class="container" style="margin-top: 60px">
     <section class="materi-dashboard">
-      <a href="./getting-started/memulai-materi-1/index.html" class="step-card materi-card" id="card-materi1">
+      <a href="./getting-started/getting-started/memulai-materi-1/index.html" class="step-card materi-card"
+        id="card-materi1">
         <div class="materi-card-header">
           <span class="badge">Materi 1</span>
           <span class="materi-status" id="status-materi1">🔓</span>
@@ -127,6 +128,62 @@
         </div>
         <small id="label-materi7">Terkunci</small>
       </div>
+
+      <div class="step-card materi-card locked" id="card-materi8">
+        <div class="lock-overlay">🔒 Selesaikan Materi 7</div>
+        <div class="materi-card-header">
+          <span class="badge">Materi 8</span>
+          <span class="materi-status" id="status-materi8">🔒</span>
+        </div>
+        <h2>Schedule Activities</h2>
+        <p>Komunikasi tim dan penjadwalan aktivitas</p>
+        <div class="materi-progress">
+          <div class="materi-progress-bar" id="progress-materi8"></div>
+        </div>
+        <small id="label-materi8">Terkunci</small>
+      </div>
+
+      <div class="step-card materi-card locked" id="card-materi9">
+        <div class="lock-overlay">🔒 Selesaikan Materi 8</div>
+        <div class="materi-card-header">
+          <span class="badge">Materi 9</span>
+          <span class="materi-status" id="status-materi9">🔒</span>
+        </div>
+        <h2>Mengelola Kontak (Contacts)</h2>
+        <p>Pusat data pelanggan & vendor</p>
+        <div class="materi-progress">
+          <div class="materi-progress-bar" id="progress-materi9"></div>
+        </div>
+        <small id="label-materi9">Terkunci</small>
+      </div>
+
+      <div class="step-card materi-card locked" id="card-materi10">
+        <div class="lock-overlay">🔒 Selesaikan Materi 9</div>
+        <div class="materi-card-header">
+          <span class="badge">Materi 10</span>
+          <span class="materi-status" id="status-materi10">🔒</span>
+        </div>
+        <h2>Import & Export Data</h2>
+        <p>Cara memindahkan data massal</p>
+        <div class="materi-progress">
+          <div class="materi-progress-bar" id="progress-materi10"></div>
+        </div>
+        <small id="label-materi10">Terkunci</small>
+      </div>
+
+      <div class="step-card materi-card locked" id="card-materi11">
+        <div class="lock-overlay">🔒 Selesaikan Materi 10</div>
+        <div class="materi-card-header">
+          <span class="badge">Materi 11</span>
+          <span class="materi-status" id="status-materi11">🔒</span>
+        </div>
+        <h2>Chatter Basic</h2>
+        <p>Pusat Komunikasi & Log Aktivitas</p>
+        <div class="materi-progress">
+          <div class="materi-progress-bar" id="progress-materi11"></div>
+        </div>
+        <small id="label-materi11">Terkunci</small>
+      </div>
     </section>
 
   </main>
@@ -146,13 +203,17 @@
       // --- KONFIGURASI ALUR MATERI ---
       // --- KONFIGURASI ALUR MATERI ---
       const modules = [
-        { id: "materi1", link: "./getting-started/memulai-materi-1/index.html", nextCard: "card-materi2" },
-        { id: "materi2", link: "./getting-started/memulai-materi-2/index.html", nextCard: "card-materi3" },
-        { id: "materi3", link: "./getting-started/memulai-materi-3/index.html", nextCard: "card-materi4" },
-        { id: "materi4", link: "./getting-started/memulai-materi-4/index.html", nextCard: "card-materi5" },
-        { id: "materi5", link: "./getting-started/memulai-materi-5/index.html", nextCard: "card-materi6" },
-        { id: "materi6", link: "./getting-started/memulai-materi-6/index.html", nextCard: "card-materi7" },
-        { id: "materi7", link: "./getting-started/memulai-materi-7/index.html", nextCard: null }
+        { id: "materi1", link: "./getting-started/getting-started/memulai-materi-1/index.html", nextCard: "card-materi2" },
+        { id: "materi2", link: "./getting-started/getting-started/memulai-materi-2/index.html", nextCard: "card-materi3" },
+        { id: "materi3", link: "./getting-started/getting-started/memulai-materi-3/index.html", nextCard: "card-materi4" },
+        { id: "materi4", link: "./getting-started/getting-started/memulai-materi-4/index.html", nextCard: "card-materi5" },
+        { id: "materi5", link: "./getting-started/getting-started/memulai-materi-5/index.html", nextCard: "card-materi6" },
+        { id: "materi6", link: "./getting-started/getting-started/memulai-materi-6/index.html", nextCard: "card-materi7" },
+        { id: "materi7", link: "./getting-started/using-odoo/memulai-materi-7/index.html", nextCard: "card-materi8" },
+        { id: "materi8", link: "./getting-started/using-odoo/memulai-materi-8/index.html", nextCard: "card-materi9" },
+        { id: "materi9", link: "./getting-started/using-odoo/memulai-materi-9/index.html", nextCard: "card-materi10" },
+        { id: "materi10", link: "./getting-started/using-odoo/memulai-materi-10/index.html", nextCard: "card-materi11" },
+        { id: "materi11", link: "./getting-started/using-odoo/memulai-materi-11/index.html", nextCard: null }
       ];
 
       let completedCount = 0;

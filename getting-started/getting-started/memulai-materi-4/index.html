@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Materi 4: Filter & Tampilan Odoo | PembelajarBelajar</title>
+  <link rel="stylesheet" href="../../../assets/css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+  <div class="progress-wrapper">
+    <div class="progress-container" id="progressContainer">
+      <div class="progress-bar" id="progressBar"></div>
+      <span class="progress-label" id="progressLabel" style="top: 24px">0%</span>
+    </div>
+  </div>
+
+  <main class="container">
+    <button class="dark-toggle" onclick="toggleDark()">🌙</button>
+
+    <header class="header">
+      <div id="materiBadge" class="materi-badge" style="display: none">
+        🎓 Materi 4 Lulus
+      </div>
+      <span class="badge">Materi 4</span>
+      <h1>Filter, Grup, & Tampilan</h1>
+      <p class="subtitle">
+        Belajar cara mengelola data dengan filter canggih dan mengubah
+        tampilan sesuai kebutuhan kita.
+      </p>
+      <div class="image-placeholder">
+        <img src="../../../assets/images/getting-started/materi-4/infographic.png" alt="Form Nama Project"
+          onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+        <span class="placeholder-text">📸 Screenshot: Input nama project & tombol Create</span>
+      </div>
+    </header>
+
+    <section class="step-card">
+      <h2>1. Menggunakan Filter & Pencarian</h2>
+      <div class="content">
+        <p>
+          Odoo memungkinkan kita menyaring ribuan data hanya dalam hitungan
+          detik.
+        </p>
+        <ol class="instruction-list">
+          <li>
+            Buka aplikasi <strong>Sales</strong>. Perhatikan bar pencarian di
+            kanan atas.
+          </li>
+          <li>
+            Secara default, filter <strong>My Quotations</strong> aktif. Klik
+            tkita <strong>X</strong> untuk menghapusnya dan melihat semua
+            data.
+          </li>
+          <li>
+            Klik ikon dropdown (tkita panah bawah) di search bar untuk membuka
+            menu filter.
+          </li>
+          <li>
+            Coba pilih filter stkitar (seperti <em>Quotations</em> atau
+            <em>Sales Orders</em>).
+          </li>
+        </ol>
+
+        <div class="image-placeholder">
+          <img src="../../../assets/images/getting-started/materi-4/step-1-filters.png" alt="Odoo Filters"
+            onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+          <span class="placeholder-text">📸 Screenshot: Menu dropdown Filter di aplikasi Sales</span>
+        </div>
+      </div>
+      <div class="step-footer">
+        <label>Selesai</label>
+        <input type="checkbox" class="mark-done" />
+      </div>
+    </section>
+
+    <section class="step-card">
+      <h2>2. Menambahkan Salesperson Baru</h2>
+      <div class="content">
+        <p>
+          Agar fitur pengelompokan (Group By) lebih terlihat efeknya, mari
+          kita buat satu user tambahan sebagai Salesperson.
+        </p>
+        <ol class="instruction-list">
+          <li>Buka menu utama (Home), masuk ke <strong>Settings</strong>.</li>
+          <li>
+            Klik menu <strong>Users & Companies</strong> >
+            <strong>Users</strong> di bagian atas.
+          </li>
+          <li>Klik tombol <strong>New</strong>.</li>
+          <li>
+            Isi Nama: misal <strong>Budi Sales</strong> (Login bebas, misal:
+            <em>budi@test.com</em>).
+          </li>
+          <li>
+            <strong>PENTING:</strong> Di tab <em>Access Rights</em>, cari
+            bagian <strong>Sales</strong> dan pilih
+            <strong>User: All Documents</strong>.
+          </li>
+          <li>Klik ikon awan (Save) untuk menyimpan.</li>
+        </ol>
+        <div class="alert warning">
+          Jika hak akses Sales tidak diisi, user ini tidak akan muncul sebagai
+          opsi Salesperson.
+        </div>
+        <div class="image-placeholder">
+          <img src="../../../assets/images/getting-started/materi-4/step-2-add-user.png" alt="Add Salesperson"
+            onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+          <span class="placeholder-text">📸 Screenshot: Form User baru dengan sorotan pada Access Rights >
+            Sales</span>
+        </div>
+      </div>
+      <div class="step-footer">
+        <label>Selesai</label>
+        <input type="checkbox" class="mark-done" />
+      </div>
+    </section>
+
+    <section class="step-card">
+      <h2>3. Mengelompokkan Data (Group By)</h2>
+      <div class="content">
+        <p>
+          Sekarang, mari kita kelompokkan data penjualan berdasarkan
+          Salesperson yang baru kita buat.
+        </p>
+        <ol class="instruction-list">
+          <li>Kembali ke aplikasi <strong>Sales</strong>.</li>
+          <li>
+            Buka menu dropdown pencarian, pilih tab <strong>Group By</strong>.
+          </li>
+          <li>Pilih <strong>Salesperson</strong>.</li>
+          <li>
+            Data sekarang terpisah menjadi beberapa kelompok (Admin, Budi
+            Sales, dll).
+          </li>
+        </ol>
+        <div class="image-placeholder">
+          <img src="../../../assets/images/getting-started/materi-4/step-3-groupby.png" alt="Group By Odoo"
+            onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+          <span class="placeholder-text">📸 Screenshot: Data Sales yang dikelompokkan (header biru per
+            nama user)</span>
+        </div>
+      </div>
+      <div class="step-footer">
+        <label>Selesai</label>
+        <input type="checkbox" class="mark-done" />
+      </div>
+    </section>
+
+    <section class="step-card">
+      <h2>4. Menyimpan Filter Favorit</h2>
+      <div class="content">
+        <p>
+          Jangan habiskan waktu mencari filter yang sama setiap hari. Simpan
+          saja!
+        </p>
+        <ol class="instruction-list">
+          <li>
+            Setelah mengatur filter/grup yang kita suka, klik tab
+            <strong>Favorites</strong> di menu dropdown.
+          </li>
+          <li>
+            Klik <strong>Save current search</strong>. Beri nama, misalnya
+            <code>Laporan Tim</code>.
+          </li>
+          <li>
+            Centang <strong>Use by default</strong> jika ingin filter ini
+            aktif otomatis.
+          </li>
+          <li>Klik <strong>Save</strong>.</li>
+        </ol>
+        <div class="image-placeholder">
+          <img src="../../../assets/images/getting-started/materi-4/step-4-favorites.png" alt="Save Favorites"
+            onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+          <span class="placeholder-text">📸 Screenshot: Menu Favorites > Save current search</span>
+        </div>
+      </div>
+      <div class="step-footer">
+        <label>Selesai</label>
+        <input type="checkbox" class="mark-done" />
+      </div>
+    </section>
+
+    <section class="step-card">
+      <h2>5. Mengenal Jenis-Jenis Tampilan (Views)</h2>
+      <div class="content">
+        <p>
+          Odoo memiliki berbagai cara untuk menampilkan data. Navigasi ini ada
+          di pojok kanan atas.
+        </p>
+
+        <h3>A. List View (Daftar)</h3>
+        <p>
+          Tampilan tabel stkitar. Cocok untuk melihat detail banyak data
+          sekaligus.
+        </p>
+        <div class="image-placeholder">
+          <img src="../../../assets/images/getting-started/materi-4/step-5a-list.png" alt="List View"
+            onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+          <span class="placeholder-text">📸 Screenshot: Tampilan List View (Tabel)</span>
+        </div>
+        <div style="margin-top: 30px"></div>
+
+        <h3>B. Kanban View (Kartu)</h3>
+        <p>
+          Tampilan visual kartu. Coba <strong>Drag & Drop</strong> kartu
+          pesanan dari kolom Admin ke kolom Budi Sales (pastikan Group By
+          Salesperson aktif).
+        </p>
+        <div class="image-placeholder">
+          <img src="../../../assets/images/getting-started/materi-4/step-5b-kanban.png" alt="Kanban View"
+            onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+          <span class="placeholder-text">📸 Screenshot: Tampilan Kanban (Kartu-kartu)</span>
+        </div>
+        <div style="margin-top: 30px"></div>
+
+        <h3>C. Calendar View</h3>
+        <p>Melihat jadwal dokumen berdasarkan tanggal.</p>
+        <div class="image-placeholder">
+          <img src="../../../assets/images/getting-started/materi-4/step-5c-calendar.png" alt="Calendar View"
+            onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+          <span class="placeholder-text">📸 Screenshot: Tampilan Kalender</span>
+        </div>
+        <div style="margin-top: 30px"></div>
+
+        <h3>D. Pivot View</h3>
+        <p>
+          Tabel analisis data (seperti Excel Pivot) untuk laporan ringkasan.
+        </p>
+        <div class="image-placeholder">
+          <img src="../../../assets/images/getting-started/materi-4/step-5d-pivot.png" alt="Pivot View"
+            onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+          <span class="placeholder-text">📸 Screenshot: Tampilan Pivot Table</span>
+        </div>
+        <div style="margin-top: 30px"></div>
+
+        <h3>E. Graph View</h3>
+        <p>Visualisasi data (Bar, Line, Pie Chart).</p>
+        <div class="image-placeholder">
+          <img src="../../../assets/images/getting-started/materi-4/step-5e-graph.png" alt="Graph View"
+            onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+          <span class="placeholder-text">📸 Screenshot: Tampilan Grafik</span>
+        </div>
+        <div style="margin-top: 30px"></div>
+
+        <h3>F. Activity View (Aktivitas)</h3>
+        <p>
+          Melihat jadwal tugas (To-Do, Email, Call). <br />🔴 Merah: Terlambat
+          | 🟢 Hijau: Akan datang | 🟡 Kuning: Hari ini
+        </p>
+        <div class="image-placeholder">
+          <img src="../../../assets/images/getting-started/materi-4/step-5f-activity.png" alt="Activity View"
+            onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+          <span class="placeholder-text">📸 Screenshot: Tampilan Activity (Grid warna-warni)</span>
+        </div>
+        <div style="margin-top: 30px"></div>
+
+        <h3>G. Map View (Peta)</h3>
+        <p>Menampilkan lokasi partner di peta.</p>
+        <div class="image-placeholder">
+          <img src="../../../assets/images/getting-started/materi-4/step-5g-map.png" alt="Map View"
+            onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+          <span class="placeholder-text">📸 Screenshot: Tampilan Peta dengan pin lokasi</span>
+        </div>
+      </div>
+      <div class="step-footer">
+        <label>Selesai</label>
+        <input type="checkbox" class="mark-done" />
+      </div>
+    </section>
+
+    <section class="step-card quiz-card" id="materi-4-quiz">
+      <div class="quiz-progress-wrapper">
+        <div class="quiz-progress-bar" id="quizProgressBar"></div>
+      </div>
+      <h2>📝 Quiz Materi 4</h2>
+      <div class="quiz-container"></div>
+      <div class="step-footer">
+        <button class="quiz-submit-btn" onclick="checkQuiz()">
+          Periksa Jawaban
+        </button>
+        <div id="quizResult" style="display: none"></div>
+      </div>
+    </section>
+
+    <div id="nextActionArea" class="next-action-area" style="display: none">
+      <h3>🎉 Materi 4 Selesai!</h3>
+      <p>kita sekarang adalah ahli navigasi data di Odoo!</p>
+      <a href="../memulai-materi-5/index.html" class="btn-next">
+        Lanjut ke Materi 5 ➔
+      </a>
+    </div>
+
+    <footer class="footer">
+      <a href="../../../getting-started.html" style="text-decoration: none; color: #666; font-weight: 600">← Kembali ke Dashboard</a>
+    </footer>
+  </main>
+
+  <script src="../../../assets/js/quiz-bank.js"></script>
+  <script src="../../../assets/js/lms-core.js"></script>
+  <script src="../../../assets/js/quiz-engine.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      initMateriProgress("materi4");
+      renderQuiz("materi4", ".quiz-container");
+
+      if (loadQuizResult("materi4")?.passed) {
+        const area = document.getElementById("nextActionArea");
+        if (area) area.style.display = "block";
+      }
+    });
+
+    const originalOnQuizPassed = window.onQuizPassed;
+    window.onQuizPassed = function (materiId, score) {
+      if (originalOnQuizPassed) originalOnQuizPassed(materiId, score);
+
+      const area = document.getElementById("nextActionArea");
+      if (area) {
+        area.style.display = "block";
+        setTimeout(() => {
+          area.scrollIntoView({ behavior: "smooth", block: "center" });
+        }, 500);
+      }
+    };
+
+    function toggleDark() {
+      document.body.classList.toggle("dark");
+      localStorage.setItem(
+        "darkMode",
+        document.body.classList.contains("dark")
+      );
+    }
+    if (localStorage.getItem("darkMode") === "true")
+      document.body.classList.add("dark");
+  </script>
+</body>
+
+</html>
