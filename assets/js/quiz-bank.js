@@ -380,5 +380,40 @@ window.QUIZ_BANK = {
       ],
       correct: "Ikon Gear → Import Records"
     }
+  ],
+  /* =====================================================
+     MATERI 11 — CHATTER BASIC
+     ===================================================== */
+  materi11: [
+    {
+      question: "Jenis informasi apa yang ditampilkan di Chatter?",
+      options: [
+        "Hanya pesan dan email",
+        "Perubahan field, pesan, catatan, dan aktivitas terjadwal",
+        "Hanya acara kalender",
+        "Pengaturan dan konfigurasi sistem"
+      ],
+      correct: "Perubahan field, pesan, catatan, dan aktivitas terjadwal"
+    },
+    {
+      question: "Apa yang terjadi ketika Anda mengklik ikon bintang pada entri Chatter?",
+      options: [
+        "Menandai pesan sebagai telah dibaca",
+        "Mengirim pesan ke manajer Anda",
+        "Menghapus entri Chatter",
+        "Menyimpan entri tersebut ke folder Starred di aplikasi Discuss"
+      ],
+      correct: "Menyimpan entri tersebut ke folder Starred di aplikasi Discuss"
+    },
+    {
+      question: "Apa yang terjadi ketika Anda mengklik Log setelah menulis catatan?",
+      options: [
+        "Catatan muncul di Chatter dan memberi notifikasi kepada pengguna internal yang di-tag",
+        "Catatan dikirim sebagai email",
+        "Record ditutup secara otomatis",
+        "Catatan disembunyikan dari semua pengikut"
+      ],
+      correct: "Catatan muncul di Chatter dan memberi notifikasi kepada pengguna internal yang di-tag"
+    }
   ]
 };

@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Materi 11: Chatter Basic | PembelajarBelajar</title>
+    <link rel="stylesheet" href="../../../assets/css/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="progress-wrapper">
+        <div class="progress-container" id="progressContainer">
+            <div class="progress-bar" id="progressBar"></div>
+            <span class="progress-label" id="progressLabel" style="top: 24px">0%</span>
+        </div>
+    </div>
+
+    <main class="container">
+        <button class="dark-toggle" onclick="toggleDark()">🌙</button>
+
+        <header class="header">
+            <div id="materiBadge" class="materi-badge" style="display: none">
+                🎓 Materi 11 Lulus
+            </div>
+            <span class="badge">Materi 11</span>
+            <h1>Chatter Basic</h1>
+            <p class="subtitle">
+                Pusat komunikasi dan riwayat aktivitas untuk setiap dokumen di Odoo.
+            </p>
+
+            <div class="image-placeholder" style="margin-top: 20px">
+                <img src="../../../assets/images/getting-started/materi-11/infographic.png" alt="Ilustrasi Chatter"
+                    onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+                <span class="placeholder-text">📸 Ilustrasi Utama: Tampilan Chatter (Send Message, Log Note)</span>
+            </div>
+        </header>
+
+        <section class="step-card">
+            <h2>1. Apa itu Chatter?</h2>
+            <div class="content">
+                <p>
+                    <strong>Chatter</strong> adalah area komunikasi yang biasanya terletak di sebelah kanan (pada layar
+                    desktop besar) atau di bagian bawah (pada layar kecil) dari setiap form dokumen Odoo (seperti Sales
+                    Order, Invoice, atau Contact).
+                </p>
+                <p>Chatter berfungsi sebagai:</p>
+                <ul>
+                    <li><strong>Riwayat Audit:</strong> Mencatat setiap perubahan data (misal: siapa yang mengubah
+                        status dari Draft menjadi Confirmed).</li>
+                    <li><strong>Alat Komunikasi:</strong> Mengirim email ke eksternal atau catatan internal ke tim.</li>
+                    <li><strong>Penjadwalan:</strong> Mengatur aktivitas (Meeting, To-Do, Call) terkait dokumen
+                        tersebut.</li>
+                </ul>
+
+                <div class="image-placeholder">
+                    <img src="../../../assets/images/getting-started/materi-11/step-1-chatter-overview.png"
+                        alt="Chatter Overview"
+                        onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+                    <span class="placeholder-text">📸 Screenshot: Area Chatter dengan history log</span>
+                </div>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>2. Send Message vs Log Note</h2>
+            <div class="content">
+                <p>Ada dua cara utama untuk berkomunikasi di Chatter:</p>
+
+                <div class="deep-dive">
+                    <h3>📢 Send Message</h3>
+                    <p>
+                        Gunakan ini untuk mengirim pesan yang <strong>juga dikirim sebagai EMAIL</strong> ke pengikut
+                        (followers) dokumen tersebut, termasuk pelanggan (jika mereka adalah followers).
+                        <br><em>Cocok untuk: Membalas email klien, mengirim penawaran, update status ke semua
+                            pihak.</em>
+                    </p>
+                </div>
+
+                <div class="deep-dive">
+                    <h3>📝 Log Note</h3>
+                    <p>
+                        Gunakan ini untuk membuat catatan <strong>INTERNAL</strong>. Pesan ini <strong>hanya terlihat
+                            oleh pengguna internal</strong> (karyawan) dan tidak akan dikirim ke pelanggan eksternal.
+                        <br><em>Cocok untuk: Diskusi tim, catatan approval, pengingat untuk rekan kerja.</em>
+                    </p>
+                    <div class="alert info">
+                        <strong>Tips:</strong> Saat Anda mengklik "Log" setelah menulis catatan, pesan tersebut akan
+                        muncul di Chatter dan notifikasi akan dikirim hanya kepada pengguna internal yang di-tag
+                        (menggunakan @nama).
+                    </div>
+                </div>
+
+                <div class="image-placeholder">
+                    <img src="../../../assets/images/getting-started/materi-11/step-2-send-vs-log.png"
+                        alt="Tab Send Message dan Log Note"
+                        onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+                    <span class="placeholder-text">📸 Screenshot: Perbedaan tombol Send Message dan Log Note</span>
+                </div>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>3. Fitur Tambahan (Star & Attachments)</h2>
+            <div class="content">
+                <ul class="technical-list">
+                    <li><strong>⭐ Star Icon:</strong> Setiap pesan di Chatter memiliki ikon bintang kecil. Jika diklik,
+                        pesan tersebut akan disimpan ke folder <strong>Starred</strong> di aplikasi
+                        <strong>Discuss</strong> Anda untuk akses cepat nanti.</li>
+                    <li><strong>📎 Attachments:</strong> Anda dapat melihat semua file yang diunggah ke dokumen ini
+                        melalui menu Attachments di bagian atas Chatter.</li>
+                </ul>
+
+                <div class="image-placeholder">
+                    <img src="../../../assets/images/getting-started/materi-11/step-3-star-icon.png"
+                        alt="Ikon Bintang di Chatter"
+                        onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+                    <span class="placeholder-text">📸 Screenshot: Menandai pesan dengan Bintang (Star)</span>
+                </div>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card quiz-card" id="materi-11-quiz">
+            <div class="quiz-progress-wrapper">
+                <div class="quiz-progress-bar" id="quizProgressBar"></div>
+            </div>
+            <h2>📝 Quiz Materi 11</h2>
+            <div class="quiz-container"></div>
+            <div class="step-footer">
+                <button class="quiz-submit-btn" onclick="checkQuiz()">
+                    Periksa Jawaban
+                </button>
+                <div id="quizResult" style="display: none"></div>
+            </div>
+        </section>
+
+        <div id="nextActionArea" class="next-action-area" style="display: none">
+            <h3>🎉 Materi 11 Selesai!</h3>
+            <p>
+                Anda kini memahami cara menggunakan Chatter untuk komunikasi yang efektif.
+            </p>
+            <a href="../../../getting-started.html" class="btn-next">Kembali ke Dashboard Utama ➔</a>
+        </div>
+
+        <footer class="footer">
+            <a href="../../../getting-started.html" style="text-decoration: none; color: #666; font-weight: 600">←
+                Kembali ke
+                Dashboard</a>
+        </footer>
+    </main>
+
+    <script src="../../../assets/js/quiz-bank.js"></script>
+    <script src="../../../assets/js/lms-core.js"></script>
+    <script src="../../../assets/js/quiz-engine.js"></script>
+
+    <script>
+        // Inisialisasi Materi 11
+        document.addEventListener("DOMContentLoaded", () => {
+            initMateriProgress("materi11");
+            renderQuiz("materi11", ".quiz-container");
+
+            if (loadQuizResult("materi11")?.passed) {
+                const area = document.getElementById("nextActionArea");
+                if (area) area.style.display = "block";
+            }
+        });
+
+        const originalOnQuizPassed = window.onQuizPassed;
+        window.onQuizPassed = function (materiId, score) {
+            if (originalOnQuizPassed) originalOnQuizPassed(materiId, score);
+            const area = document.getElementById("nextActionArea");
+            if (area) {
+                area.style.display = "block";
+                setTimeout(() => {
+                    area.scrollIntoView({ behavior: "smooth", block: "center" });
+                }, 500);
+            }
+        };
+
+        function toggleDark() {
+            document.body.classList.toggle("dark");
+            localStorage.setItem(
+                "darkMode",
+                document.body.classList.contains("dark")
+            );
+        }
+        if (localStorage.getItem("darkMode") === "true")
+            document.body.classList.add("dark");
+    </script>
+</body>
+
+</html>

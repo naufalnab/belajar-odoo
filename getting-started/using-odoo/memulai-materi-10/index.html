@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Materi 10: Import & Export Data | PembelajarBelajar</title>
+    <link rel="stylesheet" href="../../../assets/css/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="progress-wrapper">
+        <div class="progress-container" id="progressContainer">
+            <div class="progress-bar" id="progressBar"></div>
+            <span class="progress-label" id="progressLabel" style="top: 24px">0%</span>
+        </div>
+    </div>
+
+    <main class="container">
+        <button class="dark-toggle" onclick="toggleDark()">🌙</button>
+
+        <header class="header">
+            <div id="materiBadge" class="materi-badge" style="display: none">
+                🎓 Materi 10 Lulus
+            </div>
+            <span class="badge">Materi 10</span>
+            <h1>Import & Export Data</h1>
+            <p class="subtitle">
+                Cara cepat memindahkan data massal masuk dan keluar dari Odoo.
+            </p>
+
+            <div class="image-placeholder" style="margin-top: 20px">
+                <img src="../../../assets/images/getting-started/materi-10/infographic.png"
+                    alt="Ilustrasi Import Export"
+                    onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+                <span class="placeholder-text">📸 Ilustrasi Utama: Alur Import & Export</span>
+            </div>
+        </header>
+
+        <section class="step-card">
+            <h2>1. Export Data</h2>
+            <div class="content">
+                <p>
+                    Anda dapat mengekspor data dari Odoo ke dalam file Excel (.xlsx) atau CSV. Ini sangat berguna untuk
+                    reporting atau ketika Anda ingin memindahkan data ke sistem lain.
+                </p>
+                <p><strong>Caranya:</strong></p>
+                <ol>
+                    <li>Buka <strong>List View</strong> (tampilan daftar) untuk data yang ingin diekspor (misal:
+                        Contacts).</li>
+                    <li>Centang kotak (checkbox) di samping nama record yang ingin dipilih.</li>
+                    <li>Tombol <strong>Actions</strong> (ikon gerigi) akan muncul di tengah atas. Klik tombol tersebut.
+                    </li>
+                    <li>Pilih menu <strong>Export</strong>.</li>
+                </ol>
+
+                <div class="image-placeholder">
+                    <img src="../../../assets/images/getting-started/materi-10/step-1-export.png"
+                        alt="Tombol Actions Export"
+                        onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+                    <span class="placeholder-text">📸 Screenshot: Tombol Actions > Export</span>
+                </div>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>2. Opsi "I want to update data"</h2>
+            <div class="content">
+                <p>
+                    Saat jendela pop-up Export muncul, Anda akan melihat checkbox bertuliskan <strong>"I want to update
+                        data"</strong> (import-compatible export).
+                </p>
+                <div class="deep-dive">
+                    <h3>💡 Mengapa opsi ini penting?</h3>
+                    <p>
+                        Jika Anda mengekspor data dengan tujuan untuk <strong>mengeditnya di Excel lalu mengimpornya
+                            kembali</strong> ke Odoo, Anda WAJIB mencentang opsi ini.
+                    </p>
+                    <p>
+                        Fitur ini memastikan Odoo menyertakan kolom <strong>External ID</strong>. ID ini adalah "kunci"
+                        yang memberi tahu Odoo bahwa "Budi Santoso" yang Anda upload ulang adalah Budi Santoso yang
+                        <em>sama</em> dengan yang ada di sistem (untuk di-update), bukan Budi Santoso baru.
+                    </p>
+                </div>
+
+                <div class="image-placeholder">
+                    <img src="../../../assets/images/getting-started/materi-10/step-2-update-data.png"
+                        alt="Checkbox I want to update data"
+                        onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+                    <span class="placeholder-text">📸 Screenshot: Pop-up Export dengan opsi Update Data</span>
+                </div>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>3. Import Data</h2>
+            <div class="content">
+                <p>
+                    Untuk memasukkan data baru secara massal (seperti 1000 kontak pelanggan sekaligus), gunakan fitur
+                    Import.
+                </p>
+                <p><strong>Langkah Memulai Import:</strong></p>
+                <ul>
+                    <li>Klik ikon <strong>Gear</strong> (Action/Favorites) di pojok kiri atas (di bawah nama menu
+                        utama).</li>
+                    <li>Pilih <strong>Import Records</strong>.</li>
+                    <li>Klik <strong>Upload File</strong> dan pilih file Excel/CSV Anda.</li>
+                </ul>
+                <div class="alert info">
+                    <strong>Tips:</strong> Sebelum melakukan impor final, selalu klik tombol <strong>Test</strong> untuk
+                    memastikan tidak ada error pada format data Anda.
+                </div>
+
+                <div class="image-placeholder">
+                    <img src="../../../assets/images/getting-started/materi-10/step-3-import-menu.png"
+                        alt="Menu Import Records"
+                        onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+                    <span class="placeholder-text">📸 Screenshot: Menu Favorites/Gear > Import Records</span>
+                </div>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card quiz-card" id="materi-10-quiz">
+            <div class="quiz-progress-wrapper">
+                <div class="quiz-progress-bar" id="quizProgressBar"></div>
+            </div>
+            <h2>📝 Quiz Materi 10</h2>
+            <div class="quiz-container"></div>
+            <div class="step-footer">
+                <button class="quiz-submit-btn" onclick="checkQuiz()">
+                    Periksa Jawaban
+                </button>
+                <div id="quizResult" style="display: none"></div>
+            </div>
+        </section>
+
+        <div id="nextActionArea" class="next-action-area" style="display: none">
+            <h3>🎉 Materi 10 Selesai!</h3>
+            <p>
+                Luar biasa! Anda kini memiliki pemahaman yang kuat tentang dasar-dasar penggunaan Odoo.
+            </p>
+            <a href="../memulai-materi-11/index.html" class="btn-next">Lanjut ke Materi 11 ➔</a>
+        </div>
+
+        <footer class="footer">
+            <a href="../../../getting-started.html" style="text-decoration: none; color: #666; font-weight: 600">←
+                Kembali ke
+                Dashboard</a>
+        </footer>
+    </main>
+
+    <script src="../../../assets/js/quiz-bank.js"></script>
+    <script src="../../../assets/js/lms-core.js"></script>
+    <script src="../../../assets/js/quiz-engine.js"></script>
+
+    <script>
+        // Inisialisasi Materi 10
+        document.addEventListener("DOMContentLoaded", () => {
+            initMateriProgress("materi10");
+            renderQuiz("materi10", ".quiz-container");
+
+            if (loadQuizResult("materi10")?.passed) {
+                const area = document.getElementById("nextActionArea");
+                if (area) area.style.display = "block";
+            }
+        });
+
+        const originalOnQuizPassed = window.onQuizPassed;
+        window.onQuizPassed = function (materiId, score) {
+            if (originalOnQuizPassed) originalOnQuizPassed(materiId, score);
+            const area = document.getElementById("nextActionArea");
+            if (area) {
+                area.style.display = "block";
+                setTimeout(() => {
+                    area.scrollIntoView({ behavior: "smooth", block: "center" });
+                }, 500);
+            }
+        };
+
+        function toggleDark() {
+            document.body.classList.toggle("dark");
+            localStorage.setItem(
+                "darkMode",
+                document.body.classList.contains("dark")
+            );
+        }
+        if (localStorage.getItem("darkMode") === "true")
+            document.body.classList.add("dark");
+    </script>
+</body>
+
+</html>

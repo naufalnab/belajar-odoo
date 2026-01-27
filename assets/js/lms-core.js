@@ -208,9 +208,67 @@ function extractMateriNumber(materiId) {
   return match ? parseInt(match[0]) : null;
 }
 
+/* ===================== LIGHTBOX ===================== */
+
+function initImageLightbox() {
+  // 1. Create Lightbox Element if not exists
+  if (!document.querySelector(".lightbox-overlay")) {
+    const lightbox = document.createElement("div");
+    lightbox.className = "lightbox-overlay";
+    lightbox.innerHTML = `
+      <button class="lightbox-close">&times;</button>
+      <img src="" alt="Enlarged Image" class="lightbox-image">
+    `;
+    document.body.appendChild(lightbox);
+
+    // Close events
+    const closeBtn = lightbox.querySelector(".lightbox-close");
+    const overlay = lightbox;
+
+    function closeLightbox() {
+      overlay.classList.remove("active");
+    }
+
+    closeBtn.addEventListener("click", closeLightbox);
+    overlay.addEventListener("click", (e) => {
+      if (e.target === overlay) closeLightbox();
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && overlay.classList.contains("active")) {
+        closeLightbox();
+      }
+    });
+  }
+
+  // 2. Attach Click Events to Images
+  const zoomableImages = document.querySelectorAll(
+    ".image-placeholder img, .content img"
+  );
+
+  const lightboxOverlay = document.querySelector(".lightbox-overlay");
+  const lightboxImg = lightboxOverlay.querySelector(".lightbox-image");
+
+  zoomableImages.forEach((img) => {
+    // Only apply if not already applied
+    if (img.dataset.zoomable === "true") return;
+
+    img.dataset.zoomable = "true";
+    img.style.cursor = "zoom-in";
+
+    img.addEventListener("click", () => {
+      lightboxImg.src = img.src;
+      lightboxImg.alt = img.alt || "Enlarged Image";
+      lightboxOverlay.classList.add("active");
+    });
+  });
+}
+
 /* ===================== AUTO INIT ===================== */
 
 document.addEventListener("DOMContentLoaded", () => {
   // dark mode optional
   initDarkMode("#darkToggle");
+  // init lightbox
+  initImageLightbox();
 });
