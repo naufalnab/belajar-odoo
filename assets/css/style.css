@@ -376,14 +376,6 @@ body.dark .lock-overlay {
   transition: border-color 0.3s;
 }
 
-/* Dark mode */
-body.dark .progress-label {
-  background: #28a745;
-}
-
-body.dark .progress-label::after {
-  border-color: #28a745 transparent transparent transparent;
-}
 
 /* ================================
    PROGRESS LABEL COLOR STATES

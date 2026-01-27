@@ -482,10 +482,46 @@ window.QUIZ_BANK = {
       options: [
         "Gunakan tombol 'Send Now' untuk mengirim segera",
         "Tunggu 'Next Send Date' agar terkirim otomatis",
-        "Ubah periodisitas (frekuensi) agar dikirim lebih cepat atau lambat",
+        "Ubah frekuensi pengiriman agar dikirim lebih cepat atau lambat",
         "Gunakan tombol 'Schedule' untuk menjadwalkan ke jam tertentu di masa depan secara manual"
       ],
       correct: "Gunakan tombol 'Schedule' untuk menjadwalkan ke jam tertentu di masa depan secara manual"
+    }
+  ],
+
+  /* =====================================================
+     MATERI 14 — CUSTOM DIGEST (STUDIO)
+     ===================================================== */
+  materi14: [
+    {
+      question: "Dua field apa yang perlu Anda buat di Odoo Studio untuk menambahkan KPI kustom ke digest email?",
+      options: [
+        "A text field and a date field",
+        "A checkbox field and an integer field",
+        "A selection field and a monetary field",
+        "An email and checkbox field"
+      ],
+      correct: "A checkbox field and an integer field"
+    },
+    {
+      question: "Ke mana Anda harus pergi untuk memasukkan kode kustom ke dalam field Odoo Studio?",
+      options: [
+        "Technical > Models > select the field",
+        "Technical > Fields > select the field",
+        "Technical > Codebox > select the field",
+        "Technical > Database > select the field"
+      ],
+      correct: "Technical > Models > select the field"
+    },
+    {
+      question: "Di mana Anda mengonfigurasi penerima (recipients) untuk digest emails?",
+      options: [
+        "In the ‘General Settings’",
+        "In the ‘User Preferences’",
+        "In the ‘Digest Settings’",
+        "In the ‘Recipients’ tab of the digest email form"
+      ],
+      correct: "In the ‘Recipients’ tab of the digest email form"
     }
   ]
 };

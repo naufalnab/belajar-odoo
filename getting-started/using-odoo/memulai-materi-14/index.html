@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Materi 14: Custom Digest (Studio) | PembelajarBelajar</title>
+    <link rel="stylesheet" href="../../../assets/css/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="progress-wrapper">
+        <div class="progress-container" id="progressContainer">
+            <div class="progress-bar" id="progressBar"></div>
+            <span class="progress-label" id="progressLabel" style="top: 24px">0%</span>
+        </div>
+    </div>
+
+    <main class="container">
+        <button class="dark-toggle" onclick="toggleDark()">🌙</button>
+
+        <header class="header">
+            <div id="materiBadge" class="materi-badge" style="display: none">
+                🎓 Materi 14 Lulus
+            </div>
+            <span class="badge">Materi 14</span>
+            <h1>Custom Digest Emails (dengan Odoo Studio)</h1>
+            <p class="subtitle">
+                Menambahkan KPI khusus ke dalam email ringkasan Anda menggunakan Odoo Studio.
+            </p>
+
+            <div class="image-placeholder" style="margin-top: 20px">
+                <img src="../../../assets/images/getting-started/materi-14/infographic.png"
+                    alt="Ilustrasi Custom Digest"
+                    onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+                <span class="placeholder-text">📸 Ilustrasi Utama: Odoo Studio Interface untuk Digest Email</span>
+            </div>
+        </header>
+
+        <section class="step-card">
+            <h2>1. Persiapan Kustomisasi</h2>
+            <div class="content">
+                <p>
+                    Terkadang KPI standar tidak cukup. Anda dapat menambahkan KPI sendiri namun membutuhkan modul
+                    <strong>Odoo Studio</strong>.
+                </p>
+                <div class="alert info">
+                    <strong>Syarat Field:</strong>
+                    <p>
+                        Untuk membuat KPI baru, Anda perlu menyiapkan dua jenis field pada model Digest:
+                    </p>
+                    <ol>
+                        <li><strong>Checkbox Field:</strong> Untuk opsi enable/disable KPI tersebut.</li>
+                        <li><strong>Integer/Float Field:</strong> Untuk menyimpan nilai hasil perhitungan KPI (computed
+                            field).</li>
+                    </ol>
+                </div>
+
+                <div class="image-placeholder">
+                    <img src="../../../assets/images/getting-started/materi-14/step-1-studio.png"
+                        alt="Tampilan Odoo Studio pada model Digest"
+                        onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+                    <span class="placeholder-text">📸 Screenshot: Tampilan menambahkan field baru di Odoo Studio</span>
+                </div>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>2. Menulis Kode Kustom (Python)</h2>
+            <div class="content">
+                <p>
+                    Karena KPI bersifat dinamis (dihitung berdasarkan data real-time), Anda perlu memasukkan kode Python
+                    untuk menghitung nilainya.
+                </p>
+                <p>
+                    Contoh kode untuk menghitung nilai peluang besar (Big Opportunities):
+                </p>
+                <pre><code class="language-python">self._calculate_company_based_kpi("crm.lead",
+    "x_studio_kpi_big_opportunities_value",
+    date_field="create_date",
+    additional_domain=[
+     ('type', '=', 'opportunity'),
+     ('expected_revenue', 'greater-than-or-equal', 10000),
+    ])</code></pre>
+
+                <p>
+                    Lokasi untuk memasukkan kode tersebut adalah di menu:
+                    <br><code>Settings > Technical > Database Structure > Models > (Pilih Model Terkait) > (Pilih Field) > Tab "Compute"</code>
+                </p>
+
+                <div class="image-placeholder">
+                    <img src="../../../assets/images/getting-started/materi-14/step-2-code.png" alt="Input Compute Code"
+                        onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+                    <span class="placeholder-text">📸 Screenshot: Area "Compute" di pengaturan teknis Field</span>
+                </div>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>3. Konfigurasi Penerima (Recipients)</h2>
+            <div class="content">
+                <p>
+                    Penting untuk menentukan siapa saja yang berhak menerima email ringkasan ini.
+                </p>
+                <p>
+                    Anda dapat mengaturnya langsung di formulir Digest Email pada tab <strong>Recipients</strong>.
+                    Di sana Anda bisa memilih user mana saja yang akan berlangganan (Subscribe).
+                </p>
+
+                <div class="image-placeholder">
+                    <img src="../../../assets/images/getting-started/materi-14/step-3-recipients.png"
+                        alt="Tab Recipients"
+                        onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+                    <span class="placeholder-text">📸 Screenshot: Tab Recipients pada form Digest Email</span>
+                </div>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card quiz-card" id="materi-14-quiz">
+            <div class="quiz-progress-wrapper">
+                <div class="quiz-progress-bar" id="quizProgressBar"></div>
+            </div>
+            <h2>📝 Quiz Materi 14</h2>
+            <div class="quiz-container"></div>
+            <div class="step-footer">
+                <button class="quiz-submit-btn" onclick="checkQuiz()">
+                    Periksa Jawaban
+                </button>
+                <div id="quizResult" style="display: none"></div>
+            </div>
+        </section>
+
+        <div id="nextActionArea" class="next-action-area" style="display: none">
+            <h3>🎉 Materi 14 Selesai!</h3>
+            <p>
+                Luar biasa! Anda telah menyelesaikan seri "Getting Started" ini.
+            </p>
+            <a href="../../../getting-started.html" class="btn-next">Kembali ke Dashboard Utama ➔</a>
+        </div>
+
+        <footer class="footer">
+            <a href="../../../getting-started.html" style="text-decoration: none; color: #666; font-weight: 600">←
+                Kembali ke
+                Dashboard</a>
+        </footer>
+    </main>
+
+    <script src="../../../assets/js/quiz-bank.js"></script>
+    <script src="../../../assets/js/lms-core.js"></script>
+    <script src="../../../assets/js/quiz-engine.js"></script>
+
+    <script>
+        // Inisialisasi Materi 14
+        document.addEventListener("DOMContentLoaded", () => {
+            initMateriProgress("materi14");
+            renderQuiz("materi14", ".quiz-container");
+
+            if (loadQuizResult("materi14")?.passed) {
+                const area = document.getElementById("nextActionArea");
+                if (area) area.style.display = "block";
+            }
+        });
+
+        const originalOnQuizPassed = window.onQuizPassed;
+        window.onQuizPassed = function (materiId, score) {
+            if (originalOnQuizPassed) originalOnQuizPassed(materiId, score);
+            const area = document.getElementById("nextActionArea");
+            if (area) {
+                area.style.display = "block";
+                setTimeout(() => {
+                    area.scrollIntoView({ behavior: "smooth", block: "center" });
+                }, 500);
+            }
+        };
+
+        function toggleDark() {
+            document.body.classList.toggle("dark");
+            localStorage.setItem(
+                "darkMode",
+                document.body.classList.contains("dark")
+            );
+        }
+        if (localStorage.getItem("darkMode") === "true")
+            document.body.classList.add("dark");
+    </script>
+</body>
+
+</html>
