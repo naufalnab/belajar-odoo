@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Materi 16: Discuss App | PembelajarBelajar</title>
+    <link rel="stylesheet" href="../../../assets/css/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="progress-wrapper">
+        <div class="progress-container" id="progressContainer">
+            <div class="progress-bar" id="progressBar"></div>
+            <span class="progress-label" id="progressLabel" style="top: 24px">0%</span>
+        </div>
+    </div>
+
+    <main class="container">
+        <button class="dark-toggle">🌙</button>
+
+        <header class="header">
+            <div id="materiBadge" class="materi-badge" style="display: none">
+                🎓 Materi 16 Lulus
+            </div>
+            <span class="badge">Materi 16</span>
+            <h1>Discuss App (Komunikasi & Kolaborasi)</h1>
+            <p class="subtitle">
+                Pusat komunikasi internal Odoo: Chat, Channel, dan Notifikasi dalam satu tempat.
+            </p>
+
+            <div class="image-placeholder" style="margin-top: 20px">
+                <img src="../../../assets/images/getting-started/materi-16/infographic.png" alt="Ilustrasi Discuss App"
+                    onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+                <span class="placeholder-text">📸 Ilustrasi Utama: Dashboard Discuss App dengan Chat & Channel</span>
+            </div>
+        </header>
+
+        <section class="step-card">
+            <h2>1. Apa itu Discuss App?</h2>
+            <div class="content">
+                <p>
+                    <strong>Discuss App</strong> adalah aplikasi bawaan Odoo yang berfungsi sebagai pusat komunikasi
+                    real-time untuk seluruh pengguna database.
+                </p>
+                <div class="deep-dive">
+                    <h3>💬 Fitur Utama</h3>
+                    <ul>
+                        <li><strong>Direct Messages (DM):</strong> Chat pribadi antar pengguna (one-on-one).</li>
+                        <li><strong>Channels:</strong> Grup chat untuk tim atau topik tertentu (misal:
+                            <code>#General</code>, <code>#Sales</code>).</li>
+                        <li><strong>Integrasi:</strong> Terhubung langsung dengan dokumen Odoo (Quotation, Invoice,
+                            dll).</li>
+                    </ul>
+                </div>
+                <div class="image-placeholder">
+                    <img src="../../../assets/images/getting-started/materi-16/step-1-overview.png"
+                        alt="Overview Discuss App"
+                        onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+                    <span class="placeholder-text">📸 Screenshot: Tampilan awal aplikasi Discuss</span>
+                </div>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>2. Mengelola Pesan & Link</h2>
+            <div class="content">
+                <p>
+                    Saat Anda mengirim link website atau dokumen di chat, Odoo akan menampilkannya dengan cerdas.
+                </p>
+                <div class="alert info">
+                    <strong>Link Preview:</strong>
+                    <br>Odoo menampilkan link yang dibagikan sebagai <strong>Clickable Preview</strong> (Pratinjau yang
+                    dapat diklik), lengkap dengan gambar thumbnail dan judul (jika tersedia), bukan hanya teks biasa.
+                </div>
+                <p>
+                    Ini memudahkan Anda untuk melihat sekilas isi konten sebelum membukanya.
+                </p>
+                <div class="image-placeholder">
+                    <img src="../../../assets/images/getting-started/materi-16/step-2-link-preview.png"
+                        alt="Link Preview di Chat"
+                        onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+                    <span class="placeholder-text">📸 Screenshot: Contoh tampilan Link Preview di dalam chat</span>
+                </div>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>3. Pin & Unpin Percakapan</h2>
+            <div class="content">
+                <p>
+                    Daftar percakapan Anda bisa menjadi sangat panjang. Untuk merapikannya, Anda dapat melakukan
+                    <strong>Unpin</strong>.
+                </p>
+                <ul class="technical-list">
+                    <li><strong>📌 Pin:</strong> Menjaga percakapan tetap terlihat di sidebar kiri.</li>
+                    <li><strong>🚫 Unpin:</strong> Menyembunyikan percakapan dari tampilan (Hides the conversation from
+                        view) sampai Anda mencarinya kembali atau ada pesan baru masuk. <strong>Ini tidak menghapus
+                            history chat.</strong></li>
+                </ul>
+                <div class="image-placeholder">
+                    <img src="../../../assets/images/getting-started/materi-16/step-3-unpin.png"
+                        alt="Menu Unpin Conversation"
+                        onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+                    <span class="placeholder-text">📸 Screenshot: Ikon Unpin pada sidebar chat</span>
+                </div>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>4. Notifikasi</h2>
+            <div class="content">
+                <p>
+                    Agar tidak terganggu atau memastikan tidak ketinggalan info penting, Anda bisa mengatur notifikasi.
+                </p>
+                <p>
+                    Lihat ke pojok kanan atas chat window, terdapat ikon <strong>Lonceng (Bell)</strong> 🔔. Klik ikon
+                    tersebut untuk mengatur notifikasi khusus untuk percakapan atau channel tersebut.
+                </p>
+                <div class="image-placeholder">
+                    <img src="../../../assets/images/getting-started/materi-16/step-4-notification-bell.png"
+                        alt="Ikon Lonceng Notifikasi"
+                        onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+                    <span class="placeholder-text">📸 Screenshot: Lokasi ikon Lonceng (Bell) di header chat</span>
+                </div>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card quiz-card" id="materi-16-quiz">
+            <div class="quiz-progress-wrapper">
+                <div class="quiz-progress-bar" id="quizProgressBar"></div>
+            </div>
+            <h2>📝 Quiz Materi 16</h2>
+            <div class="quiz-container"></div>
+            <div class="step-footer">
+                <button class="quiz-submit-btn" onclick="checkQuiz()">
+                    Periksa Jawaban
+                </button>
+                <div id="quizResult" style="display: none"></div>
+            </div>
+        </section>
+
+        <div id="nextActionArea" class="next-action-area" style="display: none">
+            <h3>🎉 Materi 16 Selesai!</h3>
+            <p>
+                Anda sudah siap berkolaborasi efektif dengan tim Anda menggunakan Odoo Discuss!
+            </p>
+            <a href="../../../getting-started.html" class="btn-next">Kembali ke Dashboard Utama ➔</a>
+        </div>
+
+        <footer class="footer">
+            <a href="../../../getting-started.html" style="text-decoration: none; color: #666; font-weight: 600">←
+                Kembali ke
+                Dashboard</a>
+        </footer>
+    </main>
+
+    <script src="../../../assets/js/quiz-bank.js"></script>
+    <script src="../../../assets/js/lms-core.js"></script>
+    <script src="../../../assets/js/quiz-engine.js"></script>
+
+    <script>
+        // Inisialisasi Materi 16
+        document.addEventListener("DOMContentLoaded", () => {
+            initMateriProgress("materi16");
+            renderQuiz("materi16", ".quiz-container");
+
+            if (loadQuizResult("materi16")?.passed) {
+                const area = document.getElementById("nextActionArea");
+                if (area) area.style.display = "block";
+            }
+        });
+
+        const originalOnQuizPassed = window.onQuizPassed;
+        window.onQuizPassed = function (materiId, score) {
+            if (originalOnQuizPassed) originalOnQuizPassed(materiId, score);
+            const area = document.getElementById("nextActionArea");
+            if (area) {
+                area.style.display = "block";
+                setTimeout(() => {
+                    area.scrollIntoView({ behavior: "smooth", block: "center" });
+                }, 500);
+            }
+        };
+    </script>
+</body>
+
+</html>

@@ -559,5 +559,37 @@ window.QUIZ_BANK = {
       ],
       correct: "Execute (Jalankan)"
     }
+  ],
+  materi16: [
+    {
+      question: "Bagaimana Odoo menampilkan tautan (link) yang dibagikan dalam pesan chat?",
+      options: [
+        "Hanya sebagai teks biasa",
+        "Sebagai pratinjau yang dapat diklik (Clickable Preview)",
+        "Sebagai kode QR",
+        "Sebagai lampiran file"
+      ],
+      correct: "Sebagai pratinjau yang dapat diklik (Clickable Preview)"
+    },
+    {
+      question: "Apa yang terjadi saat Anda melakukan 'Unpin' pada sebuah percakapan di Odoo Discuss?",
+      options: [
+        "Menghapus riwayat percakapan",
+        "Mengarsipkan percakapan secara permanen",
+        "Mengirim notifikasi ke pengguna lain",
+        "Menyembunyikan percakapan dari tampilan sampai Anda mencarinya kembali"
+      ],
+      correct: "Menyembunyikan percakapan dari tampilan sampai Anda mencarinya kembali"
+    },
+    {
+      question: "Ikon apa di pojok kanan atas chat yang memungkinkan Anda mengatur pengaturan notifikasi?",
+      options: [
+        "Kaca Pembesar",
+        "Pin",
+        "Lonceng (Bell)",
+        "Klip Kertas"
+      ],
+      correct: "Lonceng (Bell)"
+    }
   ]
 };
