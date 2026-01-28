@@ -44,11 +44,12 @@ function renderQuiz(quizId, containerSelector) {
 
     // LOGIKA RENDER:
     if (saved.score === 100) {
-      // Jika 100%, kunci total
+      // Jika 100%, kunci total tapi boleh reset
       lockQuizUI(container, saved.score);
+      enableRetryMode(true);
     } else {
       // Jika di bawah 100% (meskipun lulus), tawarkan ulang
-      enableRetryMode();
+      enableRetryMode(false);
     }
   }
 }
@@ -103,21 +104,28 @@ function checkQuiz() {
 
   // 2. Cek apakah Perfect (100) untuk mengunci kuis
   if (score === 100) {
-    disableQuizAfterPass(score); // Kunci dan sembunyikan tombol
+    disableQuizAfterPass(score);
   } else {
-    enableRetryMode(); // Ubah tombol jadi "Ulangi"
+    enableRetryMode(false); // Mode "Kejar 100%"
   }
 }
 
 /* ===================== RETRY LOGIC ===================== */
 
-function enableRetryMode() {
+function enableRetryMode(isPerfect) {
   const submitBtn = document.querySelector(".quiz-submit-btn");
   if (!submitBtn) return;
 
-  submitBtn.innerText = "🔄 Ulangi Quiz (Kejar 100%)";
-  submitBtn.style.backgroundColor = "#ffc107"; // Kuning
-  submitBtn.style.color = "#333";
+  if (isPerfect) {
+    submitBtn.innerText = "🔄 Reset Quiz (Ulangi Latihan)";
+    submitBtn.style.backgroundColor = "#28a745"; // Hijau jika sudah sempurna
+    submitBtn.style.color = "#fff";
+  } else {
+    submitBtn.innerText = "🔄 Ulangi Quiz (Kejar 100%)";
+    submitBtn.style.backgroundColor = "#ffc107"; // Kuning jika belum
+    submitBtn.style.color = "#333";
+  }
+
   submitBtn.style.display = "inline-block"; // Pastikan muncul
   submitBtn.setAttribute("data-mode", "retry");
 }
@@ -272,9 +280,8 @@ function disableQuizAfterPass(score) {
 
   lockQuizUI(container, score);
 
-  // Sembunyikan tombol HANYA jika 100%
-  const submitBtn = document.querySelector(".quiz-submit-btn");
-  if (submitBtn) submitBtn.style.display = 'none';
+  // Jangan sembunyikan tombol, tapi ubah jadi tombol Reset
+  enableRetryMode(true);
 }
 
 function lockQuizUI(container, score) {

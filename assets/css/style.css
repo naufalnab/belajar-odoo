@@ -267,6 +267,17 @@ body.dark .image-placeholder {
   opacity: 0.9;
 }
 
+/* Fix visibility for disabled inputs in Dark Mode */
+body.dark .quiz-options input[type="radio"]:disabled+label,
+body.dark .quiz-options input[type="radio"]:disabled {
+  opacity: 1 !important;
+  color: #e5e5e5;
+}
+
+body.dark .quiz-options label {
+  color: #e5e5e5;
+}
+
 /* =====================================================
    QUIZ PROGRESS
 ===================================================== */
@@ -915,6 +926,7 @@ body.dark .alert.info {
 body.dark .technical-table tr {
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
+
 /* =====================================================
    QUIZ COMPLETED STATE (READABLE)
    ===================================================== */
@@ -937,14 +949,23 @@ body.dark .quiz-status-banner {
 }
 
 @keyframes slideDown {
-  from { opacity: 0; transform: translateY(-10px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Hilangkan style .locked lama yang bikin blur */
 .locked {
-  opacity: 1 !important; /* Force readable */
-  pointer-events: auto !important; /* Allow scroll/select text */
+  opacity: 1 !important;
+  /* Force readable */
+  pointer-events: auto !important;
+  /* Allow scroll/select text */
 }
 
 /* Lock overlay lama (jika masih ada sisa) - hide aja */
@@ -959,5 +980,6 @@ body.dark .quiz-status-banner {
 
 .quiz-completed-view label {
   cursor: default;
-  opacity: 1 !important; /* Pastikan label tetap jelas */
+  opacity: 1 !important;
+  /* Pastikan label tetap jelas */
 }

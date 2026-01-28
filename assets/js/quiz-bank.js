@@ -1286,6 +1286,134 @@ window.QUIZ_BANK = {
       correct: "Accounting"
     }
   ],
+  sales_materi11: [
+    {
+      question: "Jenis program promosi apa yang akan Anda gunakan untuk membuat satu kode promosi yang didistribusikan secara luas?",
+      options: [
+        "Coupons",
+        "Promotions",
+        "Discount Code",
+        "Mass Distribution Promo"
+      ],
+      correct: "Discount Code"
+    },
+    {
+      question: "Bagaimana cara mengonfigurasi promosi agar tersedia di toko online Anda?",
+      options: [
+        "Aktifkan 'Online Promotions' di pengaturan Sales.",
+        "Aktifkan 'Internet Promo' di pengaturan Website.",
+        "Buat tersedia di aplikasi Point of Sale.",
+        "Buat tersedia di aplikasi Website."
+      ],
+      correct: "Buat tersedia di aplikasi Website."
+    },
+    {
+      question: "Bagaimana cara mengonfigurasi promosi agar tidak pernah kadaluwarsa?",
+      options: [
+        "Biarkan field Validity kosong.",
+        "Set Validity ke tanggal hari ini.",
+        "Set Expiration Date ke tanggal hari ini.",
+        "Ini tidak mungkin dilakukan dengan Odoo Sales."
+      ],
+      correct: "Biarkan field Validity kosong."
+    }
+  ],
+  sales_materi12: [
+    {
+      question: "Pengaturan apa yang perlu diaktifkan agar kupon dapat digunakan?",
+      options: [
+        "Promotions, Loyalty & Gift Card",
+        "Loyalty Programs",
+        "Discounts",
+        "Coupon Codes"
+      ],
+      correct: "Promotions, Loyalty & Gift Card"
+    },
+    {
+      question: "Apa fungsi opsi 'limit usage' (batasi penggunaan)?",
+      options: [
+        "Membatasi jumlah kupon yang dibuat.",
+        "Membatasi jumlah kupon yang didistribusikan ke semua pelanggan.",
+        "Membatasi jumlah kupon yang dapat digunakan oleh pelanggan individu.",
+        "Membatasi diskon yang diterapkan dengan kupon."
+      ],
+      correct: "Membatasi jumlah kupon yang dapat digunakan oleh pelanggan individu."
+    },
+    {
+      question: "Di mana aturan kapan kupon bisa digunakan dapat diatur?",
+      options: [
+        "Conditional rules",
+        "Restrictions",
+        "Usage categories",
+        "Discount settings"
+      ],
+      correct: "Conditional rules"
+    }
+  ],
+  sales_materi13: [
+    {
+      question: "Apa fungsi dari Loyalty Program?",
+      options: [
+        "Membiarkan pelanggan mengumpulkan poin dari pembelian mereka, yang dapat mereka gunakan pada pesanan di masa mendatang.",
+        "Membiarkan pelanggan mendapatkan porsi saham perusahaan, setelah membeli sejumlah produk tertentu.",
+        "Membiarkan pelanggan mengubah warna item apa pun yang mereka tambahkan ke pesanan mereka, jika mereka membelanjakan jumlah tertentu pada suatu produk.",
+        "Loyalty Program tidak ada di Odoo."
+      ],
+      correct: "Membiarkan pelanggan mengumpulkan poin dari pembelian mereka, yang dapat mereka gunakan pada pesanan di masa mendatang."
+    },
+    {
+      question: "Bagaimana cara memastikan pelanggan membeli dengan jumlah nominal minimum (Minimum Quantity) agar dapat mengumpulkan poin untuk pesanan tersebut?",
+      options: [
+        "Di bawah setiap penawaran, klik ke 'Tab Rewards' dan atur 'Minimum Quantity' ke jumlah nominal minimum yang diinginkan.",
+        "Tidak ada cara untuk menetapkan jumlah nominal minimum.",
+        "Di bawah 'Conditional rules', atur 'Minimum Quantity' ke jumlah nominal minimum yang diinginkan untuk setiap pesanan.",
+        "Di bawah 'Rewards', atur 'Minimum Quantity' ke jumlah nominal minimum yang diinginkan untuk setiap pesanan."
+      ],
+      correct: "Di bawah 'Conditional rules', atur 'Minimum Quantity' ke jumlah nominal minimum yang diinginkan untuk setiap pesanan."
+    },
+    {
+      question: "Bagaimana cara menerapkan reward pelanggan untuk mendapatkan diskon pada pesanan?",
+      options: [
+        "Pada penawaran Penjualan, klik tombol 'Rewards' di atas total.",
+        "Pada penawaran Penjualan, klik link internal pelanggan, periksa saldo kartu loyalitas mereka, lalu terapkan reward diskon yang diinginkan secara manual sebagai baris produk terpisah.",
+        "Pada profil pelanggan, klik tab 'Rewards' dan pilih pesanan penjualan yang akan diterapkan rewardnya.",
+        "Pada profil pelanggan, pilih pesanan penjualan dari tab 'Sales Order', dan terapkan reward dengan tombol 'Reward'."
+      ],
+      correct: "Pada penawaran Penjualan, klik tombol 'Rewards' di atas total."
+    }
+  ],
+  sales_materi14: [
+    {
+      question: "Pengaturan apa yang perlu diaktifkan agar program kartu hadiah (Gift Card) dapat dibuat?",
+      options: [
+        "Discounts",
+        "Promotions, Loyalty & Gift Card",
+        "Gift Card Programs",
+        "Loyalty Programs"
+      ],
+      correct: "Promotions, Loyalty & Gift Card"
+    },
+    {
+      question: "Apa yang terjadi ketika saya memilih 'Selected Customers' saat pembuatan kartu hadiah?",
+      options: [
+        "Saya masih bisa memilih jumlah kartu hadiah yang saya suka.",
+        "Odoo mengunci kolom 'Quantity to generate' agar sesuai dengan jumlah pelanggan yang dipilih.",
+        "Kartu hadiah dikirim ke pelanggan anonim.",
+        "Tombol 'Generate Gift Cards' disembunyikan sampai saya menambahkan outlet PoS."
+      ],
+      correct: "Odoo mengunci kolom 'Quantity to generate' agar sesuai dengan jumlah pelanggan yang dipilih."
+    },
+    {
+      question: "Di mana tanggal kedaluwarsa untuk kartu hadiah dapat diatur?",
+      options: [
+        "Field 'Valid Until'",
+        "Field 'Expiration'",
+        "Field 'Expires on'",
+        "Kartu hadiah tidak kedaluwarsa"
+      ],
+      correct: "Field 'Valid Until'"
+    }
+  ],
   sales_materi15: [
     {
       question: "Berdasarkan apa paket pelokalan pajak (tax localization package) Odoo?",
@@ -1379,7 +1507,7 @@ window.QUIZ_BANK = {
         "Di bagian 'Overview'",
         "Informasi ini tidak terlihat oleh pelanggan"
       ],
-      correct: "Di bagian 'Taxes'"
+      correct: "Di bagian 'Pricing'"
     }
   ],
   sales_materi18: [
@@ -1551,7 +1679,7 @@ window.QUIZ_BANK = {
         "Manajer tim sales tersebut.",
         "Mitra eksternal yang bekerja sama dengan tim tersebut."
       ],
-      correct: "Salesperson individu dalam tim tersebut."
+      correct: "Manajer tim sales tersebut."
     },
     {
       question: "Apa artinya memilih 'Targets' daripada 'Achievements' untuk rencana komisi?",
@@ -1593,7 +1721,7 @@ window.QUIZ_BANK = {
         "API Key",
         "Webhook secret"
       ],
-      correct: "API Key"
+      correct: "Product Template ID"
     },
     {
       question: "Bagaimana cara menambahkan metode pengiriman Gelato ke pesanan penjualan Odoo pada produk Gelato yang disinkronkan?",
