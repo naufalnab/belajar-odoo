@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Materi 28: Manufacturing & Accessories | PembelajarBelajar</title>
+    <link rel="stylesheet" href="../../../assets/css/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="progress-wrapper">
+        <div class="progress-container" id="progressContainer">
+            <div class="progress-bar" id="progressBar"></div>
+            <span class="progress-label" id="progressLabel" style="top: 24px">0%</span>
+        </div>
+    </div>
+
+    <main class="container">
+        <button class="dark-toggle">🌙</button>
+
+        <header class="header">
+            <div id="materiBadge" class="materi-badge" style="display: none">
+                🎓 Materi 28 Lulus
+            </div>
+            <span class="badge">Materi 28</span>
+            <h1>Manufacturing & eCommerce Basics</h1>
+            <p class="subtitle">
+                Rute manufaktur, produk aksesoris, dan publikasi ke website.
+            </p>
+
+            <div class="image-placeholder" style="margin-top: 20px">
+                <img src="../../../assets/images/getting-started/materi-28/infographic.png"
+                    alt="Ilustrasi Manufacturing"
+                    onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+                <span class="placeholder-text">📸 Ilustrasi Utama: Manufacturing Flow & eCommerce</span>
+            </div>
+        </header>
+
+        <section class="step-card">
+            <h2>1. Routes Configuration (Make or Buy)</h2>
+            <div class="content">
+                <p>
+                    Jika produk seperti "Drone" dibuat sendiri di dalam perusahaan (In-house Production), operational
+                    route apa yang harus dipilih?
+                </p>
+                <div class="alert info">
+                    <strong>Pilih: Manufacture</strong>.
+                </div>
+                <p>
+                    Route "Buy" digunakan jika Anda membeli barang jadi dari vendor. Route "Dropship" jika Anda mengirim
+                    langsung dari vendor ke pelanggan tanpa menyimpannya. Untuk produksi sendiri, pilih
+                    <strong>Manufacture</strong>.
+                </p>
+                <div class="image-placeholder">
+                    <img src="../../../assets/images/getting-started/materi-28/step-1-route.png"
+                        alt="Routes Configuration"
+                        onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+                    <span class="placeholder-text">📸 Screenshot: Checkbox 'Manufacture' di tab Inventory</span>
+                </div>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>2. Accessory Products (Cross-sell)</h2>
+            <div class="content">
+                <p>
+                    Anda ingin agar saat pelanggan membeli Drone, mereka juga ditawari baterai tambahan atau
+                    baling-baling cadangan di halaman checkout (keranjang).
+                </p>
+                <p>
+                    Dimana Anda mengatur ini?
+                </p>
+                <p>
+                    <strong>Sales tab > Upsell & Cross-sell > Accessory Products</strong>.
+                </p>
+                <p>
+                    Produk yang dimasukkan di sini akan muncul sebagai "Suggested Accessories" saat pelanggan melihat
+                    keranjang belanja mereka.
+                </p>
+                <div class="image-placeholder">
+                    <img src="../../../assets/images/getting-started/materi-28/step-2-accessories.png"
+                        alt="Accessory Products"
+                        onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+                    <span class="placeholder-text">📸 Screenshot: Field 'Accessory Products' di tab Sales</span>
+                </div>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>3. Publikasi ke Website (Is Published)</h2>
+            <div class="content">
+                <p>
+                    Apa fungsi dari mencentang kotak <strong>"Is Published"</strong> pada tab Sales sebuah produk?
+                </p>
+                <p>
+                    Tindakan ini akan <strong>mempublikasikan produk tersebut ke website perusahaan (eCommerce)</strong>
+                    sehingga bisa dilihat dan dibeli oleh pengunjung.
+                </p>
+                <p>
+                    Tanpa ini, produk hanya ada di backend (database) tapi tidak terlihat di toko online.
+                </p>
+                <div class="image-placeholder">
+                    <img src="../../../assets/images/getting-started/materi-28/step-3-publish.png" alt="Publish Button"
+                        onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+                    <span class="placeholder-text">📸 Screenshot: Ribbon 'Published' pada produk</span>
+                </div>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card quiz-card" id="materi-28-quiz">
+            <div class="quiz-progress-wrapper">
+                <div class="quiz-progress-bar" id="quizProgressBar"></div>
+            </div>
+            <h2>📝 Quiz Materi 28</h2>
+            <div class="quiz-container"></div>
+            <div class="step-footer">
+                <button class="quiz-submit-btn" onclick="checkQuiz()">
+                    Periksa Jawaban
+                </button>
+                <div id="quizResult" style="display: none"></div>
+            </div>
+        </section>
+
+        <div id="nextActionArea" class="next-action-area" style="display: none">
+            <h3>🎉 Materi 28 Selesai!</h3>
+            <p>
+                Selamat! Anda telah menyelesaikan seluruh rangkaian materi Business Flows.
+            </p>
+            <a href="../../../getting-started.html" class="btn-next">Kembali ke Dashboard Utama ➔</a>
+        </div>
+
+        <footer class="footer">
+            <a href="../../../getting-started.html" style="text-decoration: none; color: #666; font-weight: 600">←
+                Kembali ke
+                Dashboard</a>
+        </footer>
+    </main>
+
+    <script src="../../../assets/js/quiz-bank.js"></script>
+    <script src="../../../assets/js/lms-core.js"></script>
+    <script src="../../../assets/js/quiz-engine.js"></script>
+
+    <script>
+        // Inisialisasi Materi 28
+        document.addEventListener("DOMContentLoaded", () => {
+            initMateriProgress("materi28");
+            renderQuiz("materi28", ".quiz-container");
+
+            if (loadQuizResult("materi28")?.passed) {
+                const area = document.getElementById("nextActionArea");
+                if (area) area.style.display = "block";
+            }
+        });
+
+        const originalOnQuizPassed = window.onQuizPassed;
+        window.onQuizPassed = function (materiId, score) {
+            if (originalOnQuizPassed) originalOnQuizPassed(materiId, score);
+            const area = document.getElementById("nextActionArea");
+            if (area) {
+                area.style.display = "block";
+                setTimeout(() => {
+                    area.scrollIntoView({ behavior: "smooth", block: "center" });
+                }, 500);
+            }
+        };
+    </script>
+</body>
+
+</html>

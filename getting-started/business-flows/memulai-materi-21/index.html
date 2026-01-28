@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Materi 21: Sales to Invoice | PembelajarBelajar</title>
+    <link rel="stylesheet" href="../../../assets/css/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="progress-wrapper">
+        <div class="progress-container" id="progressContainer">
+            <div class="progress-bar" id="progressBar"></div>
+            <span class="progress-label" id="progressLabel" style="top: 24px">0%</span>
+        </div>
+    </div>
+
+    <main class="container">
+        <button class="dark-toggle">🌙</button>
+
+        <header class="header">
+            <div id="materiBadge" class="materi-badge" style="display: none">
+                🎓 Materi 21 Lulus
+            </div>
+            <span class="badge">Materi 21</span>
+            <h1>Sales to Invoice</h1>
+            <p class="subtitle">
+                Memahami alur penjualan, stok kosong, dan batch invoicing.
+            </p>
+
+            <div class="image-placeholder" style="margin-top: 20px">
+                <img src="../../../assets/images/getting-started/materi-21/infographic.png"
+                    alt="Ilustrasi Sales to Invoice"
+                    onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+                <span class="placeholder-text">📸 Ilustrasi Utama: Alur Sales Order ke Invoice</span>
+            </div>
+        </header>
+
+        <section class="step-card">
+            <h2>1. Menjual Produk dengan Stok 0 (Zero Inventory)</h2>
+            <div class="content">
+                <p>
+                    Apakah Anda bisa menjual produk meskipun inventaris di Odoo menunjukkan jumlah 0? <strong>Jawabannya
+                        adalah Ya.</strong>
+                </p>
+                <div class="alert info">
+                    <strong>Penting:</strong> Odoo mengizinkan penjualan produk tanpa stok (terutama storable product).
+                    Sistem akan memberikan peringatan (warning) pada Quotation, namun tidak melarang Anda untuk
+                    melakukan confirm order.
+                </div>
+                <p>
+                    Hal ini berguna jika Anda melakukan strategi <em>Replenish on Order</em> atau jika stok fisik ada
+                    namun belum terinput ke sistem. Namun, Anda tidak akan bisa melakukan pengiriman (delivery) sampai
+                    stok tersedia.
+                </p>
+                <div class="image-placeholder">
+                    <img src="../../../assets/images/getting-started/materi-21/step-1-zero-stock.png"
+                        alt="Zero Stock Sales"
+                        onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+                    <span class="placeholder-text">📸 Screenshot: Warning saat menjual produk dengan stok 0</span>
+                </div>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>2. Invoicing All Customers (Batch Invoice)</h2>
+            <div class="content">
+                <p>
+                    Bagaimana jika Anda memiliki ratusan pesanan yang siap ditagih dan ingin membuat invoice sekaligus?
+                </p>
+                <p>
+                    Anda tidak perlu membuka Accounting app. Cukup pergi ke module <strong>Sales</strong>, lalu pilih
+                    menu <strong>To Invoice > Orders to Invoice</strong>.
+                </p>
+                <ul class="technical-list">
+                    <li><strong>Langkah 1:</strong> Buka Sales App.</li>
+                    <li><strong>Langkah 2:</strong> Pilih menu <em>To Invoice</em> -> <em>Orders to Invoice</em>.</li>
+                    <li><strong>Langkah 3:</strong> Pilih semua order (List view), lalu klik <em>Actions > Create
+                            Invoices</em>.</li>
+                </ul>
+                <p>
+                    Cara ini jauh lebih efisien daripada membuat invoice satu per satu untuk setiap pelanggan.
+                </p>
+                <div class="image-placeholder">
+                    <img src="../../../assets/images/getting-started/materi-21/step-2-batch-invoice.png"
+                        alt="Batch Invoice Menu"
+                        onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+                    <span class="placeholder-text">📸 Screenshot: Menu 'Orders to Invoice' di Sales App</span>
+                </div>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card quiz-card" id="materi-21-quiz">
+            <div class="quiz-progress-wrapper">
+                <div class="quiz-progress-bar" id="quizProgressBar"></div>
+            </div>
+            <h2>📝 Quiz Materi 21</h2>
+            <div class="quiz-container"></div>
+            <div class="step-footer">
+                <button class="quiz-submit-btn" onclick="checkQuiz()">
+                    Periksa Jawaban
+                </button>
+                <div id="quizResult" style="display: none"></div>
+            </div>
+        </section>
+
+        <div id="nextActionArea" class="next-action-area" style="display: none">
+            <h3>🎉 Materi 21 Selesai!</h3>
+            <p>
+                Anda telah memahami dasar-dasar alur penjualan dan invoicing.
+            </p>
+            <a href="../../../getting-started.html" class="btn-next">Kembali ke Dashboard Utama ➔</a>
+        </div>
+
+        <footer class="footer">
+            <a href="../../../getting-started.html" style="text-decoration: none; color: #666; font-weight: 600">←
+                Kembali ke
+                Dashboard</a>
+        </footer>
+    </main>
+
+    <script src="../../../assets/js/quiz-bank.js"></script>
+    <script src="../../../assets/js/lms-core.js"></script>
+    <script src="../../../assets/js/quiz-engine.js"></script>
+
+    <script>
+        // Inisialisasi Materi 21
+        document.addEventListener("DOMContentLoaded", () => {
+            initMateriProgress("materi21");
+            renderQuiz("materi21", ".quiz-container");
+
+            if (loadQuizResult("materi21")?.passed) {
+                const area = document.getElementById("nextActionArea");
+                if (area) area.style.display = "block";
+            }
+        });
+
+        const originalOnQuizPassed = window.onQuizPassed;
+        window.onQuizPassed = function (materiId, score) {
+            if (originalOnQuizPassed) originalOnQuizPassed(materiId, score);
+            const area = document.getElementById("nextActionArea");
+            if (area) {
+                area.style.display = "block";
+                setTimeout(() => {
+                    area.scrollIntoView({ behavior: "smooth", block: "center" });
+                }, 500);
+            }
+        };
+    </script>
+</body>
+
+</html>

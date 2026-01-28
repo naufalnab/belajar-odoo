@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sales Layout & Settings | PembelajarBelajar</title>
+    <link rel="stylesheet" href="../../../assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header class="header">
+        <h1>Sales Layout & Settings</h1>
+        <p class="subtitle">Memahami struktur navigasi dan pengaturan dasar di modul Sales.</p>
+    </header>
+
+    <main class="container">
+        <!-- STEP 1 -->
+        <section class="step-card">
+            <h2>Langkah 1: Menjelajahi Menu Sales</h2>
+            <p>
+                Sebelum mulai berjualan, penting untuk memahami tata letak navigasi Odoo Sales.
+                Menu utama Odoo Sales terdiri dari beberapa bagian penting:
+            </p>
+            <ul>
+                <li><strong>Orders:</strong> Tempat mengelola Quotations (Penawaran) dan Orders (Pesanan).</li>
+                <li><strong>To Invoice:</strong> Menu untuk melihat pesanan yang siap ditagih (Orders to Invoice) dan
+                    pesanan yang bisa di-upsell (Orders to Upsell).</li>
+                <li><strong>Products:</strong> Pusat pengelolaan katalog produk Anda. Di bawah header ini, Anda tidak
+                    hanya menemukan "Products", tetapi juga:
+                    <ul>
+                        <li>Product Variants (Varian Produk)</li>
+                        <li>Pricelists (Daftar Harga)</li>
+                        <li>Discount & Loyalty (Diskon & Loyalitas)</li>
+                        <li>Gift cards & eWallet</li>
+                    </ul>
+                </li>
+                <li><strong>Reporting:</strong> Untuk melihat analisis penjualan.</li>
+                <li><strong>Configuration:</strong> Pusat pengaturan modul.</li>
+            </ul>
+
+            <div class="image-placeholder missing">
+                <div class="placeholder-text">Screenshot: Sales Menu Navigation</div>
+            </div>
+
+            <div class="step-footer">
+                <div style="display: flex; gap: 10px; align-items: center;">
+                    <label for="step1-check">Selesai dibaca</label>
+                    <input type="checkbox" id="step1-check" class="mark-done"
+                        onchange="updateProgress('sales_materi1')">
+                </div>
+            </div>
+        </section>
+
+        <!-- STEP 2 -->
+        <section class="step-card">
+            <h2>Langkah 2: Mengakses Pengaturan (Settings)</h2>
+            <p>
+                Untuk mengubah perilaku aplikasi Sales, seperti mengaktifkan diskon, varian produk, atau unit ukuran
+                (UoM), Anda perlu mengakses halaman Pengaturan.
+            </p>
+            <p>
+                Pergilah ke menu <strong>Configuration > Settings</strong>. Di halaman ini, Anda bisa mengaktifkan
+                berbagai fitur lanjutan yang mungkin belum aktif secara default.
+            </p>
+
+            <div class="deep-dive">
+                <h3>💡 Tips: Search Bar</h3>
+                <p>Gunakan kolom pencarian di halaman Settings untuk menemukan opsi dengan cepat, misalnya ketik
+                    "Discount" untuk langsung menemukan pengaturan diskon.</p>
+            </div>
+
+            <div class="image-placeholder missing">
+                <div class="placeholder-text">Screenshot: Sales Configuration Settings page</div>
+            </div>
+
+            <div class="step-footer">
+                <div style="display: flex; gap: 10px; align-items: center;">
+                    <label for="step2-check">Selesai dibaca</label>
+                    <input type="checkbox" id="step2-check" class="mark-done"
+                        onchange="updateProgress('sales_materi1')">
+                </div>
+            </div>
+        </section>
+
+        <!-- STEP 3 -->
+        <section class="step-card">
+            <h2>Langkah 3: Manajemen Tagihan (Invoicing)</h2>
+            <p>
+                Menu <strong>To Invoice</strong> sangat krusial bagi tim sales untuk memastikan pendapatan tercatat.
+                Di bawah menu ini terdapat dua sub-menu utama:
+            </p>
+            <ol>
+                <li><strong>Orders to Invoice:</strong> Daftar pesanan penjualan yang produknya sudah dikirim (atau
+                    sesuai kebijakan penagihan) tetapi belum dibuatkan fakturnya.</li>
+                <li><strong>Orders to Upsell:</strong> Pesanan yang berpotensi untuk dijual lebih lanjut.</li>
+            </ol>
+
+            <div class="image-placeholder missing">
+                <div class="placeholder-text">Screenshot: To Invoice Menu Options</div>
+            </div>
+
+            <div class="step-footer">
+                <div style="display: flex; gap: 10px; align-items: center;">
+                    <label for="step3-check">Selesai dibaca</label>
+                    <input type="checkbox" id="step3-check" class="mark-done"
+                        onchange="updateProgress('sales_materi1')">
+                </div>
+            </div>
+        </section>
+
+        <!-- QUIZ SECTION -->
+        <section class="step-card">
+            <h2>Kuis: Sales Layout</h2>
+            <p>Uji pemahaman Anda tentang navigasi aplikasi Sales.</p>
+            <div class="quiz-container">
+                <!-- Quiz will be rendered here -->
+            </div>
+            <div class="step-footer">
+                <button class="quiz-submit-btn" onclick="checkQuiz()">Periksa Jawaban</button>
+                <div id="quizResult" style="display: none;"></div>
+            </div>
+        </section>
+
+        <!-- NAVIGATION -->
+        <div class="next-action-area" id="nextActionArea" style="display: none;">
+            <h3>Luar Biasa! 🎉</h3>
+            <p>Anda telah memahami struktur dasar aplikasi Sales.</p>
+            <a href="../sales-materi-2/index.html" class="btn-next">Lanjut ke Materi 2 ➔</a>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <a href="../../../sales.html">Kembali ke Dashboard Sales</a>
+    </footer>
+
+    <script src="../../../assets/js/lms-core.js"></script>
+    <script src="../../../assets/js/quiz-bank.js"></script>
+    <script src="../../../assets/js/quiz-engine.js"></script>
+    <script>
+        const PRODUCT_ID = "sales_materi1"; // ID unik untuk materi ini
+
+        document.addEventListener("DOMContentLoaded", () => {
+            initMateriProgress(PRODUCT_ID);
+            renderQuiz(PRODUCT_ID, ".quiz-container");
+        });
+    </script>
+</body>
+
+</html>

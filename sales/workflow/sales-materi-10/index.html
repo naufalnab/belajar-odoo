@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Materi 10: From Lead to Invoice | Modul Sales</title>
+    <link rel="stylesheet" href="../../../assets/css/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="progress-wrapper">
+        <div class="progress-container" id="progressContainer">
+            <div class="progress-bar" id="progressBar"></div>
+            <span class="progress-label" id="progressLabel" style="top: 24px">0%</span>
+        </div>
+    </div>
+
+    <main class="container">
+        <button class="dark-toggle" onclick="toggleDark()">🌙</button>
+
+        <header class="header">
+            <div id="materiBadge" class="materi-badge" style="display: none">
+                🎓 Materi 10 Sales Lulus
+            </div>
+            <span class="badge">Sales - Materi 10</span>
+            <h1>From Lead to Invoice</h1>
+            <p class="subtitle">
+                Memahami alur kerja lengkap penjualan: Dari prosepk (Lead/Opportunity), Penawaran, hingga Faktur Lunas.
+            </p>
+
+            <div class="image-placeholder">
+                <img src="../../../assets/images/sales/materi-10/hero.png" alt="Lead to Invoice Workflow"
+                    onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+                <span class="placeholder-text">📸 Ilustrasi: Alur CRM -> Sales -> Accounting</span>
+            </div>
+        </header>
+
+        <section class="step-card">
+            <h2>1. Mengubah Kontak menjadi Opportunity</h2>
+            <div class="content">
+                <p>Semuanya dimulai dari data pelanggan (kontak). Jika Anda melihat potensi bisnis, Anda bisa langsung
+                    mengubah kontak menjadi peluang (Opportunity).</p>
+                <ol class="instruction-list">
+                    <li>Buka formulir Kontak.</li>
+                    <li>Pastikan Anda dalam mode <strong>Edit</strong> (jika di Odoo versi lama, tombol Action kadang
+                        tersembunyi).</li>
+                    <li>Klik tombol <strong>Action</strong> > <strong>Create Opportunity</strong> (atau Grant Portal
+                        Access, dll).</li>
+                </ol>
+                <p>Opsi ini memudahkan tim penjualan bergerak cepat tanpa harus berpindah-pindah aplikasi secara manual.
+                </p>
+
+                <div class="image-placeholder">
+                    <img src="../../../assets/images/sales/materi-10/step-1.png" alt="Action Create Opportunity"
+                        onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+                    <span class="placeholder-text">📸 Screenshot: Menu Action > Create Opportunity</span>
+                </div>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>2. Membuat Quotation dari Opportunity</h2>
+            <div class="content">
+                <p>Setelah Opportunity dibuat dan prospek tertarik, langkah selanjutnya adalah mengirimkan harga resmi.
+                </p>
+                <ul>
+                    <li>Di dalam formulir Opportunity (CRM), terdapat tombol khusus bernama <strong>New
+                            Quotation</strong>.</li>
+                    <li>Mengklik ini akan otomatis mengisi data pelanggan dan membawa Anda ke formulir Sales Order
+                        draft.</li>
+                    <li>Isi produk yang diminati, harga, dan kirimkan ke pelanggan via email.</li>
+                </ul>
+
+                <div class="image-placeholder">
+                    <img src="../../../assets/images/sales/materi-10/step-2.png" alt="New Quotation Button"
+                        onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+                    <span class="placeholder-text">📸 Screenshot: Tombol New Quotation di CRM</span>
+                </div>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>3. Confirm Order & Create Invoice</h2>
+            <div class="content">
+                <p>Saat pelanggan setuju:</p>
+                <ol class="instruction-list">
+                    <li>Klik <strong>Confirm</strong> pada Quotation. Status berubah menjadi <strong>Sales
+                            Order</strong>.</li>
+                    <li>Barang akan disiapkan oleh tim gudang (Delivery).</li>
+                    <li>Setelah barang dikirim (atau sesuai kebijakan invoice), klik tombol <strong>Create
+                            Invoice</strong>.</li>
+                </ol>
+                <p>Disinilah aplikasi <strong>Accounting</strong> mengambil alih. Faktur draft dibuat, menunggu validasi
+                    (Post) dan pembayaran (Register Payment) dari tim keuangan.</p>
+
+                <div class="image-placeholder">
+                    <img src="../../../assets/images/sales/materi-10/step-3.png" alt="Invoice Process"
+                        onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+                    <span class="placeholder-text">📸 Screenshot: Tombol Create Invoice</span>
+                </div>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+
+        <section class="step-card quiz-card" id="sales-materi-10-quiz">
+            <div class="quiz-progress-wrapper">
+                <div class="quiz-progress-bar" id="quizProgressBar"></div>
+            </div>
+
+            <h2>📝 Quiz Sales Materi 10</h2>
+
+            <div class="quiz-container">
+                <!-- Quiz akan di-render oleh JS -->
+            </div>
+
+            <div class="step-footer">
+                <button class="quiz-submit-btn" onclick="checkQuiz()">
+                    Periksa Jawaban
+                </button>
+                <div id="quizResult" style="display: none"></div>
+            </div>
+        </section>
+
+        <div id="nextActionArea" class="next-action-area" style="display: none">
+            <h3>🎉 Materi Sales 10 Selesai!</h3>
+            <p>
+                Selamat! Anda telah memahami siklus penuh penjualan di Odoo.
+            </p>
+            <a href="../../../sales.html" class="btn-next">
+                Kembali ke Dashboard Sales ➔
+            </a>
+        </div>
+
+        <footer class="footer">
+            <a href="../../../sales.html" style="text-decoration: none; color: #666; font-weight: 600">← Kembali ke
+                Modul
+                Sales</a>
+        </footer>
+    </main>
+
+    <!-- Load JS -->
+    <script src="../../../assets/js/quiz-bank.js"></script>
+    <script src="../../../assets/js/lms-core.js"></script>
+    <script src="../../../assets/js/quiz-engine.js"></script>
+
+    <script>
+        const MATERI_ID = "sales_materi10";
+
+        document.addEventListener("DOMContentLoaded", () => {
+            initMateriProgress(MATERI_ID);
+            renderQuiz(MATERI_ID, ".quiz-container");
+
+            if (loadQuizResult(MATERI_ID)?.passed) {
+                showNextButton();
+            }
+        });
+
+        const originalOnQuizPassed = window.onQuizPassed;
+        window.onQuizPassed = function (materiId, score) {
+            if (originalOnQuizPassed) originalOnQuizPassed(materiId, score);
+            showNextButton();
+        };
+
+        function showNextButton() {
+            const area = document.getElementById("nextActionArea");
+            if (area) {
+                area.style.display = "block";
+                setTimeout(() => {
+                    area.scrollIntoView({ behavior: "smooth", block: "center" });
+                }, 500);
+            }
+        }
+
+        function toggleDark() {
+            document.body.classList.toggle("dark");
+            localStorage.setItem("darkMode", document.body.classList.contains("dark"));
+        }
+        if (localStorage.getItem("darkMode") === "true") {
+            document.body.classList.add("dark");
+        }
+    </script>
+</body>
+
+</html>

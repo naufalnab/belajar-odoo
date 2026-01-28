@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Variants | PembelajarBelajar</title>
+    <link rel="stylesheet" href="../../../assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header class="header">
+        <h1>Product Variants</h1>
+        <p class="subtitle">Mengelola produk dengan variasi warna, ukuran, dan lainnya.</p>
+    </header>
+
+    <main class="container">
+        <!-- STEP 1 -->
+        <section class="step-card">
+            <h2>Langkah 1: Menampilkan Varian (Attributes)</h2>
+            <p>
+                Saat menjual produk seperti kaos, Anda pasti memiliki variasi ukuran dan warna. Di Odoo, ini disebut
+                <strong>Attributes</strong> & <strong>Variants</strong>.
+                Salah satu pengaturan penting adalah <strong>Display Type</strong>:
+            </p>
+            <ul>
+                <li><strong>Radio:</strong> Menampilkan varian sebagai opsi tombol lingkaran yang bisa dipilih (klik
+                    satu saja).</li>
+                <li><strong>Select:</strong> Menampilkan varian sebagai <strong>menu drop-down</strong>. Cocok jika
+                    pilihannya sangat banyak.</li>
+                <li><strong>Color:</strong> Menampilkan kotak warna kecil.</li>
+            </ul>
+
+            <div class="image-placeholder missing">
+                <div class="placeholder-text">Screenshot: Product Attribute Display Type settings</div>
+            </div>
+
+            <div class="step-footer">
+                <div style="display: flex; gap: 10px; align-items: center;">
+                    <label for="step1-check">Selesai dibaca</label>
+                    <input type="checkbox" id="step1-check" class="mark-done"
+                        onchange="updateProgress('sales_materi4')">
+                </div>
+            </div>
+        </section>
+
+        <!-- STEP 2 -->
+        <section class="step-card">
+            <h2>Langkah 2: Mode Pembuatan Varian (Creation Mode)</h2>
+            <p>
+                Odoo memberikan fleksibilitas bagaimana varian dibuat di database:
+            <ul>
+                <li><strong>Instantly:</strong> Semua kombinasi varian dibuat segera setelah atribut ditambahkan ke
+                    produk.</li>
+                <li><strong>Dynamically:</strong> Varian hanya dibuat ketika varian tersebut pertama kali dijual.</li>
+            </ul>
+            </p>
+            <div class="alert warning">
+                <strong>Peringatan:</strong> Setelah sebuah atribut digunakan pada minimal satu produk, <strong>Variants
+                    Creation Mode tidak dapat diubah lagi</strong>. Jadi, pastikan Anda memilih mode yang tepat sejak
+                awal!
+            </div>
+
+            <div class="step-footer">
+                <div style="display: flex; gap: 10px; align-items: center;">
+                    <label for="step2-check">Selesai dibaca</label>
+                    <input type="checkbox" id="step2-check" class="mark-done"
+                        onchange="updateProgress('sales_materi4')">
+                </div>
+            </div>
+        </section>
+
+        <!-- STEP 3 -->
+        <section class="step-card">
+            <h2>Langkah 3: Harga Tambahan (Extra Price)</h2>
+            <p>
+                Bagaimana jika kaos ukuran XXL harganya lebih mahal? Atau bahan premium ada biaya tambahannya?
+                Gunakan fitur <strong>Value Price Extra</strong> (atau Default Extra Price).
+            </p>
+            <p>
+                Anda bisa mengatur nominal tambahan ini pada nilai atribut spesifik di dalam template produk.
+                Misalnya: Atribut "Bahan" -> Nilai "Premium Cotton" -> Extra Price: Rp 50.000.
+                Maka harga jual otomatis akan naik Rp 50.000 jika pelanggan memilih varian tersebut.
+            </p>
+
+            <div class="image-placeholder missing">
+                <div class="placeholder-text">Screenshot: Setting Extra Price on Attribute Value</div>
+            </div>
+
+            <div class="step-footer">
+                <div style="display: flex; gap: 10px; align-items: center;">
+                    <label for="step3-check">Selesai dibaca</label>
+                    <input type="checkbox" id="step3-check" class="mark-done"
+                        onchange="updateProgress('sales_materi4')">
+                </div>
+            </div>
+        </section>
+
+        <!-- QUIZ SECTION -->
+        <section class="step-card">
+            <h2>Kuis: Product Variants</h2>
+            <p>Uji pemahaman Anda tentang varian produk.</p>
+            <div class="quiz-container">
+                <!-- Quiz will be rendered here -->
+            </div>
+            <div class="step-footer">
+                <button class="quiz-submit-btn" onclick="checkQuiz()">Periksa Jawaban</button>
+                <div id="quizResult" style="display: none;"></div>
+            </div>
+        </section>
+
+        <!-- NAVIGATION -->
+        <div class="next-action-area" id="nextActionArea" style="display: none;">
+            <h3>Luar Biasa! 🎉</h3>
+            <p>Anda kini menguasai varian produk.</p>
+            <a href="../../quotations/sales-materi-5/index.html" class="btn-next">Lanjut ke Materi 5 ➔</a>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <a href="../../../sales.html">Kembali ke Dashboard Sales</a>
+    </footer>
+
+    <script src="../../../assets/js/lms-core.js"></script>
+    <script src="../../../assets/js/quiz-bank.js"></script>
+    <script src="../../../assets/js/quiz-engine.js"></script>
+    <script>
+        const PRODUCT_ID = "sales_materi4";
+
+        document.addEventListener("DOMContentLoaded", () => {
+            initMateriProgress(PRODUCT_ID);
+            renderQuiz(PRODUCT_ID, ".quiz-container");
+        });
+    </script>
+</body>
+
+</html>

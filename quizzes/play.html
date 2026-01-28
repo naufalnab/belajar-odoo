@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Player | PembelajarBelajar</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        .quiz-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            text-decoration: none;
+            color: #666;
+            font-weight: 600;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <main class="container">
+        <a href="../quizzes.html" class="back-link">← Kembali ke Bank Quiz</a>
+        <button class="dark-toggle">🌙</button>
+
+        <header class="quiz-header">
+            <span class="badge" id="quizBadge">Quiz</span>
+            <h1 id="quizTitle">Memuat Quiz...</h1>
+            <p class="subtitle" id="quizSubtitle">Silakan jawab pertanyaan berikut.</p>
+        </header>
+
+        <section class="step-card quiz-card">
+            <div class="quiz-progress-wrapper">
+                <div class="quiz-progress-bar" id="quizProgressBar"></div>
+            </div>
+            <div class="quiz-container"></div>
+            <div class="step-footer">
+                <button class="quiz-submit-btn" onclick="checkQuiz()">Periksa Jawaban</button>
+                <div id="quizResult" style="display: none;"></div>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="../assets/js/quiz-bank.js"></script>
+    <script src="../assets/js/lms-core.js"></script>
+    <script src="../assets/js/quiz-engine.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const quizId = urlParams.get('id');
+
+            if (!quizId || !window.QUIZ_BANK[quizId]) {
+                document.getElementById('quizTitle').innerText = "Quiz Tidak Ditemukan";
+                document.querySelector('.quiz-container').innerHTML = "<p style='text-align:center; color:red;'>ID Quiz tidak valid atau belum tersedia.</p>";
+                document.querySelector('.quiz-submit-btn').style.display = 'none';
+                return;
+            }
+
+            // Update UI
+            const materiNum = quizId.replace('materi', '');
+            document.getElementById('quizBadge').innerText = `Materi ${materiNum}`;
+            document.getElementById('quizTitle').innerText = `Quiz Materi ${materiNum}`;
+
+            // Render Quiz
+            initMateriProgress(quizId); // Load saved state if any
+            renderQuiz(quizId, ".quiz-container");
+        });
+
+        // Override onQuizPassed to stay on page
+        window.onQuizPassed = function (materiId, score) {
+            console.log(`Quiz ${materiId} passed with score ${score}`);
+            // Optional: Celebrate confetti or visual cue
+        };
+    </script>
+</body>
+
+</html>

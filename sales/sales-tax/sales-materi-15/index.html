@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Materi 15: Tax Basics | Modul Sales</title>
+    <link rel="stylesheet" href="../../../assets/css/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="progress-wrapper">
+        <div class="progress-container" id="progressContainer">
+            <div class="progress-bar" id="progressBar"></div>
+            <span class="progress-label" id="progressLabel" style="top: 24px">0%</span>
+        </div>
+    </div>
+
+    <main class="container">
+        <button class="dark-toggle" onclick="toggleDark()">🌙</button>
+
+        <header class="header">
+            <div id="materiBadge" class="materi-badge" style="display: none">
+                🎓 Materi 15 Sales Lulus
+            </div>
+            <span class="badge">Sales - Materi 15</span>
+            <h1>Dasar-Dasar Pajak (Tax Basics)</h1>
+            <p class="subtitle">
+                Memahami cara kerja Tax Localization, perhitungan pajak, dan kustomisasi pajak tingkat lanjut.
+            </p>
+
+            <div class="image-placeholder">
+                <img src="../../../assets/images/sales/materi-15/hero.png" alt="Sales Tax Illustration"
+                    onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+                <span class="placeholder-text">📸 Ilustrasi: Pengaturan Pajak di Odoo</span>
+            </div>
+        </header>
+
+        <section class="step-card">
+            <h2>1. Tax Localization Package</h2>
+            <div class="content">
+                <p>Odoo berusaha membuat pengaturan pajak semudah mungkin dengan menggunakan <strong>Tax Localization
+                        Package</strong>.</p>
+                <ul>
+                    <li>Paket ini otomatis terinstal berdasarkan <strong>Negara (Country)</strong> yang Anda pilih saat
+                        pertama kali membuat database perusahaan.</li>
+                    <li>Paket ini sudah berisi aturan pajak standar yang berlaku di negara tersebut (misal: PPN 11%
+                        untuk Indonesia, GST untuk Singapura, dsb).</li>
+                </ul>
+                <div class="alert info">
+                    <strong>Penting:</strong> Selalu pilih negara yang benar saat inisialisasi database agar laporan
+                    pajak (Tax Report) sesuai dengan regulasi pemerintah setempat.
+                </div>
+
+                <div class="image-placeholder">
+                    <img src="../../../assets/images/sales/materi-15/step-1.png" alt="Company Country Selection"
+                        onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+                    <span class="placeholder-text">📸 Screenshot: Pemilihan Negara pada Database</span>
+                </div>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>2. Perhitungan Pajak: Percentage of Price</h2>
+            <div class="content">
+                <p>Metode perhitungan pajak yang paling umum adalah <strong>Percentage of Price</strong>.</p>
+                <ul>
+                    <li><strong>Cara Kerja:</strong> Pajak dihitung dengan mengalikan persentase tertentu (misal 11%)
+                        dengan harga jual produk.</li>
+                    <li>Sederhana, standar, dan digunakan di hampir semua transaksi ritel.</li>
+                </ul>
+                <p>Anda bisa membuat pajak baru atau mengedit yang sudah ada di menu <strong>Accounting</strong> >
+                    <strong>Configuration</strong> > <strong>Taxes</strong>.</p>
+
+                <div class="image-placeholder">
+                    <img src="../../../assets/images/sales/materi-15/step-2.png" alt="Tax Computation Percentage"
+                        onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+                    <span class="placeholder-text">📸 Screenshot: Konfigurasi Pajak Percentage of Price</span>
+                </div>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>3. Perhitungan Pajak Lanjutan: Python Code</h2>
+            <div class="content">
+                <p>Untuk kasus pajak yang sangat kompleks (misal: pajak progresif, pajak bersyarat), Odoo menyediakan
+                    opsi perhitungan via <strong>Python Code</strong>.</p>
+                <ul>
+                    <li><strong>Syarat:</strong> Anda perlu menginstal modul teknis bernama <strong>"Define Taxes as
+                            Python Code"</strong> dari menu Apps.</li>
+                    <li>Setelah diinstal, opsi "Python Code" akan muncul di pilihan "Tax Computation".</li>
+                    <li>Ini memberikan fleksibilitas tanpa batas bagi developer untuk menentukan logika pajak.</li>
+                </ul>
+
+                <div class="image-placeholder">
+                    <img src="../../../assets/images/sales/materi-15/step-3.png" alt="Python Code Tax"
+                        onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+                    <span class="placeholder-text">📸 Screenshot: Opsi Python Code pada Tax Computation</span>
+                </div>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card quiz-card" id="sales-materi-15-quiz">
+            <div class="quiz-progress-wrapper">
+                <div class="quiz-progress-bar" id="quizProgressBar"></div>
+            </div>
+
+            <h2>📝 Quiz Sales Materi 15</h2>
+
+            <div class="quiz-container">
+                <!-- Quiz akan di-render oleh JS -->
+            </div>
+
+            <div class="step-footer">
+                <button class="quiz-submit-btn" onclick="checkQuiz()">
+                    Periksa Jawaban
+                </button>
+                <div id="quizResult" style="display: none"></div>
+            </div>
+        </section>
+
+        <div id="nextActionArea" class="next-action-area" style="display: none">
+            <h3>🎉 Materi Sales 15 Selesai!</h3>
+            <p>
+                Anda kini memahami dasar-dasar perpajakan di Odoo.
+            </p>
+            <a href="../../../sales.html" class="btn-next">
+                Kembali ke Dashboard Sales ➔
+            </a>
+        </div>
+
+        <footer class="footer">
+            <a href="../../../sales.html" style="text-decoration: none; color: #666; font-weight: 600">← Kembali ke
+                Modul
+                Sales</a>
+        </footer>
+    </main>
+
+    <!-- Load JS -->
+    <script src="../../../assets/js/quiz-bank.js"></script>
+    <script src="../../../assets/js/lms-core.js"></script>
+    <script src="../../../assets/js/quiz-engine.js"></script>
+
+    <script>
+        const MATERI_ID = "sales_materi15";
+
+        document.addEventListener("DOMContentLoaded", () => {
+            initMateriProgress(MATERI_ID);
+            renderQuiz(MATERI_ID, ".quiz-container");
+
+            if (loadQuizResult(MATERI_ID)?.passed) {
+                showNextButton();
+            }
+        });
+
+        const originalOnQuizPassed = window.onQuizPassed;
+        window.onQuizPassed = function (materiId, score) {
+            if (originalOnQuizPassed) originalOnQuizPassed(materiId, score);
+            showNextButton();
+        };
+
+        function showNextButton() {
+            const area = document.getElementById("nextActionArea");
+            if (area) {
+                area.style.display = "block";
+                setTimeout(() => {
+                    area.scrollIntoView({ behavior: "smooth", block: "center" });
+                }, 500);
+            }
+        }
+
+        function toggleDark() {
+            document.body.classList.toggle("dark");
+            localStorage.setItem("darkMode", document.body.classList.contains("dark"));
+        }
+        if (localStorage.getItem("darkMode") === "true") {
+            document.body.classList.add("dark");
+        }
+    </script>
+</body>
+
+</html>

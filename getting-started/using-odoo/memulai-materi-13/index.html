@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Materi 13: Digest Emails | PembelajarBelajar</title>
+    <link rel="stylesheet" href="../../../assets/css/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="progress-wrapper">
+        <div class="progress-container" id="progressContainer">
+            <div class="progress-bar" id="progressBar"></div>
+            <span class="progress-label" id="progressLabel" style="top: 24px">0%</span>
+        </div>
+    </div>
+
+    <main class="container">
+        <button class="dark-toggle" onclick="toggleDark()">🌙</button>
+
+        <header class="header">
+            <div id="materiBadge" class="materi-badge" style="display: none">
+                🎓 Materi 13 Lulus
+            </div>
+            <span class="badge">Materi 13</span>
+            <h1>Digest Emails (Ringkasan Email)</h1>
+            <p class="subtitle">
+                Dapatkan ringkasan performa bisnis Anda secara berkala langsung di inbox.
+            </p>
+
+            <div class="image-placeholder" style="margin-top: 20px">
+                <img src="../../../assets/images/getting-started/materi-13/infographic.png"
+                    alt="Ilustrasi Digest Emails"
+                    onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+                <span class="placeholder-text">📸 Ilustrasi Utama: Contoh tampilan email Digest dengan KPI</span>
+            </div>
+        </header>
+
+        <section class="step-card">
+            <h2>1. Menambah KPI Baru</h2>
+            <div class="content">
+                <p>
+                    Isi dari Digest Email bergantung pada aplikasi yang terinstall.
+                </p>
+                <div class="alert info">
+                    <strong>Cara Menambah KPI:</strong>
+                    <p>
+                        Anda tidak bisa membuat KPI custom secara manual dari menu Digest. Untuk menambah KPI baru, Anda
+                        harus <strong>menginstall aplikasi yang relevan</strong> (misal: install modul
+                        <em>eCommerce</em>
+                        untuk melihat KPI penjualan online, atau install <em>CRM</em> untuk melihat pipeline).
+                    </p>
+                </div>
+                <p>
+                    Buka menu <strong>Settings > General Settings > Digest Email</strong> untuk mengonfigurasi KPI apa
+                    saja yang ingin ditampilkan (on/off).
+                </p>
+
+                <div class="image-placeholder">
+                    <img src="../../../assets/images/getting-started/materi-13/step-2-kpi.png"
+                        alt="Konfigurasi KPI Digest"
+                        onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+                    <span class="placeholder-text">📸 Screenshot: Checklist KPI di pengaturan Digest Email</span>
+                </div>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>2. Apa itu Digest Emails?</h2>
+            <div class="content">
+                <p>
+                    <strong>Digest Emails</strong> adalah email otomatis yang dikirimkan Odoo berisi ringkasan indikator
+                    kinerja utama (KPI) bisnis Anda. Ini membantu Anda tetap update tanpa harus login ke sistem setiap
+                    saat.
+                </p>
+                <div class="deep-dive">
+                    <h3>📅 Frekuensi Pengiriman</h3>
+                    <p>
+                        Anda dapat mengatur seberapa sering email ini dikirim:
+                    </p>
+                    <ul>
+                        <li><strong>Harian (Daily)</strong></li>
+                        <li><strong>Mingguan (Weekly)</strong></li>
+                        <li><strong>Bulanan (Monthly)</strong></li>
+                        <li><strong>Triwulanan (Quarterly)</strong></li>
+                    </ul>
+                </div>
+
+                <div class="image-placeholder">
+                    <img src="../../../assets/images/getting-started/materi-13/step-1-frequency.png"
+                        alt="Pengaturan Frekuensi Digest Email"
+                        onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+                    <span class="placeholder-text">📸 Screenshot: Menu pengaturan frekuensi (Daily, Weekly, dll)</span>
+                </div>
+
+                <h3>Opsi Pengiriman</h3>
+                <p>
+                    Ada beberapa cara untuk mengontrol kapan email dikirim:
+                </p>
+                <ul>
+                    <li>✅ <strong>Send Now:</strong> Mengirim email ringkasan saat itu juga (untuk tes).</li>
+                    <li>✅ <strong>Next Send Date:</strong> Menunggu tanggal pengiriman otomatis berikutnya.</li>
+                    <li>✅ <strong>Ganti Frekuensi (Frequency):</strong> Mengubah jadwal agar dikirim lebih cepat atau
+                        lambat (misal: dari Mingguan jadi Harian).</li>
+                </ul>
+                <div class="alert danger">
+                    <strong>PENTING:</strong> Tidak ada tombol khusus bernama "Schedule" untuk menjadwalkan manual ke
+                    jam tertentu. Odoo mengirim berdasarkan frekuensi jadwal yang dipilih.
+                </div>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card quiz-card" id="materi-13-quiz">
+            <div class="quiz-progress-wrapper">
+                <div class="quiz-progress-bar" id="quizProgressBar"></div>
+            </div>
+            <h2>📝 Quiz Materi 13</h2>
+            <div class="quiz-container"></div>
+            <div class="step-footer">
+                <button class="quiz-submit-btn" onclick="checkQuiz()">
+                    Periksa Jawaban
+                </button>
+                <div id="quizResult" style="display: none"></div>
+            </div>
+        </section>
+
+        <div id="nextActionArea" class="next-action-area" style="display: none">
+            <h3>🎉 Materi 13 Selesai!</h3>
+            <p>
+                Anda kini bisa memantau performa bisnis langsung dari inbox!
+            </p>
+            <a href="../memulai-materi-14/index.html" class="btn-next">Lanjut ke Materi 14 ➔</a>
+        </div>
+
+        <footer class="footer">
+            <a href="../../../getting-started.html" style="text-decoration: none; color: #666; font-weight: 600">←
+                Kembali ke
+                Dashboard</a>
+        </footer>
+    </main>
+
+    <script src="../../../assets/js/quiz-bank.js"></script>
+    <script src="../../../assets/js/lms-core.js"></script>
+    <script src="../../../assets/js/quiz-engine.js"></script>
+
+    <script>
+        // Inisialisasi Materi 13
+        document.addEventListener("DOMContentLoaded", () => {
+            initMateriProgress("materi13");
+            renderQuiz("materi13", ".quiz-container");
+
+            if (loadQuizResult("materi13")?.passed) {
+                const area = document.getElementById("nextActionArea");
+                if (area) area.style.display = "block";
+            }
+        });
+
+        const originalOnQuizPassed = window.onQuizPassed;
+        window.onQuizPassed = function (materiId, score) {
+            if (originalOnQuizPassed) originalOnQuizPassed(materiId, score);
+            const area = document.getElementById("nextActionArea");
+            if (area) {
+                area.style.display = "block";
+                setTimeout(() => {
+                    area.scrollIntoView({ behavior: "smooth", block: "center" });
+                }, 500);
+            }
+        };
+
+        function toggleDark() {
+            document.body.classList.toggle("dark");
+            localStorage.setItem(
+                "darkMode",
+                document.body.classList.contains("dark")
+            );
+        }
+        if (localStorage.getItem("darkMode") === "true")
+            document.body.classList.add("dark");
+    </script>
+</body>
+
+</html>

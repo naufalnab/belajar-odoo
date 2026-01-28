@@ -376,14 +376,6 @@ body.dark .lock-overlay {
   transition: border-color 0.3s;
 }
 
-/* Dark mode */
-body.dark .progress-label {
-  background: #28a745;
-}
-
-body.dark .progress-label::after {
-  border-color: #28a745 transparent transparent transparent;
-}
 
 /* ================================
    PROGRESS LABEL COLOR STATES
@@ -922,4 +914,50 @@ body.dark .alert.info {
 /* Dark Mode Adjustment for Table */
 body.dark .technical-table tr {
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+/* =====================================================
+   QUIZ COMPLETED STATE (READABLE)
+   ===================================================== */
+.quiz-status-banner {
+  background-color: #d4edda;
+  color: #155724;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  text-align: center;
+  border: 1px solid #c3e6cb;
+  font-weight: 600;
+  animation: slideDown 0.5s ease;
+}
+
+body.dark .quiz-status-banner {
+  background-color: #1e4620;
+  color: #a5d6a7;
+  border-color: #2e7d32;
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Hilangkan style .locked lama yang bikin blur */
+.locked {
+  opacity: 1 !important; /* Force readable */
+  pointer-events: auto !important; /* Allow scroll/select text */
+}
+
+/* Lock overlay lama (jika masih ada sisa) - hide aja */
+.lock-overlay {
+  display: none !important;
+}
+
+/* Visual cue for disabled inputs */
+.quiz-completed-view input[type="radio"]:disabled {
+  cursor: not-allowed;
+}
+
+.quiz-completed-view label {
+  cursor: default;
+  opacity: 1 !important; /* Pastikan label tetap jelas */
 }

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Materi 21: Pricelists Basic | Modul Sales</title>
+    <link rel="stylesheet" href="../../../assets/css/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="progress-wrapper">
+        <div class="progress-container" id="progressContainer">
+            <div class="progress-bar" id="progressBar"></div>
+            <span class="progress-label" id="progressLabel" style="top: 24px">0%</span>
+        </div>
+    </div>
+
+    <main class="container">
+        <button class="dark-toggle" onclick="toggleDark()">🌙</button>
+
+        <header class="header">
+            <div id="materiBadge" class="materi-badge" style="display: none">
+                🎓 Materi 21 Sales Lulus
+            </div>
+            <span class="badge">Sales - Materi 21</span>
+            <h1>Pricelists Basic</h1>
+            <p class="subtitle">
+                Mengelola strategi harga yang berbeda untuk berbagai segmen pelanggan dan mata uang.
+            </p>
+
+            <div class="image-placeholder">
+                <img src="../../../assets/images/sales/materi-21/hero.png" alt="Pricelists Overview"
+                    onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+                <span class="placeholder-text">📸 Ilustrasi: Strategi Harga (Pricelists)</span>
+            </div>
+        </header>
+
+        <section class="step-card">
+            <h2>1. Dasar-Dasar Pricelist</h2>
+            <div class="content">
+                <p>Odoo memungkinkan Anda memiliki banyak daftar harga (Pricelist) selain harga standar di produk.</p>
+                <ul>
+                    <li><strong>Multiple Prices per Product:</strong> Satu produk bisa punya harga yang berbeda di "IDR
+                        Public Pricelist", "USD Pricelist", atau "VIP Customers".</li>
+                    <li>Aktifkan dulu fitur <strong>Pricelists</strong> di <strong>Sales</strong> >
+                        <strong>Configuration</strong> > <strong>Settings</strong> > <strong>Pricing</strong>.</li>
+                </ul>
+
+                <div class="image-placeholder">
+                    <img src="../../../assets/images/sales/materi-21/step-1.png" alt="Activating Pricelists"
+                        onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+                    <span class="placeholder-text">📸 Screenshot: Aktivasi Pricelists di Pengaturan</span>
+                </div>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>2. Country Groups & Rules</h2>
+            <div class="content">
+                <p>Bagaimana menerapkan pricelist secara otomatis berdasarkan lokasi pelanggan?</p>
+                <ul>
+                    <li>Pada formulir Pricelist, Anda bisa mengisi field <strong>Country Groups</strong>.</li>
+                    <li>Misal: Buat pricelist "European Prices" dan tambahkan grup negara "Europe". Odoo otomatis
+                        mendeteksi pelanggan dari Eropa dan menerapkan harga ini.</li>
+                    <li>Anda bisa menambahkan <strong>Unlimited Price Rules</strong> di tab "Price Rules" untuk
+                        menentukan logika harga per produk atau kategori.</li>
+                </ul>
+
+                <div class="image-placeholder">
+                    <img src="../../../assets/images/sales/materi-21/step-2.png" alt="Pricelist Country Groups"
+                        onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+                    <span class="placeholder-text">📸 Screenshot: Setting Country Groups</span>
+                </div>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>3. Opsi Selectable (E-commerce)</h2>
+            <div class="content">
+                <p>Apakah pelanggan boleh memilih mata uang/harga sendiri?</p>
+                <ul>
+                    <li>Jika opsi <strong>Selectable</strong> dicentang pada formulir Pricelist, maka pengunjung website
+                        e-commerce Anda akan melihat opsi untuk mengganti mata uang/pricelist tersebut (biasanya di
+                        footer atau header website).</li>
+                    <li>Jika tidak dicentang, pricelist hanya berlaku otomatis di backend atau berdasarkan login
+                        pelanggan.</li>
+                </ul>
+
+                <div class="image-placeholder">
+                    <img src="../../../assets/images/sales/materi-21/step-3.png" alt="Selectable Option"
+                        onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+                    <span class="placeholder-text">📸 Screenshot: Opsi Selectable pada Pricelist</span>
+                </div>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card quiz-card" id="sales-materi-21-quiz">
+            <div class="quiz-progress-wrapper">
+                <div class="quiz-progress-bar" id="quizProgressBar"></div>
+            </div>
+
+            <h2>📝 Quiz Sales Materi 21</h2>
+
+            <div class="quiz-container">
+                <!-- Quiz akan di-render oleh JS -->
+            </div>
+
+            <div class="step-footer">
+                <button class="quiz-submit-btn" onclick="checkQuiz()">
+                    Periksa Jawaban
+                </button>
+                <div id="quizResult" style="display: none"></div>
+            </div>
+        </section>
+
+        <div id="nextActionArea" class="next-action-area" style="display: none">
+            <h3>🎉 Materi Sales 21 Selesai!</h3>
+            <p>
+                Anda sudah memahami dasar pengelolaan harga ganda.
+            </p>
+            <a href="../../pricelists/sales-materi-22/index.html" class="btn-next">
+                Lanjut ke Materi 22 (Advanced Pricelists) ➔
+            </a>
+        </div>
+
+        <footer class="footer">
+            <a href="../../../sales.html" style="text-decoration: none; color: #666; font-weight: 600">← Kembali ke
+                Modul
+                Sales</a>
+        </footer>
+    </main>
+
+    <!-- Load JS -->
+    <script src="../../../assets/js/quiz-bank.js"></script>
+    <script src="../../../assets/js/lms-core.js"></script>
+    <script src="../../../assets/js/quiz-engine.js"></script>
+
+    <script>
+        const MATERI_ID = "sales_materi21";
+
+        document.addEventListener("DOMContentLoaded", () => {
+            initMateriProgress(MATERI_ID);
+            renderQuiz(MATERI_ID, ".quiz-container");
+
+            if (loadQuizResult(MATERI_ID)?.passed) {
+                showNextButton();
+            }
+        });
+
+        const originalOnQuizPassed = window.onQuizPassed;
+        window.onQuizPassed = function (materiId, score) {
+            if (originalOnQuizPassed) originalOnQuizPassed(materiId, score);
+            showNextButton();
+        };
+
+        function showNextButton() {
+            const area = document.getElementById("nextActionArea");
+            if (area) {
+                area.style.display = "block";
+                setTimeout(() => {
+                    area.scrollIntoView({ behavior: "smooth", block: "center" });
+                }, 500);
+            }
+        }
+
+        function toggleDark() {
+            document.body.classList.toggle("dark");
+            localStorage.setItem("darkMode", document.body.classList.contains("dark"));
+        }
+        if (localStorage.getItem("darkMode") === "true") {
+            document.body.classList.add("dark");
+        }
+    </script>
+</body>
+
+</html>

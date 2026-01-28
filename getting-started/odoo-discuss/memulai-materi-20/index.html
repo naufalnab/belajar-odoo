@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Materi 20: WhatsApp Configuration | PembelajarBelajar</title>
+    <link rel="stylesheet" href="../../../assets/css/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="progress-wrapper">
+        <div class="progress-container" id="progressContainer">
+            <div class="progress-bar" id="progressBar"></div>
+            <span class="progress-label" id="progressLabel" style="top: 24px">0%</span>
+        </div>
+    </div>
+
+    <main class="container">
+        <button class="dark-toggle">🌙</button>
+
+        <header class="header">
+            <div id="materiBadge" class="materi-badge" style="display: none">
+                🎓 Materi 20 Lulus
+            </div>
+            <span class="badge">Materi 20</span>
+            <h1>WhatsApp Template Configuration</h1>
+            <p class="subtitle">
+                Konfigurasi lanjutan template WhatsApp, variabel dinamis, dan webhook.
+            </p>
+
+            <div class="image-placeholder" style="margin-top: 20px">
+                <img src="../../../assets/images/getting-started/materi-20/infographic.png"
+                    alt="Ilustrasi WhatsApp Config"
+                    onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+                <span class="placeholder-text">📸 Ilustrasi Utama: Konfigurasi Template WhatsApp</span>
+            </div>
+        </header>
+
+        <section class="step-card">
+            <h2>1. Variabel Dinamis (Field of Model)</h2>
+            <div class="content">
+                <p>
+                    Agar pesan WhatsApp terasa lebih personal, Anda dapat memasukkan data spesifik dari database Odoo
+                    langsung ke dalam template pesan.
+                </p>
+                <div class="alert info">
+                    <strong>Tips:</strong> Gunakan tipe variabel <strong>Field of Model</strong> untuk mereferensikan
+                    field tertentu (seperti Nama Pelanggan atau Nomor Order) di dalam badan pesan.
+                </div>
+                <p>
+                    Contohnya, alih-alih menulis "Halo Pelanggan", Anda bisa mengaturnya menjadi "Halo {{object.name}}"
+                    agar otomatis mengambil nama pelanggan yang dituju.
+                </p>
+                <div class="image-placeholder">
+                    <img src="../../../assets/images/getting-started/materi-20/step-1-variables.png"
+                        alt="Dynamic Variables"
+                        onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+                    <span class="placeholder-text">📸 Screenshot: Menambahkan 'Field of Model' variable ke
+                        template</span>
+                </div>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>2. Menentukan Model (Applies To)</h2>
+            <div class="content">
+                <p>
+                    Setiap template harus "tahu" data apa yang akan digunakan. Ini ditentukan di kolom <strong>Applies
+                        to</strong>.
+                </p>
+                <p>
+                    Kolom ini menentukan model Odoo mana (misalnya: Sales Order, Contact, Invoice) yang field-nya akan
+                    direferensikan dalam template tersebut. Jika Anda memilih "Contact", maka Anda bisa mengambil field
+                    nama, email, atau telepon dari data kontak.
+                </p>
+                <div class="image-placeholder">
+                    <img src="../../../assets/images/getting-started/materi-20/step-2-applies-to.png"
+                        alt="Kolom Applies To"
+                        onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+                    <span class="placeholder-text">📸 Screenshot: Setting kolom 'Applies to' pada form template</span>
+                </div>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>3. Konfigurasi Webhook</h2>
+            <div class="content">
+                <p>
+                    Agar Odoo bisa <strong>menerima pesan balasan</strong> dari pelanggan, Anda perlu memastikan koneksi
+                    dua arah berjalan lancar.
+                </p>
+                <ul class="technical-list">
+                    <li><strong>Callback URL & Verify Token:</strong> Dua field ini dibuat otomatis oleh Odoo.</li>
+                    <li><strong>Fungsi:</strong> Digunakan untuk mengonfigurasi penerimaan pesan masuk (receive/return
+                        messages) dari WhatsApp kembali ke Odoo.</li>
+                </ul>
+                <p>
+                    Tanpa konfigurasi ini, Anda mungkin bisa mengirim pesan keluar, tetapi tidak akan menerima balasan
+                    pelanggan di dalam Chatter Odoo.
+                </p>
+                <div class="image-placeholder">
+                    <img src="../../../assets/images/getting-started/materi-20/step-3-webhook.png"
+                        alt="Webhook Configuration"
+                        onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+                    <span class="placeholder-text">📸 Screenshot: Callback URL dan Verify Token di pengaturan
+                        WhatsApp</span>
+                </div>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card quiz-card" id="materi-20-quiz">
+            <div class="quiz-progress-wrapper">
+                <div class="quiz-progress-bar" id="quizProgressBar"></div>
+            </div>
+            <h2>📝 Quiz Materi 20</h2>
+            <div class="quiz-container"></div>
+            <div class="step-footer">
+                <button class="quiz-submit-btn" onclick="checkQuiz()">
+                    Periksa Jawaban
+                </button>
+                <div id="quizResult" style="display: none"></div>
+            </div>
+        </section>
+
+        <div id="nextActionArea" class="next-action-area" style="display: none">
+            <h3>🎉 Materi 20 Selesai!</h3>
+            <p>
+                Selamat! Anda telah menguasai konfigurasi template WhatsApp.
+            </p>
+            <a href="../../../getting-started.html" class="btn-next">Kembali ke Dashboard Utama ➔</a>
+        </div>
+
+        <footer class="footer">
+            <a href="../../../getting-started.html" style="text-decoration: none; color: #666; font-weight: 600">←
+                Kembali ke
+                Dashboard</a>
+        </footer>
+    </main>
+
+    <script src="../../../assets/js/quiz-bank.js"></script>
+    <script src="../../../assets/js/lms-core.js"></script>
+    <script src="../../../assets/js/quiz-engine.js"></script>
+
+    <script>
+        // Inisialisasi Materi 20
+        document.addEventListener("DOMContentLoaded", () => {
+            initMateriProgress("materi20");
+            renderQuiz("materi20", ".quiz-container");
+
+            if (loadQuizResult("materi20")?.passed) {
+                const area = document.getElementById("nextActionArea");
+                if (area) area.style.display = "block";
+            }
+        });
+
+        const originalOnQuizPassed = window.onQuizPassed;
+        window.onQuizPassed = function (materiId, score) {
+            if (originalOnQuizPassed) originalOnQuizPassed(materiId, score);
+            const area = document.getElementById("nextActionArea");
+            if (area) {
+                area.style.display = "block";
+                setTimeout(() => {
+                    area.scrollIntoView({ behavior: "smooth", block: "center" });
+                }, 500);
+            }
+        };
+    </script>
+</body>
+
+</html>

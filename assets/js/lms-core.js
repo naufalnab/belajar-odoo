@@ -7,7 +7,7 @@
 
 const LMS_CONFIG = {
   passingScore: 70,
-  totalMateri: 8, // ganti sesuai jumlah materi
+  totalMateri: 28, // ganti sesuai jumlah materi
 };
 
 /* ===================== UTIL ===================== */
@@ -182,23 +182,77 @@ function renderGlobalProgress(barSelector, textSelector) {
   if (text) text.innerText = `Progress Belajar: ${percent}%`;
 }
 
-/* ===================== DARK MODE ===================== */
+/* ===================== THEME MANAGER (SYSTEM/LIGHT/DARK) ===================== */
 
-function initDarkMode(toggleSelector) {
-  const toggle = qs(toggleSelector);
-  if (!toggle) return;
+const THEME = {
+  LIGHT: 'light',
+  DARK: 'dark',
+  SYSTEM: 'system'
+};
 
-  if (localStorage.getItem("darkMode") === "true") {
-    document.body.classList.add("dark");
+function initThemeSystem(toggleSelector) {
+  const toggleBtn = qs(toggleSelector);
+
+  // 0. MIGRASI DARI VERSI LAMA (Jika ada)
+  if (localStorage.getItem("darkMode")) {
+    const oldVal = localStorage.getItem("darkMode") === "true";
+    localStorage.setItem("themePreference", oldVal ? THEME.DARK : THEME.LIGHT);
+    localStorage.removeItem("darkMode"); // Hapus legacy
   }
 
-  toggle.addEventListener("click", () => {
-    document.body.classList.toggle("dark");
-    localStorage.setItem(
-      "darkMode",
-      document.body.classList.contains("dark")
-    );
+  // 1. Load Preference (default: SYSTEM)
+  let currentTheme = localStorage.getItem("themePreference") || THEME.SYSTEM;
+
+  // 2. Apply Initial State
+  applyTheme(currentTheme);
+  updateToggleIcon(toggleBtn, currentTheme);
+
+  // 3. Listen for System Changes (Only active in SYSTEM mode)
+  window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", (e) => {
+    if (localStorage.getItem("themePreference") === THEME.SYSTEM) {
+      applyTheme(THEME.SYSTEM);
+    }
   });
+
+  // 4. Click Handler (Cycle: SYSTEM -> LIGHT -> DARK -> SYSTEM)
+  if (toggleBtn) {
+    toggleBtn.addEventListener("click", () => {
+      // Logic Cycle: System -> Light -> Dark -> System
+      if (currentTheme === THEME.SYSTEM) currentTheme = THEME.LIGHT;
+      else if (currentTheme === THEME.LIGHT) currentTheme = THEME.DARK;
+      else currentTheme = THEME.SYSTEM;
+
+      localStorage.setItem("themePreference", currentTheme);
+      applyTheme(currentTheme);
+      updateToggleIcon(toggleBtn, currentTheme);
+    });
+  }
+}
+
+function applyTheme(theme) {
+  const isDark =
+    theme === THEME.DARK ||
+    (theme === THEME.SYSTEM && window.matchMedia("(prefers-color-scheme: dark)").matches);
+
+  if (isDark) {
+    document.body.classList.add("dark");
+  } else {
+    document.body.classList.remove("dark");
+  }
+}
+
+function updateToggleIcon(btn, theme) {
+  if (!btn) return;
+  if (theme === THEME.SYSTEM) {
+    btn.innerText = "🖥️"; // Icon Komputer/System
+    btn.title = "Mode: Mengikuti Sistem";
+  } else if (theme === THEME.LIGHT) {
+    btn.innerText = "☀️"; // Icon Matahari
+    btn.title = "Mode: Terang";
+  } else {
+    btn.innerText = "🌙"; // Icon Bulan
+    btn.title = "Mode: Gelap";
+  }
 }
 
 /* ===================== HELPERS ===================== */
@@ -268,7 +322,10 @@ function initImageLightbox() {
 
 document.addEventListener("DOMContentLoaded", () => {
   // dark mode optional
-  initDarkMode("#darkToggle");
+  initThemeSystem(".dark-toggle");
   // init lightbox
   initImageLightbox();
+
+  // Legacy shim: Overwrite old inline toggleDark to prevent conflicts
+  window.toggleDark = () => console.log("Legacy toggle suppressed.");
 });

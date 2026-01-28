@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Materi 26: Documents Management | PembelajarBelajar</title>
+    <link rel="stylesheet" href="../../../assets/css/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="progress-wrapper">
+        <div class="progress-container" id="progressContainer">
+            <div class="progress-bar" id="progressBar"></div>
+            <span class="progress-label" id="progressLabel" style="top: 24px">0%</span>
+        </div>
+    </div>
+
+    <main class="container">
+        <button class="dark-toggle">🌙</button>
+
+        <header class="header">
+            <div id="materiBadge" class="materi-badge" style="display: none">
+                🎓 Materi 26 Lulus
+            </div>
+            <span class="badge">Materi 26</span>
+            <h1>Documents Management</h1>
+            <p class="subtitle">
+                Digitalisasi dokumen, workflow, dan aksi otomatis.
+            </p>
+
+            <div class="image-placeholder" style="margin-top: 20px">
+                <img src="../../../assets/images/getting-started/materi-26/infographic.png" alt="Ilustrasi Documents"
+                    onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+                <span class="placeholder-text">📸 Ilustrasi Utama: Workflow Manajemen Dokumen</span>
+            </div>
+        </header>
+
+        <section class="step-card">
+            <h2>1. Menerima Dokumen via Email</h2>
+            <div class="content">
+                <p>
+                    Bagaimana Odoo menangani dokumen yang dikirim melalui email ke alamat tertentu (misal:
+                    inbox@company.odoo.com)?
+                </p>
+                <div class="alert info">
+                    <strong>Email Alias:</strong> Odoo menggunakan apa yang disebut <strong>Email Alias</strong>. Tidak
+                    perlu membuat akun email baru secara terpisah di server mail, cukup konfigurasi alias di Odoo yang
+                    akan mengarah ke Workspace dokumen tertentu.
+                </div>
+                <div class="image-placeholder">
+                    <img src="../../../assets/images/getting-started/materi-26/step-1-alias.png"
+                        alt="Email Alias Configuration"
+                        onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+                    <span class="placeholder-text">📸 Screenshot: Konfigurasi Email Alias di App Documents</span>
+                </div>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>2. Fitur "Split"</h2>
+            <div class="content">
+                <p>
+                    Apa yang dilakukan oleh tindakan <strong>"Split"</strong>?
+                </p>
+                <p>
+                    Ini sangat berguna jika Anda menscan banyak faktur menjadi satu file PDF panjang. Fitur Split akan
+                    <strong>memecah kumpulan dokumen (batch) menjadi file-file terpisah</strong>, di mana setiap pecahan
+                    bisa diberikan tindakan (Action) yang berbeda.
+                </p>
+                <div class="image-placeholder">
+                    <img src="../../../assets/images/getting-started/materi-26/step-2-split.png" alt="Splitting Tool"
+                        onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+                    <span class="placeholder-text">📸 Screenshot: Interface 'Split' dengan ikon Gunting</span>
+                </div>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>3. Kustomisasi Documents Actions</h2>
+            <div class="content">
+                <p>
+                    Anda ingin membuat tombol aksi seperti "Kirim ke Accounting" atau "Validasi Invoice"?
+                </p>
+                <p>
+                    Tindakan ini bisa dibuat dan dikustomisasi tanpa perlu koding.
+                </p>
+                <p>
+                    Lokasinya: <strong>Documents App > Configuration > Actions</strong>. Di sini Anda bisa mengatur
+                    conditions (syarat) dan actions (tindakan yang dilakukan) seperti memindahkan file, membuat record,
+                    atau menandai dengan tag.
+                </p>
+                <div class="image-placeholder">
+                    <img src="../../../assets/images/getting-started/materi-26/step-3-actions.png"
+                        alt="Documents Actions"
+                        onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+                    <span class="placeholder-text">📸 Screenshot: Halaman Configuration > Actions</span>
+                </div>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card quiz-card" id="materi-26-quiz">
+            <div class="quiz-progress-wrapper">
+                <div class="quiz-progress-bar" id="quizProgressBar"></div>
+            </div>
+            <h2>📝 Quiz Materi 26</h2>
+            <div class="quiz-container"></div>
+            <div class="step-footer">
+                <button class="quiz-submit-btn" onclick="checkQuiz()">
+                    Periksa Jawaban
+                </button>
+                <div id="quizResult" style="display: none"></div>
+            </div>
+        </section>
+
+        <div id="nextActionArea" class="next-action-area" style="display: none">
+            <h3>🎉 Materi 26 Selesai!</h3>
+            <p>
+                Anda sekarang bisa mengelola kantor tanpa kertas (paperless) dengan efisien.
+            </p>
+            <a href="../../../getting-started.html" class="btn-next">Kembali ke Dashboard Utama ➔</a>
+        </div>
+
+        <footer class="footer">
+            <a href="../../../getting-started.html" style="text-decoration: none; color: #666; font-weight: 600">←
+                Kembali ke
+                Dashboard</a>
+        </footer>
+    </main>
+
+    <script src="../../../assets/js/quiz-bank.js"></script>
+    <script src="../../../assets/js/lms-core.js"></script>
+    <script src="../../../assets/js/quiz-engine.js"></script>
+
+    <script>
+        // Inisialisasi Materi 26
+        document.addEventListener("DOMContentLoaded", () => {
+            initMateriProgress("materi26");
+            renderQuiz("materi26", ".quiz-container");
+
+            if (loadQuizResult("materi26")?.passed) {
+                const area = document.getElementById("nextActionArea");
+                if (area) area.style.display = "block";
+            }
+        });
+
+        const originalOnQuizPassed = window.onQuizPassed;
+        window.onQuizPassed = function (materiId, score) {
+            if (originalOnQuizPassed) originalOnQuizPassed(materiId, score);
+            const area = document.getElementById("nextActionArea");
+            if (area) {
+                area.style.display = "block";
+                setTimeout(() => {
+                    area.scrollIntoView({ behavior: "smooth", block: "center" });
+                }, 500);
+            }
+        };
+    </script>
+</body>
+
+</html>

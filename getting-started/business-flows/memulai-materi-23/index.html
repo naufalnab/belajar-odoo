@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Materi 23: Planning & POS | PembelajarBelajar</title>
+    <link rel="stylesheet" href="../../../assets/css/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="progress-wrapper">
+        <div class="progress-container" id="progressContainer">
+            <div class="progress-bar" id="progressBar"></div>
+            <span class="progress-label" id="progressLabel" style="top: 24px">0%</span>
+        </div>
+    </div>
+
+    <main class="container">
+        <button class="dark-toggle">🌙</button>
+
+        <header class="header">
+            <div id="materiBadge" class="materi-badge" style="display: none">
+                🎓 Materi 23 Lulus
+            </div>
+            <span class="badge">Materi 23</span>
+            <h1>Planning & Point of Sale</h1>
+            <p class="subtitle">
+                Mengatur jadwal shift dan manajemen kasir (POS).
+            </p>
+
+            <div class="image-placeholder" style="margin-top: 20px">
+                <img src="../../../assets/images/getting-started/materi-23/infographic.png"
+                    alt="Ilustrasi Planning & POS"
+                    onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+                <span class="placeholder-text">📸 Ilustrasi Utama: Shift Planning & POS Interface</span>
+            </div>
+        </header>
+
+        <section class="step-card">
+            <h2>1. Konflik Shift pada Planning</h2>
+            <div class="content">
+                <p>
+                    Saat mengatur jadwal kerja karyawan di aplikasi Planning, Anda mungkin melihat tanda "telinga merah"
+                    (red earmark) di sudut shift.
+                </p>
+                <div class="alert warning">
+                    <strong>Arti Tanda Merah:</strong> Itu menandakan adanya <strong>Conflicting shift</strong> (bentrok
+                    jadwal) untuk orang yang sama. Artinya, karyawan tersebut dijadwalkan bekerja di dua tempat atau
+                    waktu yang tumpang tindih.
+                </div>
+                <div class="image-placeholder">
+                    <img src="../../../assets/images/getting-started/materi-23/step-1-planning-conflict.png"
+                        alt="Planning App Conflict"
+                        onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+                    <span class="placeholder-text">📸 Screenshot: Tanda merah (conflict) pada Planning App</span>
+                </div>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>2. Menambahkan Produk ke POS</h2>
+            <div class="content">
+                <p>
+                    Bagaimana cara agar sebuah produk muncul di menu kasir (POS) untuk dijual?
+                </p>
+                <p>
+                    Anda bisa melakukannya dari:
+                </p>
+                <ul>
+                    <li>A. Langsung dari menu POS dalam mode kiosk (jika ada akses edit).</li>
+                    <li>B. Dari <strong>Inventory Application > Products</strong>, lalu centang opsi "Available in POS"
+                        pada tab Sales/Point of Sale.</li>
+                </ul>
+                <p>
+                    Jawaban yang paling tepat mencakup kedua metode tersebut (A dan B).
+                </p>
+                <div class="image-placeholder">
+                    <img src="../../../assets/images/getting-started/materi-23/step-2-pos-product.png"
+                        alt="POS Product Setting"
+                        onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+                    <span class="placeholder-text">📸 Screenshot: Checkbox 'Available in POS'</span>
+                </div>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>3. Edit Tata Letak Meja (Table Layout)</h2>
+            <div class="content">
+                <p>
+                    Untuk restoran atau bar, Anda bisa mengatur denah lantai (Floor Plan).
+                </p>
+                <p>
+                    Untuk mengedit posisi meja saat sesi POS sedang aktif, Anda perlu mengklik <strong>Ikon Pensil
+                        (Pencil Icon)</strong> di pojok kanan atas antarmuka POS. Ini akan membuka mode edit (Edit
+                    Tables) yang memungkinkan Anda menggeser, mengubah ukuran, atau menambahkan meja baru.
+                </p>
+                <div class="image-placeholder">
+                    <img src="../../../assets/images/getting-started/materi-23/step-3-pos-tables.png"
+                        alt="Editing Tables"
+                        onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+                    <span class="placeholder-text">📸 Screenshot: Ikon Pensil untuk edit meja di POS</span>
+                </div>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card quiz-card" id="materi-23-quiz">
+            <div class="quiz-progress-wrapper">
+                <div class="quiz-progress-bar" id="quizProgressBar"></div>
+            </div>
+            <h2>📝 Quiz Materi 23</h2>
+            <div class="quiz-container"></div>
+            <div class="step-footer">
+                <button class="quiz-submit-btn" onclick="checkQuiz()">
+                    Periksa Jawaban
+                </button>
+                <div id="quizResult" style="display: none"></div>
+            </div>
+        </section>
+
+        <div id="nextActionArea" class="next-action-area" style="display: none">
+            <h3>🎉 Materi 23 Selesai!</h3>
+            <p>
+                Anda sekarang mengerti manajemen shift dan operasional dasar POS.
+            </p>
+            <a href="../../../getting-started.html" class="btn-next">Kembali ke Dashboard Utama ➔</a>
+        </div>
+
+        <footer class="footer">
+            <a href="../../../getting-started.html" style="text-decoration: none; color: #666; font-weight: 600">←
+                Kembali ke
+                Dashboard</a>
+        </footer>
+    </main>
+
+    <script src="../../../assets/js/quiz-bank.js"></script>
+    <script src="../../../assets/js/lms-core.js"></script>
+    <script src="../../../assets/js/quiz-engine.js"></script>
+
+    <script>
+        // Inisialisasi Materi 23
+        document.addEventListener("DOMContentLoaded", () => {
+            initMateriProgress("materi23");
+            renderQuiz("materi23", ".quiz-container");
+
+            if (loadQuizResult("materi23")?.passed) {
+                const area = document.getElementById("nextActionArea");
+                if (area) area.style.display = "block";
+            }
+        });
+
+        const originalOnQuizPassed = window.onQuizPassed;
+        window.onQuizPassed = function (materiId, score) {
+            if (originalOnQuizPassed) originalOnQuizPassed(materiId, score);
+            const area = document.getElementById("nextActionArea");
+            if (area) {
+                area.style.display = "block";
+                setTimeout(() => {
+                    area.scrollIntoView({ behavior: "smooth", block: "center" });
+                }, 500);
+            }
+        };
+    </script>
+</body>
+
+</html>

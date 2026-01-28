@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Materi 19: Delivery Lead Times | Modul Sales</title>
+    <link rel="stylesheet" href="../../../assets/css/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="progress-wrapper">
+        <div class="progress-container" id="progressContainer">
+            <div class="progress-bar" id="progressBar"></div>
+            <span class="progress-label" id="progressLabel" style="top: 24px">0%</span>
+        </div>
+    </div>
+
+    <main class="container">
+        <button class="dark-toggle" onclick="toggleDark()">🌙</button>
+
+        <header class="header">
+            <div id="materiBadge" class="materi-badge" style="display: none">
+                🎓 Materi 19 Sales Lulus
+            </div>
+            <span class="badge">Sales - Materi 19</span>
+            <h1>Delivery Lead Times</h1>
+            <p class="subtitle">
+                Mengelola ekspektasi pelanggan dengan estimasi waktu pengiriman yang akurat.
+            </p>
+
+            <div class="image-placeholder">
+                <img src="../../../assets/images/sales/materi-19/hero.png" alt="Lead Times Illustration"
+                    onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+                <span class="placeholder-text">📸 Ilustrasi: Waktu Tunggu Pengiriman</span>
+            </div>
+        </header>
+
+        <section class="step-card">
+            <h2>1. Customer Lead Time</h2>
+            <div class="content">
+                <p>Setiap produk memiliki waktu tunggu standar.</p>
+                <ul>
+                    <li>Buka formulir produk > Tab <strong>Inventory</strong>.</li>
+                    <li>Cari field <strong>Customer Lead Time</strong>. Secara default terisi <strong>0 hari</strong>.
+                    </li>
+                    <li>Jika Anda mengubahnya menjadi misal 5 hari, maka "Delivery Date" di pesanan penjualan akan
+                        otomatis dihitung: Tanggal Pesan + 5 Hari.</li>
+                </ul>
+
+                <div class="image-placeholder">
+                    <img src="../../../assets/images/sales/materi-19/step-1.png" alt="Customer Lead Time Field"
+                        onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+                    <span class="placeholder-text">📸 Screenshot: Field Customer Lead Time di Produk</span>
+                </div>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>2. Delivery Date pada Sales Order</h2>
+            <div class="content">
+                <p>Bagaimana melihat atau mengubah tanggal janji temu pengiriman?</p>
+                <ul>
+                    <li>Di dalam Sales Order, buka tab <strong>Other Info</strong>.</li>
+                    <li>Lihat field <strong>Delivery Date</strong> di bagian "Delivery".</li>
+                    <li>Inilah tanggal yang dikomunikasikan ke pelanggan (dan tim gudang).</li>
+                </ul>
+                <div class="alert info">
+                    <strong>Catatan:</strong> Jika Anda mengubah tanggal ini secara manual, Odoo akan menjadwalkan
+                    pengiriman berdasarkan tanggal baru tersebut.
+                </div>
+
+                <div class="image-placeholder">
+                    <img src="../../../assets/images/sales/materi-19/step-2.png" alt="Delivery Date Field in SO"
+                        onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+                    <span class="placeholder-text">📸 Screenshot: Field Delivery Date di Sales Order</span>
+                </div>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>3. Security Lead Time</h2>
+            <div class="content">
+                <p>Untuk mengantisipasi keterlambatan tak terduga, Anda bisa menambahkan "buffer" keamanan.</p>
+                <ul>
+                    <li>Pergi ke <strong>Inventory</strong> > <strong>Configuration</strong> >
+                        <strong>Settings</strong>.</li>
+                    <li>Aktifkan <strong>Security Lead Time for Sales</strong>.</li>
+                    <li>Jika diset misal 2 hari, Odoo akan menjadwalkan pengiriman internal 2 hari
+                        <strong>sebelum</strong> tanggal janji ke pelanggan, agar tim gudang punya waktu ekstra.</li>
+                </ul>
+
+                <div class="image-placeholder">
+                    <img src="../../../assets/images/sales/materi-19/step-3.png" alt="Security Lead Time Setting"
+                        onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+                    <span class="placeholder-text">📸 Screenshot: Pengaturan Security Lead Time</span>
+                </div>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card quiz-card" id="sales-materi-19-quiz">
+            <div class="quiz-progress-wrapper">
+                <div class="quiz-progress-bar" id="quizProgressBar"></div>
+            </div>
+
+            <h2>📝 Quiz Sales Materi 19</h2>
+
+            <div class="quiz-container">
+                <!-- Quiz akan di-render oleh JS -->
+            </div>
+
+            <div class="step-footer">
+                <button class="quiz-submit-btn" onclick="checkQuiz()">
+                    Periksa Jawaban
+                </button>
+                <div id="quizResult" style="display: none"></div>
+            </div>
+        </section>
+
+        <div id="nextActionArea" class="next-action-area" style="display: none">
+            <h3>🎉 Materi Sales 19 Selesai!</h3>
+            <p>
+                Anda kini bisa mengelola jadwal pengiriman dengan lebih presisi.
+            </p>
+            <a href="../../delivery/sales-materi-20/index.html" class="btn-next">
+                Lanjut ke Materi 20 (Dropshipping) ➔
+            </a>
+        </div>
+
+        <footer class="footer">
+            <a href="../../../sales.html" style="text-decoration: none; color: #666; font-weight: 600">← Kembali ke
+                Modul
+                Sales</a>
+        </footer>
+    </main>
+
+    <!-- Load JS -->
+    <script src="../../../assets/js/quiz-bank.js"></script>
+    <script src="../../../assets/js/lms-core.js"></script>
+    <script src="../../../assets/js/quiz-engine.js"></script>
+
+    <script>
+        const MATERI_ID = "sales_materi19";
+
+        document.addEventListener("DOMContentLoaded", () => {
+            initMateriProgress(MATERI_ID);
+            renderQuiz(MATERI_ID, ".quiz-container");
+
+            if (loadQuizResult(MATERI_ID)?.passed) {
+                showNextButton();
+            }
+        });
+
+        const originalOnQuizPassed = window.onQuizPassed;
+        window.onQuizPassed = function (materiId, score) {
+            if (originalOnQuizPassed) originalOnQuizPassed(materiId, score);
+            showNextButton();
+        };
+
+        function showNextButton() {
+            const area = document.getElementById("nextActionArea");
+            if (area) {
+                area.style.display = "block";
+                setTimeout(() => {
+                    area.scrollIntoView({ behavior: "smooth", block: "center" });
+                }, 500);
+            }
+        }
+
+        function toggleDark() {
+            document.body.classList.toggle("dark");
+            localStorage.setItem("darkMode", document.body.classList.contains("dark"));
+        }
+        if (localStorage.getItem("darkMode") === "true") {
+            document.body.classList.add("dark");
+        }
+    </script>
+</body>
+
+</html>

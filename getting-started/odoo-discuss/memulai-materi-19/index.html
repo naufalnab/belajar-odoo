@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Materi 19: WhatsApp Integration | PembelajarBelajar</title>
+    <link rel="stylesheet" href="../../../assets/css/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="progress-wrapper">
+        <div class="progress-container" id="progressContainer">
+            <div class="progress-bar" id="progressBar"></div>
+            <span class="progress-label" id="progressLabel" style="top: 24px">0%</span>
+        </div>
+    </div>
+
+    <main class="container">
+        <button class="dark-toggle">🌙</button>
+
+        <header class="header">
+            <div id="materiBadge" class="materi-badge" style="display: none">
+                🎓 Materi 19 Lulus
+            </div>
+            <span class="badge">Materi 19</span>
+            <h1>WhatsApp Integration</h1>
+            <p class="subtitle">
+                Mengintegrasikan WhatsApp Business untuk komunikasi yang lebih cepat dan efisien.
+            </p>
+
+            <div class="image-placeholder" style="margin-top: 20px">
+                <img src="../../../assets/images/getting-started/materi-19/infographic.png"
+                    alt="Ilustrasi WhatsApp Integration"
+                    onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+                <span class="placeholder-text">📸 Ilustrasi Utama: Dashboard WhatsApp di Odoo</span>
+            </div>
+        </header>
+
+        <section class="step-card">
+            <h2>1. Persiapan Template WhatsApp</h2>
+            <div class="content">
+                <p>
+                    Sebelum Anda dapat menggunakan template WhatsApp yang sudah dikonfigurasi sebelumnya (Pre-configured
+                    templates), ada langkah penting yang harus dilakukan.
+                </p>
+                <div class="alert warning">
+                    <strong>Penting:</strong> Template tersebut <strong>harus diserahkan (submitted) ke Meta</strong>
+                    untuk mendapatkan persetujuan terlebih dahulu.
+                </div>
+                <p>
+                    Anda tidak bisa langsung menggunakannya begitu saja meskipun aplikasi sudah diinstal. Meta memiliki
+                    kebijakan ketat untuk mencegah spam, sehingga setiap template pesan bisnis (business-initiated)
+                    harus melalui proses review.
+                </p>
+                <div class="image-placeholder">
+                    <img src="../../../assets/images/getting-started/materi-19/step-1-template.png"
+                        alt="Submitted to Meta"
+                        onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+                    <span class="placeholder-text">📸 Screenshot: Status Template 'Pending Approval' di Odoo</span>
+                </div>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>2. Lokasi Pesan WhatsApp</h2>
+            <div class="content">
+                <p>
+                    Dimana saja pesan WhatsApp akan muncul di Odoo? Odoo mengintegrasikan percakapan WhatsApp ke dalam
+                    beberapa area agar mudah diakses.
+                </p>
+                <ul class="technical-list">
+                    <li><strong>Chatter:</strong> Pada record terkait (misalnya Sales Order atau Contact).</li>
+                    <li><strong>Messaging Icon:</strong> Di pojok kanan atas (tray icon), tempat notifikasi pesan masuk.
+                    </li>
+                    <li><strong>Chat Window:</strong> Sebagai jendela chat pop-up di pojok kanan bawah.</li>
+                    <li><strong>Discuss App:</strong> Di aplikasi diskusi utama untuk tampilan lebih luas.</li>
+                </ul>
+                <div class="image-placeholder">
+                    <img src="../../../assets/images/getting-started/materi-19/step-2-locations.png"
+                        alt="Lokasi Pesan WhatsApp"
+                        onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+                    <span class="placeholder-text">📸 Screenshot: Tampilan pesan WhatsApp di Chatter dan Discuss</span>
+                </div>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>3. Mengirim Pesan dari Chatter</h2>
+            <div class="content">
+                <p>
+                    Saat Anda menekan tombol WhatsApp di Chatter, Odoo akan menggunakan <strong>WhatsApp
+                        Template</strong> untuk mengirim pesan.
+                </p>
+                <p>
+                    Template ini memungkinkan Anda mengirim teks yang sudah diformat sebelumnya (preformatted), gambar,
+                    dan tautan (links) kepada pelanggan secara instan tanpa harus mengetik ulang.
+                </p>
+                <div class="image-placeholder">
+                    <img src="../../../assets/images/getting-started/materi-19/step-3-send.png"
+                        alt="Mengirim Pesan via Chatter"
+                        onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+                    <span class="placeholder-text">📸 Screenshot: Pop-up pemilihan template WhatsApp di Chatter</span>
+                </div>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card quiz-card" id="materi-19-quiz">
+            <div class="quiz-progress-wrapper">
+                <div class="quiz-progress-bar" id="quizProgressBar"></div>
+            </div>
+            <h2>📝 Quiz Materi 19</h2>
+            <div class="quiz-container"></div>
+            <div class="step-footer">
+                <button class="quiz-submit-btn" onclick="checkQuiz()">
+                    Periksa Jawaban
+                </button>
+                <div id="quizResult" style="display: none"></div>
+            </div>
+        </section>
+
+        <div id="nextActionArea" class="next-action-area" style="display: none">
+            <h3>🎉 Materi 19 Selesai!</h3>
+            <p>
+                Anda telah menyelesaikan materi tentang Integrasi WhatsApp!
+            </p>
+            <a href="../../../getting-started.html" class="btn-next">Kembali ke Dashboard Utama ➔</a>
+        </div>
+
+        <footer class="footer">
+            <a href="../../../getting-started.html" style="text-decoration: none; color: #666; font-weight: 600">←
+                Kembali ke
+                Dashboard</a>
+        </footer>
+    </main>
+
+    <script src="../../../assets/js/quiz-bank.js"></script>
+    <script src="../../../assets/js/lms-core.js"></script>
+    <script src="../../../assets/js/quiz-engine.js"></script>
+
+    <script>
+        // Inisialisasi Materi 19
+        document.addEventListener("DOMContentLoaded", () => {
+            initMateriProgress("materi19");
+            renderQuiz("materi19", ".quiz-container");
+
+            if (loadQuizResult("materi19")?.passed) {
+                const area = document.getElementById("nextActionArea");
+                if (area) area.style.display = "block";
+            }
+        });
+
+        const originalOnQuizPassed = window.onQuizPassed;
+        window.onQuizPassed = function (materiId, score) {
+            if (originalOnQuizPassed) originalOnQuizPassed(materiId, score);
+            const area = document.getElementById("nextActionArea");
+            if (area) {
+                area.style.display = "block";
+                setTimeout(() => {
+                    area.scrollIntoView({ behavior: "smooth", block: "center" });
+                }, 500);
+            }
+        };
+    </script>
+</body>
+
+</html>

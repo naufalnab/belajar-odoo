@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quotation Templates | PembelajarBelajar</title>
+    <link rel="stylesheet" href="../../../assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header class="header">
+        <h1>Quotation Templates</h1>
+        <p class="subtitle">Mempercepat pembuatan penawaran dengan template yang siap pakai.</p>
+    </header>
+
+    <main class="container">
+        <!-- STEP 1 -->
+        <section class="step-card">
+            <h2>Langkah 1: Mengakses Quotation Templates</h2>
+            <p>
+                Quotation Templates sangat berguna untuk menghemat waktu, terutama jika Anda sering menawarkan paket
+                produk yang sama.
+            </p>
+            <p>
+                Bagaimana cara mengakses konfigurasinya?
+                Ada dua jalan utama:
+            </p>
+            <ol>
+                <li>Melalui link <strong>'Template Configuration'</strong> yang ada di dokumen penawaran.</li>
+                <li>Atau melalui menu <strong>Configuration > Quotation Templates</strong> (Anda mungkin perlu
+                    mengaktifkan fitur ini terlebih dahulu di Settings).</li>
+            </ol>
+            <p><strong>Bukan</strong> di menu 'Templates > Configuration' ya!</p>
+
+            <div class="image-placeholder missing">
+                <div class="placeholder-text">Screenshot: Accessing Quotation Templates via Sales Settings</div>
+            </div>
+
+            <div class="step-footer">
+                <div style="display: flex; gap: 10px; align-items: center;">
+                    <label for="step1-check">Selesai dibaca</label>
+                    <input type="checkbox" id="step1-check" class="mark-done"
+                        onchange="updateProgress('sales_materi5')">
+                </div>
+            </div>
+        </section>
+
+        <!-- STEP 2 -->
+        <section class="step-card">
+            <h2>Langkah 2: Recurring Plan (Langganan)</h2>
+            <p>
+                Jika bisnis Anda berbasis langganan (subscription), template penawaran bisa diatur untuk mengakomodasi
+                ini.
+            </p>
+            <p>
+                Pada formulir template, perhatikan field bernama <strong>Recurring Plan</strong>.
+                Field ini wajib diisi jika template ini digunakan untuk produk berlangganan atau jasa berulang (misal:
+                Maintenance Bulanan).
+            </p>
+            <div class="deep-dive">
+                <h3>💡 Tips</h3>
+                <p>Mengatur Recurring Plan di template akan otomatis menerapkannya ke setiap penawaran baru yang
+                    menggunakan template tersebut.</p>
+            </div>
+
+            <div class="image-placeholder missing">
+                <div class="placeholder-text">Screenshot: Recurring Plan field on Quotation Template</div>
+            </div>
+
+            <div class="step-footer">
+                <div style="display: flex; gap: 10px; align-items: center;">
+                    <label for="step2-check">Selesai dibaca</label>
+                    <input type="checkbox" id="step2-check" class="mark-done"
+                        onchange="updateProgress('sales_materi5')">
+                </div>
+            </div>
+        </section>
+
+        <!-- STEP 3 -->
+        <section class="step-card">
+            <h2>Langkah 3: Tanda Tangan Online (Online Signature)</h2>
+            <p>
+                Ingin proses deal lebih cepat? Izinkan pelanggan menandatangani penawaran secara digital langsung dari
+                HP atau laptop mereka.
+            </p>
+            <p>
+                Untuk mengaktifkan fitur ini per template:
+            <ol>
+                <li>Buka template penawaran yang diinginkan.</li>
+                <li>Cari opsi <strong>Online Signature</strong> (Tanda Tangan Online).</li>
+                <li>Centang opsi tersebut.</li>
+            </ol>
+            Sekarang, tombol "Sign & Pay" akan muncul di portal pelanggan.
+            </p>
+
+            <div class="image-placeholder missing">
+                <div class="placeholder-text">Screenshot: Online Signature option</div>
+            </div>
+
+            <div class="step-footer">
+                <div style="display: flex; gap: 10px; align-items: center;">
+                    <label for="step3-check">Selesai dibaca</label>
+                    <input type="checkbox" id="step3-check" class="mark-done"
+                        onchange="updateProgress('sales_materi5')">
+                </div>
+            </div>
+        </section>
+
+        <!-- QUIZ SECTION -->
+        <section class="step-card">
+            <h2>Kuis: Quotation Templates</h2>
+            <p>Uji pemahaman Anda tentang template penawaran.</p>
+            <div class="quiz-container">
+                <!-- Quiz will be rendered here -->
+            </div>
+            <div class="step-footer">
+                <button class="quiz-submit-btn" onclick="checkQuiz()">Periksa Jawaban</button>
+                <div id="quizResult" style="display: none;"></div>
+            </div>
+        </section>
+
+        <!-- NAVIGATION -->
+        <div class="next-action-area" id="nextActionArea" style="display: none;">
+            <h3>Selesai! 👏</h3>
+            <p>Anda telah menyelesaikan modul lanjutan Sales.</p>
+            <a href="../../../sales.html" class="btn-next">Kembali ke Dashboard Sales</a>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <a href="../../../sales.html">Kembali ke Dashboard Sales</a>
+    </footer>
+
+    <script src="../../../assets/js/lms-core.js"></script>
+    <script src="../../../assets/js/quiz-bank.js"></script>
+    <script src="../../../assets/js/quiz-engine.js"></script>
+    <script>
+        const PRODUCT_ID = "sales_materi5";
+
+        document.addEventListener("DOMContentLoaded", () => {
+            initMateriProgress(PRODUCT_ID);
+            renderQuiz(PRODUCT_ID, ".quiz-container");
+        });
+    </script>
+</body>
+
+</html>

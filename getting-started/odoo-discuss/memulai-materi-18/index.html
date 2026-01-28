@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Materi 18: Working with Channels | PembelajarBelajar</title>
+    <link rel="stylesheet" href="../../../assets/css/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="progress-wrapper">
+        <div class="progress-container" id="progressContainer">
+            <div class="progress-bar" id="progressBar"></div>
+            <span class="progress-label" id="progressLabel" style="top: 24px">0%</span>
+        </div>
+    </div>
+
+    <main class="container">
+        <button class="dark-toggle">🌙</button>
+
+        <header class="header">
+            <div id="materiBadge" class="materi-badge" style="display: none">
+                🎓 Materi 18 Lulus
+            </div>
+            <span class="badge">Materi 18</span>
+            <h1>Working with Channels</h1>
+            <p class="subtitle">
+                Mengelola komunikasi grup, indikator visual, dan pengaturan privasi channel.
+            </p>
+
+            <div class="image-placeholder" style="margin-top: 20px">
+                <img src="../../../assets/images/getting-started/materi-18/infographic.png" alt="Ilustrasi Channels"
+                    onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+                <span class="placeholder-text">📸 Ilustrasi Utama: Dashboard Channel dan List Grup</span>
+            </div>
+        </header>
+
+        <section class="step-card">
+            <h2>1. Indikator Visual (Bold Name)</h2>
+            <div class="content">
+                <p>
+                    Bagaimana Anda tahu jika ada pesan baru di salah satu channel grup Anda tanpa harus membukanya satu
+                    per satu?
+                </p>
+                <div class="alert info">
+                    <strong>Teks Tebal (Bold):</strong>
+                    <br>Jika nama sebuah channel di sidebar terlihat <strong>dicetak tebal (bold)</strong>, itu artinya
+                    terdapat <strong>pesan yang belum terbaca (unread messages)</strong> di dalamnya.
+                </div>
+                <div class="image-placeholder">
+                    <img src="../../../assets/images/getting-started/materi-18/step-1-bold.png"
+                        alt="Channel dengan Nama Tebal"
+                        onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+                    <span class="placeholder-text">📸 Screenshot: Sidebar dengan channel #general yang dicetak
+                        tebal</span>
+                </div>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>2. Menjelajahi Channel (Browsing)</h2>
+            <div class="content">
+                <p>
+                    Tidak semua channel langsung muncul di sidebar Anda. Anda mungkin perlu mencari dan bergabung ke
+                    channel publik lainnya yang ada di perusahaan.
+                </p>
+                <p>
+                    Klik ikon <strong>Gear (Roda Gigi)</strong> ⚙️ di sebelah judul "Channels" pada sidebar. Ini akan
+                    membuka daftar <strong>semua channel yang tersedia</strong> (Access all available channels) untuk
+                    Anda gabung atau tinggalkan.
+                </p>
+                <div class="image-placeholder">
+                    <img src="../../../assets/images/getting-started/materi-18/step-2-gear.png"
+                        alt="Ikon Gear untuk Browse Channels"
+                        onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+                    <span class="placeholder-text">📸 Screenshot: Ikon Gear di sebelah menu Channels</span>
+                </div>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>3. Pengaturan Privasi Channel</h2>
+            <div class="content">
+                <p>
+                    Saat membuat channel baru, Anda bisa menentukan siapa saja yang boleh bergabung melalui pengaturan
+                    "Privacy" atau "Authorized Group".
+                </p>
+                <ul class="technical-list">
+                    <li><strong>🌍 Public / Everyone:</strong> Siapa saja bisa bergabung.</li>
+                    <li><strong>🏢 User Types / Internal Users:</strong> Hanya pengguna internal (karyawan) yang bisa
+                        bergabung. Ini mencakup <strong>semua karyawan</strong> di perusahaan (Any employee).</li>
+                    <li><strong>🔒 Invited People Only / Private:</strong> Hanya orang yang diundang yang bisa melihat
+                        dan bergabung.</li>
+                </ul>
+                <div class="image-placeholder">
+                    <img src="../../../assets/images/getting-started/materi-18/step-3-privacy.png"
+                        alt="Pengaturan Privasi Channel"
+                        onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+                    <span class="placeholder-text">📸 Screenshot: Form konfigurasi channel tab Privacy</span>
+                </div>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card quiz-card" id="materi-18-quiz">
+            <div class="quiz-progress-wrapper">
+                <div class="quiz-progress-bar" id="quizProgressBar"></div>
+            </div>
+            <h2>📝 Quiz Materi 18</h2>
+            <div class="quiz-container"></div>
+            <div class="step-footer">
+                <button class="quiz-submit-btn" onclick="checkQuiz()">
+                    Periksa Jawaban
+                </button>
+                <div id="quizResult" style="display: none"></div>
+            </div>
+        </section>
+
+        <div id="nextActionArea" class="next-action-area" style="display: none">
+            <h3>🎉 Materi 18 Selesai!</h3>
+            <p>
+                Anda sekarang bisa mengelola channel dan grup dengan lebih efektif!
+            </p>
+            <a href="../../../getting-started.html" class="btn-next">Kembali ke Dashboard Utama ➔</a>
+        </div>
+
+        <footer class="footer">
+            <a href="../../../getting-started.html" style="text-decoration: none; color: #666; font-weight: 600">←
+                Kembali ke
+                Dashboard</a>
+        </footer>
+    </main>
+
+    <script src="../../../assets/js/quiz-bank.js"></script>
+    <script src="../../../assets/js/lms-core.js"></script>
+    <script src="../../../assets/js/quiz-engine.js"></script>
+
+    <script>
+        // Inisialisasi Materi 18
+        document.addEventListener("DOMContentLoaded", () => {
+            initMateriProgress("materi18");
+            renderQuiz("materi18", ".quiz-container");
+
+            if (loadQuizResult("materi18")?.passed) {
+                const area = document.getElementById("nextActionArea");
+                if (area) area.style.display = "block";
+            }
+        });
+
+        const originalOnQuizPassed = window.onQuizPassed;
+        window.onQuizPassed = function (materiId, score) {
+            if (originalOnQuizPassed) originalOnQuizPassed(materiId, score);
+            const area = document.getElementById("nextActionArea");
+            if (area) {
+                area.style.display = "block";
+                setTimeout(() => {
+                    area.scrollIntoView({ behavior: "smooth", block: "center" });
+                }, 500);
+            }
+        };
+    </script>
+</body>
+
+</html>

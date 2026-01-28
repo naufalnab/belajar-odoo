@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Materi 23: Commissions | Modul Sales</title>
+    <link rel="stylesheet" href="../../../assets/css/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="progress-wrapper">
+        <div class="progress-container" id="progressContainer">
+            <div class="progress-bar" id="progressBar"></div>
+            <span class="progress-label" id="progressLabel" style="top: 24px">0%</span>
+        </div>
+    </div>
+
+    <main class="container">
+        <button class="dark-toggle" onclick="toggleDark()">🌙</button>
+
+        <header class="header">
+            <div id="materiBadge" class="materi-badge" style="display: none">
+                🎓 Materi 23 Sales Lulus
+            </div>
+            <span class="badge">Sales - Materi 23</span>
+            <h1>Sales Commissions</h1>
+            <p class="subtitle">
+                Memotivasi tim penjualan dengan skema target, pencapaian, dan insentif bertingkat.
+            </p>
+
+            <div class="image-placeholder">
+                <img src="../../../assets/images/sales/materi-23/hero.png" alt="Commissions Dashboard"
+                    onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+                <span class="placeholder-text">📸 Ilustrasi: Dashboard Komisi Sales</span>
+            </div>
+        </header>
+
+        <section class="step-card">
+            <h2>1. Commission Plans (Achievements vs Targets)</h2>
+            <div class="content">
+                <p>Ada dua metode utama perhitungan komisi di Odoo (biasanya via modul Spreadsheets atau modul custom
+                    tambahan, materi ini mengacu pada konsep umum Sales Performance Management):</p>
+                <ul>
+                    <li><strong>Achievements (Flat %):</strong> Komisi langsung dihitung dari total penjualan. Misal 5%
+                        dari setiap pesanan yang lunas.</li>
+                    <li><strong>Targets:</strong> Komisi berbasis target. Misal: Target Rp 100 Juta/Bulan. Jika tercapai
+                        80%, komisi cair. Jika tercapai 120%, ada bonus ekstra.</li>
+                </ul>
+
+                <div class="image-placeholder">
+                    <img src="../../../assets/images/sales/materi-23/step-1.png" alt="Commission Plan Settings"
+                        onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+                    <span class="placeholder-text">📸 Screenshot: Pengaturan Commission Plan</span>
+                </div>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>2. Menetapkan Rencana ke Tim Sales</h2>
+            <div class="content">
+                <p>Bagaimana komisi didistribusikan?</p>
+                <ul>
+                    <li>Anda bisa menetapkan Commission Plan ke satu <strong>Sales Team</strong> sekaligus.</li>
+                    <li><strong>Penting:</strong> Meskipun diberikan ke "Tim", komisi dihitung dan diterima oleh
+                        <strong>Individu (Salesperson)</strong> di dalam tim tersebut berdasarkan kinerja masing-masing.
+                    </li>
+                </ul>
+
+                <div class="image-placeholder">
+                    <img src="../../../assets/images/sales/materi-23/step-2.png" alt="Assigning Plan to Team"
+                        onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+                    <span class="placeholder-text">📸 Screenshot: Assign Plan ke Sales Team</span>
+                </div>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>3. Tiered Commissions (Komisi Bertingkat)</h2>
+            <div class="content">
+                <p>Untuk memacu kinerja tinggi, gunakan sistem Tier:</p>
+                <ul>
+                    <li>0% - 100% Target: Komisi Standar (misal 2%).</li>
+                    <li>> 100% Target: Komisi Premium (misal 5%).</li>
+                </ul>
+                <p>Jadi jika salesperson mencapai 150% target, mereka akan mendapatkan tarif komisi yang lebih tinggi
+                    untuk kelebihan tersebut (atau untuk total, tergantung aturan).</p>
+
+                <div class="image-placeholder">
+                    <img src="../../../assets/images/sales/materi-23/step-3.png" alt="Tiered Commission Structure"
+                        onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+                    <span class="placeholder-text">📸 Screenshot: Struktur Komisi Bertingkat</span>
+                </div>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card quiz-card" id="sales-materi-23-quiz">
+            <div class="quiz-progress-wrapper">
+                <div class="quiz-progress-bar" id="quizProgressBar"></div>
+            </div>
+
+            <h2>📝 Quiz Sales Materi 23</h2>
+
+            <div class="quiz-container">
+                <!-- Quiz akan di-render oleh JS -->
+            </div>
+
+            <div class="step-footer">
+                <button class="quiz-submit-btn" onclick="checkQuiz()">
+                    Periksa Jawaban
+                </button>
+                <div id="quizResult" style="display: none"></div>
+            </div>
+        </section>
+
+        <div id="nextActionArea" class="next-action-area" style="display: none">
+            <h3>🎉 Materi Sales 23 Selesai!</h3>
+            <p>
+                Tim sales Anda akan lebih termotivasi sekarang.
+            </p>
+            <a href="../../integrations/sales-materi-24/index.html" class="btn-next">
+                Lanjut ke Materi 24 (Integrations) ➔
+            </a>
+        </div>
+
+        <footer class="footer">
+            <a href="../../../sales.html" style="text-decoration: none; color: #666; font-weight: 600">← Kembali ke
+                Modul
+                Sales</a>
+        </footer>
+    </main>
+
+    <!-- Load JS -->
+    <script src="../../../assets/js/quiz-bank.js"></script>
+    <script src="../../../assets/js/lms-core.js"></script>
+    <script src="../../../assets/js/quiz-engine.js"></script>
+
+    <script>
+        const MATERI_ID = "sales_materi23";
+
+        document.addEventListener("DOMContentLoaded", () => {
+            initMateriProgress(MATERI_ID);
+            renderQuiz(MATERI_ID, ".quiz-container");
+
+            if (loadQuizResult(MATERI_ID)?.passed) {
+                showNextButton();
+            }
+        });
+
+        const originalOnQuizPassed = window.onQuizPassed;
+        window.onQuizPassed = function (materiId, score) {
+            if (originalOnQuizPassed) originalOnQuizPassed(materiId, score);
+            showNextButton();
+        };
+
+        function showNextButton() {
+            const area = document.getElementById("nextActionArea");
+            if (area) {
+                area.style.display = "block";
+                setTimeout(() => {
+                    area.scrollIntoView({ behavior: "smooth", block: "center" });
+                }, 500);
+            }
+        }
+
+        function toggleDark() {
+            document.body.classList.toggle("dark");
+            localStorage.setItem("darkMode", document.body.classList.contains("dark"));
+        }
+        if (localStorage.getItem("darkMode") === "true") {
+            document.body.classList.add("dark");
+        }
+    </script>
+</body>
+
+</html>

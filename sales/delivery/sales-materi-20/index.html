@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Materi 20: Dropshipping | Modul Sales</title>
+    <link rel="stylesheet" href="../../../assets/css/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="progress-wrapper">
+        <div class="progress-container" id="progressContainer">
+            <div class="progress-bar" id="progressBar"></div>
+            <span class="progress-label" id="progressLabel" style="top: 24px">0%</span>
+        </div>
+    </div>
+
+    <main class="container">
+        <button class="dark-toggle" onclick="toggleDark()">🌙</button>
+
+        <header class="header">
+            <div id="materiBadge" class="materi-badge" style="display: none">
+                🎓 Materi 20 Sales Lulus
+            </div>
+            <span class="badge">Sales - Materi 20</span>
+            <h1>Dropshipping</h1>
+            <p class="subtitle">
+                Menjual barang tanpa menyimpannya: Alur Vendor -> Pelanggan Langsung.
+            </p>
+
+            <div class="image-placeholder">
+                <img src="../../../assets/images/sales/materi-20/hero.png" alt="Dropshipping Flow"
+                    onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+                <span class="placeholder-text">📸 Ilustrasi: Alur Dropshipping</span>
+            </div>
+        </header>
+
+        <section class="step-card">
+            <h2>1. Mengaktifkan Fitur Dropship</h2>
+            <div class="content">
+                <p>Fitur ini tidak aktif secara otomatis.</p>
+                <ol class="instruction-list">
+                    <li>Buka <strong>Purchase</strong> (bukan Sales) > <strong>Configuration</strong> >
+                        <strong>Settings</strong>.</li>
+                    <li>Cari bagian <strong>Logistics</strong> dan centang <strong>Dropshipping</strong>.</li>
+                    <li>Klik <strong>Save</strong>.</li>
+                </ol>
+                <div class="alert info">
+                    <strong>Penting:</strong> Mengaktifkan ini akan memunculkan rute baru bernama "Dropship" pada
+                    konfigurasi Inventory produk.
+                </div>
+
+                <div class="image-placeholder">
+                    <img src="../../../assets/images/sales/materi-20/step-1.png" alt="Dropshipping Settings"
+                        onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+                    <span class="placeholder-text">📸 Screenshot: Aktivasi Dropshipping di Purchase Settings</span>
+                </div>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>2. Konfigurasi Produk untuk Dropship</h2>
+            <div class="content">
+                <p>Agar produk bisa dikirim langsung dari vendor ke pelanggan, Anda harus mengatur 2 hal:</p>
+                <ul>
+                    <li><strong>Tab Purchase:</strong> Tambahkan minimal 1 Vendor (Pemasok). Odoo perlu tahu dari mana
+                        barang dibeli.</li>
+                    <li><strong>Tab Inventory:</strong> Pada bagian "Routes", centang opsi <strong>Dropship</strong>.
+                        (Jika opsi Buy juga dicentang, Dropship biasanya diprioritaskan jika stok kosong, tergantung
+                        aturan MTO).</li>
+                </ul>
+
+                <div class="image-placeholder">
+                    <img src="../../../assets/images/sales/materi-20/step-2.png" alt="Product Route Dropship"
+                        onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+                    <span class="placeholder-text">📸 Screenshot: Centang Route 'Dropship' di Produk</span>
+                </div>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>3. Alur Transaksi Dropship</h2>
+            <div class="content">
+                <p>Apa yang terjadi saat Anda membuat Sales Order untuk produk Dropship?</p>
+                <ol>
+                    <li>Saat SO dikonfirmasi, Odoo TIDAK membuat Delivery Order dari gudang Anda.</li>
+                    <li>Sebaliknya, Odoo otomatis membuat <strong>Request for Quotation (RFQ)</strong> atau
+                        <strong>Purchase Order (PO)</strong> ke Vendor.</li>
+                    <li>Alamat pengiriman di PO tersebut akan diset ke <strong>Alamat Pelanggan Anda</strong> (bukan
+                        alamat gudang Anda).</li>
+                    <li>Setelah Vendor mengirim barang, Anda memvalidasi penerimaan dropship (Receive) untuk
+                        menyelesaikan alur.</li>
+                </ol>
+
+                <div class="image-placeholder">
+                    <img src="../../../assets/images/sales/materi-20/step-3.png" alt="Dropship Purchase Order"
+                        onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+                    <span class="placeholder-text">📸 Screenshot: Purchase Order dengan Alamat Pelanggan</span>
+                </div>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card quiz-card" id="sales-materi-20-quiz">
+            <div class="quiz-progress-wrapper">
+                <div class="quiz-progress-bar" id="quizProgressBar"></div>
+            </div>
+
+            <h2>📝 Quiz Sales Materi 20</h2>
+
+            <div class="quiz-container">
+                <!-- Quiz akan di-render oleh JS -->
+            </div>
+
+            <div class="step-footer">
+                <button class="quiz-submit-btn" onclick="checkQuiz()">
+                    Periksa Jawaban
+                </button>
+                <div id="quizResult" style="display: none"></div>
+            </div>
+        </section>
+
+        <div id="nextActionArea" class="next-action-area" style="display: none">
+            <h3>🎉 Materi Sales 20 Selesai!</h3>
+            <p>
+                Selamat! Anda telah mempelajari berbagai strategi pengiriman tingkat lanjut.
+            </p>
+            <a href="../../../sales.html" class="btn-next">
+                Kembali ke Dashboard Sales ➔
+            </a>
+        </div>
+
+        <footer class="footer">
+            <a href="../../../sales.html" style="text-decoration: none; color: #666; font-weight: 600">← Kembali ke
+                Modul
+                Sales</a>
+        </footer>
+    </main>
+
+    <!-- Load JS -->
+    <script src="../../../assets/js/quiz-bank.js"></script>
+    <script src="../../../assets/js/lms-core.js"></script>
+    <script src="../../../assets/js/quiz-engine.js"></script>
+
+    <script>
+        const MATERI_ID = "sales_materi20";
+
+        document.addEventListener("DOMContentLoaded", () => {
+            initMateriProgress(MATERI_ID);
+            renderQuiz(MATERI_ID, ".quiz-container");
+
+            if (loadQuizResult(MATERI_ID)?.passed) {
+                showNextButton();
+            }
+        });
+
+        const originalOnQuizPassed = window.onQuizPassed;
+        window.onQuizPassed = function (materiId, score) {
+            if (originalOnQuizPassed) originalOnQuizPassed(materiId, score);
+            showNextButton();
+        };
+
+        function showNextButton() {
+            const area = document.getElementById("nextActionArea");
+            if (area) {
+                area.style.display = "block";
+                setTimeout(() => {
+                    area.scrollIntoView({ behavior: "smooth", block: "center" });
+                }, 500);
+            }
+        }
+
+        function toggleDark() {
+            document.body.classList.toggle("dark");
+            localStorage.setItem("darkMode", document.body.classList.contains("dark"));
+        }
+        if (localStorage.getItem("darkMode") === "true") {
+            document.body.classList.add("dark");
+        }
+    </script>
+</body>
+
+</html>

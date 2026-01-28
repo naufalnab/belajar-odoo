@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Materi 8: Advanced Quotation Templates | Modul Sales</title>
+    <link rel="stylesheet" href="../../../assets/css/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="progress-wrapper">
+        <div class="progress-container" id="progressContainer">
+            <div class="progress-bar" id="progressBar"></div>
+            <span class="progress-label" id="progressLabel" style="top: 24px">0%</span>
+        </div>
+    </div>
+
+    <main class="container">
+        <button class="dark-toggle" onclick="toggleDark()">🌙</button>
+
+        <header class="header">
+            <div id="materiBadge" class="materi-badge" style="display: none">
+                🎓 Materi 8 Sales Lulus
+            </div>
+            <span class="badge">Sales - Materi 8</span>
+            <h1>Advanced Quotation Templates</h1>
+            <p class="subtitle">
+                Memaksimalkan template penawaran dengan produk opsional dan konfigurasi lanjutan.
+            </p>
+
+            <div class="image-placeholder">
+                <img src="../../../assets/images/sales/materi-8/hero.png" alt="Advanced Templates Hero"
+                    onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+                <span class="placeholder-text">📸 Ilustrasi: Advanced Quotation Template Features</span>
+            </div>
+        </header>
+
+        <section class="step-card">
+            <h2>1. Menawarkan Produk Tambahan (Upselling)</h2>
+            <div class="content">
+                <p>Template penawaran bukan hanya soal menghemat waktu ketik, tapi juga strategi penjualan. Anda bisa
+                    menyertakan opsi produk tambahan secara otomatis.</p>
+                <ol class="instruction-list">
+                    <li>Buka formulir <strong>Quotation Template</strong>.</li>
+                    <li>Pilih tab <strong>Optional Products</strong>.</li>
+                    <li>Tambahkan baris produk yang relevan (misal: Garansi Tambahan, Aksesoris).</li>
+                </ol>
+                <p>Produk ini akan muncul di bagian bawah penawaran online, menggoda pelanggan untuk menambahkannya ke
+                    keranjang belanja mereka dengan satu klik ("Add to cart").</p>
+
+                <div class="image-placeholder">
+                    <img src="../../../assets/images/sales/materi-8/step-1.png" alt="Optional Products in Template"
+                        onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+                    <span class="placeholder-text">📸 Screenshot: Tab Optional Products pada Template</span>
+                </div>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>2. Multi-Company Support</h2>
+            <div class="content">
+                <p>Bagaimana jika Anda mengelola lebih dari satu perusahaan dalam satu database Odoo?</p>
+                <ul>
+                    <li>Template penawaran bisa dibuat spesifik untuk satu perusahaan (Company A) saja, atau dibiarkan
+                        kosong agar bisa digunakan oleh semua perusahaan.</li>
+                    <li>Field <strong>Company</strong> pada formulir template menentukan batasan ini.</li>
+                </ul>
+                <div class="alert info">
+                    <strong>Fakta:</strong> Odoo mendukung penggunaan template di lingkungan multi-company sepenuhnya.
+                </div>
+
+                <div class="image-placeholder">
+                    <img src="../../../assets/images/sales/materi-8/step-2.png" alt="Multi-company settings"
+                        onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+                    <span class="placeholder-text">📸 Screenshot: Field Company pada Template</span>
+                </div>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>3. Quotation Builder & Aplikasi Website</h2>
+            <div class="content">
+                <p>Untuk membuat tampilan penawaran yang benar-benar memukau (seperti landing page mini), Anda
+                    membutuhkan fitur <strong>Quotation Builder</strong>.</p>
+                <p>Syarat utama fitur ini adalah instalasi aplikasi <strong>Website</strong>. Mengapa?</p>
+                <ul>
+                    <li>Karena Quotation Builder menggunakan editor "drag-and-drop" yang sama dengan Website Builder
+                        Odoo.</li>
+                    <li>Ini memungkinkan Anda menambahkan blok gambar, teks, kolom, bahkan video ke dalam deskripsi
+                        produk atau template penawaran Anda.</li>
+                </ul>
+
+                <div class="image-placeholder">
+                    <img src="../../../assets/images/sales/materi-8/step-3.png" alt="Quotation Builder Editor"
+                        onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+                    <span class="placeholder-text">📸 Screenshot: Editor Quotation Builder</span>
+                </div>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card quiz-card" id="sales-materi-8-quiz">
+            <div class="quiz-progress-wrapper">
+                <div class="quiz-progress-bar" id="quizProgressBar"></div>
+            </div>
+
+            <h2>📝 Quiz Sales Materi 8</h2>
+
+            <div class="quiz-container">
+                <!-- Quiz akan di-render oleh JS -->
+            </div>
+
+            <div class="step-footer">
+                <button class="quiz-submit-btn" onclick="checkQuiz()">
+                    Periksa Jawaban
+                </button>
+                <div id="quizResult" style="display: none"></div>
+            </div>
+        </section>
+
+        <div id="nextActionArea" class="next-action-area" style="display: none">
+            <h3>🎉 Materi Sales 8 Selesai!</h3>
+            <p>
+                Anda semakin ahli dalam kustomisasi penawaran.
+            </p>
+            <a href="../../invoicing/sales-materi-9/index.html" class="btn-next">
+                Lanjut ke Materi 9 ➔
+            </a>
+        </div>
+
+        <footer class="footer">
+            <a href="../../../sales.html" style="text-decoration: none; color: #666; font-weight: 600">← Kembali ke
+                Modul
+                Sales</a>
+        </footer>
+    </main>
+
+    <!-- Load JS -->
+    <script src="../../../assets/js/quiz-bank.js"></script>
+    <script src="../../../assets/js/lms-core.js"></script>
+    <script src="../../../assets/js/quiz-engine.js"></script>
+
+    <script>
+        const MATERI_ID = "sales_materi8";
+
+        document.addEventListener("DOMContentLoaded", () => {
+            initMateriProgress(MATERI_ID);
+            renderQuiz(MATERI_ID, ".quiz-container");
+
+            if (loadQuizResult(MATERI_ID)?.passed) {
+                showNextButton();
+            }
+        });
+
+        const originalOnQuizPassed = window.onQuizPassed;
+        window.onQuizPassed = function (materiId, score) {
+            if (originalOnQuizPassed) originalOnQuizPassed(materiId, score);
+            showNextButton();
+        };
+
+        function showNextButton() {
+            const area = document.getElementById("nextActionArea");
+            if (area) {
+                area.style.display = "block";
+                setTimeout(() => {
+                    area.scrollIntoView({ behavior: "smooth", block: "center" });
+                }, 500);
+            }
+        }
+
+        function toggleDark() {
+            document.body.classList.toggle("dark");
+            localStorage.setItem("darkMode", document.body.classList.contains("dark"));
+        }
+        if (localStorage.getItem("darkMode") === "true") {
+            document.body.classList.add("dark");
+        }
+    </script>
+</body>
+
+</html>
