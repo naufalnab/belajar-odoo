@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quotations & Orders | PembelajarBelajar</title>
+    <link rel="stylesheet" href="../../../assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header class="header">
+        <h1>Quotations & Orders</h1>
+        <p class="subtitle">Membuat dan mengelola penawaran serta strategi penjualan.</p>
+    </header>
+
+    <main class="container">
+        <!-- STEP 1 -->
+        <section class="step-card">
+            <h2>Langkah 1: Dashboard Utama</h2>
+            <p>
+                Saat Anda membuka aplikasi <strong>Sales</strong>, halaman pertama yang Anda lihat adalah halaman
+                <strong>Quotations</strong> (Penawaran).
+            </p>
+            <p>
+                Halaman ini berfungsi sebagai dashboard utama operasi penjualan Anda, menampilkan daftar semua penawaran
+                yang sedang berjalan dalam tampilan List atau Kanban. Dari sini, Anda bisa membuat penawaran baru atau
+                memfilter penawaran yang perlu ditindaklanjuti.
+            </p>
+
+            <div class="image-placeholder missing">
+                <div class="placeholder-text">Screenshot: Sales Dashboard showing Quotations</div>
+            </div>
+
+            <div class="step-footer">
+                <div style="display: flex; gap: 10px; align-items: center;">
+                    <label for="step1-check">Selesai dibaca</label>
+                    <input type="checkbox" id="step1-check" class="mark-done"
+                        onchange="updateProgress('sales_materi2')">
+                </div>
+            </div>
+        </section>
+
+        <!-- STEP 2 -->
+        <section class="step-card">
+            <h2>Langkah 2: Menggunakan Optional Products</h2>
+            <p>
+                Salah satu fitur hebat untuk meningkatkan penjualan (Average Cart Value) adalah <strong>Optional
+                    Products</strong>.
+                Saat membuat Quotation, Anda akan melihat tab "Optional Products" di bagian bawah.
+            </p>
+            <p>
+                Produk yang Anda tambahkan di sini akan muncul sebagai rekomendasi saat pelanggan melihat penawaran di
+                portal online. Berapa banyak produk yang boleh ditambahkan?
+            </p>
+            <div class="deep-dive">
+                <h3>💡 Fakta: Tidak Ada Batasan</h3>
+                <p>Anda bisa menambahkan sebanyak mungkin optional products (tidak ada limit). Namun, disarankan
+                    menambahkan 1-3 produk yang relevan agar pelanggan tidak bingung.</p>
+            </div>
+
+            <div class="image-placeholder missing">
+                <div class="placeholder-text">Screenshot: Optional Products tab on Quotation</div>
+            </div>
+
+            <div class="step-footer">
+                <div style="display: flex; gap: 10px; align-items: center;">
+                    <label for="step2-check">Selesai dibaca</label>
+                    <input type="checkbox" id="step2-check" class="mark-done"
+                        onchange="updateProgress('sales_materi2')">
+                </div>
+            </div>
+        </section>
+
+        <!-- STEP 3 -->
+        <section class="step-card">
+            <h2>Langkah 3: Komunikasi Internal</h2>
+            <p>
+                Terkadang Anda perlu memberikan instruksi khusus kepada tim gudang atau akuntan mengenai sebuah pesanan,
+                tetapi tidak ingin pelanggan melihat catatan tersebut.
+            </p>
+            <p>
+                Gunakan tab <strong>Notes</strong> (atau sering disebut Internal Notes) pada formulir Quotation/Order.
+                Teks yang ditulis di sini HANYA terlihat oleh karyawan internal dan tidak akan dicetak pada dokumen PDF
+                yang dikirim ke pelanggan (kecuali jika Anda menaruhnya di kolom 'Terms and Conditions' atau
+                'Description' produk).
+            </p>
+
+            <div class="image-placeholder missing">
+                <div class="placeholder-text">Screenshot: Internal Notes tab</div>
+            </div>
+
+            <div class="step-footer">
+                <div style="display: flex; gap: 10px; align-items: center;">
+                    <label for="step3-check">Selesai dibaca</label>
+                    <input type="checkbox" id="step3-check" class="mark-done"
+                        onchange="updateProgress('sales_materi2')">
+                </div>
+            </div>
+        </section>
+
+        <!-- QUIZ SECTION -->
+        <section class="step-card">
+            <h2>Kuis: Quotations & Orders</h2>
+            <p>Uji pemahaman Anda tentang pembuatan order.</p>
+            <div class="quiz-container">
+                <!-- Quiz will be rendered here -->
+            </div>
+            <div class="step-footer">
+                <button class="quiz-submit-btn" onclick="checkQuiz()">Periksa Jawaban</button>
+                <div id="quizResult" style="display: none;"></div>
+            </div>
+        </section>
+
+        <!-- NAVIGATION -->
+        <div class="next-action-area" id="nextActionArea" style="display: none;">
+            <h3>Luar Biasa! 🎉</h3>
+            <p>Anda siap mengelola penawaran penjualan.</p>
+            <a href="../sales-materi-3/index.html" class="btn-next">Lanjut ke Materi 3 ➔</a>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <a href="../../../sales.html">Kembali ke Dashboard Sales</a>
+    </footer>
+
+    <script src="../../../assets/js/lms-core.js"></script>
+    <script src="../../../assets/js/quiz-bank.js"></script>
+    <script src="../../../assets/js/quiz-engine.js"></script>
+    <script>
+        const PRODUCT_ID = "sales_materi2";
+
+        document.addEventListener("DOMContentLoaded", () => {
+            initMateriProgress(PRODUCT_ID);
+            renderQuiz(PRODUCT_ID, ".quiz-container");
+        });
+    </script>
+</body>
+
+</html>

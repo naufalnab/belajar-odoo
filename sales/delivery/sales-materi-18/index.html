@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Materi 18: Delivery Methods | Modul Sales</title>
+    <link rel="stylesheet" href="../../../assets/css/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="progress-wrapper">
+        <div class="progress-container" id="progressContainer">
+            <div class="progress-bar" id="progressBar"></div>
+            <span class="progress-label" id="progressLabel" style="top: 24px">0%</span>
+        </div>
+    </div>
+
+    <main class="container">
+        <button class="dark-toggle" onclick="toggleDark()">🌙</button>
+
+        <header class="header">
+            <div id="materiBadge" class="materi-badge" style="display: none">
+                🎓 Materi 18 Sales Lulus
+            </div>
+            <span class="badge">Sales - Materi 18</span>
+            <h1>Metode Pengiriman (Shipping Methods)</h1>
+            <p class="subtitle">
+                Mengatur biaya kirim, integrasi kurir, dan aturan pengiriman berdasarkan berat/harga.
+            </p>
+
+            <div class="image-placeholder">
+                <img src="../../../assets/images/sales/materi-18/hero.png" alt="Shipping Methods Hero"
+                    onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+                <span class="placeholder-text">📸 Ilustrasi: Berbagai Opsi Pengiriman</span>
+            </div>
+        </header>
+
+        <section class="step-card">
+            <h2>1. Jenis Metode Pengiriman</h2>
+            <div class="content">
+                <p>Odoo mendukung beberapa metode perhitungan biaya kirim:</p>
+                <ul>
+                    <li><strong>Fixed Price:</strong> Biaya tetap (misal: Rp 20.000 ke seluruh Jakarta).</li>
+                    <li><strong>Based on Rules:</strong> Biaya berubah sesuai variabel (misal: Jika berat > 5kg biaya Rp
+                        50.000, jika kurang Rp 20.000).</li>
+                    <li><strong>Pickup in Store:</strong> Gratis biaya kirim untuk pengambilan di toko.</li>
+                    <li><strong>External Connector:</strong> Integrasi langsung dengan FedEx, UPS, DHL (memerlukan modul
+                        tambahan).</li>
+                </ul>
+
+                <div class="image-placeholder">
+                    <img src="../../../assets/images/sales/materi-18/step-1.png" alt="Delivery Methods List"
+                        onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+                    <span class="placeholder-text">📸 Screenshot: Daftar Shipping Methods</span>
+                </div>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>2. Konfigurasi Nama dan Produk Pengiriman</h2>
+            <div class="content">
+                <p>Setiap metode pengiriman sebenarnya terhubung dengan satu "Produk Layanan" di backend.</p>
+                <ul>
+                    <li>Di dalam formulir Shipping Method, field <strong>Delivery Product</strong> adalah nama yang akan
+                        muncul di baris Sales Order/Invoice.</li>
+                    <li>Anda bisa menamaninya "Jasa Kirim JNE", "Same Day Delivery", dll.</li>
+                </ul>
+                <div class="alert info">
+                    <strong>Tips:</strong> Pastikan produk layanan ini bertipe "Service" agar tidak mempengaruhi stok.
+                </div>
+
+                <div class="image-placeholder">
+                    <img src="../../../assets/images/sales/materi-18/step-2.png" alt="Delivery Product Configuration"
+                        onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+                    <span class="placeholder-text">📸 Screenshot: Konfigurasi Delivery Product</span>
+                </div>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>3. Aturan Berdasarkan Berat (Weight Rules)</h2>
+            <div class="content">
+                <p>Agar perhitungan otomatis "Based on Rules" bekerja, Odoo harus tahu berat barang yang dijual.</p>
+                <ol class="instruction-list">
+                    <li>Buka formulir produk yang Anda jual (misal: Meja Kayu).</li>
+                    <li>Ke tab <strong>Inventory</strong>.</li>
+                    <li>Isi field <strong>Weight</strong> (misal: 10.00 kg).</li>
+                </ol>
+                <p>Jika berat di produk 0, maka Odoo akan menganggap paket tersebut ringan dan mungkin menggratiskan
+                    ongkir (tergantung aturan Anda).</p>
+
+                <div class="image-placeholder">
+                    <img src="../../../assets/images/sales/materi-18/step-3.png" alt="Product Weight Field"
+                        onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+                    <span class="placeholder-text">📸 Screenshot: Mengisi Berat Produk di Tab Inventory</span>
+                </div>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card quiz-card" id="sales-materi-18-quiz">
+            <div class="quiz-progress-wrapper">
+                <div class="quiz-progress-bar" id="quizProgressBar"></div>
+            </div>
+
+            <h2>📝 Quiz Sales Materi 18</h2>
+
+            <div class="quiz-container">
+                <!-- Quiz akan di-render oleh JS -->
+            </div>
+
+            <div class="step-footer">
+                <button class="quiz-submit-btn" onclick="checkQuiz()">
+                    Periksa Jawaban
+                </button>
+                <div id="quizResult" style="display: none"></div>
+            </div>
+        </section>
+
+        <div id="nextActionArea" class="next-action-area" style="display: none">
+            <h3>🎉 Materi Sales 18 Selesai!</h3>
+            <p>
+                Hebat! Anda sudah menguasai manajemen pengiriman.
+            </p>
+            <a href="../../../sales.html" class="btn-next">
+                Kembali ke Dashboard Sales ➔
+            </a>
+        </div>
+
+        <footer class="footer">
+            <a href="../../../sales.html" style="text-decoration: none; color: #666; font-weight: 600">← Kembali ke
+                Modul
+                Sales</a>
+        </footer>
+    </main>
+
+    <!-- Load JS -->
+    <script src="../../../assets/js/quiz-bank.js"></script>
+    <script src="../../../assets/js/lms-core.js"></script>
+    <script src="../../../assets/js/quiz-engine.js"></script>
+
+    <script>
+        const MATERI_ID = "sales_materi18";
+
+        document.addEventListener("DOMContentLoaded", () => {
+            initMateriProgress(MATERI_ID);
+            renderQuiz(MATERI_ID, ".quiz-container");
+
+            if (loadQuizResult(MATERI_ID)?.passed) {
+                showNextButton();
+            }
+        });
+
+        const originalOnQuizPassed = window.onQuizPassed;
+        window.onQuizPassed = function (materiId, score) {
+            if (originalOnQuizPassed) originalOnQuizPassed(materiId, score);
+            showNextButton();
+        };
+
+        function showNextButton() {
+            const area = document.getElementById("nextActionArea");
+            if (area) {
+                area.style.display = "block";
+                setTimeout(() => {
+                    area.scrollIntoView({ behavior: "smooth", block: "center" });
+                }, 500);
+            }
+        }
+
+        function toggleDark() {
+            document.body.classList.toggle("dark");
+            localStorage.setItem("darkMode", document.body.classList.contains("dark"));
+        }
+        if (localStorage.getItem("darkMode") === "true") {
+            document.body.classList.add("dark");
+        }
+    </script>
+</body>
+
+</html>

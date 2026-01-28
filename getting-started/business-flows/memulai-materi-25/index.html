@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Materi 25: Subscriptions & Projects | PembelajarBelajar</title>
+    <link rel="stylesheet" href="../../../assets/css/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="progress-wrapper">
+        <div class="progress-container" id="progressContainer">
+            <div class="progress-bar" id="progressBar"></div>
+            <span class="progress-label" id="progressLabel" style="top: 24px">0%</span>
+        </div>
+    </div>
+
+    <main class="container">
+        <button class="dark-toggle">🌙</button>
+
+        <header class="header">
+            <div id="materiBadge" class="materi-badge" style="display: none">
+                🎓 Materi 25 Lulus
+            </div>
+            <span class="badge">Materi 25</span>
+            <h1>Subscriptions & Projects</h1>
+            <p class="subtitle">
+                Mengelola langganan berulang dan otomatisasi tugas proyek.
+            </p>
+
+            <div class="image-placeholder" style="margin-top: 20px">
+                <img src="../../../assets/images/getting-started/materi-25/infographic.png"
+                    alt="Ilustrasi Subscriptions"
+                    onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+                <span class="placeholder-text">📸 Ilustrasi Utama: Subscription Cycle & Project Tasks</span>
+            </div>
+        </header>
+
+        <section class="step-card">
+            <h2>1. Cek Tanggal Tagihan Berikutnya (Next Payment)</h2>
+            <div class="content">
+                <p>
+                    Untuk langganan yang sedang berjalan (On-going Subscription), bagaimana cara mengetahui kapan
+                    pembayaran berikutnya jatuh tempo?
+                </p>
+                <div class="alert info">
+                    <strong>Caranya:</strong> Cek field <strong>'Invoice Date'</strong> pada dokumen
+                    <strong>Subscription Sales Order</strong>.
+                </div>
+                <p>
+                    Tanggal ini menunjukkan kapan invoice berikutnya akan digenerate otomatis oleh sistem Odoo.
+                </p>
+                <div class="image-placeholder">
+                    <img src="../../../assets/images/getting-started/materi-25/step-1-invoice-date.png"
+                        alt="Subscription Invoice Date"
+                        onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+                    <span class="placeholder-text">📸 Screenshot: Field 'Invoice Date' di Sales Order</span>
+                </div>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>2. Otomatisasi Tugas Proyek (Task Automation)</h2>
+            <div class="content">
+                <p>
+                    Di aplikasi Project, Anda bisa membuat otomatisasi (misalnya mengirim email atau memindahkan task)
+                    saat task mencapai stage tertentu.
+                </p>
+                <p>
+                    Dimana pengaturannya?
+                </p>
+                <p>
+                    <strong>In the gear icon next to the task name.</strong> (Klik ikon gerigi di sebelah nama kolom
+                    stage/task).
+                </p>
+                <div class="image-placeholder">
+                    <img src="../../../assets/images/getting-started/materi-25/step-2-automation.png"
+                        alt="Project Automation"
+                        onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+                    <span class="placeholder-text">📸 Screenshot: Ikon Gerigi (Settings) pada Stage Task</span>
+                </div>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>3. Mengaktifkan Pembayaran Online</h2>
+            <div class="content">
+                <p>
+                    Agar pelanggan bisa membayar tagihan atau order langsung di website Anda, fitur ini harus
+                    diaktifkan.
+                </p>
+                <ul>
+                    <li>Pergi ke <strong>Settings -> Quotations & Orders</strong>.</li>
+                    <li>Centang kotak (checkbox) di sebelah opsi <strong>Online Payment</strong>.</li>
+                </ul>
+                <p>
+                    Ini memungkinkan integrasi dengan payment gateway seperti Stripe, PayPal, atau transfer bank.
+                </p>
+                <div class="image-placeholder">
+                    <img src="../../../assets/images/getting-started/materi-25/step-3-online-pay.png"
+                        alt="Online Payment Settings"
+                        onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+                    <span class="placeholder-text">📸 Screenshot: Checkbox 'Online Payment' di Settings</span>
+                </div>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card quiz-card" id="materi-25-quiz">
+            <div class="quiz-progress-wrapper">
+                <div class="quiz-progress-bar" id="quizProgressBar"></div>
+            </div>
+            <h2>📝 Quiz Materi 25</h2>
+            <div class="quiz-container"></div>
+            <div class="step-footer">
+                <button class="quiz-submit-btn" onclick="checkQuiz()">
+                    Periksa Jawaban
+                </button>
+                <div id="quizResult" style="display: none"></div>
+            </div>
+        </section>
+
+        <div id="nextActionArea" class="next-action-area" style="display: none">
+            <h3>🎉 Materi 25 Selesai!</h3>
+            <p>
+                Anda telah mempelajari manajemen langganan dan otomatisasi proyek dasar.
+            </p>
+            <a href="../../../getting-started.html" class="btn-next">Kembali ke Dashboard Utama ➔</a>
+        </div>
+
+        <footer class="footer">
+            <a href="../../../getting-started.html" style="text-decoration: none; color: #666; font-weight: 600">←
+                Kembali ke
+                Dashboard</a>
+        </footer>
+    </main>
+
+    <script src="../../../assets/js/quiz-bank.js"></script>
+    <script src="../../../assets/js/lms-core.js"></script>
+    <script src="../../../assets/js/quiz-engine.js"></script>
+
+    <script>
+        // Inisialisasi Materi 25
+        document.addEventListener("DOMContentLoaded", () => {
+            initMateriProgress("materi25");
+            renderQuiz("materi25", ".quiz-container");
+
+            if (loadQuizResult("materi25")?.passed) {
+                const area = document.getElementById("nextActionArea");
+                if (area) area.style.display = "block";
+            }
+        });
+
+        const originalOnQuizPassed = window.onQuizPassed;
+        window.onQuizPassed = function (materiId, score) {
+            if (originalOnQuizPassed) originalOnQuizPassed(materiId, score);
+            const area = document.getElementById("nextActionArea");
+            if (area) {
+                area.style.display = "block";
+                setTimeout(() => {
+                    area.scrollIntoView({ behavior: "smooth", block: "center" });
+                }, 500);
+            }
+        };
+    </script>
+</body>
+
+</html>

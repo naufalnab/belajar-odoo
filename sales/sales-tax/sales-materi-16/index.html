@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Materi 16: Fiscal Positions | Modul Sales</title>
+    <link rel="stylesheet" href="../../../assets/css/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="progress-wrapper">
+        <div class="progress-container" id="progressContainer">
+            <div class="progress-bar" id="progressBar"></div>
+            <span class="progress-label" id="progressLabel" style="top: 24px">0%</span>
+        </div>
+    </div>
+
+    <main class="container">
+        <button class="dark-toggle" onclick="toggleDark()">🌙</button>
+
+        <header class="header">
+            <div id="materiBadge" class="materi-badge" style="display: none">
+                🎓 Materi 16 Sales Lulus
+            </div>
+            <span class="badge">Sales - Materi 16</span>
+            <h1>Fiscal Positions</h1>
+            <p class="subtitle">
+                Mengelola aturan pajak otomatis untuk pelanggan luar negeri, zona bebas pajak, dan kategori khusus.
+            </p>
+
+            <div class="image-placeholder">
+                <img src="../../../assets/images/sales/materi-16/hero.png" alt="Fiscal Position Map"
+                    onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+                <span class="placeholder-text">📸 Ilustrasi: Peta Perpajakan (Fiscal Positions)</span>
+            </div>
+        </header>
+
+        <section class="step-card">
+            <h2>1. Apa itu Fiscal Position?</h2>
+            <div class="content">
+                <p><strong>Fiscal Position</strong> adalah fitur Odoo untuk memetakan (mengganti) satu jenis pajak ke
+                    pajak lainnya secara otomatis berdasarkan kondisi tertentu.</p>
+                <div class="alert info">
+                    <strong>Contoh Kasus:</strong> Jika PPN Lokal adalah 11%, tetapi untuk Pelanggan Luar Negeri
+                    (Ekspor) pajaknya harus 0%. Fiscal Position akan otomatis mengubah Pajak 11% menjadi 0% saat Anda
+                    memilih pelanggan dari luar negeri.
+                </div>
+                <p>Anda tidak perlu mengganti pajak di setiap baris produk secara manual!</p>
+
+                <div class="image-placeholder">
+                    <img src="../../../assets/images/sales/materi-16/step-1.png" alt="Fiscal Position Form"
+                        onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+                    <span class="placeholder-text">📸 Screenshot: Formulir Fiscal Position</span>
+                </div>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>2. Cara Menerapkan Fiscal Position</h2>
+            <div class="content">
+                <p>Bagaimana Odoo tahu kapan harus menggunakan Fiscal Position?</p>
+                <ol class="instruction-list">
+                    <li><strong>Detect Automatically:</strong> Odoo mendeteksi berdasarkan negara alamat pelanggan.
+                        (Paling sering digunakan).</li>
+                    <li><strong>Manual pada Kontak:</strong> Anda menetapkan Fiscal Position tertentu (misal: "Kawasan
+                        Berikat") di tab Sales & Purchase pada formulir kontak pelanggan.</li>
+                </ol>
+                <p>Catatan: Anda <strong>tidak bisa</strong> menetapkan "Pelanggan A memakai posisi ini" dari dalam
+                    formulir Fiscal Position itu sendiri. Logikanya harus dari sisi Kontak atau deteksi otomatis.</p>
+
+                <div class="image-placeholder">
+                    <img src="../../../assets/images/sales/materi-16/step-2.png"
+                        alt="Setting Fiscal Position on Contact"
+                        onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+                    <span class="placeholder-text">📸 Screenshot: Setting Fiscal Position di Kontak</span>
+                </div>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>3. Tax Scope & Tax Grids</h2>
+            <div class="content">
+                <p>Pengaturan tambahan pada formulir Pajak:</p>
+                <ul>
+                    <li><strong>Tax Scope:</strong> Membatasi penggunaan pajak. Jika diset ke "Services", pajak ini
+                        tidak akan muncul saat Anda menjual produk tipe "Goods". Ini mencegah kesalahan input user.</li>
+                    <li><strong>Tax Grids:</strong> Digunakan untuk pelaporan pajak otomatis (Tax Report). Ini memberi
+                        label pada pajak (misal: "1a. PPN Keluaran") sehingga Odoo tahu di baris mana angka ini harus
+                        muncul pada formulir pajak pemerintah.</li>
+                </ul>
+
+                <div class="image-placeholder">
+                    <img src="../../../assets/images/sales/materi-16/step-3.png" alt="Tax Scope and Grids"
+                        onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+                    <span class="placeholder-text">📸 Screenshot: Tax Scope & Tax Grids</span>
+                </div>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card quiz-card" id="sales-materi-16-quiz">
+            <div class="quiz-progress-wrapper">
+                <div class="quiz-progress-bar" id="quizProgressBar"></div>
+            </div>
+
+            <h2>📝 Quiz Sales Materi 16</h2>
+
+            <div class="quiz-container">
+                <!-- Quiz akan di-render oleh JS -->
+            </div>
+
+            <div class="step-footer">
+                <button class="quiz-submit-btn" onclick="checkQuiz()">
+                    Periksa Jawaban
+                </button>
+                <div id="quizResult" style="display: none"></div>
+            </div>
+        </section>
+
+        <div id="nextActionArea" class="next-action-area" style="display: none">
+            <h3>🎉 Materi Sales 16 Selesai!</h3>
+            <p>
+                Pemahaman pajak Anda sudah tingkat lanjut.
+            </p>
+            <a href="../../../sales.html" class="btn-next">
+                Kembali ke Dashboard Sales ➔
+            </a>
+        </div>
+
+        <footer class="footer">
+            <a href="../../../sales.html" style="text-decoration: none; color: #666; font-weight: 600">← Kembali ke
+                Modul
+                Sales</a>
+        </footer>
+    </main>
+
+    <!-- Load JS -->
+    <script src="../../../assets/js/quiz-bank.js"></script>
+    <script src="../../../assets/js/lms-core.js"></script>
+    <script src="../../../assets/js/quiz-engine.js"></script>
+
+    <script>
+        const MATERI_ID = "sales_materi16";
+
+        document.addEventListener("DOMContentLoaded", () => {
+            initMateriProgress(MATERI_ID);
+            renderQuiz(MATERI_ID, ".quiz-container");
+
+            if (loadQuizResult(MATERI_ID)?.passed) {
+                showNextButton();
+            }
+        });
+
+        const originalOnQuizPassed = window.onQuizPassed;
+        window.onQuizPassed = function (materiId, score) {
+            if (originalOnQuizPassed) originalOnQuizPassed(materiId, score);
+            showNextButton();
+        };
+
+        function showNextButton() {
+            const area = document.getElementById("nextActionArea");
+            if (area) {
+                area.style.display = "block";
+                setTimeout(() => {
+                    area.scrollIntoView({ behavior: "smooth", block: "center" });
+                }, 500);
+            }
+        }
+
+        function toggleDark() {
+            document.body.classList.toggle("dark");
+            localStorage.setItem("darkMode", document.body.classList.contains("dark"));
+        }
+        if (localStorage.getItem("darkMode") === "true") {
+            document.body.classList.add("dark");
+        }
+    </script>
+</body>
+
+</html>

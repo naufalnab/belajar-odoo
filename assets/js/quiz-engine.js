@@ -278,15 +278,25 @@ function disableQuizAfterPass(score) {
 }
 
 function lockQuizUI(container, score) {
-  container.classList.add("locked");
-  if (!container.querySelector(".lock-overlay")) {
-    const overlay = document.createElement("div");
-    overlay.className = "lock-overlay";
-    overlay.innerHTML = `🏆 Quiz Selesai (${score}%)`;
-    container.appendChild(overlay);
-  }
+  // Hapus overlay lama jika ada (untuk backward compatibility atau re-render)
+  const existingOverlay = container.querySelector(".lock-overlay");
+  if (existingOverlay) existingOverlay.remove();
+
+  const existingBanner = container.querySelector(".quiz-status-banner");
+  if (existingBanner) existingBanner.remove();
+
+  // Tambahkan banner status di ATAS container (bukan overlay yang menutupi)
+  const banner = document.createElement("div");
+  banner.className = "quiz-status-banner";
+  banner.innerHTML = `🏆 Quiz Selesai! Skor: ${score}% <br><small>Jawaban telah dikunci.</small>`;
+  container.prepend(banner);
+
+  // Kunci semua input
   const radios = container.querySelectorAll("input[type=radio]");
   radios.forEach(r => (r.disabled = true));
+
+  // Tambahkan visual class ke container (opsional, untuk styling border dsb)
+  container.classList.add("quiz-completed-view");
 }
 
 /* ===================== AUTO LOAD ===================== */

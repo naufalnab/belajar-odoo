@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Management | PembelajarBelajar</title>
+    <link rel="stylesheet" href="../../../assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header class="header">
+        <h1>Product Management</h1>
+        <p class="subtitle">Memahami detail konfigurasi produk untuk penjualan maksimal.</p>
+    </header>
+
+    <main class="container">
+        <!-- STEP 1 -->
+        <section class="step-card">
+            <h2>Langkah 1: Informasi Umum Produk</h2>
+            <p>
+                Saat Anda membuka formulir produk, tab pertama yang aktif adalah <strong>General Information</strong>.
+                Tab ini dibagi menjadi dua kolom utama:
+            </p>
+            <ul>
+                <li><strong>Kolom Kiri:</strong> Berisi informasi dasar seperti Tipe Produk (Storable, Consumable,
+                    Service) dan kebijakan penagihan.</li>
+                <li><strong>Kolom Kanan:</strong> Berisi field terkait finansial (Harga Jual, Modal/Biaya, Pajak,
+                    Kategori Internal).</li>
+            </ul>
+            <div class="alert info">
+                <strong>Penting:</strong> Kolom kanan ini (Financial Fields) <em>selalu</em> muncul terlepas dari apa
+                pun Tipe Produk yang Anda pilih (baik itu Barang atau Jasa).
+            </div>
+
+            <div class="image-placeholder missing">
+                <div class="placeholder-text">Screenshot: Product Form General Information Tab</div>
+            </div>
+
+            <div class="step-footer">
+                <div style="display: flex; gap: 10px; align-items: center;">
+                    <label for="step1-check">Selesai dibaca</label>
+                    <input type="checkbox" id="step1-check" class="mark-done"
+                        onchange="updateProgress('sales_materi3')">
+                </div>
+            </div>
+        </section>
+
+        <!-- STEP 2 -->
+        <section class="step-card">
+            <h2>Langkah 2: Strategi Upsell (Optional Products)</h2>
+            <p>
+                Di dalam formulir produk (tab Sales), terdapat field bernama <strong>Optional Products</strong>.
+                Apa bedanya dengan optional product di level Quotation?
+            </p>
+            <p>
+                Jika Anda mengisi field ini di level Produk, maka setiap kali produk ini ditambahkan ke keranjang
+                belanja (eCommerce) atau penawaran, Odoo akan otomatis menyarankan produk pelengkap tersebut kepada
+                pelanggan.
+            </p>
+            <p>
+                <strong>Kegunaan Utama:</strong> Menambahkan produk pelengkap yang akan direkomendasikan kepada
+                pelanggan selama proses pembelian (Cross-selling/Up-selling otomatis).
+            </p>
+
+            <div class="image-placeholder missing">
+                <div class="placeholder-text">Screenshot: Optional Products field in Product Form</div>
+            </div>
+
+            <div class="step-footer">
+                <div style="display: flex; gap: 10px; align-items: center;">
+                    <label for="step2-check">Selesai dibaca</label>
+                    <input type="checkbox" id="step2-check" class="mark-done"
+                        onchange="updateProgress('sales_materi3')">
+                </div>
+            </div>
+        </section>
+
+        <!-- STEP 3 -->
+        <section class="step-card">
+            <h2>Langkah 3: Mempublikasikan Produk</h2>
+            <p>
+                Jika Anda menggunakan modul Website/eCommerce, membuat produk saja tidak cukup. Produk tersebut harus
+                dipublikasikan agar terlihat oleh publik.
+            </p>
+            <p>
+                Caranya sangat mudah:
+            </p>
+            <ol>
+                <li>Buka formulir produk.</li>
+                <li>Lihat ke pojok kiri atas (Smart Buttons).</li>
+                <li>Klik tombol merah bertuliskan <strong>Unpublished</strong>.</li>
+                <li>Tombol akan berubah menjadi hijau bertuliskan <strong>Published</strong>.</li>
+            </ol>
+            <p>Opsi simpel ini sering terlupakan namun krusial untuk penjualan online.</p>
+
+            <div class="image-placeholder missing">
+                <div class="placeholder-text">Screenshot: Published Smart Button</div>
+            </div>
+
+            <div class="step-footer">
+                <div style="display: flex; gap: 10px; align-items: center;">
+                    <label for="step3-check">Selesai dibaca</label>
+                    <input type="checkbox" id="step3-check" class="mark-done"
+                        onchange="updateProgress('sales_materi3')">
+                </div>
+            </div>
+        </section>
+
+        <!-- QUIZ SECTION -->
+        <section class="step-card">
+            <h2>Kuis: Product Management</h2>
+            <p>Uji pengetahuan Anda tentang konfigurasi produk.</p>
+            <div class="quiz-container">
+                <!-- Quiz will be rendered here -->
+            </div>
+            <div class="step-footer">
+                <button class="quiz-submit-btn" onclick="checkQuiz()">Periksa Jawaban</button>
+                <div id="quizResult" style="display: none;"></div>
+            </div>
+        </section>
+
+        <!-- NAVIGATION -->
+        <div class="next-action-area" id="nextActionArea" style="display: none;">
+            <h3>Selesai! 👏</h3>
+            <p>Anda telah menyelesaikan modul dasar Sales ini.</p>
+            <a href="../../../sales.html" class="btn-next">Kembali ke Dashboard Sales</a>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <a href="../../../sales.html">Kembali ke Dashboard Sales</a>
+    </footer>
+
+    <script src="../../../assets/js/lms-core.js"></script>
+    <script src="../../../assets/js/quiz-bank.js"></script>
+    <script src="../../../assets/js/quiz-engine.js"></script>
+    <script>
+        const PRODUCT_ID = "sales_materi3";
+
+        document.addEventListener("DOMContentLoaded", () => {
+            initMateriProgress(PRODUCT_ID);
+            renderQuiz(PRODUCT_ID, ".quiz-container");
+        });
+    </script>
+</body>
+
+</html>

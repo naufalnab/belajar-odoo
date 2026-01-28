@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Materi 7: Product Documents | Modul Sales</title>
+    <link rel="stylesheet" href="../../../assets/css/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="progress-wrapper">
+        <div class="progress-container" id="progressContainer">
+            <div class="progress-bar" id="progressBar"></div>
+            <span class="progress-label" id="progressLabel" style="top: 24px">0%</span>
+        </div>
+    </div>
+
+    <main class="container">
+        <button class="dark-toggle" onclick="toggleDark()">🌙</button>
+
+        <header class="header">
+            <div id="materiBadge" class="materi-badge" style="display: none">
+                🎓 Materi 7 Sales Lulus
+            </div>
+            <span class="badge">Sales - Materi 7</span>
+            <h1>Product Documents</h1>
+            <p class="subtitle">
+                Mengelola dokumentasi teknis, lembar spesifikasi, dan brosur produk agar mudah diakses pelanggan.
+            </p>
+
+            <div class="image-placeholder">
+                <img src="../../../assets/images/sales/materi-7/hero.png" alt="Product Documents Hero"
+                    onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+                <span class="placeholder-text">📸 Ilustrasi: Documents Smart Button pada Produk</span>
+            </div>
+        </header>
+
+        <section class="step-card">
+            <h2>1. Mengakses Dokumen Produk</h2>
+            <div class="content">
+                <p>Odoo memungkinkan Anda melampirkan file penting langsung ke formulir produk. Ini berguna untuk
+                    menjaga spesifikasi teknis atau sertifikat garansi tetap terorganisir.</p>
+                <ol class="instruction-list">
+                    <li>Buka formulir produk apa saja di menu <strong>Products</strong>.</li>
+                    <li>Lihat ke pojok kanan atas (area Smart Buttons).</li>
+                    <li>Cari dan klik tombol bertuliskan <strong>Documents</strong>.</li>
+                </ol>
+
+                <div class="image-placeholder">
+                    <img src="../../../assets/images/sales/materi-7/step-1.png" alt="Documents Smart Button"
+                        onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+                    <span class="placeholder-text">📸 Screenshot: Lokasi Smart Button Documents</span>
+                </div>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>2. Mengunggah Dokumen (Upload)</h2>
+            <div class="content">
+                <p>Odoo mendukung dua jenis "dokumen":</p>
+                <ul>
+                    <li><strong>File:</strong> PDF, Gambar, Word, dll yang diunggah langsung dari komputer Anda.</li>
+                    <li><strong>URL:</strong> Link ke dokumen eksternal (misal: Google Drive, video YouTube, atau
+                        halaman web manual).</li>
+                </ul>
+                <p>Klik tombol <strong>Create</strong> atau <strong>Upload</strong> untuk menambahkan materi baru.</p>
+
+                <div class="image-placeholder">
+                    <img src="../../../assets/images/sales/materi-7/step-2.png" alt="Upload Document"
+                        onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+                    <span class="placeholder-text">📸 Screenshot: Form Upload Dokumen</span>
+                </div>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>3. Pengaturan Visibilitas</h2>
+            <div class="content">
+                <p>Kapan pelanggan bisa melihat dokumen ini? Anda bisa mengaturnya di kolom <strong>Visibility</strong>:
+                </p>
+                <ul class="instruction-list">
+                    <li><strong>On Quote:</strong> Dokumen akan muncul di portal penawaran online.</li>
+                    <li><strong>On Confirmed Order:</strong> Dokumen baru muncul setelah pesanan disetujui (cocok untuk
+                        manual produk).</li>
+                    <li><strong>Inside Quote PDF:</strong> Dokumen akan digabungkan secara otomatis ke dalam file PDF
+                        penawaran yang diunduh/dikirim.</li>
+                </ul>
+
+                <div class="image-placeholder">
+                    <img src="../../../assets/images/sales/materi-7/step-3.png" alt="Document Visibility Options"
+                        onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+                    <span class="placeholder-text">📸 Screenshot: Opsi Visibility pada Dokumen</span>
+                </div>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+
+        <section class="step-card quiz-card" id="sales-materi-7-quiz">
+            <div class="quiz-progress-wrapper">
+                <div class="quiz-progress-bar" id="quizProgressBar"></div>
+            </div>
+
+            <h2>📝 Quiz Sales Materi 7</h2>
+
+            <div class="quiz-container">
+                <!-- Quiz akan di-render oleh JS -->
+            </div>
+
+            <div class="step-footer">
+                <button class="quiz-submit-btn" onclick="checkQuiz()">
+                    Periksa Jawaban
+                </button>
+                <div id="quizResult" style="display: none"></div>
+            </div>
+        </section>
+
+        <div id="nextActionArea" class="next-action-area" style="display: none">
+            <h3>🎉 Materi Sales 7 Selesai!</h3>
+            <p>
+                Anda sudah paham cara mengelola dokumen produk.
+            </p>
+            <a href="../../quotations/sales-materi-8/index.html" class="btn-next">
+                Lanjut ke Materi 8 ➔
+            </a>
+        </div>
+
+        <footer class="footer">
+            <a href="../../../sales.html" style="text-decoration: none; color: #666; font-weight: 600">← Kembali ke
+                Modul
+                Sales</a>
+        </footer>
+    </main>
+
+    <!-- Load JS -->
+    <script src="../../../assets/js/quiz-bank.js"></script>
+    <script src="../../../assets/js/lms-core.js"></script>
+    <script src="../../../assets/js/quiz-engine.js"></script>
+
+    <script>
+        const MATERI_ID = "sales_materi7";
+
+        document.addEventListener("DOMContentLoaded", () => {
+            initMateriProgress(MATERI_ID);
+            renderQuiz(MATERI_ID, ".quiz-container");
+
+            if (loadQuizResult(MATERI_ID)?.passed) {
+                showNextButton();
+            }
+        });
+
+        const originalOnQuizPassed = window.onQuizPassed;
+        window.onQuizPassed = function (materiId, score) {
+            if (originalOnQuizPassed) originalOnQuizPassed(materiId, score);
+            showNextButton();
+        };
+
+        function showNextButton() {
+            const area = document.getElementById("nextActionArea");
+            if (area) {
+                area.style.display = "block";
+                setTimeout(() => {
+                    area.scrollIntoView({ behavior: "smooth", block: "center" });
+                }, 500);
+            }
+        }
+
+        function toggleDark() {
+            document.body.classList.toggle("dark");
+            localStorage.setItem("darkMode", document.body.classList.contains("dark"));
+        }
+        if (localStorage.getItem("darkMode") === "true") {
+            document.body.classList.add("dark");
+        }
+    </script>
+</body>
+
+</html>

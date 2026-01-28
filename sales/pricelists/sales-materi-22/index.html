@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Materi 22: Advanced Pricelists | Modul Sales</title>
+    <link rel="stylesheet" href="../../../assets/css/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="progress-wrapper">
+        <div class="progress-container" id="progressContainer">
+            <div class="progress-bar" id="progressBar"></div>
+            <span class="progress-label" id="progressLabel" style="top: 24px">0%</span>
+        </div>
+    </div>
+
+    <main class="container">
+        <button class="dark-toggle" onclick="toggleDark()">🌙</button>
+
+        <header class="header">
+            <div id="materiBadge" class="materi-badge" style="display: none">
+                🎓 Materi 22 Sales Lulus
+            </div>
+            <span class="badge">Sales - Materi 22</span>
+            <h1>Advanced Pricelists</h1>
+            <p class="subtitle">
+                Formula harga tingkat lanjut, diskon, margin, dan trik harga psikologis ($9.99).
+            </p>
+
+            <div class="image-placeholder">
+                <img src="../../../assets/images/sales/materi-22/hero.png" alt="Advanced Pricelists Hero"
+                    onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+                <span class="placeholder-text">📸 Ilustrasi: Kustomisasi Harga Lanjutan</span>
+            </div>
+        </header>
+
+        <section class="step-card">
+            <h2>1. Discounts & Margins</h2>
+            <div class="content">
+                <p>Odoo memungkinkan Anda melihat margin keuntungan secara langsung saat membuat penawaran.</p>
+                <ul>
+                    <li>Aktifkan <strong>Discounts</strong> dan <strong>Margins</strong> di <strong>Sales</strong> >
+                        <strong>Configuration</strong> > <strong>Settings</strong>.</li>
+                    <li>Sekarang saat Anda membuat Sales Order, Anda akan melihat kolom tambahan untuk memasukkan Diskon
+                        (%) dan kolom informasi Margin (keuntungan).</li>
+                    <li>Margin dihitung dari: Harga Jual - Biaya (Cost) Produk.</li>
+                </ul>
+
+                <div class="image-placeholder">
+                    <img src="../../../assets/images/sales/materi-22/step-1.png" alt="Sales Order Margins"
+                        onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+                    <span class="placeholder-text">📸 Screenshot: Kolom Margin & Diskon di SO</span>
+                </div>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>2. Formula Pricing</h2>
+            <div class="content">
+                <p>Alih-alih harga tetap, Anda bisa menggunakan rumus matematika.</p>
+                <ul>
+                    <li>Di dalam Pricelist Item, pilih opsi <strong>Formula</strong>.</li>
+                    <li>Rumus dasar: <code>Harga = (Base Price - Discount) + Surcharge</code>.</li>
+                    <li><strong>Base Price</strong> bisa berupa: Harga Jual Umum, Biaya Produk (Cost), atau Pricelist
+                        Lain.</li>
+                </ul>
+
+                <div class="image-placeholder">
+                    <img src="../../../assets/images/sales/materi-22/step-2.png" alt="Price Formula"
+                        onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+                    <span class="placeholder-text">📸 Screenshot: Konfigurasi Formula Harga</span>
+                </div>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>3. Trik Harga Psikologis ($X.99)</h2>
+            <div class="content">
+                <p>Bagaimana membuat semua harga otomatis berakhiran .99 (misal Rp 19.999)?</p>
+                <ol class="instruction-list">
+                    <li>Gunakan <strong>Formula</strong>.</li>
+                    <li>Set <strong>Rounding Method</strong> ke <strong>1.00</strong> (untuk membulatkan ke angka bulat
+                        terdekat, misal 20.000).</li>
+                    <li>Set <strong>Extra Fee</strong> ke <strong>-0.01</strong> (kurangi 0.01 dari hasil pembulatan).
+                    </li>
+                </ol>
+                <p>Hasil: Harga 20.000 menjadi 19.999.</p>
+
+                <div class="image-placeholder">
+                    <img src="../../../assets/images/sales/materi-22/step-3.png" alt="Rounding Method 99"
+                        onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+                    <span class="placeholder-text">📸 Screenshot: Setting Rounding & Extra Fee</span>
+                </div>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card quiz-card" id="sales-materi-22-quiz">
+            <div class="quiz-progress-wrapper">
+                <div class="quiz-progress-bar" id="quizProgressBar"></div>
+            </div>
+
+            <h2>📝 Quiz Sales Materi 22</h2>
+
+            <div class="quiz-container">
+                <!-- Quiz akan di-render oleh JS -->
+            </div>
+
+            <div class="step-footer">
+                <button class="quiz-submit-btn" onclick="checkQuiz()">
+                    Periksa Jawaban
+                </button>
+                <div id="quizResult" style="display: none"></div>
+            </div>
+        </section>
+
+        <div id="nextActionArea" class="next-action-area" style="display: none">
+            <h3>🎉 Materi Sales 22 Selesai!</h3>
+            <p>
+                Anda luar biasa! Kemampuan manajemen harga Anda sudah sangat advanced.
+            </p>
+            <a href="../../../sales.html" class="btn-next">
+                Kembali ke Dashboard Sales ➔
+            </a>
+        </div>
+
+        <footer class="footer">
+            <a href="../../../sales.html" style="text-decoration: none; color: #666; font-weight: 600">← Kembali ke
+                Modul
+                Sales</a>
+        </footer>
+    </main>
+
+    <!-- Load JS -->
+    <script src="../../../assets/js/quiz-bank.js"></script>
+    <script src="../../../assets/js/lms-core.js"></script>
+    <script src="../../../assets/js/quiz-engine.js"></script>
+
+    <script>
+        const MATERI_ID = "sales_materi22";
+
+        document.addEventListener("DOMContentLoaded", () => {
+            initMateriProgress(MATERI_ID);
+            renderQuiz(MATERI_ID, ".quiz-container");
+
+            if (loadQuizResult(MATERI_ID)?.passed) {
+                showNextButton();
+            }
+        });
+
+        const originalOnQuizPassed = window.onQuizPassed;
+        window.onQuizPassed = function (materiId, score) {
+            if (originalOnQuizPassed) originalOnQuizPassed(materiId, score);
+            showNextButton();
+        };
+
+        function showNextButton() {
+            const area = document.getElementById("nextActionArea");
+            if (area) {
+                area.style.display = "block";
+                setTimeout(() => {
+                    area.scrollIntoView({ behavior: "smooth", block: "center" });
+                }, 500);
+            }
+        }
+
+        function toggleDark() {
+            document.body.classList.toggle("dark");
+            localStorage.setItem("darkMode", document.body.classList.contains("dark"));
+        }
+        if (localStorage.getItem("darkMode") === "true") {
+            document.body.classList.add("dark");
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Materi 9: Invoicing Policies | Modul Sales</title>
+    <link rel="stylesheet" href="../../../assets/css/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="progress-wrapper">
+        <div class="progress-container" id="progressContainer">
+            <div class="progress-bar" id="progressBar"></div>
+            <span class="progress-label" id="progressLabel" style="top: 24px">0%</span>
+        </div>
+    </div>
+
+    <main class="container">
+        <button class="dark-toggle" onclick="toggleDark()">🌙</button>
+
+        <header class="header">
+            <div id="materiBadge" class="materi-badge" style="display: none">
+                🎓 Materi 9 Sales Lulus
+            </div>
+            <span class="badge">Sales - Materi 9</span>
+            <h1>Invoicing Policies</h1>
+            <p class="subtitle">
+                Memahami berbagai metode penagihan: Barang terkirim vs. Barang dipesan, serta penagihan jasa.
+            </p>
+
+            <div class="image-placeholder">
+                <img src="../../../assets/images/sales/materi-9/hero.png" alt="Invoicing Policies Hero"
+                    onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+                <span class="placeholder-text">📸 Ilustrasi: Invoicing Policy Settings</span>
+            </div>
+        </header>
+
+        <section class="step-card">
+            <h2>1. Kebijakan Invoice Default</h2>
+            <div class="content">
+                <p>Odoo menawarkan dua kebijakan utama untuk produk fisik:</p>
+                <ul>
+                    <li><strong>Ordered Quantities:</strong> Anda bisa menagih segera setelah pesanan dikonfirmasi,
+                        meskipun barang belum dikirim.</li>
+                    <li><strong>Delivered Quantities:</strong> Anda hanya bisa menagih sesuai jumlah barang yang sudah
+                        dikirim ke pelanggan. (Lebih umum digunakan di Indonesia).</li>
+                </ul>
+                <p>Pengaturan default ini bisa diubah di <strong>Sales</strong> > <strong>Configuration</strong> >
+                    <strong>Settings</strong>.</p>
+                <div class="image-placeholder">
+                    <img src="../../../assets/images/sales/materi-9/step-1.png" alt="Invoicing Settings"
+                        onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+                    <span class="placeholder-text">📸 Screenshot: Pengaturan Invoicing Policy</span>
+                </div>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>2. Penagihan Jasa (Berdasarkan Timesheets)</h2>
+            <div class="content">
+                <p>Untuk perusahaan jasa (konsultan, developer), penagihan seringkali didasarkan pada jam kerja.</p>
+                <p>Pilih kebijakan <strong>Based on Timesheets</strong> pada formulir produk (Tipe: Service). Ini
+                    memungkinkan Anda menagih pelanggan secara berkala sesuai jumlah jam kerja yang dicatat oleh
+                    karyawan di aplikasi <strong>Timesheets</strong> atau tugas Proyek.</p>
+
+                <div class="image-placeholder">
+                    <img src="../../../assets/images/sales/materi-9/step-2.png" alt="Service Invoicing Policy"
+                        onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+                    <span class="placeholder-text">📸 Screenshot: Produk Jasa dengan Policy 'Based on Timesheets'</span>
+                </div>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>3. Penagihan Berdasarkan Milestones</h2>
+            <div class="content">
+                <p>Metode ini cocok untuk proyek besar dengan tahapan tertentu (misal: Tahap Desain Selesai 30%, Tahap
+                    Konstruksi 50%).</p>
+                <ul>
+                    <li>Pilih kebijakan <strong>Based on Milestones</strong>.</li>
+                    <li>Sistem akan mengintegrasikan Sales Order dengan aplikasi <strong>Project</strong>.</li>
+                    <li>Ketika milestone ditandai selesai di proyek, Odoo secara otomatis memperbarui <strong>Delivered
+                            Quantity</strong> di Sales Order, sehingga siap untuk ditagihkan (Create Invoice).</li>
+                </ul>
+
+                <div class="image-placeholder">
+                    <img src="../../../assets/images/sales/materi-9/step-3.png" alt="Milestone Invoicing"
+                        onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+                    <span class="placeholder-text">📸 Screenshot: Penagihan Milestone</span>
+                </div>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>4. Automatic Invoice</h2>
+            <div class="content">
+                <p>Bagaimana dengan toko online?</p>
+                <p>Jika fitur <strong>Automatic Invoice</strong> (sering terdapat di pengaturan Online Payments)
+                    diaktifkan, maka Odoo akan <strong>secara otomatis membuat dan memvalidasi faktur</strong> segera
+                    setelah pelanggan melunasi pembayaran (Confirm Payment) di website e-commerce.</p>
+                <p>Ini sangat menghemat waktu admin karena tidak perlu membuat faktur manual untuk setiap transaksi
+                    online.</p>
+
+                <div class="image-placeholder">
+                    <img src="../../../assets/images/sales/materi-9/step-4.png" alt="Automatic Invoice Feature"
+                        onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+                    <span class="placeholder-text">📸 Screenshot: Alur Automatic Invoice</span>
+                </div>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+
+        <section class="step-card quiz-card" id="sales-materi-9-quiz">
+            <div class="quiz-progress-wrapper">
+                <div class="quiz-progress-bar" id="quizProgressBar"></div>
+            </div>
+
+            <h2>📝 Quiz Sales Materi 9</h2>
+
+            <div class="quiz-container">
+                <!-- Quiz akan di-render oleh JS -->
+            </div>
+
+            <div class="step-footer">
+                <button class="quiz-submit-btn" onclick="checkQuiz()">
+                    Periksa Jawaban
+                </button>
+                <div id="quizResult" style="display: none"></div>
+            </div>
+        </section>
+
+        <div id="nextActionArea" class="next-action-area" style="display: none">
+            <h3>🎉 Materi Sales 9 Selesai!</h3>
+            <p>
+                Anda luar biasa! Selesaikan langkah selanjutnya di dashboard.
+            </p>
+            <a href="../../../sales.html" class="btn-next">
+                Kembali ke Dashboard Sales ➔
+            </a>
+        </div>
+
+        <footer class="footer">
+            <a href="../../../sales.html" style="text-decoration: none; color: #666; font-weight: 600">← Kembali ke
+                Modul
+                Sales</a>
+        </footer>
+    </main>
+
+    <!-- Load JS -->
+    <script src="../../../assets/js/quiz-bank.js"></script>
+    <script src="../../../assets/js/lms-core.js"></script>
+    <script src="../../../assets/js/quiz-engine.js"></script>
+
+    <script>
+        const MATERI_ID = "sales_materi9";
+
+        document.addEventListener("DOMContentLoaded", () => {
+            initMateriProgress(MATERI_ID);
+            renderQuiz(MATERI_ID, ".quiz-container");
+
+            if (loadQuizResult(MATERI_ID)?.passed) {
+                showNextButton();
+            }
+        });
+
+        const originalOnQuizPassed = window.onQuizPassed;
+        window.onQuizPassed = function (materiId, score) {
+            if (originalOnQuizPassed) originalOnQuizPassed(materiId, score);
+            showNextButton();
+        };
+
+        function showNextButton() {
+            const area = document.getElementById("nextActionArea");
+            if (area) {
+                area.style.display = "block";
+                setTimeout(() => {
+                    area.scrollIntoView({ behavior: "smooth", block: "center" });
+                }, 500);
+            }
+        }
+
+        function toggleDark() {
+            document.body.classList.toggle("dark");
+            localStorage.setItem("darkMode", document.body.classList.contains("dark"));
+        }
+        if (localStorage.getItem("darkMode") === "true") {
+            document.body.classList.add("dark");
+        }
+    </script>
+</body>
+
+</html>

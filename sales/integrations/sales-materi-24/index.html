@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Materi 24: Integrations (Gelato) | Modul Sales</title>
+    <link rel="stylesheet" href="../../../assets/css/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="progress-wrapper">
+        <div class="progress-container" id="progressContainer">
+            <div class="progress-bar" id="progressBar"></div>
+            <span class="progress-label" id="progressLabel" style="top: 24px">0%</span>
+        </div>
+    </div>
+
+    <main class="container">
+        <button class="dark-toggle" onclick="toggleDark()">🌙</button>
+
+        <header class="header">
+            <div id="materiBadge" class="materi-badge" style="display: none">
+                🎓 Materi 24 Sales Lulus
+            </div>
+            <span class="badge">Sales - Materi 24</span>
+            <h1>Integrations: Gelato (Print on Demand)</h1>
+            <p class="subtitle">
+                Menghubungkan Odoo dengan layanan Print on Demand untuk otomatisasi penuh.
+            </p>
+
+            <div class="image-placeholder">
+                <img src="../../../assets/images/sales/materi-24/hero.png" alt="Gelato Integration"
+                    onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+                <span class="placeholder-text">📸 Ilustrasi: Integrasi Odoo x Gelato</span>
+            </div>
+        </header>
+
+        <section class="step-card">
+            <h2>1. Sinkronisasi Produk</h2>
+            <div class="content">
+                <p>Bagaimana cara menarik produk dari Gelato ke Odoo?</p>
+                <ul>
+                    <li>Gunakan <strong>API Key</strong> dari akun Gelato Anda untuk menghubungkan kedua platform.</li>
+                    <li>Odoo akan menarik "Product Templates" dari Gelato.</li>
+                    <li>Semua varian (ukuran, warna, desain) akan otomatis terbuat di Odoo sebagai Product Variants.
+                    </li>
+                </ul>
+
+                <div class="image-placeholder">
+                    <img src="../../../assets/images/sales/materi-24/step-1.png" alt="Gelato API Key"
+                        onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+                    <span class="placeholder-text">📸 Screenshot: Gelato API Key Configuration</span>
+                </div>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>2. Webhooks & Order Status</h2>
+            <div class="content">
+                <p>Agar Odoo tahu status pesanan (sedang dicetak, dikirim, dll), kita perlu Webhooks.</p>
+                <ul>
+                    <li>Di dashboard Gelato > Developer > Webhooks.</li>
+                    <li>Tambahkan URL Webhook dari Odoo Anda.</li>
+                    <li>Pilih Event: <code>order_status_updated</code>.</li>
+                    <li>Ini memastikan saat Gelato memperbarui status (misal: "Shipped"), Odoo otomatis menerima update
+                        tersebut.</li>
+                </ul>
+
+                <div class="image-placeholder">
+                    <img src="../../../assets/images/sales/materi-24/step-2.png" alt="Gelato Webhook Event"
+                        onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+                    <span class="placeholder-text">📸 Screenshot: Webhook Event 'order_status_updated'</span>
+                </div>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>3. Menambahkan Pengiriman (Shipping)</h2>
+            <div class="content">
+                <p>Gelato memiliki biaya kirim sendiri. Bagaimana menagihnya ke pelanggan?</p>
+                <ul>
+                    <li>Pada Sales Order di Odoo yang berisi produk Gelato, klik tombol <strong>Add Shipping</strong>.
+                    </li>
+                    <li>Odoo akan mengambil tarif real-time dari Gelato berdasarkan alamat pelanggan.</li>
+                    <li>Biaya ini akan ditambahkan sebagai baris "Delivery" di Sales Order Odoo.</li>
+                </ul>
+
+                <div class="image-placeholder">
+                    <img src="../../../assets/images/sales/materi-24/step-3.png" alt="Add Shipping Button"
+                        onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+                    <span class="placeholder-text">📸 Screenshot: Tombol 'Add Shipping' di Sales Order</span>
+                </div>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card quiz-card" id="sales-materi-24-quiz">
+            <div class="quiz-progress-wrapper">
+                <div class="quiz-progress-bar" id="quizProgressBar"></div>
+            </div>
+
+            <h2>📝 Quiz Sales Materi 24</h2>
+
+            <div class="quiz-container">
+                <!-- Quiz akan di-render oleh JS -->
+            </div>
+
+            <div class="step-footer">
+                <button class="quiz-submit-btn" onclick="checkQuiz()">
+                    Periksa Jawaban
+                </button>
+                <div id="quizResult" style="display: none"></div>
+            </div>
+        </section>
+
+        <div id="nextActionArea" class="next-action-area" style="display: none">
+            <h3>🎉 Materi Sales 24 Selesai!</h3>
+            <p>
+                Luar biasa! Anda telah menyelesaikan seluruh rangkaian modul Sales.
+            </p>
+            <a href="../../../sales.html" class="btn-next">
+                Kembali ke Dashboard Utama ➔
+            </a>
+        </div>
+
+        <footer class="footer">
+            <a href="../../../sales.html" style="text-decoration: none; color: #666; font-weight: 600">← Kembali ke
+                Modul
+                Sales</a>
+        </footer>
+    </main>
+
+    <!-- Load JS -->
+    <script src="../../../assets/js/quiz-bank.js"></script>
+    <script src="../../../assets/js/lms-core.js"></script>
+    <script src="../../../assets/js/quiz-engine.js"></script>
+
+    <script>
+        const MATERI_ID = "sales_materi24";
+
+        document.addEventListener("DOMContentLoaded", () => {
+            initMateriProgress(MATERI_ID);
+            renderQuiz(MATERI_ID, ".quiz-container");
+
+            if (loadQuizResult(MATERI_ID)?.passed) {
+                showNextButton();
+            }
+        });
+
+        const originalOnQuizPassed = window.onQuizPassed;
+        window.onQuizPassed = function (materiId, score) {
+            if (originalOnQuizPassed) originalOnQuizPassed(materiId, score);
+            showNextButton();
+        };
+
+        function showNextButton() {
+            const area = document.getElementById("nextActionArea");
+            if (area) {
+                area.style.display = "block";
+                setTimeout(() => {
+                    area.scrollIntoView({ behavior: "smooth", block: "center" });
+                }, 500);
+            }
+        }
+
+        function toggleDark() {
+            document.body.classList.toggle("dark");
+            localStorage.setItem("darkMode", document.body.classList.contains("dark"));
+        }
+        if (localStorage.getItem("darkMode") === "true") {
+            document.body.classList.add("dark");
+        }
+    </script>
+</body>
+
+</html>

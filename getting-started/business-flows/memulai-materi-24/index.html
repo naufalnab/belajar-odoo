@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Materi 24: eLearning | PembelajarBelajar</title>
+    <link rel="stylesheet" href="../../../assets/css/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="progress-wrapper">
+        <div class="progress-container" id="progressContainer">
+            <div class="progress-bar" id="progressBar"></div>
+            <span class="progress-label" id="progressLabel" style="top: 24px">0%</span>
+        </div>
+    </div>
+
+    <main class="container">
+        <button class="dark-toggle">🌙</button>
+
+        <header class="header">
+            <div id="materiBadge" class="materi-badge" style="display: none">
+                🎓 Materi 24 Lulus
+            </div>
+            <span class="badge">Materi 24</span>
+            <h1>eLearning & Courses</h1>
+            <p class="subtitle">
+                Membuat dan menjual kursus online dengan Odoo eLearning.
+            </p>
+
+            <div class="image-placeholder" style="margin-top: 20px">
+                <img src="../../../assets/images/getting-started/materi-24/infographic.png" alt="Ilustrasi eLearning"
+                    onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+                <span class="placeholder-text">📸 Ilustrasi Utama: Odoo eLearning Overview</span>
+            </div>
+        </header>
+
+        <section class="step-card">
+            <h2>1. Enrollment Policy: On Payment</h2>
+            <div class="content">
+                <p>
+                    Saat membuat kursus, Anda harus memilih **Enrollment Policy** (Kebijakan Pendaftaran).
+                </p>
+                <p>
+                    Mengapa harus memilih opsi <strong>"On payment"</strong>?
+                </p>
+                <div class="alert info">
+                    <strong>Alasan:</strong> Agar kursus tersebut dianggap sebagai <strong>produk</strong> yang bisa
+                    <strong>dijual secara online</strong>. Tanpa opsi ini, kursus mungkin hanya bersifat publik atau
+                    undangan saja.
+                </div>
+                <div class="image-placeholder">
+                    <img src="../../../assets/images/getting-started/materi-24/step-1-policy.png"
+                        alt="Enrollment Policy"
+                        onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+                    <span class="placeholder-text">📸 Screenshot: Opsi 'On Payment' di pengaturan Kursus</span>
+                </div>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>2. Akses Kursus (Course Access)</h2>
+            <div class="content">
+                <p>
+                    Jika pelanggan membeli kursus Anda secara online, kapan mereka bisa mulai mengakses materinya?
+                </p>
+                <p>
+                    <strong>Once the payment has been processed successfully.</strong> (Segera setelah pembayaran
+                    berhasil diproses).
+                </p>
+                <p>
+                    Sistem Odoo akan otomatis memberikan hak akses kepada user yang terhubung dengan akun pembeli
+                    tersebut.
+                </p>
+                <div class="image-placeholder">
+                    <img src="../../../assets/images/getting-started/materi-24/step-2-access.png" alt="Course Access"
+                        onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+                    <span class="placeholder-text">📸 Screenshot: Alur pembelian hingga akses terbuka</span>
+                </div>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>3. Syarat Menjual Kursus</h2>
+            <div class="content">
+                <p>
+                    Apa yang harus dilakukan agar kursus Anda benar-benar bisa dibeli orang lain?
+                </p>
+                <ul>
+                    <li>1. Kursus harus terhubung dengan <strong>Product</strong> di katalog.</li>
+                    <li>2. Produk tersebut harus dalam status <strong>Published</strong> (Dipublikasikan).</li>
+                </ul>
+                <p>
+                    Jika produknya belum "Published", maka tombol "Add to Cart" tidak akan muncul di website, meskipun
+                    kursusnya sudah ada.
+                </p>
+                <div class="image-placeholder">
+                    <img src="../../../assets/images/getting-started/materi-24/step-3-publish.png" alt="Publish Product"
+                        onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+                    <span class="placeholder-text">📸 Screenshot: Tombol 'Unpublished/Published' di halaman
+                        produk</span>
+                </div>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card quiz-card" id="materi-24-quiz">
+            <div class="quiz-progress-wrapper">
+                <div class="quiz-progress-bar" id="quizProgressBar"></div>
+            </div>
+            <h2>📝 Quiz Materi 24</h2>
+            <div class="quiz-container"></div>
+            <div class="step-footer">
+                <button class="quiz-submit-btn" onclick="checkQuiz()">
+                    Periksa Jawaban
+                </button>
+                <div id="quizResult" style="display: none"></div>
+            </div>
+        </section>
+
+        <div id="nextActionArea" class="next-action-area" style="display: none">
+            <h3>🎉 Materi 24 Selesai!</h3>
+            <p>
+                Anda sudah siap untuk monetisasi pengetahuan Anda dengan Odoo eLearning.
+            </p>
+            <a href="../../../getting-started.html" class="btn-next">Kembali ke Dashboard Utama ➔</a>
+        </div>
+
+        <footer class="footer">
+            <a href="../../../getting-started.html" style="text-decoration: none; color: #666; font-weight: 600">←
+                Kembali ke
+                Dashboard</a>
+        </footer>
+    </main>
+
+    <script src="../../../assets/js/quiz-bank.js"></script>
+    <script src="../../../assets/js/lms-core.js"></script>
+    <script src="../../../assets/js/quiz-engine.js"></script>
+
+    <script>
+        // Inisialisasi Materi 24
+        document.addEventListener("DOMContentLoaded", () => {
+            initMateriProgress("materi24");
+            renderQuiz("materi24", ".quiz-container");
+
+            if (loadQuizResult("materi24")?.passed) {
+                const area = document.getElementById("nextActionArea");
+                if (area) area.style.display = "block";
+            }
+        });
+
+        const originalOnQuizPassed = window.onQuizPassed;
+        window.onQuizPassed = function (materiId, score) {
+            if (originalOnQuizPassed) originalOnQuizPassed(materiId, score);
+            const area = document.getElementById("nextActionArea");
+            if (area) {
+                area.style.display = "block";
+                setTimeout(() => {
+                    area.scrollIntoView({ behavior: "smooth", block: "center" });
+                }, 500);
+            }
+        };
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Materi 6: PDF Quote Builder | Modul Sales</title>
+    <link rel="stylesheet" href="../../../assets/css/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="progress-wrapper">
+        <div class="progress-container" id="progressContainer">
+            <div class="progress-bar" id="progressBar"></div>
+            <span class="progress-label" id="progressLabel" style="top: 24px">0%</span>
+        </div>
+    </div>
+
+    <main class="container">
+        <button class="dark-toggle" onclick="toggleDark()">🌙</button>
+
+        <header class="header">
+            <div id="materiBadge" class="materi-badge" style="display: none">
+                🎓 Materi 6 Sales Lulus
+            </div>
+            <span class="badge">Sales - Materi 6</span>
+            <h1>PDF Quote Builder</h1>
+            <p class="subtitle">
+                Modifikasi Header dan Footer penawaran PDF Anda agar terlihat lebih profesional.
+            </p>
+
+            <div class="image-placeholder">
+                <img src="../../../assets/images/sales/materi-6/hero.png" alt="PDF Quote Builder Hero"
+                    onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+                <span class="placeholder-text">📸 Ilustrasi: PDF Quote Builder Odoo</span>
+            </div>
+        </header>
+
+        <section class="step-card">
+            <h2>1. Mengakses Halaman Headers/Footers</h2>
+            <div class="content">
+                <p>Odoo memungkinkan kita menyesuaikan tampilan PDF penawaran (Quotation) untuk memberikan kesan yang
+                    lebih personal dan profesional.</p>
+                <p>Ada dua cara untuk mengakses pengaturan ini:</p>
+                <ol class="instruction-list">
+                    <li>Buka menu <strong>Sales</strong> > <strong>Configuration</strong> > <strong>Settings</strong>.
+                    </li>
+                    <li>Cari bagian <strong>Quotations & Orders</strong>.</li>
+                    <li>Klik link bertuliskan <strong>"Configure your document layout"</strong> (atau document
+                        template).</li>
+                    <li><strong>Alternatif:</strong> Terkadang link ini berlabel "Headers/Footers" tergantung versi
+                        Odoo.</li>
+                </ol>
+
+                <div class="image-placeholder">
+                    <img src="../../../assets/images/sales/materi-6/step-1.png" alt="Accessing Document Layout"
+                        onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+                    <span class="placeholder-text">📸 Screenshot: Sales Settings > Document Layout Link</span>
+                </div>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>2. Menggunakan PDF Quote Builder</h2>
+            <div class="content">
+                <p>Setelah masuk ke konfigurasi layout, kita bisa mengatur elemen header dan footer.</p>
+                <ol class="instruction-list">
+                    <li><strong>Layout:</strong> Pilih template dasar (Light, Boxed, Bold, Striped).</li>
+                    <li><strong>Font:</strong> Pilih jenis huruf yang sesuai dengan branding perusahaan.</li>
+                    <li><strong>Logo:</strong> Pastikan logo perusahaan sudah terupload dengan resolusi tinggi.</li>
+                    <li><strong>Colors:</strong> Sesuaikan warna utama dan sekunder dokumen.</li>
+                    <li><strong>Background:</strong> Tambahkan latar belakang custom jika diperlukan.</li>
+                </ol>
+
+                <div class="image-placeholder">
+                    <img src="../../../assets/images/sales/materi-6/step-2.png" alt="Document Layout Configurator"
+                        onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+                    <span class="placeholder-text">📸 Screenshot: Konfigurator Layout Dokumen</span>
+                </div>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>3. Mencari Technical Name (Developer Mode)</h2>
+            <div class="content">
+                <p>Kadang kita perlu memasukkan field dinamis ke dalam header/footer (misal: Tanggal Penawaran, Nama
+                    Salesperson). Untuk itu, kita butuh "Technical Name" dari field tersebut.</p>
+                <p>Bagaimana cara mendapatkannya?</p>
+                <ol class="instruction-list">
+                    <li>Aktifkan <strong>Developer Mode</strong> (di Settings > General Settings > Scroll paling bawah >
+                        Activate the developer mode).</li>
+                    <li>Buka formulir Sales Order atau Quotation.</li>
+                    <li>Arahkan kursor (hover) ke atas label field yang ingin diketahui namanya.</li>
+                    <li>Sebuah kotak hitam (tooltip) akan muncul. Cari baris bertuliskan <strong>Field:</strong>
+                        (contoh: <code>date_order</code> atau <code>user_id</code>).</li>
+                </ol>
+
+                <div class="image-placeholder">
+                    <img src="../../../assets/images/sales/materi-6/step-3.png" alt="Developer Mode Field Tooltip"
+                        onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+                    <span class="placeholder-text">📸 Screenshot: Tooltip field di Developer Mode</span>
+                </div>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>4. Tab Quote Builder</h2>
+            <div class="content">
+                <p>Selain header/footer global, kita bisa memodifikasi konten PDF per penawaran.</p>
+                <p>Di dalam formulir Quotation/Sales Order, terdapat tab khusus bernama <strong>Quote Builder</strong>
+                    (di beberapa versi mungkin disebut PDF Options atau sejenisnya, tapi fungsinya sama).</p>
+                <ul>
+                    <li>Di sini kita bisa mengupload file PDF tambahan (misal: Brosur Produk, Syarat & Ketentuan) yang
+                        akan digabungkan dengan penawaran.</li>
+                    <li>Kita juga bisa mengatur header/footer spesifik untuk dokumen ini saja.</li>
+                </ul>
+
+                <div class="image-placeholder">
+                    <img src="../../../assets/images/sales/materi-6/step-4.png" alt="Quote Builder Tab"
+                        onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+                    <span class="placeholder-text">📸 Screenshot: Tab Quote Builder di Sales Order</span>
+                </div>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card quiz-card" id="sales-materi-6-quiz">
+            <div class="quiz-progress-wrapper">
+                <div class="quiz-progress-bar" id="quizProgressBar"></div>
+            </div>
+
+            <h2>📝 Quiz Sales Materi 6</h2>
+
+            <div class="quiz-container">
+                <!-- Quiz akan di-render oleh JS -->
+            </div>
+
+            <div class="step-footer">
+                <button class="quiz-submit-btn" onclick="checkQuiz()">
+                    Periksa Jawaban
+                </button>
+                <div id="quizResult" style="display: none"></div>
+            </div>
+        </section>
+
+        <div id="nextActionArea" class="next-action-area" style="display: none">
+            <h3>🎉 Materi Sales 6 Selesai!</h3>
+            <p>
+                Anda kini bisa membuat penawaran PDF yang profesional.
+            </p>
+            <a href="../../../sales.html" class="btn-next">
+                Kembali ke Modul Sales ➔
+            </a>
+        </div>
+
+        <footer class="footer">
+            <a href="../../../sales.html" style="text-decoration: none; color: #666; font-weight: 600">← Kembali ke
+                Modul
+                Sales</a>
+        </footer>
+    </main>
+
+    <!-- Load JS -->
+    <script src="../../../assets/js/quiz-bank.js"></script>
+    <script src="../../../assets/js/lms-core.js"></script>
+    <script src="../../../assets/js/quiz-engine.js"></script>
+
+    <script>
+        // ID Unik untuk modul Sales Materi 6
+        const MATERI_ID = "sales_materi6";
+
+        document.addEventListener("DOMContentLoaded", () => {
+            initMateriProgress(MATERI_ID);
+
+            // Inject dummy quiz data if needed (tapi kita sudah update quiz-bank.js)
+            // renderQuiz akan mengambil dari QUIZ_BANK di quiz-bank.js
+
+            renderQuiz(MATERI_ID, ".quiz-container");
+
+            if (loadQuizResult(MATERI_ID)?.passed) {
+                showNextButton();
+            }
+        });
+
+        const originalOnQuizPassed = window.onQuizPassed;
+        window.onQuizPassed = function (materiId, score) {
+            if (originalOnQuizPassed) originalOnQuizPassed(materiId, score);
+            showNextButton();
+        };
+
+        function showNextButton() {
+            const area = document.getElementById("nextActionArea");
+            if (area) {
+                area.style.display = "block";
+                setTimeout(() => {
+                    area.scrollIntoView({ behavior: "smooth", block: "center" });
+                }, 500);
+            }
+        }
+
+        function toggleDark() {
+            document.body.classList.toggle("dark");
+            localStorage.setItem("darkMode", document.body.classList.contains("dark"));
+        }
+        if (localStorage.getItem("darkMode") === "true") {
+            document.body.classList.add("dark");
+        }
+    </script>
+</body>
+
+</html>

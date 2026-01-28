@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Materi 27: Timesheets & Invoicing | PembelajarBelajar</title>
+    <link rel="stylesheet" href="../../../assets/css/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="progress-wrapper">
+        <div class="progress-container" id="progressContainer">
+            <div class="progress-bar" id="progressBar"></div>
+            <span class="progress-label" id="progressLabel" style="top: 24px">0%</span>
+        </div>
+    </div>
+
+    <main class="container">
+        <button class="dark-toggle">🌙</button>
+
+        <header class="header">
+            <div id="materiBadge" class="materi-badge" style="display: none">
+                🎓 Materi 27 Lulus
+            </div>
+            <span class="badge">Materi 27</span>
+            <h1>Timesheets & Invoicing</h1>
+            <p class="subtitle">
+                Penagihan waktu kerja (timesheets) dan akun analitik.
+            </p>
+
+            <div class="image-placeholder" style="margin-top: 20px">
+                <img src="../../../assets/images/getting-started/materi-27/infographic.png" alt="Ilustrasi Timesheets"
+                    onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+                <span class="placeholder-text">📸 Ilustrasi Utama: Menagih Jam Kerja ke Client</span>
+            </div>
+        </header>
+
+        <section class="step-card">
+            <h2>1. Mengaktifkan Analytic Accounts</h2>
+            <div class="content">
+                <p>
+                    Jika kolom "Analytic" tidak muncul di Sales Order atau Purchase Order, itu berarti fiturnya belum
+                    aktif.
+                </p>
+                <div class="alert info">
+                    <strong>Lokasi Pengaturan:</strong> Pergi ke <strong>Accounting > Configuration > Settings</strong>,
+                    lalu aktifkan "Analytic Accounting".
+                </div>
+                <p>
+                    Analytic accounts berguna untuk melacak profitabilitas proyek atau departemen tertentu secara
+                    spesifik.
+                </p>
+                <div class="image-placeholder">
+                    <img src="../../../assets/images/getting-started/materi-27/step-1-analytic.png"
+                        alt="Analytic Settings"
+                        onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+                    <span class="placeholder-text">📸 Screenshot: Enable 'Analytic Accounting' di Settings</span>
+                </div>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>2. Menagih Jasa Berdasarkan Waktu (Timesheets)</h2>
+            <div class="content">
+                <p>
+                    Bagaimana cara menagih klien berdasarkan jam kerja karyawan (misal: jasa Arsitek)?
+                </p>
+                <p>
+                    Anda perlu mengonfigurasi Produk Jasa tersebut dengan setting berikut:
+                </p>
+                <ul>
+                    <li><strong>Product Type:</strong> Service</li>
+                    <li><strong>Invoicing Policy:</strong> Timesheets on tasks</li>
+                </ul>
+                <p>
+                    Dengan setting ini, invoice akan dibuat berdasarkan jumlah jam yang dicatat karyawan di project
+                    task, bukan jumlah yang dipesan di awal.
+                </p>
+                <div class="image-placeholder">
+                    <img src="../../../assets/images/getting-started/materi-27/step-2-service-product.png"
+                        alt="Service Product Config"
+                        onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+                    <span class="placeholder-text">📸 Screenshot: Setting 'Invoicing Policy: Timesheets on tasks'</span>
+                </div>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>3. Perhitungan Tagihan (Delivered Quantities)</h2>
+            <div class="content">
+                <p>
+                    Contoh Kasus: Produk "Wood Panels".
+                </p>
+                <ul class="technical-list">
+                    <li><strong>Harga Jual:</strong> $80</li>
+                    <li><strong>Biaya (Cost):</strong> $50</li>
+                    <li><strong>Kebijakan:</strong> Invoice on delivered quantities</li>
+                    <li><strong>Jumlah Terkirim:</strong> 5 unit</li>
+                </ul>
+                <p>
+                    Berapa yang akan ditagih ke pelanggan?
+                </p>
+                <p>
+                    <strong>Jawab: $400</strong> (5 unit terkirim × $80 harga jual). Cost $50 tidak relevan untuk harga
+                    jual ke pelanggan, itu hanya untuk margin internal Anda.
+                </p>
+                <div class="image-placeholder">
+                    <img src="../../../assets/images/getting-started/materi-27/step-3-calculation.png"
+                        alt="Invoice Calculation"
+                        onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+                    <span class="placeholder-text">📸 Ilustrasi: 5 x $80 = $400</span>
+                </div>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card quiz-card" id="materi-27-quiz">
+            <div class="quiz-progress-wrapper">
+                <div class="quiz-progress-bar" id="quizProgressBar"></div>
+            </div>
+            <h2>📝 Quiz Materi 27</h2>
+            <div class="quiz-container"></div>
+            <div class="step-footer">
+                <button class="quiz-submit-btn" onclick="checkQuiz()">
+                    Periksa Jawaban
+                </button>
+                <div id="quizResult" style="display: none"></div>
+            </div>
+        </section>
+
+        <div id="nextActionArea" class="next-action-area" style="display: none">
+            <h3>🎉 Materi 27 Selesai!</h3>
+            <p>
+                Anda telah memahami integrasi antara pencatatan waktu dan penagihan.
+            </p>
+            <a href="../../../getting-started.html" class="btn-next">Kembali ke Dashboard Utama ➔</a>
+        </div>
+
+        <footer class="footer">
+            <a href="../../../getting-started.html" style="text-decoration: none; color: #666; font-weight: 600">←
+                Kembali ke
+                Dashboard</a>
+        </footer>
+    </main>
+
+    <script src="../../../assets/js/quiz-bank.js"></script>
+    <script src="../../../assets/js/lms-core.js"></script>
+    <script src="../../../assets/js/quiz-engine.js"></script>
+
+    <script>
+        // Inisialisasi Materi 27
+        document.addEventListener("DOMContentLoaded", () => {
+            initMateriProgress("materi27");
+            renderQuiz("materi27", ".quiz-container");
+
+            if (loadQuizResult("materi27")?.passed) {
+                const area = document.getElementById("nextActionArea");
+                if (area) area.style.display = "block";
+            }
+        });
+
+        const originalOnQuizPassed = window.onQuizPassed;
+        window.onQuizPassed = function (materiId, score) {
+            if (originalOnQuizPassed) originalOnQuizPassed(materiId, score);
+            const area = document.getElementById("nextActionArea");
+            if (area) {
+                area.style.display = "block";
+                setTimeout(() => {
+                    area.scrollIntoView({ behavior: "smooth", block: "center" });
+                }, 500);
+            }
+        };
+    </script>
+</body>
+
+</html>

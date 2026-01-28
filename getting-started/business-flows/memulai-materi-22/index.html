@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Materi 22: Events & Social Marketing | PembelajarBelajar</title>
+    <link rel="stylesheet" href="../../../assets/css/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="progress-wrapper">
+        <div class="progress-container" id="progressContainer">
+            <div class="progress-bar" id="progressBar"></div>
+            <span class="progress-label" id="progressLabel" style="top: 24px">0%</span>
+        </div>
+    </div>
+
+    <main class="container">
+        <button class="dark-toggle">🌙</button>
+
+        <header class="header">
+            <div id="materiBadge" class="materi-badge" style="display: none">
+                🎓 Materi 22 Lulus
+            </div>
+            <span class="badge">Materi 22</span>
+            <h1>Events & Social Marketing</h1>
+            <p class="subtitle">
+                Manajemen event, pendaftaran, dan pemasaran media sosial.
+            </p>
+
+            <div class="image-placeholder" style="margin-top: 20px">
+                <img src="../../../assets/images/getting-started/materi-22/infographic.png" alt="Ilustrasi Events"
+                    onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+                <span class="placeholder-text">📸 Ilustrasi Utama: Event Management & Social Marketing</span>
+            </div>
+        </header>
+
+        <section class="step-card">
+            <h2>1. Pertanyaan Pendaftaran (Registration Questions)</h2>
+            <div class="content">
+                <p>
+                    Saat membuat formulir pendaftaran event, Anda bisa menanyakan info tambahan ke peserta.
+                </p>
+                <div class="alert info">
+                    <strong>Penting:</strong> Jika opsi <em>'Ask only once per order'</em> <strong>tidak
+                        diaktifkan</strong>, maka pertanyaan tersebut akan diajukan <strong>ke setiap peserta (per
+                        attendee)</strong>, bukan per pemesanan.
+                </div>
+                <p>
+                    Misalnya, jika satu orang mendaftarkan 5 teman, dia harus menjawab pertanyaan tersebut 5 kali (untuk
+                    masing-masing teman) jika opsi "Ask only once per order" mati.
+                </p>
+                <div class="image-placeholder">
+                    <img src="../../../assets/images/getting-started/materi-22/step-1-questions.png"
+                        alt="Registration Questions"
+                        onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+                    <span class="placeholder-text">📸 Screenshot: Konfigurasi Pertanyaan Event</span>
+                </div>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>2. Lead Generation Rules</h2>
+            <div class="content">
+                <p>
+                    Odoo bisa otomatis membuat Lead/Opportunity di CRM berdasarkan pendaftaran event.
+                </p>
+                <p>
+                    Untuk mengaturnya, pergi ke: <strong>Events -> Configuration -> Lead Generation -> Create</strong>.
+                </p>
+                <p>
+                    Anda bisa membuat aturan seperti: "Jika ada yang mendaftar ke Event Webinar, otomatis buat Lead
+                    dengan tag 'Webinar Interest' di CRM".
+                </p>
+                <div class="image-placeholder">
+                    <img src="../../../assets/images/getting-started/materi-22/step-2-lead-gen.png"
+                        alt="Lead Generation Menu"
+                        onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+                    <span class="placeholder-text">📸 Screenshot: Menu Lead Generation di Events</span>
+                </div>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>3. Social Marketing (Multi-posting)</h2>
+            <div class="content">
+                <p>
+                    Dengan aplikasi Social Marketing Odoo, Anda tidak perlu memposting konten satu per satu ke setiap
+                    platform.
+                </p>
+                <p>
+                    <strong>Yes, posts can be created and posted to multiple streams at the same time.</strong> Anda
+                    bisa membuat satu konten kampanye, lalu memilih untuk mempublikasikannya sekaligus ke Facebook,
+                    LinkedIn, Twitter, dan Instagram secara bersamaan.
+                </p>
+                <div class="image-placeholder">
+                    <img src="../../../assets/images/getting-started/materi-22/step-3-social.png"
+                        alt="Social Marketing Posts"
+                        onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+                    <span class="placeholder-text">📸 Screenshot: Membuat Postingan Multi-Platform</span>
+                </div>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card quiz-card" id="materi-22-quiz">
+            <div class="quiz-progress-wrapper">
+                <div class="quiz-progress-bar" id="quizProgressBar"></div>
+            </div>
+            <h2>📝 Quiz Materi 22</h2>
+            <div class="quiz-container"></div>
+            <div class="step-footer">
+                <button class="quiz-submit-btn" onclick="checkQuiz()">
+                    Periksa Jawaban
+                </button>
+                <div id="quizResult" style="display: none"></div>
+            </div>
+        </section>
+
+        <div id="nextActionArea" class="next-action-area" style="display: none">
+            <h3>🎉 Materi 22 Selesai!</h3>
+            <p>
+                Anda telah memahami dasar-dasar Event Management dan Social Marketing di Odoo.
+            </p>
+            <a href="../../../getting-started.html" class="btn-next">Kembali ke Dashboard Utama ➔</a>
+        </div>
+
+        <footer class="footer">
+            <a href="../../../getting-started.html" style="text-decoration: none; color: #666; font-weight: 600">←
+                Kembali ke
+                Dashboard</a>
+        </footer>
+    </main>
+
+    <script src="../../../assets/js/quiz-bank.js"></script>
+    <script src="../../../assets/js/lms-core.js"></script>
+    <script src="../../../assets/js/quiz-engine.js"></script>
+
+    <script>
+        // Inisialisasi Materi 22
+        document.addEventListener("DOMContentLoaded", () => {
+            initMateriProgress("materi22");
+            renderQuiz("materi22", ".quiz-container");
+
+            if (loadQuizResult("materi22")?.passed) {
+                const area = document.getElementById("nextActionArea");
+                if (area) area.style.display = "block";
+            }
+        });
+
+        const originalOnQuizPassed = window.onQuizPassed;
+        window.onQuizPassed = function (materiId, score) {
+            if (originalOnQuizPassed) originalOnQuizPassed(materiId, score);
+            const area = document.getElementById("nextActionArea");
+            if (area) {
+                area.style.display = "block";
+                setTimeout(() => {
+                    area.scrollIntoView({ behavior: "smooth", block: "center" });
+                }, 500);
+            }
+        };
+    </script>
+</body>
+
+</html>
