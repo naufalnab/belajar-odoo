@@ -591,5 +591,37 @@ window.QUIZ_BANK = {
       ],
       correct: "Lonceng (Bell)"
     }
+  ],
+  materi17: [
+    {
+      question: "Bagaimana cara Anda mengundang seseorang dari luar perusahaan ke dalam grup chat?",
+      options: [
+        "Tambahkan mereka melalui modul CRM",
+        "Buat tautan publik (public link) ke chat tersebut",
+        "Minta admin untuk membuatkan akun mereka terlebih dahulu",
+        "Gunakan opsi 'Start a Meeting' saja"
+      ],
+      correct: "Buat tautan publik (public link) ke chat tersebut"
+    },
+    {
+      question: "Saat membuka aplikasi Discuss, bagian mana yang harus Anda periksa untuk meninjau semua pembaruan (updates) terbaru pada record yang melibatkan Anda?",
+      options: [
+        "Inbox (Kotak Masuk)",
+        "Starred (Berbintang)",
+        "History feed (Riwayat)",
+        "Direct Messages (Pesan Langsung)"
+      ],
+      correct: "History feed (Riwayat)"
+    },
+    {
+      question: "Kontrol apa yang digunakan untuk memberi tahu orang lain secara sopan (discreetly) bahwa Anda ingin berbicara?",
+      options: [
+        "Mute",
+        "Members List",
+        "Gear menu",
+        "Raise Hand (Angkat Tangan)"
+      ],
+      correct: "Raise Hand (Angkat Tangan)"
+    }
   ]
 };
