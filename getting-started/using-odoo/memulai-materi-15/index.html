@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Materi 15: Hak Akses | PembelajarBelajar</title>
+    <link rel="stylesheet" href="../../../assets/css/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="progress-wrapper">
+        <div class="progress-container" id="progressContainer">
+            <div class="progress-bar" id="progressBar"></div>
+            <span class="progress-label" id="progressLabel" style="top: 24px">0%</span>
+        </div>
+    </div>
+
+    <main class="container">
+        <button class="dark-toggle">🌙</button>
+
+        <header class="header">
+            <div id="materiBadge" class="materi-badge" style="display: none">
+                🎓 Materi 15 Lulus
+            </div>
+            <span class="badge">Materi 15</span>
+            <h1>Access Rights (Hak Akses)</h1>
+            <p class="subtitle">
+                Mengelola keamanan data dengan Grup dan Hak Akses Pengguna.
+            </p>
+
+            <div class="image-placeholder" style="margin-top: 20px">
+                <img src="../../../assets/images/getting-started/materi-15/infographic.png"
+                    alt="Ilustrasi Access Rights"
+                    onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+                <span class="placeholder-text">📸 Ilustrasi Utama: Diagram User Groups dan Access Rights</span>
+            </div>
+        </header>
+
+        <section class="step-card">
+            <h2>1. Mengapa Menggunakan Grup?</h2>
+            <div class="content">
+                <p>
+                    Saat menambahkan karyawan baru, Anda mungkin berpikir untuk mengatur izin aksesnya secara individu.
+                    Namun, cara yang <strong>lebih efisien</strong> adalah menggunakan <strong>Grup Akses (Access
+                        Groups)</strong>.
+                </p>
+                <div class="alert info">
+                    <strong>Keuntungan Grup:</strong>
+                    <ul>
+                        <li><strong>Efisiensi:</strong> Lebih cepat mengatur izin untuk banyak pengguna sekaligus.</li>
+                        <li><strong>Konsistensi:</strong> Pastikan semua orang dalam peran yang sama memiliki akses yang
+                            sama.</li>
+                        <li><strong>Dinamis:</strong> Jika karyawan berganti, grup tetap ada; Anda hanya perlu mengganti
+                            usernya.</li>
+                    </ul>
+                </div>
+
+                <div class="image-placeholder">
+                    <img src="../../../assets/images/getting-started/materi-15/step-1-groups.png"
+                        alt="Manajemen Grup Pengguna"
+                        onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+                    <span class="placeholder-text">📸 Screenshot: Tampilan menu Users & Groups</span>
+                </div>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>2. Memahami Jenis Akses (CRUD)</h2>
+            <div class="content">
+                <p>
+                    Setiap Model (data) di Odoo memiliki 4 jenis hak akses dasar yang dapat diberikan kepada grup:
+                </p>
+                <ul>
+                    <li>👀 <strong>Read (Baca):</strong> Pengguna hanya bisa melihat data.</li>
+                    <li>✏️ <strong>Write (Tulis):</strong> Pengguna bisa mengubah/edit data yang sudah ada.</li>
+                    <li>➕ <strong>Create (Buat):</strong> Pengguna bisa membuat data baru.</li>
+                    <li>🗑️ <strong>Delete (Hapus):</strong> Pengguna bisa menghapus data.</li>
+                </ul>
+                <div class="alert warning">
+                    <strong>Contoh Kasus:</strong><br>
+                    Jika grup "New Employees" hanya memiliki hak <strong>Read Access</strong> pada probabilitas Lead,
+                    artinya mereka <strong>hanya bisa melihat</strong> nilai tersebut, tidak bisa mengubah atau
+                    membuatnya baru.
+                </div>
+
+                <div class="image-placeholder">
+                    <img src="../../../assets/images/getting-started/materi-15/step-2-access-rights.png"
+                        alt="Tabel Access Rights"
+                        onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+                    <span class="placeholder-text">📸 Screenshot: Tabel Access Rights (Read, Write, Create, Delete
+                        checkboxes)</span>
+                </div>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>3. Konfigurasi Lanjutan (Tabs)</h2>
+            <div class="content">
+                <p>Selain hak akses dasar (CRUD), terdapat tab-tab penting lainnya dalam pengaturan Grup:</p>
+
+                <h3>A. Inherited (Implied Groups)</h3>
+                <p>
+                    Anda tidak perlu mengatur ulang hak akses dari nol. Gunakan tab <strong>Inherited</strong> untuk
+                    mewariskan hak akses dari grup lain.
+                </p>
+                <div class="alert info">
+                    <strong>Contoh:</strong> Grup "<i>Sales Manager</i>" bisa diatur untuk mewarisi semua akses milik
+                    grup "<i>Sales User</i>", ditambah hak akses ekstra khusus manajer.
+                </div>
+                <div class="image-placeholder">
+                    <img src="../../../assets/images/getting-started/materi-15/tab-inherited.png" alt="Tab Inherited"
+                        onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+                    <span class="placeholder-text">📸 Screenshot: Tab Inherited untuk pewarisan grup</span>
+                </div>
+
+                <div style="margin-top: 30px;"></div>
+
+                <h3>B. Menus</h3>
+                <p>
+                    Tab ini mengontrol visiibilitas menu. Anda bisa menyembunyikan menu tertentu agar tidak terlihat
+                    oleh anggota grup ini, meskipun mereka memiliki akses ke datanya.
+                </p>
+                <div class="image-placeholder">
+                    <img src="../../../assets/images/getting-started/materi-15/tab-menus.png" alt="Tab Menus"
+                        onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+                    <span class="placeholder-text">📸 Screenshot: Daftar menu yang diizinkan untuk grup ini</span>
+                </div>
+
+                <div style="margin-top: 30px;"></div>
+
+                <div style="margin-top: 30px;"></div>
+
+                <h3>C. Views</h3>
+                <p>
+                    Anda dapat menentukan Tampilan (View) mana yang boleh dilihat oleh grup ini. Misalnya,
+                    menyembunyikan tampilan form tertentu atau membatasi akses ke dashboard.
+                </p>
+                <div class="image-placeholder">
+                    <img src="../../../assets/images/getting-started/materi-15/tab-views.png" alt="Tab Views"
+                        onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+                    <span class="placeholder-text">📸 Screenshot: Pengaturan Views untuk grup</span>
+                </div>
+
+                <div style="margin-top: 30px;"></div>
+
+                <h3>D. Record Rules (Aturan Baris Data)</h3>
+                <p>
+                    Jika Access Rights membatasi akses ke <strong>Tabel (Model)</strong>, maka Record Rules membatasi
+                    akses ke <strong>Baris Data (Row)</strong> tertentu.
+                </p>
+                <div class="alert warning">
+                    <strong>Contoh Powerful:</strong>
+                    <br>Anda bisa membuat aturan: <i>"Salesman hanya boleh melihat Sales Order yang dibuat oleh dirinya
+                        sendiri."</i>
+                    <br>(Domain: <code>[('user_id', '=', user.id)]</code>)
+                </div>
+                <div class="image-placeholder">
+                    <img src="../../../assets/images/getting-started/materi-15/tab-record-rules.png"
+                        alt="Tab Record Rules"
+                        onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+                    <span class="placeholder-text">📸 Screenshot: Aturan Record Rules dengan Domain Filter</span>
+                </div>
+
+                <div style="margin-top: 30px;"></div>
+
+                <h3>E. Notes</h3>
+                <p>
+                    Gunakan tab ini untuk menulis dokumentasi internal tentang tujuan grup ini dan perubahan apa saja
+                    yang telah dilakukan. Sangat berguna untuk audit di masa depan.
+                </p>
+                <div class="image-placeholder">
+                    <img src="../../../assets/images/getting-started/materi-15/tab-notes.png" alt="Tab Notes"
+                        onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+                    <span class="placeholder-text">📸 Screenshot: Tab Notes untuk dokumentasi</span>
+                </div>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card quiz-card" id="materi-15-quiz">
+            <div class="quiz-progress-wrapper">
+                <div class="quiz-progress-bar" id="quizProgressBar"></div>
+            </div>
+            <h2>📝 Quiz Materi 15</h2>
+            <div class="quiz-container"></div>
+            <div class="step-footer">
+                <button class="quiz-submit-btn" onclick="checkQuiz()">
+                    Periksa Jawaban
+                </button>
+                <div id="quizResult" style="display: none"></div>
+            </div>
+        </section>
+
+        <div id="nextActionArea" class="next-action-area" style="display: none">
+            <h3>🎉 Materi 15 Selesai!</h3>
+            <p>
+                Anda telah memahami dasar keamanan dan hak akses di Odoo!
+            </p>
+            <a href="../../../getting-started.html" class="btn-next">Kembali ke Dashboard Utama ➔</a>
+        </div>
+
+        <footer class="footer">
+            <a href="../../../getting-started.html" style="text-decoration: none; color: #666; font-weight: 600">←
+                Kembali ke
+                Dashboard</a>
+        </footer>
+    </main>
+
+    <script src="../../../assets/js/quiz-bank.js"></script>
+    <script src="../../../assets/js/lms-core.js"></script>
+    <script src="../../../assets/js/quiz-engine.js"></script>
+
+    <script>
+        // Inisialisasi Materi 15
+        document.addEventListener("DOMContentLoaded", () => {
+            initMateriProgress("materi15");
+            renderQuiz("materi15", ".quiz-container");
+
+            if (loadQuizResult("materi15")?.passed) {
+                const area = document.getElementById("nextActionArea");
+                if (area) area.style.display = "block";
+            }
+        });
+
+        const originalOnQuizPassed = window.onQuizPassed;
+        window.onQuizPassed = function (materiId, score) {
+            if (originalOnQuizPassed) originalOnQuizPassed(materiId, score);
+            const area = document.getElementById("nextActionArea");
+            if (area) {
+                area.style.display = "block";
+                setTimeout(() => {
+                    area.scrollIntoView({ behavior: "smooth", block: "center" });
+                }, 500);
+            }
+        };
+    </script>
+</body>
+
+</html>

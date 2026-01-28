@@ -523,5 +523,41 @@ window.QUIZ_BANK = {
       ],
       correct: "In the ‘Recipients’ tab of the digest email form"
     }
+  ],
+
+  /* =====================================================
+     MATERI 15 — ACCESS RIGHTS
+     ===================================================== */
+  materi15: [
+    {
+      question: "Mengapa sebaiknya mengatur hak akses grup untuk karyawan baru daripada mengatur izin per individu?",
+      options: [
+        "Ini memungkinkan karyawan baru memiliki kontrol penuh atas aplikasi CRM",
+        "Lebih cepat mengatur izin untuk setiap pengguna satu per satu",
+        "Grup akan tetap ada meskipun penggunanya berganti, dan lebih mudah mengelola banyak pengguna dengan izin yang sama",
+        "Ini mencegah karyawan baru melihat apa yang terjadi di aplikasi CRM"
+      ],
+      correct: "Grup akan tetap ada meskipun penggunanya berganti, dan lebih mudah mengelola banyak pengguna dengan izin yang sama"
+    },
+    {
+      question: "Apa arti pengaturan izin 'Read Access' (Baca) pada hak akses tertentu bagi pengguna dalam grup tersebut?",
+      options: [
+        "Mereka bisa mengedit dan menghapus probabilitas lead",
+        "Mereka bisa membuat probabilitas lead baru",
+        "Mereka tidak memiliki akses ke probabilitas lead",
+        "Mereka hanya bisa melihat (view) probabilitas lead"
+      ],
+      correct: "Mereka hanya bisa melihat (view) probabilitas lead"
+    },
+    {
+      question: "Manakah dari berikut ini yang BUKAN merupakan hak akses (access right) standar?",
+      options: [
+        "Read (Baca)",
+        "Write (Tulis/Edit)",
+        "Create (Buat)",
+        "Execute (Jalankan)"
+      ],
+      correct: "Execute (Jalankan)"
+    }
   ]
 };
