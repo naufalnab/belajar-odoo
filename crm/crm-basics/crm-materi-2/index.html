@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Materi 2: Dashboard & Activities | Modul CRM</title>
+    <link rel="stylesheet" href="../../../assets/css/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="progress-wrapper">
+        <div class="progress-container" id="progressContainer">
+            <div class="progress-bar" id="progressBar"></div>
+            <span class="progress-label" id="progressLabel" style="top: 24px">0%</span>
+        </div>
+    </div>
+
+    <main class="container">
+        <button class="dark-toggle" onclick="toggleDark()">🌙</button>
+
+        <header class="header">
+            <div id="materiBadge" class="materi-badge" style="display: none">
+                🎓 Materi 2 CRM Lulus
+            </div>
+            <span class="badge">CRM - Basics</span>
+            <h1>Dashboard & Activities</h1>
+            <p class="subtitle">
+                Mengelola tahapan di Kanban, menjadwalkan aktivitas, dan detail opportunity.
+            </p>
+        </header>
+
+        <section class="step-card">
+            <h2>1. Kustomisasi Stage (Kanban View)</h2>
+            <div class="content">
+                <p>Menyesuaikan alur pipeline Anda sangat mudah:</p>
+                <ul>
+                    <li>Tidak perlu masuk ke menu konfigurasi yang rumit.</li>
+                    <li>Cukup <strong>arahkan kursor (hover)</strong> ke bagian atas nama Stage di tampilan Kanban.</li>
+                    <li>Sebuah ikon <strong>Gear (Roda Gigi)</strong> akan muncul. Klik untuk melihat menu drop-down
+                        opsi kustomisasi (seperti Edit Stage, Fold, Delete).</li>
+                </ul>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>2. Menjadwalkan Activities</h2>
+            <div class="content">
+                <p>Jangan biarkan opportunity terhenti tanpa tindak lanjut:</p>
+                <ul>
+                    <li>Anda bisa menjadwalkan aktivitas (telepon, meeting, email) langsung dari kartu Kanban.</li>
+                    <li>Klik ikon <strong>Jam (Clock)</strong> kecil yang ada di kartu Opportunity.</li>
+                    <li>Ini jauh lebih cepat daripada membuka formulir opportunity satu per satu.</li>
+                </ul>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>3. Tab Informasi Tambahan (Extra Info)</h2>
+            <div class="content">
+                <p>Di dalam formulir Opportunity, tab 'Extra Info' menyimpan data krusial:</p>
+                <ul>
+                    <li><strong>Contact Information</strong>: Detail kontak pelanggan.</li>
+                    <li><strong>Marketing</strong>: Sumber lead (Campaign, Medium, Source).</li>
+                    <li><strong>Tracking</strong>: Referensi ID dan tracking lainnya.</li>
+                    <li>(Catatan: Revenue biasanya ada di bagian utama atau Expected Revenue, bukan dikelompokkan khusus
+                        di sini dalam konteks pengaturan standar).</li>
+                </ul>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card quiz-card" id="crm-materi-2-quiz">
+            <div class="quiz-progress-wrapper">
+                <div class="quiz-progress-bar" id="quizProgressBar"></div>
+            </div>
+
+            <h2>📝 Quiz CRM Materi 2</h2>
+
+            <div class="quiz-container">
+                <!-- Quiz akan di-render oleh JS -->
+            </div>
+
+            <div class="step-footer">
+                <button class="quiz-submit-btn" onclick="checkQuiz()">
+                    Periksa Jawaban
+                </button>
+                <div id="quizResult" style="display: none"></div>
+            </div>
+        </section>
+
+        <div id="nextActionArea" class="next-action-area" style="display: none">
+            <h3>🎉 Materi 2 Selesai!</h3>
+            <p>
+                Anda kini mahir mengelola tampilan dan aktivitas harian CRM.
+            </p>
+            <a href="../../../crm.html" class="btn-next">
+                Kembali ke Dashboard CRM ➔
+            </a>
+        </div>
+
+        <footer class="footer">
+            <a href="../../../crm.html" style="text-decoration: none; color: #666; font-weight: 600">← Kembali ke Modul
+                CRM</a>
+        </footer>
+    </main>
+
+    <!-- Load JS -->
+    <script src="../../../assets/js/quiz-bank.js"></script>
+    <script src="../../../assets/js/lms-core.js"></script>
+    <script src="../../../assets/js/quiz-engine.js"></script>
+
+    <script>
+        const MATERI_ID = "crm_materi2";
+
+        document.addEventListener("DOMContentLoaded", () => {
+            initMateriProgress(MATERI_ID);
+            renderQuiz(MATERI_ID, ".quiz-container");
+
+            if (loadQuizResult(MATERI_ID)?.passed) {
+                showNextButton();
+            }
+        });
+
+        const originalOnQuizPassed = window.onQuizPassed;
+        window.onQuizPassed = function (materiId, score) {
+            if (originalOnQuizPassed) originalOnQuizPassed(materiId, score);
+            showNextButton();
+        };
+
+        function showNextButton() {
+            const area = document.getElementById("nextActionArea");
+            if (area) {
+                area.style.display = "block";
+                setTimeout(() => {
+                    area.scrollIntoView({ behavior: "smooth", block: "center" });
+                }, 500);
+            }
+        }
+
+        function toggleDark() {
+            document.body.classList.toggle("dark");
+            localStorage.setItem("darkMode", document.body.classList.contains("dark"));
+        }
+        if (localStorage.getItem("darkMode") === "true") {
+            document.body.classList.add("dark");
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Materi 18: Customer Ratings | Modul Project</title>
+    <link rel="stylesheet" href="../../../assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="progress-wrapper">
+        <div class="progress-container" id="progressContainer">
+            <div class="progress-bar" id="progressBar"></div>
+            <span class="progress-label" id="progressLabel" style="top: 24px;">0%</span>
+        </div>
+    </div>
+
+    <main class="container">
+        <button class="dark-toggle" onclick="toggleDark()">🌙</button>
+
+        <header class="header">
+            <div id="materiBadge" class="materi-badge" style="display: none;">🎓 Materi 18 (Tamat) Project Selesai</div>
+            <span class="badge">Project - Reporting</span>
+            <h1>Customer Ratings</h1>
+            <p class="subtitle">Mengukur kepuasan pelanggan secara otomatis.</p>
+        </header>
+
+        <section class="step-card">
+            <h2>1. Mengaktifkan Customer Ratings</h2>
+            <div class="content">
+                <p>Fitur ini harus diaktifkan terlebih dahulu:</p>
+                <ul>
+                    <li>Pergi ke <strong>Project > Configuration > Settings</strong>.</li>
+                    <li>Aktifkan <strong>Customer Ratings</strong>.</li>
+                    <li>Tanpa ini, fitur survey kepuasan tidak akan tersedia di project.</li>
+                </ul>
+            </div>
+            <div class="step-footer">
+                <label>Paham</label>
+                <input type="checkbox" class="mark-done">
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>2. Trigger Pengiriman Email</h2>
+            <div class="content">
+                <p>Kapan email rating dikirim ke pelanggan?</p>
+                <ul>
+                    <li>Anda mengaturnya di level Stage.</li>
+                    <li>Saat task dipindahkan ke <strong>Stage</strong> tertentu (misal: "Done" atau "Client Review")
+                        yang memiliki template email rating terpasang.</li>
+                    <li>Bukan hanya sekedar status "Done", tapi perpindahan ke stage spesifik yang memicu email.</li>
+                </ul>
+            </div>
+            <div class="step-footer">
+                <label>Paham</label>
+                <input type="checkbox" class="mark-done">
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>3. Membaca Rating di Kanban</h2>
+            <div class="content">
+                <p>Di dashboard Project (Kanban View), Anda akan melihat ikon Smiley dengan angka:</p>
+                <ul>
+                    <li>Angka di sebelah kiri biasanya menunjukkan <strong>jumlah survey yang telah diisi
+                            (Completed)</strong>.</li>
+                    <li>Angka di sebelah kanan (jika ada, atau via hover) menunjukkan total yang dikirim.</li>
+                    <li>Persentase kepuasan ditampilkan sebagai rata-rata.</li>
+                </ul>
+            </div>
+            <div class="step-footer">
+                <label>Paham</label>
+                <input type="checkbox" class="mark-done">
+            </div>
+        </section>
+
+        <section class="step-card quiz-card" id="project-materi-18-quiz">
+            <div class="quiz-progress-wrapper">
+                <div class="quiz-progress-bar" id="quizProgressBar"></div>
+            </div>
+            <h2>📝 Quiz Project Materi 18</h2>
+            <div class="quiz-container">
+                <!-- Rendered by JS -->
+            </div>
+            <div class="step-footer">
+                <button class="quiz-submit-btn" onclick="checkQuiz()">Periksa Jawaban</button>
+                <div id="quizResult" style="display: none;"></div>
+            </div>
+        </section>
+
+        <div id="nextActionArea" class="next-action-area" style="display: none;">
+            <h3>🎉 SELAMAT! CELESTIAL MASTER! 🌌</h3>
+            <p>Anda telah menyelesaikan seluruh Track Project (Materi 1-18). Anda siap mengelola proyek kompleks!</p>
+            <a href="../../../project.html" class="btn-next">Kembali ke Dashboard Utama Project ➔</a>
+        </div>
+
+        <footer class="footer">
+            <a href="../../../project.html" style="text-decoration: none; color: #666; font-weight: 600;">← Kembali ke
+                Modul Project</a>
+        </footer>
+    </main>
+
+    <script src="../../../assets/js/quiz-bank.js"></script>
+    <script src="../../../assets/js/lms-core.js"></script>
+    <script src="../../../assets/js/quiz-engine.js"></script>
+    <script>
+        const MATERI_ID = "project_materi18";
+        document.addEventListener("DOMContentLoaded", () => {
+            initMateriProgress(MATERI_ID);
+            renderQuiz(MATERI_ID, ".quiz-container");
+            if (loadQuizResult(MATERI_ID)?.passed) showNextButton();
+        });
+
+        const originalOnQuizPassed = window.onQuizPassed;
+        window.onQuizPassed = function (materiId, score) {
+            if (originalOnQuizPassed) originalOnQuizPassed(materiId, score);
+            showNextButton();
+            // Optional: Trigger confetti or special celebration for completing the track
+            if (score.correct === score.total) {
+                alert("Luar biasa! Modul Project selesai sepenuhnya!");
+            }
+        };
+
+        function showNextButton() {
+            const area = document.getElementById("nextActionArea");
+            if (area) {
+                area.style.display = "block";
+                setTimeout(() => area.scrollIntoView({ behavior: "smooth", block: "center" }), 500);
+            }
+        }
+        function toggleDark() {
+            document.body.classList.toggle("dark");
+            localStorage.setItem("darkMode", document.body.classList.contains("dark"));
+        }
+        if (localStorage.getItem("darkMode") === "true") document.body.classList.add("dark");
+    </script>
+</body>
+
+</html>

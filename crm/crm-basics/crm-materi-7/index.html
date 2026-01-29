@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Materi 7: Activity Reporting | Modul CRM</title>
+    <link rel="stylesheet" href="../../../assets/css/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="progress-wrapper">
+        <div class="progress-container" id="progressContainer">
+            <div class="progress-bar" id="progressBar"></div>
+            <span class="progress-label" id="progressLabel" style="top: 24px">0%</span>
+        </div>
+    </div>
+
+    <main class="container">
+        <button class="dark-toggle" onclick="toggleDark()">🌙</button>
+
+        <header class="header">
+            <div id="materiBadge" class="materi-badge" style="display: none">
+                🎓 Materi 7 CRM Lulus
+            </div>
+            <span class="badge">CRM - Performance Analysis</span>
+            <h1>Activity Reporting</h1>
+            <p class="subtitle">
+                Melacak kinerja aktivitas tim dan otomatisasi template email.
+            </p>
+        </header>
+
+        <section class="step-card">
+            <h2>1. Melihat Daftar Aktivitas Terlaksana</h2>
+            <div class="content">
+                <p>Odoo mencatat semua sejarah aktivitas:</p>
+                <ul>
+                    <li>Gunakan <strong>List View</strong> pada menu Activities atau Reporting.</li>
+                    <li>Di sini Anda dapat melihat detail lengkap dari semua aktivitas yang telah ditandai 'Done'.</li>
+                    <li>Kanban View lebih cocok untuk planning masa depan, bukan audit masa lalu.</li>
+                </ul>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>2. Melacak Kinerja Salesperson</h2>
+            <div class="content">
+                <p>Siapa yang paling rajin melakukan follow-up?</p>
+                <ul>
+                    <li>Gunakan fitur <strong>Reporting</strong>.</li>
+                    <li>Terapkan <strong>Group By > Salesperson</strong> untuk melihat jumlah aktivitas yang dilakukan
+                        oleh masing-masing anggota tim.</li>
+                    <li>Anda bisa membandingkan jumlah 'Call', 'Email', dll.</li>
+                </ul>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>3. Template Email Otomatis</h2>
+            <div class="content">
+                <p>Menghemat waktu saat mengirim email rutin:</p>
+                <ul>
+                    <li>Anda bisa menugaskan <strong>Email Template</strong> ke jenis aktivitas (Activity Type)
+                        tertentu.</li>
+                    <li>Saat aktivitas itu di-trigger, konten pesan akan <strong>terisi otomatis (automatically
+                            populating)</strong>.</li>
+                    <li>Salesperson tidak perlu mengetik ulang pesan standar berulang kali.</li>
+                </ul>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card quiz-card" id="crm-materi-7-quiz">
+            <div class="quiz-progress-wrapper">
+                <div class="quiz-progress-bar" id="quizProgressBar"></div>
+            </div>
+
+            <h2>📝 Quiz CRM Materi 7</h2>
+
+            <div class="quiz-container">
+                <!-- Quiz akan di-render oleh JS -->
+            </div>
+
+            <div class="step-footer">
+                <button class="quiz-submit-btn" onclick="checkQuiz()">
+                    Periksa Jawaban
+                </button>
+                <div id="quizResult" style="display: none"></div>
+            </div>
+        </section>
+
+        <div id="nextActionArea" class="next-action-area" style="display: none">
+            <h3>🎉 Materi 7 Selesai!</h3>
+            <p>
+                Analisis kinerja tim sales kini ada di ujung jari Anda.
+            </p>
+            <a href="../../../crm.html" class="btn-next">
+                Kembali ke Dashboard CRM ➔
+            </a>
+        </div>
+
+        <footer class="footer">
+            <a href="../../../crm.html" style="text-decoration: none; color: #666; font-weight: 600">← Kembali ke Modul
+                CRM</a>
+        </footer>
+    </main>
+
+    <!-- Load JS -->
+    <script src="../../../assets/js/quiz-bank.js"></script>
+    <script src="../../../assets/js/lms-core.js"></script>
+    <script src="../../../assets/js/quiz-engine.js"></script>
+
+    <script>
+        const MATERI_ID = "crm_materi7";
+
+        document.addEventListener("DOMContentLoaded", () => {
+            initMateriProgress(MATERI_ID);
+            renderQuiz(MATERI_ID, ".quiz-container");
+
+            if (loadQuizResult(MATERI_ID)?.passed) {
+                showNextButton();
+            }
+        });
+
+        const originalOnQuizPassed = window.onQuizPassed;
+        window.onQuizPassed = function (materiId, score) {
+            if (originalOnQuizPassed) originalOnQuizPassed(materiId, score);
+            showNextButton();
+        };
+
+        function showNextButton() {
+            const area = document.getElementById("nextActionArea");
+            if (area) {
+                area.style.display = "block";
+                setTimeout(() => {
+                    area.scrollIntoView({ behavior: "smooth", block: "center" });
+                }, 500);
+            }
+        }
+
+        function toggleDark() {
+            document.body.classList.toggle("dark");
+            localStorage.setItem("darkMode", document.body.classList.contains("dark"));
+        }
+        if (localStorage.getItem("darkMode") === "true") {
+            document.body.classList.add("dark");
+        }
+    </script>
+</body>
+
+</html>

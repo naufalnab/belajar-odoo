@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Materi 6: Sales Integration | Modul Project</title>
+    <link rel="stylesheet" href="../../../assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="progress-wrapper">
+        <div class="progress-container" id="progressContainer">
+            <div class="progress-bar" id="progressBar"></div>
+            <span class="progress-label" id="progressLabel" style="top: 24px;">0%</span>
+        </div>
+    </div>
+
+    <main class="container">
+        <button class="dark-toggle" onclick="toggleDark()">🌙</button>
+
+        <header class="header">
+            <div id="materiBadge" class="materi-badge" style="display: none;">🎓 Materi 6 Project Selesai</div>
+            <span class="badge">Project - Tasks Management</span>
+            <h1>Sales Integration</h1>
+            <p class="subtitle">Menjual layanan (Service) yang otomatis membuat Project dan Task.</p>
+        </header>
+
+        <section class="step-card">
+            <h2>1. Project dari Sales Order</h2>
+            <div class="content">
+                <p>Project yang terhubung dengan Sales Orders biasanya bersifat:</p>
+                <ul>
+                    <li><strong>Billable</strong> (Dapat ditagihkan). Waktu yang dihabiskan atau milestone yang dicapai
+                        akan ditagih ke klien.</li>
+                    <li>Sering digunakan oleh perusahaan jasa (konsultan, developer, dll).</li>
+                </ul>
+            </div>
+            <div class="step-footer">
+                <label>Paham</label>
+                <input type="checkbox" class="mark-done">
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>2. Kapan Task Dibuat?</h2>
+            <div class="content">
+                <p>Task atau Project otomatis dibuat saat Sales Order:</p>
+                <ul>
+                    <li><strong>Confirmed</strong> (Dikonfirmasi).</li>
+                    <li>Bukan saat Draft (masih penawaran) dan bukan menunggu Invoice.</li>
+                    <li>Momen "Confirm" adalah pemicu (trigger) pembentukan project.</li>
+                </ul>
+            </div>
+            <div class="step-footer">
+                <label>Paham</label>
+                <input type="checkbox" class="mark-done">
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>3. Konfigurasi Service Product</h2>
+            <div class="content">
+                <p>Agar penjualan produk Service otomatis membuat Project dengan banyak Task:</p>
+                <ul>
+                    <li>Pada form Product (tab Sales), set "Create on Order" menjadi <strong>Project & Task</strong>.
+                    </li>
+                    <li>PENTING: Anda harus menghubungkannya dengan <strong>Project Template</strong> yang sudah
+                        memiliki tasks di dalamnya.</li>
+                    <li>Jika hanya memilih "Project & Task" tanpa template, Odoo hanya akan membuat project kosong
+                        dengan satu task default dari item SO tersebut.</li>
+                </ul>
+            </div>
+            <div class="step-footer">
+                <label>Paham</label>
+                <input type="checkbox" class="mark-done">
+            </div>
+        </section>
+
+        <section class="step-card quiz-card" id="project-materi-6-quiz">
+            <div class="quiz-progress-wrapper">
+                <div class="quiz-progress-bar" id="quizProgressBar"></div>
+            </div>
+            <h2>📝 Quiz Project Materi 6</h2>
+            <div class="quiz-container">
+                <!-- Rendered by JS -->
+            </div>
+            <div class="step-footer">
+                <button class="quiz-submit-btn" onclick="checkQuiz()">Periksa Jawaban</button>
+                <div id="quizResult" style="display: none;"></div>
+            </div>
+        </section>
+
+        <div id="nextActionArea" class="next-action-area" style="display: none;">
+            <h3>🎉 Materi 6 Selesai!</h3>
+            <p>Lanjut ke Subtasks.</p>
+            <a href="../project-materi-7/index.html" class="btn-next">Lanjut ke Materi 7 ➔</a>
+        </div>
+
+        <footer class="footer">
+            <a href="../../../project.html" style="text-decoration: none; color: #666; font-weight: 600;">← Kembali ke
+                Modul Project</a>
+        </footer>
+    </main>
+
+    <script src="../../../assets/js/quiz-bank.js"></script>
+    <script src="../../../assets/js/lms-core.js"></script>
+    <script src="../../../assets/js/quiz-engine.js"></script>
+    <script>
+        const MATERI_ID = "project_materi6";
+        document.addEventListener("DOMContentLoaded", () => {
+            initMateriProgress(MATERI_ID);
+            renderQuiz(MATERI_ID, ".quiz-container");
+            if (loadQuizResult(MATERI_ID)?.passed) showNextButton();
+        });
+
+        const originalOnQuizPassed = window.onQuizPassed;
+        window.onQuizPassed = function (materiId, score) {
+            if (originalOnQuizPassed) originalOnQuizPassed(materiId, score);
+            showNextButton();
+        };
+
+        function showNextButton() {
+            const area = document.getElementById("nextActionArea");
+            if (area) {
+                area.style.display = "block";
+                setTimeout(() => area.scrollIntoView({ behavior: "smooth", block: "center" }), 500);
+            }
+        }
+        function toggleDark() {
+            document.body.classList.toggle("dark");
+            localStorage.setItem("darkMode", document.body.classList.contains("dark"));
+        }
+        if (localStorage.getItem("darkMode") === "true") document.body.classList.add("dark");
+    </script>
+</body>
+
+</html>

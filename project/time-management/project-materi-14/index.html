@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Materi 14: Advanced Timesheets | Modul Project</title>
+    <link rel="stylesheet" href="../../../assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="progress-wrapper">
+        <div class="progress-container" id="progressContainer">
+            <div class="progress-bar" id="progressBar"></div>
+            <span class="progress-label" id="progressLabel" style="top: 24px;">0%</span>
+        </div>
+    </div>
+
+    <main class="container">
+        <button class="dark-toggle" onclick="toggleDark()">🌙</button>
+
+        <header class="header">
+            <div id="materiBadge" class="materi-badge" style="display: none;">🎓 Materi 14 Project Selesai</div>
+            <span class="badge">Project - Time Management</span>
+            <h1>Advanced Timesheets</h1>
+            <p class="subtitle">Fitur lanjutan Timesheets: Reminder, Billing Rates, dan Leaderboard.</p>
+        </header>
+
+        <section class="step-card">
+            <h2>1. Timesheet Reminders</h2>
+            <div class="content">
+                <p>Odoo dapat mengirimkan pengingat email otomatis:</p>
+                <ul>
+                    <li><strong>Untuk Karyawan</strong>: Mengingatkan agar mengisi timesheet jika belum lengkap.</li>
+                    <li><strong>Untuk Manager (Approver)</strong>: Mengingatkan untuk memvalidasi timesheet tim mereka.
+                    </li>
+                </ul>
+            </div>
+            <div class="step-footer">
+                <label>Paham</label>
+                <input type="checkbox" class="mark-done">
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>2. Billing Rate Indicators</h2>
+            <div class="content">
+                <p>Indikator ini (biasanya di view By Employee) membantu melihat efisiensi:</p>
+                <ul>
+                    <li>Anda harus mengaktifkannya di <strong>Timesheets > Configuration > Settings</strong>.</li>
+                    <li>Menampilkan persentase jam yang dapat ditagih (billable) vs non-billable.</li>
+                </ul>
+            </div>
+            <div class="step-footer">
+                <label>Paham</label>
+                <input type="checkbox" class="mark-done">
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>3. Leaderboard</h2>
+            <div class="content">
+                <p>Gamifikasi timesheet dengan Leaderboard:</p>
+                <ul>
+                    <li>Menampilkan ranking karyawan berdasarkan total jam kerja.</li>
+                    <li>Syarat: <strong>Encoding method</strong> (satuan pencatatan waktu) di sistem harus diset ke
+                        <strong>Days / Half-Days</strong> (bukan Hours) agar fitur ini muncul/relevan di beberapa versi
+                        Odoo Enterprise.</li>
+                </ul>
+            </div>
+            <div class="step-footer">
+                <label>Paham</label>
+                <input type="checkbox" class="mark-done">
+            </div>
+        </section>
+
+        <section class="step-card quiz-card" id="project-materi-14-quiz">
+            <div class="quiz-progress-wrapper">
+                <div class="quiz-progress-bar" id="quizProgressBar"></div>
+            </div>
+            <h2>📝 Quiz Project Materi 14</h2>
+            <div class="quiz-container">
+                <!-- Rendered by JS -->
+            </div>
+            <div class="step-footer">
+                <button class="quiz-submit-btn" onclick="checkQuiz()">Periksa Jawaban</button>
+                <div id="quizResult" style="display: none;"></div>
+            </div>
+        </section>
+
+        <div id="nextActionArea" class="next-action-area" style="display: none;">
+            <h3>🎉 Materi 14 Selesai!</h3>
+            <p>Bagian Time Management selesai. Lanjut ke Invoicing.</p>
+            <a href="../../invoicing/project-materi-15/index.html" class="btn-next">Lanjut ke Invoicing ➔</a>
+        </div>
+
+        <footer class="footer">
+            <a href="../../../project.html" style="text-decoration: none; color: #666; font-weight: 600;">← Kembali ke
+                Modul Project</a>
+        </footer>
+    </main>
+
+    <script src="../../../assets/js/quiz-bank.js"></script>
+    <script src="../../../assets/js/lms-core.js"></script>
+    <script src="../../../assets/js/quiz-engine.js"></script>
+    <script>
+        const MATERI_ID = "project_materi14";
+        document.addEventListener("DOMContentLoaded", () => {
+            initMateriProgress(MATERI_ID);
+            renderQuiz(MATERI_ID, ".quiz-container");
+            if (loadQuizResult(MATERI_ID)?.passed) showNextButton();
+        });
+
+        const originalOnQuizPassed = window.onQuizPassed;
+        window.onQuizPassed = function (materiId, score) {
+            if (originalOnQuizPassed) originalOnQuizPassed(materiId, score);
+            showNextButton();
+        };
+
+        function showNextButton() {
+            const area = document.getElementById("nextActionArea");
+            if (area) {
+                area.style.display = "block";
+                setTimeout(() => area.scrollIntoView({ behavior: "smooth", block: "center" }), 500);
+            }
+        }
+        function toggleDark() {
+            document.body.classList.toggle("dark");
+            localStorage.setItem("darkMode", document.body.classList.contains("dark"));
+        }
+        if (localStorage.getItem("darkMode") === "true") document.body.classList.add("dark");
+    </script>
+</body>
+
+</html>

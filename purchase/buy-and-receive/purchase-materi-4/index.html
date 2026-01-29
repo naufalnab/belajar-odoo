@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Materi 4: Access Rights | Modul Purchase</title>
+    <link rel="stylesheet" href="../../../assets/css/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="progress-wrapper">
+        <div class="progress-container" id="progressContainer">
+            <div class="progress-bar" id="progressBar"></div>
+            <span class="progress-label" id="progressLabel" style="top: 24px">0%</span>
+        </div>
+    </div>
+
+    <main class="container">
+        <button class="dark-toggle" onclick="toggleDark()">🌙</button>
+
+        <header class="header">
+            <div id="materiBadge" class="materi-badge" style="display: none">
+                🎓 Materi 4 Purchase Lulus
+            </div>
+            <span class="badge">Purchase - Buy & Receive</span>
+            <h1>Access Rights</h1>
+            <p class="subtitle">
+                Mengontrol siapa yang boleh membeli dan batas persetujuannya.
+            </p>
+        </header>
+
+        <section class="step-card">
+            <h2>1. Memblokir Vendor</h2>
+            <div class="content">
+                <p>Bagaimana mencegah pembelian dari vendor bermasalah?</p>
+                <ul>
+                    <li>Anda tidak bisa benar-benar "memblokir" (prevent) karyawan pilih vendor (opsi D).</li>
+                    <li>Tapi Anda bisa memberi peringatan (Warning/Blocking Message), namun secara teknis 'Prevent'
+                        hard-stop tidak tersedia sebagai opsi default sederhana di soal ini (Jawabannya: I cannot
+                        prevent...).</li>
+                    <li><em>Note: Di Odoo versi terbaru bisa archive, tapi sesuai konteks soal ini, jawabannya adalah
+                            tidak bisa prevent total via blocking message semata.</em></li>
+                </ul>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>2. User Roles</h2>
+            <div class="content">
+                <p>Mengatur hak akses:</p>
+                <ul>
+                    <li>Buka <strong>General Settings > Manage Users</strong>.</li>
+                    <li>Pilih karyawan, lalu edit bagian <strong>Access Rights</strong>.</li>
+                    <li>Anda bisa set sebagai User atau Administrator.</li>
+                </ul>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>3. Approval Rules</h2>
+            <div class="content">
+                <p>Membatasi nominal pembelian:</p>
+                <ul>
+                    <li>Jika Anda set "Purchase Order Approval" minimum amount $200.</li>
+                    <li>Maka setiap RFQ di atas $200 yang dibuat oleh <strong>Purchase User</strong> (bukan Admin)
+                        memerlukan persetujuan Manager/Admin.</li>
+                    <li>Admin bisa bypass aturan ini.</li>
+                </ul>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card quiz-card" id="purchase-materi-4-quiz">
+            <div class="quiz-progress-wrapper">
+                <div class="quiz-progress-bar" id="quizProgressBar"></div>
+            </div>
+
+            <h2>📝 Quiz Purchase Materi 4</h2>
+
+            <div class="quiz-container">
+                <!-- Quiz akan di-render oleh JS -->
+            </div>
+
+            <div class="step-footer">
+                <button class="quiz-submit-btn" onclick="checkQuiz()">
+                    Periksa Jawaban
+                </button>
+                <div id="quizResult" style="display: none"></div>
+            </div>
+        </section>
+
+        <div id="nextActionArea" class="next-action-area" style="display: none">
+            <h3>🎉 Materi 4 Selesai!</h3>
+            <p>
+                Section 'Buy and Receive' telah tuntas.
+            </p>
+            <a href="../../../purchase.html" class="btn-next">
+                Kembali ke Dashboard Purchase ➔
+            </a>
+        </div>
+
+        <footer class="footer">
+            <a href="../../../purchase.html" style="text-decoration: none; color: #666; font-weight: 600">← Kembali ke
+                Modul
+                Purchase</a>
+        </footer>
+    </main>
+
+    <!-- Load JS -->
+    <script src="../../../assets/js/quiz-bank.js"></script>
+    <script src="../../../assets/js/lms-core.js"></script>
+    <script src="../../../assets/js/quiz-engine.js"></script>
+
+    <script>
+        const MATERI_ID = "purchase_materi4";
+
+        document.addEventListener("DOMContentLoaded", () => {
+            initMateriProgress(MATERI_ID);
+            renderQuiz(MATERI_ID, ".quiz-container");
+
+            if (loadQuizResult(MATERI_ID)?.passed) {
+                showNextButton();
+            }
+        });
+
+        const originalOnQuizPassed = window.onQuizPassed;
+        window.onQuizPassed = function (materiId, score) {
+            if (originalOnQuizPassed) originalOnQuizPassed(materiId, score);
+            showNextButton();
+        };
+
+        function showNextButton() {
+            const area = document.getElementById("nextActionArea");
+            if (area) {
+                area.style.display = "block";
+                setTimeout(() => {
+                    area.scrollIntoView({ behavior: "smooth", block: "center" });
+                }, 500);
+            }
+        }
+
+        function toggleDark() {
+            document.body.classList.toggle("dark");
+            localStorage.setItem("darkMode", document.body.classList.contains("dark"));
+        }
+        if (localStorage.getItem("darkMode") === "true") {
+            document.body.classList.add("dark");
+        }
+    </script>
+</body>
+
+</html>

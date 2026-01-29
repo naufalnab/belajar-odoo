@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Materi 6: Blanket Orders | Modul Purchase</title>
+    <link rel="stylesheet" href="../../../assets/css/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="progress-wrapper">
+        <div class="progress-container" id="progressContainer">
+            <div class="progress-bar" id="progressBar"></div>
+            <span class="progress-label" id="progressLabel" style="top: 24px">0%</span>
+        </div>
+    </div>
+
+    <main class="container">
+        <button class="dark-toggle" onclick="toggleDark()">🌙</button>
+
+        <header class="header">
+            <div id="materiBadge" class="materi-badge" style="display: none">
+                🎓 Materi 6 Purchase Lulus
+            </div>
+            <span class="badge">Purchase - Manage Deals</span>
+            <h1>Blanket Orders</h1>
+            <p class="subtitle">
+                Kontrak pembelian jangka panjang dengan harga tetap.
+            </p>
+        </header>
+
+        <section class="step-card">
+            <h2>1. Kapan Menggunakan Blanket Order?</h2>
+            <div class="content">
+                <p>Gunakan Blanket Order jika:</p>
+                <ul>
+                    <li>Anda melakukan <strong>pembelian berulang (recurring purchases)</strong>.</li>
+                    <li>Untuk produk yang sama.</li>
+                    <li>Dari vendor yang sama (dengan harga/kuantitas yang sudah disepakati dalam kontrak).</li>
+                </ul>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>2. Membuat RFQ dari Blanket Order</h2>
+            <div class="content">
+                <p>Saat membuat RFQ baru dari sebuah Blanket Order:</p>
+                <ul>
+                    <li>Unit Price otomatis terisi (sesuai kontrak).</li>
+                    <li>Tapi <strong>Order Deadline</strong> dan <strong>Expected Arrival</strong> HARUS diisi manual
+                        (NOT auto-filled).</li>
+                    <li>Quantity juga perlu disesuaikan dengan kebutuhan saat itu (meski mungkin ada sisa kuota).</li>
+                </ul>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>3. Menutup (Close) Blanket Order</h2>
+            <div class="content">
+                <p>Syarat untuk menutup agreement:</p>
+                <ul>
+                    <li>Secara teknis, Anda bisa menutup manual.</li>
+                    <li>Namun secara logika sistem, biasanya dianggap selesai jika kuota terpenuhi atau semua RFQ
+                        terkait telah menjadi <strong>Purchase Orders</strong> (bukan hanya RFQ).</li>
+                    <li><em>(Update: Odoo cukup fleksibel, tapi idealnya seluruh purchase order terkait sudah
+                            dikonfirmasi).</em></li>
+                </ul>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card quiz-card" id="purchase-materi-6-quiz">
+            <div class="quiz-progress-wrapper">
+                <div class="quiz-progress-bar" id="quizProgressBar"></div>
+            </div>
+
+            <h2>📝 Quiz Purchase Materi 6</h2>
+
+            <div class="quiz-container">
+                <!-- Quiz akan di-render oleh JS -->
+            </div>
+
+            <div class="step-footer">
+                <button class="quiz-submit-btn" onclick="checkQuiz()">
+                    Periksa Jawaban
+                </button>
+                <div id="quizResult" style="display: none"></div>
+            </div>
+        </section>
+
+        <div id="nextActionArea" class="next-action-area" style="display: none">
+            <h3>🎉 Materi 6 Selesai!</h3>
+            <p>
+                Kontrak payung telah dikuasai. Selanjutnya: Billing & Matching.
+            </p>
+            <a href="../../../purchase.html" class="btn-next">
+                Kembali ke Dashboard Purchase ➔
+            </a>
+        </div>
+
+        <footer class="footer">
+            <a href="../../../purchase.html" style="text-decoration: none; color: #666; font-weight: 600">← Kembali ke
+                Modul
+                Purchase</a>
+        </footer>
+    </main>
+
+    <!-- Load JS -->
+    <script src="../../../assets/js/quiz-bank.js"></script>
+    <script src="../../../assets/js/lms-core.js"></script>
+    <script src="../../../assets/js/quiz-engine.js"></script>
+
+    <script>
+        const MATERI_ID = "purchase_materi6";
+
+        document.addEventListener("DOMContentLoaded", () => {
+            initMateriProgress(MATERI_ID);
+            renderQuiz(MATERI_ID, ".quiz-container");
+
+            if (loadQuizResult(MATERI_ID)?.passed) {
+                showNextButton();
+            }
+        });
+
+        const originalOnQuizPassed = window.onQuizPassed;
+        window.onQuizPassed = function (materiId, score) {
+            if (originalOnQuizPassed) originalOnQuizPassed(materiId, score);
+            showNextButton();
+        };
+
+        function showNextButton() {
+            const area = document.getElementById("nextActionArea");
+            if (area) {
+                area.style.display = "block";
+                setTimeout(() => {
+                    area.scrollIntoView({ behavior: "smooth", block: "center" });
+                }, 500);
+            }
+        }
+
+        function toggleDark() {
+            document.body.classList.toggle("dark");
+            localStorage.setItem("darkMode", document.body.classList.contains("dark"));
+        }
+        if (localStorage.getItem("darkMode") === "true") {
+            document.body.classList.add("dark");
+        }
+    </script>
+</body>
+
+</html>

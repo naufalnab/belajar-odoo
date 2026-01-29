@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Materi 1: RFQ to PO | Modul Purchase</title>
+    <link rel="stylesheet" href="../../../assets/css/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="progress-wrapper">
+        <div class="progress-container" id="progressContainer">
+            <div class="progress-bar" id="progressBar"></div>
+            <span class="progress-label" id="progressLabel" style="top: 24px">0%</span>
+        </div>
+    </div>
+
+    <main class="container">
+        <button class="dark-toggle" onclick="toggleDark()">🌙</button>
+
+        <header class="header">
+            <div id="materiBadge" class="materi-badge" style="display: none">
+                🎓 Materi 1 Purchase Lulus
+            </div>
+            <span class="badge">Purchase - Buy & Receive</span>
+            <h1>RFQ to PO</h1>
+            <p class="subtitle">
+                Memulai siklus pembelian dari penawaran hingga konfirmasi order.
+            </p>
+        </header>
+
+        <section class="step-card">
+            <h2>1. Vendor Rules & Pricelists</h2>
+            <div class="content">
+                <p>Mengapa kita membutuhkannya?</p>
+                <ul>
+                    <li>Digunakan untuk <strong>menerapkan harga berbasis kuantitas secara otomatis</strong> (To apply
+                        quantity-based pricing automatically).</li>
+                    <li>Odoo akan otomatis memilih harga yang tepat saat Anda membuat RFQ ke vendor tersebut.</li>
+                </ul>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>2. Konfirmasi RFQ</h2>
+            <div class="content">
+                <p>Apa yang terjadi setelah RFQ dikonfirmasi?</p>
+                <ul>
+                    <li>RFQ berubah status menjadi <strong>Purchase Order (PO)</strong>.</li>
+                    <li>Ini berarti order telah resmi ditempatkan ke vendor (The order has been placed).</li>
+                </ul>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>3. Receipt Smart Button</h2>
+            <div class="content">
+                <p>Langkah selanjutnya setelah PO:</p>
+                <ul>
+                    <li>Muncul tombol pintar <strong>'Receipt'</strong> di atas dokumen PO.</li>
+                    <li>Tujuannya adalah untuk <strong>memvalidasi dan mengonfirmasi penerimaan produk</strong> (To
+                        validate and confirm product delivery) ke gudang.</li>
+                </ul>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card quiz-card" id="purchase-materi-1-quiz">
+            <div class="quiz-progress-wrapper">
+                <div class="quiz-progress-bar" id="quizProgressBar"></div>
+            </div>
+
+            <h2>📝 Quiz Purchase Materi 1</h2>
+
+            <div class="quiz-container">
+                <!-- Quiz akan di-render oleh JS -->
+            </div>
+
+            <div class="step-footer">
+                <button class="quiz-submit-btn" onclick="checkQuiz()">
+                    Periksa Jawaban
+                </button>
+                <div id="quizResult" style="display: none"></div>
+            </div>
+        </section>
+
+        <div id="nextActionArea" class="next-action-area" style="display: none">
+            <h3>🎉 Materi 1 Selesai!</h3>
+            <p>
+                Anda telah memahami dasar siklus pembelian. Selanjutnya: Lead Times.
+            </p>
+            <a href="../../../purchase.html" class="btn-next">
+                Kembali ke Dashboard Purchase ➔
+            </a>
+        </div>
+
+        <footer class="footer">
+            <a href="../../../purchase.html" style="text-decoration: none; color: #666; font-weight: 600">← Kembali ke
+                Modul
+                Purchase</a>
+        </footer>
+    </main>
+
+    <!-- Load JS -->
+    <script src="../../../assets/js/quiz-bank.js"></script>
+    <script src="../../../assets/js/lms-core.js"></script>
+    <script src="../../../assets/js/quiz-engine.js"></script>
+
+    <script>
+        const MATERI_ID = "purchase_materi1";
+
+        document.addEventListener("DOMContentLoaded", () => {
+            initMateriProgress(MATERI_ID);
+            renderQuiz(MATERI_ID, ".quiz-container");
+
+            if (loadQuizResult(MATERI_ID)?.passed) {
+                showNextButton();
+            }
+        });
+
+        const originalOnQuizPassed = window.onQuizPassed;
+        window.onQuizPassed = function (materiId, score) {
+            if (originalOnQuizPassed) originalOnQuizPassed(materiId, score);
+            showNextButton();
+        };
+
+        function showNextButton() {
+            const area = document.getElementById("nextActionArea");
+            if (area) {
+                area.style.display = "block";
+                setTimeout(() => {
+                    area.scrollIntoView({ behavior: "smooth", block: "center" });
+                }, 500);
+            }
+        }
+
+        function toggleDark() {
+            document.body.classList.toggle("dark");
+            localStorage.setItem("darkMode", document.body.classList.contains("dark"));
+        }
+        if (localStorage.getItem("darkMode") === "true") {
+            document.body.classList.add("dark");
+        }
+    </script>
+</body>
+
+</html>

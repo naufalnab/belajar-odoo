@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Materi 13: Generating Leads | Modul CRM</title>
+    <link rel="stylesheet" href="../../../assets/css/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="progress-wrapper">
+        <div class="progress-container" id="progressContainer">
+            <div class="progress-bar" id="progressBar"></div>
+            <span class="progress-label" id="progressLabel" style="top: 24px">0%</span>
+        </div>
+    </div>
+
+    <main class="container">
+        <button class="dark-toggle" onclick="toggleDark()">🌙</button>
+
+        <header class="header">
+            <div id="materiBadge" class="materi-badge" style="display: none">
+                🎓 Materi 13 CRM Lulus
+            </div>
+            <span class="badge">CRM - Lead Generation</span>
+            <h1>Generating Leads</h1>
+            <p class="subtitle">
+                Mengubah pengunjung website dan pengirim email menjadi Leads secara otomatis.
+            </p>
+        </header>
+
+        <section class="step-card">
+            <h2>1. Website Contact Form</h2>
+            <div class="content">
+                <p>Bagaimana form di website menjadi lead?</p>
+                <ul>
+                    <li>Saat mengedit form di Website Builder, perhatikan kolom <strong>'Action'</strong>.</li>
+                    <li>Anda WAJIB memilih <strong>'Create an Opportunity'</strong>.</li>
+                    <li>Jika form diisi pengunjung, data akan langsung masuk ke pipeline CRM.</li>
+                </ul>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>2. Email Alias Configuration</h2>
+            <div class="content">
+                <p>Mengatur email tim sales (misal: sales@mycompany.com):</p>
+                <ul>
+                    <li>Buka konfigurasi Sales Team.</li>
+                    <li>Pastikan opsi <strong>'Leads'</strong> dicentang.</li>
+                    <li>Opsi ini memerintahkan Odoo untuk membuat lead baru setiap kali ada email masuk ke alamat alias
+                        tersebut.</li>
+                </ul>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>3. Dimana Isi Emailnya?</h2>
+            <div class="content">
+                <p>Mencari detail pesan dari prospek:</p>
+                <ul>
+                    <li>Isi (body) dari email asli tidak masuk ke field deskripsi biasa.</li>
+                    <li>Ia akan ditemukan di bagian <strong>Chatter</strong> (log aktivitas di sebelah kanan/bawah form
+                        lead).</li>
+                    <li>Ini menjaga form tetap rapi sambil menyimpan konteks penuh percakapan.</li>
+                </ul>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card quiz-card" id="crm-materi-13-quiz">
+            <div class="quiz-progress-wrapper">
+                <div class="quiz-progress-bar" id="quizProgressBar"></div>
+            </div>
+
+            <h2>📝 Quiz CRM Materi 13</h2>
+
+            <div class="quiz-container">
+                <!-- Quiz akan di-render oleh JS -->
+            </div>
+
+            <div class="step-footer">
+                <button class="quiz-submit-btn" onclick="checkQuiz()">
+                    Periksa Jawaban
+                </button>
+                <div id="quizResult" style="display: none"></div>
+            </div>
+        </section>
+
+        <div id="nextActionArea" class="next-action-area" style="display: none">
+            <h3>🎉 Materi 13 Selesai!</h3>
+            <p>
+                Saluran masuk leads Anda sudah terkonfigurasi.
+            </p>
+            <a href="../../../crm.html" class="btn-next">
+                Kembali ke Dashboard CRM ➔
+            </a>
+        </div>
+
+        <footer class="footer">
+            <a href="../../../crm.html" style="text-decoration: none; color: #666; font-weight: 600">← Kembali ke Modul
+                CRM</a>
+        </footer>
+    </main>
+
+    <!-- Load JS -->
+    <script src="../../../assets/js/quiz-bank.js"></script>
+    <script src="../../../assets/js/lms-core.js"></script>
+    <script src="../../../assets/js/quiz-engine.js"></script>
+
+    <script>
+        const MATERI_ID = "crm_materi13";
+
+        document.addEventListener("DOMContentLoaded", () => {
+            initMateriProgress(MATERI_ID);
+            renderQuiz(MATERI_ID, ".quiz-container");
+
+            if (loadQuizResult(MATERI_ID)?.passed) {
+                showNextButton();
+            }
+        });
+
+        const originalOnQuizPassed = window.onQuizPassed;
+        window.onQuizPassed = function (materiId, score) {
+            if (originalOnQuizPassed) originalOnQuizPassed(materiId, score);
+            showNextButton();
+        };
+
+        function showNextButton() {
+            const area = document.getElementById("nextActionArea");
+            if (area) {
+                area.style.display = "block";
+                setTimeout(() => {
+                    area.scrollIntoView({ behavior: "smooth", block: "center" });
+                }, 500);
+            }
+        }
+
+        function toggleDark() {
+            document.body.classList.toggle("dark");
+            localStorage.setItem("darkMode", document.body.classList.contains("dark"));
+        }
+        if (localStorage.getItem("darkMode") === "true") {
+            document.body.classList.add("dark");
+        }
+    </script>
+</body>
+
+</html>

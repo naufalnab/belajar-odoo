@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Accounting & Invoicing Dashboard | Pembelajar Odoo</title>
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+    <button class="dark-toggle" onclick="toggleDark()">🌙</button>
+
+    <div class="main-dashboard-container">
+        <header class="dashboard-header">
+            <a href="./index.html" class="back-link">← Kembali ke Halaman Utama</a>
+            <h1>Accounting & Invoicing</h1>
+            <p>Kelola pembukuan, invoice, pembayaran, pajak, dan laporan keuangan.</p>
+        </header>
+
+        <!-- Phase 1: Accounting Basics -->
+        <h3 class="dashboard-section-title">Accounting Basics</h3>
+        <section class="materi-dashboard">
+            <div class="step-card materi-card locked">
+                <h2>Materi 1-4</h2>
+                <p>Dasar-dasar Akuntansi di Odoo.</p>
+                <small>Coming Soon</small>
+            </div>
+        </section>
+
+        <!-- Phase 2: Invoicing -->
+        <h3 class="dashboard-section-title" style="margin-top: 30px; opacity: 0.5;">Invoicing (Coming Soon)</h3>
+        <section class="materi-dashboard" style="opacity: 0.5;">
+            <div class="step-card materi-card locked">
+                <h2>Materi 5-10</h2>
+                <p>Manajemen Invoice & Penagihan.</p>
+            </div>
+        </section>
+
+        <!-- Phase 3: Payments -->
+        <h3 class="dashboard-section-title" style="margin-top: 30px; opacity: 0.5;">Payments (Coming Soon)</h3>
+        <section class="materi-dashboard" style="opacity: 0.5;">
+            <div class="step-card materi-card locked">
+                <h2>Materi 11-14</h2>
+                <p>Metode Pembayaran & Rekonsiliasi.</p>
+            </div>
+        </section>
+
+        <!-- Phase 4: Bank and Cash -->
+        <h3 class="dashboard-section-title" style="margin-top: 30px; opacity: 0.5;">Bank and Cash (Coming Soon)</h3>
+        <section class="materi-dashboard" style="opacity: 0.5;">
+            <div class="step-card materi-card locked">
+                <h2>Materi 15-21</h2>
+                <p>Bank Statements & Cash Management.</p>
+            </div>
+        </section>
+
+        <!-- Phase 5: Taxes -->
+        <h3 class="dashboard-section-title" style="margin-top: 30px; opacity: 0.5;">Taxes (Coming Soon)</h3>
+        <section class="materi-dashboard" style="opacity: 0.5;">
+            <div class="step-card materi-card locked">
+                <h2>Materi 22-25</h2>
+                <p>Konfigurasi Pajak & Laporan.</p>
+            </div>
+        </section>
+
+        <!-- Phase 6: Accounting Management -->
+        <h3 class="dashboard-section-title" style="margin-top: 30px; opacity: 0.5;">Accounting Management (Coming Soon)
+        </h3>
+        <section class="materi-dashboard" style="opacity: 0.5;">
+            <div class="step-card materi-card locked">
+                <h2>Materi 26-32</h2>
+                <p>Assets, Deferred Revenue, & Budget.</p>
+            </div>
+        </section>
+
+        <!-- Phase 7: Reporting -->
+        <h3 class="dashboard-section-title" style="margin-top: 30px; opacity: 0.5;">Reporting (Coming Soon)</h3>
+        <section class="materi-dashboard" style="opacity: 0.5;">
+            <div class="step-card materi-card locked">
+                <h2>Materi 33-34</h2>
+                <p>Analisis Laporan Keuangan.</p>
+            </div>
+        </section>
+
+        <!-- Phase 8: Inventory Valuation -->
+        <h3 class="dashboard-section-title" style="margin-top: 30px; opacity: 0.5;">Inventory Valuation (Coming Soon)
+        </h3>
+        <section class="materi-dashboard" style="opacity: 0.5;">
+            <div class="step-card materi-card locked">
+                <h2>Materi 35-37</h2>
+                <p>Penilaian Persediaan Barang.</p>
+            </div>
+        </section>
+
+        <!-- Phase 9: End of Period -->
+        <h3 class="dashboard-section-title" style="margin-top: 30px; opacity: 0.5;">End of Period (Coming Soon)</h3>
+        <section class="materi-dashboard" style="opacity: 0.5;">
+            <div class="step-card materi-card locked">
+                <h2>Materi 38-40</h2>
+                <p>Tutup Buku & Audit.</p>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Load JS -->
+    <script src="./assets/js/lms-core.js"></script>
+    <script>
+        const TRACK_PREFIX = "accounting_";
+        const TOTAL_MATERI = 40; // Total 40 modules
+
+        const materiList = [
+            // Will be populated as we create modules
+        ];
+
+        document.addEventListener("DOMContentLoaded", () => {
+            initTrackProgress(materiList);
+        });
+
+        function toggleDark() {
+            document.body.classList.toggle("dark");
+            localStorage.setItem("darkMode", document.body.classList.contains("dark"));
+        }
+        if (localStorage.getItem("darkMode") === "true") {
+            document.body.classList.add("dark");
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Materi 17: Assignment Rules | Modul CRM</title>
+    <link rel="stylesheet" href="../../../assets/css/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="progress-wrapper">
+        <div class="progress-container" id="progressContainer">
+            <div class="progress-bar" id="progressBar"></div>
+            <span class="progress-label" id="progressLabel" style="top: 24px">0%</span>
+        </div>
+    </div>
+
+    <main class="container">
+        <button class="dark-toggle" onclick="toggleDark()">🌙</button>
+
+        <header class="header">
+            <div id="materiBadge" class="materi-badge" style="display: none">
+                🎓 Materi 17 CRM Lulus
+            </div>
+            <span class="badge">CRM - Lead Management</span>
+            <h1>Assignment Rules</h1>
+            <p class="subtitle">
+                Mengotomatiskan pembagian leads ke tim sales berdasarkan aturan spesifik.
+            </p>
+        </header>
+
+        <section class="step-card">
+            <h2>1. Mengaktifkan Fitur</h2>
+            <div class="content">
+                <p>Agar assignment berjalan otomatis, apa syarat utamanya?</p>
+                <ul>
+                    <li>Anda harus mengaktifkan <strong>'Rule-Based Assignment'</strong> di pengaturan CRM.</li>
+                    <li>Fitur ini menggantikan cara manual atau round-robin sederhana dengan logika yang lebih cerdas
+                        (misal: berdasarkan negara atau bahasa).</li>
+                </ul>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>2. Konfigurasi per Sales Team</h2>
+            <div class="content">
+                <p>Dimana aturan ini dibuat?</p>
+                <ul>
+                    <li>Aturan assignment dikonfigurasi langsung di halaman <strong>Sales Team</strong> (di bawah menu
+                        Configuration > Sales Teams).</li>
+                    <li>Setiap anggota tim dapat memiliki domain (filter) spesifik yang menentukan leads seperti apa
+                        yang mereka terima.</li>
+                </ul>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>3. Skip Auto Assignment</h2>
+            <div class="content">
+                <p>Bagaimana jika salesperson sedang cuti atau overload?</p>
+                <ul>
+                    <li>Opsi <strong>'Skip auto assignment'</strong> dapat diaktifkan pada profil user/salesperson.</li>
+                    <li>Ini berarti sistem akan melewati (skip) assignment otomatis untuk mereka, tetapi mereka
+                        <strong>masih bisa mengambil leads secara manual</strong> atau diassign manual oleh manajer.
+                    </li>
+                </ul>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card quiz-card" id="crm-materi-17-quiz">
+            <div class="quiz-progress-wrapper">
+                <div class="quiz-progress-bar" id="quizProgressBar"></div>
+            </div>
+
+            <h2>📝 Quiz CRM Materi 17</h2>
+
+            <div class="quiz-container">
+                <!-- Quiz akan di-render oleh JS -->
+            </div>
+
+            <div class="step-footer">
+                <button class="quiz-submit-btn" onclick="checkQuiz()">
+                    Periksa Jawaban
+                </button>
+                <div id="quizResult" style="display: none"></div>
+            </div>
+        </section>
+
+        <div id="nextActionArea" class="next-action-area" style="display: none">
+            <h3>🎉 Materi 17 Selesai!</h3>
+            <p>
+                Distribusi leads Anda sekarang otomatis dan adil.
+            </p>
+            <a href="../../../crm.html" class="btn-next">
+                Kembali ke Dashboard CRM ➔
+            </a>
+        </div>
+
+        <footer class="footer">
+            <a href="../../../crm.html" style="text-decoration: none; color: #666; font-weight: 600">← Kembali ke Modul
+                CRM</a>
+        </footer>
+    </main>
+
+    <!-- Load JS -->
+    <script src="../../../assets/js/quiz-bank.js"></script>
+    <script src="../../../assets/js/lms-core.js"></script>
+    <script src="../../../assets/js/quiz-engine.js"></script>
+
+    <script>
+        const MATERI_ID = "crm_materi17";
+
+        document.addEventListener("DOMContentLoaded", () => {
+            initMateriProgress(MATERI_ID);
+            renderQuiz(MATERI_ID, ".quiz-container");
+
+            if (loadQuizResult(MATERI_ID)?.passed) {
+                showNextButton();
+            }
+        });
+
+        const originalOnQuizPassed = window.onQuizPassed;
+        window.onQuizPassed = function (materiId, score) {
+            if (originalOnQuizPassed) originalOnQuizPassed(materiId, score);
+            showNextButton();
+        };
+
+        function showNextButton() {
+            const area = document.getElementById("nextActionArea");
+            if (area) {
+                area.style.display = "block";
+                setTimeout(() => {
+                    area.scrollIntoView({ behavior: "smooth", block: "center" });
+                }, 500);
+            }
+        }
+
+        function toggleDark() {
+            document.body.classList.toggle("dark");
+            localStorage.setItem("darkMode", document.body.classList.contains("dark"));
+        }
+        if (localStorage.getItem("darkMode") === "true") {
+            document.body.classList.add("dark");
+        }
+    </script>
+</body>
+
+</html>

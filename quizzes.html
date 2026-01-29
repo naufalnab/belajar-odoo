@@ -154,6 +154,7 @@
                     <button class="tab-btn" onclick="switchTab('ecommerce')">eCommerce</button>
                     <button class="tab-btn" onclick="switchTab('surveys')">Surveys</button>
                     <button class="tab-btn" onclick="switchTab('marketing')">Marketing</button>
+                    <button class="tab-btn" onclick="switchTab('crm')">CRM</button>
                 </div>
 
                 <div id="quizListContainer">
@@ -227,6 +228,19 @@
             { id: "materi28", title: "Manufacturing", topic: "Inventory" },
         ];
 
+        const tabs = [
+            { id: "all", label: "Semua Quiz" },
+            { id: "getting-started", label: "Getting Started" },
+            { id: "sales", label: "Sales" },
+            { id: "crm", label: "CRM" },
+            { id: "purchase", label: "Purchase" },
+            { id: "project", label: "Project & Timesheets" },
+            { id: "website", label: "Website" },
+            { id: "ecommerce", label: "eCommerce" },
+            { id: "mobile-app", label: "Mobile App" },
+            { id: "surveys", label: "Surveys" },
+            { id: "marketing-email", label: "Marketing" }
+        ];
         const salesQuizzes = [
             { id: "sales_materi1", title: "Sales Layout & Settings", topic: "Basics" },
             { id: "sales_materi2", title: "Quotations & Orders", topic: "Sales Flow" },
@@ -311,6 +325,43 @@
             { id: "marketing_materi4", title: "SMS & Mailing Lists", topic: "Email" }
         ];
 
+        const crmQuizzes = [
+            { id: "crm_materi1", title: "CRM Basics", topic: "Basics" },
+            { id: "crm_materi2", title: "Dashboard & Activities", topic: "Basics" },
+            { id: "crm_materi3", title: "Pipeline Management", topic: "Pipeline" },
+            { id: "crm_materi4", title: "Activities & Calendar", topic: "Pipeline" },
+            { id: "crm_materi5", title: "Closing Opportunities", topic: "Pipeline" },
+            { id: "crm_materi6", title: "Lead Assignment", topic: "Automation" },
+            { id: "crm_materi7", title: "Activity Reporting", topic: "Analysis" },
+            { id: "crm_materi8", title: "Opportunity Reporting", topic: "Analysis" },
+            { id: "crm_materi9", title: "Gmail Plugin", topic: "Integrations" },
+            { id: "crm_materi10", title: "Outlook Plugin", topic: "Integrations" },
+            { id: "crm_materi11", title: "Lead Analysis", topic: "Analysis" },
+            { id: "crm_materi12", title: "Predictive Lead Scoring", topic: "AI & Tools" },
+            { id: "crm_materi13", title: "Generating Leads", topic: "Lead Gen" },
+            { id: "crm_materi14", title: "Advanced Lead Gen", topic: "Lead Gen" },
+            { id: "crm_materi15", title: "Lead Enrichment", topic: "Lead Gen" },
+            { id: "crm_materi16", title: "Lead Mining", topic: "Lead Gen" },
+            { id: "crm_materi17", title: "Assignment Rules", topic: "Management" },
+            { id: "crm_materi18", title: "Opportunity Handling", topic: "Management" },
+            { id: "crm_materi19", title: "Gamification", topic: "Performance" },
+
+            // PURCHASE
+            { id: "purchase_materi1", title: "RFQ to PO", topic: "Buy & Receive" },
+            { id: "purchase_materi2", title: "Lead Times", topic: "Buy & Receive" },
+            { id: "purchase_materi3", title: "Vendor Pricelists", topic: "Buy & Receive" },
+            { id: "purchase_materi4", title: "Access Rights", topic: "Buy & Receive" },
+            { id: "purchase_materi5", title: "Call for Tenders", topic: "Manage Deals" },
+            { id: "purchase_materi6", title: "Blanket Orders", topic: "Manage Deals" },
+            { id: "purchase_materi7", title: "Billing & Matches", topic: "Manage Deals" },
+            { id: "purchase_materi8", title: "Alternative RFQs", topic: "Manage Deals" },
+            { id: "purchase_materi9", title: "Purchase Templates", topic: "Manage Deals" },
+            { id: "purchase_materi10", title: "EDI", topic: "Manage Deals" },
+
+            // PROJECT
+            { id: "project_materi1", title: "Project Basics", topic: "Project Mgmt" }
+        ];
+
         // --- UI LOGIC ---
         function switchTab(tabName) {
             // Update Tab UI
@@ -325,6 +376,7 @@
             else if (tabName === 'ecommerce') list = ecommerceQuizzes;
             else if (tabName === 'surveys') list = surveysQuizzes;
             else if (tabName === 'marketing') list = marketingQuizzes;
+            else if (tabName === 'crm') list = crmQuizzes;
 
             renderList(list);
 

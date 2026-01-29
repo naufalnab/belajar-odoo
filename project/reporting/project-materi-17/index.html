@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Materi 17: Project Profitability | Modul Project</title>
+    <link rel="stylesheet" href="../../../assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="progress-wrapper">
+        <div class="progress-container" id="progressContainer">
+            <div class="progress-bar" id="progressBar"></div>
+            <span class="progress-label" id="progressLabel" style="top: 24px;">0%</span>
+        </div>
+    </div>
+
+    <main class="container">
+        <button class="dark-toggle" onclick="toggleDark()">🌙</button>
+
+        <header class="header">
+            <div id="materiBadge" class="materi-badge" style="display: none;">🎓 Materi 17 Project Selesai</div>
+            <span class="badge">Project - Reporting</span>
+            <h1>Project Profitability</h1>
+            <p class="subtitle">Memahami P&L Project: Revenues vs Costs.</p>
+        </header>
+
+        <section class="step-card">
+            <h2>1. Top Bar & Profitability</h2>
+            <div class="content">
+                <p>Hubungan antara Top Bar dan Profitability:</p>
+                <ul>
+                    <li>Dokumen/record yang dibuat melalui smart buttons di Top Bar (misal: Purchase Order, Expense)
+                        secara otomatis terlink ke <strong>Analytic Account</strong> project tersebut.</li>
+                    <li>Oleh karena itu, biaya/pendapatannya akan muncul di dashboard Profitability.</li>
+                </ul>
+            </div>
+            <div class="step-footer">
+                <label>Paham</label>
+                <input type="checkbox" class="mark-done">
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>2. Employee Hourly Cost</h2>
+            <div class="content">
+                <p>Biaya terbesar project jasa biasanya adalah tenaga kerja (Timesheets):</p>
+                <ul>
+                    <li>Cost ini dihitung dari: <strong>Jam Kerja × Hourly Cost</strong>.</li>
+                    <li>Di mana Hourly Cost ditentukan? Di form <strong>Employee</strong>, pada tab <strong>Work
+                            Information</strong> (kolom Hourly Cost).</li>
+                    <li>Pastikan ini diisi agar margin proyek akurat.</li>
+                </ul>
+            </div>
+            <div class="step-footer">
+                <label>Paham</label>
+                <input type="checkbox" class="mark-done">
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>3. Komponen Lain (Down Payments)</h2>
+            <div class="content">
+                <p>Tentang Down Payments (DP):</p>
+                <ul>
+                    <li>DP dianggap sebagai pendapatan (Revenues), bukan biaya.</li>
+                    <li>Namun, perilaku DP di profitability report bisa tricky tergantung apakah sudah direkonsiliasi
+                        dengan invoice final atau belum.</li>
+                    <li>Secara umum, DP ditampilkan di section invoicing/revenues.</li>
+                </ul>
+            </div>
+            <div class="step-footer">
+                <label>Paham</label>
+                <input type="checkbox" class="mark-done">
+            </div>
+        </section>
+
+        <section class="step-card quiz-card" id="project-materi-17-quiz">
+            <div class="quiz-progress-wrapper">
+                <div class="quiz-progress-bar" id="quizProgressBar"></div>
+            </div>
+            <h2>📝 Quiz Project Materi 17</h2>
+            <div class="quiz-container">
+                <!-- Rendered by JS -->
+            </div>
+            <div class="step-footer">
+                <button class="quiz-submit-btn" onclick="checkQuiz()">Periksa Jawaban</button>
+                <div id="quizResult" style="display: none;"></div>
+            </div>
+        </section>
+
+        <div id="nextActionArea" class="next-action-area" style="display: none;">
+            <h3>🎉 Materi 17 Selesai!</h3>
+            <p>Lanjut ke Customer Ratings.</p>
+            <a href="../project-materi-18/index.html" class="btn-next">Lanjut ke Materi 18 (Terakhir) ➔</a>
+        </div>
+
+        <footer class="footer">
+            <a href="../../../project.html" style="text-decoration: none; color: #666; font-weight: 600;">← Kembali ke
+                Modul Project</a>
+        </footer>
+    </main>
+
+    <script src="../../../assets/js/quiz-bank.js"></script>
+    <script src="../../../assets/js/lms-core.js"></script>
+    <script src="../../../assets/js/quiz-engine.js"></script>
+    <script>
+        const MATERI_ID = "project_materi17";
+        document.addEventListener("DOMContentLoaded", () => {
+            initMateriProgress(MATERI_ID);
+            renderQuiz(MATERI_ID, ".quiz-container");
+            if (loadQuizResult(MATERI_ID)?.passed) showNextButton();
+        });
+
+        const originalOnQuizPassed = window.onQuizPassed;
+        window.onQuizPassed = function (materiId, score) {
+            if (originalOnQuizPassed) originalOnQuizPassed(materiId, score);
+            showNextButton();
+        };
+
+        function showNextButton() {
+            const area = document.getElementById("nextActionArea");
+            if (area) {
+                area.style.display = "block";
+                setTimeout(() => area.scrollIntoView({ behavior: "smooth", block: "center" }), 500);
+            }
+        }
+        function toggleDark() {
+            document.body.classList.toggle("dark");
+            localStorage.setItem("darkMode", document.body.classList.contains("dark"));
+        }
+        if (localStorage.getItem("darkMode") === "true") document.body.classList.add("dark");
+    </script>
+</body>
+
+</html>

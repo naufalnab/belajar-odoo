@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Materi 2: Managing Projects | Modul Project</title>
+    <link rel="stylesheet" href="../../../assets/css/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="progress-wrapper">
+        <div class="progress-container" id="progressContainer">
+            <div class="progress-bar" id="progressBar"></div>
+            <span class="progress-label" id="progressLabel" style="top: 24px">0%</span>
+        </div>
+    </div>
+
+    <main class="container">
+        <button class="dark-toggle" onclick="toggleDark()">🌙</button>
+
+        <header class="header">
+            <div id="materiBadge" class="materi-badge" style="display: none">
+                🎓 Materi 2 Project Selesai
+            </div>
+            <span class="badge">Project - Project Management</span>
+            <h1>Managing Projects</h1>
+            <p class="subtitle">
+                Mengelola tahapan proyek (Project Stages) dan pelaporan status (Project Updates).
+            </p>
+        </header>
+
+        <section class="step-card">
+            <h2>1. Mengaktifkan Project Stages</h2>
+            <div class="content">
+                <p>Secara default, Project Stages mungkin sudah terlihat di Kanban view dashboard Project. Namun, Anda
+                    dapat mengelolanya melalui:</p>
+                <ul>
+                    <li><strong>Configuration > Settings</strong>: Pastikan opsi "Project Stages" diaktifkan jika
+                        tersedia.</li>
+                    <li><strong>Configuration > Project Stages</strong>: Untuk membuat atau mengedit tahapan proyek
+                        (Stages) secara global.</li>
+                    <li>Ingat: Anda tidak perlu masuk ke settings setiap project; stage seringkali diatur di level
+                        global atau per project type.</li>
+                </ul>
+            </div>
+            <div class="step-footer">
+                <label>Paham</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>2. Kanban Stages vs Project Status</h2>
+            <div class="content">
+                <p>Penting untuk membedakan antara posisi di Kanban (Stage) dan Status kesehatan proyek:</p>
+                <ul>
+                    <li><strong>Memindahkan Project ke Stage Lain</strong> (misal dari "New" ke "In Progress")
+                        <strong>TIDAK</strong> secara otomatis mengubah "Status" kesehatannya.</li>
+                    <li>Status (On Track, At Risk, Off Track) dikelola secara terpisah, biasanya melalui fitur
+                        <strong>Project Updates</strong>.</li>
+                    <li>Jadi, pernyataan "Moving a project to a different Kanban stage affects its status" adalah
+                        <strong>False</strong>.</li>
+                </ul>
+            </div>
+            <div class="step-footer">
+                <label>Paham</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>3. Indikator Warna di Kanban</h2>
+            <div class="content">
+                <p>Di bagian atas setiap kolom Stage di Kanban View, terdapat bar berwarna (hijau, kuning, merah,
+                    abu-abu). Apa artinya?</p>
+                <ul>
+                    <li>Ini menunjukkan <strong>jumlah project dengan masing-masing status</strong> dalam stage
+                        tersebut.</li>
+                    <li>Contoh: Bagian hijau menunjukkan jumlah project yang "On Track", merah untuk "Off Track" atau
+                        "At Risk", dll.</li>
+                    <li>Ini memberikan visualisasi cepat tentang kesehatan proyek di setiap tahapan.</li>
+                </ul>
+            </div>
+            <div class="step-footer">
+                <label>Paham</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>4. Project Updates</h2>
+            <div class="content">
+                <p>Fitur "Project Updates" memungkinkan manajer memberikan laporan berkala. Saat Anda membuat Update
+                    baru (klik "New" di dashboard Project Update):</p>
+                <ul>
+                    <li>Anda memilih status (On Track, At Risk, dll).</li>
+                    <li><strong>Status Proyek akan diperbarui</strong> mengikuti status yang Anda pilih di update
+                        TERAKHIR ini.</li>
+                    <li>Tujuannya agar stakeholder selalu melihat status terkini berdasarkan laporan terbaru.</li>
+                </ul>
+            </div>
+            <div class="step-footer">
+                <label>Paham</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card quiz-card" id="project-materi-2-quiz">
+            <div class="quiz-progress-wrapper">
+                <div class="quiz-progress-bar" id="quizProgressBar"></div>
+            </div>
+
+            <h2>📝 Quiz Project Materi 2</h2>
+
+            <div class="quiz-container">
+                <!-- Quiz akan di-render oleh JS -->
+            </div>
+
+            <div class="step-footer">
+                <button class="quiz-submit-btn" onclick="checkQuiz()">
+                    Periksa Jawaban
+                </button>
+                <div id="quizResult" style="display: none"></div>
+            </div>
+        </section>
+
+        <div id="nextActionArea" class="next-action-area" style="display: none">
+            <h3>🎉 Materi 2 Selesai!</h3>
+            <p>
+                Anda telah memahami manajemen dasar proyek.
+            </p>
+            <a href="../../../project.html" class="btn-next">
+                Kembali ke Dashboard Project ➔
+            </a>
+        </div>
+
+        <footer class="footer">
+            <a href="../../../project.html" style="text-decoration: none; color: #666; font-weight: 600">← Kembali ke
+                Modul Project</a>
+        </footer>
+    </main>
+
+    <!-- Load JS -->
+    <script src="../../../assets/js/quiz-bank.js"></script>
+    <script src="../../../assets/js/lms-core.js"></script>
+    <script src="../../../assets/js/quiz-engine.js"></script>
+
+    <script>
+        const MATERI_ID = "project_materi2";
+
+        document.addEventListener("DOMContentLoaded", () => {
+            initMateriProgress(MATERI_ID);
+            renderQuiz(MATERI_ID, ".quiz-container");
+
+            if (loadQuizResult(MATERI_ID)?.passed) {
+                showNextButton();
+            }
+        });
+
+        const originalOnQuizPassed = window.onQuizPassed;
+        window.onQuizPassed = function (materiId, score) {
+            if (originalOnQuizPassed) originalOnQuizPassed(materiId, score);
+            showNextButton();
+        };
+
+        function showNextButton() {
+            const area = document.getElementById("nextActionArea");
+            if (area) {
+                area.style.display = "block";
+                setTimeout(() => {
+                    area.scrollIntoView({ behavior: "smooth", block: "center" });
+                }, 500);
+            }
+        }
+
+        function toggleDark() {
+            document.body.classList.toggle("dark");
+            localStorage.setItem("darkMode", document.body.classList.contains("dark"));
+        }
+        if (localStorage.getItem("darkMode") === "true") {
+            document.body.classList.add("dark");
+        }
+    </script>
+</body>
+
+</html>

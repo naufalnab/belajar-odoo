@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Materi 16: Lead Mining | Modul CRM</title>
+    <link rel="stylesheet" href="../../../assets/css/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="progress-wrapper">
+        <div class="progress-container" id="progressContainer">
+            <div class="progress-bar" id="progressBar"></div>
+            <span class="progress-label" id="progressLabel" style="top: 24px">0%</span>
+        </div>
+    </div>
+
+    <main class="container">
+        <button class="dark-toggle" onclick="toggleDark()">🌙</button>
+
+        <header class="header">
+            <div id="materiBadge" class="materi-badge" style="display: none">
+                🎓 Materi 16 CRM Lulus
+            </div>
+            <span class="badge">CRM - Lead Generation</span>
+            <h1>Lead Mining</h1>
+            <p class="subtitle">
+                Mencari prospek baru dari database global Odoo berdasarkan kriteria spesifik.
+            </p>
+        </header>
+
+        <section class="step-card">
+            <h2>1. Apa itu Lead Mining?</h2>
+            <div class="content">
+                <p>Bagaimana mencari pelanggan baru jika pipeline kosong?</p>
+                <ul>
+                    <li>Fitur <strong>Lead Mining</strong> memungkinkan Anda menambang database Odoo yang berisi jutaan
+                        perusahaan.</li>
+                    <li>Anda bisa mengaksesnya dari <strong>CRM > Configuration > Lead Mining Requests</strong>.</li>
+                    <li>Sama seperti Enrichment, ini menggunakan IAP Credits.</li>
+                </ul>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>2. Kriteria Mining</h2>
+            <div class="content">
+                <p>Menargetkan audiens yang tepat:</p>
+                <ul>
+                    <li><strong>Country</strong>: Anda BISA menambang tanpa memilih negara spesifik (global), tetapi
+                        biasanya lebih efektif jika ditargetkan.</li>
+                    <li><strong>Industries</strong>: Anda bisa memilih banyak industri. Tidak ada batas spesifik (As
+                        many as you wish) selama relevan.</li>
+                </ul>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>3. Target Output</h2>
+            <div class="content">
+                <p>Mau ditaruh dimana data ini?</p>
+                <ul>
+                    <li>Anda bisa memilih untuk menjadikannya <strong>Leads</strong> atau langsung
+                        <strong>Opportunities</strong>.</li>
+                    <li>Anda bisa menugaskannya ke <strong>Sales Team</strong> tertentu atau Salesperson tertentu.</li>
+                    <li>(Catatan: Opsi 'Team Pipelines' bukan istilah standar tempat generate, biasanya 'Leads' atau 'My
+                        Pipeline').</li>
+                </ul>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card quiz-card" id="crm-materi-16-quiz">
+            <div class="quiz-progress-wrapper">
+                <div class="quiz-progress-bar" id="quizProgressBar"></div>
+            </div>
+
+            <h2>📝 Quiz CRM Materi 16</h2>
+
+            <div class="quiz-container">
+                <!-- Quiz akan di-render oleh JS -->
+            </div>
+
+            <div class="step-footer">
+                <button class="quiz-submit-btn" onclick="checkQuiz()">
+                    Periksa Jawaban
+                </button>
+                <div id="quizResult" style="display: none"></div>
+            </div>
+        </section>
+
+        <div id="nextActionArea" class="next-action-area" style="display: none">
+            <h3>🎉 Materi 16 Selesai!</h3>
+            <p>
+                Selamat! Anda telah menyelesaikan seluruh rangkaian materi CRM Lead Generation.
+            </p>
+            <a href="../../../crm.html" class="btn-next">
+                Kembali ke Dashboard CRM ➔
+            </a>
+        </div>
+
+        <footer class="footer">
+            <a href="../../../crm.html" style="text-decoration: none; color: #666; font-weight: 600">← Kembali ke Modul
+                CRM</a>
+        </footer>
+    </main>
+
+    <!-- Load JS -->
+    <script src="../../../assets/js/quiz-bank.js"></script>
+    <script src="../../../assets/js/lms-core.js"></script>
+    <script src="../../../assets/js/quiz-engine.js"></script>
+
+    <script>
+        const MATERI_ID = "crm_materi16";
+
+        document.addEventListener("DOMContentLoaded", () => {
+            initMateriProgress(MATERI_ID);
+            renderQuiz(MATERI_ID, ".quiz-container");
+
+            if (loadQuizResult(MATERI_ID)?.passed) {
+                showNextButton();
+            }
+        });
+
+        const originalOnQuizPassed = window.onQuizPassed;
+        window.onQuizPassed = function (materiId, score) {
+            if (originalOnQuizPassed) originalOnQuizPassed(materiId, score);
+            showNextButton();
+        };
+
+        function showNextButton() {
+            const area = document.getElementById("nextActionArea");
+            if (area) {
+                area.style.display = "block";
+                setTimeout(() => {
+                    area.scrollIntoView({ behavior: "smooth", block: "center" });
+                }, 500);
+            }
+        }
+
+        function toggleDark() {
+            document.body.classList.toggle("dark");
+            localStorage.setItem("darkMode", document.body.classList.contains("dark"));
+        }
+        if (localStorage.getItem("darkMode") === "true") {
+            document.body.classList.add("dark");
+        }
+    </script>
+</body>
+
+</html>

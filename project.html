@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project & Timesheets Dashboard | Pembelajar Odoo</title>
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+    <button class="dark-toggle" onclick="toggleDark()">🌙</button>
+
+    <div class="main-dashboard-container">
+        <header class="dashboard-header">
+            <a href="./index.html" class="back-link">← Kembali ke Halaman Utama</a>
+            <h1>Project & Timesheets</h1>
+            <p>Kelola proyek, tasks, timesheets, dan profitabilitas project.</p>
+        </header>
+
+        <h3 class="dashboard-section-title">Project Management</h3>
+        <section class="materi-dashboard">
+            <!-- Materi 1 -->
+            <a href="./project/project-management/project-materi-1/index.html" class="step-card materi-card"
+                id="card-materi1">
+                <div class="materi-card-header">
+                    <span class="badge badge-new">Materi 1</span>
+                    <span class="materi-status" id="status-materi1">🔒</span>
+                </div>
+                <h2>Project Basics</h2>
+                <p>Kanban view, Stages vs Status, dan Task Handling.</p>
+                <div class="materi-progress">
+                    <div class="materi-progress-bar" id="progress-materi1"></div>
+                </div>
+                <small id="label-materi1">Terkunci</small>
+            </a>
+
+            <!-- Materi 2 -->
+            <a href="./project/project-management/project-materi-2/index.html" class="step-card materi-card"
+                id="card-materi2">
+                <div class="materi-card-header">
+                    <span class="badge badge-new">Materi 2</span>
+                    <span class="materi-status" id="status-materi2">🔒</span>
+                </div>
+                <h2>Managing Projects</h2>
+                <p>Project Stages, Kanban Status, & Project Updates.</p>
+                <div class="materi-progress">
+                    <div class="materi-progress-bar" id="progress-materi2"></div>
+                </div>
+                <small id="label-materi2">Terkunci</small>
+            </a>
+
+            <!-- Materi 3 -->
+            <a href="./project/project-management/project-materi-3/index.html" class="step-card materi-card"
+                id="card-materi3">
+                <div class="materi-card-header">
+                    <span class="badge badge-new">Materi 3</span>
+                    <span class="materi-status" id="status-materi3">🔒</span>
+                </div>
+                <h2>Project Settings</h2>
+                <p>Kanban Elements, Project Name & Visuals.</p>
+                <div class="materi-progress">
+                    <div class="materi-progress-bar" id="progress-materi3"></div>
+                </div>
+                <small id="label-materi3">Terkunci</small>
+            </a>
+
+            <!-- Materi 4 -->
+            <a href="./project/project-management/project-materi-4/index.html" class="step-card materi-card"
+                id="card-materi4">
+                <div class="materi-card-header">
+                    <span class="badge badge-new">Materi 4</span>
+                    <span class="materi-status" id="status-materi4">🔒</span>
+                </div>
+                <h2>Top Bar Customization</h2>
+                <p>Menampilkan dan mengatur Top Bar view.</p>
+                <div class="materi-progress">
+                    <div class="materi-progress-bar" id="progress-materi4"></div>
+                </div>
+                <small id="label-materi4">Terkunci</small>
+            </a>
+        </section>
+
+        <h3 class="dashboard-section-title" style="margin-top: 30px;">Tasks Management</h3>
+        <section class="materi-dashboard">
+            <!-- Materi 5 -->
+            <a href="./project/tasks-management/project-materi-5/index.html" class="step-card materi-card"
+                id="card-materi5">
+                <div class="materi-card-header">
+                    <span class="badge badge-new">Materi 5</span>
+                    <span class="materi-status" id="status-materi5">🔒</span>
+                </div>
+                <h2>Task Creation</h2>
+                <p>Email Alias & Website Forms.</p>
+                <div class="materi-progress">
+                    <div class="materi-progress-bar" id="progress-materi5"></div>
+                </div>
+                <small id="label-materi5">Terkunci</small>
+            </a>
+
+            <!-- Materi 6 -->
+            <a href="./project/tasks-management/project-materi-6/index.html" class="step-card materi-card"
+                id="card-materi6">
+                <div class="materi-card-header">
+                    <span class="badge badge-new">Materi 6</span>
+                    <span class="materi-status" id="status-materi6">🔒</span>
+                </div>
+                <h2>Sales Integration</h2>
+                <p>Billable Projects & SO Configuration.</p>
+                <div class="materi-progress">
+                    <div class="materi-progress-bar" id="progress-materi6"></div>
+                </div>
+                <small id="label-materi6">Terkunci</small>
+            </a>
+
+            <!-- Materi 7 -->
+            <a href="./project/tasks-management/project-materi-7/index.html" class="step-card materi-card"
+                id="card-materi7">
+                <div class="materi-card-header">
+                    <span class="badge badge-new">Materi 7</span>
+                    <span class="materi-status" id="status-materi7">🔒</span>
+                </div>
+                <h2>Subtasks</h2>
+                <p>Memecah pekerjaan & Nested Subtasks.</p>
+                <div class="materi-progress">
+                    <div class="materi-progress-bar" id="progress-materi7"></div>
+                </div>
+                <small id="label-materi7">Terkunci</small>
+            </a>
+
+            <!-- Materi 8 -->
+            <a href="./project/tasks-management/project-materi-8/index.html" class="step-card materi-card"
+                id="card-materi8">
+                <div class="materi-card-header">
+                    <span class="badge badge-new">Materi 8</span>
+                    <span class="materi-status" id="status-materi8">🔒</span>
+                </div>
+                <h2>Task Dependencies</h2>
+                <p>Blocked By, Gantt View, & Sequential Tasks.</p>
+                <div class="materi-progress">
+                    <div class="materi-progress-bar" id="progress-materi8"></div>
+                </div>
+                <small id="label-materi8">Terkunci</small>
+            </a>
+
+            <!-- Materi 9 -->
+            <a href="./project/tasks-management/project-materi-9/index.html" class="step-card materi-card"
+                id="card-materi9">
+                <div class="materi-card-header">
+                    <span class="badge badge-new">Materi 9</span>
+                    <span class="materi-status" id="status-materi9">🔒</span>
+                </div>
+                <h2>Recurring Tasks</h2>
+                <p>Otomatisasi tugas berulang & konfigurasi.</p>
+                <div class="materi-progress">
+                    <div class="materi-progress-bar" id="progress-materi9"></div>
+                </div>
+                <small id="label-materi9">Terkunci</small>
+            </a>
+
+            <!-- Materi 10 -->
+            <a href="./project/tasks-management/project-materi-10/index.html" class="step-card materi-card"
+                id="card-materi10">
+                <div class="materi-card-header">
+                    <span class="badge badge-new">Materi 10</span>
+                    <span class="materi-status" id="status-materi10">🔒</span>
+                </div>
+                <h2>Project Visibility</h2>
+                <p>Private, Public, & Portal Access.</p>
+                <div class="materi-progress">
+                    <div class="materi-progress-bar" id="progress-materi10"></div>
+                </div>
+                <small id="label-materi10">Terkunci</small>
+            </a>
+
+            <!-- Materi 11 -->
+            <a href="./project/tasks-management/project-materi-11/index.html" class="step-card materi-card"
+                id="card-materi11">
+                <div class="materi-card-header">
+                    <span class="badge badge-new">Materi 11</span>
+                    <span class="materi-status" id="status-materi11">🔒</span>
+                </div>
+                <h2>Automations</h2>
+                <p>Triggers, Actions, & Stage-based rules.</p>
+                <div class="materi-progress">
+                    <div class="materi-progress-bar" id="progress-materi11"></div>
+                </div>
+                <small id="label-materi11">Terkunci</small>
+            </a>
+
+            <!-- Materi 12 -->
+            <a href="./project/tasks-management/project-materi-12/index.html" class="step-card materi-card"
+                id="card-materi12">
+                <div class="materi-card-header">
+                    <span class="badge badge-new">Materi 12</span>
+                    <span class="materi-status" id="status-materi12">🔒</span>
+                </div>
+                <h2>Milestones</h2>
+                <p>Project milestones & Invoicing.</p>
+                <div class="materi-progress">
+                    <div class="materi-progress-bar" id="progress-materi12"></div>
+                </div>
+                <small id="label-materi12">Terkunci</small>
+            </a>
+        </section>
+
+        <h3 class="dashboard-section-title" style="margin-top: 30px;">Time Management</h3>
+        <section class="materi-dashboard">
+            <!-- Materi 13 -->
+            <a href="./project/time-management/project-materi-13/index.html" class="step-card materi-card"
+                id="card-materi13">
+                <div class="materi-card-header">
+                    <span class="badge badge-new">Materi 13</span>
+                    <span class="materi-status" id="status-materi13">🔒</span>
+                </div>
+                <h2>Timesheets Basics</h2>
+                <p>Recording Time & Validation.</p>
+                <div class="materi-progress">
+                    <div class="materi-progress-bar" id="progress-materi13"></div>
+                </div>
+                <small id="label-materi13">Terkunci</small>
+            </a>
+
+            <!-- Materi 14 -->
+            <a href="./project/time-management/project-materi-14/index.html" class="step-card materi-card"
+                id="card-materi14">
+                <div class="materi-card-header">
+                    <span class="badge badge-new">Materi 14</span>
+                    <span class="materi-status" id="status-materi14">🔒</span>
+                </div>
+                <h2>Advanced Timesheets</h2>
+                <p>Reminders, Billing Rates, & Leaderboard.</p>
+                <div class="materi-progress">
+                    <div class="materi-progress-bar" id="progress-materi14"></div>
+                </div>
+                <small id="label-materi14">Terkunci</small>
+            </a>
+        </section>
+
+        <h3 class="dashboard-section-title" style="margin-top: 30px;">Invoicing</h3>
+        <section class="materi-dashboard">
+            <!-- Materi 15 -->
+            <a href="./project/invoicing/project-materi-15/index.html" class="step-card materi-card" id="card-materi15">
+                <div class="materi-card-header">
+                    <span class="badge badge-new">Materi 15</span>
+                    <span class="materi-status" id="status-materi15">🔒</span>
+                </div>
+                <h2>Invoicing Projects</h2>
+                <p>Fixed Price vs Time & Material.</p>
+                <div class="materi-progress">
+                    <div class="materi-progress-bar" id="progress-materi15"></div>
+                </div>
+                <small id="label-materi15">Terkunci</small>
+            </a>
+        </section>
+
+        <h3 class="dashboard-section-title" style="margin-top: 30px;">Reporting</h3>
+        <section class="materi-dashboard">
+            <!-- Materi 16 -->
+            <a href="./project/reporting/project-materi-16/index.html" class="step-card materi-card" id="card-materi16">
+                <div class="materi-card-header">
+                    <span class="badge badge-new">Materi 16</span>
+                    <span class="materi-status" id="status-materi16">🔒</span>
+                </div>
+                <h2>Project Dashboard</h2>
+                <p>Real-time data & Snapshots.</p>
+                <div class="materi-progress">
+                    <div class="materi-progress-bar" id="progress-materi16"></div>
+                </div>
+                <small id="label-materi16">Terkunci</small>
+            </a>
+
+            <!-- Materi 17 -->
+            <a href="./project/reporting/project-materi-17/index.html" class="step-card materi-card" id="card-materi17">
+                <div class="materi-card-header">
+                    <span class="badge badge-new">Materi 17</span>
+                    <span class="materi-status" id="status-materi17">🔒</span>
+                </div>
+                <h2>Project Profitability</h2>
+                <p>Revenues, Costs, & Margin.</p>
+                <div class="materi-progress">
+                    <div class="materi-progress-bar" id="progress-materi17"></div>
+                </div>
+                <small id="label-materi17">Terkunci</small>
+            </a>
+
+            <!-- Materi 18 -->
+            <a href="./project/reporting/project-materi-18/index.html" class="step-card materi-card" id="card-materi18">
+                <div class="materi-card-header">
+                    <span class="badge badge-new">Materi 18</span>
+                    <span class="materi-status" id="status-materi18">🔒</span>
+                </div>
+                <h2>Customer Ratings</h2>
+                <p>Satisfaction surveys & feedback.</p>
+                <div class="materi-progress">
+                    <div class="materi-progress-bar" id="progress-materi18"></div>
+                </div>
+                <small id="label-materi18">Terkunci</small>
+            </a>
+        </section>
+
+    </div>
+
+    <!-- Load JS -->
+    <script src="./assets/js/lms-core.js"></script>
+    <script>
+        const TRACK_PREFIX = "project_";
+        const TOTAL_MATERI = 18; // Est
+
+        const materiList = [
+            { id: "project_materi1", uiId: "materi1", link: "./project/project-management/project-materi-1/index.html", nextCard: "materi2" },
+            { id: "project_materi2", uiId: "materi2", link: "./project/project-management/project-materi-2/index.html", nextCard: "materi3" },
+            { id: "project_materi3", uiId: "materi3", link: "./project/project-management/project-materi-3/index.html", nextCard: "materi4" },
+            { id: "project_materi4", uiId: "materi4", link: "./project/project-management/project-materi-4/index.html", nextCard: "materi5" },
+            { id: "project_materi5", uiId: "materi5", link: "./project/tasks-management/project-materi-5/index.html", nextCard: "materi6" },
+            { id: "project_materi6", uiId: "materi6", link: "./project/tasks-management/project-materi-6/index.html", nextCard: "materi7" },
+            { id: "project_materi7", uiId: "materi7", link: "./project/tasks-management/project-materi-7/index.html", nextCard: "materi8" },
+            { id: "project_materi8", uiId: "materi8", link: "./project/tasks-management/project-materi-8/index.html", nextCard: "materi9" },
+            { id: "project_materi9", uiId: "materi9", link: "./project/tasks-management/project-materi-9/index.html", nextCard: "materi10" },
+            { id: "project_materi10", uiId: "materi10", link: "./project/tasks-management/project-materi-10/index.html", nextCard: "materi11" },
+            { id: "project_materi11", uiId: "materi11", link: "./project/tasks-management/project-materi-11/index.html", nextCard: "materi12" },
+            { id: "project_materi12", uiId: "materi12", link: "./project/tasks-management/project-materi-12/index.html", nextCard: "materi13" },
+            { id: "project_materi13", uiId: "materi13", link: "./project/time-management/project-materi-13/index.html", nextCard: "materi14" },
+            { id: "project_materi14", uiId: "materi14", link: "./project/time-management/project-materi-14/index.html", nextCard: "materi15" },
+            { id: "project_materi15", uiId: "materi15", link: "./project/invoicing/project-materi-15/index.html", nextCard: "materi16" },
+            { id: "project_materi16", uiId: "materi16", link: "./project/reporting/project-materi-16/index.html", nextCard: "materi17" },
+            { id: "project_materi17", uiId: "materi17", link: "./project/reporting/project-materi-17/index.html", nextCard: "materi18" },
+            { id: "project_materi18", uiId: "materi18", link: "./project/reporting/project-materi-18/index.html", nextCard: null }
+        ];
+
+        document.addEventListener("DOMContentLoaded", () => {
+            initTrackProgress(materiList);
+        });
+
+        function toggleDark() {
+            document.body.classList.toggle("dark");
+            localStorage.setItem("darkMode", document.body.classList.contains("dark"));
+        }
+        if (localStorage.getItem("darkMode") === "true") {
+            document.body.classList.add("dark");
+        }
+    </script>
+</body>
+
+</html>

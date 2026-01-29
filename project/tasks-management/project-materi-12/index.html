@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Materi 12: Milestones | Modul Project</title>
+    <link rel="stylesheet" href="../../../assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="progress-wrapper">
+        <div class="progress-container" id="progressContainer">
+            <div class="progress-bar" id="progressBar"></div>
+            <span class="progress-label" id="progressLabel" style="top: 24px;">0%</span>
+        </div>
+    </div>
+
+    <main class="container">
+        <button class="dark-toggle" onclick="toggleDark()">🌙</button>
+
+        <header class="header">
+            <div id="materiBadge" class="materi-badge" style="display: none;">🎓 Materi 12 Project Selesai</div>
+            <span class="badge">Project - Tasks Management</span>
+            <h1>Project Milestones</h1>
+            <p class="subtitle">Menandai pencapaian penting dalam project dan menagih (invoice) berdasarkan milestone.
+            </p>
+        </header>
+
+        <section class="step-card">
+            <h2>1. Apa itu Milestone?</h2>
+            <div class="content">
+                <p>Milestone adalah penanda progres signifikan dalam project.</p>
+                <ul>
+                    <li>Milestones bersifat <strong>project-specific</strong> (terikat pada project, bukan task
+                        individu).</li>
+                    <li>Anda bisa menghubungkan Tasks ke Milestone (via field Milestone di task form), tapi Milestone
+                        sendiri levelnya ada di Project.</li>
+                </ul>
+            </div>
+            <div class="step-footer">
+                <label>Paham</label>
+                <input type="checkbox" class="mark-done">
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>2. Status Milestone</h2>
+            <div class="content">
+                <p>Kapan Milestone dianggap tercapai (Reached)?</p>
+                <ul>
+                    <li>Secara otomatis: Ketika <strong>semua tasks</strong> yang terhubung ke milestone tersebut
+                        selesai (Done/Canceled).</li>
+                    <li>Status milestone akan berubah menjadi hijau di dashboard project update.</li>
+                    <li>Anda juga bisa menandainya secara manual.</li>
+                </ul>
+            </div>
+            <div class="step-footer">
+                <label>Paham</label>
+                <input type="checkbox" class="mark-done">
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>3. Invoicing based on Milestones</h2>
+            <div class="content">
+                <p>Untuk menagih klien berdasarkan pencapaian:</p>
+                <ul>
+                    <li>Buat Service Product dengan Invoicing Policy: <strong>Based on Milestones</strong>.</li>
+                    <li>Buat Sales Order dengan produk tersebut -> Confirm -> Project dibuat.</li>
+                    <li>Ketika milestone di project tercapai (Reached), Anda bisa kembali ke Sales Order dan membuat
+                        Invoice.</li>
+                </ul>
+            </div>
+            <div class="step-footer">
+                <label>Paham</label>
+                <input type="checkbox" class="mark-done">
+            </div>
+        </section>
+
+        <section class="step-card quiz-card" id="project-materi-12-quiz">
+            <div class="quiz-progress-wrapper">
+                <div class="quiz-progress-bar" id="quizProgressBar"></div>
+            </div>
+            <h2>📝 Quiz Project Materi 12</h2>
+            <div class="quiz-container">
+                <!-- Rendered by JS -->
+            </div>
+            <div class="step-footer">
+                <button class="quiz-submit-btn" onclick="checkQuiz()">Periksa Jawaban</button>
+                <div id="quizResult" style="display: none;"></div>
+            </div>
+        </section>
+
+        <div id="nextActionArea" class="next-action-area" style="display: none;">
+            <h3>🎉 Materi 12 Selesai!</h3>
+            <p>Bagian Tasks Management selesai. Lanjut ke Time Management.</p>
+            <a href="../../time-management/project-materi-13/index.html" class="btn-next">Lanjut ke Time Management
+                ➔</a>
+        </div>
+
+        <footer class="footer">
+            <a href="../../../project.html" style="text-decoration: none; color: #666; font-weight: 600;">← Kembali ke
+                Modul Project</a>
+        </footer>
+    </main>
+
+    <script src="../../../assets/js/quiz-bank.js"></script>
+    <script src="../../../assets/js/lms-core.js"></script>
+    <script src="../../../assets/js/quiz-engine.js"></script>
+    <script>
+        const MATERI_ID = "project_materi12";
+        document.addEventListener("DOMContentLoaded", () => {
+            initMateriProgress(MATERI_ID);
+            renderQuiz(MATERI_ID, ".quiz-container");
+            if (loadQuizResult(MATERI_ID)?.passed) showNextButton();
+        });
+
+        const originalOnQuizPassed = window.onQuizPassed;
+        window.onQuizPassed = function (materiId, score) {
+            if (originalOnQuizPassed) originalOnQuizPassed(materiId, score);
+            showNextButton();
+        };
+
+        function showNextButton() {
+            const area = document.getElementById("nextActionArea");
+            if (area) {
+                area.style.display = "block";
+                setTimeout(() => area.scrollIntoView({ behavior: "smooth", block: "center" }), 500);
+            }
+        }
+        function toggleDark() {
+            document.body.classList.toggle("dark");
+            localStorage.setItem("darkMode", document.body.classList.contains("dark"));
+        }
+        if (localStorage.getItem("darkMode") === "true") document.body.classList.add("dark");
+    </script>
+</body>
+
+</html>

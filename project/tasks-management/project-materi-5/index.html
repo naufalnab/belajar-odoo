@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Materi 5: Task Creation | Modul Project</title>
+    <link rel="stylesheet" href="../../../assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="progress-wrapper">
+        <div class="progress-container" id="progressContainer">
+            <div class="progress-bar" id="progressBar"></div>
+            <span class="progress-label" id="progressLabel" style="top: 24px;">0%</span>
+        </div>
+    </div>
+
+    <main class="container">
+        <button class="dark-toggle" onclick="toggleDark()">🌙</button>
+
+        <header class="header">
+            <div id="materiBadge" class="materi-badge" style="display: none;">🎓 Materi 5 Project Selesai</div>
+            <span class="badge">Project - Tasks Management</span>
+            <h1>Task Creation</h1>
+            <p class="subtitle">Berbagai cara membuat task: Email Alias dan Website Form.</p>
+        </header>
+
+        <section class="step-card">
+            <h2>1. Email Alias untuk Tasks</h2>
+            <div class="content">
+                <p>Odoo memungkinkan pembuatan task via email:</p>
+                <ul>
+                    <li>Anda bisa memiliki <strong>Satu Email Alias per Project</strong> (misal:
+                        `project-A@mycompany.com` untuk Project A, `support@mycompany.com` untuk Project B).</li>
+                    <li>Email yang dikirim ke alias ini akan otomatis menjadi Task baru di project tersebut.</li>
+                    <li>Judul email menjadi Judul Task, isi email menjadi Deskripsi.</li>
+                </ul>
+            </div>
+            <div class="step-footer">
+                <label>Paham</label>
+                <input type="checkbox" class="mark-done">
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>2. Otomatisasi Email Template</h2>
+            <div class="content">
+                <p>Mengonfigurasi Email Template pada sebuah Kanban Stage:</p>
+                <ul>
+                    <li>Digunakan untuk memberi notifikasi otomatis ke pelanggan saat status task berubah.</li>
+                    <li>Email dikirim <strong>saat task DIPINDAHKAN KE stage tersebut</strong>.</li>
+                    <li>Contoh: Saat task dipindah ke "Done", kirim email "Tugas Anda sudah selesai".</li>
+                </ul>
+            </div>
+            <div class="step-footer">
+                <label>Paham</label>
+                <input type="checkbox" class="mark-done">
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>3. Task dari Website Form</h2>
+            <div class="content">
+                <p>Jika menggunakan formulir di Website Odoo:</p>
+                <ul>
+                    <li>Task akan dibuat di <strong>Project yang telah dipilih saat konfigurasi form</strong> di website
+                        editor.</li>
+                    <li>Tidak otomatis masuk ke "Website Project" atau "Dispatch", melainkan spesifik ke project tujuan
+                        (misal: "Customer Support").</li>
+                </ul>
+            </div>
+            <div class="step-footer">
+                <label>Paham</label>
+                <input type="checkbox" class="mark-done">
+            </div>
+        </section>
+
+        <section class="step-card quiz-card" id="project-materi-5-quiz">
+            <div class="quiz-progress-wrapper">
+                <div class="quiz-progress-bar" id="quizProgressBar"></div>
+            </div>
+            <h2>📝 Quiz Project Materi 5</h2>
+            <div class="quiz-container">
+                <!-- Rendered by JS -->
+            </div>
+            <div class="step-footer">
+                <button class="quiz-submit-btn" onclick="checkQuiz()">Periksa Jawaban</button>
+                <div id="quizResult" style="display: none;"></div>
+            </div>
+        </section>
+
+        <div id="nextActionArea" class="next-action-area" style="display: none;">
+            <h3>🎉 Materi 5 Selesai!</h3>
+            <p>Lanjut ke integrasi Sales.</p>
+            <a href="../project-materi-6/index.html" class="btn-next">Lanjut ke Materi 6 ➔</a>
+        </div>
+
+        <footer class="footer">
+            <a href="../../../project.html" style="text-decoration: none; color: #666; font-weight: 600;">← Kembali ke
+                Modul Project</a>
+        </footer>
+    </main>
+
+    <script src="../../../assets/js/quiz-bank.js"></script>
+    <script src="../../../assets/js/lms-core.js"></script>
+    <script src="../../../assets/js/quiz-engine.js"></script>
+    <script>
+        const MATERI_ID = "project_materi5";
+        document.addEventListener("DOMContentLoaded", () => {
+            initMateriProgress(MATERI_ID);
+            renderQuiz(MATERI_ID, ".quiz-container");
+            if (loadQuizResult(MATERI_ID)?.passed) showNextButton();
+        });
+
+        const originalOnQuizPassed = window.onQuizPassed;
+        window.onQuizPassed = function (materiId, score) {
+            if (originalOnQuizPassed) originalOnQuizPassed(materiId, score);
+            showNextButton();
+        };
+
+        function showNextButton() {
+            const area = document.getElementById("nextActionArea");
+            if (area) {
+                area.style.display = "block";
+                setTimeout(() => area.scrollIntoView({ behavior: "smooth", block: "center" }), 500);
+            }
+        }
+        function toggleDark() {
+            document.body.classList.toggle("dark");
+            localStorage.setItem("darkMode", document.body.classList.contains("dark"));
+        }
+        if (localStorage.getItem("darkMode") === "true") document.body.classList.add("dark");
+    </script>
+</body>
+
+</html>
