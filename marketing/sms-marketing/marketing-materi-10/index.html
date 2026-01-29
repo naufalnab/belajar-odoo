@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Materi 10: SMS Essentials | Modul Marketing</title>
+    <link rel="stylesheet" href="../../../assets/css/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="progress-wrapper">
+        <div class="progress-container" id="progressContainer">
+            <div class="progress-bar" id="progressBar"></div>
+            <span class="progress-label" id="progressLabel" style="top: 24px">0%</span>
+        </div>
+    </div>
+
+    <main class="container">
+        <button class="dark-toggle" onclick="toggleDark()">🌙</button>
+
+        <header class="header">
+            <div id="materiBadge" class="materi-badge" style="display: none">
+                🎓 Materi 10 Marketing Lulus
+            </div>
+            <span class="badge">Marketing - SMS</span>
+            <h1>SMS Essentials</h1>
+            <p class="subtitle">
+                Mengirim pesan teks langsung ke pelanggan Anda dengan Odoo SMS Marketing.
+            </p>
+        </header>
+
+        <section class="step-card">
+            <h2>1. IAP Credits & Setup</h2>
+            <div class="content">
+                <p>SMS Marketing di Odoo adalah layanan berbayar yang menggunakan sistem kredit:</p>
+                <ul>
+                    <li>Anda membutuhkan <strong>IAP Credits (In-App Purchase)</strong> untuk mengirim SMS.</li>
+                    <li>Satu SMS bisa memakan lebih dari 1 kredit tergantung negara tujuan dan panjang karakter.</li>
+                </ul>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>2. Kepatuhan & Opt-out</h2>
+            <div class="content">
+                <p>Penting untuk memberikan jalan keluar bagi pelanggan:</p>
+                <ul>
+                    <li>Aktifkan opsi <strong>Include Opt-out link</strong> pada pengaturan.</li>
+                    <li>Ini akan secara otomatis menambahkan link pendek di akhir SMS Anda agar penerima bisa berhenti
+                        berlangganan.</li>
+                    <li>Tanpa ini, pesan Anda mungkin dianggap spam oleh operator.</li>
+                </ul>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>3. Testing SMS</h2>
+            <div class="content">
+                <p>Sebelum mengirim ke ribuan orang:</p>
+                <ul>
+                    <li>Gunakan tombol <strong>Test</strong> di header mailing SMS.</li>
+                    <li>Anda bisa memasukkan <strong>multiple phone numbers</strong> (banyak nomor sekaligus) untuk
+                        dites oleh tim internal Anda.</li>
+                </ul>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card quiz-card" id="marketing-materi-10-quiz">
+            <div class="quiz-progress-wrapper">
+                <div class="quiz-progress-bar" id="quizProgressBar"></div>
+            </div>
+
+            <h2>📝 Quiz Marketing Materi 10</h2>
+
+            <div class="quiz-container">
+                <!-- Quiz akan di-render oleh JS -->
+            </div>
+
+            <div class="step-footer">
+                <button class="quiz-submit-btn" onclick="checkQuiz()">
+                    Periksa Jawaban
+                </button>
+                <div id="quizResult" style="display: none"></div>
+            </div>
+        </section>
+
+        <div id="nextActionArea" class="next-action-area" style="display: none">
+            <h3>🎉 Materi 10 Selesai!</h3>
+            <p>
+                Anda siap memulai kampanye SMS pertama Anda.
+            </p>
+            <a href="../../../marketing.html" class="btn-next">
+                Kembali ke Dashboard Marketing ➔
+            </a>
+        </div>
+
+        <footer class="footer">
+            <a href="../../../marketing.html" style="text-decoration: none; color: #666; font-weight: 600">← Kembali ke
+                Modul
+                Marketing</a>
+        </footer>
+    </main>
+
+    <!-- Load JS -->
+    <script src="../../../assets/js/quiz-bank.js"></script>
+    <script src="../../../assets/js/lms-core.js"></script>
+    <script src="../../../assets/js/quiz-engine.js"></script>
+
+    <script>
+        const MATERI_ID = "marketing_materi10";
+
+        document.addEventListener("DOMContentLoaded", () => {
+            initMateriProgress(MATERI_ID);
+            renderQuiz(MATERI_ID, ".quiz-container");
+
+            if (loadQuizResult(MATERI_ID)?.passed) {
+                showNextButton();
+            }
+        });
+
+        const originalOnQuizPassed = window.onQuizPassed;
+        window.onQuizPassed = function (materiId, score) {
+            if (originalOnQuizPassed) originalOnQuizPassed(materiId, score);
+            showNextButton();
+        };
+
+        function showNextButton() {
+            const area = document.getElementById("nextActionArea");
+            if (area) {
+                area.style.display = "block";
+                setTimeout(() => {
+                    area.scrollIntoView({ behavior: "smooth", block: "center" });
+                }, 500);
+            }
+        }
+
+        function toggleDark() {
+            document.body.classList.toggle("dark");
+            localStorage.setItem("darkMode", document.body.classList.contains("dark"));
+        }
+        if (localStorage.getItem("darkMode") === "true") {
+            document.body.classList.add("dark");
+        }
+    </script>
+</body>
+
+</html>

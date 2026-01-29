@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Materi 2: Building Blocks & Customization | Modul Website</title>
+    <link rel="stylesheet" href="../../../assets/css/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="progress-wrapper">
+        <div class="progress-container" id="progressContainer">
+            <div class="progress-bar" id="progressBar"></div>
+            <span class="progress-label" id="progressLabel" style="top: 24px">0%</span>
+        </div>
+    </div>
+
+    <main class="container">
+        <button class="dark-toggle" onclick="toggleDark()">🌙</button>
+
+        <header class="header">
+            <div id="materiBadge" class="materi-badge" style="display: none">
+                🎓 Materi 2 Website Lulus
+            </div>
+            <span class="badge">Website - Building Your Website</span>
+            <h1>Menggunakan Building Blocks</h1>
+            <p class="subtitle">
+                Desain halaman web dengan cepat menggunakan sistem drag-and-drop Odoo.
+            </p>
+
+            <div class="image-placeholder">
+                <img src="../../../assets/images/website/materi-2/hero.png" alt="Building Blocks Overview"
+                    onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+                <span class="placeholder-text">📸 Ilustrasi: Building Blocks Panel</span>
+            </div>
+        </header>
+
+        <section class="step-card">
+            <h2>1. Apa itu Building Blocks?</h2>
+            <div class="content">
+                <p><strong>Building Blocks</strong> memungkinkan Anda mendesain website dengan cepat cukup dengan
+                    <em>drag-and-drop</em> (seret dan lepas). Terdapat 4 jenis blok:</p>
+                <ul>
+                    <li><strong>Structure:</strong> Kerangka dasar halaman.</li>
+                    <li><strong>Features:</strong> Fitur spesifik seperti fitur perbandingan atau bagan.</li>
+                    <li><strong>Dynamic Content:</strong> Konten yang berubah dinamis, misal produk terbaru.</li>
+                    <li><strong>Inner Content:</strong> Konten kecil di dalam blok lain.</li>
+                </ul>
+                <div class="deep-dive">
+                    <h3>Cara Menambahkan Blok</h3>
+                    <p>Klik tombol <strong>Edit</strong> di pojok kanan atas, pilih blok yang diinginkan dari panel
+                        kanan, lalu <strong>drag</strong> ke halaman Anda.</p>
+                </div>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>2. Kustomisasi & Layout</h2>
+            <div class="content">
+                <p>Setiap blok bisa dikustomisasi melalui tab <strong>Customize</strong>. Anda bisa mengubah warna
+                    background dengan memilih <strong>Color Preset</strong> yang tersedia.</p>
+
+                <h3>Grid vs Kolom (Cols)</h3>
+                <p>Odoo menyediakan dua gaya tata letak (Layout):</p>
+                <ul>
+                    <li><strong>Grid:</strong> Bebas memindahkan dan mengubah ukuran elemen (gambar/teks) di mana saja.
+                        Bisa menumpuk gambar di belakang teks.</li>
+                    <li><strong>Cols (Columns):</strong> Mengatur jumlah elemen per baris. Sangat rapi dan terstruktur.
+                    </li>
+                </ul>
+                <p>Untuk mode Mobile, secara default Odoo akan menampilkan 1 kolom agar mudah dibaca. Anda bisa mengubah
+                    jumlah kolom mobile dengan klik ikon 📱 di editor.</p>
+
+                <div class="image-placeholder">
+                    <img src="../../../assets/images/website/materi-2/layout-grid-cols.png" alt="Grid vs Cols"
+                        onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+                    <span class="placeholder-text">📸 Screenshot: Pilihan Layout (Grid / Cols)</span>
+                </div>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>3. Visibilitas (Desktop vs Mobile)</h2>
+            <div class="content">
+                <p>Anda bisa menyembunyikan elemen tertentu agar hanya muncul di perangkat tertentu:</p>
+                <ul>
+                    <li>Pilih elemen yang ingin disembunyikan.</li>
+                    <li>Di tab <strong>Customize</strong>, cari bagian <strong>Visibility</strong>.</li>
+                    <li>Klik ikon <strong>Mata</strong> untuk Hide on Mobile atau Hide on Desktop.</li>
+                </ul>
+                <div class="alert info">
+                    <strong>Tips:</strong> Klik ikon HP di bagian atas editor untuk melihat pratinjau (preview) tampilan
+                    mobile website Anda.
+                </div>
+
+                <h3>Conditional Visibility</h3>
+                <p>Anda juga bisa menyembunyikan blok berdasarkan kondisi tertentu (misal: hanya untuk User Login atau
+                    Negara tertentu) melalui opsi <strong>Visible for</strong> atau <strong>Hidden for</strong>.</p>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>4. Manajemen Blok (Duplikat & Simpan)</h2>
+            <div class="content">
+                <p>Fitur tambahan untuk mempercepat kerja Anda:</p>
+                <ul>
+                    <li><strong>Duplikat Blok:</strong> Klik ikon duplikat untuk menyalin blok beserta isinya.</li>
+                    <li><strong>Reorder (Urutkan):</strong> Gunakan panah naik/turun atau drag icon untuk memindah
+                        posisi blok.</li>
+                    <li><strong>Simpan Blok (Save):</strong> Kustomisasi blok bisa disimpan! Klik ikon 💾 (disket) di
+                        tab Customize. Blok yang disimpan akan muncul di bagian <strong>Custom</strong>.</li>
+                </ul>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card quiz-card" id="website-materi-2-quiz">
+            <div class="quiz-progress-wrapper">
+                <div class="quiz-progress-bar" id="quizProgressBar"></div>
+            </div>
+
+            <h2>📝 Quiz Website Materi 2</h2>
+
+            <div class="quiz-container">
+                <!-- Quiz akan di-render oleh JS -->
+            </div>
+
+            <div class="step-footer">
+                <button class="quiz-submit-btn" onclick="checkQuiz()">
+                    Periksa Jawaban
+                </button>
+                <div id="quizResult" style="display: none"></div>
+            </div>
+        </section>
+
+        <div id="nextActionArea" class="next-action-area" style="display: none">
+            <h3>🎉 Materi 2 Selesai!</h3>
+            <p>
+                Anda sudah ahli menggunakan Building Blocks. Siap untuk materi selanjutnya?
+            </p>
+            <a href="../../../website.html" class="btn-next">
+                Kembali ke Dashboard Website ➔
+            </a>
+        </div>
+
+        <footer class="footer">
+            <a href="../../../website.html" style="text-decoration: none; color: #666; font-weight: 600">← Kembali ke
+                Modul
+                Website</a>
+        </footer>
+    </main>
+
+    <!-- Load JS -->
+    <script src="../../../assets/js/quiz-bank.js"></script>
+    <script src="../../../assets/js/lms-core.js"></script>
+    <script src="../../../assets/js/quiz-engine.js"></script>
+
+    <script>
+        const MATERI_ID = "website_materi2";
+
+        document.addEventListener("DOMContentLoaded", () => {
+            initMateriProgress(MATERI_ID);
+            renderQuiz(MATERI_ID, ".quiz-container");
+
+            if (loadQuizResult(MATERI_ID)?.passed) {
+                showNextButton();
+            }
+        });
+
+        const originalOnQuizPassed = window.onQuizPassed;
+        window.onQuizPassed = function (materiId, score) {
+            if (originalOnQuizPassed) originalOnQuizPassed(materiId, score);
+            showNextButton();
+        };
+
+        function showNextButton() {
+            const area = document.getElementById("nextActionArea");
+            if (area) {
+                area.style.display = "block";
+                setTimeout(() => {
+                    area.scrollIntoView({ behavior: "smooth", block: "center" });
+                }, 500);
+            }
+        }
+
+        function toggleDark() {
+            document.body.classList.toggle("dark");
+            localStorage.setItem("darkMode", document.body.classList.contains("dark"));
+        }
+        if (localStorage.getItem("darkMode") === "true") {
+            document.body.classList.add("dark");
+        }
+    </script>
+</body>
+
+</html>

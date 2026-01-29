@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Materi 7: Mobile Optimization | Modul Website</title>
+    <link rel="stylesheet" href="../../../assets/css/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="progress-wrapper">
+        <div class="progress-container" id="progressContainer">
+            <div class="progress-bar" id="progressBar"></div>
+            <span class="progress-label" id="progressLabel" style="top: 24px">0%</span>
+        </div>
+    </div>
+
+    <main class="container">
+        <button class="dark-toggle" onclick="toggleDark()">🌙</button>
+
+        <header class="header">
+            <div id="materiBadge" class="materi-badge" style="display: none">
+                🎓 Materi 7 Website Lulus
+            </div>
+            <span class="badge">Website - Building Your Website</span>
+            <h1>Mobile Optimization</h1>
+            <p class="subtitle">
+                Memastikan website Anda tampil sempurna di berbagai ukuran layar.
+            </p>
+
+            <div class="image-placeholder">
+                <img src="../../../assets/images/website/materi-7/hero.png" alt="Mobile View"
+                    onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+                <span class="placeholder-text">📸 Ilustrasi: Tampilan Mobile vs Desktop</span>
+            </div>
+        </header>
+
+        <section class="step-card">
+            <h2>1. Pentingnya Mobile Optimization</h2>
+            <div class="content">
+                <p>Sebagian besar lalu lintas web saat ini berasal dari perangkat seluler. Mengapa optimasi itu penting?
+                </p>
+                <ul>
+                    <li><strong>Layar Lebih Kecil:</strong> Konten harus mudah dibaca tanpa perlu zoom-in/zoom-out.</li>
+                    <li><strong>Interaksi Sentuh:</strong> Tombol harus cukup besar untuk diklik jari.</li>
+                    <li><strong>Peringkat SEO:</strong> Google memprioritaskan website yang <em>mobile-friendly</em>.
+                    </li>
+                </ul>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>2. Bootstrap & Responsive Grid</h2>
+            <div class="content">
+                <p>Odoo dibangun di atas framework <strong>Bootstrap</strong>. Ini artinya:</p>
+                <ul>
+                    <li>Layout Odoo secara otomatis <strong>responsif</strong>.</li>
+                    <li>Pada layar desktop, kolom mungkin berjajar ke samping.</li>
+                    <li>Pada layar HP, kolom-kolom tersebut akan otomatis <strong>bertumpuk (stack)</strong> ke bawah
+                        agar muat di layar sempit.</li>
+                </ul>
+                <p>Anda tidak perlu coding manual untuk ini, Odoo yang menanganinya!</p>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>3. Pratinjau Mobile (Mobile Preview)</h2>
+            <div class="content">
+                <p>Jangan menebak-nebak. Selalu cek tampilan mobile Anda saat mendesain.</p>
+                <ul>
+                    <li>Klik ikon 📱 (Mobile) di bar bagian atas editor.</li>
+                    <li>Tampilan editor akan menyempit menyerupai layar HP.</li>
+                    <li>Anda bisa mengedit teks, mengganti gambar, atau mengatur ulang blok khusus untuk tampilan mobile
+                        ini.</li>
+                </ul>
+                <div class="alert info">
+                    <strong>Tips:</strong> Perubahan konten teks biasanya berlaku untuk semua perangkat, tapi perubahan
+                    urutan blok bisa spesifik untuk mobile jika diaktifkan.
+                </div>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>4. Conditional Visibility (Sembunyikan Elemen)</h2>
+            <div class="content">
+                <p>Kadang ada elemen yang bagus di Desktop tapi terlalu sempit di HP. Solusinya?</p>
+                <p>Gunakan fitur <strong>Visibility</strong> di tab Customize:</p>
+                <ul>
+                    <li><strong>Hide on Mobile:</strong> Sembunyikan blok besar/kompleks di HP.</li>
+                    <li><strong>Hide on Desktop:</strong> Tampilkan blok yang lebih simpel khusus untuk pengguna HP.
+                    </li>
+                </ul>
+                <p>Ini memungkinkan Anda memberikan pengalaman terbaik untuk setiap pengguna.</p>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card quiz-card" id="website-materi-7-quiz">
+            <div class="quiz-progress-wrapper">
+                <div class="quiz-progress-bar" id="quizProgressBar"></div>
+            </div>
+
+            <h2>📝 Quiz Website Materi 7</h2>
+
+            <div class="quiz-container">
+                <!-- Quiz akan di-render oleh JS -->
+            </div>
+
+            <div class="step-footer">
+                <button class="quiz-submit-btn" onclick="checkQuiz()">
+                    Periksa Jawaban
+                </button>
+                <div id="quizResult" style="display: none"></div>
+            </div>
+        </section>
+
+        <div id="nextActionArea" class="next-action-area" style="display: none">
+            <h3>🎉 Materi 7 Selesai!</h3>
+            <p>
+                Website Anda kini nyaman diakses dari perangkat apapun.
+            </p>
+            <a href="../../../website.html" class="btn-next">
+                Kembali ke Dashboard Website ➔
+            </a>
+        </div>
+
+        <footer class="footer">
+            <a href="../../../website.html" style="text-decoration: none; color: #666; font-weight: 600">← Kembali ke
+                Modul
+                Website</a>
+        </footer>
+    </main>
+
+    <!-- Load JS -->
+    <script src="../../../assets/js/quiz-bank.js"></script>
+    <script src="../../../assets/js/lms-core.js"></script>
+    <script src="../../../assets/js/quiz-engine.js"></script>
+
+    <script>
+        const MATERI_ID = "website_materi7";
+
+        document.addEventListener("DOMContentLoaded", () => {
+            initMateriProgress(MATERI_ID);
+            renderQuiz(MATERI_ID, ".quiz-container");
+
+            if (loadQuizResult(MATERI_ID)?.passed) {
+                showNextButton();
+            }
+        });
+
+        const originalOnQuizPassed = window.onQuizPassed;
+        window.onQuizPassed = function (materiId, score) {
+            if (originalOnQuizPassed) originalOnQuizPassed(materiId, score);
+            showNextButton();
+        };
+
+        function showNextButton() {
+            const area = document.getElementById("nextActionArea");
+            if (area) {
+                area.style.display = "block";
+                setTimeout(() => {
+                    area.scrollIntoView({ behavior: "smooth", block: "center" });
+                }, 500);
+            }
+        }
+
+        function toggleDark() {
+            document.body.classList.toggle("dark");
+            localStorage.setItem("darkMode", document.body.classList.contains("dark"));
+        }
+        if (localStorage.getItem("darkMode") === "true") {
+            document.body.classList.add("dark");
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Materi 1: Website Configurator | Modul Website</title>
+    <link rel="stylesheet" href="../../../assets/css/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="progress-wrapper">
+        <div class="progress-container" id="progressContainer">
+            <div class="progress-bar" id="progressBar"></div>
+            <span class="progress-label" id="progressLabel" style="top: 24px">0%</span>
+        </div>
+    </div>
+
+    <main class="container">
+        <button class="dark-toggle" onclick="toggleDark()">🌙</button>
+
+        <header class="header">
+            <div id="materiBadge" class="materi-badge" style="display: none">
+                🎓 Materi 1 Website Lulus
+            </div>
+            <span class="badge">Website - Building Your Website</span>
+            <h1>Website Configurator</h1>
+            <p class="subtitle">
+                Memulai pembuatan website impian Anda dengan bantuan AI Configurator.
+            </p>
+
+            <div class="image-placeholder">
+                <img src="../../../assets/images/website/materi-1/hero.png" alt="Website Configurator"
+                    onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+                <span class="placeholder-text">📸 Ilustrasi: Tampilan AI Website Configurator</span>
+            </div>
+        </header>
+
+        <section class="step-card">
+            <h2>1. Memulai dengan Configurator</h2>
+            <div class="content">
+                <p>Saat membuat website baru di Odoo, Anda akan disuguhi <strong>Steps Configurator</strong>:</p>
+                <ul>
+                    <li><strong>Objective:</strong> Apa tujuan website? (Toko Online, Blog, Portofolio, dll).</li>
+                    <li><strong>Industry:</strong> Jenis bisnis Anda (Restoran, IT, Konsultan, dll). Odoo menyesuaikan
+                        konten dan fitur berdasarkan ini.</li>
+                    <li><strong>Palette:</strong> Pilih warna brand Anda (atau upload logo agar AI mendeteksi warna).
+                    </li>
+                </ul>
+                <p>Pilihan "Main Objective" sangat krusial karena akan menentukan tombol utama (Call to Action) di
+                    halaman depan.</p>
+
+                <div class="image-placeholder">
+                    <img src="../../../assets/images/website/materi-1/step-1.png" alt="Selecting Objective"
+                        onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+                    <span class="placeholder-text">📸 Screenshot: Memilih Tujuan & Industri</span>
+                </div>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>2. Memilih Tema & Halaman</h2>
+            <div class="content">
+                <p>Odoo akan menawarkan 3 desain template yang sesuai dengan industri Anda.</p>
+                <ul>
+                    <li>Pilih salah satu yang paling mendekati selera Anda.</li>
+                    <li>Tenang saja, <strong>SEMUA aspek bisa diubah nanti</strong> (warna, font, blok, gambar).</li>
+                    <li>Anda juga bisa langsung memilih halaman apa saja yang ingin dibuat (About Us, Services, Privacy
+                        Policy).</li>
+                </ul>
+
+                <div class="image-placeholder">
+                    <img src="../../../assets/images/website/materi-1/step-2.png" alt="Selecting Theme"
+                        onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+                    <span class="placeholder-text">📸 Screenshot: Memilih Tema Desain awal</span>
+                </div>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card quiz-card" id="website-materi-1-quiz">
+            <div class="quiz-progress-wrapper">
+                <div class="quiz-progress-bar" id="quizProgressBar"></div>
+            </div>
+
+            <h2>📝 Quiz Website Materi 1</h2>
+
+            <div class="quiz-container">
+                <!-- Quiz akan di-render oleh JS -->
+            </div>
+
+            <div class="step-footer">
+                <button class="quiz-submit-btn" onclick="checkQuiz()">
+                    Periksa Jawaban
+                </button>
+                <div id="quizResult" style="display: none"></div>
+            </div>
+        </section>
+
+        <div id="nextActionArea" class="next-action-area" style="display: none">
+            <h3>🎉 Materi 1 Selesai!</h3>
+            <p>
+                Website dasar Anda sudah jadi. Materi selanjutnya akan membahas cara mengedit konten.
+            </p>
+            <a href="../../../website.html" class="btn-next">
+                Kembali ke Dashboard Website ➔
+            </a>
+        </div>
+
+        <footer class="footer">
+            <a href="../../../website.html" style="text-decoration: none; color: #666; font-weight: 600">← Kembali ke
+                Modul
+                Website</a>
+        </footer>
+    </main>
+
+    <!-- Load JS -->
+    <script src="../../../assets/js/quiz-bank.js"></script>
+    <script src="../../../assets/js/lms-core.js"></script>
+    <script src="../../../assets/js/quiz-engine.js"></script>
+
+    <script>
+        const MATERI_ID = "website_materi1";
+
+        document.addEventListener("DOMContentLoaded", () => {
+            initMateriProgress(MATERI_ID);
+            renderQuiz(MATERI_ID, ".quiz-container");
+
+            if (loadQuizResult(MATERI_ID)?.passed) {
+                showNextButton();
+            }
+        });
+
+        const originalOnQuizPassed = window.onQuizPassed;
+        window.onQuizPassed = function (materiId, score) {
+            if (originalOnQuizPassed) originalOnQuizPassed(materiId, score);
+            showNextButton();
+        };
+
+        function showNextButton() {
+            const area = document.getElementById("nextActionArea");
+            if (area) {
+                area.style.display = "block";
+                setTimeout(() => {
+                    area.scrollIntoView({ behavior: "smooth", block: "center" });
+                }, 500);
+            }
+        }
+
+        function toggleDark() {
+            document.body.classList.toggle("dark");
+            localStorage.setItem("darkMode", document.body.classList.contains("dark"));
+        }
+        if (localStorage.getItem("darkMode") === "true") {
+            document.body.classList.add("dark");
+        }
+    </script>
+</body>
+
+</html>

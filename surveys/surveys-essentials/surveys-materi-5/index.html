@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Materi 5: Live Session Surveys | Modul Surveys</title>
+    <link rel="stylesheet" href="../../../assets/css/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="progress-wrapper">
+        <div class="progress-container" id="progressContainer">
+            <div class="progress-bar" id="progressBar"></div>
+            <span class="progress-label" id="progressLabel" style="top: 24px">0%</span>
+        </div>
+    </div>
+
+    <main class="container">
+        <button class="dark-toggle" onclick="toggleDark()">🌙</button>
+
+        <header class="header">
+            <div id="materiBadge" class="materi-badge" style="display: none">
+                🎓 Materi 5 Surveys Lulus
+            </div>
+            <span class="badge">Surveys - Interactivity</span>
+            <h1>Live Session Surveys</h1>
+            <p class="subtitle">
+                Mengubah survei menjadi presentasi interaktif dan menarik.
+            </p>
+        </header>
+
+        <section class="step-card">
+            <h2>1. Apa itu Live Session?</h2>
+            <div class="content">
+                <p>Live Session memungkinkan host mengontrol alur survei secara real-time. Peserta menjawab pertanyaan
+                    secara bersamaan sesuai yang ditampilkan host.</p>
+                <ul>
+                    <li>Cocok untuk presentasi, kelas, atau webinar.</li>
+                    <li>Menampilkan leaderboard dan grafik hasil secara instan.</li>
+                </ul>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>2. Memulai Sesi (Session Manager)</h2>
+            <div class="content">
+                <p>Klik tombol <strong>Create Live Session</strong>:</p>
+                <ul>
+                    <li><strong>QR Code:</strong> Ditampilkan di layar besar agar peserta mudah bergabung via HP.</li>
+                    <li><strong>URL Pendek:</strong> Alternatif untuk akses via browser.</li>
+                    <li>Jika ada peserta terlambat bergabung (Late Join), mereka akan langsung masuk ke pertanyaan yang
+                        sedang aktif (current step), bukan dari awal.</li>
+                </ul>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>3. Batasan Mode Live</h2>
+            <div class="content">
+                <p>Beberapa fitur survei reguler tidak tersedia di Live Session karena sifatnya yang linier dan dipandu
+                    host:</p>
+                <ul>
+                    <li><strong>Pagination settings (One page per question):</strong> Otomatis diatur oleh host.</li>
+                    <li>Peserta tidak bisa kembali ke pertanyaan sebelumnya (No Back Button).</li>
+                </ul>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card quiz-card" id="surveys-materi-5-quiz">
+            <div class="quiz-progress-wrapper">
+                <div class="quiz-progress-bar" id="quizProgressBar"></div>
+            </div>
+
+            <h2>📝 Quiz Surveys Materi 5</h2>
+
+            <div class="quiz-container">
+                <!-- Quiz akan di-render oleh JS -->
+            </div>
+
+            <div class="step-footer">
+                <button class="quiz-submit-btn" onclick="checkQuiz()">
+                    Periksa Jawaban
+                </button>
+                <div id="quizResult" style="display: none"></div>
+            </div>
+        </section>
+
+        <div id="nextActionArea" class="next-action-area" style="display: none">
+            <h3>🎉 Materi 5 Selesai!</h3>
+            <p>
+                Anda telah menyelesaikan seluruh materi dasar Surveys.
+            </p>
+            <a href="../../../surveys.html" class="btn-next">
+                Kembali ke Dashboard Surveys ➔
+            </a>
+        </div>
+
+        <footer class="footer">
+            <a href="../../../surveys.html" style="text-decoration: none; color: #666; font-weight: 600">← Kembali ke
+                Modul
+                Surveys</a>
+        </footer>
+    </main>
+
+    <!-- Load JS -->
+    <script src="../../../assets/js/quiz-bank.js"></script>
+    <script src="../../../assets/js/lms-core.js"></script>
+    <script src="../../../assets/js/quiz-engine.js"></script>
+
+    <script>
+        const MATERI_ID = "surveys_materi5";
+
+        document.addEventListener("DOMContentLoaded", () => {
+            initMateriProgress(MATERI_ID);
+            renderQuiz(MATERI_ID, ".quiz-container");
+
+            if (loadQuizResult(MATERI_ID)?.passed) {
+                showNextButton();
+            }
+        });
+
+        const originalOnQuizPassed = window.onQuizPassed;
+        window.onQuizPassed = function (materiId, score) {
+            if (originalOnQuizPassed) originalOnQuizPassed(materiId, score);
+            showNextButton();
+        };
+
+        function showNextButton() {
+            const area = document.getElementById("nextActionArea");
+            if (area) {
+                area.style.display = "block";
+                setTimeout(() => {
+                    area.scrollIntoView({ behavior: "smooth", block: "center" });
+                }, 500);
+            }
+        }
+
+        function toggleDark() {
+            document.body.classList.toggle("dark");
+            localStorage.setItem("darkMode", document.body.classList.contains("dark"));
+        }
+        if (localStorage.getItem("darkMode") === "true") {
+            document.body.classList.add("dark");
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Materi 8: Orders & Invoicing | Modul eCommerce</title>
+    <link rel="stylesheet" href="../../../assets/css/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="progress-wrapper">
+        <div class="progress-container" id="progressContainer">
+            <div class="progress-bar" id="progressBar"></div>
+            <span class="progress-label" id="progressLabel" style="top: 24px">0%</span>
+        </div>
+    </div>
+
+    <main class="container">
+        <button class="dark-toggle" onclick="toggleDark()">🌙</button>
+
+        <header class="header">
+            <div id="materiBadge" class="materi-badge" style="display: none">
+                🎓 Materi 8 eCommerce Lulus
+            </div>
+            <span class="badge">eCommerce - Menjual dan Mengelola Pesanan</span>
+            <h1>Orders & Invoicing</h1>
+            <p class="subtitle">
+                Manajemen pesanan masuk dan otomatisasi faktur.
+            </p>
+        </header>
+
+        <section class="step-card">
+            <h2>1. Memahami Status Quotation vs Sales Order</h2>
+            <div class="content">
+                <p>Saat pelanggan checkout tapi BELUM bayar (misal Wire Transfer, atau payment pending):</p>
+                <ul>
+                    <li>Dokumen terbentuk sebagai <strong>Quotation</strong>.</li>
+                    <li>Stok mungkin tereservasi (tergantung setting inventory).</li>
+                </ul>
+                <p>Saat pembayaran dikonfirmasi (Payment Acquirer sukses):</p>
+                <ul>
+                    <li>Status berubah menjadi <strong>Sales Order (Confirmed)</strong>.</li>
+                    <li>Delivery Order otomatis dibuat.</li>
+                </ul>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>2. Automatic Invoice</h2>
+            <div class="content">
+                <p>Untuk efisiensi, Anda bisa mengaktifkan <strong>Automatic Invoicing</strong>.</p>
+                <ul>
+                    <li>Jika aktif, setelah pelanggan membayar lunas secara online, Odoo otomatis membuat Draft Invoice
+                        -> Validate -> Post -> Send Email.</li>
+                    <li>Pelanggan langsung menerima faktur lunas di email mereka tanpa campur tangan staf admin.</li>
+                </ul>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>3. Recovering Abandoned Carts</h2>
+            <div class="content">
+                <p>Odoo menyimpan data keranjang yang ditinggalkan (Abandoned Carts).</p>
+                <ul>
+                    <li>Buka menu <strong>Orders > Abandoned Carts</strong>.</li>
+                    <li>Anda bisa mengirim email recovery otomatis ("Hai, Anda melupakan barang ini...") untuk mengajak
+                        mereka kembali checkout.</li>
+                </ul>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card quiz-card" id="ecommerce-materi-8-quiz">
+            <div class="quiz-progress-wrapper">
+                <div class="quiz-progress-bar" id="quizProgressBar"></div>
+            </div>
+
+            <h2>📝 Quiz eCommerce Materi 8</h2>
+
+            <div class="quiz-container">
+                <!-- Quiz akan di-render oleh JS -->
+            </div>
+
+            <div class="step-footer">
+                <button class="quiz-submit-btn" onclick="checkQuiz()">
+                    Periksa Jawaban
+                </button>
+                <div id="quizResult" style="display: none"></div>
+            </div>
+        </section>
+
+        <div id="nextActionArea" class="next-action-area" style="display: none">
+            <h3>🎉 Materi 8 Selesai!</h3>
+            <p>
+                Anda sudah siap menangani banjir orderan!
+            </p>
+            <a href="../../../ecommerce.html" class="btn-next">
+                Kembali ke Dashboard eCommerce ➔
+            </a>
+        </div>
+
+        <footer class="footer">
+            <a href="../../../ecommerce.html" style="text-decoration: none; color: #666; font-weight: 600">← Kembali ke
+                Modul
+                eCommerce</a>
+        </footer>
+    </main>
+
+    <!-- Load JS -->
+    <script src="../../../assets/js/quiz-bank.js"></script>
+    <script src="../../../assets/js/lms-core.js"></script>
+    <script src="../../../assets/js/quiz-engine.js"></script>
+
+    <script>
+        const MATERI_ID = "ecommerce_materi8";
+
+        document.addEventListener("DOMContentLoaded", () => {
+            initMateriProgress(MATERI_ID);
+            renderQuiz(MATERI_ID, ".quiz-container");
+
+            if (loadQuizResult(MATERI_ID)?.passed) {
+                showNextButton();
+            }
+        });
+
+        const originalOnQuizPassed = window.onQuizPassed;
+        window.onQuizPassed = function (materiId, score) {
+            if (originalOnQuizPassed) originalOnQuizPassed(materiId, score);
+            showNextButton();
+        };
+
+        function showNextButton() {
+            const area = document.getElementById("nextActionArea");
+            if (area) {
+                area.style.display = "block";
+                setTimeout(() => {
+                    area.scrollIntoView({ behavior: "smooth", block: "center" });
+                }, 500);
+            }
+        }
+
+        function toggleDark() {
+            document.body.classList.toggle("dark");
+            localStorage.setItem("darkMode", document.body.classList.contains("dark"));
+        }
+        if (localStorage.getItem("darkMode") === "true") {
+            document.body.classList.add("dark");
+        }
+    </script>
+</body>
+
+</html>

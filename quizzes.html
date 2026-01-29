@@ -150,6 +150,10 @@
                 <div class="tabs">
                     <button class="tab-btn active" onclick="switchTab('getting-started')">Getting Started</button>
                     <button class="tab-btn" onclick="switchTab('sales')">Sales</button>
+                    <button class="tab-btn" onclick="switchTab('website')">Website</button>
+                    <button class="tab-btn" onclick="switchTab('ecommerce')">eCommerce</button>
+                    <button class="tab-btn" onclick="switchTab('surveys')">Surveys</button>
+                    <button class="tab-btn" onclick="switchTab('marketing')">Marketing</button>
                 </div>
 
                 <div id="quizListContainer">
@@ -250,6 +254,63 @@
             { id: "sales_materi24", title: "Integrations (Gelato)", topic: "External Apps" },
         ];
 
+        const websiteQuizzes = [
+            { id: "website_materi1", title: "Website Configurator", topic: "Building" },
+            { id: "website_materi2", title: "Customizing Website", topic: "Design" },
+            { id: "website_materi3", title: "Images & Media", topic: "Content" },
+            { id: "website_materi4", title: "Forms & Data", topic: "Collection" },
+            { id: "website_materi5", title: "Menus & Navigation", topic: "Structure" },
+            { id: "website_materi6", title: "Website Translation", topic: "Localization" },
+            { id: "website_materi7", title: "Mobile Optimization", topic: "Usability" },
+            { id: "website_materi8", title: "Domain Names", topic: "Infrastructure" },
+            { id: "website_materi9", title: "Blogging", topic: "Marketing" },
+            { id: "website_materi10", title: "SEO Optimization", topic: "Marketing" },
+            { id: "website_materi11", title: "Web Analytics", topic: "Analysis" },
+            { id: "website_materi12", title: "Multi-Websites", topic: "Strategy" }
+        ];
+
+        const ecommerceQuizzes = [
+            { id: "ecommerce_materi1", title: "Product Page", topic: "Catalog" },
+            { id: "ecommerce_materi2", title: "Product Variants", topic: "Catalog" },
+            { id: "ecommerce_materi3", title: "Categories & Ribbons", topic: "Organization" },
+            { id: "ecommerce_materi4", title: "Pricelists", topic: "Pricing" },
+            { id: "ecommerce_materi5", title: "Checkout Process", topic: "Experience" },
+            { id: "ecommerce_materi6", title: "Payment & Shipping", topic: "Operations" },
+            { id: "ecommerce_materi7", title: "Customer Portal", topic: "Experience" },
+            { id: "ecommerce_materi8", title: "Orders & Invoicing", topic: "Sales" },
+            { id: "ecommerce_materi9", title: "Upselling Strategy", topic: "Sales" },
+            { id: "ecommerce_materi10", title: "Loyalty & Gift Cards", topic: "Marketing" }
+        ];
+
+        const surveysQuizzes = [
+            { id: "surveys_materi1", title: "Survey Essentials", topic: "Basics" },
+            { id: "surveys_materi2", title: "Questions & Sections", topic: "Configuration" },
+            { id: "surveys_materi3", title: "Survey Analysis", topic: "Reporting" },
+            { id: "surveys_materi4", title: "Conditional Displays", topic: "Logic" },
+            { id: "surveys_materi5", title: "Live Session Surveys", topic: "Interactivity" }
+        ];
+
+        const marketingQuizzes = [
+            { id: "marketing_materi1", title: "Marketing Essentials", topic: "Basics" },
+            { id: "marketing_materi2", title: "Email Marketing Basics", topic: "Email" },
+            { id: "marketing_materi3", title: "Mailing Campaigns", topic: "Email" },
+            { id: "marketing_materi5", title: "Email Templates", topic: "Email" },
+            { id: "marketing_materi6", title: "Designing Emails", topic: "Email" },
+            { id: "marketing_materi7", title: "Subscriptions", topic: "Email" },
+            { id: "marketing_materi8", title: "A/B Testing", topic: "Email" },
+            { id: "marketing_materi9", title: "Advanced Targeting", topic: "Email" },
+            { id: "marketing_materi10", title: "SMS Essentials", topic: "SMS" },
+            { id: "marketing_materi11", title: "SMS Campaigns", topic: "SMS" },
+            { id: "marketing_materi12", title: "Social Essentials", topic: "Social" },
+            { id: "marketing_materi13", title: "Social Campaigns", topic: "Social" },
+            { id: "marketing_materi14", title: "Multi-Channel", topic: "Social" },
+            { id: "marketing_materi15", title: "Push Notifications", topic: "Social" },
+            { id: "marketing_materi16", title: "Campaign Basics", topic: "Automation" },
+            { id: "marketing_materi17", title: "Activities & Actions", topic: "Automation" },
+            { id: "marketing_materi18", title: "Testing & Launching", topic: "Automation" },
+            { id: "marketing_materi4", title: "SMS & Mailing Lists", topic: "Email" }
+        ];
+
         // --- UI LOGIC ---
         function switchTab(tabName) {
             // Update Tab UI
@@ -257,7 +318,14 @@
             event.target.classList.add('active');
 
             // Render List
-            const list = tabName === 'getting-started' ? gettingStartedQuizzes : salesQuizzes;
+            let list = [];
+            if (tabName === 'getting-started') list = gettingStartedQuizzes;
+            else if (tabName === 'sales') list = salesQuizzes;
+            else if (tabName === 'website') list = websiteQuizzes;
+            else if (tabName === 'ecommerce') list = ecommerceQuizzes;
+            else if (tabName === 'surveys') list = surveysQuizzes;
+            else if (tabName === 'marketing') list = marketingQuizzes;
+
             renderList(list);
 
             // Reset Main Area

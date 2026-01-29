@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Materi 11: SMS Campaigns | Modul Marketing</title>
+    <link rel="stylesheet" href="../../../assets/css/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="progress-wrapper">
+        <div class="progress-container" id="progressContainer">
+            <div class="progress-bar" id="progressBar"></div>
+            <span class="progress-label" id="progressLabel" style="top: 24px">0%</span>
+        </div>
+    </div>
+
+    <main class="container">
+        <button class="dark-toggle" onclick="toggleDark()">🌙</button>
+
+        <header class="header">
+            <div id="materiBadge" class="materi-badge" style="display: none">
+                🎓 Materi 11 Marketing Lulus
+            </div>
+            <span class="badge">Marketing - SMS</span>
+            <h1>SMS Campaigns</h1>
+            <p class="subtitle">
+                Mengelola kampanye SMS yang efektif dan terukur.
+            </p>
+        </header>
+
+        <section class="step-card">
+            <h2>1. Title Field</h2>
+            <div class="content">
+                <p>Salah satu kesalahan umum pemula adalah tentang field <strong>Title</strong> (Judul):</p>
+                <ul>
+                    <li>Judul ini hanyalah <strong>referensi internal</strong>.</li>
+                    <li>Penerima SMS <strong>tidak akan melihat</strong> judul ini.</li>
+                    <li>Gunakan nama yang deskriptif (misal: "Promo Lebaran 2026") agar mudah dicari oleh tim Anda.</li>
+                </ul>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>2. A/B Testing untuk SMS</h2>
+            <div class="content">
+                <p>Sama seperti email, Anda bisa melakukan tes A/B pada SMS:</p>
+                <ul>
+                    <li>Buka tab <strong>A/B Tests</strong>.</li>
+                    <li>Klik <strong>Create an Alternative Version</strong>.</li>
+                    <li>Anda bisa mengetes apakah teks yang lebih pendek bekerja lebih baik daripada yang panjang, atau
+                        apakah menyertakan link di awal kalimat lebih efektif dibanding di akhir.</li>
+                </ul>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card quiz-card" id="marketing-materi-11-quiz">
+            <div class="quiz-progress-wrapper">
+                <div class="quiz-progress-bar" id="quizProgressBar"></div>
+            </div>
+
+            <h2>📝 Quiz Marketing Materi 11</h2>
+
+            <div class="quiz-container">
+                <!-- Quiz akan di-render oleh JS -->
+            </div>
+
+            <div class="step-footer">
+                <button class="quiz-submit-btn" onclick="checkQuiz()">
+                    Periksa Jawaban
+                </button>
+                <div id="quizResult" style="display: none"></div>
+            </div>
+        </section>
+
+        <div id="nextActionArea" class="next-action-area" style="display: none">
+            <h3>🎉 Materi 11 Selesai!</h3>
+            <p>
+                Anda makin ahli dalam manajemen kampanye digital Odoo!
+            </p>
+            <a href="../../../marketing.html" class="btn-next">
+                Kembali ke Dashboard Marketing ➔
+            </a>
+        </div>
+
+        <footer class="footer">
+            <a href="../../../marketing.html" style="text-decoration: none; color: #666; font-weight: 600">← Kembali ke
+                Modul
+                Marketing</a>
+        </footer>
+    </main>
+
+    <!-- Load JS -->
+    <script src="../../../assets/js/quiz-bank.js"></script>
+    <script src="../../../assets/js/lms-core.js"></script>
+    <script src="../../../assets/js/quiz-engine.js"></script>
+
+    <script>
+        const MATERI_ID = "marketing_materi11";
+
+        document.addEventListener("DOMContentLoaded", () => {
+            initMateriProgress(MATERI_ID);
+            renderQuiz(MATERI_ID, ".quiz-container");
+
+            if (loadQuizResult(MATERI_ID)?.passed) {
+                showNextButton();
+            }
+        });
+
+        const originalOnQuizPassed = window.onQuizPassed;
+        window.onQuizPassed = function (materiId, score) {
+            if (originalOnQuizPassed) originalOnQuizPassed(materiId, score);
+            showNextButton();
+        };
+
+        function showNextButton() {
+            const area = document.getElementById("nextActionArea");
+            if (area) {
+                area.style.display = "block";
+                setTimeout(() => {
+                    area.scrollIntoView({ behavior: "smooth", block: "center" });
+                }, 500);
+            }
+        }
+
+        function toggleDark() {
+            document.body.classList.toggle("dark");
+            localStorage.setItem("darkMode", document.body.classList.contains("dark"));
+        }
+        if (localStorage.getItem("darkMode") === "true") {
+            document.body.classList.add("dark");
+        }
+    </script>
+</body>
+
+</html>

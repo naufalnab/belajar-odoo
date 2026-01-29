@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Materi 5: Checkout Process | Modul eCommerce</title>
+    <link rel="stylesheet" href="../../../assets/css/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="progress-wrapper">
+        <div class="progress-container" id="progressContainer">
+            <div class="progress-bar" id="progressBar"></div>
+            <span class="progress-label" id="progressLabel" style="top: 24px">0%</span>
+        </div>
+    </div>
+
+    <main class="container">
+        <button class="dark-toggle" onclick="toggleDark()">🌙</button>
+
+        <header class="header">
+            <div id="materiBadge" class="materi-badge" style="display: none">
+                🎓 Materi 5 eCommerce Lulus
+            </div>
+            <span class="badge">eCommerce - Membangun Pengalaman Pelanggan</span>
+            <h1>Checkout Process</h1>
+            <p class="subtitle">
+                Mengoptimalkan alur pembelian dari keranjang hingga pembayaran.
+            </p>
+        </header>
+
+        <section class="step-card">
+            <h2>1. Alur Checkout</h2>
+            <div class="content">
+                <p>Odoo memberikan fleksibilitas alur checkout:</p>
+                <ul>
+                    <li><strong>Cart to Checkout:</strong> Apakah langsung lanjut atau ada tombol konfirmasi? Odoo
+                        mengizinkan pelanggan memilih.</li>
+                    <li><strong>Mandatory Sign-in:</strong> Anda bisa memaksa user login sebelum bayar, atau membiarkan
+                        "Guest Checkout" (Checkout Tamu).</li>
+                    <li><strong>Buy Now:</strong> Tombol "Beli Sekarang" yang melewati keranjang dan langsung ke
+                        pembayaran.</li>
+                </ul>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>2. Extra Step (Langkah Tambahan)</h2>
+            <div class="content">
+                <p>Butuh data tambahan saat checkout? Misalnya ucapan kartu hadiah atau instruksi khusus?</p>
+                <ul>
+                    <li>Aktifkan <strong>Extra Step During Checkout</strong> di pengaturan Website.</li>
+                    <li>Ini akan menambahkan formulir di antara konfirmasi alamat dan pembayaran.</li>
+                    <li>Anda bisa menyesuaikannya dengan Odoo Studio atau Website Editor untuk menambah field custom.
+                    </li>
+                </ul>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>3. Kustomisasi Halaman Checkout</h2>
+            <div class="content">
+                <p>Halaman checkout juga bisa diedit!</p>
+                <ul>
+                    <li>Gunakan tombol <strong>Edit</strong> di pojok kanan atas saat berada di halaman
+                        <code>/shop/checkout</code>.</li>
+                    <li>Menambahkan <strong>Trust Badges</strong> (Logo Visa, Garansi Uang Kembali) di sini sangat
+                        efektif meningkatkan konversi.</li>
+                    <li>Anda bisa memberikan informasi/gambar yang BERBEDA di setiap langkah (Alamat, Pengiriman,
+                        Pembayaran).</li>
+                </ul>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card quiz-card" id="ecommerce-materi-5-quiz">
+            <div class="quiz-progress-wrapper">
+                <div class="quiz-progress-bar" id="quizProgressBar"></div>
+            </div>
+
+            <h2>📝 Quiz eCommerce Materi 5</h2>
+
+            <div class="quiz-container">
+                <!-- Quiz akan di-render oleh JS -->
+            </div>
+
+            <div class="step-footer">
+                <button class="quiz-submit-btn" onclick="checkQuiz()">
+                    Periksa Jawaban
+                </button>
+                <div id="quizResult" style="display: none"></div>
+            </div>
+        </section>
+
+        <div id="nextActionArea" class="next-action-area" style="display: none">
+            <h3>🎉 Materi 5 Selesai!</h3>
+            <p>
+                Alur checkout yang mulus adalah kunci konversi penjualan.
+            </p>
+            <a href="../../../ecommerce.html" class="btn-next">
+                Kembali ke Dashboard eCommerce ➔
+            </a>
+        </div>
+
+        <footer class="footer">
+            <a href="../../../ecommerce.html" style="text-decoration: none; color: #666; font-weight: 600">← Kembali ke
+                Modul
+                eCommerce</a>
+        </footer>
+    </main>
+
+    <!-- Load JS -->
+    <script src="../../../assets/js/quiz-bank.js"></script>
+    <script src="../../../assets/js/lms-core.js"></script>
+    <script src="../../../assets/js/quiz-engine.js"></script>
+
+    <script>
+        const MATERI_ID = "ecommerce_materi5";
+
+        document.addEventListener("DOMContentLoaded", () => {
+            initMateriProgress(MATERI_ID);
+            renderQuiz(MATERI_ID, ".quiz-container");
+
+            if (loadQuizResult(MATERI_ID)?.passed) {
+                showNextButton();
+            }
+        });
+
+        const originalOnQuizPassed = window.onQuizPassed;
+        window.onQuizPassed = function (materiId, score) {
+            if (originalOnQuizPassed) originalOnQuizPassed(materiId, score);
+            showNextButton();
+        };
+
+        function showNextButton() {
+            const area = document.getElementById("nextActionArea");
+            if (area) {
+                area.style.display = "block";
+                setTimeout(() => {
+                    area.scrollIntoView({ behavior: "smooth", block: "center" });
+                }, 500);
+            }
+        }
+
+        function toggleDark() {
+            document.body.classList.toggle("dark");
+            localStorage.setItem("darkMode", document.body.classList.contains("dark"));
+        }
+        if (localStorage.getItem("darkMode") === "true") {
+            document.body.classList.add("dark");
+        }
+    </script>
+</body>
+
+</html>

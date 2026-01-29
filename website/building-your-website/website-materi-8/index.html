@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Materi 8: Domain Names | Modul Website</title>
+    <link rel="stylesheet" href="../../../assets/css/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="progress-wrapper">
+        <div class="progress-container" id="progressContainer">
+            <div class="progress-bar" id="progressBar"></div>
+            <span class="progress-label" id="progressLabel" style="top: 24px">0%</span>
+        </div>
+    </div>
+
+    <main class="container">
+        <button class="dark-toggle" onclick="toggleDark()">🌙</button>
+
+        <header class="header">
+            <div id="materiBadge" class="materi-badge" style="display: none">
+                🎓 Materi 8 Website Lulus
+            </div>
+            <span class="badge">Website - Building Your Website</span>
+            <h1>Domain Names</h1>
+            <p class="subtitle">
+                Memahami, mendaftarkan, dan mengonfigurasi nama domain untuk website Odoo Anda.
+            </p>
+
+            <div class="image-placeholder">
+                <img src="../../../assets/images/website/materi-8/domain-config-1.jpg"
+                    alt="Domain Configuration Overview"
+                    onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+                <span class="placeholder-text">📸 Infografis: Website Domain Configuration</span>
+            </div>
+        </header>
+
+        <section class="step-card">
+            <h2>1. Apa itu Nama Domain?</h2>
+            <div class="content">
+                <p>Nama domain adalah alamat berbasis teks untuk mengidentifikasi lokasi online, seperti website. Ini
+                    jauh lebih mudah diingat daripada alamat IP numerik.</p>
+                <p>Secara default, database Odoo Online dan Odoo.sh menggunakan subdomain dari <code>odoo.com</code>
+                    (contoh: <code>perusahaansaya.odoo.com</code>).</p>
+                <p>Namun, Anda bisa menggunakan <strong>custom domain name</strong> dengan:</p>
+                <ul>
+                    <li>Mendaftarkan nama domain gratis (khusus Odoo Online).</li>
+                    <li>Mengonfigurasi nama domain yang sudah Anda miliki.</li>
+                </ul>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>2. Mendaftarkan Domain Gratis dengan Odoo</h2>
+            <div class="content">
+                <p>Odoo menawarkan domain gratis selama satu tahun untuk database Odoo Online. Caranya:</p>
+                <ol>
+                    <li>Buka <strong>Database Manager</strong> di akun Odoo Anda.</li>
+                    <li>Klik tombol ⚙️ (gear) di sebelah nama database, pilih <strong>Domain Names</strong>.</li>
+                    <li>Cari nama domain yang diinginkan dan cek ketersediaannya.</li>
+                    <li>Pilih domain, isi formulir <strong>Domain Owner</strong>, dan klik <strong>Register</strong>.
+                    </li>
+                </ol>
+                <div class="alert warning">
+                    <strong>Penting:</strong> Verifikasi email dari <code>noreply@domainnameverification.net</code>
+                    wajib dilakukan agar domain tetap aktif.
+                </div>
+
+                <div class="image-placeholder">
+                    <img src="../../../assets/images/website/materi-8/domain-config-2.jpg" alt="Register Domain Steps"
+                        onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+                    <span class="placeholder-text">📸 Langkah-langkah Registrasi Domain</span>
+                </div>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>3. DNS Records: A, CNAME, MX, TXT</h2>
+            <div class="content">
+                <p>Untuk mengelola domain, Anda perlu memahami jenis-jenis DNS record:</p>
+                <ul>
+                    <li><strong>A Record:</strong> Menyimpan alamat IP domain. Dibuat otomatis.</li>
+                    <li><strong>CNAME (Canonical Name):</strong> Mengarahkan satu domain/subdomain ke domain lain.
+                        Penting untuk mengarahkan <code>www.domainanda.com</code> ke database Odoo.</li>
+                    <li><strong>MX (Mail Exchange):</strong> Mengarahkan email ke server mail yang benar (misal: Google
+                        Workspace).</li>
+                    <li><strong>TXT:</strong> Digunakan untuk verifikasi kepemilikan domain (misal: verifikasi Google).
+                    </li>
+                </ul>
+                <div class="alert info">
+                    Perubahan DNS bisa memakan waktu hingga <strong>72 jam</strong> untuk menyebar ke seluruh dunia
+                    (propagasi).
+                </div>
+                <div class="image-placeholder">
+                    <img src="../../../assets/images/website/materi-8/domain-config-5.jpg"
+                        alt="DNS Configuration Example"
+                        onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+                    <span class="placeholder-text">📸 Contoh Konfigurasi DNS</span>
+                </div>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>4. Konfigurasi Domain yang Sudah Dimiliki</h2>
+            <div class="content">
+                <p>Jika Anda sudah punya domain dari provider lain (GoDaddy, Namecheap, dll), ikuti langkah ini:</p>
+                <ol>
+                    <li><strong>CNAME Record:</strong> Tambahkan record CNAME di provider DNS Anda.
+                        <ul>
+                            <li>Name: <code>www</code></li>
+                            <li>Target: <code>databaseanda.odoo.com</code></li>
+                        </ul>
+                    </li>
+                    <li><strong>Redirect Naked Domain:</strong> Arahkan <code>domainanda.com</code> (tanpa www) ke
+                        <code>www.domainanda.com</code>. Odoo menyarankan menggunakan Cloudflare untuk ini jika provider
+                        Anda tidak mendukung redirect HTTPS.</li>
+                    <li><strong>Mapping di Odoo:</strong> Di Database Manager > Domain Names, klik <strong>Use my own
+                            domain</strong>. Masukkan <code>www.domainanda.com</code> dan verifikasi.</li>
+                </ol>
+
+                <div class="image-placeholder">
+                    <img src="../../../assets/images/website/materi-8/domain-config-3.jpg"
+                        alt="Own Domain Configuration"
+                        onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+                    <span class="placeholder-text">📸 Konfigurasi Domain Sendiri</span>
+                </div>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>5. SSL & Web Base URL</h2>
+            <div class="content">
+                <p><strong>SSL (HTTPS):</strong> Odoo otomatis membuat sertifikat SSL untuk domain yang dipetakan dengan
+                    benar. Prosesnya bisa memakan waktu hingga 24 jam.</p>
+                <p><strong>Web Base URL:</strong> Pastikan untuk mengatur domain Anda di menu <strong>Website >
+                        Configuration > Settings</strong>. Masukkan domain Anda di kolom Domain (contoh:
+                    <code>https://www.domainanda.com</code>). Ini memastikan semua link portal dan email menggunakan
+                    alamat yang benar.</p>
+
+                <div class="image-placeholder">
+                    <img src="../../../assets/images/website/materi-8/domain-config-4.jpg" alt="Acceptable Use Policy"
+                        onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+                    <span class="placeholder-text">📸 Informasi Tambahan & Kebijakan</span>
+                </div>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card quiz-card" id="website-materi-8-quiz">
+            <div class="quiz-progress-wrapper">
+                <div class="quiz-progress-bar" id="quizProgressBar"></div>
+            </div>
+
+            <h2>📝 Quiz Website Materi 8</h2>
+
+            <div class="quiz-container">
+                <!-- Quiz akan di-render oleh JS -->
+            </div>
+
+            <div class="step-footer">
+                <button class="quiz-submit-btn" onclick="checkQuiz()">
+                    Periksa Jawaban
+                </button>
+                <div id="quizResult" style="display: none"></div>
+            </div>
+        </section>
+
+        <div id="nextActionArea" class="next-action-area" style="display: none">
+            <h3>🎉 Materi 8 Selesai!</h3>
+            <p>
+                Identitas website Anda kini profesional dengan domain sendiri.
+            </p>
+            <a href="../../../website.html" class="btn-next">
+                Kembali ke Dashboard Website ➔
+            </a>
+        </div>
+
+        <footer class="footer">
+            <a href="../../../website.html" style="text-decoration: none; color: #666; font-weight: 600">← Kembali ke
+                Modul
+                Website</a>
+        </footer>
+    </main>
+
+    <!-- Load JS -->
+    <script src="../../../assets/js/quiz-bank.js"></script>
+    <script src="../../../assets/js/lms-core.js"></script>
+    <script src="../../../assets/js/quiz-engine.js"></script>
+
+    <script>
+        const MATERI_ID = "website_materi8";
+
+        document.addEventListener("DOMContentLoaded", () => {
+            initMateriProgress(MATERI_ID);
+            renderQuiz(MATERI_ID, ".quiz-container");
+
+            if (loadQuizResult(MATERI_ID)?.passed) {
+                showNextButton();
+            }
+        });
+
+        const originalOnQuizPassed = window.onQuizPassed;
+        window.onQuizPassed = function (materiId, score) {
+            if (originalOnQuizPassed) originalOnQuizPassed(materiId, score);
+            showNextButton();
+        };
+
+        function showNextButton() {
+            const area = document.getElementById("nextActionArea");
+            if (area) {
+                area.style.display = "block";
+                setTimeout(() => {
+                    area.scrollIntoView({ behavior: "smooth", block: "center" });
+                }, 500);
+            }
+        }
+
+        function toggleDark() {
+            document.body.classList.toggle("dark");
+            localStorage.setItem("darkMode", document.body.classList.contains("dark"));
+        }
+        if (localStorage.getItem("darkMode") === "true") {
+            document.body.classList.add("dark");
+        }
+    </script>
+</body>
+
+</html>

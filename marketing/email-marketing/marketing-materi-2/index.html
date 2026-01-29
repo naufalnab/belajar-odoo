@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Materi 2: Email Marketing Basics | Modul Marketing</title>
+    <link rel="stylesheet" href="../../../assets/css/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="progress-wrapper">
+        <div class="progress-container" id="progressContainer">
+            <div class="progress-bar" id="progressBar"></div>
+            <span class="progress-label" id="progressLabel" style="top: 24px">0%</span>
+        </div>
+    </div>
+
+    <main class="container">
+        <button class="dark-toggle" onclick="toggleDark()">🌙</button>
+
+        <header class="header">
+            <div id="materiBadge" class="materi-badge" style="display: none">
+                🎓 Materi 2 Marketing Lulus
+            </div>
+            <span class="badge">Marketing - Email</span>
+            <h1>Email Marketing Basics</h1>
+            <p class="subtitle">
+                Membuat, mengirim, dan mengelola mailing list untuk newsletter efektif.
+            </p>
+        </header>
+
+        <section class="step-card">
+            <h2>1. Konfigurasi Server</h2>
+            <div class="content">
+                <p>Secara default, Odoo membatasi jumlah email harian untuk mencegah spam. Untuk pengiriman massal:</p>
+                <ul>
+                    <li>Anda bisa mengaktifkan <strong>Dedicated Server</strong> di menu <strong>Configuration >
+                            Settings</strong>.</li>
+                    <li>Ini memungkinkan penggunaan server pengiriman khusus (SMTP) untuk reputasi email yang lebih
+                        baik.</li>
+                </ul>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>2. Membuat Mailing Baru</h2>
+            <div class="content">
+                <p>Di dashboard Email Marketing, klik <strong>New</strong>:</p>
+                <ul>
+                    <li><strong>Recipients:</strong> Pilih "Mailing List" untuk mengirim ke daftar subscriber. Anda bisa
+                        memilih <strong>Multiple Mailing Lists</strong> sekaligus di kolom ini.</li>
+                    <li><strong>Subject:</strong> Judul email yang menarik.</li>
+                    <li><strong>Design:</strong> Gunakan drag-and-drop editor Odoo untuk mendesain body email.</li>
+                </ul>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>3. Pengiriman (Sending)</h2>
+            <div class="content">
+                <p>Setelah selesai mendesain:</p>
+                <ul>
+                    <li>Klik <strong>Send</strong> untuk mengirim segera atau <strong>Schedule</strong> untuk nanti.
+                    </li>
+                    <li>Setelah klik Send, status mailing akan berubah dari <strong>Draft</strong> menjadi <strong>In
+                            Queue</strong> (Dalam Antrean) sebelum akhirnya terkirim (Sent).</li>
+                </ul>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card quiz-card" id="marketing-materi-2-quiz">
+            <div class="quiz-progress-wrapper">
+                <div class="quiz-progress-bar" id="quizProgressBar"></div>
+            </div>
+
+            <h2>📝 Quiz Marketing Materi 2</h2>
+
+            <div class="quiz-container">
+                <!-- Quiz akan di-render oleh JS -->
+            </div>
+
+            <div class="step-footer">
+                <button class="quiz-submit-btn" onclick="checkQuiz()">
+                    Periksa Jawaban
+                </button>
+                <div id="quizResult" style="display: none"></div>
+            </div>
+        </section>
+
+        <div id="nextActionArea" class="next-action-area" style="display: none">
+            <h3>🎉 Materi 2 Selesai!</h3>
+            <p>
+                Anda sudah siap mengirim newsletter pertama Anda.
+            </p>
+            <a href="../../../marketing.html" class="btn-next">
+                Kembali ke Dashboard Marketing ➔
+            </a>
+        </div>
+
+        <footer class="footer">
+            <a href="../../../marketing.html" style="text-decoration: none; color: #666; font-weight: 600">← Kembali ke
+                Modul
+                Marketing</a>
+        </footer>
+    </main>
+
+    <!-- Load JS -->
+    <script src="../../../assets/js/quiz-bank.js"></script>
+    <script src="../../../assets/js/lms-core.js"></script>
+    <script src="../../../assets/js/quiz-engine.js"></script>
+
+    <script>
+        const MATERI_ID = "marketing_materi2";
+
+        document.addEventListener("DOMContentLoaded", () => {
+            initMateriProgress(MATERI_ID);
+            renderQuiz(MATERI_ID, ".quiz-container");
+
+            if (loadQuizResult(MATERI_ID)?.passed) {
+                showNextButton();
+            }
+        });
+
+        const originalOnQuizPassed = window.onQuizPassed;
+        window.onQuizPassed = function (materiId, score) {
+            if (originalOnQuizPassed) originalOnQuizPassed(materiId, score);
+            showNextButton();
+        };
+
+        function showNextButton() {
+            const area = document.getElementById("nextActionArea");
+            if (area) {
+                area.style.display = "block";
+                setTimeout(() => {
+                    area.scrollIntoView({ behavior: "smooth", block: "center" });
+                }, 500);
+            }
+        }
+
+        function toggleDark() {
+            document.body.classList.toggle("dark");
+            localStorage.setItem("darkMode", document.body.classList.contains("dark"));
+        }
+        if (localStorage.getItem("darkMode") === "true") {
+            document.body.classList.add("dark");
+        }
+    </script>
+</body>
+
+</html>

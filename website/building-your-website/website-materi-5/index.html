@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Materi 5: Menus & Navigation | Modul Website</title>
+    <link rel="stylesheet" href="../../../assets/css/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="progress-wrapper">
+        <div class="progress-container" id="progressContainer">
+            <div class="progress-bar" id="progressBar"></div>
+            <span class="progress-label" id="progressLabel" style="top: 24px">0%</span>
+        </div>
+    </div>
+
+    <main class="container">
+        <button class="dark-toggle" onclick="toggleDark()">🌙</button>
+
+        <header class="header">
+            <div id="materiBadge" class="materi-badge" style="display: none">
+                🎓 Materi 5 Website Lulus
+            </div>
+            <span class="badge">Website - Building Your Website</span>
+            <h1>Menus & Navigation</h1>
+            <p class="subtitle">
+                Mengatur navigasi dan menu agar pengunjung mudah menjelajahi website Anda.
+            </p>
+
+            <div class="image-placeholder">
+                <img src="../../../assets/images/website/materi-5/menu-editor.png" alt="Menu Editor Overview"
+                    onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+                <span class="placeholder-text">📸 Ilustrasi: Editor Menu Odoo</span>
+            </div>
+        </header>
+
+        <section class="step-card">
+            <h2>1. Mengedit Menu Utama</h2>
+            <div class="content">
+                <p>Menu adalah peta bagi pengunjung website Anda. Di Odoo, Anda bisa mengakses <strong>Menu
+                        Editor</strong> dengan cara:</p>
+                <ul>
+                    <li>Klik menu <strong>Site</strong> > <strong>Menu Editor</strong> di mode Edit.</li>
+                    <li>Atau klik <strong>Edit</strong>, lalu klik ikon <strong>Edit Menu</strong> pada navbar.</li>
+                </ul>
+                <p>Di sini Anda bisa:</p>
+                <ul>
+                    <li><strong>Rename:</strong> Mengubah nama menu.</li>
+                    <li><strong>Delete:</strong> Menghapus menu yang tidak perlu.</li>
+                    <li><strong>Move:</strong> Geser posisi menu dengan drag-and-drop.</li>
+                </ul>
+
+                <div class="image-placeholder">
+                    <img src="../../../assets/images/website/materi-5/edit-menu-btn.png" alt="Accessing Menu Editor"
+                        onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+                    <span class="placeholder-text">📸 Screenshot: Tombol Edit Menu</span>
+                </div>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>2. Membuat Sub-Menu & Regular Menu</h2>
+            <div class="content">
+                <p><strong>Regular Menu:</strong> Tautan standar ke halaman lain. Klik <strong>Add Menu Item</strong>,
+                    masukkan nama dan URL.</p>
+                <div class="alert info">
+                    <strong>Tips URL:</strong> Ketik <code>/</code> untuk mencari halaman internal, atau <code>#</code>
+                    untuk mencari anchor link di halaman yang sama.
+                </div>
+                <h3>Membuat Dropdown (Sub-menu)</h3>
+                <p>Cukup <strong>seret (drag) item menu ke kanan</strong>, tepat di bawah menu induknya. Item tersebut
+                    akan otomatis menjadi anak (child) dari menu di atasnya, menciptakan struktur dropdown.</p>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>3. Mega Menu</h2>
+            <div class="content">
+                <p>Untuk website dengan banyak konten (misal: E-commerce besar), gunakan <strong>Mega Menu</strong>.</p>
+                <ul>
+                    <li>Menampilkan panel besar berisi grup navigasi.</li>
+                    <li>Lebih visual: Bisa berisi ikon, gambar, dan tipografi menarik.</li>
+                    <li>Semua opsi terlihat sekaligus, memudahkan pengunjung.</li>
+                </ul>
+                <p>Cara buat: Di Menu Editor, klik <strong>Add Mega Menu Item</strong>. Pilih template layout yang
+                    diinginkan.</p>
+
+                <div class="image-placeholder">
+                    <img src="../../../assets/images/website/materi-5/mega-menu-example.png" alt="Mega Menu Example"
+                        onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+                    <span class="placeholder-text">📸 Screenshot: Contoh Tampilan Mega Menu</span>
+                </div>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>4. Kustomisasi Mega Menu</h2>
+            <div class="content">
+                <p>Mega Menu di Odoo dibangun menggunakan <strong>Building Blocks</strong>. Artinya, Anda bisa mengedit
+                    isinya sama seperti mengedit halaman biasa!</p>
+                <ul>
+                    <li>Klik Mega Menu di navbar saat mode Edit.</li>
+                    <li>Gunakan panel kanan untuk mengubah layout, padding, atau background.</li>
+                    <li>Edit teks dan link langsung di dalam panel menu.</li>
+                </ul>
+
+                <div class="image-placeholder">
+                    <img src="../../../assets/images/website/materi-5/edit-mega-menu.png" alt="Editing Mega Menu"
+                        onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+                    <span class="placeholder-text">📸 Screenshot: Mengedit Konten Mega Menu</span>
+                </div>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card quiz-card" id="website-materi-5-quiz">
+            <div class="quiz-progress-wrapper">
+                <div class="quiz-progress-bar" id="quizProgressBar"></div>
+            </div>
+
+            <h2>📝 Quiz Website Materi 5</h2>
+
+            <div class="quiz-container">
+                <!-- Quiz akan di-render oleh JS -->
+            </div>
+
+            <div class="step-footer">
+                <button class="quiz-submit-btn" onclick="checkQuiz()">
+                    Periksa Jawaban
+                </button>
+                <div id="quizResult" style="display: none"></div>
+            </div>
+        </section>
+
+        <div id="nextActionArea" class="next-action-area" style="display: none">
+            <h3>🎉 Materi 5 Selesai!</h3>
+            <p>
+                Sistem navigasi website Anda kini rapi dan profesional.
+            </p>
+            <a href="../../../website.html" class="btn-next">
+                Kembali ke Dashboard Website ➔
+            </a>
+        </div>
+
+        <footer class="footer">
+            <a href="../../../website.html" style="text-decoration: none; color: #666; font-weight: 600">← Kembali ke
+                Modul
+                Website</a>
+        </footer>
+    </main>
+
+    <!-- Load JS -->
+    <script src="../../../assets/js/quiz-bank.js"></script>
+    <script src="../../../assets/js/lms-core.js"></script>
+    <script src="../../../assets/js/quiz-engine.js"></script>
+
+    <script>
+        const MATERI_ID = "website_materi5";
+
+        document.addEventListener("DOMContentLoaded", () => {
+            initMateriProgress(MATERI_ID);
+            renderQuiz(MATERI_ID, ".quiz-container");
+
+            if (loadQuizResult(MATERI_ID)?.passed) {
+                showNextButton();
+            }
+        });
+
+        const originalOnQuizPassed = window.onQuizPassed;
+        window.onQuizPassed = function (materiId, score) {
+            if (originalOnQuizPassed) originalOnQuizPassed(materiId, score);
+            showNextButton();
+        };
+
+        function showNextButton() {
+            const area = document.getElementById("nextActionArea");
+            if (area) {
+                area.style.display = "block";
+                setTimeout(() => {
+                    area.scrollIntoView({ behavior: "smooth", block: "center" });
+                }, 500);
+            }
+        }
+
+        function toggleDark() {
+            document.body.classList.toggle("dark");
+            localStorage.setItem("darkMode", document.body.classList.contains("dark"));
+        }
+        if (localStorage.getItem("darkMode") === "true") {
+            document.body.classList.add("dark");
+        }
+    </script>
+</body>
+
+</html>

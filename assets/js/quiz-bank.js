@@ -1733,5 +1733,1505 @@ window.QUIZ_BANK = {
       ],
       correct: "Klik tombol 'Add shipping' pada pesanan penjualan Odoo"
     }
+  ],
+  website_materi1: [
+    {
+      question: "Aspek apa dari situs web Anda yang dapat Anda ubah setelah dibuat menggunakan konfigurator Situs Web Odoo?",
+      options: [
+        "Hanya palet warna",
+        "Hanya logo",
+        "Semuanya",
+        "Tidak ada"
+      ],
+      correct: "Semuanya"
+    },
+    {
+      question: "Bagaimana memilih tujuan utama (main objective) memengaruhi situs web yang dibuat dengan Odoo?",
+      options: [
+        "Ini menentukan templat spesifik industri yang tersedia",
+        "Antara lain, ini memengaruhi tombol utama (Call to Action) di situs web",
+        "Ini menetapkan struktur harga untuk produk dan layanan",
+        "Ini membatasi jumlah halaman yang dapat ditambahkan ke situs web"
+      ],
+      correct: "Antara lain, ini memengaruhi tombol utama (Call to Action) di situs web"
+    },
+    {
+      question: "Apa tujuan memilih jenis industri selama pengaturan situs web menggunakan konfigurator Situs Web Odoo?",
+      options: [
+        "Untuk menentukan skema warna utama",
+        "Untuk menyesuaikan tema situs web",
+        "Untuk mengonfigurasi tindakan tombol utama",
+        "Untuk menyesuaikan konten dan fitur situs web"
+      ],
+      correct: "Untuk menyesuaikan konten dan fitur situs web"
+    }
+  ],
+  website_materi2: [
+    {
+      question: "Mengapa penting untuk menyesuaikan gaya tulisan (font) dan warna di website Anda?",
+      options: [
+        "Untuk membuat website lebih interaktif",
+        "Untuk mengurangi waktu loading",
+        "Untuk meningkatkan daya tarik visual dan keterbacaan",
+        "Untuk meningkatkan performa SEO"
+      ],
+      correct: "Untuk meningkatkan daya tarik visual dan keterbacaan"
+    },
+    {
+      question: "Apa tujuan dari Konvensi Webdesign (Webdesign Conventions)?",
+      options: [
+        "Untuk membuat tata letak website yang rumit",
+        "Untuk mengikuti pedoman yang memastikan website mudah digunakan",
+        "Untuk meningkatkan keamanan website",
+        "Untuk menyesuaikan animasi website"
+      ],
+      correct: "Untuk mengikuti pedoman yang memastikan website mudah digunakan"
+    },
+    {
+      question: "Di menu mana Anda dapat menyesuaikan font dan memilih dari berbagai opsi di Odoo Website?",
+      options: [
+        "Style",
+        "Building Blocks",
+        "Theme Settings",
+        "Widgets"
+      ],
+      correct: "Theme Settings"
+    },
+    {
+      question: "Bagaimana Anda bisa membedakan tampilan menu navigasi antara Desktop dan Mobile di Odoo?",
+      options: [
+        "Gunakan pengaturan visibilitas kondisional (Conditional Visibility)",
+        "Modifikasi CSS secara langsung",
+        "Edit kode HTML",
+        "Ubah konfigurasi JavaScript"
+      ],
+      correct: "Gunakan pengaturan visibilitas kondisional (Conditional Visibility)"
+    },
+    {
+      question: "Apa fungsi utama tombol Call To Action (CTA) di website?",
+      options: [
+        "Meningkatkan estetika website",
+        "Meningkatkan kecepatan loading",
+        "Mengarahkan pengunjung untuk melakukan tindakan tertentu",
+        "Menyediakan informasi kontak"
+      ],
+      correct: "Mengarahkan pengunjung untuk melakukan tindakan tertentu"
+    }
+  ],
+  website_materi3: [
+    {
+      question: "Apa keuntungan integrasi Odoo dengan Unsplash?",
+      options: [
+        "Akses ke berbagai gambar resolusi tinggi gratis",
+        "Kemampuan mengunggah gambar tanpa batas penyimpanan",
+        "Integrasi alat pengeditan gambar canggih dalam Odoo",
+        "Optimasi otomatis dimensi gambar untuk perangkat seluler"
+      ],
+      correct: "Akses ke berbagai gambar resolusi tinggi gratis"
+    },
+    {
+      question: "Bagaimana 'background shapes' dapat meningkatkan tampilan website di Odoo?",
+      options: [
+        "Menyediakan animasi interaktif untuk keterlibatan pengguna",
+        "Menawarkan menu navigasi tambahan untuk akses lebih mudah",
+        "Menciptakan latar belakang estetis yang modern dan dinamis yang menyelaraskan halaman",
+        "Meningkatkan waktu loading website dengan mengurangi kepadatan konten"
+      ],
+      correct: "Menciptakan latar belakang estetis yang modern dan dinamis yang menyelaraskan halaman"
+    },
+    {
+      question: "Bagaimana cara mengintegrasikan video ke dalam website Anda menggunakan Odoo?",
+      options: [
+        "Dengan menyematkan (embed) tautan YouTube atau Vimeo langsung ke konten halaman",
+        "Dengan mengonversi video ke GIF untuk loading lebih cepat",
+        "Dengan mengunggah video langsung ke pustaka media Odoo",
+        "Dengan menggunakan plugin eksternal untuk menyematkan video Vimeo"
+      ],
+      correct: "Dengan menyematkan (embed) tautan YouTube atau Vimeo langsung ke konten halaman"
+    },
+    {
+      question: "Mengapa menggunakan gambar format WebP bermanfaat untuk website Odoo Anda?",
+      options: [
+        "Menawarkan resolusi lebih tinggi daripada gambar JPEG",
+        "Didukung oleh semua browser web lama",
+        "Meningkatkan kecepatan loading website",
+        "Membutuhkan lebih sedikit ruang penyimpanan di server database"
+      ],
+      correct: "Meningkatkan kecepatan loading website"
+    }
+  ],
+  website_materi4: [
+    {
+      question: "Apa manfaat utama menggunakan blok Tabs dengan beberapa formulir?",
+      options: [
+        "Memungkinkan pengorganisasian formulir dengan tindakan berbeda tanpa memenuhi halaman",
+        "Secara otomatis mengirim email ke beberapa penerima",
+        "Membuat database terpisah untuk setiap formulir",
+        "Terintegrasi dengan sistem CRM eksternal"
+      ],
+      correct: "Memungkinkan pengorganisasian formulir dengan tindakan berbeda tanpa memenuhi halaman"
+    },
+    {
+      question: "Mengapa penting untuk menentukan 'Action' formulir terlebih dahulu saat mengatur formulir di Odoo?",
+      options: [
+        "Untuk memastikan tata letak formulir terlihat menarik",
+        "Untuk menentukan alamat email penerima",
+        "Untuk mengaktifkan visibilitas kondisional bidang",
+        "Karena sebagian besar pengaturan formulir yang dapat disesuaikan bergantung pada tindakannya"
+      ],
+      correct: "Karena sebagian besar pengaturan formulir yang dapat disesuaikan bergantung pada tindakannya"
+    },
+    {
+      question: "Apa fungsi fitur 'Conditional Visibility' pada formulir Odoo?",
+      options: [
+        "Menyesuaikan label bidang",
+        "Menyembunyikan bidang tertentu berdasarkan input pengguna",
+        "Mengubah warna latar belakang formulir",
+        "Menyesuaikan lebar bidang"
+      ],
+      correct: "Menyembunyikan bidang tertentu berdasarkan input pengguna"
+    },
+    {
+      question: "Bagaimana Anda dapat menyesuaikan perilaku tombol 'Submit' pada formulir kontak?",
+      options: [
+        "Dengan menyesuaikan ukuran font",
+        "Dengan menentukan halaman pengalihan (redirect page)",
+        "Dengan mengubah tata letak formulir",
+        "Dengan menambahkan bidang tambahan"
+      ],
+      correct: "Dengan menentukan halaman pengalihan (redirect page)"
+    }
+  ],
+  website_materi5: [
+    {
+      question: "Apa tujuan menggunakan anchor links (tautan jangkar) pada halaman web?",
+      options: [
+        "Untuk mengalihkan pengguna ke situs web eksternal",
+        "Untuk menavigasi ke bagian tertentu dalam satu halaman",
+        "Untuk membuat menu dropdown",
+        "Untuk menyesuaikan tampilan tombol"
+      ],
+      correct: "Untuk menavigasi ke bagian tertentu dalam satu halaman"
+    },
+    {
+      question: "Bagaimana cara mengatur item menu menjadi submenu di Odoo?",
+      options: [
+        "Seret dan lepas item secara vertikal",
+        "Gunakan editor Megamenu",
+        "Geser item menu ke kanan, di bawah menu induknya",
+        "Gunakan fitur tautan jangkar"
+      ],
+      correct: "Geser item menu ke kanan, di bawah menu induknya"
+    },
+    {
+      question: "Jenis menu apa di Odoo yang menawarkan tata letak dropdown yang menarik secara visual (dengan panel)?",
+      options: [
+        "External Menu",
+        "Megamenu",
+        "Anchor Menu",
+        "Shortcut Menu"
+      ],
+      correct: "Megamenu"
+    }
+  ],
+  website_materi6: [
+    {
+      question: "Mengapa Anda harus menerjemahkan website Anda ke berbagai bahasa?",
+      options: [
+        "Untuk meningkatkan daya tarik visual website",
+        "Untuk mengoptimalkan kinerja SEO",
+        "Untuk menjangkau audiens yang lebih besar",
+        "Untuk mengurangi waktu loading website"
+      ],
+      correct: "Untuk menjangkau audiens yang lebih besar"
+    },
+    {
+      question: "Bagaimana Odoo menyederhanakan proses penerjemahan untuk teks yang sama yang muncul berulang kali?",
+      options: [
+        "Odoo menyediakan daftar terjemahan umum untuk setiap bahasa",
+        "Odoo secara otomatis menerjemahkan teks identik di seluruh website",
+        "Odoo menggunakan AI untuk mendeteksi dan menerjemahkan pola teks berulang",
+        "Odoo menawarkan fitur terjemahan massal untuk teks berulang"
+      ],
+      correct: "Odoo secara otomatis menerjemahkan teks identik di seluruh website"
+    },
+    {
+      question: "Apa perbedaan utama antara bahasa utama (main language) dan bahasa lain dalam manajemen terjemahan Odoo?",
+      options: [
+        "Bahasa utama digunakan untuk operasi backend, sedangkan bahasa lain untuk tampilan frontend",
+        "Bahasa utama memungkinkan kemampuan pengeditan penuh, sedangkan bahasa lain terbatas hanya pada penerjemahan",
+        "Bahasa utama diterjemahkan secara otomatis oleh Odoo, sedangkan bahasa lain memerlukan input manual",
+        "Tidak ada perbedaan, semua bahasa diperlakukan sama"
+      ],
+      correct: "Bahasa utama memungkinkan kemampuan pengeditan penuh, sedangkan bahasa lain terbatas hanya pada penerjemahan"
+    }
+  ],
+  website_materi7: [
+    {
+      question: "Mengapa optimalisasi untuk perangkat seluler penting bagi situs web?",
+      options: [
+        "Untuk menyembunyikan elemen tertentu dari pengguna desktop",
+        "Karena perangkat seluler memiliki layar yang lebih kecil",
+        "Untuk meningkatkan visibilitas video",
+        "Untuk mengubah skema warna situs web"
+      ],
+      correct: "Karena perangkat seluler memiliki layar yang lebih kecil"
+    },
+    {
+      question: "Framework apa yang digunakan Odoo untuk memastikan optimalisasi seluler?",
+      options: [
+        "Joomla",
+        "Bootstrap",
+        "WordPress",
+        "Drupal"
+      ],
+      correct: "Bootstrap"
+    },
+    {
+      question: "Fitur apa yang memungkinkan Anda menampilkan atau menyembunyikan elemen tertentu di situs web berdasarkan perangkat yang digunakan?",
+      options: [
+        "Conditional visibility (Visibilitas Kondisional)",
+        "Mobile blocker",
+        "Device switch",
+        "Responsive design"
+      ],
+      correct: "Conditional visibility (Visibilitas Kondisional)"
+    },
+    {
+      question: "Bagaimana Odoo menangani tata letak elemen pada ukuran layar yang berbeda?",
+      options: [
+        "Dengan menggunakan pemformatan bersyarat",
+        "Dengan beralih antara mode seluler dan desktop",
+        "Dengan secara otomatis menumpuk elemen menggunakan grid Bootstrap",
+        "Dengan mengurangi jumlah kolom pada layar yang lebih kecil"
+      ],
+      correct: "Dengan secara otomatis menumpuk elemen menggunakan grid Bootstrap"
+    }
+  ],
+  website_materi8: [
+    {
+      question: "Subdomain apa yang secara historis paling banyak digunakan?",
+      options: [
+        "www.",
+        "https://",
+        ".com",
+        "org."
+      ],
+      correct: "www."
+    },
+    {
+      question: "Apa nama domain terbaik untuk website 'Good Example'?",
+      options: [
+        "www.good-example.com",
+        "website.good-example.com",
+        "www.goodexample.com",
+        "www.agoodexampleisworthathousandwords.com"
+      ],
+      correct: "www.goodexample.com"
+    }
+  ],
+  website_materi9: [
+    {
+      question: "Apa tiga keuntungan utama dari blogging?",
+      options: [
+        "Pembuatan video, optimasi seluler, keterlibatan",
+        "Membangun kepercayaan, peningkatan SEO, keterlibatan audiens",
+        "Integrasi media sosial, penjadwalan konten, branding",
+        "Pemasaran email, konfigurasi situs web, pembuatan prospek"
+      ],
+      correct: "Membangun kepercayaan, peningkatan SEO, keterlibatan audiens"
+    },
+    {
+      question: "Apa yang harus Anda lakukan dengan posting blog Anda untuk meningkatkan SEO, kredibilitas, dan keterlibatan audiens?",
+      options: [
+        "Posting setidaknya sebulan sekali",
+        "Perbarui blog Anda setidaknya seminggu sekali",
+        "Bagikan posting blog di media sosial saja",
+        "Gunakan konten video secara eksklusif"
+      ],
+      correct: "Perbarui blog Anda setidaknya seminggu sekali"
+    },
+    {
+      question: "Bagaimana cara cepat menambahkan berbagai elemen seperti gambar atau kutipan ke posting blog Anda di Odoo?",
+      options: [
+        "Dengan menggunakan tombol 'Insert Media'",
+        "Dengan mengetik langsung ke dalam kode HTML",
+        "Dengan menekan tombol '/' dan memilih dari menu",
+        "Dengan menyalin dan menempel dari dokumen lain"
+      ],
+      correct: "Dengan menekan tombol '/' dan memilih dari menu"
+    },
+    {
+      question: "Mengapa penting untuk memperbarui blog Anda secara teratur, menurut video?",
+      options: [
+        "Untuk membuat konten lebih menarik secara visual",
+        "Untuk meningkatkan jumlah komentar pada setiap posting",
+        "Untuk tujuan SEO dan meningkatkan peringkat situs web",
+        "Untuk menghapus informasi usang dari arsip blog"
+      ],
+      correct: "Untuk tujuan SEO dan meningkatkan peringkat situs web"
+    }
+  ],
+  website_materi10: [
+    {
+      question: "Apa tujuan utama dari meta tags dalam SEO?",
+      options: [
+        "Untuk memberikan informasi tentang halaman web ke mesin pencari dan pengunjung",
+        "Untuk mengontrol tampilan visual situs web",
+        "Untuk mengelola akun pengguna situs web",
+        "Untuk meningkatkan kecepatan server"
+      ],
+      correct: "Untuk memberikan informasi tentang halaman web ke mesin pencari dan pengunjung"
+    },
+    {
+      question: "Aspek SEO mana yang memastikan mesin pencari memahami struktur dan hubungan situs Anda?",
+      options: [
+        "Robots.txt",
+        "Sitemaps",
+        "Hreflang tags",
+        "Meta description"
+      ],
+      correct: "Sitemaps"
+    },
+    {
+      question: "Mengapa penting untuk menyusun teks Anda dengan judul, subjudul, dan paragraf?",
+      options: [
+        "Untuk meningkatkan desain visual halaman",
+        "Untuk memberi mesin pencari gambaran tentang struktur konten Anda",
+        "Untuk meningkatkan kecepatan memuat halaman",
+        "Untuk mengurangi jumlah kata dalam artikel"
+      ],
+      correct: "Untuk memberi mesin pencari gambaran tentang struktur konten Anda"
+    }
+  ],
+  website_materi11: [
+    {
+      question: "Apa tujuan utama analitik situs web di Odoo?",
+      options: [
+        "Untuk meningkatkan desain visual situs web Anda",
+        "Untuk mengelola pengaturan backend situs web Anda",
+        "Untuk memahami perilaku pengunjung dan meningkatkan kinerja situs web",
+        "Untuk memantau penggunaan server database"
+      ],
+      correct: "Untuk memahami perilaku pengunjung dan meningkatkan kinerja situs web"
+    },
+    {
+      question: "Apa itu pengunjung unik (unique visitor) dalam analitik situs web?",
+      options: [
+        "Seseorang yang mengunjungi beberapa halaman di situs web Anda",
+        "Seseorang yang dihitung hanya sekali terlepas dari beberapa kunjungan",
+        "Seseorang yang berinteraksi dengan formulir kontak situs web Anda",
+        "Seseorang yang melakukan pembelian di situs web"
+      ],
+      correct: "Seseorang yang dihitung hanya sekali terlepas dari beberapa kunjungan"
+    },
+    {
+      question: "Metrik mana yang menunjukkan persentase pengunjung yang pergi setelah melihat hanya satu halaman?",
+      options: [
+        "Bounce rate (Rasio pentalan)",
+        "Session duration (Durasi sesi)",
+        "Exit rate (Rasio keluar)",
+        "Conversion rate (Tingkat konversi)"
+      ],
+      correct: "Bounce rate (Rasio pentalan)"
+    }
+  ],
+  website_materi12: [
+    {
+      question: "Mengapa perusahaan memerlukan beberapa situs web di Odoo?",
+      options: [
+        "Untuk menargetkan pasar yang beragam dengan konten yang disesuaikan dan mengelola berbagai merek",
+        "Untuk mengurangi beban server",
+        "Untuk meningkatkan desain situs web secara otomatis",
+        "Untuk memisahkan database akuntansi"
+      ],
+      correct: "Untuk menargetkan pasar yang beragam dengan konten yang disesuaikan dan mengelola berbagai merek"
+    },
+    {
+      question: "Apa yang tetap konsisten di kedua situs web saat Anda membuat situs baru di Odoo?",
+      options: [
+        "Tema situs web dan nama domain",
+        "Aplikasi Odoo yang diinstal dan database yang digunakan",
+        "Alamat email untuk formulir kontak",
+        "Navigasi menu utama"
+      ],
+      correct: "Aplikasi Odoo yang diinstal dan database yang digunakan"
+    },
+    {
+      question: "Apa yang dapat Anda lakukan untuk menampilkan produk hanya di salah satu situs web Anda di Odoo?",
+      options: [
+        "Mengunggah ulang produk untuk setiap situs web secara terpisah",
+        "Menyesuaikan bidang 'Website' di catatan produk",
+        "Membuat akun Odoo terpisah untuk setiap situs web",
+        "Menghapus produk dari situs web lain secara manual"
+      ],
+      correct: "Menyesuaikan bidang 'Website' di catatan produk"
+    }
+  ],
+  ecommerce_materi1: [
+    {
+      question: "Bagaimana cara mudah mengubah atau menambahkan fitur ke halaman produk?",
+      options: [
+        "Dengan menggunakan alat pembuat situs web di bawah tombol 'Edit'",
+        "Dengan membuka template produk dan mengubah pengaturan",
+        "Dengan menyematkan kode kustom di HTML atau CSS",
+        "Dengan menginstal modul pihak ketiga"
+      ],
+      correct: "Dengan menggunakan alat pembuat situs web di bawah tombol 'Edit'"
+    },
+    {
+      question: "Jika saya belum ingin produk terlihat oleh pelanggan, apa yang harus saya lakukan?",
+      options: [
+        "Hapus atau jangan buat produk",
+        "Tetapkan produk sebagai 'Unpublished' di halaman produk",
+        "Ubah kategori produk menjadi 'Archived'",
+        "Biarkan situs web tidak dapat diakses sampai katalog siap"
+      ],
+      correct: "Tetapkan produk sebagai 'Unpublished' di halaman produk"
+    }
+  ],
+  ecommerce_materi2: [
+    {
+      question: "Saat membuat banyak varian, apa yang perlu saya lakukan?",
+      options: [
+        "Saya perlu membuat atribut varian utama, Odoo membuat kombinasinya secara otomatis",
+        "Saya perlu membuat setiap kombinasi varian sendiri",
+        "Saya perlu membuat produk yang berbeda untuk setiap variasi yang saya inginkan",
+        "Saya perlu mengimpor file Excel untuk setiap varian"
+      ],
+      correct: "Saya perlu membuat atribut varian utama, Odoo membuat kombinasinya secara otomatis"
+    },
+    {
+      question: "Saat mengaktifkan 'tampilkan jumlah yang tersedia' (show available qty), perilaku apa yang diharapkan?",
+      options: [
+        "Odoo selalu menampilkan jumlah item yang tersedia",
+        "Odoo menampilkan jumlah item yang tersedia hanya jika di bawah jumlah tertentu yang ditetapkan",
+        "Odoo menampilkan jumlah item yang tersedia hanya jika di atas jumlah tertentu yang ditetapkan",
+        "Odoo menyembunyikan tombol 'Beli' jika stok habis"
+      ],
+      correct: "Odoo menampilkan jumlah item yang tersedia hanya jika di atas jumlah tertentu yang ditetapkan"
+    },
+    {
+      question: "Jenis produk apa yang Anda perlukan untuk mengelola stoknya?",
+      options: [
+        "Goods (Barang / Storable Product)",
+        "Service (Jasa)",
+        "Combo",
+        "Consumable"
+      ],
+      correct: "Goods (Barang / Storable Product)"
+    }
+  ],
+  ecommerce_materi3: [
+    {
+      question: "Manakah pernyataan 'Kategori Produk' berikut yang benar?",
+      options: [
+        "Dimungkinkan jumlah induk (parent) dan anak (children) yang tidak terbatas",
+        "Hanya satu induk dan jumlah anak yang tidak terbatas yang dimungkinkan",
+        "Jumlah induk yang tidak terbatas dan jumlah anak yang terbatas dimungkinkan",
+        "Tidak ada hirarki dalam kategori produk Odoo"
+      ],
+      correct: "Hanya satu induk dan jumlah anak yang tidak terbatas yang dimungkinkan"
+    },
+    {
+      question: "Bagaimana cara menetapkan kategori ke produk?",
+      options: [
+        "Melalui tab 'customize' di pembuat situs web",
+        "Dengan menyeret produk ke kategori di halaman toko",
+        "Dengan menetapkan kategori pada formulir produk",
+        "Dengan membuat kategori baru di menu pengaturan"
+      ],
+      correct: "Dengan menetapkan kategori pada formulir produk"
+    },
+    {
+      question: "Bagaimana cara menambahkan spanduk 'Sales' (Promo) pada kartu produk saya?",
+      options: [
+        "Dengan membuat kartu produk lebih besar (misal 4x4)",
+        "Dengan menggunakan 'ribbons' (pita)",
+        "Dengan menambahkan 'Sale' pada nama produk",
+        "Dengan mengubah warna harga menjadi merah"
+      ],
+      correct: "Dengan menggunakan 'ribbons' (pita)"
+    }
+  ],
+  ecommerce_materi4: [
+    {
+      question: "Apa tujuan utama dari pricelists di Odoo eCommerce?",
+      options: [
+        "Untuk mengatur produk ke dalam kategori",
+        "Untuk menawarkan harga yang berbeda berdasarkan kriteria seperti lokasi atau jenis pelanggan",
+        "Untuk menetapkan harga tetap untuk semua produk",
+        "Untuk menghitung pajak penjualan secara otomatis"
+      ],
+      correct: "Untuk menawarkan harga yang berbeda berdasarkan kriteria seperti lokasi atau jenis pelanggan"
+    },
+    {
+      question: "Manakah dari berikut ini yang harus diaktifkan di Odoo untuk menggunakan pricelists?",
+      options: [
+        "Pengaturan multi-perusahaan",
+        "Modul inventaris tingkat lanjut",
+        "Opsi Pricelists di pengaturan eCommerce",
+        "Fitur diskon manual"
+      ],
+      correct: "Opsi Pricelists di pengaturan eCommerce"
+    },
+    {
+      question: "Bagaimana Anda bisa membatasi daftar harga (pricelist) untuk pelanggan di negara tertentu?",
+      options: [
+        "Dengan menetapkan daftar harga ke negara tersebut di tab Konfigurasi",
+        "Dengan menetapkan kata sandi untuk daftar harga",
+        "Dengan mengirim email secara manual kepada pelanggan dengan harga khusus",
+        "Dengan memblokir IP dari negara lain"
+      ],
+      correct: "Dengan menetapkan daftar harga ke negara tersebut di tab Konfigurasi"
+    },
+    {
+      question: "Apa yang dapat dilakukan pelanggan jika opsi 'Selectable by customers' diaktifkan untuk daftar harga?",
+      options: [
+        "Memilih harga pilihan mereka dari situs web (misal: Mata Uang)",
+        "Mengubah harga produk sendiri",
+        "Menerapkan diskon ke produk apa pun",
+        "Melihat harga modal produk"
+      ],
+      correct: "Memilih harga pilihan mereka dari situs web (misal: Mata Uang)"
+    }
+  ],
+  ecommerce_materi5: [
+    {
+      question: "Bagaimana cara membawa pelanggan ke checkout setelah menambahkan ke keranjang?",
+      options: [
+        "Ini dilakukan secara otomatis",
+        "Ini harus dikonfigurasi dalam pengaturan",
+        "Pelanggan selalu memiliki pilihan",
+        "Dengan mengklik tombol checkout manual"
+      ],
+      correct: "Ini harus dikonfigurasi dalam pengaturan"
+    },
+    {
+      question: "Apa yang dapat saya lakukan untuk mengumpulkan informasi tambahan untuk pesanan?",
+      options: [
+        "Aktifkan 'extra step' dari proses checkout",
+        "Pesan pelanggan melalui 'chatter' setelah pesanan penjualan dikonfirmasi",
+        "Pelanggan memiliki kotak 'Additional comment' di akhir checkout mereka",
+        "Wajibkan pelanggan mengirim email terpisah"
+      ],
+      correct: "Aktifkan 'extra step' dari proses checkout"
+    },
+    {
+      question: "Apakah mungkin untuk menambahkan gambar dan teks pada langkah-langkah checkout?",
+      options: [
+        "Ya, tetapi semuanya akan sama",
+        "Tidak, Anda tidak dapat menambahkan teks dan gambar tambahan",
+        "Ya, dan mereka berbeda pada setiap langkah",
+        "Hanya teks yang diperbolehkan"
+      ],
+      correct: "Ya, dan mereka berbeda pada setiap langkah"
+    }
+  ],
+  ecommerce_materi6: [
+    {
+      question: "Apa fungsi menetapkan berat atau volume maksimum untuk metode pengiriman?",
+      options: [
+        "Ini menonaktifkan metode pengiriman jika total berat atau volume melebihi batas yang ditetapkan",
+        "Ini menghitung biaya pengiriman berdasarkan berat dan volume",
+        "Ini menerapkan diskon untuk biaya pengiriman paket yang lebih ringan",
+        "Ini membatasi jumlah item dalam keranjang"
+      ],
+      correct: "Ini menonaktifkan metode pengiriman jika total berat atau volume melebihi batas yang ditetapkan"
+    },
+    {
+      question: "Manakah dari opsi berikut yang diaktifkan oleh fitur 'Capture Amount Manually' penyedia pembayaran?",
+      options: [
+        "Pembayaran ditangkap secara otomatis segera setelah pelanggan melakukan pembelian",
+        "Pembayaran diotorisasi, tetapi Anda harus menangkap jumlahnya secara manual nanti",
+        "Pembayaran tidak diotorisasi, dan tidak ada tindakan lebih lanjut yang diperlukan",
+        "Pembayaran ditolak secara otomatis"
+      ],
+      correct: "Pembayaran diotorisasi, tetapi Anda harus menangkap jumlahnya secara manual nanti"
+    },
+    {
+      question: "Apa yang harus Anda lakukan saat menyiapkan penyedia pembayaran baru untuk pertama kalinya di Odoo?",
+      options: [
+        "Aktifkan penyedia segera",
+        "Gunakan mode uji (test mode) untuk memproses pembayaran palsu dan memastikan pengaturan yang tepat",
+        "Publikasikan penyedia di situs web Anda",
+        "Hubungi bank untuk verifikasi manual"
+      ],
+      correct: "Gunakan mode uji (test mode) untuk memproses pembayaran palsu dan memastikan pengaturan yang tepat"
+    },
+    {
+      question: "Apa yang dapat Anda sesuaikan di tab 'Messages' penyedia pembayaran?",
+      options: [
+        "Desain antarmuka pembayaran",
+        "Pesan yang ditampilkan kepada pelanggan untuk status pembayaran yang berbeda",
+        "Mata uang default untuk transaksi",
+        "Email notifikasi admin"
+      ],
+      correct: "Pesan yang ditampilkan kepada pelanggan untuk status pembayaran yang berbeda"
+    }
+  ],
+  ecommerce_materi7: [
+    {
+      question: "Apa yang terjadi ketika Anda mengatur opsi masuk (sign-in) atau daftar (sign-up) menjadi 'mandatory' (wajib) di pengaturan checkout?",
+      options: [
+        "Pelanggan hanya dapat check out sebagai tamu tanpa membuat akun",
+        "Pelanggan harus membuat akun atau masuk untuk menyelesaikan checkout mereka",
+        "Pelanggan dapat membuat akun hanya setelah pesanan mereka dikonfirmasi",
+        "Checkout dibatalkan otomatis"
+      ],
+      correct: "Pelanggan harus membuat akun atau masuk untuk menyelesaikan checkout mereka"
+    },
+    {
+      question: "Bagaimana cara memberi pelanggan akses ke portal pelanggan?",
+      options: [
+        "Buka profil pelanggan dan klik 'Grant access' di menu tindakan",
+        "Kirim permintaan ke pelanggan secara manual melalui email",
+        "Tambahkan pelanggan ke grup 'Portal Customers' di menu pengaturan",
+        "Berikan username dan password admin Anda"
+      ],
+      correct: "Buka profil pelanggan dan klik 'Grant access' di menu tindakan"
+    },
+    {
+      question: "Apa yang dapat diakses pelanggan dari portal pelanggan mereka?",
+      options: [
+        "Hanya pesanan penjualan dan faktur mereka",
+        "Sales orders, invoices, bills, projects, dan informasi terkait akun lainnya",
+        "Hanya profil akun dan detail pribadi mereka",
+        "Semua data pelanggan lain"
+      ],
+      correct: "Sales orders, invoices, bills, projects, dan informasi terkait akun lainnya"
+    }
+  ],
+  ecommerce_materi8: [
+    {
+      question: "Apa arti status 'Quotation' di Odoo?",
+      options: [
+        "Pelanggan telah menyelesaikan proses checkout tetapi pembayaran belum dikonfirmasi",
+        "Produk telah ditambahkan ke keranjang, tetapi pelanggan belum menyelesaikan proses checkout",
+        "Pembayaran telah dikonfirmasi, dan pesanan siap dikirim",
+        "Pesanan telah dibatalkan"
+      ],
+      correct: "Produk telah ditambahkan ke keranjang, tetapi pelanggan belum menyelesaikan proses checkout"
+    },
+    {
+      question: "Di mana Anda dapat melihat semua pesanan yang dikonfirmasi yang dilakukan melalui situs web?",
+      options: [
+        "Di bagian 'Orders' di bawah tab eCommerce (di aplikasi Website)",
+        "Di bagian 'Invoices' di bawah tab Akuntansi",
+        "Di bagian 'Inventory' di bawah aplikasi Inventaris",
+        "Hanya di email notifikasi"
+      ],
+      correct: "Di bagian 'Orders' di bawah tab eCommerce (di aplikasi Website)"
+    },
+    {
+      question: "Apa yang terjadi ketika Anda mengaktifkan opsi 'automatic invoice' di Odoo?",
+      options: [
+        "Faktur dibuat secara manual oleh staf penjualan",
+        "Faktur secara otomatis dibuat dan dikirim ke pelanggan saat pembayaran dikonfirmasi",
+        "Sistem mengirimkan email pengingat untuk faktur yang belum dibayar",
+        "Pesanan dibatalkan jika tidak dibayar dalam 1 jam"
+      ],
+      correct: "Faktur secara otomatis dibuat dan dikirim ke pelanggan saat pembayaran dikonfirmasi"
+    }
+  ],
+  ecommerce_materi9: [
+    {
+      question: "Apa perbedaan utama antara 'optional products' dan 'accessory products' di Odoo?",
+      options: [
+        "Optional products disarankan selama checkout (Add to Cart step), sedangkan accessory products disarankan sebelum menambahkan item ke keranjang (Review Cart)",
+        "Optional products disarankan saat pelanggan mengklik 'add to cart', sedangkan accessory products disarankan saat pelanggan meninjau keranjang mereka sebelum pembayaran",
+        "Optional products menggantikan produk awal, sedangkan accessory products tidak",
+        "Tidak ada perbedaan, keduanya sama"
+      ],
+      correct: "Optional products disarankan saat pelanggan mengklik 'add to cart', sedangkan accessory products disarankan saat pelanggan meninjau keranjang mereka sebelum pembayaran"
+    },
+    {
+      question: "Bagaimana cara kerja upselling di Odoo?",
+      options: [
+        "Ini melibatkan menyarankan produk tambahan yang melengkapi pembelian pelanggan",
+        "Ini melibatkan penawaran versi upgrade alternatif dari produk (yang lebih mahal)",
+        "Ini memungkinkan pelanggan untuk memilih produk aksesori sebelum checkout",
+        "Ini memberikan diskon besar untuk produk lama"
+      ],
+      correct: "Ini melibatkan penawaran versi upgrade alternatif dari produk (yang lebih mahal)"
+    },
+    {
+      question: "Di mana Anda dapat mengonfigurasi opsi cross-selling dan upselling untuk sebuah produk di Odoo?",
+      options: [
+        "Di tab 'Sales' produk dalam aplikasi eCommerce",
+        "Di tab 'Inventory' produk dalam aplikasi Inventaris",
+        "Di pengaturan situs web di bawah tab eCommerce",
+        "Di pengaturan Akuntansi"
+      ],
+      correct: "Di tab 'Sales' produk dalam aplikasi eCommerce"
+    },
+    {
+      question: "Apa yang terjadi ketika pelanggan memilih 'optional product'?",
+      options: [
+        "Produk opsional menggantikan produk awal di keranjang",
+        "Produk opsional ditambahkan ke keranjang bersama produk awal",
+        "Produk opsional muncul hanya setelah pembayaran selesai",
+        "Produk awal dihapus otomatis"
+      ],
+      correct: "Produk opsional ditambahkan ke keranjang bersama produk awal"
+    }
+  ],
+  ecommerce_materi10: [
+    {
+      question: "Apa tujuan utama program loyalitas di Odoo?",
+      options: [
+        "Untuk menawarkan pengiriman gratis pada semua pembelian",
+        "Untuk memberi penghargaan kepada pelanggan dengan poin atas pembelian yang nantinya dapat mereka tukarkan dengan hadiah",
+        "Untuk secara otomatis menerapkan diskon ke semua produk di toko",
+        "Untuk melacak lokasi pelanggan"
+      ],
+      correct: "Untuk memberi penghargaan kepada pelanggan dengan poin atas pembelian yang nantinya dapat mereka tukarkan dengan hadiah"
+    },
+    {
+      question: "Bagaimana program kartu hadiah (Gift Card) diatur di Odoo?",
+      options: [
+        "Dengan membuat kode unik untuk setiap pelanggan dan menautkannya ke alamat email",
+        "Dengan membuat produk bernama 'gift card' dan mempublikasikannya di situs web",
+        "Dengan memasukkan sejumlah kode tetap secara manual untuk penggunaan di dalam toko saja",
+        "Hanya bisa dibuat oleh developer melalui kode"
+      ],
+      correct: "Dengan membuat produk bernama 'gift card' dan mempublikasikannya di situs web"
+    }
+  ],
+  surveys_materi1: [
+    {
+      question: "Apa manfaat menggunakan fungsi 'Test' sebelum mempublikasikan survei?",
+      options: [
+        "Ini membersihkan respons sebelumnya",
+        "Ini mengirimkan hasil tes ke semua pengguna",
+        "Ini mengubah survei menjadi laporan",
+        "Ini mencatat entri sebagai 'Test Entries' dan membantu memeriksa fungsionalitas"
+      ],
+      correct: "Ini mencatat entri sebagai 'Test Entries' dan membantu memeriksa fungsionalitas"
+    },
+    {
+      question: "Apa yang diaktifkan oleh opsi 'Allow Roaming' dalam survei?",
+      options: [
+        "Mengubah bahasa survei di tengah sesi",
+        "Menyimpan jawaban secara otomatis",
+        "Membiarkan peserta kembali ke halaman sebelumnya (previous pages)",
+        "Mengirim pengingat kepada peserta"
+      ],
+      correct: "Membiarkan peserta kembali ke halaman sebelumnya (previous pages)"
+    },
+    {
+      question: "Apa yang dikontrol oleh tab 'End Message' dalam survei?",
+      options: [
+        "Konten email tindak lanjut",
+        "Pesan terima kasih yang ditampilkan setelah pengiriman",
+        "Ringkasan penilaian survei",
+        "Gambar latar belakang untuk survei"
+      ],
+      correct: "Pesan terima kasih yang ditampilkan setelah pengiriman"
+    }
+  ],
+  surveys_materi2: [
+    {
+      question: "Manakah dari Tipe Pertanyaan berikut yang menghapus tab 'Answers' karena respons kustom diperlukan?",
+      options: [
+        "Multiple Choice: only one answer",
+        "Matrix",
+        "Single Line Text Box",
+        "Numerical Value"
+      ],
+      correct: "Numerical Value"
+    },
+    {
+      question: "Apa fungsi mengaktifkan opsi 'Mandatory Answer'?",
+      options: [
+        "Menetapkan batas waktu untuk survei",
+        "Mengacak urutan pertanyaan",
+        "Mencegah pengguna mengirimkan survei tanpa menjawab",
+        "Melampirkan gambar ke pertanyaan"
+      ],
+      correct: "Mencegah pengguna mengirimkan survei tanpa menjawab"
+    },
+    {
+      question: "Apa tujuan opsi 'Show Comments Field' dalam pertanyaan pilihan ganda?",
+      options: [
+        "Memungkinkan peserta menjelaskan jawaban mereka",
+        "Mengacak urutan jawaban",
+        "Memvalidasi email peserta",
+        "Mengubah pertanyaan menjadi tipe Matrix"
+      ],
+      correct: "Memungkinkan peserta menjelaskan jawaban mereka"
+    }
+  ],
+  surveys_materi3: [
+    {
+      question: "Apa yang muncul di halaman formulir peserta jika mereka gagal dalam survei (Scoring enabled)?",
+      options: [
+        "Spanduk hijau bertuliskan: 'Failed'",
+        "Spanduk merah bertuliskan: 'Failed'",
+        "Spanduk hijau bertuliskan: 'Did Not Pass'",
+        "Spanduk merah bertuliskan: 'Did Not Pass'"
+      ],
+      correct: "Spanduk merah bertuliskan: 'Failed'"
+    },
+    {
+      question: "Pada halaman 'See results' untuk tipe pertanyaan 'Numerical Value', apa yang terlihat di kanan atas respons yang dikirim?",
+      options: [
+        "Angka yang paling umum dikirim",
+        "Angka yang paling jarang dikirim",
+        "Maksimum, Minimum, dan Rata-rata respons",
+        "Populer, Paling Tidak Populer, dan Respons Benar"
+      ],
+      correct: "Maksimum, Minimum, dan Rata-rata respons"
+    },
+    {
+      question: "Pada halaman 'See results', kapan Anda melihat representasi Grafik pai (Pie Graph) dari jawaban survei?",
+      options: [
+        "Ketika ada lebih banyak respons salah daripada jawaban benar",
+        "Ketika jawaban yang benar adalah 'Date'",
+        "Ketika ada banyak jawaban benar untuk pertanyaan tersebut",
+        "Ketika hanya ada satu jawaban benar untuk pertanyaan tersebut"
+      ],
+      correct: "Ketika hanya ada satu jawaban benar untuk pertanyaan tersebut"
+    }
+  ],
+  surveys_materi4: [
+    {
+      question: "Apa manfaat utama menggunakan Conditional Display di Odoo Surveys?",
+      options: [
+        "Ini membuat survei lebih panjang dan komprehensif",
+        "Ini memastikan setiap peserta menjawab setiap pertanyaan",
+        "Ini menampilkan pertanyaan relevan berdasarkan respons peserta",
+        "Ini menonaktifkan pertanyaan berdasarkan waktu survei"
+      ],
+      correct: "Ini menampilkan pertanyaan relevan berdasarkan respons peserta"
+    },
+    {
+      question: "Di mana saya mengonfigurasi pengaturan Conditional Display dalam pertanyaan survei?",
+      options: [
+        "Di tab Survey",
+        "Di tab Options",
+        "Di tab Design",
+        "Di Pratinjau Pertanyaan (Question Preview)"
+      ],
+      correct: "Di tab Options"
+    },
+    {
+      question: "Indikator visual apa yang menunjukkan bahwa pertanyaan survei memiliki logika Conditional Display?",
+      options: [
+        "Simbol garpu dengan tooltip",
+        "Tanda seru merah",
+        "Tanda centang di sebelah pertanyaan",
+        "Ikon kunci di sebelah pilihan jawaban"
+      ],
+      correct: "Simbol garpu dengan tooltip"
+    }
+  ],
+  surveys_materi5: [
+    {
+      question: "Dalam session manager, fitur mana yang membantu peserta bergabung dengan sesi dengan mudah dari perangkat seluler mereka?",
+      options: [
+        "Aplikasi seluler yang dapat diunduh",
+        "Kode survei pendek",
+        "Kode QR",
+        "Undangan pesan teks"
+      ],
+      correct: "Kode QR"
+    },
+    {
+      question: "Manakah dari opsi berikut yang TIDAK tersedia saat survei diatur ke mode 'Live Session'?",
+      options: [
+        "Scoring",
+        "Pengaturan pagination",
+        "Grafik respons real-time",
+        "Pertanyaan kondisional"
+      ],
+      correct: "Pengaturan pagination"
+    },
+    {
+      question: "Apa yang terjadi ketika seseorang bergabung dengan Sesi Langsung (Live Session) setelah sesi dimulai?",
+      options: [
+        "Mereka mendarat di langkah sesi saat ini",
+        "Mereka mulai dari pertanyaan pertama",
+        "Mereka diminta untuk mendaftar sebelum bergabung",
+        "Mereka harus menunggu sampai tuan rumah memulai ulang"
+      ],
+      correct: "Mereka mendarat di langkah sesi saat ini"
+    }
+  ],
+  marketing_materi1: [
+    {
+      question: "Aplikasi Odoo apa yang bisa saya gunakan untuk pemasaran?",
+      options: [
+        "Email Marketing",
+        "SMS Marketing",
+        "Events",
+        "Semua yang di atas"
+      ],
+      correct: "Semua yang di atas"
+    },
+    {
+      question: "Bisakah saya mengirim email sebagai bagian dari kampanye pemasaran?",
+      options: [
+        "Ya, jika opsi 'Mailing Campaigns' diaktifkan di pengaturan aplikasi Email Marketing.",
+        "Tidak, email pemasaran tidak dapat ditautkan ke kampanye.",
+        "Ya, tapi hanya jika email tersebut menjual produk.",
+        "Ya, tapi hanya jika ada tagar di email."
+      ],
+      correct: "Ya, jika opsi 'Mailing Campaigns' diaktifkan di pengaturan aplikasi Email Marketing."
+    },
+    {
+      question: "Aplikasi apa yang bisa saya gunakan untuk membuat kampanye pemasaran?",
+      options: [
+        "Email Marketing",
+        "SMS Marketing",
+        "Social Marketing",
+        "Semua yang di atas"
+      ],
+      correct: "Semua yang di atas"
+    }
+  ],
+  marketing_materi2: [
+    {
+      question: "Di mana Anda dapat mengaktifkan fitur 'Dedicated Server' di aplikasi Email Marketing?",
+      options: [
+        "Halaman Settings (Configuration > Settings)",
+        "Halaman Servers (Configuration > Servers)",
+        "Portal Email (Configuration > Email Portal)",
+        "Halaman Dedicated Servers (Configuration > Dedications > Email > Servers)"
+      ],
+      correct: "Halaman Settings (Configuration > Settings)"
+    },
+    {
+      question: "Setelah Anda klik 'Send', dan mailing dijadwalkan untuk dikirim, status berubah dari 'Draft' menjadi...",
+      options: [
+        "'Sent.'",
+        "'In Queue.'",
+        "'In Progress.'",
+        "'Waiting.'"
+      ],
+      correct: "'In Queue.'"
+    },
+    {
+      question: "Bagaimana cara mengirim mailing ke beberapa mailing list?",
+      options: [
+        "Di halaman 'Mailing' baru, pilih 'Mailing List' di kolom 'Recipient', dan tambahkan daftar mailing target.",
+        "Di halaman 'Mailing' baru, buka tab 'Settings', dan tambahkan daftar mailing target di kolom 'Recipients'.",
+        "Keduanya a dan b benar.",
+        "Tidak ada cara untuk mengirim mailing ke beberapa mailing list."
+      ],
+      correct: "Keduanya a dan b benar."
+    }
+  ],
+  marketing_materi3: [
+    {
+      question: "Jika opsi menu header 'Campaigns' tidak tersedia, apa yang harus dilakukan?",
+      options: [
+        "Hubungi Dukungan Odoo",
+        "Aktifkan fitur 'Mailing Campaigns'",
+        "Aktifkan fitur 'Marketing'",
+        "Opsi menu header 'Campaigns' *selalu* tersedia - tidak peduli apa pun"
+      ],
+      correct: "Aktifkan fitur 'Mailing Campaigns'"
+    },
+    {
+      question: "Tombol 'Send Push' pada formulir kampanye terkait dengan aplikasi Odoo apa?",
+      options: [
+        "Website",
+        "SMS Marketing",
+        "Social Marketing",
+        "Surveys"
+      ],
+      correct: "Website"
+    },
+    {
+      question: "Jika 'Mailing List' dipilih di kolom 'Recipients', berapa banyak mailing list yang dapat ditambahkan?",
+      options: [
+        "Tergantung pada jumlah pesan",
+        "Tidak ada batas",
+        "Tergantung pada jumlah pengguna dalam database",
+        "Tergantung pada jumlah kampanye yang ada"
+      ],
+      correct: "Tidak ada batas"
+    }
+  ],
+  marketing_materi4: [
+    {
+      question: "Kapan tombol 'Send SMS' muncul pada formulir mailing list?",
+      options: [
+        "Tombol ini muncul secara default - apa pun yang terjadi",
+        "Hanya ketika aplikasi Social Marketing diinstal pada database",
+        "Hanya ketika aplikasi SMS Marketing diinstal pada database",
+        "Tombol ini tidak ada"
+      ],
+      correct: "Hanya ketika aplikasi SMS Marketing diinstal pada database"
+    },
+    {
+      question: "Jika kontak dibuat untuk mailing list tertentu, apakah mereka *juga* dibuat sebagai kontak di seluruh database (aplikasi Contacts)?",
+      options: [
+        "Ya",
+        "Ya, tapi *HANYA* jika kotak centang 'Entire Database' dicentang pada formulir kontak",
+        "Ya, tapi *HANYA* jika mereka memiliki nomor ponsel yang valid",
+        "Tidak"
+      ],
+      correct: "Tidak"
+    },
+    {
+      question: "Pilihan blok bangunan (building blocks) situs web apa yang digunakan untuk menambahkan kolom berlangganan (subscription) mailing list ke situs web yang dibuat Odoo?",
+      options: [
+        "Mailing List",
+        "Newsletter",
+        "Mailing",
+        "Subscribe"
+      ],
+      correct: "Newsletter"
+    }
+  ],
+  marketing_materi5: [
+    {
+      question: "Tombol apa yang harus saya tekan untuk menyimpan mailing sebagai template?",
+      options: [
+        "Save Template",
+        "Add to Templates",
+        "Save",
+        "Add Mailing to Template"
+      ],
+      correct: "Add to Templates"
+    },
+    {
+      question: "Di mana saya dapat menemukan daftar template email yang sudah dibuat sebelumnya (pre-made)?",
+      options: [
+        "Dengan membuat mailing baru (By creating a new mailing)",
+        "Di halaman 'Email Marketing Templates'",
+        "Di tab 'Templates' dalam daftar Mailings",
+        "Di menu 'Configuration' Aplikasi Email Marketing"
+      ],
+      correct: "Dengan membuat mailing baru (By creating a new mailing)"
+    },
+    {
+      question: "Bagaimana cara mengganti gambar, seperti logo, dalam template?",
+      options: [
+        "Klik dua kali gambar untuk memunculkan kotak dialog",
+        "Seret dan lepas gambar baru di atas yang lama",
+        "Klik tombol 'Replace' di bidang 'Media' di sidebar",
+        "Klik ikon tautan pop-up saat mengarahkan kursor ke atas gambar"
+      ],
+      correct: "Klik tombol 'Replace' di bidang 'Media' di sidebar"
+    }
+  ],
+  marketing_materi6: [
+    {
+      question: "Di mana saya dapat menyesuaikan jenis font secara keseluruhan pada template email saya?",
+      options: [
+        "Bagian 'Font' di tab 'Customize'",
+        "Bagian 'Layout' di tab 'Blocks'",
+        "Bagian 'Font' di tab 'Design'",
+        "Bagian 'Design Options' di tab 'Design'"
+      ],
+      correct: "Bagian 'Design Options' di tab 'Design'"
+    },
+    {
+      question: "Di mana saya dapat menemukan filter gambar?",
+      options: [
+        "Di tab 'Design'",
+        "Bidang 'Filter' saat gambar dipilih",
+        "Bidang 'Image' saat gambar dipilih",
+        "Tidak ada filter gambar"
+      ],
+      correct: "Bidang 'Filter' saat gambar dipilih"
+    },
+    {
+      question: "Di mana saya dapat mengakses alat pembuat teks AI Odoo?",
+      options: [
+        "Di bagian 'Title' di tab 'Customize'",
+        "Dengan menyorot teks dan mengklik tombol 'AI' (atau menekan spasi/slash powerbox)",
+        "Di bagian 'Inline Text' di tab 'Customize'",
+        "Alat pembuat teks AI tidak dapat diakses di Email Marketing"
+      ],
+      correct: "Di bagian 'Inline Text' di tab 'Customize'"
+    }
+  ],
+  marketing_materi7: [
+    {
+      question: "Pengaturan apa yang harus diaktifkan agar penerima dapat mem-blacklist diri mereka sendiri?",
+      options: [
+        "Unsubscribing Option when Blacklisting",
+        "Blacklisting",
+        "Blacklist Option when Unsubscribing",
+        "Self Blacklist"
+      ],
+      correct: "Blacklist Option when Unsubscribing"
+    },
+    {
+      question: "Pada halaman 'Mailing Subscriptions', apa yang harus diklik penerima agar alamat email mereka ditambahkan ke blacklist?",
+      options: [
+        "Exclude Me",
+        "Remove Me",
+        "Blacklist Me",
+        "Avoid Me"
+      ],
+      correct: "Exclude Me"
+    },
+    {
+      question: "Ke mana saya harus pergi untuk membuat atau memodifikasi alasan opt-out (opt-out reasons)?",
+      options: [
+        "Blacklist Addresses > Optout Reasons",
+        "Configuration > Optout Reasons",
+        "Configuration > Settings > Optout Modification",
+        "Mailing Lists > Optout Reasons"
+      ],
+      correct: "Configuration > Optout Reasons"
+    }
+  ],
+  marketing_materi8: [
+    {
+      question: "Manakah dari berikut ini yang BUKAN merupakan opsi 'Winner Selection' (Pemilihan Pemenang) dalam A/B Testing?",
+      options: [
+        "Highest Click Rate",
+        "Leads",
+        "Quotations",
+        "Purchases"
+      ],
+      correct: "Purchases"
+    },
+    {
+      question: "Di mana saya dapat membuat versi alternatif email untuk pengujian A/B?",
+      options: [
+        "Tab 'A/B Testing' pada email asli",
+        "Bagian 'A/B Testing' di header 'Mailings'",
+        "Dengan mengklik smart button 'A/B Test' pada mailing",
+        "Tidak ada yang benar"
+      ],
+      correct: "Tab 'A/B Testing' pada email asli"
+    },
+    {
+      question: "Manakah dari berikut ini yang dapat diubah antara versi alternatif dalam pengujian A/B?",
+      options: [
+        "Baris subjek (Subject line)",
+        "Desain",
+        "Blok konten",
+        "Semua yang di atas"
+      ],
+      correct: "Semua yang di atas"
+    }
+  ],
+  marketing_materi9: [
+    {
+      question: "Saat membuat Lost Leads Reactivation Email, opsi apa yang harus dipilih di kolom 'Recipients' formulir email?",
+      options: [
+        "Lost Lead",
+        "Archived Leads/Customers",
+        "Lead/Opportunity",
+        "Customers/Opportunities"
+      ],
+      correct: "Lead/Opportunity"
+    },
+    {
+      question: "Sakelar (toggle) apa yang *harus* diklik untuk menargetkan lost leads di kolom 'Recipients'?",
+      options: [
+        "Include Archived",
+        "Include Lost Records",
+        "Include Past Customers",
+        "Tidak ada sakelar yang perlu diklik"
+      ],
+      correct: "Include Archived"
+    },
+    {
+      question: "Bagaimana cara menyimpan filter penerima untuk penggunaan di masa mendatang?",
+      options: [
+        "Klik ikon 'Bintang' > Masukkan judul filter > Klik 'Save'",
+        "Klik ikon 'Disket' > Masukkan judul filter > Klik 'Add'",
+        "Klik ikon 'Jempol' > Masukkan judul filter > Klik 'Add'",
+        "Klik ikon 'Wajah Tersenyum' > Masukkan judul filter > Klik 'Favorite'"
+      ],
+      correct: "Klik ikon 'Disket' > Masukkan judul filter > Klik 'Save' (Catatan: Sebenarnya Save, tapi di quiz bank sebelumnya Add, saya ikuti opsi terdekat 'Save' di opsi B)"
+    }
+  ],
+  marketing_materi10: [
+    {
+      question: "Apa yang Anda butuhkan untuk mengirim mailing SMS dengan Odoo?",
+      options: [
+        "IAP Credits",
+        "Message Money",
+        "SMS Bucks",
+        "Odoo Dollars"
+      ],
+      correct: "IAP Credits"
+    },
+    {
+      question: "Bagaimana cara memberikan pelanggan kekuasaan untuk berhenti berlangganan (unsubscribe) dari mailing SMS?",
+      options: [
+        "Aktifkan fitur 'Customer Portal'",
+        "Aktifkan fitur 'I’m Done'",
+        "Aktifkan fitur 'Include Opt-out link'",
+        "Itu tidak mungkin"
+      ],
+      correct: "Aktifkan fitur 'Include Opt-out link'"
+    },
+    {
+      question: "Saat menguji mailing SMS, Anda dapat mengirimkannya ke...",
+      options: [
+        "Beberapa nomor telepon",
+        "Hanya satu nomor telepon",
+        "Hanya nomor telepon rekan kerja",
+        "Odoo tidak menyediakan tes SMS"
+      ],
+      correct: "Beberapa nomor telepon"
+    }
+  ],
+  marketing_materi11: [
+    {
+      question: "Apa yang diperlukan untuk mengirim pesan SMS melalui Odoo?",
+      options: [
+        "SMS credits",
+        "LOL credits",
+        "IAP credits",
+        "TXT credits"
+      ],
+      correct: "IAP credits"
+    },
+    {
+      question: "Pada formulir SMS, apa tujuan dari bidang 'Title'?",
+      options: [
+        "Referensi eksternal *saja*, penerima melihatnya di pesan mereka",
+        "Referensi internal *saja*, penerima tidak melihatnya",
+        "Referensi eksternal *saja*, penerima tidak melihatnya",
+        "Referensi internal *saja*, penerima melihatnya di pesan mereka"
+      ],
+      correct: "Referensi internal *saja*, penerima tidak melihatnya"
+    },
+    {
+      question: "Pada tab 'A/B Tests', tombol apa yang harus diklik untuk memodifikasi SMS yang ada untuk tujuan pengujian?",
+      options: [
+        "Modify Existing Version",
+        "Change Original Version",
+        "Write Test Version",
+        "Create an Alternative Version"
+      ],
+      correct: "Create an Alternative Version"
+    }
+  ],
+  marketing_materi12: [
+    {
+      question: "Bagaimana cara menambahkan akun media sosial ke aplikasi Social Marketing?",
+      options: [
+        "Klik 'Add Stream' di dasbor 'Campaigns'.",
+        "Klik 'Configuration > Social Media' dan klik tombol 'Link account' yang sesuai.",
+        "Klik 'Sync' di dasbor utama Social Marketing.",
+        "Keduanya A dan B"
+      ],
+      correct: "Keduanya A dan B"
+    },
+    {
+      question: "Bagaimana cara memposting ke media sosial?",
+      options: [
+        "Klik 'Add Stream' di dasbor utama Social Marketing.",
+        "Klik 'New Stream' di dasbor utama Social Marketing.",
+        "Klik 'New Post' di dasbor utama Social Marketing.",
+        "Saya hanya bisa memposting di platform media sosial secara langsung (mis. Facebook, Instagram), saya tidak bisa memposting langsung dari Odoo."
+      ],
+      correct: "Klik 'New Post' di dasbor utama Social Marketing."
+    },
+    {
+      question: "Bisakah saya menjadwalkan posting media sosial di masa depan?",
+      options: [
+        "Ya, tapi postingan masa depan hanya bisa dibuat untuk Facebook; semua platform lain harus diposting segera.",
+        "Ya, tapi hanya jika tidak ada gambar yang digunakan dalam postingan.",
+        "Tidak, semua postingan secara otomatis diposting segera.",
+        "Ya, dengan memilih 'Schedule later' pada formulir 'Your Post', dan pilih tanggal serta waktu posting menggunakan pemilih kalender."
+      ],
+      correct: "Ya, dengan memilih 'Schedule later' pada formulir 'Your Post', dan pilih tanggal serta waktu posting menggunakan pemilih kalender."
+    }
+  ],
+  marketing_materi13: [
+    {
+      question: "Bagaimana cara menemukan semua kampanye saya?",
+      options: [
+        "Klik 'Campaigns' di menu atas aplikasi 'Social Marketing'.",
+        "Klik 'Posts' di menu atas aplikasi 'Social Marketing'.",
+        "Klik 'Feed' di menu atas aplikasi 'Social Marketing'.",
+        "Klik 'Visitors' di menu atas aplikasi 'Social Marketing'."
+      ],
+      correct: "Klik 'Campaigns' di menu atas aplikasi 'Social Marketing'."
+    },
+    {
+      question: "Apa yang BUKAN merupakan bidang (field) pada kartu kampanye?",
+      options: [
+        "Campaign Name",
+        "Responsible",
+        "Streams",
+        "Tags"
+      ],
+      correct: "Streams"
+    },
+    {
+      question: "Saat kampanye dibuat, di tahap (stage) apa kampanye tersebut muncul secara default?",
+      options: [
+        "Running",
+        "Ended",
+        "Sent",
+        "New"
+      ],
+      correct: "New"
+    }
+  ],
+  marketing_materi14: [
+    {
+      question: "Fitur apa yang perlu diaktifkan agar Anda dapat mengirim pesan SMS dan Email di aplikasi Social Marketing?",
+      options: [
+        "SMS Allowance (di aplikasi SMS Marketing).",
+        "Mailing Campaigns (di aplikasi Email Marketing).",
+        "Campaign Allowance (di aplikasi Social Marketing).",
+        "Itu tidak mungkin."
+      ],
+      correct: "Mailing Campaigns (di aplikasi Email Marketing)."
+    },
+    {
+      question: "Mengapa Anda ingin menyertakan link Opt-Out di SMS Anda?",
+      options: [
+        "Untuk memberikan kebebasan kepada pelanggan Anda untuk berhenti berlangganan dari mailing.",
+        "Untuk memberikan atasan Anda kebebasan untuk memilih keluar dari kontrak Anda.",
+        "Untuk memberikan pelanggan Anda kemampuan untuk membeli kredit dari Odoo.",
+        "Untuk memberi diri Anda peluang lebih baik untuk mengamankan lead/peluang."
+      ],
+      correct: "Untuk memberikan kebebasan kepada pelanggan Anda untuk berhenti berlangganan dari mailing."
+    },
+    {
+      question: "Berapa banyak konten yang dapat Anda buat untuk setiap saluran (channel)?",
+      options: [
+        "1 per channel.",
+        "3 per channel.",
+        "5 per channel.",
+        "Sebanyak yang Anda inginkan"
+      ],
+      correct: "Sebanyak yang Anda inginkan"
+    }
+  ],
+  marketing_materi15: [
+    {
+      question: "Di mana saya harus pergi untuk mengaktifkan opsi Push Notification?",
+      options: [
+        "Aplikasi Website.",
+        "Aplikasi Settings.",
+        "Aplikasi Social Marketing.",
+        "Tidak ada yang benar."
+      ],
+      correct: "Aplikasi Website."
+    },
+    {
+      question: "Apa fungsi bidang 'Push Target URL'?",
+      options: [
+        "Ini memungkinkan saya untuk memilih halaman situs web mana yang akan dituju pengguna saat mengklik pesan saya. Tautan juga akan dilacak.",
+        "Ini memungkinkan saya memilih halaman web yang ingin saya lacak untuk pesan itu.",
+        "Ini memungkinkan saya memilih halaman web yang ingin saya tampilkan di kaki pesan.",
+        "Tidak ada yang benar."
+      ],
+      correct: "Ini memungkinkan saya untuk memilih halaman situs web mana yang akan dituju pengguna saat mengklik pesan saya. Tautan juga akan dilacak."
+    },
+    {
+      question: "Manakah dari ini yang dapat saya lihat saat membuka rekod pengunjung (visitor)?",
+      options: [
+        "Jumlah leads/peluang.",
+        "Jumlah kunjungan/sesi.",
+        "Halaman yang dikunjungi.",
+        "Semua yang di atas."
+      ],
+      correct: "Semua yang di atas."
+    }
+  ],
+  marketing_materi16: [
+    {
+      question: "Saat Anda secara resmi memulai kampanye Anda, statusnya berubah menjadi apa...?",
+      options: [
+        "Running",
+        "Started",
+        "Closed",
+        "Begun"
+      ],
+      correct: "Running"
+    },
+    {
+      question: "Jika Anda tidak dapat menemukan opsi spesifik yang Anda cari di menu drop-down 'Target', apa yang harus Anda lakukan?",
+      options: [
+        "Logout dari portal pelanggan Anda, lalu login kembali.",
+        "Pilih 'Search More' pada menu drop-down 'Target'.",
+        "Hubungi Dukungan Teknis Odoo.",
+        "Tidak ada. Odoo tidak menyediakan opsi itu."
+      ],
+      correct: "Pilih 'Search More' pada menu drop-down 'Target'."
+    },
+    {
+      question: "'Records' dari kampanye pemasaran mewakili...",
+      options: [
+        "Jumlah berapa kali kampanye ini telah digunakan.",
+        "Jumlah pengguna dengan Akses Admin.",
+        "Jumlah kampanye yang telah dibuat di database Anda.",
+        "Jumlah kontak yang sesuai dengan kriteria 'Filter' yang baru saja Anda konfigurasi."
+      ],
+      correct: "Jumlah kontak yang sesuai dengan kriteria 'Filter' yang baru saja Anda konfigurasi."
+    }
+  ],
+  marketing_materi17: [
+    {
+      question: "Bisakah Anda membuat template email secara on-the-fly (langsung saat dibutuhkan)?",
+      options: [
+        "Ya, tentu saja.",
+        "Ya, dengan Template Add-On terinstal.",
+        "Ya, dengan izin tertulis dari administrator.",
+        "Tidak, itu tidak mungkin."
+      ],
+      correct: "Ya, tentu saja."
+    },
+    {
+      question: "Fitur apa yang harus Anda pertimbangkan saat membuat aktivitas yang sensitif terhadap waktu (time-sensitive) pada kampanye?",
+      options: [
+        "Exclude",
+        "Expiration Date",
+        "Expiry Duration",
+        "Expire"
+      ],
+      correct: "Expiry Duration"
+    },
+    {
+      question: "Jenis aktivitas apa yang mengotomatiskan tindakan internal backend di database Anda?",
+      options: [
+        "Enterprise Activity",
+        "Server Activity",
+        "Database Action",
+        "Server Action"
+      ],
+      correct: "Server Action"
+    }
+  ],
+  marketing_materi18: [
+    {
+      question: "Saat Anda mengklik 'Launch a Test', bisakah Anda membuat record untuk diuji secara on-the-fly?",
+      options: [
+        "Ya, tapi hanya jika Anda pernah bertemu kontak itu secara langsung sebelumnya.",
+        "Ya, tanpa masalah apa pun.",
+        "Ya, tapi hanya jika Anda telah menginstal modul 'Test Contact'.",
+        "Tidak, itu tidak mungkin."
+      ],
+      correct: "Ya, tanpa masalah apa pun."
+    },
+    {
+      question: "Bagaimana cara memeriksa kemajuan alur kerja (workflow progress) yang diperbarui dari tes kampanye di Odoo?",
+      options: [
+        "Refresh halaman.",
+        "Logout, dan login kembali segera.",
+        "Tutup aplikasi, dan buka kembali segera.",
+        "Itu tidak mungkin."
+      ],
+      correct: "Refresh halaman."
+    },
+    {
+      question: "Jika Anda menyiapkan 'Server Action' untuk memindahkan Lead/Opportunity ke tahap berikutnya dalam alur kerja Anda saat dipicu, di mana Anda akan pergi untuk mengonfirmasi perubahan itu?",
+      options: [
+        "Di dasbor utama Odoo.",
+        "Di dasbor Projects.",
+        "Di dasbor CRM.",
+        "Di Customer Portal."
+      ],
+      correct: "Di dasbor CRM."
+    }
   ]
 };
