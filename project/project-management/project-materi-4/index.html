@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Materi 4: Top Bar & Customization | Modul Project</title>
+    <link rel="stylesheet" href="../../../assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="progress-wrapper">
+        <div class="progress-container" id="progressContainer">
+            <div class="progress-bar" id="progressBar"></div>
+            <span class="progress-label" id="progressLabel" style="top: 24px;">0%</span>
+        </div>
+    </div>
+
+    <main class="container">
+        <button class="dark-toggle" onclick="toggleDark()">🌙</button>
+
+        <header class="header">
+            <div id="materiBadge" class="materi-badge" style="display: none;">🎓 Materi 4 Project Selesai</div>
+            <span class="badge">Project - Project Management</span>
+            <h1>Project Top Bar</h1>
+            <p class="subtitle">Mengkustomisasi Top Bar view untuk akses cepat ke informasi penting.</p>
+        </header>
+
+        <section class="step-card">
+            <h2>1. Menampilkan Top Bar</h2>
+            <div class="content">
+                <p>Untuk menampilkan Top Bar (jika belum muncul):</p>
+                <ul>
+                    <li>Klik tombol <strong>"sliders" (icon pengaturan)</strong> di dekat pojok kanan atas halaman.</li>
+                    <li>Top bar ini berisi ringkasan cepat seperti Tasks, Burndown Chart, Sales Order, dll.</li>
+                </ul>
+            </div>
+            <div class="step-footer">
+                <label>Paham</label>
+                <input type="checkbox" class="mark-done">
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>2. Kustomisasi Isi Top Bar</h2>
+            <div class="content">
+                <p>Anda bisa memilih elemen apa saja yang muncul di Top Bar:</p>
+                <ul>
+                    <li>Klik icon sliders lagi.</li>
+                    <li>Centang/Uncheck item yang diinginkan (misal: Milestones, Documents, Collaborators).</li>
+                    <li><strong>Catatan</strong>: Anda TIDAK BISA menambahkan menu dari aplikasi lain yang tidak
+                        terintegrasi langsung (seperti CRM Pipeline umum atau Stock Moves inventory umum) ke dalam
+                        Project Top Bar standar tanpa kustomisasi Studio/Code.</li>
+                </ul>
+            </div>
+            <div class="step-footer">
+                <label>Paham</label>
+                <input type="checkbox" class="mark-done">
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>3. Membuat Custom Top Bar Views</h2>
+            <div class="content">
+                <p>Bagaimana cara menyimpan preferensi filter di view project?</p>
+                <ul>
+                    <li>Klik salah satu tombol di Top Bar (misal: Tasks).</li>
+                    <li>Gunakan <strong>Search Bar</strong> untuk menambah Filter, Group By, atau Favorites.</li>
+                    <li>Klik "Save current search" di menu Favorites search bar untuk menyimpannya sebagai default atau
+                        shared view.</li>
+                </ul>
+            </div>
+            <div class="step-footer">
+                <label>Paham</label>
+                <input type="checkbox" class="mark-done">
+            </div>
+        </section>
+
+        <section class="step-card quiz-card" id="project-materi-4-quiz">
+            <div class="quiz-progress-wrapper">
+                <div class="quiz-progress-bar" id="quizProgressBar"></div>
+            </div>
+            <h2>📝 Quiz Project Materi 4</h2>
+            <div class="quiz-container">
+                <!-- Rendered by JS -->
+            </div>
+            <div class="step-footer">
+                <button class="quiz-submit-btn" onclick="checkQuiz()">Periksa Jawaban</button>
+                <div id="quizResult" style="display: none;"></div>
+            </div>
+        </section>
+
+        <div id="nextActionArea" class="next-action-area" style="display: none;">
+            <h3>🎉 Materi 4 Selesai!</h3>
+            <p>Bagian Project Management selesai. Lanjut ke Tasks Management.</p>
+            <a href="../../tasks-management/project-materi-5/index.html" class="btn-next">Lanjut ke Tasks Management
+                ➔</a>
+        </div>
+
+        <footer class="footer">
+            <a href="../../../project.html" style="text-decoration: none; color: #666; font-weight: 600;">← Kembali ke
+                Modul Project</a>
+        </footer>
+    </main>
+
+    <script src="../../../assets/js/quiz-bank.js"></script>
+    <script src="../../../assets/js/lms-core.js"></script>
+    <script src="../../../assets/js/quiz-engine.js"></script>
+    <script>
+        const MATERI_ID = "project_materi4";
+        document.addEventListener("DOMContentLoaded", () => {
+            initMateriProgress(MATERI_ID);
+            renderQuiz(MATERI_ID, ".quiz-container");
+            if (loadQuizResult(MATERI_ID)?.passed) showNextButton();
+        });
+
+        const originalOnQuizPassed = window.onQuizPassed;
+        window.onQuizPassed = function (materiId, score) {
+            if (originalOnQuizPassed) originalOnQuizPassed(materiId, score);
+            showNextButton();
+        };
+
+        function showNextButton() {
+            const area = document.getElementById("nextActionArea");
+            if (area) {
+                area.style.display = "block";
+                setTimeout(() => area.scrollIntoView({ behavior: "smooth", block: "center" }), 500);
+            }
+        }
+        function toggleDark() {
+            document.body.classList.toggle("dark");
+            localStorage.setItem("darkMode", document.body.classList.contains("dark"));
+        }
+        if (localStorage.getItem("darkMode") === "true") document.body.classList.add("dark");
+    </script>
+</body>
+
+</html>

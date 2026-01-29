@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Materi 8: Alternative RFQs | Modul Purchase</title>
+    <link rel="stylesheet" href="../../../assets/css/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="progress-wrapper">
+        <div class="progress-container" id="progressContainer">
+            <div class="progress-bar" id="progressBar"></div>
+            <span class="progress-label" id="progressLabel" style="top: 24px">0%</span>
+        </div>
+    </div>
+
+    <main class="container">
+        <button class="dark-toggle" onclick="toggleDark()">🌙</button>
+
+        <header class="header">
+            <div id="materiBadge" class="materi-badge" style="display: none">
+                🎓 Materi 8 Purchase Lulus
+            </div>
+            <span class="badge">Purchase - Manage Deals</span>
+            <h1>Alternative RFQs</h1>
+            <p class="subtitle">
+                Membandingkan RFQ secara langsung tanpa Call for Tenders formal.
+            </p>
+        </header>
+
+        <section class="step-card">
+            <h2>1. Mengaktifkan Fitur</h2>
+            <div class="content">
+                <p>Setting yang diperlukan:</p>
+                <ul>
+                    <li>Masuk ke Configuration > Settings.</li>
+                    <li>Aktifkan <strong>Purchase Agreements</strong> dan <strong>Purchase Alternatives</strong>.</li>
+                    <li>(Dua-duanya harus aktif untuk fungsionalitas penuh perbandingan).</li>
+                </ul>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>2. Menautkan RFQ</h2>
+            <div class="content">
+                <p>Bagaimana cara menjadikan RFQ sebagai alternatif satu sama lain?</p>
+                <ul>
+                    <li>Buka RFQ yang ingin ditautkan.</li>
+                    <li>Klik menu <strong>Action</strong> (Create Alternative juga bisa, tapi untuk existing RFQ gunakan
+                        'Link').</li>
+                    <li>Pilih <strong>'Link to Existing RFQ'</strong> (sesuai opsi quiz), atau buat alternatif baru
+                        langsung dari sana.</li>
+                </ul>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>3. Compare Product Lines</h2>
+            <div class="content">
+                <p>Di dashboard komparasi, apa yang TIDAK ditandai hijau?</p>
+                <ul>
+                    <li>Odoo menandai harga termurah dan waktu tercepat dengan warna hijau.</li>
+                    <li><strong>Vendor name</strong> tidak berwarna hijau (kecuali Anda kustomisasi CSS, tapi secara
+                        default fitur ini menonjolkan angka metrics).</li>
+                </ul>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card quiz-card" id="purchase-materi-8-quiz">
+            <div class="quiz-progress-wrapper">
+                <div class="quiz-progress-bar" id="quizProgressBar"></div>
+            </div>
+
+            <h2>📝 Quiz Purchase Materi 8</h2>
+
+            <div class="quiz-container">
+                <!-- Quiz akan di-render oleh JS -->
+            </div>
+
+            <div class="step-footer">
+                <button class="quiz-submit-btn" onclick="checkQuiz()">
+                    Periksa Jawaban
+                </button>
+                <div id="quizResult" style="display: none"></div>
+            </div>
+        </section>
+
+        <div id="nextActionArea" class="next-action-area" style="display: none">
+            <h3>🎉 Materi 8 Selesai!</h3>
+            <p>
+                Anda bisa membandingkan harga dengan cepat. Selanjutnya: Purchase Templates.
+            </p>
+            <a href="../../../purchase.html" class="btn-next">
+                Kembali ke Dashboard Purchase ➔
+            </a>
+        </div>
+
+        <footer class="footer">
+            <a href="../../../purchase.html" style="text-decoration: none; color: #666; font-weight: 600">← Kembali ke
+                Modul
+                Purchase</a>
+        </footer>
+    </main>
+
+    <!-- Load JS -->
+    <script src="../../../assets/js/quiz-bank.js"></script>
+    <script src="../../../assets/js/lms-core.js"></script>
+    <script src="../../../assets/js/quiz-engine.js"></script>
+
+    <script>
+        const MATERI_ID = "purchase_materi8";
+
+        document.addEventListener("DOMContentLoaded", () => {
+            initMateriProgress(MATERI_ID);
+            renderQuiz(MATERI_ID, ".quiz-container");
+
+            if (loadQuizResult(MATERI_ID)?.passed) {
+                showNextButton();
+            }
+        });
+
+        const originalOnQuizPassed = window.onQuizPassed;
+        window.onQuizPassed = function (materiId, score) {
+            if (originalOnQuizPassed) originalOnQuizPassed(materiId, score);
+            showNextButton();
+        };
+
+        function showNextButton() {
+            const area = document.getElementById("nextActionArea");
+            if (area) {
+                area.style.display = "block";
+                setTimeout(() => {
+                    area.scrollIntoView({ behavior: "smooth", block: "center" });
+                }, 500);
+            }
+        }
+
+        function toggleDark() {
+            document.body.classList.toggle("dark");
+            localStorage.setItem("darkMode", document.body.classList.contains("dark"));
+        }
+        if (localStorage.getItem("darkMode") === "true") {
+            document.body.classList.add("dark");
+        }
+    </script>
+</body>
+
+</html>

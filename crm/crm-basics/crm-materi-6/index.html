@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Materi 6: Lead Assignment | Modul CRM</title>
+    <link rel="stylesheet" href="../../../assets/css/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="progress-wrapper">
+        <div class="progress-container" id="progressContainer">
+            <div class="progress-bar" id="progressBar"></div>
+            <span class="progress-label" id="progressLabel" style="top: 24px">0%</span>
+        </div>
+    </div>
+
+    <main class="container">
+        <button class="dark-toggle" onclick="toggleDark()">🌙</button>
+
+        <header class="header">
+            <div id="materiBadge" class="materi-badge" style="display: none">
+                🎓 Materi 6 CRM Lulus
+            </div>
+            <span class="badge">CRM - Lead Management</span>
+            <h1>Lead Assignment</h1>
+            <p class="subtitle">
+                Otomatisasi pembagian leads ke sales team yang tepat.
+            </p>
+        </header>
+
+        <section class="step-card">
+            <h2>1. Mengaktifkan Otomatisasi</h2>
+            <div class="content">
+                <p>Agar leads tidak menumpuk tanpa pemilik:</p>
+                <ul>
+                    <li>Aktifkan pengaturan <strong>Rule-Based Assignment</strong> di konfigurasi CRM.</li>
+                    <li>Tanpa ini, Anda harus menetapkan setiap lead secara manual.</li>
+                </ul>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>2. Email Alias Tim</h2>
+            <div class="content">
+                <p>Bagaimana email masuk langsung jadi Lead?</p>
+                <ul>
+                    <li>Gunakan field <strong>Email Alias</strong> pada pengaturan Sales Team.</li>
+                    <li>Contoh: Set alias 'sales-us', maka email ke sales-us@domain.com akan otomatis masuk ke tim US.
+                    </li>
+                </ul>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>3. Mengedit Domain Assignment</h2>
+            <div class="content">
+                <p>Dimana mengatur aturan siapa dapat apa?</p>
+                <ul>
+                    <li>Masuk ke <strong>Assignment Rules</strong> di dalam konfigurasi Sales Team atau Lead Assignment.
+                    </li>
+                    <li>Atur skor dan domain (misal: Lokasi = Jakarta) agar lead dibagikan secara adil dan relevan.</li>
+                </ul>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card quiz-card" id="crm-materi-6-quiz">
+            <div class="quiz-progress-wrapper">
+                <div class="quiz-progress-bar" id="quizProgressBar"></div>
+            </div>
+
+            <h2>📝 Quiz CRM Materi 6</h2>
+
+            <div class="quiz-container">
+                <!-- Quiz akan di-render oleh JS -->
+            </div>
+
+            <div class="step-footer">
+                <button class="quiz-submit-btn" onclick="checkQuiz()">
+                    Periksa Jawaban
+                </button>
+                <div id="quizResult" style="display: none"></div>
+            </div>
+        </section>
+
+        <div id="nextActionArea" class="next-action-area" style="display: none">
+            <h3>🎉 Materi 6 Selesai!</h3>
+            <p>
+                Sistem CRM Anda kini bekerja secara otomatis membagikan tugas. Pekerjaan sales jadi lebih fokus!
+            </p>
+            <a href="../../../crm.html" class="btn-next">
+                Kembali ke Dashboard CRM ➔
+            </a>
+        </div>
+
+        <footer class="footer">
+            <a href="../../../crm.html" style="text-decoration: none; color: #666; font-weight: 600">← Kembali ke Modul
+                CRM</a>
+        </footer>
+    </main>
+
+    <!-- Load JS -->
+    <script src="../../../assets/js/quiz-bank.js"></script>
+    <script src="../../../assets/js/lms-core.js"></script>
+    <script src="../../../assets/js/quiz-engine.js"></script>
+
+    <script>
+        const MATERI_ID = "crm_materi6";
+
+        document.addEventListener("DOMContentLoaded", () => {
+            initMateriProgress(MATERI_ID);
+            renderQuiz(MATERI_ID, ".quiz-container");
+
+            if (loadQuizResult(MATERI_ID)?.passed) {
+                showNextButton();
+            }
+        });
+
+        const originalOnQuizPassed = window.onQuizPassed;
+        window.onQuizPassed = function (materiId, score) {
+            if (originalOnQuizPassed) originalOnQuizPassed(materiId, score);
+            showNextButton();
+        };
+
+        function showNextButton() {
+            const area = document.getElementById("nextActionArea");
+            if (area) {
+                area.style.display = "block";
+                setTimeout(() => {
+                    area.scrollIntoView({ behavior: "smooth", block: "center" });
+                }, 500);
+            }
+        }
+
+        function toggleDark() {
+            document.body.classList.toggle("dark");
+            localStorage.setItem("darkMode", document.body.classList.contains("dark"));
+        }
+        if (localStorage.getItem("darkMode") === "true") {
+            document.body.classList.add("dark");
+        }
+    </script>
+</body>
+
+</html>

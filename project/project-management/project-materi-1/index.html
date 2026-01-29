@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Materi 1: Project Basics | Modul Project</title>
+    <link rel="stylesheet" href="../../../assets/css/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="progress-wrapper">
+        <div class="progress-container" id="progressContainer">
+            <div class="progress-bar" id="progressBar"></div>
+            <span class="progress-label" id="progressLabel" style="top: 24px">0%</span>
+        </div>
+    </div>
+
+    <main class="container">
+        <button class="dark-toggle" onclick="toggleDark()">🌙</button>
+
+        <header class="header">
+            <div id="materiBadge" class="materi-badge" style="display: none">
+                🎓 Materi 1 Project Lulus
+            </div>
+            <span class="badge">Project - Project Management</span>
+            <h1>Project Basics (Kanban)</h1>
+            <p class="subtitle">
+                Mengelola task menggunakan Kanban View, Stages, dan Status.
+            </p>
+        </header>
+
+        <section class="step-card">
+            <h2>1. Manfaat Kanban View</h2>
+            <div class="content">
+                <p>Fitur powerfull untuk manajemen visual:</p>
+                <ul>
+                    <li>Memberikan gambaran jelas (overview) semua task aktif.</li>
+                    <li>Memungkinkan edit cepat tanpa membuka record satu per satu.</li>
+                    <li>Drag and drop untuk mengubah stage (tahapan).</li>
+                    <li><strong>All of the above</strong>: Semua poin di atas benar.</li>
+                </ul>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>2. Stage vs Status</h2>
+            <div class="content">
+                <p>Penting untuk dibedakan:</p>
+                <ul>
+                    <li><strong>Kanban Stage</strong>: Kolom di Kanban (To Do, In Progress, Done) -> Melacak progres
+                        workflow.</li>
+                    <li><strong>Task Status</strong>: State spesifik (Ready, Blocked, Changes Requested, Done) ->
+                        Menandai kondisi task.</li>
+                    <li>Mereka adalah fitur yang BERBEDA (Stage != Status).</li>
+                    <li>Apakah bisa membuat custom Kanban stages? Ya, tentu saja.</li>
+                </ul>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>3. Status "Changes Requested"</h2>
+            <div class="content">
+                <p>Apa yang terjadi jika status diatur ke "Changes Requested"?</p>
+                <ul>
+                    <li>Task TIDAK otomatis pindah stage.</li>
+                    <li>Tapi follower akan dinotifikasi.</li>
+                    <li>Dan <strong>titik status kuning</strong> akan muncul pada kartu task untuk menandakan butuh
+                        perhatian.</li>
+                    <li><strong>All of the above</strong>.</li>
+                </ul>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>4. Menutup Task</h2>
+            <div class="content">
+                <p>Cara yang benar menutup task (selain drag ke stage Done):</p>
+                <ul>
+                    <li>Mengubah <strong>status</strong> task menjadi <strong>"Done" (Hijau)</strong> atau "Canceled".
+                    </li>
+                    <li>Drag ke tong sampah (trash)? Tidak disarankan, itu menghapus data.</li>
+                </ul>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card quiz-card" id="project-materi-1-quiz">
+            <div class="quiz-progress-wrapper">
+                <div class="quiz-progress-bar" id="quizProgressBar"></div>
+            </div>
+
+            <h2>📝 Quiz Project Materi 1</h2>
+
+            <div class="quiz-container">
+                <!-- Quiz akan di-render oleh JS -->
+            </div>
+
+            <div class="step-footer">
+                <button class="quiz-submit-btn" onclick="checkQuiz()">
+                    Periksa Jawaban
+                </button>
+                <div id="quizResult" style="display: none"></div>
+            </div>
+        </section>
+
+        <div id="nextActionArea" class="next-action-area" style="display: none">
+            <h3>🎉 Materi 1 Selesai!</h3>
+            <p>
+                Pondasi Project Management sudah kuat. Materi selanjutnya akan ditambahkan segera.
+            </p>
+            <a href="../../../project.html" class="btn-next">
+                Kembali ke Dashboard Project ➔
+            </a>
+        </div>
+
+        <footer class="footer">
+            <a href="../../../project.html" style="text-decoration: none; color: #666; font-weight: 600">← Kembali ke
+                Modul
+                Project</a>
+        </footer>
+    </main>
+
+    <!-- Load JS -->
+    <script src="../../../assets/js/quiz-bank.js"></script>
+    <script src="../../../assets/js/lms-core.js"></script>
+    <script src="../../../assets/js/quiz-engine.js"></script>
+
+    <script>
+        const MATERI_ID = "project_materi1";
+
+        document.addEventListener("DOMContentLoaded", () => {
+            initMateriProgress(MATERI_ID);
+            renderQuiz(MATERI_ID, ".quiz-container");
+
+            if (loadQuizResult(MATERI_ID)?.passed) {
+                showNextButton();
+            }
+        });
+
+        const originalOnQuizPassed = window.onQuizPassed;
+        window.onQuizPassed = function (materiId, score) {
+            if (originalOnQuizPassed) originalOnQuizPassed(materiId, score);
+            showNextButton();
+        };
+
+        function showNextButton() {
+            const area = document.getElementById("nextActionArea");
+            if (area) {
+                area.style.display = "block";
+                setTimeout(() => {
+                    area.scrollIntoView({ behavior: "smooth", block: "center" });
+                }, 500);
+            }
+        }
+
+        function toggleDark() {
+            document.body.classList.toggle("dark");
+            localStorage.setItem("darkMode", document.body.classList.contains("dark"));
+        }
+        if (localStorage.getItem("darkMode") === "true") {
+            document.body.classList.add("dark");
+        }
+    </script>
+</body>
+
+</html>

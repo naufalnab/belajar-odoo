@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Materi 11: Lead Analysis | Modul CRM</title>
+    <link rel="stylesheet" href="../../../assets/css/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="progress-wrapper">
+        <div class="progress-container" id="progressContainer">
+            <div class="progress-bar" id="progressBar"></div>
+            <span class="progress-label" id="progressLabel" style="top: 24px">0%</span>
+        </div>
+    </div>
+
+    <main class="container">
+        <button class="dark-toggle" onclick="toggleDark()">🌙</button>
+
+        <header class="header">
+            <div id="materiBadge" class="materi-badge" style="display: none">
+                🎓 Materi 11 CRM Lulus
+            </div>
+            <span class="badge">CRM - Performance Analysis</span>
+            <h1>Lead Analysis</h1>
+            <p class="subtitle">
+                Melacak sumber leads (Search Engine, FB, dll) dengan filter cerdas.
+            </p>
+        </header>
+
+        <section class="step-card">
+            <h2>1. Group By Source</h2>
+            <div class="content">
+                <p>Ingin tahu leads mana yang datang dari Google?</p>
+                <ul>
+                    <li>Di menu Leads Reporting, gunakan <strong>Group By > Source</strong>.</li>
+                    <li>Ini akan mengelompokkan data berdasarkan 'Search Engine', 'Facebook', 'Newsletter', dll.</li>
+                </ul>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>2. Memfilter Leads Aktif</h2>
+            <div class="content">
+                <p>Bagaimana memilah data?</p>
+                <ul>
+                    <li>Gunakan menu <strong>Filters</strong>.</li>
+                    <li>Pilih tombol <strong>Add Custom Filter</strong>.</li>
+                    <li>Set kondisi: <strong>Active is set (True)</strong> untuk hanya melihat leads yang sedang aktif.
+                    </li>
+                </ul>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>3. Tampilan Pivot (Laporan Tabel)</h2>
+            <div class="content">
+                <p>Ingin melihat data sebagai tabel laporan?</p>
+                <ul>
+                    <li>Gunakan <strong>Pivot View</strong>.</li>
+                    <li>Ini memberikan tampilan tabular matriks yang ideal untuk pelaporan angka dibanding list atau
+                        kanban.</li>
+                </ul>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card quiz-card" id="crm-materi-11-quiz">
+            <div class="quiz-progress-wrapper">
+                <div class="quiz-progress-bar" id="quizProgressBar"></div>
+            </div>
+
+            <h2>📝 Quiz CRM Materi 11</h2>
+
+            <div class="quiz-container">
+                <!-- Quiz akan di-render oleh JS -->
+            </div>
+
+            <div class="step-footer">
+                <button class="quiz-submit-btn" onclick="checkQuiz()">
+                    Periksa Jawaban
+                </button>
+                <div id="quizResult" style="display: none"></div>
+            </div>
+        </section>
+
+        <div id="nextActionArea" class="next-action-area" style="display: none">
+            <h3>🎉 Track CRM Selesai!</h3>
+            <p>
+                Anda telah menyelesaikan semua materi CRM dari Basics hingga Analytics. Luar biasa!
+            </p>
+            <a href="../../../crm.html" class="btn-next">
+                Kembali ke Dashboard CRM ➔
+            </a>
+        </div>
+
+        <footer class="footer">
+            <a href="../../../crm.html" style="text-decoration: none; color: #666; font-weight: 600">← Kembali ke Modul
+                CRM</a>
+        </footer>
+    </main>
+
+    <!-- Load JS -->
+    <script src="../../../assets/js/quiz-bank.js"></script>
+    <script src="../../../assets/js/lms-core.js"></script>
+    <script src="../../../assets/js/quiz-engine.js"></script>
+
+    <script>
+        const MATERI_ID = "crm_materi11";
+
+        document.addEventListener("DOMContentLoaded", () => {
+            initMateriProgress(MATERI_ID);
+            renderQuiz(MATERI_ID, ".quiz-container");
+
+            if (loadQuizResult(MATERI_ID)?.passed) {
+                showNextButton();
+            }
+        });
+
+        const originalOnQuizPassed = window.onQuizPassed;
+        window.onQuizPassed = function (materiId, score) {
+            if (originalOnQuizPassed) originalOnQuizPassed(materiId, score);
+            showNextButton();
+        };
+
+        function showNextButton() {
+            const area = document.getElementById("nextActionArea");
+            if (area) {
+                area.style.display = "block";
+                setTimeout(() => {
+                    area.scrollIntoView({ behavior: "smooth", block: "center" });
+                }, 500);
+            }
+        }
+
+        function toggleDark() {
+            document.body.classList.toggle("dark");
+            localStorage.setItem("darkMode", document.body.classList.contains("dark"));
+        }
+        if (localStorage.getItem("darkMode") === "true") {
+            document.body.classList.add("dark");
+        }
+    </script>
+</body>
+
+</html>

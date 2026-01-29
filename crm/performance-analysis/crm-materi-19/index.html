@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Materi 19: Gamification | Modul CRM</title>
+    <link rel="stylesheet" href="../../../assets/css/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="progress-wrapper">
+        <div class="progress-container" id="progressContainer">
+            <div class="progress-bar" id="progressBar"></div>
+            <span class="progress-label" id="progressLabel" style="top: 24px">0%</span>
+        </div>
+    </div>
+
+    <main class="container">
+        <button class="dark-toggle" onclick="toggleDark()">🌙</button>
+
+        <header class="header">
+            <div id="materiBadge" class="materi-badge" style="display: none">
+                🎓 Materi 19 CRM Lulus
+            </div>
+            <span class="badge">CRM - Performance</span>
+            <h1>Gamification</h1>
+            <p class="subtitle">
+                Meningkatkan motivasi tim sales dengan Goals, Challenges, dan Badges.
+            </p>
+        </header>
+
+        <section class="step-card">
+            <h2>1. Prasyarat Gamification</h2>
+            <div class="content">
+                <p>Sebelum memulai konfigurasi:</p>
+                <ul>
+                    <li>Anda WAJIB mengaktifkan <strong>Developer Mode</strong>.</li>
+                    <li>Tanpa Developer Mode, menu konfigurasi Gamification Tools mungkin tidak terlihat lengkap di
+                        Settings.</li>
+                </ul>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>2. Goals & Challenges</h2>
+            <div class="content">
+                <p>Membuat tantangan untuk tim:</p>
+                <ul>
+                    <li>Akses melalui <strong>Settings app > Gamification Tools > Goal Definitions</strong> untuk
+                        mendefinisikan metrik (misal: Total Invoiced).</li>
+                    <li>Gunakan <strong>Goal Challenges</strong> untuk men-assign goal tersebut ke tim sales dalam
+                        periode waktu tertentu (misal: Target Bulan Ini).</li>
+                </ul>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>3. Badges</h2>
+            <div class="content">
+                <p>Penghargaan visual:</p>
+                <ul>
+                    <li>Badges dapat dikustomisasi di <strong>Settings > Gamification Tools > Badges</strong>.</li>
+                    <li>Badges bisa diberikan secara manual atau otomatis jika Challenge tercapai.</li>
+                    <li>Contoh: Badge "Top Seller" untuk yang mencapai sales tertinggi.</li>
+                </ul>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card quiz-card" id="crm-materi-19-quiz">
+            <div class="quiz-progress-wrapper">
+                <div class="quiz-progress-bar" id="quizProgressBar"></div>
+            </div>
+
+            <h2>📝 Quiz CRM Materi 19</h2>
+
+            <div class="quiz-container">
+                <!-- Quiz akan di-render oleh JS -->
+            </div>
+
+            <div class="step-footer">
+                <button class="quiz-submit-btn" onclick="checkQuiz()">
+                    Periksa Jawaban
+                </button>
+                <div id="quizResult" style="display: none"></div>
+            </div>
+        </section>
+
+        <div id="nextActionArea" class="next-action-area" style="display: none">
+            <h3>🎉 Track CRM Selesai!</h3>
+            <p>
+                Luar biasa! Anda telah menyelesaikan 19 materi CRM Odoo dari dasar hingga mahir.
+            </p>
+            <a href="../../../crm.html" class="btn-next">
+                Lihat Sertifikat/Progress ➔
+            </a>
+        </div>
+
+        <footer class="footer">
+            <a href="../../../crm.html" style="text-decoration: none; color: #666; font-weight: 600">← Kembali ke Modul
+                CRM</a>
+        </footer>
+    </main>
+
+    <!-- Load JS -->
+    <script src="../../../assets/js/quiz-bank.js"></script>
+    <script src="../../../assets/js/lms-core.js"></script>
+    <script src="../../../assets/js/quiz-engine.js"></script>
+
+    <script>
+        const MATERI_ID = "crm_materi19";
+
+        document.addEventListener("DOMContentLoaded", () => {
+            initMateriProgress(MATERI_ID);
+            renderQuiz(MATERI_ID, ".quiz-container");
+
+            if (loadQuizResult(MATERI_ID)?.passed) {
+                showNextButton();
+            }
+        });
+
+        const originalOnQuizPassed = window.onQuizPassed;
+        window.onQuizPassed = function (materiId, score) {
+            if (originalOnQuizPassed) originalOnQuizPassed(materiId, score);
+            showNextButton();
+        };
+
+        function showNextButton() {
+            const area = document.getElementById("nextActionArea");
+            if (area) {
+                area.style.display = "block";
+                setTimeout(() => {
+                    area.scrollIntoView({ behavior: "smooth", block: "center" });
+                }, 500);
+            }
+        }
+
+        function toggleDark() {
+            document.body.classList.toggle("dark");
+            localStorage.setItem("darkMode", document.body.classList.contains("dark"));
+        }
+        if (localStorage.getItem("darkMode") === "true") {
+            document.body.classList.add("dark");
+        }
+    </script>
+</body>
+
+</html>

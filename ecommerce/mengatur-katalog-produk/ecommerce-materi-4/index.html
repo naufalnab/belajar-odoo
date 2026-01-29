@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Materi 4: Pricelists | Modul eCommerce</title>
+    <link rel="stylesheet" href="../../../assets/css/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="progress-wrapper">
+        <div class="progress-container" id="progressContainer">
+            <div class="progress-bar" id="progressBar"></div>
+            <span class="progress-label" id="progressLabel" style="top: 24px">0%</span>
+        </div>
+    </div>
+
+    <main class="container">
+        <button class="dark-toggle" onclick="toggleDark()">🌙</button>
+
+        <header class="header">
+            <div id="materiBadge" class="materi-badge" style="display: none">
+                🎓 Materi 4 eCommerce Lulus
+            </div>
+            <span class="badge">eCommerce - Mengatur Katalog Produk</span>
+            <h1>Pricelists (Daftar Harga)</h1>
+            <p class="subtitle">
+                Strategi harga dinamis berdasarkan negara, mata uang, atau tipe pelanggan.
+            </p>
+        </header>
+
+        <section class="step-card">
+            <h2>1. Mengaktifkan Pricelists</h2>
+            <div class="content">
+                <p>Fitur ini powerful tapi opsional.</p>
+                <ul>
+                    <li>Pergi ke <strong>Website > Configuration > Settings</strong>.</li>
+                    <li>Cari bagian <strong>Shop - Products</strong>.</li>
+                    <li>Centang <strong>Pricelists</strong>. Anda bisa memilih mode "Multiple prices per product" atau
+                        "Advanced price rules".</li>
+                </ul>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>2. Strategi Harga (Use Cases)</h2>
+            <div class="content">
+                <p>Kapan Anda butuh Pricelists?</p>
+                <ul>
+                    <li><strong>Multi-Currency:</strong> Pelanggan AS melihat harga dalam USD, Pelanggan Indonesia dalam
+                        IDR.</li>
+                    <li><strong>Geo-Pricing:</strong> Harga di Eropa lebih mahal karena pajak/ongkir, dibanding harga
+                        lokal.</li>
+                    <li><strong>B2B vs B2C:</strong> Pelanggan "Reseller" yang login otomatis mendapat diskon 10%.</li>
+                </ul>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>3. Selectable by Customer</h2>
+            <div class="content">
+                <p>Anda bisa membiarkan pengunjung memilih sendiri daftar harga/mata uang mereka.</p>
+                <ul>
+                    <li>Di pengaturan Pricelist, centang <strong>Selectable</strong>.</li>
+                    <li>Otomatis akan muncul dropdown (biasanya di footer atau header) berisi pilihan mata uang (misal:
+                        USD, EUR, IDR).</li>
+                </ul>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card quiz-card" id="ecommerce-materi-4-quiz">
+            <div class="quiz-progress-wrapper">
+                <div class="quiz-progress-bar" id="quizProgressBar"></div>
+            </div>
+
+            <h2>📝 Quiz eCommerce Materi 4</h2>
+
+            <div class="quiz-container">
+                <!-- Quiz akan di-render oleh JS -->
+            </div>
+
+            <div class="step-footer">
+                <button class="quiz-submit-btn" onclick="checkQuiz()">
+                    Periksa Jawaban
+                </button>
+                <div id="quizResult" style="display: none"></div>
+            </div>
+        </section>
+
+        <div id="nextActionArea" class="next-action-area" style="display: none">
+            <h3>🎉 Materi 4 Selesai!</h3>
+            <p>
+                Anda telah menguasai manajemen harga tingkat lanjut.
+            </p>
+            <a href="../../../ecommerce.html" class="btn-next">
+                Kembali ke Dashboard eCommerce ➔
+            </a>
+        </div>
+
+        <footer class="footer">
+            <a href="../../../ecommerce.html" style="text-decoration: none; color: #666; font-weight: 600">← Kembali ke
+                Modul
+                eCommerce</a>
+        </footer>
+    </main>
+
+    <!-- Load JS -->
+    <script src="../../../assets/js/quiz-bank.js"></script>
+    <script src="../../../assets/js/lms-core.js"></script>
+    <script src="../../../assets/js/quiz-engine.js"></script>
+
+    <script>
+        const MATERI_ID = "ecommerce_materi4";
+
+        document.addEventListener("DOMContentLoaded", () => {
+            initMateriProgress(MATERI_ID);
+            renderQuiz(MATERI_ID, ".quiz-container");
+
+            if (loadQuizResult(MATERI_ID)?.passed) {
+                showNextButton();
+            }
+        });
+
+        const originalOnQuizPassed = window.onQuizPassed;
+        window.onQuizPassed = function (materiId, score) {
+            if (originalOnQuizPassed) originalOnQuizPassed(materiId, score);
+            showNextButton();
+        };
+
+        function showNextButton() {
+            const area = document.getElementById("nextActionArea");
+            if (area) {
+                area.style.display = "block";
+                setTimeout(() => {
+                    area.scrollIntoView({ behavior: "smooth", block: "center" });
+                }, 500);
+            }
+        }
+
+        function toggleDark() {
+            document.body.classList.toggle("dark");
+            localStorage.setItem("darkMode", document.body.classList.contains("dark"));
+        }
+        if (localStorage.getItem("darkMode") === "true") {
+            document.body.classList.add("dark");
+        }
+    </script>
+</body>
+
+</html>

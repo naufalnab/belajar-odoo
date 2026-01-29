@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Materi 4: Forms & Data Collection | Modul Website</title>
+    <link rel="stylesheet" href="../../../assets/css/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="progress-wrapper">
+        <div class="progress-container" id="progressContainer">
+            <div class="progress-bar" id="progressBar"></div>
+            <span class="progress-label" id="progressLabel" style="top: 24px">0%</span>
+        </div>
+    </div>
+
+    <main class="container">
+        <button class="dark-toggle" onclick="toggleDark()">🌙</button>
+
+        <header class="header">
+            <div id="materiBadge" class="materi-badge" style="display: none">
+                🎓 Materi 4 Website Lulus
+            </div>
+            <span class="badge">Website - Building Your Website</span>
+            <h1>Forms & Data Collection</h1>
+            <p class="subtitle">
+                Mengumpulkan data pengunjung dengan formulir pintar yang terintegrasi.
+            </p>
+
+            <div class="image-placeholder">
+                <img src="../../../assets/images/website/materi-4/hero.png" alt="Forms Builder"
+                    onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+                <span class="placeholder-text">📸 Ilustrasi: Form Builder Odoo</span>
+            </div>
+        </header>
+
+        <section class="step-card">
+            <h2>1. Dasar Pembuatan Formulir</h2>
+            <div class="content">
+                <p>Formulir adalah jembatan komunikasi utama dengan pengunjung. Di Odoo, menambahkan formulir semudah
+                    <strong>drag-and-drop</strong> blok "Form" ke halaman.</p>
+                <div class="alert info">
+                    <strong>Penting:</strong> Hal pertama yang harus ditentukan adalah <strong>Action</strong>
+                    (Tindakan).
+                </div>
+                <p>Mengapa Action penting? Karena Action menentukan opsi apa saja yang tersedia. Contoh Action:</p>
+                <ul>
+                    <li><strong>Send an Email:</strong> Mengirim data ke email admin.</li>
+                    <li><strong>Create Customer:</strong> Otomatis membuat kontak baru di CRM.</li>
+                    <li><strong>Create Ticket:</strong> Membuat tiket support di Helpdesk.</li>
+                </ul>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>2. Kustomisasi Bidang (Fields)</h2>
+            <div class="content">
+                <p>Anda bisa menambahkan berbagai jenis bidang data:</p>
+                <ul>
+                    <li><strong>Text:</strong> Untuk nama atau pesan singkat.</li>
+                    <li><strong>Email/Phone:</strong> Validasi format otomatis.</li>
+                    <li><strong>Checkbox/Radio:</strong> Pilihan ganda.</li>
+                    <li><strong>File Upload:</strong> Meminta dokumen pengguna.</li>
+                </ul>
+                <p>Setiap bidang bisa diatur sebagai <strong>Required</strong> (Wajib diisi) atau Opsional.</p>
+
+                <div class="image-placeholder">
+                    <img src="../../../assets/images/website/materi-4/fields.png" alt="Form Fields"
+                        onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+                    <span class="placeholder-text">📸 Screenshot: Menambah Field Formulir</span>
+                </div>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>3. Logika & Visibilitas</h2>
+            <div class="content">
+                <p>Buat formulir Anda lebih pintar dengan <strong>Conditional Visibility</strong>. Fitur ini
+                    memungkinkan Anda menyembunyikan atau menampilkan pertanyaan berdasarkan jawaban sebelumnya.</p>
+                <p><em>Contoh:</em> Munculkan kotak "Nomor WhatsApp" HANYA JIKA pengunjung memilih metode kontak
+                    "WhatsApp".</p>
+
+                <h3>Menggunakan Tabs</h3>
+                <p>Jika Anda memiliki banyak jenis formulir (misal: "Sales Inquiry" dan "Support Request"), gunakan blok
+                    <strong>Tabs</strong>. Ini memungkinkan Anda menaruh beberapa formulir di satu halaman tanpa
+                    membuatnya terlihat berantakan.</p>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>4. Tombol Submit & Redirect</h2>
+            <div class="content">
+                <p>Apa yang terjadi setelah pengunjung klik "Kirim"? Anda bisa menyesuaikan perilaku ini.</p>
+                <ul>
+                    <li><strong>Redirect:</strong> Arahkan ke halaman "Terima Kasih" khusus.</li>
+                    <li><strong>Message:</strong> Tampilkan pesan sukses sederhana di tempat ("Pesan Anda telah
+                        terkirim!").</li>
+                </ul>
+                <p>Anda juga bisa menyesuaikan label tombol Submit, misalnya diganti menjadi "Daftar Sekarang" atau
+                    "Hubungi Kami".</p>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card quiz-card" id="website-materi-4-quiz">
+            <div class="quiz-progress-wrapper">
+                <div class="quiz-progress-bar" id="quizProgressBar"></div>
+            </div>
+
+            <h2>📝 Quiz Website Materi 4</h2>
+
+            <div class="quiz-container">
+                <!-- Quiz akan di-render oleh JS -->
+            </div>
+
+            <div class="step-footer">
+                <button class="quiz-submit-btn" onclick="checkQuiz()">
+                    Periksa Jawaban
+                </button>
+                <div id="quizResult" style="display: none"></div>
+            </div>
+        </section>
+
+        <div id="nextActionArea" class="next-action-area" style="display: none">
+            <h3>🎉 Materi 4 Selesai!</h3>
+            <p>
+                Anda kini bisa mengumpulkan data pelanggan secara efektif.
+            </p>
+            <a href="../../../website.html" class="btn-next">
+                Kembali ke Dashboard Website ➔
+            </a>
+        </div>
+
+        <footer class="footer">
+            <a href="../../../website.html" style="text-decoration: none; color: #666; font-weight: 600">← Kembali ke
+                Modul
+                Website</a>
+        </footer>
+    </main>
+
+    <!-- Load JS -->
+    <script src="../../../assets/js/quiz-bank.js"></script>
+    <script src="../../../assets/js/lms-core.js"></script>
+    <script src="../../../assets/js/quiz-engine.js"></script>
+
+    <script>
+        const MATERI_ID = "website_materi4";
+
+        document.addEventListener("DOMContentLoaded", () => {
+            initMateriProgress(MATERI_ID);
+            renderQuiz(MATERI_ID, ".quiz-container");
+
+            if (loadQuizResult(MATERI_ID)?.passed) {
+                showNextButton();
+            }
+        });
+
+        const originalOnQuizPassed = window.onQuizPassed;
+        window.onQuizPassed = function (materiId, score) {
+            if (originalOnQuizPassed) originalOnQuizPassed(materiId, score);
+            showNextButton();
+        };
+
+        function showNextButton() {
+            const area = document.getElementById("nextActionArea");
+            if (area) {
+                area.style.display = "block";
+                setTimeout(() => {
+                    area.scrollIntoView({ behavior: "smooth", block: "center" });
+                }, 500);
+            }
+        }
+
+        function toggleDark() {
+            document.body.classList.toggle("dark");
+            localStorage.setItem("darkMode", document.body.classList.contains("dark"));
+        }
+        if (localStorage.getItem("darkMode") === "true") {
+            document.body.classList.add("dark");
+        }
+    </script>
+</body>
+
+</html>

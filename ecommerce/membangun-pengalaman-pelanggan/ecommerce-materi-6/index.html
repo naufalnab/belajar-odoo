@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Materi 6: Payment & Shipping | Modul eCommerce</title>
+    <link rel="stylesheet" href="../../../assets/css/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="progress-wrapper">
+        <div class="progress-container" id="progressContainer">
+            <div class="progress-bar" id="progressBar"></div>
+            <span class="progress-label" id="progressLabel" style="top: 24px">0%</span>
+        </div>
+    </div>
+
+    <main class="container">
+        <button class="dark-toggle" onclick="toggleDark()">🌙</button>
+
+        <header class="header">
+            <div id="materiBadge" class="materi-badge" style="display: none">
+                🎓 Materi 6 eCommerce Lulus
+            </div>
+            <span class="badge">eCommerce - Membangun Pengalaman Pelanggan</span>
+            <h1>Payment & Shipping</h1>
+            <p class="subtitle">
+                Mengonfigurasi metode pembayaran dan pengiriman yang fleksibel.
+            </p>
+        </header>
+
+        <section class="step-card">
+            <h2>1. Shipping Methods (Pengiriman)</h2>
+            <div class="content">
+                <p>Odoo mendukung berbagai skenario ongkir:</p>
+                <ul>
+                    <li><strong>Fixed Price:</strong> Ongkir flat (misal: Rp 20.000 ke seluruh Jawa).</li>
+                    <li><strong>Based on Rules:</strong> Harga berubah berdasarkan berat, total belanja, atau volume.
+                    </li>
+                    <li><strong>Limitasi:</strong> Anda bisa mengatur "Max Weight" agar opsi pengiriman otomatis hilang
+                        jika paket terlalu berat.</li>
+                    <li><strong>Free Shipping:</strong> Berikan gratis ongkir jika belanja > Rp 500.000.</li>
+                </ul>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>2. Payment Providers (Pembayaran)</h2>
+            <div class="content">
+                <p>Menghubungkan Odoo dengan gerbang pembayaran (Payment Gateway):</p>
+                <ul>
+                    <li><strong>Test Mode:</strong> Selalu gunakan mode tes saat pertama setting untuk memastikan alur
+                        lancar tanpa uang sungguhan.</li>
+                    <li><strong>Capture Amount Manually:</strong> Opsi untuk hanya "mengotorisasi" kartu kredit dulu,
+                        dan uang ditarik nanti saat barang dikirim. Berguna untuk menghindari refund jika stok ternyata
+                        kosong.</li>
+                    <li><strong>Wire Transfer:</strong> Opsi transfer bank manual, di mana instruksi rekening
+                        ditampilkan di akhir checkout.</li>
+                </ul>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>3. Custom Messages</h2>
+            <div class="content">
+                <p>Komunikasi status pembayaran penting untuk ketenangan pelanggan.</p>
+                <ul>
+                    <li>Di konfigurasi Provider, tab <strong>Messages</strong> memungkinkan Anda mengubah teks untuk:
+                    </li>
+                    <li>Pending, Done, Cancelled, Error.</li>
+                    <li>Gunakan bahasa yang ramah dan instruktif (misal: "Pembayaran berhasil! Kami sedang menyiapkan
+                        paket Anda").</li>
+                </ul>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card quiz-card" id="ecommerce-materi-6-quiz">
+            <div class="quiz-progress-wrapper">
+                <div class="quiz-progress-bar" id="quizProgressBar"></div>
+            </div>
+
+            <h2>📝 Quiz eCommerce Materi 6</h2>
+
+            <div class="quiz-container">
+                <!-- Quiz akan di-render oleh JS -->
+            </div>
+
+            <div class="step-footer">
+                <button class="quiz-submit-btn" onclick="checkQuiz()">
+                    Periksa Jawaban
+                </button>
+                <div id="quizResult" style="display: none"></div>
+            </div>
+        </section>
+
+        <div id="nextActionArea" class="next-action-area" style="display: none">
+            <h3>🎉 Materi 6 Selesai!</h3>
+            <p>
+                Sistem pembayaran dan logistik Anda sudah siap beroperasi.
+            </p>
+            <a href="../../../ecommerce.html" class="btn-next">
+                Kembali ke Dashboard eCommerce ➔
+            </a>
+        </div>
+
+        <footer class="footer">
+            <a href="../../../ecommerce.html" style="text-decoration: none; color: #666; font-weight: 600">← Kembali ke
+                Modul
+                eCommerce</a>
+        </footer>
+    </main>
+
+    <!-- Load JS -->
+    <script src="../../../assets/js/quiz-bank.js"></script>
+    <script src="../../../assets/js/lms-core.js"></script>
+    <script src="../../../assets/js/quiz-engine.js"></script>
+
+    <script>
+        const MATERI_ID = "ecommerce_materi6";
+
+        document.addEventListener("DOMContentLoaded", () => {
+            initMateriProgress(MATERI_ID);
+            renderQuiz(MATERI_ID, ".quiz-container");
+
+            if (loadQuizResult(MATERI_ID)?.passed) {
+                showNextButton();
+            }
+        });
+
+        const originalOnQuizPassed = window.onQuizPassed;
+        window.onQuizPassed = function (materiId, score) {
+            if (originalOnQuizPassed) originalOnQuizPassed(materiId, score);
+            showNextButton();
+        };
+
+        function showNextButton() {
+            const area = document.getElementById("nextActionArea");
+            if (area) {
+                area.style.display = "block";
+                setTimeout(() => {
+                    area.scrollIntoView({ behavior: "smooth", block: "center" });
+                }, 500);
+            }
+        }
+
+        function toggleDark() {
+            document.body.classList.toggle("dark");
+            localStorage.setItem("darkMode", document.body.classList.contains("dark"));
+        }
+        if (localStorage.getItem("darkMode") === "true") {
+            document.body.classList.add("dark");
+        }
+    </script>
+</body>
+
+</html>

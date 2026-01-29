@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Materi 15: Invoicing Projects | Modul Project</title>
+    <link rel="stylesheet" href="../../../assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="progress-wrapper">
+        <div class="progress-container" id="progressContainer">
+            <div class="progress-bar" id="progressBar"></div>
+            <span class="progress-label" id="progressLabel" style="top: 24px;">0%</span>
+        </div>
+    </div>
+
+    <main class="container">
+        <button class="dark-toggle" onclick="toggleDark()">🌙</button>
+
+        <header class="header">
+            <div id="materiBadge" class="materi-badge" style="display: none;">🎓 Materi 15 Project Selesai</div>
+            <span class="badge">Project - Invoicing</span>
+            <h1>Invoicing Projects</h1>
+            <p class="subtitle">Menagih klien berdasarkan Fixed Price atau Timesheets (Time & Material).</p>
+        </header>
+
+        <section class="step-card">
+            <h2>1. Fixed Price Invoice</h2>
+            <div class="content">
+                <p>Studi kasus: Service Pack 20 Jam (Fixed Price):</p>
+                <ul>
+                    <li>Jika Anda menjual 20 jam di awal (Prepaid) dengan Fixed Price.</li>
+                    <li>Meskipun Anda baru mengerjakan 16 jam, harga tetap tidak berubah.</li>
+                    <li>Tidak perlu melakukan apa-apa pada invoice (kecuali jika ada klausul refund/addendum). Waktu
+                        yang dihabiskan hanya mempengaruhi keuntungan internal, bukan harga ke klien.</li>
+                </ul>
+            </div>
+            <div class="step-footer">
+                <label>Paham</label>
+                <input type="checkbox" class="mark-done">
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>2. Time & Material Invoice</h2>
+            <div class="content">
+                <p>Menagih berdasarkan jam kerja aktual (Timesheets):</p>
+                <ul>
+                    <li>Anda bisa menagih meskipun tidak semua jam tervalidasi (tergantung konfigurasi dan keberanian
+                        Anda!).</li>
+                    <li>Namun, praktik terbaik adalah memvalidasi timesheet terlebih dahulu.</li>
+                    <li>Odoo memungkinkan invoicing sejumlah jam tertentu yang tercatat di SO line, tervalidasi atau
+                        tidak (tapi defaultnya 'Approved Timesheets only' di setting tertentu).</li>
+                </ul>
+            </div>
+            <div class="step-footer">
+                <label>Paham</label>
+                <input type="checkbox" class="mark-done">
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>3. Indikator Siap Tagih</h2>
+            <div class="content">
+                <p>Di Sales Order Line:</p>
+                <ul>
+                    <li>Jika baris produk layanan berubah warna menjadi <strong>Biru</strong>, itu berarti ada kuantitas
+                        yang siap untuk ditagih (Delivered > Invoiced).</li>
+                    <li>Artinya, sales order siap untuk dibuatkan invoice (Create Invoice).</li>
+                </ul>
+            </div>
+            <div class="step-footer">
+                <label>Paham</label>
+                <input type="checkbox" class="mark-done">
+            </div>
+        </section>
+
+        <section class="step-card quiz-card" id="project-materi-15-quiz">
+            <div class="quiz-progress-wrapper">
+                <div class="quiz-progress-bar" id="quizProgressBar"></div>
+            </div>
+            <h2>📝 Quiz Project Materi 15</h2>
+            <div class="quiz-container">
+                <!-- Rendered by JS -->
+            </div>
+            <div class="step-footer">
+                <button class="quiz-submit-btn" onclick="checkQuiz()">Periksa Jawaban</button>
+                <div id="quizResult" style="display: none;"></div>
+            </div>
+        </section>
+
+        <div id="nextActionArea" class="next-action-area" style="display: none;">
+            <h3>🎉 Materi 15 Selesai!</h3>
+            <p>Bagian Invoicing selesai. Lanjut ke Reporting.</p>
+            <a href="../../reporting/project-materi-16/index.html" class="btn-next">Lanjut ke Reporting ➔</a>
+        </div>
+
+        <footer class="footer">
+            <a href="../../../project.html" style="text-decoration: none; color: #666; font-weight: 600;">← Kembali ke
+                Modul Project</a>
+        </footer>
+    </main>
+
+    <script src="../../../assets/js/quiz-bank.js"></script>
+    <script src="../../../assets/js/lms-core.js"></script>
+    <script src="../../../assets/js/quiz-engine.js"></script>
+    <script>
+        const MATERI_ID = "project_materi15";
+        document.addEventListener("DOMContentLoaded", () => {
+            initMateriProgress(MATERI_ID);
+            renderQuiz(MATERI_ID, ".quiz-container");
+            if (loadQuizResult(MATERI_ID)?.passed) showNextButton();
+        });
+
+        const originalOnQuizPassed = window.onQuizPassed;
+        window.onQuizPassed = function (materiId, score) {
+            if (originalOnQuizPassed) originalOnQuizPassed(materiId, score);
+            showNextButton();
+        };
+
+        function showNextButton() {
+            const area = document.getElementById("nextActionArea");
+            if (area) {
+                area.style.display = "block";
+                setTimeout(() => area.scrollIntoView({ behavior: "smooth", block: "center" }), 500);
+            }
+        }
+        function toggleDark() {
+            document.body.classList.toggle("dark");
+            localStorage.setItem("darkMode", document.body.classList.contains("dark"));
+        }
+        if (localStorage.getItem("darkMode") === "true") document.body.classList.add("dark");
+    </script>
+</body>
+
+</html>

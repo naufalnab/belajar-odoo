@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Materi 12: Multiple Websites | Modul Website</title>
+    <link rel="stylesheet" href="../../../assets/css/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="progress-wrapper">
+        <div class="progress-container" id="progressContainer">
+            <div class="progress-bar" id="progressBar"></div>
+            <span class="progress-label" id="progressLabel" style="top: 24px">0%</span>
+        </div>
+    </div>
+
+    <main class="container">
+        <button class="dark-toggle" onclick="toggleDark()">🌙</button>
+
+        <header class="header">
+            <div id="materiBadge" class="materi-badge" style="display: none">
+                🎓 Materi 12 Website Lulus
+            </div>
+            <span class="badge">Website - Market Your Website</span>
+            <h1>Multiple Websites</h1>
+            <p class="subtitle">
+                Mengelola banyak brand dan domain dalam satu database Odoo.
+            </p>
+        </header>
+
+        <section class="step-card">
+            <h2>1. Strategi Multi-Website</h2>
+            <div class="content">
+                <p>Mengapa satu perusahaan butuh banyak website?</p>
+                <ul>
+                    <li><strong>Diversifikasi Brand:</strong> Punya brand fashion kelas atas dan brand streetwear murah?
+                        Pisahkan websitenya agar target pasarnya fokus.</li>
+                    <li><strong>Target Geografis:</strong> Website khusus untuk pasar Indonesia (IDR) dan website Global
+                        (USD) dengan konten berbeda.</li>
+                </ul>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>2. Apa yang Dibagi (Shared)?</h2>
+            <div class="content">
+                <p>Saat membuat website baru di database yang sama:</p>
+                <ul>
+                    <li><strong>Konsisten:</strong> Aplikasi yang diinstal (Sales, Inventory, dll) dan Databasenya SAMA.
+                        Barang, kontak, dan data tersimpan di satu tempat pusat.</li>
+                    <li><strong>Berbeda:</strong> Domain, Tema/Desain, Menu, Halaman, dan Produk yang ditampilkan bisa
+                        dibedakan.</li>
+                </ul>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>3. Mengatur Konten per Website</h2>
+            <div class="content">
+                <p>Bagaimana cara agar produk "A" hanya muncul di Website 1, dan produk "B" di Website 2?</p>
+                <p><strong>Caranya:</strong></p>
+                <ul>
+                    <li>Buka detail Produk di backend.</li>
+                    <li>Cari kolom <strong>Website</strong> di tab Sales/eCommerce.</li>
+                    <li>Pilih website spesifik. Jika dibiarkan kosong, produk akan muncul di <em>semua</em> website.
+                    </li>
+                </ul>
+                <p>Logic ini berlaku juga untuk Halaman Web, Blog Post, dan Slide.</p>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card quiz-card" id="website-materi-12-quiz">
+            <div class="quiz-progress-wrapper">
+                <div class="quiz-progress-bar" id="quizProgressBar"></div>
+            </div>
+
+            <h2>📝 Quiz Website Materi 12</h2>
+
+            <div class="quiz-container">
+                <!-- Quiz akan di-render oleh JS -->
+            </div>
+
+            <div class="step-footer">
+                <button class="quiz-submit-btn" onclick="checkQuiz()">
+                    Periksa Jawaban
+                </button>
+                <div id="quizResult" style="display: none"></div>
+            </div>
+        </section>
+
+        <div id="nextActionArea" class="next-action-area" style="display: none">
+            <h3>🎉 Materi 12 Selesai!</h3>
+            <p>
+                Anda kini ahli dalam mengelola kerajaan website di Odoo.
+            </p>
+            <a href="../../../website.html" class="btn-next">
+                Kembali ke Dashboard Website ➔
+            </a>
+        </div>
+
+        <footer class="footer">
+            <a href="../../../website.html" style="text-decoration: none; color: #666; font-weight: 600">← Kembali ke
+                Modul
+                Website</a>
+        </footer>
+    </main>
+
+    <!-- Load JS -->
+    <script src="../../../assets/js/quiz-bank.js"></script>
+    <script src="../../../assets/js/lms-core.js"></script>
+    <script src="../../../assets/js/quiz-engine.js"></script>
+
+    <script>
+        const MATERI_ID = "website_materi12";
+
+        document.addEventListener("DOMContentLoaded", () => {
+            initMateriProgress(MATERI_ID);
+            renderQuiz(MATERI_ID, ".quiz-container");
+
+            if (loadQuizResult(MATERI_ID)?.passed) {
+                showNextButton();
+            }
+        });
+
+        const originalOnQuizPassed = window.onQuizPassed;
+        window.onQuizPassed = function (materiId, score) {
+            if (originalOnQuizPassed) originalOnQuizPassed(materiId, score);
+            showNextButton();
+        };
+
+        function showNextButton() {
+            const area = document.getElementById("nextActionArea");
+            if (area) {
+                area.style.display = "block";
+                setTimeout(() => {
+                    area.scrollIntoView({ behavior: "smooth", block: "center" });
+                }, 500);
+            }
+        }
+
+        function toggleDark() {
+            document.body.classList.toggle("dark");
+            localStorage.setItem("darkMode", document.body.classList.contains("dark"));
+        }
+        if (localStorage.getItem("darkMode") === "true") {
+            document.body.classList.add("dark");
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Materi 9: Blogging | Modul Website</title>
+    <link rel="stylesheet" href="../../../assets/css/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="progress-wrapper">
+        <div class="progress-container" id="progressContainer">
+            <div class="progress-bar" id="progressBar"></div>
+            <span class="progress-label" id="progressLabel" style="top: 24px">0%</span>
+        </div>
+    </div>
+
+    <main class="container">
+        <button class="dark-toggle" onclick="toggleDark()">🌙</button>
+
+        <header class="header">
+            <div id="materiBadge" class="materi-badge" style="display: none">
+                🎓 Materi 9 Website Lulus
+            </div>
+            <span class="badge">Website - Market Your Website</span>
+            <h1>Blogging Menuju Sukses</h1>
+            <p class="subtitle">
+                Membangun audiens, kepercayaan, dan SEO melalui konten artikel yang konsisten.
+            </p>
+        </header>
+
+        <section class="step-card">
+            <h2>1. Mengapa Blogging Itu Penting?</h2>
+            <div class="content">
+                <p>Blogging bukan sekadar hobi, tapi alat pemasaran yang kuat untuk bisnis Anda. Tiga manfaat utamanya
+                    adalah:</p>
+                <ul>
+                    <li><strong>Membangun Kepercayaan (Trust Building):</strong> Artikel edukatif menunjukkan keahlian
+                        Anda di bidang industri tersebut.</li>
+                    <li><strong>SEO (Search Engine Optimization):</strong> Google menyukai konten segar. Artikel yang
+                        rutin diperbarui membantu website Anda naik peringkat.</li>
+                    <li><strong>Audience Engagement:</strong> Membuka percakapan dengan pelanggan melalui komentar dan
+                        berbagi sosial.</li>
+                </ul>
+                <div class="alert tip">
+                    <strong>Target:</strong> Usahakan memposting artikel minimal <strong>seminggu sekali</strong> untuk
+                    hasil maksimal.
+                </div>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>2. Membuat Blog Post Baru di Odoo</h2>
+            <div class="content">
+                <p>Odoo membuat blogging menjadi sangat mudah dan visual (WYSIWYG).</p>
+                <ol>
+                    <li>Buka halaman website Anda, klik <strong>New</strong> di pojok kanan atas.</li>
+                    <li>Pilih <strong>Blog Post</strong>.</li>
+                    <li>Pilih lokasi blog (misal: "Our Blog") jika Anda punya beberapa blog.</li>
+                    <li>Tulis judul artikel yang menarik.</li>
+                </ol>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>3. Menulis & Tips Power Key "/"</h2>
+            <div class="content">
+                <p>Di editor blog Odoo, Anda bisa menambahkan elemen visual dengan sangat cepat tanpa menyentuh mouse.
+                </p>
+                <ul>
+                    <li>Tekan tombol <code>/</code> (garis miring) pada keyboard saat mengetik.</li>
+                    <li>Sebuah menu akan muncul. Anda bisa langsung memilih untuk memasukkan:
+                        <ul>
+                            <li><strong>Images & Media</strong></li>
+                            <li><strong>Quotes / Blockquotes</strong></li>
+                            <li><strong>Headings</strong></li>
+                            <li><strong>Lists</strong></li>
+                        </ul>
+                    </li>
+                </ul>
+                <p>Fitur ini mempercepat alur kerja penulisan Anda secara signifikan.</p>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>4. Mempublikasikan Artikel</h2>
+            <div class="content">
+                <p>Secara default, artikel baru berstatus <strong>Unpublished</strong> (Tidak Diterbitkan) agar Anda
+                    bisa mengeditnya dengan tenang.</p>
+                <ul>
+                    <li>Periksa kembali tulisan Anda.</li>
+                    <li>Siapkan gambar <strong>Cover</strong> yang menarik melalui menu Customize.</li>
+                    <li>Jika sudah siap, geser tombol <strong>Unpublished</strong> menjadi <strong>Published</strong> di
+                        bagian atas editor.</li>
+                </ul>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card quiz-card" id="website-materi-9-quiz">
+            <div class="quiz-progress-wrapper">
+                <div class="quiz-progress-bar" id="quizProgressBar"></div>
+            </div>
+
+            <h2>📝 Quiz Website Materi 9</h2>
+
+            <div class="quiz-container">
+                <!-- Quiz akan di-render oleh JS -->
+            </div>
+
+            <div class="step-footer">
+                <button class="quiz-submit-btn" onclick="checkQuiz()">
+                    Periksa Jawaban
+                </button>
+                <div id="quizResult" style="display: none"></div>
+            </div>
+        </section>
+
+        <div id="nextActionArea" class="next-action-area" style="display: none">
+            <h3>🎉 Materi 9 Selesai!</h3>
+            <p>
+                Anda telah memulai perjalanan Content Marketing Anda.
+            </p>
+            <a href="../../../website.html" class="btn-next">
+                Kembali ke Dashboard Website ➔
+            </a>
+        </div>
+
+        <footer class="footer">
+            <a href="../../../website.html" style="text-decoration: none; color: #666; font-weight: 600">← Kembali ke
+                Modul
+                Website</a>
+        </footer>
+    </main>
+
+    <!-- Load JS -->
+    <script src="../../../assets/js/quiz-bank.js"></script>
+    <script src="../../../assets/js/lms-core.js"></script>
+    <script src="../../../assets/js/quiz-engine.js"></script>
+
+    <script>
+        const MATERI_ID = "website_materi9";
+
+        document.addEventListener("DOMContentLoaded", () => {
+            initMateriProgress(MATERI_ID);
+            renderQuiz(MATERI_ID, ".quiz-container");
+
+            if (loadQuizResult(MATERI_ID)?.passed) {
+                showNextButton();
+            }
+        });
+
+        const originalOnQuizPassed = window.onQuizPassed;
+        window.onQuizPassed = function (materiId, score) {
+            if (originalOnQuizPassed) originalOnQuizPassed(materiId, score);
+            showNextButton();
+        };
+
+        function showNextButton() {
+            const area = document.getElementById("nextActionArea");
+            if (area) {
+                area.style.display = "block";
+                setTimeout(() => {
+                    area.scrollIntoView({ behavior: "smooth", block: "center" });
+                }, 500);
+            }
+        }
+
+        function toggleDark() {
+            document.body.classList.toggle("dark");
+            localStorage.setItem("darkMode", document.body.classList.contains("dark"));
+        }
+        if (localStorage.getItem("darkMode") === "true") {
+            document.body.classList.add("dark");
+        }
+    </script>
+</body>
+
+</html>

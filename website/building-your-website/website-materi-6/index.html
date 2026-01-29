@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Materi 6: Website Translation | Modul Website</title>
+    <link rel="stylesheet" href="../../../assets/css/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="progress-wrapper">
+        <div class="progress-container" id="progressContainer">
+            <div class="progress-bar" id="progressBar"></div>
+            <span class="progress-label" id="progressLabel" style="top: 24px">0%</span>
+        </div>
+    </div>
+
+    <main class="container">
+        <button class="dark-toggle" onclick="toggleDark()">🌙</button>
+
+        <header class="header">
+            <div id="materiBadge" class="materi-badge" style="display: none">
+                🎓 Materi 6 Website Lulus
+            </div>
+            <span class="badge">Website - Building Your Website</span>
+            <h1>Menerjemahkan Website (Multilingual)</h1>
+            <p class="subtitle">
+                Jangkau audiens global dengan menyediakan website dalam berbagai bahasa.
+            </p>
+
+            <div class="image-placeholder">
+                <img src="../../../assets/images/website/materi-6/hero.png" alt="Translation Tools"
+                    onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+                <span class="placeholder-text">📸 Ilustrasi: Fitur Terjemahan Odoo</span>
+            </div>
+        </header>
+
+        <section class="step-card">
+            <h2>1. Mengapa Perlu Menerjemahkan Website?</h2>
+            <div class="content">
+                <p>Menerjemahkan website bukan hanya soal gaya, tapi soal bisnis:</p>
+                <ul>
+                    <li><strong>Jangkauan Luas:</strong> Pengunjung lebih nyaman membaca dalam bahasa ibu mereka.</li>
+                    <li><strong>SEO:</strong> Mesin pencari menghargai konten lokal, meningkatkan peringkat pencarian di
+                        negara target.</li>
+                    <li><strong>Kepercayaan:</strong> Website multibahasa terlihat lebih profesional dan dapat
+                        dipercaya.</li>
+                </ul>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>2. Bahasa Utama vs Terjemahan</h2>
+            <div class="content">
+                <p>Dalam Odoo, ada perbedaan penting antara <strong>Main Language</strong> dan bahasa tambahan:</p>
+                <ul>
+                    <li><strong>Main Language (Bahasa Utama):</strong> Ini adalah versi "master". Anda memiliki kontrol
+                        penuh untuk mengedit layout, struktur, dan konten secara bebas.</li>
+                    <li><strong>Translated Language:</strong> Di versi terjemahan, Anda <em>hanya</em> bisa mengubah
+                        teks. Anda tidak bisa mengubah posisi blok atau menghapus elemen di mode ini. Ini menjaga
+                        konsistensi tampilan antar bahasa.</li>
+                </ul>
+                <div class="alert info">
+                    <strong>Penting:</strong> Selalu lakukan perubahan desain di Bahasa Utama terlebih dahulu.
+                </div>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>3. Fitur Cerdas Odoo</h2>
+            <div class="content">
+                <p>Menerjemahkan website besar bisa melelahkan. Odoo membantu dengan fitur pintar:</p>
+                <ul>
+                    <li><strong>Sinkronisasi Teks Identik:</strong> Jika Anda menerjemahkan kata "Contact Us" menjadi
+                        "Hubungi Kami" di satu halaman, Odoo akan otomatis menerjemahkan semua kata "Contact Us" lainnya
+                        di seluruh website. Hemat waktu!</li>
+                    <li><strong>Gengo Integration:</strong> Odoo bisa terhubung dengan layanan terjemahan profesional
+                        (Gengo) jika Anda membutuhkan hasil yang sempurna (berbayar).</li>
+                </ul>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card quiz-card" id="website-materi-6-quiz">
+            <div class="quiz-progress-wrapper">
+                <div class="quiz-progress-bar" id="quizProgressBar"></div>
+            </div>
+
+            <h2>📝 Quiz Website Materi 6</h2>
+
+            <div class="quiz-container">
+                <!-- Quiz akan di-render oleh JS -->
+            </div>
+
+            <div class="step-footer">
+                <button class="quiz-submit-btn" onclick="checkQuiz()">
+                    Periksa Jawaban
+                </button>
+                <div id="quizResult" style="display: none"></div>
+            </div>
+        </section>
+
+        <div id="nextActionArea" class="next-action-area" style="display: none">
+            <h3>🎉 Materi 6 Selesai!</h3>
+            <p>
+                Website Anda kini siap <i>Go International</i>.
+            </p>
+            <a href="../../../website.html" class="btn-next">
+                Kembali ke Dashboard Website ➔
+            </a>
+        </div>
+
+        <footer class="footer">
+            <a href="../../../website.html" style="text-decoration: none; color: #666; font-weight: 600">← Kembali ke
+                Modul
+                Website</a>
+        </footer>
+    </main>
+
+    <!-- Load JS -->
+    <script src="../../../assets/js/quiz-bank.js"></script>
+    <script src="../../../assets/js/lms-core.js"></script>
+    <script src="../../../assets/js/quiz-engine.js"></script>
+
+    <script>
+        const MATERI_ID = "website_materi6";
+
+        document.addEventListener("DOMContentLoaded", () => {
+            initMateriProgress(MATERI_ID);
+            renderQuiz(MATERI_ID, ".quiz-container");
+
+            if (loadQuizResult(MATERI_ID)?.passed) {
+                showNextButton();
+            }
+        });
+
+        const originalOnQuizPassed = window.onQuizPassed;
+        window.onQuizPassed = function (materiId, score) {
+            if (originalOnQuizPassed) originalOnQuizPassed(materiId, score);
+            showNextButton();
+        };
+
+        function showNextButton() {
+            const area = document.getElementById("nextActionArea");
+            if (area) {
+                area.style.display = "block";
+                setTimeout(() => {
+                    area.scrollIntoView({ behavior: "smooth", block: "center" });
+                }, 500);
+            }
+        }
+
+        function toggleDark() {
+            document.body.classList.toggle("dark");
+            localStorage.setItem("darkMode", document.body.classList.contains("dark"));
+        }
+        if (localStorage.getItem("darkMode") === "true") {
+            document.body.classList.add("dark");
+        }
+    </script>
+</body>
+
+</html>

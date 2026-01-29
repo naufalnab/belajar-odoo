@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Materi 13: Timesheets Basics | Modul Project</title>
+    <link rel="stylesheet" href="../../../assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="progress-wrapper">
+        <div class="progress-container" id="progressContainer">
+            <div class="progress-bar" id="progressBar"></div>
+            <span class="progress-label" id="progressLabel" style="top: 24px;">0%</span>
+        </div>
+    </div>
+
+    <main class="container">
+        <button class="dark-toggle" onclick="toggleDark()">🌙</button>
+
+        <header class="header">
+            <div id="materiBadge" class="materi-badge" style="display: none;">🎓 Materi 13 Project Selesai</div>
+            <span class="badge">Project - Time Management</span>
+            <h1>Timesheets Basics</h1>
+            <p class="subtitle">Mencatat waktu kerja (Timesheets) dan validasi.</p>
+        </header>
+
+        <section class="step-card">
+            <h2>1. Cara Mencatat Waktu</h2>
+            <div class="content">
+                <p>Ada beberapa cara mencatat timesheet di Odoo:</p>
+                <ul>
+                    <li><strong>Start/Stop Timer</strong>: Di task view, tekan Start untuk mulai, Stop untuk berhenti.
+                        Jika kurang dari 1 menit tapi sudah lebih dari beberapa detik, biasanya dibulatkan ke unit
+                        terkecil yang diset (misal 15 menit) atau dicatat sesuai durasi <strong>jika durasi timer cukup
+                            signifikan</strong> (di Odoo 16, timer pendek < 1 menit mungkin diabaikan atau 0).</li>
+                    <li><strong>Manual Encoding</strong>: Masukkan durasi langsung di tab Timesheets pada task.</li>
+                    <li><strong>Keyboard Shortcut</strong>: Gunakan huruf di sebelah kiri baris timesheet (misal 'a',
+                        'b') untuk start/stop timer (fitur Awesome Timesheet/Grid view tertentu). Jika menggunakan Grid
+                        View (Enterprise), tekan huruf shortcut.</li>
+                </ul>
+            </div>
+            <div class="step-footer">
+                <label>Paham</label>
+                <input type="checkbox" class="mark-done">
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>2. Indikator Waktu</h2>
+            <div class="content">
+                <p>Di Timesheet Grid View:</p>
+                <ul>
+                    <li>Warna <strong>Merah</strong> pada total jam di bawah kolom hari: Menandakan total jam kerja
+                        kurang dari jam kerja kontraktual (misal < 8 jam).</li>
+                    <li>Warna <strong>Hijau</strong>: Jam kerja tercapai atau lebih.</li>
+                </ul>
+            </div>
+            <div class="step-footer">
+                <label>Paham</label>
+                <input type="checkbox" class="mark-done">
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>3. Validasi Timesheet</h2>
+            <div class="content">
+                <p>Manager memvalidasi timesheets:</p>
+                <ul>
+                    <li>Biasanya dilakukan di <strong>Grid View</strong> atau <strong>List View</strong>.</li>
+                    <li>Pilih entri timesheet (checkbox) lalu klik tombol <strong>Validate</strong>.</li>
+                    <li>Di Odoo modern, validasi sering dilakukan per periode atau per karyawan di aplikasi Timesheets >
+                        To Validate.</li>
+                </ul>
+            </div>
+            <div class="step-footer">
+                <label>Paham</label>
+                <input type="checkbox" class="mark-done">
+            </div>
+        </section>
+
+        <section class="step-card quiz-card" id="project-materi-13-quiz">
+            <div class="quiz-progress-wrapper">
+                <div class="quiz-progress-bar" id="quizProgressBar"></div>
+            </div>
+            <h2>📝 Quiz Project Materi 13</h2>
+            <div class="quiz-container">
+                <!-- Rendered by JS -->
+            </div>
+            <div class="step-footer">
+                <button class="quiz-submit-btn" onclick="checkQuiz()">Periksa Jawaban</button>
+                <div id="quizResult" style="display: none;"></div>
+            </div>
+        </section>
+
+        <div id="nextActionArea" class="next-action-area" style="display: none;">
+            <h3>🎉 Materi 13 Selesai!</h3>
+            <p>Lanjut ke materi berikutnya (Coming Soon).</p>
+            <a href="../../../project.html" class="btn-next">Kembali ke Dashboard Project ➔</a>
+        </div>
+
+        <footer class="footer">
+            <a href="../../../project.html" style="text-decoration: none; color: #666; font-weight: 600;">← Kembali ke
+                Modul Project</a>
+        </footer>
+    </main>
+
+    <script src="../../../assets/js/quiz-bank.js"></script>
+    <script src="../../../assets/js/lms-core.js"></script>
+    <script src="../../../assets/js/quiz-engine.js"></script>
+    <script>
+        const MATERI_ID = "project_materi13";
+        document.addEventListener("DOMContentLoaded", () => {
+            initMateriProgress(MATERI_ID);
+            renderQuiz(MATERI_ID, ".quiz-container");
+            if (loadQuizResult(MATERI_ID)?.passed) showNextButton();
+        });
+
+        const originalOnQuizPassed = window.onQuizPassed;
+        window.onQuizPassed = function (materiId, score) {
+            if (originalOnQuizPassed) originalOnQuizPassed(materiId, score);
+            showNextButton();
+        };
+
+        function showNextButton() {
+            const area = document.getElementById("nextActionArea");
+            if (area) {
+                area.style.display = "block";
+                setTimeout(() => area.scrollIntoView({ behavior: "smooth", block: "center" }), 500);
+            }
+        }
+        function toggleDark() {
+            document.body.classList.toggle("dark");
+            localStorage.setItem("darkMode", document.body.classList.contains("dark"));
+        }
+        if (localStorage.getItem("darkMode") === "true") document.body.classList.add("dark");
+    </script>
+</body>
+
+</html>

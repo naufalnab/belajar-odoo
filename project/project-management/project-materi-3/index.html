@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Materi 3: Project Settings | Modul Project</title>
+    <link rel="stylesheet" href="../../../assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="progress-wrapper">
+        <div class="progress-container" id="progressContainer">
+            <div class="progress-bar" id="progressBar"></div>
+            <span class="progress-label" id="progressLabel" style="top: 24px;">0%</span>
+        </div>
+    </div>
+
+    <main class="container">
+        <button class="dark-toggle" onclick="toggleDark()">🌙</button>
+
+        <header class="header">
+            <div id="materiBadge" class="materi-badge" style="display: none;">🎓 Materi 3 Project Selesai</div>
+            <span class="badge">Project - Project Management</span>
+            <h1>Project Settings & Kanban</h1>
+            <p class="subtitle">Memahami pengaturan dasar proyek dan elemen visual Kanban.</p>
+        </header>
+
+        <section class="step-card">
+            <h2>1. Membuat Project Baru</h2>
+            <div class="content">
+                <p>Saat membuat project baru di Odoo:</p>
+                <ul>
+                    <li><strong>Nama Project</strong>: Wajib diisi.</li>
+                    <li><strong>Customer</strong>: Opsional. Project bisa bersifat internal dan tidak terkait customer.
+                    </li>
+                    <li><strong>Nama Project</strong> bisa diubah kapan saja melalui Settings Project atau langsung dari
+                        Kanban/List view jika diizinkan, tetapi biasanya melalui Settings Form.</li>
+                </ul>
+            </div>
+            <div class="step-footer">
+                <label>Paham</label>
+                <input type="checkbox" class="mark-done">
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>2. Elemen Kartu Proyek (Kanban)</h2>
+            <div class="content">
+                <p>Apa saja yang muncul di setiap kartu project pada view utama?</p>
+                <ul>
+                    <li><strong>Tag</strong>: Label untuk kategorisasi.</li>
+                    <li><strong>Project Manager</strong>: Foto/Avatar penanggung jawab.</li>
+                    <li><strong>Scheduled Date</strong> (jika ada).</li>
+                    <li><strong>Yang TIDAK muncul</strong>: Due Dates (biasanya di level task, bukan project) dan
+                        Project Description (hidden).</li>
+                </ul>
+            </div>
+            <div class="step-footer">
+                <label>Paham</label>
+                <input type="checkbox" class="mark-done">
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>3. Membedakan Project</h2>
+            <div class="content">
+                <p>Agar mudah dikenali, Anda bisa menambahkan:</p>
+                <ul>
+                    <li><strong>Tags</strong>: Untuk filter dan grouping.</li>
+                    <li><strong>Warna</strong> (Colors): Memberikan kode warna pada kartu.</li>
+                    <li><strong>Favorites</strong>: Menandai bintang untuk prioritas.</li>
+                    <li>Anda BISA menggabungkan semuanya (Tags + Colors + Star).</li>
+                </ul>
+            </div>
+            <div class="step-footer">
+                <label>Paham</label>
+                <input type="checkbox" class="mark-done">
+            </div>
+        </section>
+
+        <section class="step-card quiz-card" id="project-materi-3-quiz">
+            <div class="quiz-progress-wrapper">
+                <div class="quiz-progress-bar" id="quizProgressBar"></div>
+            </div>
+            <h2>📝 Quiz Project Materi 3</h2>
+            <div class="quiz-container">
+                <!-- Rendered by JS -->
+            </div>
+            <div class="step-footer">
+                <button class="quiz-submit-btn" onclick="checkQuiz()">Periksa Jawaban</button>
+                <div id="quizResult" style="display: none;"></div>
+            </div>
+        </section>
+
+        <div id="nextActionArea" class="next-action-area" style="display: none;">
+            <h3>🎉 Materi 3 Selesai!</h3>
+            <p>Selanjutnya belajar kustomisasi Top Bar.</p>
+            <a href="../project-materi-4/index.html" class="btn-next">Lanjut ke Materi 4 ➔</a>
+        </div>
+
+        <footer class="footer">
+            <a href="../../../project.html" style="text-decoration: none; color: #666; font-weight: 600;">← Kembali ke
+                Modul Project</a>
+        </footer>
+    </main>
+
+    <script src="../../../assets/js/quiz-bank.js"></script>
+    <script src="../../../assets/js/lms-core.js"></script>
+    <script src="../../../assets/js/quiz-engine.js"></script>
+    <script>
+        const MATERI_ID = "project_materi3";
+        document.addEventListener("DOMContentLoaded", () => {
+            initMateriProgress(MATERI_ID);
+            renderQuiz(MATERI_ID, ".quiz-container");
+            if (loadQuizResult(MATERI_ID)?.passed) showNextButton();
+        });
+
+        const originalOnQuizPassed = window.onQuizPassed;
+        window.onQuizPassed = function (materiId, score) {
+            if (originalOnQuizPassed) originalOnQuizPassed(materiId, score);
+            showNextButton();
+        };
+
+        function showNextButton() {
+            const area = document.getElementById("nextActionArea");
+            if (area) {
+                area.style.display = "block";
+                setTimeout(() => area.scrollIntoView({ behavior: "smooth", block: "center" }), 500);
+            }
+        }
+        function toggleDark() {
+            document.body.classList.toggle("dark");
+            localStorage.setItem("darkMode", document.body.classList.contains("dark"));
+        }
+        if (localStorage.getItem("darkMode") === "true") document.body.classList.add("dark");
+    </script>
+</body>
+
+</html>

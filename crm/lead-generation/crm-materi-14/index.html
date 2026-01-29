@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Materi 14: Advanced Lead Generation | Modul CRM</title>
+    <link rel="stylesheet" href="../../../assets/css/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="progress-wrapper">
+        <div class="progress-container" id="progressContainer">
+            <div class="progress-bar" id="progressBar"></div>
+            <span class="progress-label" id="progressLabel" style="top: 24px">0%</span>
+        </div>
+    </div>
+
+    <main class="container">
+        <button class="dark-toggle" onclick="toggleDark()">🌙</button>
+
+        <header class="header">
+            <div id="materiBadge" class="materi-badge" style="display: none">
+                🎓 Materi 14 CRM Lulus
+            </div>
+            <span class="badge">CRM - Lead Generation</span>
+            <h1>Advanced Lead Generation</h1>
+            <p class="subtitle">
+                Otomatisasi pembuatan lead dari Website Visits dan Appointments.
+            </p>
+        </header>
+
+        <section class="step-card">
+            <h2>1. Visits to Leads</h2>
+            <div class="content">
+                <p>Bagaimana jika pengunjung website tidak mengisi form?</p>
+                <ul>
+                    <li>Anda bisa mengaktifkan fitur <strong>'Visits to Leads'</strong>.</li>
+                    <li>Di aplikasi <strong>CRM > Configuration > Settings</strong>, aktifkan fitur ini.</li>
+                    <li>Odoo akan melacak IP perusahaan dan menggunakan database eksternal untuk mengidentifikasi
+                        perusahaan pengunjung, lalu menjadikannya lead jika memenuhi kriteria (Rules).</li>
+                </ul>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>2. Lead Generation Rules</h2>
+            <div class="content">
+                <p>Mengatur aturan pembuatan lead otomatis:</p>
+                <ul>
+                    <li>Anda bisa membuat rule berdasarkan Negara, Event, atau Halaman Website yang dikunjungi.</li>
+                    <li>Pada field <strong>'Lead Type'</strong>, Anda harus memilih apakah ingin membuat
+                        <strong>Lead</strong> atau <strong>Opportunity</strong>.</li>
+                    <li>Pilih 'Opportunity' jika Anda ingin langsung memasukkannya ke pipeline.</li>
+                </ul>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>3. Appointments to Opportunities</h2>
+            <div class="content">
+                <p>Dapat appointment, dapat lead:</p>
+                <ul>
+                    <li>Jika Anda membuka form Appointment (di tab 'Options').</li>
+                    <li>Pastikan opsi <strong>'Create Opportunities'</strong> dicentang.</li>
+                    <li>Ini menjamin setiap booking yang masuk langsung terconvert menjadi opportunity di pipeline, agar
+                        tidak ada prospek yang terlewat.</li>
+                </ul>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card quiz-card" id="crm-materi-14-quiz">
+            <div class="quiz-progress-wrapper">
+                <div class="quiz-progress-bar" id="quizProgressBar"></div>
+            </div>
+
+            <h2>📝 Quiz CRM Materi 14</h2>
+
+            <div class="quiz-container">
+                <!-- Quiz akan di-render oleh JS -->
+            </div>
+
+            <div class="step-footer">
+                <button class="quiz-submit-btn" onclick="checkQuiz()">
+                    Periksa Jawaban
+                </button>
+                <div id="quizResult" style="display: none"></div>
+            </div>
+        </section>
+
+        <div id="nextActionArea" class="next-action-area" style="display: none">
+            <h3>🎉 Materi 14 Selesai!</h3>
+            <p>
+                Otomatisasi lead gen Anda semakin canggih. Selanjutnya: Lead Enrichment.
+            </p>
+            <a href="../../../crm.html" class="btn-next">
+                Kembali ke Dashboard CRM ➔
+            </a>
+        </div>
+
+        <footer class="footer">
+            <a href="../../../crm.html" style="text-decoration: none; color: #666; font-weight: 600">← Kembali ke Modul
+                CRM</a>
+        </footer>
+    </main>
+
+    <!-- Load JS -->
+    <script src="../../../assets/js/quiz-bank.js"></script>
+    <script src="../../../assets/js/lms-core.js"></script>
+    <script src="../../../assets/js/quiz-engine.js"></script>
+
+    <script>
+        const MATERI_ID = "crm_materi14";
+
+        document.addEventListener("DOMContentLoaded", () => {
+            initMateriProgress(MATERI_ID);
+            renderQuiz(MATERI_ID, ".quiz-container");
+
+            if (loadQuizResult(MATERI_ID)?.passed) {
+                showNextButton();
+            }
+        });
+
+        const originalOnQuizPassed = window.onQuizPassed;
+        window.onQuizPassed = function (materiId, score) {
+            if (originalOnQuizPassed) originalOnQuizPassed(materiId, score);
+            showNextButton();
+        };
+
+        function showNextButton() {
+            const area = document.getElementById("nextActionArea");
+            if (area) {
+                area.style.display = "block";
+                setTimeout(() => {
+                    area.scrollIntoView({ behavior: "smooth", block: "center" });
+                }, 500);
+            }
+        }
+
+        function toggleDark() {
+            document.body.classList.toggle("dark");
+            localStorage.setItem("darkMode", document.body.classList.contains("dark"));
+        }
+        if (localStorage.getItem("darkMode") === "true") {
+            document.body.classList.add("dark");
+        }
+    </script>
+</body>
+
+</html>

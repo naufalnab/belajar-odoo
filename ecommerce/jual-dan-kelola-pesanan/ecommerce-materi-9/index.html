@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Materi 9: Cross-selling & Upselling | Modul eCommerce</title>
+    <link rel="stylesheet" href="../../../assets/css/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="progress-wrapper">
+        <div class="progress-container" id="progressContainer">
+            <div class="progress-bar" id="progressBar"></div>
+            <span class="progress-label" id="progressLabel" style="top: 24px">0%</span>
+        </div>
+    </div>
+
+    <main class="container">
+        <button class="dark-toggle" onclick="toggleDark()">🌙</button>
+
+        <header class="header">
+            <div id="materiBadge" class="materi-badge" style="display: none">
+                🎓 Materi 9 eCommerce Lulus
+            </div>
+            <span class="badge">eCommerce - Menjual dan Mengelola Pesanan</span>
+            <h1>Cross-selling & Upselling</h1>
+            <p class="subtitle">
+                Meningkatkan nilai transaksi dengan penawaran produk relevan.
+            </p>
+        </header>
+
+        <section class="step-card">
+            <h2>1. Accessory Products (Cross-selling)</h2>
+            <div class="content">
+                <p>Ini adalah produk pelengkap.</p>
+                <ul>
+                    <li><strong>Momen Muncul:</strong> Saat pelanggan melihat keranjang (Review Cart) sebelum checkout.
+                    </li>
+                    <li><strong>Contoh:</strong> Jual Laptop -> Tawarkan Mouse dan Tas Laptop.</li>
+                    <li>Meningkatkan rata-rata jumlah item per order.</li>
+                </ul>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>2. Optional Products (Upselling)</h2>
+            <div class="content">
+                <p>Strategi "Add to Cart" pop-up.</p>
+                <ul>
+                    <li><strong>Momen Muncul:</strong> Tepat saat tombol "Add to Cart" diklik. Jendela pop-up akan
+                        muncul menawarkan produk ini.</li>
+                    <li><strong>Contoh:</strong> Jual Burger -> Tawarkan "Paket dengan Kentang & Minum" atau "Extra
+                        Keju".</li>
+                    <li>Bisa digunakan untuk produk pengganti yang lebih mahal (Upsell) atau tambahan (Cross-sell
+                        agresif).</li>
+                </ul>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>3. Alternative Products</h2>
+            <div class="content">
+                <p>Ditampilkan di bagian bawah halaman produk.</p>
+                <ul>
+                    <li><strong>Fungsi:</strong> Memberikan opsi lain jika pelanggan tidak cocok dengan produk yang
+                        sedang dilihat.</li>
+                    <li><strong>Contoh:</strong> Lihat Meja Kaca -> Tampilkan Meja Kayu dan Meja Belajar.</li>
+                    <li>Membantu pelanggan membandingkan dan tetap berada di toko Anda.</li>
+                </ul>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card quiz-card" id="ecommerce-materi-9-quiz">
+            <div class="quiz-progress-wrapper">
+                <div class="quiz-progress-bar" id="quizProgressBar"></div>
+            </div>
+
+            <h2>📝 Quiz eCommerce Materi 9</h2>
+
+            <div class="quiz-container">
+                <!-- Quiz akan di-render oleh JS -->
+            </div>
+
+            <div class="step-footer">
+                <button class="quiz-submit-btn" onclick="checkQuiz()">
+                    Periksa Jawaban
+                </button>
+                <div id="quizResult" style="display: none"></div>
+            </div>
+        </section>
+
+        <div id="nextActionArea" class="next-action-area" style="display: none">
+            <h3>🎉 Materi 9 Selesai!</h3>
+            <p>
+                Strategi penjualan Anda semakin tajam.
+            </p>
+            <a href="../../../ecommerce.html" class="btn-next">
+                Kembali ke Dashboard eCommerce ➔
+            </a>
+        </div>
+
+        <footer class="footer">
+            <a href="../../../ecommerce.html" style="text-decoration: none; color: #666; font-weight: 600">← Kembali ke
+                Modul
+                eCommerce</a>
+        </footer>
+    </main>
+
+    <!-- Load JS -->
+    <script src="../../../assets/js/quiz-bank.js"></script>
+    <script src="../../../assets/js/lms-core.js"></script>
+    <script src="../../../assets/js/quiz-engine.js"></script>
+
+    <script>
+        const MATERI_ID = "ecommerce_materi9";
+
+        document.addEventListener("DOMContentLoaded", () => {
+            initMateriProgress(MATERI_ID);
+            renderQuiz(MATERI_ID, ".quiz-container");
+
+            if (loadQuizResult(MATERI_ID)?.passed) {
+                showNextButton();
+            }
+        });
+
+        const originalOnQuizPassed = window.onQuizPassed;
+        window.onQuizPassed = function (materiId, score) {
+            if (originalOnQuizPassed) originalOnQuizPassed(materiId, score);
+            showNextButton();
+        };
+
+        function showNextButton() {
+            const area = document.getElementById("nextActionArea");
+            if (area) {
+                area.style.display = "block";
+                setTimeout(() => {
+                    area.scrollIntoView({ behavior: "smooth", block: "center" });
+                }, 500);
+            }
+        }
+
+        function toggleDark() {
+            document.body.classList.toggle("dark");
+            localStorage.setItem("darkMode", document.body.classList.contains("dark"));
+        }
+        if (localStorage.getItem("darkMode") === "true") {
+            document.body.classList.add("dark");
+        }
+    </script>
+</body>
+
+</html>

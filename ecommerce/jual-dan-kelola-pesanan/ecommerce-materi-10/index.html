@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Materi 10: Loyalty & Gift Cards | Modul eCommerce</title>
+    <link rel="stylesheet" href="../../../assets/css/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="progress-wrapper">
+        <div class="progress-container" id="progressContainer">
+            <div class="progress-bar" id="progressBar"></div>
+            <span class="progress-label" id="progressLabel" style="top: 24px">0%</span>
+        </div>
+    </div>
+
+    <main class="container">
+        <button class="dark-toggle" onclick="toggleDark()">🌙</button>
+
+        <header class="header">
+            <div id="materiBadge" class="materi-badge" style="display: none">
+                🎓 Materi 10 eCommerce Lulus
+            </div>
+            <span class="badge">eCommerce - Menjual dan Mengelola Pesanan</span>
+            <h1>Loyalty & Gift Cards</h1>
+            <p class="subtitle">
+                Membangun loyalitas pelanggan dengan poin, reward, dan kartu hadiah.
+            </p>
+        </header>
+
+        <section class="step-card">
+            <h2>1. Loyalty Programs (Poin Reward)</h2>
+            <div class="content">
+                <p>Mekanisme gamifikasi belanja:</p>
+                <ul>
+                    <li><strong>Rules:</strong> Tentukan cara dapat poin (misal: Rp 10.000 = 1 poin).</li>
+                    <li><strong>Rewards:</strong> Tentukan penukaran (misal: 100 poin = Diskon Rp 50.000 atau Gratis
+                        Produk A).</li>
+                    <li>Pelanggan bisa melihat saldo poin mereka di Portal Pelanggan.</li>
+                </ul>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>2. Gift Cards (Kartu Hadiah)</h2>
+            <div class="content">
+                <p>Menjual saldo belanja prabayar.</p>
+                <ul>
+                    <li>Buat produk tipe <strong>Service</strong> atau <strong>Gift Card</strong>.</li>
+                    <li>Saat pelanggan membeli, Odoo men-generate kode unik.</li>
+                    <li>Kode ini bisa dikirim via email ke penerima hadiah untuk digunakan saat checkout.</li>
+                </ul>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>3. eWallet</h2>
+            <div class="content">
+                <p>Dompet digital toko Anda.</p>
+                <ul>
+                    <li>Berguna untuk proses Refund (Pengembalian Dana) yang dijadikan saldo toko alih-alih transfer
+                        balik bank.</li>
+                    <li>Pelanggan bisa Top Up saldo untuk belanja lebih cepat nanti.</li>
+                </ul>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card quiz-card" id="ecommerce-materi-10-quiz">
+            <div class="quiz-progress-wrapper">
+                <div class="quiz-progress-bar" id="quizProgressBar"></div>
+            </div>
+
+            <h2>📝 Quiz eCommerce Materi 10</h2>
+
+            <div class="quiz-container">
+                <!-- Quiz akan di-render oleh JS -->
+            </div>
+
+            <div class="step-footer">
+                <button class="quiz-submit-btn" onclick="checkQuiz()">
+                    Periksa Jawaban
+                </button>
+                <div id="quizResult" style="display: none"></div>
+            </div>
+        </section>
+
+        <div id="nextActionArea" class="next-action-area" style="display: none">
+            <h3>🎉 Modul eCommerce Selesai!</h3>
+            <p>
+                Selamat! Anda telah menyelesaikan seluruh materi eCommerce.
+            </p>
+            <a href="../../../ecommerce.html" class="btn-next">
+                Kembali ke Dashboard ➔
+            </a>
+        </div>
+
+        <footer class="footer">
+            <a href="../../../ecommerce.html" style="text-decoration: none; color: #666; font-weight: 600">← Kembali ke
+                Modul
+                eCommerce</a>
+        </footer>
+    </main>
+
+    <!-- Load JS -->
+    <script src="../../../assets/js/quiz-bank.js"></script>
+    <script src="../../../assets/js/lms-core.js"></script>
+    <script src="../../../assets/js/quiz-engine.js"></script>
+
+    <script>
+        const MATERI_ID = "ecommerce_materi10";
+
+        document.addEventListener("DOMContentLoaded", () => {
+            initMateriProgress(MATERI_ID);
+            renderQuiz(MATERI_ID, ".quiz-container");
+
+            if (loadQuizResult(MATERI_ID)?.passed) {
+                showNextButton();
+            }
+        });
+
+        const originalOnQuizPassed = window.onQuizPassed;
+        window.onQuizPassed = function (materiId, score) {
+            if (originalOnQuizPassed) originalOnQuizPassed(materiId, score);
+            showNextButton();
+            // Optional: Celebrate completion of track
+        };
+
+        function showNextButton() {
+            const area = document.getElementById("nextActionArea");
+            if (area) {
+                area.style.display = "block";
+                setTimeout(() => {
+                    area.scrollIntoView({ behavior: "smooth", block: "center" });
+                }, 500);
+            }
+        }
+
+        function toggleDark() {
+            document.body.classList.toggle("dark");
+            localStorage.setItem("darkMode", document.body.classList.contains("dark"));
+        }
+        if (localStorage.getItem("darkMode") === "true") {
+            document.body.classList.add("dark");
+        }
+    </script>
+</body>
+
+</html>

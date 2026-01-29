@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Materi 4: Activities & Calendar | Modul CRM</title>
+    <link rel="stylesheet" href="../../../assets/css/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="progress-wrapper">
+        <div class="progress-container" id="progressContainer">
+            <div class="progress-bar" id="progressBar"></div>
+            <span class="progress-label" id="progressLabel" style="top: 24px">0%</span>
+        </div>
+    </div>
+
+    <main class="container">
+        <button class="dark-toggle" onclick="toggleDark()">🌙</button>
+
+        <header class="header">
+            <div id="materiBadge" class="materi-badge" style="display: none">
+                🎓 Materi 4 CRM Lulus
+            </div>
+            <span class="badge">CRM - Lead Management</span>
+            <h1>Activities & Calendar</h1>
+            <p class="subtitle">
+                Manajemen waktu yang efisien dengan kode warna dan integrasi kalender.
+            </p>
+        </header>
+
+        <section class="step-card">
+            <h2>1. Kode Warna di Kanban (Activity Status)</h2>
+            <div class="content">
+                <p>Klik bar berwarna di bagian atas setiap stage:</p>
+                <ul>
+                    <li>Hijau: Future activities.</li>
+                    <li>Kuning: Today activities.</li>
+                    <li>Merah: Overdue activities.</li>
+                    <li><strong>Efek Klik:</strong> Ini hanya akan menampilkan opportunity di stage tersebut (filter)
+                        yang memiliki status aktivitas sesuai warna yang dipilih.</li>
+                </ul>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>2. Snooze Button</h2>
+            <div class="content">
+                <p>Jika Anda belum siap melakukan follow-up:</p>
+                <ul>
+                    <li>Gunakan tombol <strong>Snooze</strong>.</li>
+                    <li>Fitur ini akan menambahkan <strong>7 hari</strong> ke deadline aktivitas saat ini.</li>
+                    <li>Sangat berguna untuk menunda tugas yang tidak mendesak tanpa perlu membuka form edit.</li>
+                </ul>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>3. Penjadwalan dengan Banyak Peserta</h2>
+            <div class="content">
+                <p>Tidak yakin kapan tim Anda available?</p>
+                <ul>
+                    <li>Saat menjadwalkan 'Meeting' atau 'Call', buka aplikasi <strong>Calendar</strong>.</li>
+                    <li>Gunakan tombol (atau fitur) <strong>'Share Availabilities'</strong> atau lihat tampilan kalender
+                        bersama untuk menemukan slot waktu yang kosong untuk semua orang.</li>
+                </ul>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card quiz-card" id="crm-materi-4-quiz">
+            <div class="quiz-progress-wrapper">
+                <div class="quiz-progress-bar" id="quizProgressBar"></div>
+            </div>
+
+            <h2>📝 Quiz CRM Materi 4</h2>
+
+            <div class="quiz-container">
+                <!-- Quiz akan di-render oleh JS -->
+            </div>
+
+            <div class="step-footer">
+                <button class="quiz-submit-btn" onclick="checkQuiz()">
+                    Periksa Jawaban
+                </button>
+                <div id="quizResult" style="display: none"></div>
+            </div>
+        </section>
+
+        <div id="nextActionArea" class="next-action-area" style="display: none">
+            <h3>🎉 Materi 4 Selesai!</h3>
+            <p>
+                Waktu Anda sekarang lebih terorganisir. Lanjut ke penutupan sales!
+            </p>
+            <a href="../../../crm.html" class="btn-next">
+                Kembali ke Dashboard CRM ➔
+            </a>
+        </div>
+
+        <footer class="footer">
+            <a href="../../../crm.html" style="text-decoration: none; color: #666; font-weight: 600">← Kembali ke Modul
+                CRM</a>
+        </footer>
+    </main>
+
+    <!-- Load JS -->
+    <script src="../../../assets/js/quiz-bank.js"></script>
+    <script src="../../../assets/js/lms-core.js"></script>
+    <script src="../../../assets/js/quiz-engine.js"></script>
+
+    <script>
+        const MATERI_ID = "crm_materi4";
+
+        document.addEventListener("DOMContentLoaded", () => {
+            initMateriProgress(MATERI_ID);
+            renderQuiz(MATERI_ID, ".quiz-container");
+
+            if (loadQuizResult(MATERI_ID)?.passed) {
+                showNextButton();
+            }
+        });
+
+        const originalOnQuizPassed = window.onQuizPassed;
+        window.onQuizPassed = function (materiId, score) {
+            if (originalOnQuizPassed) originalOnQuizPassed(materiId, score);
+            showNextButton();
+        };
+
+        function showNextButton() {
+            const area = document.getElementById("nextActionArea");
+            if (area) {
+                area.style.display = "block";
+                setTimeout(() => {
+                    area.scrollIntoView({ behavior: "smooth", block: "center" });
+                }, 500);
+            }
+        }
+
+        function toggleDark() {
+            document.body.classList.toggle("dark");
+            localStorage.setItem("darkMode", document.body.classList.contains("dark"));
+        }
+        if (localStorage.getItem("darkMode") === "true") {
+            document.body.classList.add("dark");
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Materi 3: Vendor Pricelists | Modul Purchase</title>
+    <link rel="stylesheet" href="../../../assets/css/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="progress-wrapper">
+        <div class="progress-container" id="progressContainer">
+            <div class="progress-bar" id="progressBar"></div>
+            <span class="progress-label" id="progressLabel" style="top: 24px">0%</span>
+        </div>
+    </div>
+
+    <main class="container">
+        <button class="dark-toggle" onclick="toggleDark()">🌙</button>
+
+        <header class="header">
+            <div id="materiBadge" class="materi-badge" style="display: none">
+                🎓 Materi 3 Purchase Lulus
+            </div>
+            <span class="badge">Purchase - Buy & Receive</span>
+            <h1>Vendor Pricelists</h1>
+            <p class="subtitle">
+                Mengelola harga khusus dari berbagai vendor.
+            </p>
+        </header>
+
+        <section class="step-card">
+            <h2>1. Membuat Pricelist</h2>
+            <div class="content">
+                <p>Bagaimana cara menambahkan harga vendor untuk produk tertentu?</p>
+                <ul>
+                    <li>Buka <strong>Product form</strong>, klik tab <strong>Purchase</strong>.</li>
+                    <li>Di sana Anda bisa menambahkan baris harga untuk setiap vendor.</li>
+                </ul>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>2. Impor Pricelist</h2>
+            <div class="content">
+                <p>Jika vendor punya banyak barang:</p>
+                <ul>
+                    <li>Masuk ke <strong>Purchase app > Configuration > Vendor Pricelists</strong>.</li>
+                    <li>Klik ikon gerigi (cog) dan pilih <strong>'Import records'</strong>.</li>
+                    <li>Ini cara tercepat untuk memasukkan ribuan harga sekaligus.</li>
+                </ul>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>3. Logika Harga</h2>
+            <div class="content">
+                <p>Contoh Kasus:</p>
+                <ul>
+                    <li>Vendor memberi harga $20 (Price) dengan diskon 10% (Discount).</li>
+                    <li>Jika kita beli 4 item:
+                        <ul>
+                            <li>Total = 4 x $20 = $80.</li>
+                            <li>Diskon 10% dari $80 = $8.</li>
+                            <li>Harga akhir = $80 - $8 = <strong>$72</strong>.</li>
+                            <li>(Atau per item: $20 x 0.9 = $18. 4 item = $72).</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card quiz-card" id="purchase-materi-3-quiz">
+            <div class="quiz-progress-wrapper">
+                <div class="quiz-progress-bar" id="quizProgressBar"></div>
+            </div>
+
+            <h2>📝 Quiz Purchase Materi 3</h2>
+
+            <div class="quiz-container">
+                <!-- Quiz akan di-render oleh JS -->
+            </div>
+
+            <div class="step-footer">
+                <button class="quiz-submit-btn" onclick="checkQuiz()">
+                    Periksa Jawaban
+                </button>
+                <div id="quizResult" style="display: none"></div>
+            </div>
+        </section>
+
+        <div id="nextActionArea" class="next-action-area" style="display: none">
+            <h3>🎉 Materi 3 Selesai!</h3>
+            <p>
+                Harga vendor sudah terkendali. Terakhir di sesi ini: Access Rights.
+            </p>
+            <a href="../../../purchase.html" class="btn-next">
+                Kembali ke Dashboard Purchase ➔
+            </a>
+        </div>
+
+        <footer class="footer">
+            <a href="../../../purchase.html" style="text-decoration: none; color: #666; font-weight: 600">← Kembali ke
+                Modul
+                Purchase</a>
+        </footer>
+    </main>
+
+    <!-- Load JS -->
+    <script src="../../../assets/js/quiz-bank.js"></script>
+    <script src="../../../assets/js/lms-core.js"></script>
+    <script src="../../../assets/js/quiz-engine.js"></script>
+
+    <script>
+        const MATERI_ID = "purchase_materi3";
+
+        document.addEventListener("DOMContentLoaded", () => {
+            initMateriProgress(MATERI_ID);
+            renderQuiz(MATERI_ID, ".quiz-container");
+
+            if (loadQuizResult(MATERI_ID)?.passed) {
+                showNextButton();
+            }
+        });
+
+        const originalOnQuizPassed = window.onQuizPassed;
+        window.onQuizPassed = function (materiId, score) {
+            if (originalOnQuizPassed) originalOnQuizPassed(materiId, score);
+            showNextButton();
+        };
+
+        function showNextButton() {
+            const area = document.getElementById("nextActionArea");
+            if (area) {
+                area.style.display = "block";
+                setTimeout(() => {
+                    area.scrollIntoView({ behavior: "smooth", block: "center" });
+                }, 500);
+            }
+        }
+
+        function toggleDark() {
+            document.body.classList.toggle("dark");
+            localStorage.setItem("darkMode", document.body.classList.contains("dark"));
+        }
+        if (localStorage.getItem("darkMode") === "true") {
+            document.body.classList.add("dark");
+        }
+    </script>
+</body>
+
+</html>

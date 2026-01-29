@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Materi 2: Product Variants | Modul eCommerce</title>
+    <link rel="stylesheet" href="../../../assets/css/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="progress-wrapper">
+        <div class="progress-container" id="progressContainer">
+            <div class="progress-bar" id="progressBar"></div>
+            <span class="progress-label" id="progressLabel" style="top: 24px">0%</span>
+        </div>
+    </div>
+
+    <main class="container">
+        <button class="dark-toggle" onclick="toggleDark()">🌙</button>
+
+        <header class="header">
+            <div id="materiBadge" class="materi-badge" style="display: none">
+                🎓 Materi 2 eCommerce Lulus
+            </div>
+            <span class="badge">eCommerce - Mengatur Katalog Produk</span>
+            <h1>Product Variants</h1>
+            <p class="subtitle">
+                Mengelola variasi produk (warna, ukuran) dan ketersediaan stok.
+            </p>
+        </header>
+
+        <section class="step-card">
+            <h2>1. Membuat Varian Produk</h2>
+            <div class="content">
+                <p>Daripada membuat produk terpisah untuk "Kaos Merah S", "Kaos Merah M", "Kaos Biru S", gunakan
+                    <strong>Product Variants</strong>.</p>
+                <ul>
+                    <li>Di formulir produk, buka tab <strong>Attributes & Variants</strong>.</li>
+                    <li>Tambahkan baris baru, pilih atribut (misal: Color), dan isi nilainya (Red, Blue, Green).</li>
+                    <li>Odoo otomatis menghasilkan semua kombinasi yang mungkin. Anda tidak perlu membuatnya satu per
+                        satu.</li>
+                </ul>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>2. Tampilan Stok (Stock Availability)</h2>
+            <div class="content">
+                <p>Strategi psikologis "FOMO" (Fear of Missing Out) bisa diterapkan dengan menampilkan sisa stok.</p>
+                <ul>
+                    <li>Aktifkan fitur <strong>Show Available Qty</strong> di pengaturan.</li>
+                    <li><strong>Threshold:</strong> Anda bisa mengatur agar stok hanya muncul jika "Kurang dari X unit".
+                    </li>
+                    <li>Contoh: "Hanya tersisa 3 unit!" akan muncul jika stok di bawah 5. Jika stok 100, pesan tidak
+                        muncul.</li>
+                </ul>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>3. Tipe Produk</h2>
+            <div class="content">
+                <p>Penting memilih tipe produk yang benar:</p>
+                <dl>
+                    <dt><strong>Goods (Storable Product):</strong></dt>
+                    <dd>Produk fisik yang stoknya dilacak. Jika habis, tidak bisa dibeli (kecuali diizinkan backorder).
+                    </dd>
+
+                    <dt><strong>Service:</strong></dt>
+                    <dd>Jasa, tiket, atau layanan digital. Tidak ada manajemen stok.</dd>
+
+                    <dt><strong>Consumable:</strong></dt>
+                    <dd>Barang fisik tapi stoknya tidak dilacak secara ketat (misal: baut murah, kertas).</dd>
+                </dl>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card quiz-card" id="ecommerce-materi-2-quiz">
+            <div class="quiz-progress-wrapper">
+                <div class="quiz-progress-bar" id="quizProgressBar"></div>
+            </div>
+
+            <h2>📝 Quiz eCommerce Materi 2</h2>
+
+            <div class="quiz-container">
+                <!-- Quiz akan di-render oleh JS -->
+            </div>
+
+            <div class="step-footer">
+                <button class="quiz-submit-btn" onclick="checkQuiz()">
+                    Periksa Jawaban
+                </button>
+                <div id="quizResult" style="display: none"></div>
+            </div>
+        </section>
+
+        <div id="nextActionArea" class="next-action-area" style="display: none">
+            <h3>🎉 Materi 2 Selesai!</h3>
+            <p>
+                Variasi produk kini tertata rapi.
+            </p>
+            <a href="../../../ecommerce.html" class="btn-next">
+                Kembali ke Dashboard eCommerce ➔
+            </a>
+        </div>
+
+        <footer class="footer">
+            <a href="../../../ecommerce.html" style="text-decoration: none; color: #666; font-weight: 600">← Kembali ke
+                Modul
+                eCommerce</a>
+        </footer>
+    </main>
+
+    <!-- Load JS -->
+    <script src="../../../assets/js/quiz-bank.js"></script>
+    <script src="../../../assets/js/lms-core.js"></script>
+    <script src="../../../assets/js/quiz-engine.js"></script>
+
+    <script>
+        const MATERI_ID = "ecommerce_materi2";
+
+        document.addEventListener("DOMContentLoaded", () => {
+            initMateriProgress(MATERI_ID);
+            renderQuiz(MATERI_ID, ".quiz-container");
+
+            if (loadQuizResult(MATERI_ID)?.passed) {
+                showNextButton();
+            }
+        });
+
+        const originalOnQuizPassed = window.onQuizPassed;
+        window.onQuizPassed = function (materiId, score) {
+            if (originalOnQuizPassed) originalOnQuizPassed(materiId, score);
+            showNextButton();
+        };
+
+        function showNextButton() {
+            const area = document.getElementById("nextActionArea");
+            if (area) {
+                area.style.display = "block";
+                setTimeout(() => {
+                    area.scrollIntoView({ behavior: "smooth", block: "center" });
+                }, 500);
+            }
+        }
+
+        function toggleDark() {
+            document.body.classList.toggle("dark");
+            localStorage.setItem("darkMode", document.body.classList.contains("dark"));
+        }
+        if (localStorage.getItem("darkMode") === "true") {
+            document.body.classList.add("dark");
+        }
+    </script>
+</body>
+
+</html>

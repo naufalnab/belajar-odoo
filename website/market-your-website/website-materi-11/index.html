@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Materi 11: Website Analytics | Modul Website</title>
+    <link rel="stylesheet" href="../../../assets/css/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="progress-wrapper">
+        <div class="progress-container" id="progressContainer">
+            <div class="progress-bar" id="progressBar"></div>
+            <span class="progress-label" id="progressLabel" style="top: 24px">0%</span>
+        </div>
+    </div>
+
+    <main class="container">
+        <button class="dark-toggle" onclick="toggleDark()">🌙</button>
+
+        <header class="header">
+            <div id="materiBadge" class="materi-badge" style="display: none">
+                🎓 Materi 11 Website Lulus
+            </div>
+            <span class="badge">Website - Market Your Website</span>
+            <h1>Website Analytics</h1>
+            <p class="subtitle">
+                Memahami performa website Anda dengan data pengunjung yang akurat.
+            </p>
+        </header>
+
+        <section class="step-card">
+            <h2>1. Mengapa Analytics Penting?</h2>
+            <div class="content">
+                <p>Anda tidak bisa memperbaiki apa yang tidak bisa Anda ukur. Analytics membantu Anda:</p>
+                <ul>
+                    <li><strong>Memahami Pengunjung:</strong> Siapa mereka (demografi) dan dari mana mereka datang
+                        (source).</li>
+                    <li><strong>Meningkatkan Performa:</strong> Halaman mana yang populer dan halaman mana yang membuat
+                        orang pergi.</li>
+                </ul>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>2. Istilah Penting Analytics</h2>
+            <div class="content">
+                <dl>
+                    <dt><strong>Unique Visitor (Pengunjung Unik):</strong></dt>
+                    <dd>Seseorang yang dihitung SATU kali saja, meskipun mereka mengunjungi website Anda 100 kali. Ini
+                        menggambarkan jumlah "orang" sebenarnya.</dd>
+
+                    <dt><strong>Bounce Rate (Rasio Pentalan):</strong></dt>
+                    <dd>Persentase pengunjung yang datang, melihat SATU halaman saja, lalu langsung pergi (close
+                        tab/back). Angka tinggi biasanya berarti konten tidak relevan atau loading lambat.</dd>
+                </dl>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>3. Integrasi Plausible / Google Analytics</h2>
+            <div class="content">
+                <p>Odoo sekarang terintegrasi secara native dengan <strong>Plausible.io</strong>, alat analitik yang
+                    menjaga privasi, ringan, dan mudah dipahami.</p>
+                <p>Anda bisa melihat dashboard analitik langsung dari Odoo Website Backend untuk memantau trafik harian
+                    tanpa perlu keluar aplikasi.</p>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card quiz-card" id="website-materi-11-quiz">
+            <div class="quiz-progress-wrapper">
+                <div class="quiz-progress-bar" id="quizProgressBar"></div>
+            </div>
+
+            <h2>📝 Quiz Website Materi 11</h2>
+
+            <div class="quiz-container">
+                <!-- Quiz akan di-render oleh JS -->
+            </div>
+
+            <div class="step-footer">
+                <button class="quiz-submit-btn" onclick="checkQuiz()">
+                    Periksa Jawaban
+                </button>
+                <div id="quizResult" style="display: none"></div>
+            </div>
+        </section>
+
+        <div id="nextActionArea" class="next-action-area" style="display: none">
+            <h3>🎉 Materi 11 Selesai!</h3>
+            <p>
+                Anda kini bisa membaca data untuk membuat keputusan bisnis yang lebih baik.
+            </p>
+            <a href="../../../website.html" class="btn-next">
+                Kembali ke Dashboard Website ➔
+            </a>
+        </div>
+
+        <footer class="footer">
+            <a href="../../../website.html" style="text-decoration: none; color: #666; font-weight: 600">← Kembali ke
+                Modul
+                Website</a>
+        </footer>
+    </main>
+
+    <!-- Load JS -->
+    <script src="../../../assets/js/quiz-bank.js"></script>
+    <script src="../../../assets/js/lms-core.js"></script>
+    <script src="../../../assets/js/quiz-engine.js"></script>
+
+    <script>
+        const MATERI_ID = "website_materi11";
+
+        document.addEventListener("DOMContentLoaded", () => {
+            initMateriProgress(MATERI_ID);
+            renderQuiz(MATERI_ID, ".quiz-container");
+
+            if (loadQuizResult(MATERI_ID)?.passed) {
+                showNextButton();
+            }
+        });
+
+        const originalOnQuizPassed = window.onQuizPassed;
+        window.onQuizPassed = function (materiId, score) {
+            if (originalOnQuizPassed) originalOnQuizPassed(materiId, score);
+            showNextButton();
+        };
+
+        function showNextButton() {
+            const area = document.getElementById("nextActionArea");
+            if (area) {
+                area.style.display = "block";
+                setTimeout(() => {
+                    area.scrollIntoView({ behavior: "smooth", block: "center" });
+                }, 500);
+            }
+        }
+
+        function toggleDark() {
+            document.body.classList.toggle("dark");
+            localStorage.setItem("darkMode", document.body.classList.contains("dark"));
+        }
+        if (localStorage.getItem("darkMode") === "true") {
+            document.body.classList.add("dark");
+        }
+    </script>
+</body>
+
+</html>

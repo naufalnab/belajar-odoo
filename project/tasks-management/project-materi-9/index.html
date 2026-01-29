@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Materi 9: Recurring Tasks | Modul Project</title>
+    <link rel="stylesheet" href="../../../assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="progress-wrapper">
+        <div class="progress-container" id="progressContainer">
+            <div class="progress-bar" id="progressBar"></div>
+            <span class="progress-label" id="progressLabel" style="top: 24px;">0%</span>
+        </div>
+    </div>
+
+    <main class="container">
+        <button class="dark-toggle" onclick="toggleDark()">🌙</button>
+
+        <header class="header">
+            <div id="materiBadge" class="materi-badge" style="display: none;">🎓 Materi 9 Project Selesai</div>
+            <span class="badge">Project - Tasks Management</span>
+            <h1>Recurring Tasks</h1>
+            <p class="subtitle">Mengotomatiskan pembuatan tugas yang berulang secara berkala.</p>
+        </header>
+
+        <section class="step-card">
+            <h2>1. Mengaktifkan Fitur Recurrence</h2>
+            <div class="content">
+                <p>Fitur ini tidak aktif secara otomatis. Anda harus:</p>
+                <ul>
+                    <li>Pergi ke <strong>Project > Configuration > Settings</strong>.</li>
+                    <li>Cari bagian "Tasks Management" dan aktifkan checklist <strong>Recurring Tasks</strong>.</li>
+                    <li>Klik Save.</li>
+                </ul>
+            </div>
+            <div class="step-footer">
+                <label>Paham</label>
+                <input type="checkbox" class="mark-done">
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>2. Membuat Tugas Berulang</h2>
+            <div class="content">
+                <p>Setelah diaktifkan, field baru "Recurrent" akan muncul di form Task:</p>
+                <ul>
+                    <li>Buka task yang ingin diulang.</li>
+                    <li>Centang kotak <strong>Recurrent</strong> (atau klik smart button "Recurrence").</li>
+                    <li>Atur frekuensi pengulangan (Harian, Mingguan, Bulanan, Tahunan) dan kapan pengulangan berakhir
+                        (Forever, End Date, atau Number of Repetitions).</li>
+                </ul>
+            </div>
+            <div class="step-footer">
+                <label>Paham</label>
+                <input type="checkbox" class="mark-done">
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>3. Menghentikan Pengulangan</h2>
+            <div class="content">
+                <p>Jika Anda tidak ingin task tersebut berulang lagi:</p>
+                <ul>
+                    <li>Buka task terakhir atau task induknya.</li>
+                    <li>Klik pada status <strong>Recurrence</strong> (biasanya berupa link atau smart button hijau).
+                    </li>
+                    <li>Pilih opsi untuk menghentikan recurrence atau hapus checklist "Recurrent".</li>
+                </ul>
+            </div>
+            <div class="step-footer">
+                <label>Paham</label>
+                <input type="checkbox" class="mark-done">
+            </div>
+        </section>
+
+        <section class="step-card quiz-card" id="project-materi-9-quiz">
+            <div class="quiz-progress-wrapper">
+                <div class="quiz-progress-bar" id="quizProgressBar"></div>
+            </div>
+            <h2>📝 Quiz Project Materi 9</h2>
+            <div class="quiz-container">
+                <!-- Rendered by JS -->
+            </div>
+            <div class="step-footer">
+                <button class="quiz-submit-btn" onclick="checkQuiz()">Periksa Jawaban</button>
+                <div id="quizResult" style="display: none;"></div>
+            </div>
+        </section>
+
+        <div id="nextActionArea" class="next-action-area" style="display: none;">
+            <h3>🎉 Materi 9 Selesai!</h3>
+            <p>Hebat! Anda mempelajari fitur otomatisasi task.</p>
+            <a href="../../../project.html" class="btn-next">Kembali ke Dashboard Project ➔</a>
+        </div>
+
+        <footer class="footer">
+            <a href="../../../project.html" style="text-decoration: none; color: #666; font-weight: 600;">← Kembali ke
+                Modul Project</a>
+        </footer>
+    </main>
+
+    <script src="../../../assets/js/quiz-bank.js"></script>
+    <script src="../../../assets/js/lms-core.js"></script>
+    <script src="../../../assets/js/quiz-engine.js"></script>
+    <script>
+        const MATERI_ID = "project_materi9";
+        document.addEventListener("DOMContentLoaded", () => {
+            initMateriProgress(MATERI_ID);
+            renderQuiz(MATERI_ID, ".quiz-container");
+            if (loadQuizResult(MATERI_ID)?.passed) showNextButton();
+        });
+
+        const originalOnQuizPassed = window.onQuizPassed;
+        window.onQuizPassed = function (materiId, score) {
+            if (originalOnQuizPassed) originalOnQuizPassed(materiId, score);
+            showNextButton();
+        };
+
+        function showNextButton() {
+            const area = document.getElementById("nextActionArea");
+            if (area) {
+                area.style.display = "block";
+                setTimeout(() => area.scrollIntoView({ behavior: "smooth", block: "center" }), 500);
+            }
+        }
+        function toggleDark() {
+            document.body.classList.toggle("dark");
+            localStorage.setItem("darkMode", document.body.classList.contains("dark"));
+        }
+        if (localStorage.getItem("darkMode") === "true") document.body.classList.add("dark");
+    </script>
+</body>
+
+</html>

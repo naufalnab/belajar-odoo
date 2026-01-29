@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Materi 3: Categories & Ribbons | Modul eCommerce</title>
+    <link rel="stylesheet" href="../../../assets/css/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="progress-wrapper">
+        <div class="progress-container" id="progressContainer">
+            <div class="progress-bar" id="progressBar"></div>
+            <span class="progress-label" id="progressLabel" style="top: 24px">0%</span>
+        </div>
+    </div>
+
+    <main class="container">
+        <button class="dark-toggle" onclick="toggleDark()">🌙</button>
+
+        <header class="header">
+            <div id="materiBadge" class="materi-badge" style="display: none">
+                🎓 Materi 3 eCommerce Lulus
+            </div>
+            <span class="badge">eCommerce - Mengatur Katalog Produk</span>
+            <h1>Categories & Ribbons</h1>
+            <p class="subtitle">
+                Memudahkan navigasi pelanggan dengan kategori dan menonjolkan produk promo.
+            </p>
+        </header>
+
+        <section class="step-card">
+            <h2>1. Kategori Produk eCommerce</h2>
+            <div class="content">
+                <p>Berbeda dengan kategori internal (POS/Accounting), <strong>eCommerce Category</strong> khusus untuk
+                    navigasi website.</p>
+                <ul>
+                    <li><strong>Hirarki:</strong> Satu produk hanya boleh punya SATU kategori induk utama di internal,
+                        tapi di eCommerce satu produk bisa masuk ke BANYAK kategori navigasi.</li>
+                    <li><strong>Pengaturan:</strong> Masuk ke tab "Sales" pada formulir produk, lalu isi field
+                        <strong>eCommerce Categories</strong>.</li>
+                </ul>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>2. Mengelola Categories</h2>
+            <div class="content">
+                <p>Di backend (Website > eCommerce > eCommerce Categories):</p>
+                <ul>
+                    <li>Anda bisa membuat struktur pohon (Parent > Child).</li>
+                    <li>Contoh: Pakaian (Parent) > Pria (Child), Wanita (Child).</li>
+                    <li>Satu kategori Parent bisa punya banyak Child.</li>
+                </ul>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>3. Ribbons (Pita Promo)</h2>
+            <div class="content">
+                <p>Ingin produk terlihat menonjol? Gunakan Ribbons.</p>
+                <ul>
+                    <li>Buka halaman produk di Website Editor.</li>
+                    <li>Klik produk, lalu di sidebar pilih opsi <strong>Ribbon</strong>.</li>
+                    <li>Anda bisa memilih desain pita (Sale, New, Out of Stock) atau membuat teks custom.</li>
+                    <li>Ini cara visual terbaik untuk menarik perhatian mata pengunjung.</li>
+                </ul>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card quiz-card" id="ecommerce-materi-3-quiz">
+            <div class="quiz-progress-wrapper">
+                <div class="quiz-progress-bar" id="quizProgressBar"></div>
+            </div>
+
+            <h2>📝 Quiz eCommerce Materi 3</h2>
+
+            <div class="quiz-container">
+                <!-- Quiz akan di-render oleh JS -->
+            </div>
+
+            <div class="step-footer">
+                <button class="quiz-submit-btn" onclick="checkQuiz()">
+                    Periksa Jawaban
+                </button>
+                <div id="quizResult" style="display: none"></div>
+            </div>
+        </section>
+
+        <div id="nextActionArea" class="next-action-area" style="display: none">
+            <h3>🎉 Materi 3 Selesai!</h3>
+            <p>
+                Toko Anda sekarang rapi dan menarik.
+            </p>
+            <a href="../../../ecommerce.html" class="btn-next">
+                Kembali ke Dashboard eCommerce ➔
+            </a>
+        </div>
+
+        <footer class="footer">
+            <a href="../../../ecommerce.html" style="text-decoration: none; color: #666; font-weight: 600">← Kembali ke
+                Modul
+                eCommerce</a>
+        </footer>
+    </main>
+
+    <!-- Load JS -->
+    <script src="../../../assets/js/quiz-bank.js"></script>
+    <script src="../../../assets/js/lms-core.js"></script>
+    <script src="../../../assets/js/quiz-engine.js"></script>
+
+    <script>
+        const MATERI_ID = "ecommerce_materi3";
+
+        document.addEventListener("DOMContentLoaded", () => {
+            initMateriProgress(MATERI_ID);
+            renderQuiz(MATERI_ID, ".quiz-container");
+
+            if (loadQuizResult(MATERI_ID)?.passed) {
+                showNextButton();
+            }
+        });
+
+        const originalOnQuizPassed = window.onQuizPassed;
+        window.onQuizPassed = function (materiId, score) {
+            if (originalOnQuizPassed) originalOnQuizPassed(materiId, score);
+            showNextButton();
+        };
+
+        function showNextButton() {
+            const area = document.getElementById("nextActionArea");
+            if (area) {
+                area.style.display = "block";
+                setTimeout(() => {
+                    area.scrollIntoView({ behavior: "smooth", block: "center" });
+                }, 500);
+            }
+        }
+
+        function toggleDark() {
+            document.body.classList.toggle("dark");
+            localStorage.setItem("darkMode", document.body.classList.contains("dark"));
+        }
+        if (localStorage.getItem("darkMode") === "true") {
+            document.body.classList.add("dark");
+        }
+    </script>
+</body>
+
+</html>

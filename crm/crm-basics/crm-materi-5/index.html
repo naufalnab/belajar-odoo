@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Materi 5: Closing Opportunities | Modul CRM</title>
+    <link rel="stylesheet" href="../../../assets/css/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="progress-wrapper">
+        <div class="progress-container" id="progressContainer">
+            <div class="progress-bar" id="progressBar"></div>
+            <span class="progress-label" id="progressLabel" style="top: 24px">0%</span>
+        </div>
+    </div>
+
+    <main class="container">
+        <button class="dark-toggle" onclick="toggleDark()">🌙</button>
+
+        <header class="header">
+            <div id="materiBadge" class="materi-badge" style="display: none">
+                🎓 Materi 5 CRM Lulus
+            </div>
+            <span class="badge">CRM - Lead Management</span>
+            <h1>Closing Opportunities</h1>
+            <p class="subtitle">
+                Menandai Won dan Lost, serta memulihkan data yang hilang.
+            </p>
+        </header>
+
+        <section class="step-card">
+            <h2>1. Edit Setelah 'Won'</h2>
+            <div class="content">
+                <p>Apakah opportunity terkunci setelah menang?</p>
+                <ul>
+                    <li>Tidak. Anda masih bisa mengedit opportunity kapan saja (<strong>Yes, at any time</strong>).</li>
+                    <li>Fleksibilitas ini penting jika Anda perlu memperbarui informasi pasca-penjualan.</li>
+                </ul>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>2. Kemana Perginya 'Lost'?</h2>
+            <div class="content">
+                <p>Saat Anda menandai opportunity sebagai 'Lost':</p>
+                <ul>
+                    <li>Mereka secara otomatis <strong>disembunyikan (hidden automatically)</strong> dari pipeline aktif
+                        agar tampilan tetap bersih.</li>
+                    <li>Mereka tidak dihapus permanen.</li>
+                </ul>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>3. Restore 'Lost' Opportunity</h2>
+            <div class="content">
+                <p>Salah menandai Lost?</p>
+                <ul>
+                    <li>Gunakan filter Archive/Lost di search bar untuk menemukannya.</li>
+                    <li>Buka opportunity tersebut.</li>
+                    <li>Anda bisa klik tombol <strong>Restore</strong> kapan saja untuk mengembalikannya ke pipeline
+                        aktif.</li>
+                </ul>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card quiz-card" id="crm-materi-5-quiz">
+            <div class="quiz-progress-wrapper">
+                <div class="quiz-progress-bar" id="quizProgressBar"></div>
+            </div>
+
+            <h2>📝 Quiz CRM Materi 5</h2>
+
+            <div class="quiz-container">
+                <!-- Quiz akan di-render oleh JS -->
+            </div>
+
+            <div class="step-footer">
+                <button class="quiz-submit-btn" onclick="checkQuiz()">
+                    Periksa Jawaban
+                </button>
+                <div id="quizResult" style="display: none"></div>
+            </div>
+        </section>
+
+        <div id="nextActionArea" class="next-action-area" style="display: none">
+            <h3>🎉 Materi 5 Selesai!</h3>
+            <p>
+                Siklus hidup opportunity dari awal hingga akhir kini Anda kuasai.
+            </p>
+            <a href="../../../crm.html" class="btn-next">
+                Kembali ke Dashboard CRM ➔
+            </a>
+        </div>
+
+        <footer class="footer">
+            <a href="../../../crm.html" style="text-decoration: none; color: #666; font-weight: 600">← Kembali ke Modul
+                CRM</a>
+        </footer>
+    </main>
+
+    <!-- Load JS -->
+    <script src="../../../assets/js/quiz-bank.js"></script>
+    <script src="../../../assets/js/lms-core.js"></script>
+    <script src="../../../assets/js/quiz-engine.js"></script>
+
+    <script>
+        const MATERI_ID = "crm_materi5";
+
+        document.addEventListener("DOMContentLoaded", () => {
+            initMateriProgress(MATERI_ID);
+            renderQuiz(MATERI_ID, ".quiz-container");
+
+            if (loadQuizResult(MATERI_ID)?.passed) {
+                showNextButton();
+            }
+        });
+
+        const originalOnQuizPassed = window.onQuizPassed;
+        window.onQuizPassed = function (materiId, score) {
+            if (originalOnQuizPassed) originalOnQuizPassed(materiId, score);
+            showNextButton();
+        };
+
+        function showNextButton() {
+            const area = document.getElementById("nextActionArea");
+            if (area) {
+                area.style.display = "block";
+                setTimeout(() => {
+                    area.scrollIntoView({ behavior: "smooth", block: "center" });
+                }, 500);
+            }
+        }
+
+        function toggleDark() {
+            document.body.classList.toggle("dark");
+            localStorage.setItem("darkMode", document.body.classList.contains("dark"));
+        }
+        if (localStorage.getItem("darkMode") === "true") {
+            document.body.classList.add("dark");
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Materi 3: Images & Media | Modul Website</title>
+    <link rel="stylesheet" href="../../../assets/css/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="progress-wrapper">
+        <div class="progress-container" id="progressContainer">
+            <div class="progress-bar" id="progressBar"></div>
+            <span class="progress-label" id="progressLabel" style="top: 24px">0%</span>
+        </div>
+    </div>
+
+    <main class="container">
+        <button class="dark-toggle" onclick="toggleDark()">🌙</button>
+
+        <header class="header">
+            <div id="materiBadge" class="materi-badge" style="display: none">
+                🎓 Materi 3 Website Lulus
+            </div>
+            <span class="badge">Website - Building Your Website</span>
+            <h1>Images & Media</h1>
+            <p class="subtitle">
+                Mempercantik website dengan gambar berkualitas, video, dan background dinamis.
+            </p>
+
+            <div class="image-placeholder">
+                <img src="../../../assets/images/website/materi-3/hero.png" alt="Images and Media"
+                    onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+                <span class="placeholder-text">📸 Ilustrasi: Media Manager Odoo</span>
+            </div>
+        </header>
+
+        <section class="step-card">
+            <h2>1. Integrasi Unsplash (Gambar Gratis)</h2>
+            <div class="content">
+                <p>Mencari gambar berkualitas tinggi seringkali sulit dan mahal. Odoo terintegrasi langsung dengan
+                    <strong>Unsplash</strong>, perpustakaan stok foto gratis.</p>
+                <ul>
+                    <li><strong>Akses Mudah:</strong> Cari gambar berdasarkan kata kunci langsung dari editor website.
+                    </li>
+                    <li><strong>Kualitas Tinggi:</strong> Ribuan gambar resolusi tinggi siap pakai.</li>
+                    <li><strong>Hak Cipta Aman:</strong> Bebas royalti untuk penggunaan komersial.</li>
+                </ul>
+                <div class="alert info">
+                    <strong>Tips:</strong> Ketik kata kunci dalam Bahasa Inggris saat mencari di Unsplash untuk hasil
+                    terbaik.
+                </div>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>2. Background Shapes</h2>
+            <div class="content">
+                <p>Untuk membuat tampilan website lebih modern dan tidak kaku ("kotak-kotak"), Odoo menyediakan fitur
+                    <strong>Background Shapes</strong>.</p>
+                <ul>
+                    <li>Ini adalah bentuk grafis (gelombang, miring, abstrak) yang memisahkan antar blok.</li>
+                    <li>Fungsinya untuk menciptakan alur visual yang estetis dan dinamis.</li>
+                    <li>Dapat disesuaikan warnanya agar selaras dengan tema website.</li>
+                </ul>
+
+                <div class="image-placeholder">
+                    <img src="../../../assets/images/website/materi-3/shapes.png" alt="Background Shapes"
+                        onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+                    <span class="placeholder-text">📸 Screenshot: Contoh Background Shapes</span>
+                </div>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>3. Integrasi Video</h2>
+            <div class="content">
+                <p>Video meningkatkan keterlibatan pengunjung (engagement). Di Odoo, cara terbaik menambahkan video
+                    adalah dengan metode <strong>Embed</strong>.</p>
+                <p>Cukup salin tautan (URL) dari <strong>YouTube</strong> atau <strong>Vimeo</strong> dan tempel (paste)
+                    ke dalam blok video di Odoo. Odoo akan otomatis menyematkannya.</p>
+                <div class="alert warning">
+                    <strong>Hindari Upload Langsung:</strong> Mengunggah file video besar langsung ke server Odoo dapat
+                    memperlambat website. Selalu gunakan hosting video eksternal (YouTube/Vimeo).
+                </div>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>4. Optimasi Gambar (WebP)</h2>
+            <div class="content">
+                <p>Kecepatan website adalah segalanya. Odoo secara otomatis mengonversi dan menggunakan format gambar
+                    <strong>WebP</strong>.</p>
+                <ul>
+                    <li><strong>Ukuran Kecil:</strong> WebP jauh lebih ringan dibanding JPEG atau PNG dengan kualitas
+                        yang setara.</li>
+                    <li><strong>Loading Cepat:</strong> Website terbuka lebih cepat, pengunjung lebih senang.</li>
+                    <li><strong>SEO Friendly:</strong> Google menyukai website yang cepat.</li>
+                </ul>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card quiz-card" id="website-materi-3-quiz">
+            <div class="quiz-progress-wrapper">
+                <div class="quiz-progress-bar" id="quizProgressBar"></div>
+            </div>
+
+            <h2>📝 Quiz Website Materi 3</h2>
+
+            <div class="quiz-container">
+                <!-- Quiz akan di-render oleh JS -->
+            </div>
+
+            <div class="step-footer">
+                <button class="quiz-submit-btn" onclick="checkQuiz()">
+                    Periksa Jawaban
+                </button>
+                <div id="quizResult" style="display: none"></div>
+            </div>
+        </section>
+
+        <div id="nextActionArea" class="next-action-area" style="display: none">
+            <h3>🎉 Materi 3 Selesai!</h3>
+            <p>
+                Website Anda kini lebih hidup dengan gambar dan video.
+            </p>
+            <a href="../../../website.html" class="btn-next">
+                Kembali ke Dashboard Website ➔
+            </a>
+        </div>
+
+        <footer class="footer">
+            <a href="../../../website.html" style="text-decoration: none; color: #666; font-weight: 600">← Kembali ke
+                Modul
+                Website</a>
+        </footer>
+    </main>
+
+    <!-- Load JS -->
+    <script src="../../../assets/js/quiz-bank.js"></script>
+    <script src="../../../assets/js/lms-core.js"></script>
+    <script src="../../../assets/js/quiz-engine.js"></script>
+
+    <script>
+        const MATERI_ID = "website_materi3";
+
+        document.addEventListener("DOMContentLoaded", () => {
+            initMateriProgress(MATERI_ID);
+            renderQuiz(MATERI_ID, ".quiz-container");
+
+            if (loadQuizResult(MATERI_ID)?.passed) {
+                showNextButton();
+            }
+        });
+
+        const originalOnQuizPassed = window.onQuizPassed;
+        window.onQuizPassed = function (materiId, score) {
+            if (originalOnQuizPassed) originalOnQuizPassed(materiId, score);
+            showNextButton();
+        };
+
+        function showNextButton() {
+            const area = document.getElementById("nextActionArea");
+            if (area) {
+                area.style.display = "block";
+                setTimeout(() => {
+                    area.scrollIntoView({ behavior: "smooth", block: "center" });
+                }, 500);
+            }
+        }
+
+        function toggleDark() {
+            document.body.classList.toggle("dark");
+            localStorage.setItem("darkMode", document.body.classList.contains("dark"));
+        }
+        if (localStorage.getItem("darkMode") === "true") {
+            document.body.classList.add("dark");
+        }
+    </script>
+</body>
+
+</html>

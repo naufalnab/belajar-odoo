@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Materi 4: Conditional Displays | Modul Surveys</title>
+    <link rel="stylesheet" href="../../../assets/css/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="progress-wrapper">
+        <div class="progress-container" id="progressContainer">
+            <div class="progress-bar" id="progressBar"></div>
+            <span class="progress-label" id="progressLabel" style="top: 24px">0%</span>
+        </div>
+    </div>
+
+    <main class="container">
+        <button class="dark-toggle" onclick="toggleDark()">🌙</button>
+
+        <header class="header">
+            <div id="materiBadge" class="materi-badge" style="display: none">
+                🎓 Materi 4 Surveys Lulus
+            </div>
+            <span class="badge">Surveys - Logic</span>
+            <h1>Conditional Displays</h1>
+            <p class="subtitle">
+                Membuat survei yang dinamis dan relevan dengan logika bersyarat.
+            </p>
+        </header>
+
+        <section class="step-card">
+            <h2>1. Manfaat Conditional Display</h2>
+            <div class="content">
+                <p>Conditional Display memungkinkan Anda menyembunyikan atau menampilkan pertanyaan berdasarkan jawaban
+                    sebelumnya.</p>
+                <ul>
+                    <li><strong>Personalisasi:</strong> Hanya menampilkan pertanyaan yang relevan (misal: Jika "Punya
+                        Mobil" = Ya, tanya "Merk Mobil?").</li>
+                    <li><strong>Efisiensi:</strong> Survei terasa lebih pendek dan to-the-point bagi peserta.</li>
+                </ul>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>2. Mengonfigurasi Logika</h2>
+            <div class="content">
+                <p>Cara setting:</p>
+                <ul>
+                    <li>Pilih pertanyaan yang ingin disembunyikan/dimunculkan.</li>
+                    <li>Buka tab <strong>Options</strong> > aktifkan <strong>Conditional Display</strong>.</li>
+                    <li>Pilih <strong>Triggering Question</strong> (pertanyaan pemicu) dan <strong>Triggering
+                            Answer</strong> (jawaban pemicu).</li>
+                </ul>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>3. Indikator Visual</h2>
+            <div class="content">
+                <p>Di dashboard editor survei, pertanyaan yang memiliki logika kondisional akan ditandai dengan ikon
+                    khusus:</p>
+                <ul>
+                    <li><strong>Simbol Garpu (Fork Symbol):</strong> Menandakan adanya percabangan logika. Hover mouse
+                        untuk melihat tool tip detailnya.</li>
+                </ul>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card quiz-card" id="surveys-materi-4-quiz">
+            <div class="quiz-progress-wrapper">
+                <div class="quiz-progress-bar" id="quizProgressBar"></div>
+            </div>
+
+            <h2>📝 Quiz Surveys Materi 4</h2>
+
+            <div class="quiz-container">
+                <!-- Quiz akan di-render oleh JS -->
+            </div>
+
+            <div class="step-footer">
+                <button class="quiz-submit-btn" onclick="checkQuiz()">
+                    Periksa Jawaban
+                </button>
+                <div id="quizResult" style="display: none"></div>
+            </div>
+        </section>
+
+        <div id="nextActionArea" class="next-action-area" style="display: none">
+            <h3>🎉 Materi 4 Selesai!</h3>
+            <p>
+                Survei Anda sekarang lebih cerdas dan personal.
+            </p>
+            <a href="../../../surveys.html" class="btn-next">
+                Kembali ke Dashboard Surveys ➔
+            </a>
+        </div>
+
+        <footer class="footer">
+            <a href="../../../surveys.html" style="text-decoration: none; color: #666; font-weight: 600">← Kembali ke
+                Modul
+                Surveys</a>
+        </footer>
+    </main>
+
+    <!-- Load JS -->
+    <script src="../../../assets/js/quiz-bank.js"></script>
+    <script src="../../../assets/js/lms-core.js"></script>
+    <script src="../../../assets/js/quiz-engine.js"></script>
+
+    <script>
+        const MATERI_ID = "surveys_materi4";
+
+        document.addEventListener("DOMContentLoaded", () => {
+            initMateriProgress(MATERI_ID);
+            renderQuiz(MATERI_ID, ".quiz-container");
+
+            if (loadQuizResult(MATERI_ID)?.passed) {
+                showNextButton();
+            }
+        });
+
+        const originalOnQuizPassed = window.onQuizPassed;
+        window.onQuizPassed = function (materiId, score) {
+            if (originalOnQuizPassed) originalOnQuizPassed(materiId, score);
+            showNextButton();
+        };
+
+        function showNextButton() {
+            const area = document.getElementById("nextActionArea");
+            if (area) {
+                area.style.display = "block";
+                setTimeout(() => {
+                    area.scrollIntoView({ behavior: "smooth", block: "center" });
+                }, 500);
+            }
+        }
+
+        function toggleDark() {
+            document.body.classList.toggle("dark");
+            localStorage.setItem("darkMode", document.body.classList.contains("dark"));
+        }
+        if (localStorage.getItem("darkMode") === "true") {
+            document.body.classList.add("dark");
+        }
+    </script>
+</body>
+
+</html>

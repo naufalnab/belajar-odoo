@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Materi 18: Opportunity Handling | Modul CRM</title>
+    <link rel="stylesheet" href="../../../assets/css/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="progress-wrapper">
+        <div class="progress-container" id="progressContainer">
+            <div class="progress-bar" id="progressBar"></div>
+            <span class="progress-label" id="progressLabel" style="top: 24px">0%</span>
+        </div>
+    </div>
+
+    <main class="container">
+        <button class="dark-toggle" onclick="toggleDark()">🌙</button>
+
+        <header class="header">
+            <div id="materiBadge" class="materi-badge" style="display: none">
+                🎓 Materi 18 CRM Lulus
+            </div>
+            <span class="badge">CRM - Lead Management</span>
+            <h1>Opportunity Handling</h1>
+            <p class="subtitle">
+                Tips praktis mengelola opportunities sehari-hari: Pindah stage, log aktivitas, dan meetings.
+            </p>
+        </header>
+
+        <section class="step-card">
+            <h2>1. Memindahkan Stage</h2>
+            <div class="content">
+                <p>Ada beberapa cara memindahkan opportunity ke tahap selanjutnya:</p>
+                <ul>
+                    <li><strong>Drag & Drop</strong>: Di Kanban view, tarik kartu opportunity ke kolom stage tujuan.
+                    </li>
+                    <li><strong>Klik Stage</strong>: Di dalam detail opportunity, klik bar status (panah stage) di pojok
+                        kanan atas.</li>
+                    <li>Odoo akan mencatat perpindahan ini di Chatter secara otomatis.</li>
+                </ul>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>2. Mengecek History</h2>
+            <div class="content">
+                <p>Bagaimana melihat riwayat komunikasi dan perubahan?</p>
+                <ul>
+                    <li>Semua histori ada di <strong>Chatter</strong> (panel sebelah kanan/bawah detail opportunity).
+                    </li>
+                    <li>Ini mencakup email, catatan internal, perubahan stage, dan log aktivitas.</li>
+                    <li>Anda tidak perlu membuka menu 'Reporting' khusus untuk melihat riwayat satu opportunity.</li>
+                </ul>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card">
+            <h2>3. Next Meeting</h2>
+            <div class="content">
+                <p>Melihat jadwal meeting tanpa membuka kalender:</p>
+                <ul>
+                    <li>Lihat <strong>Smart Button 'Meetings'</strong> di bagian atas opportunity form.</li>
+                    <li>Tanggal meeting berikutnya biasanya tertera di sana atau di chatter jika baru saja dijadwalkan.
+                    </li>
+                    <li>Smart button adalah cara tercepat untuk mengakses detail event kalender terkait opportunity ini.
+                    </li>
+                </ul>
+            </div>
+            <div class="step-footer">
+                <label>Selesai</label>
+                <input type="checkbox" class="mark-done" />
+            </div>
+        </section>
+
+        <section class="step-card quiz-card" id="crm-materi-18-quiz">
+            <div class="quiz-progress-wrapper">
+                <div class="quiz-progress-bar" id="quizProgressBar"></div>
+            </div>
+
+            <h2>📝 Quiz CRM Materi 18</h2>
+
+            <div class="quiz-container">
+                <!-- Quiz akan di-render oleh JS -->
+            </div>
+
+            <div class="step-footer">
+                <button class="quiz-submit-btn" onclick="checkQuiz()">
+                    Periksa Jawaban
+                </button>
+                <div id="quizResult" style="display: none"></div>
+            </div>
+        </section>
+
+        <div id="nextActionArea" class="next-action-area" style="display: none">
+            <h3>🎉 Materi 18 Selesai!</h3>
+            <p>
+                Anda sudah master dalam operasional harian CRM. Terakhir: Mari bahas Gamification.
+            </p>
+            <a href="../../../crm.html" class="btn-next">
+                Kembali ke Dashboard CRM ➔
+            </a>
+        </div>
+
+        <footer class="footer">
+            <a href="../../../crm.html" style="text-decoration: none; color: #666; font-weight: 600">← Kembali ke Modul
+                CRM</a>
+        </footer>
+    </main>
+
+    <!-- Load JS -->
+    <script src="../../../assets/js/quiz-bank.js"></script>
+    <script src="../../../assets/js/lms-core.js"></script>
+    <script src="../../../assets/js/quiz-engine.js"></script>
+
+    <script>
+        const MATERI_ID = "crm_materi18";
+
+        document.addEventListener("DOMContentLoaded", () => {
+            initMateriProgress(MATERI_ID);
+            renderQuiz(MATERI_ID, ".quiz-container");
+
+            if (loadQuizResult(MATERI_ID)?.passed) {
+                showNextButton();
+            }
+        });
+
+        const originalOnQuizPassed = window.onQuizPassed;
+        window.onQuizPassed = function (materiId, score) {
+            if (originalOnQuizPassed) originalOnQuizPassed(materiId, score);
+            showNextButton();
+        };
+
+        function showNextButton() {
+            const area = document.getElementById("nextActionArea");
+            if (area) {
+                area.style.display = "block";
+                setTimeout(() => {
+                    area.scrollIntoView({ behavior: "smooth", block: "center" });
+                }, 500);
+            }
+        }
+
+        function toggleDark() {
+            document.body.classList.toggle("dark");
+            localStorage.setItem("darkMode", document.body.classList.contains("dark"));
+        }
+        if (localStorage.getItem("darkMode") === "true") {
+            document.body.classList.add("dark");
+        }
+    </script>
+</body>
+
+</html>
