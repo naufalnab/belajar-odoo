@@ -493,14 +493,15 @@
         // Update UI Card
         updateCardUI(mod.id, percent, quiz?.passed);
 
-        // Logika Buka Gembok Berantai
-        if (quiz?.passed && mod.nextCard) {
+        // Logika Buka Gembok Berantai (DISABLED: Always Unlock)
+        if (mod.nextCard) {
           // Cari link materi selanjutnya
           const nextModuleData = modules.find(
             (m) => `card-${m.id}` === mod.nextCard
           );
           const nextLink = nextModuleData ? nextModuleData.link : "#";
 
+          // Always unlock next card
           unlockCard(mod.nextCard, nextLink);
         }
       });
