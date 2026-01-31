@@ -117,11 +117,17 @@ function enableRetryMode(isPerfect) {
   if (!submitBtn) return;
 
   if (isPerfect) {
-    submitBtn.innerText = "🔄 Reset Quiz (Ulangi Latihan)";
+    submitBtn.innerHTML = `
+      <span class="lang-id">🔄 Reset Quiz (Ulangi Latihan)</span>
+      <span class="lang-en">🔄 Reset Quiz (Practice Again)</span>
+    `;
     submitBtn.style.backgroundColor = "#28a745"; // Hijau jika sudah sempurna
     submitBtn.style.color = "#fff";
   } else {
-    submitBtn.innerText = "🔄 Ulangi Quiz (Kejar 100%)";
+    submitBtn.innerHTML = `
+      <span class="lang-id">🔄 Ulangi Quiz (Kejar 100%)</span>
+      <span class="lang-en">🔄 Retry Quiz (Get 100%)</span>
+    `;
     submitBtn.style.backgroundColor = "#ffc107"; // Kuning jika belum
     submitBtn.style.color = "#333";
   }
@@ -157,7 +163,10 @@ function resetButtonState() {
   const submitBtn = document.querySelector(".quiz-submit-btn");
   if (!submitBtn) return;
 
-  submitBtn.innerText = "Periksa Jawaban";
+  submitBtn.innerHTML = `
+    <span class="lang-id">Periksa Jawaban</span>
+    <span class="lang-en">Check Answers</span>
+  `;
   submitBtn.style.backgroundColor = "";
   submitBtn.style.color = "";
   submitBtn.style.display = "inline-block";
@@ -172,20 +181,31 @@ function createQuestionElement(question, index, locked, savedResult) {
   wrapper.id = `quiz-question-${index}`;
 
   const title = document.createElement("p");
-  title.innerHTML = `<strong>${index + 1}. ${question.question}</strong>`;
+
+  // LOGIKA BAHASA (STRICT TOGGLE)
+  const lang = getCurrentLanguage(); // dari lms-core.js
+  let questionText = question.question; // Default ID
+  let questionTextEn = question.question_en || question.question;
+
+  title.innerHTML = `
+    <strong>
+      <span class="lang-id">${index + 1}. ${questionText}</span>
+      <span class="lang-en">${index + 1}. ${questionTextEn}</span>
+    </strong>
+  `;
   wrapper.appendChild(title);
 
   const ul = document.createElement("ul");
   ul.className = "quiz-options";
 
-  question.options.forEach(option => {
+  question.options.forEach((option, i) => {
     const li = document.createElement("li");
     const label = document.createElement("label");
     const input = document.createElement("input");
 
     input.type = "radio";
     input.name = `quiz_q_${index}`;
-    input.value = option;
+    input.value = option; // Value tetap original (ID) untuk validasi
 
     // Kunci input HANYA jika locked (100%)
     if (locked) input.disabled = true;
@@ -197,10 +217,26 @@ function createQuestionElement(question, index, locked, savedResult) {
     }
 
     label.appendChild(input);
-    label.append(" " + option);
+
+    // Teks Opsi
+    let optionLabel = option;
+    let optionLabelEn = (question.options_en && question.options_en[i]) ? question.options_en[i] : option;
+
+    const spanId = document.createElement("span");
+    spanId.className = "lang-id";
+    spanId.textContent = " " + optionLabel;
+
+    const spanEn = document.createElement("span");
+    spanEn.className = "lang-en";
+    spanEn.textContent = " " + optionLabelEn;
+
+    label.appendChild(spanId);
+    label.appendChild(spanEn);
+
     li.appendChild(label);
     ul.appendChild(li);
   });
+
 
   wrapper.appendChild(ul);
 
@@ -228,14 +264,23 @@ function showQuizResult(score) {
   box.style.display = "block";
 
   if (score === 100) {
-    box.innerHTML = `🌟 <strong>SEMPURNA!</strong><br>Skor kita: <strong>100%</strong>`;
+    box.innerHTML = `
+      <span class="lang-id">🌟 <strong>SEMPURNA!</strong><br>Skor kita: <strong>100%</strong></span>
+      <span class="lang-en">🌟 <strong>PERFECT!</strong><br>Score: <strong>100%</strong></span>
+    `;
     box.className = "alert success";
   } else if (score >= LMS_CONFIG.passingScore) {
     // Kasus 70-99%
-    box.innerHTML = `✅ <strong>LULUS</strong><br>Skor kita: <strong>${score}%</strong><br><small>kita boleh lanjut, atau ulangi agar 100%.</small>`;
+    box.innerHTML = `
+      <span class="lang-id">✅ <strong>LULUS</strong><br>Skor kita: <strong>${score}%</strong><br><small>kita boleh lanjut, atau ulangi agar 100%.</small></span>
+      <span class="lang-en">✅ <strong>PASSED</strong><br>Score: <strong>${score}%</strong><br><small>You can proceed, or retry for 100%.</small></span>
+    `;
     box.className = "alert warning"; // Kuning/Warning biar sadar belum sempurna
   } else {
-    box.innerHTML = `❌ <strong>BELUM LULUS</strong><br>Skor kita: <strong>${score}%</strong>`;
+    box.innerHTML = `
+      <span class="lang-id">❌ <strong>BELUM LULUS</strong><br>Skor kita: <strong>${score}%</strong></span>
+      <span class="lang-en">❌ <strong>NOT PASSED</strong><br>Score: <strong>${score}%</strong></span>
+    `;
     box.className = "alert danger";
   }
 }
@@ -295,7 +340,10 @@ function lockQuizUI(container, score) {
   // Tambahkan banner status di ATAS container (bukan overlay yang menutupi)
   const banner = document.createElement("div");
   banner.className = "quiz-status-banner";
-  banner.innerHTML = `🏆 Quiz Selesai! Skor: ${score}% <br><small>Jawaban telah dikunci.</small>`;
+  banner.innerHTML = `
+    <span class="lang-id">🏆 Quiz Selesai! Skor: ${score}% <br><small>Jawaban telah dikunci.</small></span>
+    <span class="lang-en">🏆 Quiz Completed! Score: ${score}% <br><small>Answers are locked.</small></span>
+  `;
   container.prepend(banner);
 
   // Kunci semua input
@@ -312,4 +360,20 @@ document.addEventListener("DOMContentLoaded", () => {
   if (currentQuizId) {
     // Tidak perlu load manual di sini karena renderQuiz sudah menanganinya
   }
+
+  // Listen for language changes
+  window.addEventListener("languageChanged", (e) => {
+    if (currentQuizId && quizRendered) {
+      // Re-render quiz with new language
+      // Perlu selector container yg sama, kita asumsikan default .quiz-container jika tidak disimpan
+      // Tapi renderQuiz menyimpan currentId, kita bisa panggil renderQuiz lagi
+      // PERHATIAN: renderQuiz butuh containerSelector. 
+      // Kita perlu simpan containerSelector di variable global state quiz-engine.
+
+      const container = document.querySelector(".quiz-container");
+      if (container) {
+        renderQuiz(currentQuizId, ".quiz-container");
+      }
+    }
+  });
 });

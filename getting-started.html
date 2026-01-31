@@ -30,6 +30,7 @@
   </header>
 
   <main class="container" style="margin-top: 60px">
+  <button class="lang-toggle">ID</button>
     <button class="dark-toggle" title="Ganti Mode Tema">🌙</button>
     <section class="materi-dashboard">
       <a href="./getting-started/getting-started/memulai-materi-1/index.html" class="step-card materi-card"
@@ -493,14 +494,15 @@
         // Update UI Card
         updateCardUI(mod.id, percent, quiz?.passed);
 
-        // Logika Buka Gembok Berantai
-        if (quiz?.passed && mod.nextCard) {
+        // Logika Buka Gembok Berantai (DISABLED: Always Unlock)
+        if (mod.nextCard) {
           // Cari link materi selanjutnya
           const nextModuleData = modules.find(
             (m) => `card-${m.id}` === mod.nextCard
           );
           const nextLink = nextModuleData ? nextModuleData.link : "#";
 
+          // Always unlock next card
           unlockCard(mod.nextCard, nextLink);
         }
       });

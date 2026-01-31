@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory Basics 2: Pengiriman & Ketersediaan - Odoo Learning</title>
+    <link rel="stylesheet" href="../../../assets/css/style.css">
+    <link rel="stylesheet" href="../../../assets/css/dark-mode.css">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo-container">
+            <a href="../../../index.html" style="text-decoration: none;">
+                <h2 class="logo">Odoo<span style="color: var(--accent);">Learning</span></h2>
+            </a>
+        </div>
+        <nav class="nav-links">
+            <a href="../../../index.html" class="nav-item">
+                <span class="icon">🏠</span>
+                Dashboard
+            </a>
+            <a href="../../../accounting.html" class="nav-item">
+                <span class="icon">💰</span>
+                Accounting
+            </a>
+             <a href="../../../inventory.html" class="nav-item active">
+                <span class="icon">📦</span>
+                Inventory
+            </a>
+        </nav>
+    </div>
+
+    <div class="main-content">
+        <header class="top-bar">
+            <div class="breadcrumbs">
+                <a href="../../../index.html">Home</a> &gt; 
+                <a href="../../../inventory.html">Inventory</a> &gt; 
+                <span>Inventory Basics 2: Pengiriman & Ketersediaan</span>
+            </div>
+        </header>
+
+        <div class="module-container">
+            <div class="video-section">
+               <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/7qX2o_-N9j0" title="Odoo Tutorial" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+
+            <div class="content-section">
+                <h1>Inventory Basics 2: Pengiriman & Ketersediaan</h1>
+                <p class="subtitle">Delivery Steps & Product Availability</p>
+                
+                <div class="learning-material">
+                    <h3>Strategi Pengiriman 2 Langkah</h3><p>Beberapa perusahaan, seperti Stealthy Wood dalam contoh kasus, menggunakan pengiriman 2 langkah (Pick + Ship). Alasannya adalah efisiensi kerja: tim picking dapat fokus menemukan produk dengan cepat, sementara tim pengiriman (delivery) fokus pada <strong>verifikasi, pengepakan, dan pengiriman</strong> barang.</p><h3>Sumber Dokumen Pengiriman</h3><p>Berbeda dengan penerimaan, dokumen sumber untuk Picking atau Delivery Order adalah <strong>Order Penjualan (Sales Order)</strong>.</p><h3>Indikator Ketersediaan Produk</h3><p>Di Odoo, jika Anda melihat teks 'Product Availability' berwarna hijau dengan status 'Available', itu berarti <strong>barang tersedia secara fisik dan telah dicadangkan (reserved)</strong> untuk pesanan tersebut. Ini memberikan kepastian bahwa stok siap untuk diproses.</p>
+                </div>
+            </div>
+
+            <div class="quiz-section">
+                <h2>Kuis Pengetahuan</h2>
+                <div id="quiz-container" class="quiz-container" data-quiz-id="inventory_materi2">
+                    <!-- Quiz will be rendered here -->
+                </div>
+            </div>
+
+            <div class="navigation-buttons">
+                <a href="../../../inventory/inventory-basics/inventory-materi-1/index.html" class="btn btn-secondary">← Materi Sebelumnya</a>
+                <a href="../../../inventory/inventory-basics/inventory-materi-3/index.html" class="btn btn-primary btn-next">Lanjut ke Materi Berikutnya →</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="../../../assets/js/lms-core.js"></script>
+    <script src="../../../assets/js/quiz-bank.js"></script>
+    <script src="../../../assets/js/quiz-engine.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            if (typeof renderQuiz === 'function') {
+                const quizId = document.getElementById('quiz-container').getAttribute('data-quiz-id');
+                if (window.QUIZ_BANK && window.QUIZ_BANK[quizId]) {
+                    renderQuiz(quizId, '#quiz-container');
+                }
+            }
+        });
+    </script>
+</body>
+</html>

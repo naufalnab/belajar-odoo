@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tax Closing & Lock Dates | PembelajarBelajar</title>
+    <link rel="stylesheet" href="../../../assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header class="header">
+        <h1>Tax Closing & Lock Dates</h1>
+        <p class="subtitle">Penutupan pajak dan tanggal kunci.</p>
+    </header>
+
+    <main class="container">
+        <!-- QUIZ SECTION -->
+        <section class="step-card">
+            <h2>Kuis: Tax Closing & Lock Dates</h2>
+            <p>Uji pemahaman Anda tentang materi ini.</p>
+            <div class="quiz-container">
+                <!-- Quiz will be rendered here -->
+            </div>
+            <div class="step-footer">
+                <button class="quiz-submit-btn" onclick="checkQuiz()">Periksa Jawaban</button>
+                <div id="quizResult" style="display: none;"></div>
+            </div>
+        </section>
+
+        <!-- NAVIGATION -->
+        <div class="next-action-area" id="nextActionArea" style="display: none;">
+            <h3>Luar Biasa! 🎉</h3>
+            <p>Anda telah menyelesaikan kuis ini.</p>
+            <a href="../accounting-materi-26/index.html" class="btn-next">Lanjut ke Materi Berikutnya ➔</a>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <a href="../../../accounting.html">Kembali ke Dashboard Accounting</a>
+    </footer>
+
+    <script src="../../../assets/js/lms-core.js"></script>
+    <script src="../../../assets/js/quiz-bank.js"></script>
+    <script src="../../../assets/js/quiz-engine.js"></script>
+    <script>
+        const PRODUCT_ID = "accounting_materi25"; // ID unik untuk materi ini
+
+        document.addEventListener("DOMContentLoaded", () => {
+            initMateriProgress(PRODUCT_ID);
+            renderQuiz(PRODUCT_ID, ".quiz-container");
+        });
+    </script>
+</body>
+
+</html>

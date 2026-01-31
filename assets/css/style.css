@@ -27,6 +27,12 @@ body.dark {
 }
 
 /* =====================================================
+   LANGUAGE VISIBILITY
+===================================================== */
+body[data-lang="id"] .lang-en { display: none !important; }
+body[data-lang="en"] .lang-id { display: none !important; }
+
+/* =====================================================
    BASE
 ===================================================== */
 * {
@@ -344,6 +350,22 @@ body.dark .lock-overlay {
   padding: 10px 14px;
   cursor: pointer;
   font-weight: 600;
+  z-index: 9999;
+}
+
+.lang-toggle {
+  position: fixed;
+  bottom: 20px;
+  right: 80px; /* Sebelah kiri tombol dark mode */
+  background: var(--card-bg);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50px;
+  padding: 10px 14px;
+  cursor: pointer;
+  font-weight: 700;
+  color: var(--primary-color);
+  z-index: 9999;
+  min-width: 45px;
 }
 
 /* ================================

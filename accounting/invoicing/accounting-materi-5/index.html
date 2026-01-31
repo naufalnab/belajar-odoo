@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Invoices | PembelajarBelajar</title>
+    <link rel="stylesheet" href="../../../assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header class="header">
+        <h1>Customer Invoices (Faktur Pelanggan)</h1>
+        <p class="subtitle">Memahami cara membuat dan mengelola faktur pelanggan di Odoo.</p>
+
+        <div class="image-placeholder">
+            <img src="../../../assets/images/accounting/accounting-materi-5/infographic.png"
+                alt="accounting-materi-5 Infographic"
+                onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+        </div>
+    </header>
+
+    <main class="container">
+
+        <!-- CONTENT -->
+        <section class="step-card">
+            <h2>Membuat Faktur (Invoice)</h2>
+            <p>
+                Faktur pelanggan dapat dibuat dari pesanan penjualan (Sales Order) atau secara manual di menu
+                <strong>Accounting ‣ Customers ‣ Invoices</strong>.
+            </p>
+            <h3>Journal Items</h3>
+            <p>Ketikja faktur divalidasi, Odoo membuat jurnal entri (Journal items) di latar belakang:</p>
+            <ul>
+                <li><strong>Kredit (Credit):</strong> Akun Product Sales (Pendapatan) dan Tax Account (Utang Pajak).
+                </li>
+                <li><strong>Debit:</strong> Akun Account Receivable (Piutang Dagang).</li>
+            </ul>
+
+            <h3>Konfigurasi</h3>
+            <p>
+                <strong>Default Income Account:</strong> Akun pendapatan default ditentukan di formulir Produk (Product
+                Form) atau Kategori Produk (Product Category).
+            </p>
+            <p>
+                <strong>Struktur Faktur:</strong> Anda dapat menambahkan "Sections" (Bagian) dan "Notes" (Catatan) untuk
+                membuat faktur lebih rapi dan mudah dibaca oleh pelanggan.
+            </p>
+
+            <div class="step-footer">
+                <div style="display: flex; gap: 10px; align-items: center;">
+                    <label for="step1-check">Selesai dibaca</label>
+                    <input type="checkbox" id="step1-check" class="mark-done"
+                        onchange="updateProgress('accounting_materi5')">
+                </div>
+            </div>
+        </section>
+
+        <!-- QUIZ SECTION -->
+        <section class="step-card">
+            <h2>Kuis: Customer Invoices</h2>
+            <p>Uji pemahaman Anda tentang pembuatan faktur.</p>
+            <div class="quiz-container">
+                <!-- Quiz will be rendered here -->
+            </div>
+            <div class="step-footer">
+                <button class="quiz-submit-btn" onclick="checkQuiz()">Periksa Jawaban</button>
+                <div id="quizResult" style="display: none;"></div>
+            </div>
+        </section>
+
+        <!-- NAVIGATION -->
+        <div class="next-action-area" id="nextActionArea" style="display: none;">
+            <h3>Luar Biasa! 🎉</h3>
+            <p>Anda telah memahami dasar-dasar Invoicing.</p>
+            <a href="../accounting-materi-6/index.html" class="btn-next">Lanjut ke Materi 6 ➔</a>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <a href="../../../accounting.html">Kembali ke Dashboard Accounting</a>
+    </footer>
+
+    <script src="../../../assets/js/lms-core.js"></script>
+    <script src="../../../assets/js/quiz-bank.js"></script>
+    <script src="../../../assets/js/quiz-engine.js"></script>
+    <script>
+        const PRODUCT_ID = "accounting_materi5"; // ID unik untuk materi ini
+
+        document.addEventListener("DOMContentLoaded", () => {
+            initMateriProgress(PRODUCT_ID);
+            renderQuiz(PRODUCT_ID, ".quiz-container");
+        });
+    </script>
+</body>
+
+</html>

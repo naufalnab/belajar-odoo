@@ -10,9 +10,24 @@
 </head>
 
 <body>
-    <button class="dark-toggle" onclick="toggleDark()">🌙</button>
+    <nav class="navbar">
+        <div class="nav-content">
+            <a href="./index.html" class="logo">Belajar Odoo</a>
+            <div class="nav-links">
+                <a href="./getting-started.html">Getting Started</a>
+                <a href="./website.html">Website</a>
+                <a href="./sales.html">Sales</a>
+                <a href="./marketing.html">Marketing</a>
+                <a href="./crm.html">CRM</a>
+                <a href="./accounting.html" class="active">Accounting</a>
+                <a href="./quizzes.html">Quiz Center</a>
+            </div>
+            <button class="lang-toggle">ID</button>
+            <button class="dark-toggle" onclick="toggleDark()">🌙</button>
+        </div>
+    </nav>
 
-    <div class="main-dashboard-container">
+    <div class="dashboard-container">
         <header class="dashboard-header">
             <a href="./index.html" class="back-link">← Kembali ke Halaman Utama</a>
             <h1>Accounting & Invoicing</h1>
@@ -22,101 +37,696 @@
         <!-- Phase 1: Accounting Basics -->
         <h3 class="dashboard-section-title">Accounting Basics</h3>
         <section class="materi-dashboard">
-            <div class="step-card materi-card locked">
-                <h2>Materi 1-4</h2>
-                <p>Dasar-dasar Akuntansi di Odoo.</p>
-                <small>Coming Soon</small>
-            </div>
+            <!-- Materi 1 -->
+            <a href="./accounting/accounting-basics/accounting-materi-1/index.html" class="step-card materi-card"
+                id="card-accounting_materi1">
+                <div class="materi-card-header">
+                    <span class="badge">Materi 1</span>
+                    <span class="materi-status" id="status-accounting_materi1">🔒</span>
+                </div>
+                <h2>Dashboard & Onboarding</h2>
+                <p>Konfigurasi awal dan pengenalan dashboard akuntansi.</p>
+                <div class="materi-progress">
+                    <div class="materi-progress-bar" id="progress-accounting_materi1"></div>
+                </div>
+                <small id="label-accounting_materi1">Terkunci</small>
+            </a>
+
+            <!-- Materi 2 -->
+            <a href="./accounting/accounting-basics/accounting-materi-2/index.html" class="step-card materi-card"
+                id="card-accounting_materi2">
+                <div class="materi-card-header">
+                    <span class="badge">Materi 2</span>
+                    <span class="materi-status" id="status-accounting_materi2">🔒</span>
+                </div>
+                <h2>Chart of Accounts</h2>
+                <p>Memahami dan mengelola bagan akun.</p>
+                <div class="materi-progress">
+                    <div class="materi-progress-bar" id="progress-accounting_materi2"></div>
+                </div>
+                <small id="label-accounting_materi2">Terkunci</small>
+            </a>
+
+            <!-- Materi 3 -->
+            <a href="./accounting/accounting-basics/accounting-materi-3/index.html" class="step-card materi-card"
+                id="card-accounting_materi3">
+                <div class="materi-card-header">
+                    <span class="badge">Materi 3</span>
+                    <span class="materi-status" id="status-accounting_materi3">🔒</span>
+                </div>
+                <h2>Initial Balances</h2>
+                <p>Mengatur saldo awal akun.</p>
+                <div class="materi-progress">
+                    <div class="materi-progress-bar" id="progress-accounting_materi3"></div>
+                </div>
+                <small id="label-accounting_materi3">Terkunci</small>
+            </a>
+
+            <!-- Materi 4 -->
+            <a href="./accounting/accounting-basics/accounting-materi-4/index.html" class="step-card materi-card"
+                id="card-accounting_materi4">
+                <div class="materi-card-header">
+                    <span class="badge">Materi 4</span>
+                    <span class="materi-status" id="status-accounting_materi4">🔒</span>
+                </div>
+                <h2>Import Data</h2>
+                <p>Cara mengimpor data akuntansi ke Odoo.</p>
+                <div class="materi-progress">
+                    <div class="materi-progress-bar" id="progress-accounting_materi4"></div>
+                </div>
+                <small id="label-accounting_materi4">Terkunci</small>
+            </a>
         </section>
 
         <!-- Phase 2: Invoicing -->
-        <h3 class="dashboard-section-title" style="margin-top: 30px; opacity: 0.5;">Invoicing (Coming Soon)</h3>
-        <section class="materi-dashboard" style="opacity: 0.5;">
-            <div class="step-card materi-card locked">
-                <h2>Materi 5-10</h2>
-                <p>Manajemen Invoice & Penagihan.</p>
-            </div>
+        <h3 class="dashboard-section-title" style="margin-top: 30px;">Invoicing</h3>
+        <section class="materi-dashboard">
+            <!-- Materi 5 -->
+            <a href="./accounting/invoicing/accounting-materi-5/index.html" class="step-card materi-card"
+                id="card-accounting_materi5">
+                <div class="materi-card-header">
+                    <span class="badge">Materi 5</span>
+                    <span class="materi-status" id="status-accounting_materi5">🔒</span>
+                </div>
+                <h2>Customer Invoices</h2>
+                <p>Membuat dan mengelola faktur pelanggan.</p>
+                <div class="materi-progress">
+                    <div class="materi-progress-bar" id="progress-accounting_materi5"></div>
+                </div>
+                <small id="label-accounting_materi5">Terkunci</small>
+            </a>
+
+            <!-- Materi 6 -->
+            <a href="./accounting/invoicing/accounting-materi-6/index.html" class="step-card materi-card"
+                id="card-accounting_materi6">
+                <div class="materi-card-header">
+                    <span class="badge badge-new">Materi 6</span>
+                    <span class="materi-status" id="status-accounting_materi6">🔒</span>
+                </div>
+                <h2>Invoicing from SO</h2>
+                <p>Integrasi Invoicing dengan Sales Order.</p>
+                <div class="materi-progress">
+                    <div class="materi-progress-bar" id="progress-accounting_materi6"></div>
+                </div>
+                <small id="label-accounting_materi6">Terkunci</small>
+            </a>
+
+            <!-- Materi 7 -->
+            <a href="./accounting/invoicing/accounting-materi-7/index.html" class="step-card materi-card"
+                id="card-accounting_materi7">
+                <div class="materi-card-header">
+                    <span class="badge badge-new">Materi 7</span>
+                    <span class="materi-status" id="status-accounting_materi7">🔒</span>
+                </div>
+                <h2>Credit Notes & Refunds</h2>
+                <p>Mengelola pengembalian dana dan nota kredit.</p>
+                <div class="materi-progress">
+                    <div class="materi-progress-bar" id="progress-accounting_materi7"></div>
+                </div>
+                <small id="label-accounting_materi7">Terkunci</small>
+            </a>
+
+            <!-- Materi 8 -->
+            <a href="./accounting/invoicing/accounting-materi-8/index.html" class="step-card materi-card"
+                id="card-accounting_materi8">
+                <div class="materi-card-header">
+                    <span class="badge badge-new">Materi 8</span>
+                    <span class="materi-status" id="status-accounting_materi8">🔒</span>
+                </div>
+                <h2>Vendor Bills</h2>
+                <p>Mengelola tagihan dari pemasok.</p>
+                <div class="materi-progress">
+                    <div class="materi-progress-bar" id="progress-accounting_materi8"></div>
+                </div>
+                <small id="label-accounting_materi8">Terkunci</small>
+            </a>
+
+            <!-- Materi 9 -->
+            <a href="./accounting/invoicing/accounting-materi-9/index.html" class="step-card materi-card"
+                id="card-accounting_materi9">
+                <div class="materi-card-header">
+                    <span class="badge badge-new">Materi 9</span>
+                    <span class="materi-status" id="status-accounting_materi9">🔒</span>
+                </div>
+                <h2>Reconciliation & OCR</h2>
+                <p>Otomatisasi pembacaan tagihan.</p>
+                <div class="materi-progress">
+                    <div class="materi-progress-bar" id="progress-accounting_materi9"></div>
+                </div>
+                <small id="label-accounting_materi9">Terkunci</small>
+            </a>
+
+            <!-- Materi 10 -->
+            <a href="./accounting/invoicing/accounting-materi-10/index.html" class="step-card materi-card"
+                id="card-accounting_materi10">
+                <div class="materi-card-header">
+                    <span class="badge badge-new">Materi 10</span>
+                    <span class="materi-status" id="status-accounting_materi10">🔒</span>
+                </div>
+                <h2>Payment Terms</h2>
+                <p>Mengatur termin pembayaran.</p>
+                <div class="materi-progress">
+                    <div class="materi-progress-bar" id="progress-accounting_materi10"></div>
+                </div>
+                <small id="label-accounting_materi10">Terkunci</small>
+            </a>
         </section>
 
         <!-- Phase 3: Payments -->
-        <h3 class="dashboard-section-title" style="margin-top: 30px; opacity: 0.5;">Payments (Coming Soon)</h3>
-        <section class="materi-dashboard" style="opacity: 0.5;">
-            <div class="step-card materi-card locked">
-                <h2>Materi 11-14</h2>
-                <p>Metode Pembayaran & Rekonsiliasi.</p>
-            </div>
+        <h3 class="dashboard-section-title" style="margin-top: 30px;">Payments</h3>
+        <section class="materi-dashboard">
+            <!-- Materi 11 -->
+            <a href="./accounting/payments/accounting-materi-11/index.html" class="step-card materi-card"
+                id="card-accounting_materi11">
+                <div class="materi-card-header">
+                    <span class="badge badge-new">Materi 11</span>
+                    <span class="materi-status" id="status-accounting_materi11">🔒</span>
+                </div>
+                <h2>Payments</h2>
+                <p>Registrasi dan rekonsiliasi pembayaran.</p>
+                <div class="materi-progress">
+                    <div class="materi-progress-bar" id="progress-accounting_materi11"></div>
+                </div>
+                <small id="label-accounting_materi11">Terkunci</small>
+            </a>
+
+            <!-- Materi 12 -->
+            <a href="./accounting/payments/accounting-materi-12/index.html" class="step-card materi-card"
+                id="card-accounting_materi12">
+                <div class="materi-card-header">
+                    <span class="badge badge-new">Materi 12</span>
+                    <span class="materi-status" id="status-accounting_materi12">🔒</span>
+                </div>
+                <h2>Online Payments</h2>
+                <p>Konfigurasi payment gateway.</p>
+                <div class="materi-progress">
+                    <div class="materi-progress-bar" id="progress-accounting_materi12"></div>
+                </div>
+                <small id="label-accounting_materi12">Terkunci</small>
+            </a>
+
+            <!-- Materi 13 -->
+            <a href="./accounting/payments/accounting-materi-13/index.html" class="step-card materi-card"
+                id="card-accounting_materi13">
+                <div class="materi-card-header">
+                    <span class="badge badge-new">Materi 13</span>
+                    <span class="materi-status" id="status-accounting_materi13">🔒</span>
+                </div>
+                <h2>Follow-up</h2>
+                <p>Mengelola penagihan piutang.</p>
+                <div class="materi-progress">
+                    <div class="materi-progress-bar" id="progress-accounting_materi13"></div>
+                </div>
+                <small id="label-accounting_materi13">Terkunci</small>
+            </a>
+
+            <!-- Materi 14 -->
+            <a href="./accounting/payments/accounting-materi-14/index.html" class="step-card materi-card"
+                id="card-accounting_materi14">
+                <div class="materi-card-header">
+                    <span class="badge badge-new">Materi 14</span>
+                    <span class="materi-status" id="status-accounting_materi14">🔒</span>
+                </div>
+                <h2>Cash Discounts</h2>
+                <p>Insentif pembayaran dini.</p>
+                <div class="materi-progress">
+                    <div class="materi-progress-bar" id="progress-accounting_materi14"></div>
+                </div>
+                <small id="label-accounting_materi14">Terkunci</small>
+            </a>
         </section>
 
-        <!-- Phase 4: Bank and Cash -->
-        <h3 class="dashboard-section-title" style="margin-top: 30px; opacity: 0.5;">Bank and Cash (Coming Soon)</h3>
-        <section class="materi-dashboard" style="opacity: 0.5;">
-            <div class="step-card materi-card locked">
-                <h2>Materi 15-21</h2>
-                <p>Bank Statements & Cash Management.</p>
-            </div>
+        <!-- Phase 4: Bank & Cash -->
+        <h3 class="dashboard-section-title" style="margin-top: 30px;">Bank & Cash</h3>
+        <section class="materi-dashboard">
+            <!-- Materi 15 -->
+            <a href="./accounting/bank/accounting-materi-15/index.html" class="step-card materi-card"
+                id="card-accounting_materi15">
+                <div class="materi-card-header">
+                    <span class="badge badge-new">Materi 15</span>
+                    <span class="materi-status" id="status-accounting_materi15">🔒</span>
+                </div>
+                <h2>Bank Suspense</h2>
+                <p>Mengelola akun penampung sementara bank.</p>
+                <div class="materi-progress">
+                    <div class="materi-progress-bar" id="progress-accounting_materi15"></div>
+                </div>
+                <small id="label-accounting_materi15">Terkunci</small>
+            </a>
+
+            <!-- Materi 16 -->
+            <a href="./accounting/bank/accounting-materi-16/index.html" class="step-card materi-card"
+                id="card-accounting_materi16">
+                <div class="materi-card-header">
+                    <span class="badge badge-new">Materi 16</span>
+                    <span class="materi-status" id="status-accounting_materi16">🔒</span>
+                </div>
+                <h2>Bank Import</h2>
+                <p>Impor transaksi bank otomatis.</p>
+                <div class="materi-progress">
+                    <div class="materi-progress-bar" id="progress-accounting_materi16"></div>
+                </div>
+                <small id="label-accounting_materi16">Terkunci</small>
+            </a>
+
+            <!-- Materi 17 -->
+            <a href="./accounting/bank/accounting-materi-17/index.html" class="step-card materi-card"
+                id="card-accounting_materi17">
+                <div class="materi-card-header">
+                    <span class="badge badge-new">Materi 17</span>
+                    <span class="materi-status" id="status-accounting_materi17">🔒</span>
+                </div>
+                <h2>Bank Synchronization</h2>
+                <p>Sinkronisasi bank secara real-time.</p>
+                <div class="materi-progress">
+                    <div class="materi-progress-bar" id="progress-accounting_materi17"></div>
+                </div>
+                <small id="label-accounting_materi17">Terkunci</small>
+            </a>
+
+            <!-- Materi 18 -->
+            <a href="./accounting/bank/accounting-materi-18/index.html" class="step-card materi-card"
+                id="card-accounting_materi18">
+                <div class="materi-card-header">
+                    <span class="badge badge-new">Materi 18</span>
+                    <span class="materi-status" id="status-accounting_materi18">🔒</span>
+                </div>
+                <h2>Reconciliation Models</h2>
+                <p>Otomatisasi rekonsiliasi bank.</p>
+                <div class="materi-progress">
+                    <div class="materi-progress-bar" id="progress-accounting_materi18"></div>
+                </div>
+                <small id="label-accounting_materi18">Terkunci</small>
+            </a>
+
+            <!-- Materi 19 -->
+            <a href="./accounting/bank/accounting-materi-19/index.html" class="step-card materi-card"
+                id="card-accounting_materi19">
+                <div class="materi-card-header">
+                    <span class="badge badge-new">Materi 19</span>
+                    <span class="materi-status" id="status-accounting_materi19">🔒</span>
+                </div>
+                <h2>Batch Payments</h2>
+                <p>Mengelola pembayaran massal.</p>
+                <div class="materi-progress">
+                    <div class="materi-progress-bar" id="progress-accounting_materi19"></div>
+                </div>
+                <small id="label-accounting_materi19">Terkunci</small>
+            </a>
+
+            <!-- Materi 20 -->
+            <a href="./accounting/bank/accounting-materi-20/index.html" class="step-card materi-card"
+                id="card-accounting_materi20">
+                <div class="materi-card-header">
+                    <span class="badge badge-new">Materi 20</span>
+                    <span class="materi-status" id="status-accounting_materi20">🔒</span>
+                </div>
+                <h2>SEPA Direct Debit</h2>
+                <p>Penagihan langsung otomatis (Direct Debit).</p>
+                <div class="materi-progress">
+                    <div class="materi-progress-bar" id="progress-accounting_materi20"></div>
+                </div>
+                <small id="label-accounting_materi20">Terkunci</small>
+            </a>
         </section>
 
         <!-- Phase 5: Taxes -->
-        <h3 class="dashboard-section-title" style="margin-top: 30px; opacity: 0.5;">Taxes (Coming Soon)</h3>
-        <section class="materi-dashboard" style="opacity: 0.5;">
-            <div class="step-card materi-card locked">
-                <h2>Materi 22-25</h2>
-                <p>Konfigurasi Pajak & Laporan.</p>
-            </div>
+        <h3 class="dashboard-section-title" style="margin-top: 30px;">Taxes</h3>
+        <section class="materi-dashboard">
+            <!-- Materi 22 -->
+            <a href="./accounting/taxes/accounting-materi-22/index.html" class="step-card materi-card"
+                id="card-accounting_materi22">
+                <div class="materi-card-header">
+                    <span class="badge badge-new">Materi 22</span>
+                    <span class="materi-status" id="status-accounting_materi22">🔒</span>
+                </div>
+                <h2>Rounding & Scope</h2>
+                <p>Konfigurasi pembulatan dan lingkup pajak.</p>
+                <div class="materi-progress">
+                    <div class="materi-progress-bar" id="progress-accounting_materi22"></div>
+                </div>
+                <small id="label-accounting_materi22">Terkunci</small>
+            </a>
+
+            <!-- Materi 23 -->
+            <a href="./accounting/taxes/accounting-materi-23/index.html" class="step-card materi-card"
+                id="card-accounting_materi23">
+                <div class="materi-card-header">
+                    <span class="badge badge-new">Materi 23</span>
+                    <span class="materi-status" id="status-accounting_materi23">🔒</span>
+                </div>
+                <h2>Cash Basis</h2>
+                <p>Pajak berbasis kas (Cash Basis).</p>
+                <div class="materi-progress">
+                    <div class="materi-progress-bar" id="progress-accounting_materi23"></div>
+                </div>
+                <small id="label-accounting_materi23">Terkunci</small>
+            </a>
+
+            <!-- Materi 24 -->
+            <a href="./accounting/taxes/accounting-materi-24/index.html" class="step-card materi-card"
+                id="card-accounting_materi24">
+                <div class="materi-card-header">
+                    <span class="badge badge-new">Materi 24</span>
+                    <span class="materi-status" id="status-accounting_materi24">🔒</span>
+                </div>
+                <h2>Fiscal Positions</h2>
+                <p>Aturan pajak otomatis.</p>
+                <div class="materi-progress">
+                    <div class="materi-progress-bar" id="progress-accounting_materi24"></div>
+                </div>
+                <small id="label-accounting_materi24">Terkunci</small>
+            </a>
+
+            <!-- Materi 25 -->
+            <a href="./accounting/taxes/accounting-materi-25/index.html" class="step-card materi-card"
+                id="card-accounting_materi25">
+                <div class="materi-card-header">
+                    <span class="badge badge-new">Materi 25</span>
+                    <span class="materi-status" id="status-accounting_materi25">🔒</span>
+                </div>
+                <h2>Tax Closing</h2>
+                <p>Penutupan pajak dan tanggal kunci.</p>
+                <div class="materi-progress">
+                    <div class="materi-progress-bar" id="progress-accounting_materi25"></div>
+                </div>
+                <small id="label-accounting_materi25">Terkunci</small>
+            </a>
+
+            <!-- Materi 26 -->
+            <a href="./accounting/taxes/accounting-materi-26/index.html" class="step-card materi-card"
+                id="card-accounting_materi26">
+                <div class="materi-card-header">
+                    <span class="badge badge-new">Materi 26</span>
+                    <span class="materi-status" id="status-accounting_materi26">🔒</span>
+                </div>
+                <h2>Tax Config</h2>
+                <p>Konfigurasi pajak lanjutan.</p>
+                <div class="materi-progress">
+                    <div class="materi-progress-bar" id="progress-accounting_materi26"></div>
+                </div>
+                <small id="label-accounting_materi26">Terkunci</small>
+            </a>
+
+            <!-- Materi 32 -->
+            <a href="./accounting/taxes/accounting-materi-32/index.html" class="step-card materi-card"
+                id="card-accounting_materi32">
+                <div class="materi-card-header">
+                    <span class="badge badge-new">Materi 32</span>
+                    <span class="materi-status" id="status-accounting_materi32">🔒</span>
+                </div>
+                <h2>AvaTax</h2>
+                <p>Integrasi perhitungan pajak otomatis.</p>
+                <div class="materi-progress">
+                    <div class="materi-progress-bar" id="progress-accounting_materi32"></div>
+                </div>
+                <small id="label-accounting_materi32">Terkunci</small>
+            </a>
         </section>
 
-        <!-- Phase 6: Accounting Management -->
-        <h3 class="dashboard-section-title" style="margin-top: 30px; opacity: 0.5;">Accounting Management (Coming Soon)
-        </h3>
-        <section class="materi-dashboard" style="opacity: 0.5;">
-            <div class="step-card materi-card locked">
-                <h2>Materi 26-32</h2>
-                <p>Assets, Deferred Revenue, & Budget.</p>
-            </div>
+        <!-- Phase 6: Assets & Valuation -->
+        <h3 class="dashboard-section-title" style="margin-top: 30px;">Assets & Valuation</h3>
+        <section class="materi-dashboard">
+            <!-- Materi 21 -->
+            <a href="./accounting/assets/accounting-materi-21/index.html" class="step-card materi-card"
+                id="card-accounting_materi21">
+                <div class="materi-card-header">
+                    <span class="badge badge-new">Materi 21</span>
+                    <span class="materi-status" id="status-accounting_materi21">🔒</span>
+                </div>
+                <h2>Loans</h2>
+                <p>Mengelola pinjaman dan amortisasi.</p>
+                <div class="materi-progress">
+                    <div class="materi-progress-bar" id="progress-accounting_materi21"></div>
+                </div>
+                <small id="label-accounting_materi21">Terkunci</small>
+            </a>
+
+            <!-- Materi 27 -->
+            <a href="./accounting/assets/accounting-materi-27/index.html" class="step-card materi-card"
+                id="card-accounting_materi27">
+                <div class="materi-card-header">
+                    <span class="badge badge-new">Materi 27</span>
+                    <span class="materi-status" id="status-accounting_materi27">🔒</span>
+                </div>
+                <h2>Depreciation</h2>
+                <p>Penyusutan aset tetap.</p>
+                <div class="materi-progress">
+                    <div class="materi-progress-bar" id="progress-accounting_materi27"></div>
+                </div>
+                <small id="label-accounting_materi27">Terkunci</small>
+            </a>
+
+            <!-- Materi 28 -->
+            <a href="./accounting/assets/accounting-materi-28/index.html" class="step-card materi-card"
+                id="card-accounting_materi28">
+                <div class="materi-card-header">
+                    <span class="badge badge-new">Materi 28</span>
+                    <span class="materi-status" id="status-accounting_materi28">🔒</span>
+                </div>
+                <h2>Asset Models</h2>
+                <p>Model aset untuk otomatisasi.</p>
+                <div class="materi-progress">
+                    <div class="materi-progress-bar" id="progress-accounting_materi28"></div>
+                </div>
+                <small id="label-accounting_materi28">Terkunci</small>
+            </a>
+
+            <!-- Materi 29 -->
+            <a href="./accounting/assets/accounting-materi-29/index.html" class="step-card materi-card"
+                id="card-accounting_materi29">
+                <div class="materi-card-header">
+                    <span class="badge badge-new">Materi 29</span>
+                    <span class="materi-status" id="status-accounting_materi29">🔒</span>
+                </div>
+                <h2>Deferred Revenue</h2>
+                <p>Pendapatan ditangguhkan.</p>
+                <div class="materi-progress">
+                    <div class="materi-progress-bar" id="progress-accounting_materi29"></div>
+                </div>
+                <small id="label-accounting_materi29">Terkunci</small>
+            </a>
         </section>
 
-        <!-- Phase 7: Reporting -->
-        <h3 class="dashboard-section-title" style="margin-top: 30px; opacity: 0.5;">Reporting (Coming Soon)</h3>
-        <section class="materi-dashboard" style="opacity: 0.5;">
-            <div class="step-card materi-card locked">
-                <h2>Materi 33-34</h2>
-                <p>Analisis Laporan Keuangan.</p>
-            </div>
+        <!-- Phase 7: Management -->
+        <h3 class="dashboard-section-title" style="margin-top: 30px;">Management</h3>
+        <section class="materi-dashboard">
+            <!-- Materi 30 -->
+            <a href="./accounting/management/accounting-materi-30/index.html" class="step-card materi-card"
+                id="card-accounting_materi30">
+                <div class="materi-card-header">
+                    <span class="badge badge-new">Materi 30</span>
+                    <span class="materi-status" id="status-accounting_materi30">🔒</span>
+                </div>
+                <h2>Analytic</h2>
+                <p>Distribusi analitik otomatis.</p>
+                <div class="materi-progress">
+                    <div class="materi-progress-bar" id="progress-accounting_materi30"></div>
+                </div>
+                <small id="label-accounting_materi30">Terkunci</small>
+            </a>
+
+            <!-- Materi 31 -->
+            <a href="./accounting/management/accounting-materi-31/index.html" class="step-card materi-card"
+                id="card-accounting_materi31">
+                <div class="materi-card-header">
+                    <span class="badge badge-new">Materi 31</span>
+                    <span class="materi-status" id="status-accounting_materi31">🔒</span>
+                </div>
+                <h2>Budget</h2>
+                <p>Pengelolaan anggaran perusahaan.</p>
+                <div class="materi-progress">
+                    <div class="materi-progress-bar" id="progress-accounting_materi31"></div>
+                </div>
+                <small id="label-accounting_materi31">Terkunci</small>
+            </a>
+
+            <!-- Materi 33 -->
+            <a href="./accounting/management/accounting-materi-33/index.html" class="step-card materi-card"
+                id="card-accounting_materi33">
+                <div class="materi-card-header">
+                    <span class="badge badge-new">Materi 33</span>
+                    <span class="materi-status" id="status-accounting_materi33">🔒</span>
+                </div>
+                <h2>Multi-Company</h2>
+                <p>Manajemen multi perusahaan & cabang.</p>
+                <div class="materi-progress">
+                    <div class="materi-progress-bar" id="progress-accounting_materi33"></div>
+                </div>
+                <small id="label-accounting_materi33">Terkunci</small>
+            </a>
         </section>
 
-        <!-- Phase 8: Inventory Valuation -->
-        <h3 class="dashboard-section-title" style="margin-top: 30px; opacity: 0.5;">Inventory Valuation (Coming Soon)
-        </h3>
-        <section class="materi-dashboard" style="opacity: 0.5;">
-            <div class="step-card materi-card locked">
-                <h2>Materi 35-37</h2>
-                <p>Penilaian Persediaan Barang.</p>
-            </div>
+        <!-- Phase 8: Reporting -->
+        <h3 class="dashboard-section-title" style="margin-top: 30px;">Reporting</h3>
+        <section class="materi-dashboard">
+            <!-- Materi 34 -->
+            <a href="./accounting/reporting/accounting-materi-34/index.html" class="step-card materi-card"
+                id="card-accounting_materi34">
+                <div class="materi-card-header">
+                    <span class="badge badge-new">Materi 34</span>
+                    <span class="materi-status" id="status-accounting_materi34">🔒</span>
+                </div>
+                <h2>Reporting</h2>
+                <p>Laporan keuangan & audit.</p>
+                <div class="materi-progress">
+                    <div class="materi-progress-bar" id="progress-accounting_materi34"></div>
+                </div>
+                <small id="label-accounting_materi34">Terkunci</small>
+            </a>
         </section>
 
-        <!-- Phase 9: End of Period -->
-        <h3 class="dashboard-section-title" style="margin-top: 30px; opacity: 0.5;">End of Period (Coming Soon)</h3>
-        <section class="materi-dashboard" style="opacity: 0.5;">
-            <div class="step-card materi-card locked">
-                <h2>Materi 38-40</h2>
-                <p>Tutup Buku & Audit.</p>
-            </div>
+        <!-- Phase 9: Valuation & Costing -->
+        <h3 class="dashboard-section-title" style="margin-top: 30px;">Valuation & Costing</h3>
+        <section class="materi-dashboard">
+            <!-- Materi 35 -->
+            <a href="./accounting/valuation/accounting-materi-35/index.html" class="step-card materi-card"
+                id="card-accounting_materi35">
+                <div class="materi-card-header">
+                    <span class="badge badge-new">Materi 35</span>
+                    <span class="materi-status" id="status-accounting_materi35">🔒</span>
+                </div>
+                <h2>Costing Methods</h2>
+                <p>Metode biaya (FIFO, AVCO, Standard).</p>
+                <div class="materi-progress">
+                    <div class="materi-progress-bar" id="progress-accounting_materi35"></div>
+                </div>
+                <small id="label-accounting_materi35">Terkunci</small>
+            </a>
+
+            <!-- Materi 36 -->
+            <a href="./accounting/valuation/accounting-materi-36/index.html" class="step-card materi-card"
+                id="card-accounting_materi36">
+                <div class="materi-card-header">
+                    <span class="badge badge-new">Materi 36</span>
+                    <span class="materi-status" id="status-accounting_materi36">🔒</span>
+                </div>
+                <h2>Continental</h2>
+                <p>Akuntansi Continental.</p>
+                <div class="materi-progress">
+                    <div class="materi-progress-bar" id="progress-accounting_materi36"></div>
+                </div>
+                <small id="label-accounting_materi36">Terkunci</small>
+            </a>
+
+            <!-- Materi 37 -->
+            <a href="./accounting/valuation/accounting-materi-37/index.html" class="step-card materi-card"
+                id="card-accounting_materi37">
+                <div class="materi-card-header">
+                    <span class="badge badge-new">Materi 37</span>
+                    <span class="materi-status" id="status-accounting_materi37">🔒</span>
+                </div>
+                <h2>Anglo-Saxon</h2>
+                <p>Akuntansi Anglo-Saxon.</p>
+                <div class="materi-progress">
+                    <div class="materi-progress-bar" id="progress-accounting_materi37"></div>
+                </div>
+                <small id="label-accounting_materi37">Terkunci</small>
+            </a>
         </section>
 
+        <!-- Phase 10: Multi-Currency & Closing -->
+        <h3 class="dashboard-section-title" style="margin-top: 30px;">Multi-Currency & Closing</h3>
+        <section class="materi-dashboard">
+            <!-- Materi 38 -->
+            <a href="./accounting/multicurrency/accounting-materi-38/index.html" class="step-card materi-card"
+                id="card-accounting_materi38">
+                <div class="materi-card-header">
+                    <span class="badge badge-new">Materi 38</span>
+                    <span class="materi-status" id="status-accounting_materi38">🔒</span>
+                </div>
+                <h2>Multi-Currency</h2>
+                <p>Mengelola mata uang asing.</p>
+                <div class="materi-progress">
+                    <div class="materi-progress-bar" id="progress-accounting_materi38"></div>
+                </div>
+                <small id="label-accounting_materi38">Terkunci</small>
+            </a>
+
+            <!-- Materi 39 -->
+            <a href="./accounting/multicurrency/accounting-materi-39/index.html" class="step-card materi-card"
+                id="card-accounting_materi39">
+                <div class="materi-card-header">
+                    <span class="badge badge-new">Materi 39</span>
+                    <span class="materi-status" id="status-accounting_materi39">🔒</span>
+                </div>
+                <h2>Unrealized Gains</h2>
+                <p>Keuntungan/kerugian belum terealisasi.</p>
+                <div class="materi-progress">
+                    <div class="materi-progress-bar" id="progress-accounting_materi39"></div>
+                </div>
+                <small id="label-accounting_materi39">Terkunci</small>
+            </a>
+
+            <!-- Materi 40 -->
+            <a href="./accounting/closing/accounting-materi-40/index.html" class="step-card materi-card"
+                id="card-accounting_materi40">
+                <div class="materi-card-header">
+                    <span class="badge badge-new">Materi 40</span>
+                    <span class="materi-status" id="status-accounting_materi40">🔒</span>
+                </div>
+                <h2>Annual Closing</h2>
+                <p>Tutup buku tahunan.</p>
+                <div class="materi-progress">
+                    <div class="materi-progress-bar" id="progress-accounting_materi40"></div>
+                </div>
+                <small id="label-accounting_materi40">Terkunci</small>
+            </a>
+        </section>
+
+        <!-- Future Modules -->
+        <h3 class="dashboard-section-title" style="margin-top: 30px; opacity: 0.5;">Future Modules (Coming Soon)</h3>
+        <p style="opacity: 0.7; color: #666;">Modul Banking, Reporting, dan lainnya sedang dalam pengembangan.</p>
     </div>
 
     <!-- Load JS -->
     <script src="./assets/js/lms-core.js"></script>
     <script>
-        const TRACK_PREFIX = "accounting_";
-        const TOTAL_MATERI = 40; // Total 40 modules
-
-        const materiList = [
-            // Will be populated as we create modules
+        const accountingModules = [
+            { id: "accounting_materi1", uiId: "accounting_materi1", link: "./accounting/accounting-basics/accounting-materi-1/index.html", nextCard: "card-accounting_materi2" },
+            { id: "accounting_materi2", uiId: "accounting_materi2", link: "./accounting/accounting-basics/accounting-materi-2/index.html", nextCard: "card-accounting_materi3" },
+            { id: "accounting_materi3", uiId: "accounting_materi3", link: "./accounting/accounting-basics/accounting-materi-3/index.html", nextCard: "card-accounting_materi4" },
+            { id: "accounting_materi4", uiId: "accounting_materi4", link: "./accounting/accounting-basics/accounting-materi-4/index.html", nextCard: "card-accounting_materi5" },
+            { id: "accounting_materi5", uiId: "accounting_materi5", link: "./accounting/invoicing/accounting-materi-5/index.html", nextCard: "card-accounting_materi6" },
+            { id: "accounting_materi6", uiId: "accounting_materi6", link: "./accounting/invoicing/accounting-materi-6/index.html", nextCard: "card-accounting_materi7" },
+            { id: "accounting_materi7", uiId: "accounting_materi7", link: "./accounting/invoicing/accounting-materi-7/index.html", nextCard: "card-accounting_materi8" },
+            { id: "accounting_materi8", uiId: "accounting_materi8", link: "./accounting/invoicing/accounting-materi-8/index.html", nextCard: "card-accounting_materi9" },
+            { id: "accounting_materi9", uiId: "accounting_materi9", link: "./accounting/invoicing/accounting-materi-9/index.html", nextCard: "card-accounting_materi10" },
+            { id: "accounting_materi10", uiId: "accounting_materi10", link: "./accounting/invoicing/accounting-materi-10/index.html", nextCard: "card-accounting_materi11" },
+            { id: "accounting_materi11", uiId: "accounting_materi11", link: "./accounting/payments/accounting-materi-11/index.html", nextCard: "card-accounting_materi12" },
+            { id: "accounting_materi12", uiId: "accounting_materi12", link: "./accounting/payments/accounting-materi-12/index.html", nextCard: "card-accounting_materi13" },
+            { id: "accounting_materi13", uiId: "accounting_materi13", link: "./accounting/payments/accounting-materi-13/index.html", nextCard: "card-accounting_materi14" },
+            { id: "accounting_materi14", uiId: "accounting_materi14", link: "./accounting/payments/accounting-materi-14/index.html", nextCard: "card-accounting_materi15" },
+            { id: "accounting_materi15", uiId: "accounting_materi15", link: "./accounting/bank/accounting-materi-15/index.html", nextCard: "card-accounting_materi16" },
+            { id: "accounting_materi16", uiId: "accounting_materi16", link: "./accounting/bank/accounting-materi-16/index.html", nextCard: "card-accounting_materi17" },
+            { id: "accounting_materi17", uiId: "accounting_materi17", link: "./accounting/bank/accounting-materi-17/index.html", nextCard: "card-accounting_materi18" },
+            { id: "accounting_materi18", uiId: "accounting_materi18", link: "./accounting/bank/accounting-materi-18/index.html", nextCard: "card-accounting_materi19" },
+            { id: "accounting_materi19", uiId: "accounting_materi19", link: "./accounting/bank/accounting-materi-19/index.html", nextCard: "card-accounting_materi20" },
+            { id: "accounting_materi20", uiId: "accounting_materi20", link: "./accounting/bank/accounting-materi-20/index.html", nextCard: "card-accounting_materi21" },
+            { id: "accounting_materi21", uiId: "accounting_materi21", link: "./accounting/assets/accounting-materi-21/index.html", nextCard: "card-accounting_materi22" },
+            { id: "accounting_materi22", uiId: "accounting_materi22", link: "./accounting/taxes/accounting-materi-22/index.html", nextCard: "card-accounting_materi23" },
+            { id: "accounting_materi23", uiId: "accounting_materi23", link: "./accounting/taxes/accounting-materi-23/index.html", nextCard: "card-accounting_materi24" },
+            { id: "accounting_materi24", uiId: "accounting_materi24", link: "./accounting/taxes/accounting-materi-24/index.html", nextCard: "card-accounting_materi25" },
+            { id: "accounting_materi25", uiId: "accounting_materi25", link: "./accounting/taxes/accounting-materi-25/index.html", nextCard: "card-accounting_materi26" },
+            { id: "accounting_materi26", uiId: "accounting_materi26", link: "./accounting/taxes/accounting-materi-26/index.html", nextCard: "card-accounting_materi27" },
+            { id: "accounting_materi27", uiId: "accounting_materi27", link: "./accounting/assets/accounting-materi-27/index.html", nextCard: "card-accounting_materi28" },
+            { id: "accounting_materi28", uiId: "accounting_materi28", link: "./accounting/assets/accounting-materi-28/index.html", nextCard: "card-accounting_materi29" },
+            { id: "accounting_materi29", uiId: "accounting_materi29", link: "./accounting/assets/accounting-materi-29/index.html", nextCard: "card-accounting_materi30" },
+            { id: "accounting_materi30", uiId: "accounting_materi30", link: "./accounting/management/accounting-materi-30/index.html", nextCard: "card-accounting_materi31" },
+            { id: "accounting_materi31", uiId: "accounting_materi31", link: "./accounting/management/accounting-materi-31/index.html", nextCard: "card-accounting_materi32" },
+            { id: "accounting_materi32", uiId: "accounting_materi32", link: "./accounting/taxes/accounting-materi-32/index.html", nextCard: "card-accounting_materi33" },
+            { id: "accounting_materi33", uiId: "accounting_materi33", link: "./accounting/management/accounting-materi-33/index.html", nextCard: "card-accounting_materi34" },
+            { id: "accounting_materi34", uiId: "accounting_materi34", link: "./accounting/reporting/accounting-materi-34/index.html", nextCard: "card-accounting_materi35" },
+            { id: "accounting_materi35", uiId: "accounting_materi35", link: "./accounting/valuation/accounting-materi-35/index.html", nextCard: "card-accounting_materi36" },
+            { id: "accounting_materi36", uiId: "accounting_materi36", link: "./accounting/valuation/accounting-materi-36/index.html", nextCard: "card-accounting_materi37" },
+            { id: "accounting_materi37", uiId: "accounting_materi37", link: "./accounting/valuation/accounting-materi-37/index.html", nextCard: "card-accounting_materi38" },
+            { id: "accounting_materi38", uiId: "accounting_materi38", link: "./accounting/multicurrency/accounting-materi-38/index.html", nextCard: "card-accounting_materi39" },
+            { id: "accounting_materi39", uiId: "accounting_materi39", link: "./accounting/multicurrency/accounting-materi-39/index.html", nextCard: "card-accounting_materi40" },
+            { id: "accounting_materi40", uiId: "accounting_materi40", link: "./accounting/closing/accounting-materi-40/index.html", nextCard: null }
         ];
 
         document.addEventListener("DOMContentLoaded", () => {
-            initTrackProgress(materiList);
+            initTrackProgress(accountingModules);
         });
 
         function toggleDark() {

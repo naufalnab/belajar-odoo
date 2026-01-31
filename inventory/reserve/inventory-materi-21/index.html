@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reserve Products 1: Reservation Methods - Odoo Learning</title>
+    <link rel="stylesheet" href="../../../assets/css/style.css">
+    <link rel="stylesheet" href="../../../assets/css/dark-mode.css">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo-container">
+            <a href="../../../index.html" style="text-decoration: none;">
+                <h2 class="logo">Odoo<span style="color: var(--accent);">Learning</span></h2>
+            </a>
+        </div>
+        <nav class="nav-links">
+            <a href="../../../index.html" class="nav-item">
+                <span class="icon">🏠</span>
+                Dashboard
+            </a>
+            <a href="../../../accounting.html" class="nav-item">
+                <span class="icon">💰</span>
+                Accounting
+            </a>
+             <a href="../../../inventory.html" class="nav-item active">
+                <span class="icon">📦</span>
+                Inventory
+            </a>
+        </nav>
+    </div>
+
+    <div class="main-content">
+        <header class="top-bar">
+            <div class="breadcrumbs">
+                <a href="../../../index.html">Home</a> &gt; 
+                <a href="../../../inventory.html">Inventory</a> &gt; 
+                <span>Reserve Products 1: Reservation Methods</span>
+            </div>
+        </header>
+
+        <div class="module-container">
+            <div class="video-section">
+               <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/7qX2o_-N9j0" title="Odoo Tutorial" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+
+            <div class="content-section">
+                <h1>Reserve Products 1: Reservation Methods</h1>
+                <p class="subtitle">Metode Reservasi Stok</p>
+                
+                <div class="learning-material">
+                    <h3>Konfigurasi Reservasi</h3><p>Pengaturan metode reservasi untuk delivery order dilakukan di <strong>Inventory > Configuration > Operation Types</strong> (Tipe Operasi). Anda dapat memilih metode yang paling sesuai dengan alur kerja gudang Anda.</p><h3>Reservasi Manual</h3><p>Jika metode reservasi diatur ke 'Manually' (Manual), stok tidak akan tereservasi secara otomatis saat Sales Order dikonfirmasi. Anda harus secara eksplisit mengklik tombol <strong>'Check Availability'</strong> (Periksa Ketersediaan) pada dokumen Delivery Order.</p><h3>Before Scheduled Date</h3><p>Untuk metode 'Before Scheduled Date', pemicu otomatis untuk reservasi adalah <strong>jumlah hari sebelum tanggal pengiriman terjadwal</strong>. Ini memungkinkan Anda untuk memprioritaskan reservasi stok mendekati waktu pengiriman.</p>
+                </div>
+            </div>
+
+            <div class="quiz-section">
+                <h2>Kuis Pengetahuan</h2>
+                <div id="quiz-container" class="quiz-container" data-quiz-id="inventory_materi21">
+                    <!-- Quiz will be rendered here -->
+                </div>
+            </div>
+
+            <div class="navigation-buttons">
+                <a href="../../../inventory/transfers/inventory-materi-20/index.html" class="btn btn-secondary">← Materi Sebelumnya</a>
+                <a href="../../../inventory/reserve/inventory-materi-22/index.html" class="btn btn-primary btn-next">Lanjut ke Materi Berikutnya →</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="../../../assets/js/lms-core.js"></script>
+    <script src="../../../assets/js/quiz-bank.js"></script>
+    <script src="../../../assets/js/quiz-engine.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            if (typeof renderQuiz === 'function') {
+                const quizId = document.getElementById('quiz-container').getAttribute('data-quiz-id');
+                if (window.QUIZ_BANK && window.QUIZ_BANK[quizId]) {
+                    renderQuiz(quizId, '#quiz-container');
+                }
+            }
+        });
+    </script>
+</body>
+</html>

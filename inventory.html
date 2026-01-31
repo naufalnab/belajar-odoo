@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inventory Dashboard | Pembelajar Odoo</title>
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="nav-content">
+            <a href="./index.html" class="logo">Belajar Odoo</a>
+            <div class="nav-links">
+                <a href="./getting-started.html">Getting Started</a>
+                <a href="./website.html">Website</a>
+                <a href="./sales.html">Sales</a>
+                <a href="./marketing.html">Marketing</a>
+                <a href="./crm.html">CRM</a>
+                <a href="./accounting.html">Accounting</a>
+                <a href="./inventory.html" class="active">Inventory</a>
+                <a href="./quizzes.html">Quiz Center</a>
+            </div>
+            <button class="lang-toggle">ID</button>
+            <button class="dark-toggle" onclick="toggleDark()">🌙</button>
+        </div>
+    </nav>
+
+    <div class="dashboard-container">
+        <header class="dashboard-header">
+            <a href="./index.html" class="back-link">← Kembali ke Halaman Utama</a>
+            <h1>Inventory</h1>
+            <p>Kelola stok, gudang, pergerakan barang, dan rantai pasok.</p>
+        </header>
+
+        <!-- Phase 1: Inventory Basics (8 Modules) -->
+        <h3 class="dashboard-section-title">Inventory Basics</h3>
+        <section class="materi-dashboard">
+            <!-- Materi 1-8 Loop -->
+            <!-- We will generate these cards dynamically or write them out explicitly for clarity -->
+
+            <a href="./inventory/inventory-basics/inventory-materi-1/index.html" class="step-card materi-card"
+                id="card-inventory_materi1">
+                <div class="materi-card-header"><span class="badge">Materi 1</span><span class="materi-status"
+                        id="status-inventory_materi1">🔒</span></div>
+                <h2>Inventory Basics 1</h2>
+                <p>Pengenalan modul Inventory.</p>
+                <div class="materi-progress">
+                    <div class="materi-progress-bar" id="progress-inventory_materi1"></div>
+                </div>
+                <small id="label-inventory_materi1">Terkunci</small>
+            </a>
+            <a href="./inventory/inventory-basics/inventory-materi-2/index.html" class="step-card materi-card"
+                id="card-inventory_materi2">
+                <div class="materi-card-header"><span class="badge">Materi 2</span><span class="materi-status"
+                        id="status-inventory_materi2">🔒</span></div>
+                <h2>Inventory Basics 2</h2>
+                <p>Konfigurasi dasar gudang.</p>
+                <div class="materi-progress">
+                    <div class="materi-progress-bar" id="progress-inventory_materi2"></div>
+                </div>
+                <small id="label-inventory_materi2">Terkunci</small>
+            </a>
+            <a href="./inventory/inventory-basics/inventory-materi-3/index.html" class="step-card materi-card"
+                id="card-inventory_materi3">
+                <div class="materi-card-header"><span class="badge">Materi 3</span><span class="materi-status"
+                        id="status-inventory_materi3">🔒</span></div>
+                <h2>Inventory Basics 3</h2>
+                <p>Operasi penerimaan barang.</p>
+                <div class="materi-progress">
+                    <div class="materi-progress-bar" id="progress-inventory_materi3"></div>
+                </div>
+                <small id="label-inventory_materi3">Terkunci</small>
+            </a>
+            <a href="./inventory/inventory-basics/inventory-materi-4/index.html" class="step-card materi-card"
+                id="card-inventory_materi4">
+                <div class="materi-card-header"><span class="badge">Materi 4</span><span class="materi-status"
+                        id="status-inventory_materi4">🔒</span></div>
+                <h2>Inventory Basics 4</h2>
+                <p>Operasi pengiriman barang.</p>
+                <div class="materi-progress">
+                    <div class="materi-progress-bar" id="progress-inventory_materi4"></div>
+                </div>
+                <small id="label-inventory_materi4">Terkunci</small>
+            </a>
+            <a href="./inventory/inventory-basics/inventory-materi-5/index.html" class="step-card materi-card"
+                id="card-inventory_materi5">
+                <div class="materi-card-header"><span class="badge">Materi 5</span><span class="materi-status"
+                        id="status-inventory_materi5">🔒</span></div>
+                <h2>Inventory Basics 5</h2>
+                <p>Manajemen lokasi gudang.</p>
+                <div class="materi-progress">
+                    <div class="materi-progress-bar" id="progress-inventory_materi5"></div>
+                </div>
+                <small id="label-inventory_materi5">Terkunci</small>
+            </a>
+            <a href="./inventory/inventory-basics/inventory-materi-6/index.html" class="step-card materi-card"
+                id="card-inventory_materi6">
+                <div class="materi-card-header"><span class="badge">Materi 6</span><span class="materi-status"
+                        id="status-inventory_materi6">🔒</span></div>
+                <h2>Inventory Basics 6</h2>
+                <p>Tipe operasi gudang.</p>
+                <div class="materi-progress">
+                    <div class="materi-progress-bar" id="progress-inventory_materi6"></div>
+                </div>
+                <small id="label-inventory_materi6">Terkunci</small>
+            </a>
+            <a href="./inventory/inventory-basics/inventory-materi-7/index.html" class="step-card materi-card"
+                id="card-inventory_materi7">
+                <div class="materi-card-header"><span class="badge">Materi 7</span><span class="materi-status"
+                        id="status-inventory_materi7">🔒</span></div>
+                <h2>Inventory Basics 7</h2>
+                <p>Aturan putaway.</p>
+                <div class="materi-progress">
+                    <div class="materi-progress-bar" id="progress-inventory_materi7"></div>
+                </div>
+                <small id="label-inventory_materi7">Terkunci</small>
+            </a>
+            <a href="./inventory/inventory-basics/inventory-materi-8/index.html" class="step-card materi-card"
+                id="card-inventory_materi8">
+                <div class="materi-card-header"><span class="badge">Materi 8</span><span class="materi-status"
+                        id="status-inventory_materi8">🔒</span></div>
+                <h2>Inventory Basics 8</h2>
+                <p>Inventarisasi fisik (Stock Opname).</p>
+                <div class="materi-progress">
+                    <div class="materi-progress-bar" id="progress-inventory_materi8"></div>
+                </div>
+                <small id="label-inventory_materi8">Terkunci</small>
+            </a>
+        </section>
+
+        <!-- Phase 2: Replenishment (4 Modules) -->
+        <h3 class="dashboard-section-title" style="margin-top: 30px;">Replenishment</h3>
+        <section class="materi-dashboard">
+            <a href="./inventory/replenishment/inventory-materi-9/index.html" class="step-card materi-card"
+                id="card-inventory_materi9">
+                <div class="materi-card-header"><span class="badge">Materi 9</span><span class="materi-status"
+                        id="status-inventory_materi9">🔒</span></div>
+                <h2>Replenishment 1</h2>
+                <p>Konsep dasar replenishment.</p>
+                <div class="materi-progress">
+                    <div class="materi-progress-bar" id="progress-inventory_materi9"></div>
+                </div>
+                <small id="label-inventory_materi9">Terkunci</small>
+            </a>
+            <a href="./inventory/replenishment/inventory-materi-10/index.html" class="step-card materi-card"
+                id="card-inventory_materi10">
+                <div class="materi-card-header"><span class="badge">Materi 10</span><span class="materi-status"
+                        id="status-inventory_materi10">🔒</span></div>
+                <h2>Replenishment 2</h2>
+                <p>Reordering Rules.</p>
+                <div class="materi-progress">
+                    <div class="materi-progress-bar" id="progress-inventory_materi10"></div>
+                </div>
+                <small id="label-inventory_materi10">Terkunci</small>
+            </a>
+            <a href="./inventory/replenishment/inventory-materi-11/index.html" class="step-card materi-card"
+                id="card-inventory_materi11">
+                <div class="materi-card-header"><span class="badge">Materi 11</span><span class="materi-status"
+                        id="status-inventory_materi11">🔒</span></div>
+                <h2>Replenishment 3</h2>
+                <p>Route MTO (Make to Order).</p>
+                <div class="materi-progress">
+                    <div class="materi-progress-bar" id="progress-inventory_materi11"></div>
+                </div>
+                <small id="label-inventory_materi11">Terkunci</small>
+            </a>
+            <a href="./inventory/replenishment/inventory-materi-12/index.html" class="step-card materi-card"
+                id="card-inventory_materi12">
+                <div class="materi-card-header"><span class="badge">Materi 12</span><span class="materi-status"
+                        id="status-inventory_materi12">🔒</span></div>
+                <h2>Replenishment 4</h2>
+                <p>Laporan Forecast.</p>
+                <div class="materi-progress">
+                    <div class="materi-progress-bar" id="progress-inventory_materi12"></div>
+                </div>
+                <small id="label-inventory_materi12">Terkunci</small>
+            </a>
+        </section>
+
+        <!-- Phase 3: Traceability (3 Modules) -->
+        <h3 class="dashboard-section-title" style="margin-top: 30px;">Traceability</h3>
+        <section class="materi-dashboard">
+            <a href="./inventory/traceability/inventory-materi-13/index.html" class="step-card materi-card"
+                id="card-inventory_materi13">
+                <div class="materi-card-header"><span class="badge">Materi 13</span><span class="materi-status"
+                        id="status-inventory_materi13">🔒</span></div>
+                <h2>Traceability 1</h2>
+                <p>Lots & Serial Numbers.</p>
+                <div class="materi-progress">
+                    <div class="materi-progress-bar" id="progress-inventory_materi13"></div>
+                </div>
+                <small id="label-inventory_materi13">Terkunci</small>
+            </a>
+            <a href="./inventory/traceability/inventory-materi-14/index.html" class="step-card materi-card"
+                id="card-inventory_materi14">
+                <div class="materi-card-header"><span class="badge">Materi 14</span><span class="materi-status"
+                        id="status-inventory_materi14">🔒</span></div>
+                <h2>Traceability 2</h2>
+                <p>Expired Dates & Alerts.</p>
+                <div class="materi-progress">
+                    <div class="materi-progress-bar" id="progress-inventory_materi14"></div>
+                </div>
+                <small id="label-inventory_materi14">Terkunci</small>
+            </a>
+            <a href="./inventory/traceability/inventory-materi-15/index.html" class="step-card materi-card"
+                id="card-inventory_materi15">
+                <div class="materi-card-header"><span class="badge">Materi 15</span><span class="materi-status"
+                        id="status-inventory_materi15">🔒</span></div>
+                <h2>Traceability 3</h2>
+                <p>Laporan Traceability.</p>
+                <div class="materi-progress">
+                    <div class="materi-progress-bar" id="progress-inventory_materi15"></div>
+                </div>
+                <small id="label-inventory_materi15">Terkunci</small>
+            </a>
+        </section>
+
+        <!-- Phase 4: Warehouse Transfers (6 Modules) -->
+        <h3 class="dashboard-section-title" style="margin-top: 30px;">Warehouse Transfers</h3>
+        <section class="materi-dashboard">
+            <a href="./inventory/transfers/inventory-materi-16/index.html" class="step-card materi-card"
+                id="card-inventory_materi16">
+                <div class="materi-card-header"><span class="badge">Materi 16</span><span class="materi-status"
+                        id="status-inventory_materi16">🔒</span></div>
+                <h2>Transfers 1</h2>
+                <p>Transfer internal.</p>
+                <div class="materi-progress">
+                    <div class="materi-progress-bar" id="progress-inventory_materi16"></div>
+                </div>
+                <small id="label-inventory_materi16">Terkunci</small>
+            </a>
+            <a href="./inventory/transfers/inventory-materi-17/index.html" class="step-card materi-card"
+                id="card-inventory_materi17">
+                <div class="materi-card-header"><span class="badge">Materi 17</span><span class="materi-status"
+                        id="status-inventory_materi17">🔒</span></div>
+                <h2>Transfers 2</h2>
+                <p>Resupply gudang.</p>
+                <div class="materi-progress">
+                    <div class="materi-progress-bar" id="progress-inventory_materi17"></div>
+                </div>
+                <small id="label-inventory_materi17">Terkunci</small>
+            </a>
+            <a href="./inventory/transfers/inventory-materi-18/index.html" class="step-card materi-card"
+                id="card-inventory_materi18">
+                <div class="materi-card-header"><span class="badge">Materi 18</span><span class="materi-status"
+                        id="status-inventory_materi18">🔒</span></div>
+                <h2>Transfers 3</h2>
+                <p>Rute multi-step.</p>
+                <div class="materi-progress">
+                    <div class="materi-progress-bar" id="progress-inventory_materi18"></div>
+                </div>
+                <small id="label-inventory_materi18">Terkunci</small>
+            </a>
+            <a href="./inventory/transfers/inventory-materi-19/index.html" class="step-card materi-card"
+                id="card-inventory_materi19">
+                <div class="materi-card-header"><span class="badge">Materi 19</span><span class="materi-status"
+                        id="status-inventory_materi19">🔒</span></div>
+                <h2>Transfers 4</h2>
+                <p>Cross-docking.</p>
+                <div class="materi-progress">
+                    <div class="materi-progress-bar" id="progress-inventory_materi19"></div>
+                </div>
+                <small id="label-inventory_materi19">Terkunci</small>
+            </a>
+            <a href="./inventory/transfers/inventory-materi-20/index.html" class="step-card materi-card"
+                id="card-inventory_materi20">
+                <div class="materi-card-header"><span class="badge">Materi 20</span><span class="materi-status"
+                        id="status-inventory_materi20">🔒</span></div>
+                <h2>Transfers 5</h2>
+                <p>Dropshipping.</p>
+                <div class="materi-progress">
+                    <div class="materi-progress-bar" id="progress-inventory_materi20"></div>
+                </div>
+                <small id="label-inventory_materi20">Terkunci</small>
+            </a>
+        </section>
+
+        <!-- Phase 5: Reserve Products (6 Modules) -->
+        <h3 class="dashboard-section-title" style="margin-top: 30px;">Reserve Products</h3>
+        <section class="materi-dashboard">
+            <a href="./inventory/reserve/inventory-materi-21/index.html" class="step-card materi-card"
+                id="card-inventory_materi21">
+                <div class="materi-card-header"><span class="badge">Materi 21</span><span class="materi-status"
+                        id="status-inventory_materi21">🔒</span></div>
+                <h2>Reserve Products 1</h2>
+                <p>Metode reservasi stok.</p>
+                <div class="materi-progress">
+                    <div class="materi-progress-bar" id="progress-inventory_materi21"></div>
+                </div>
+                <small id="label-inventory_materi21">Terkunci</small>
+            </a>
+            <a href="./inventory/reserve/inventory-materi-22/index.html" class="step-card materi-card"
+                id="card-inventory_materi22">
+                <div class="materi-card-header"><span class="badge">Materi 22</span><span class="materi-status"
+                        id="status-inventory_materi22">🔒</span></div>
+                <h2>Reserve Products 2</h2>
+                <p>Strategi removal/pengambilan.</p>
+                <div class="materi-progress">
+                    <div class="materi-progress-bar" id="progress-inventory_materi22"></div>
+                </div>
+                <small id="label-inventory_materi22">Terkunci</small>
+            </a>
+            <a href="./inventory/reserve/inventory-materi-23/index.html" class="step-card materi-card"
+                id="card-inventory_materi23">
+                <div class="materi-card-header"><span class="badge">Materi 23</span><span class="materi-status"
+                        id="status-inventory_materi23">🔒</span></div>
+                <h2>Reserve Products 3</h2>
+                <p>FIFO & LIFO.</p>
+                <div class="materi-progress">
+                    <div class="materi-progress-bar" id="progress-inventory_materi23"></div>
+                </div>
+                <small id="label-inventory_materi23">Terkunci</small>
+            </a>
+            <a href="./inventory/reserve/inventory-materi-24/index.html" class="step-card materi-card"
+                id="card-inventory_materi24">
+                <div class="materi-card-header"><span class="badge">Materi 24</span><span class="materi-status"
+                        id="status-inventory_materi24">🔒</span></div>
+                <h2>Reserve Products 4</h2>
+                <p>FEFO (First Expired First Out).</p>
+                <div class="materi-progress">
+                    <div class="materi-progress-bar" id="progress-inventory_materi24"></div>
+                </div>
+                <small id="label-inventory_materi24">Terkunci</small>
+            </a>
+            <a href="./inventory/reserve/inventory-materi-25/index.html" class="step-card materi-card"
+                id="card-inventory_materi25">
+                <div class="materi-card-header"><span class="badge">Materi 25</span><span class="materi-status"
+                        id="status-inventory_materi25">🔒</span></div>
+                <h2>Reserve Products 5</h2>
+                <p>Closest Location Strategy.</p>
+                <div class="materi-progress">
+                    <div class="materi-progress-bar" id="progress-inventory_materi25"></div>
+                </div>
+                <small id="label-inventory_materi25">Terkunci</small>
+            </a>
+            <a href="./inventory/reserve/inventory-materi-26/index.html" class="step-card materi-card"
+                id="card-inventory_materi26">
+                <div class="materi-card-header"><span class="badge">Materi 26</span><span class="materi-status"
+                        id="status-inventory_materi26">🔒</span></div>
+                <h2>Reserve Products 6</h2>
+                <p>Least Packages Strategy.</p>
+                <div class="materi-progress">
+                    <div class="materi-progress-bar" id="progress-inventory_materi26"></div>
+                </div>
+                <small id="label-inventory_materi26">Terkunci</small>
+            </a>
+        </section>
+
+        <!-- Phase 6: Packages and Packagings (2 Modules) -->
+        <h3 class="dashboard-section-title" style="margin-top: 30px;">Packages & Packagings</h3>
+        <section class="materi-dashboard">
+            <a href="./inventory/packaging/inventory-materi-27/index.html" class="step-card materi-card"
+                id="card-inventory_materi27">
+                <div class="materi-card-header"><span class="badge">Materi 27</span><span class="materi-status"
+                        id="status-inventory_materi27">🔒</span></div>
+                <h2>Packaging 1</h2>
+                <p>Units vs Packagings.</p>
+                <div class="materi-progress">
+                    <div class="materi-progress-bar" id="progress-inventory_materi27"></div>
+                </div>
+                <small id="label-inventory_materi27">Terkunci</small>
+            </a>
+            <a href="./inventory/packaging/inventory-materi-28/index.html" class="step-card materi-card"
+                id="card-inventory_materi28">
+                <div class="materi-card-header"><span class="badge">Materi 28</span><span class="materi-status"
+                        id="status-inventory_materi28">🔒</span></div>
+                <h2>Packaging 2</h2>
+                <p>Packages vs Packagings.</p>
+                <div class="materi-progress">
+                    <div class="materi-progress-bar" id="progress-inventory_materi28"></div>
+                </div>
+                <small id="label-inventory_materi28">Terkunci</small>
+            </a>
+        </section>
+
+        <!-- Phase 7: Daily Operations (6 Modules) -->
+        <h3 class="dashboard-section-title" style="margin-top: 30px;">Daily Operations</h3>
+        <section class="materi-dashboard">
+            <a href="./inventory/operations/inventory-materi-29/index.html" class="step-card materi-card"
+                id="card-inventory_materi29">
+                <div class="materi-card-header"><span class="badge">Materi 29</span><span class="materi-status"
+                        id="status-inventory_materi29">🔒</span></div>
+                <h2>Operations 1</h2>
+                <p>Picking Policy.</p>
+                <div class="materi-progress">
+                    <div class="materi-progress-bar" id="progress-inventory_materi29"></div>
+                </div>
+                <small id="label-inventory_materi29">Terkunci</small>
+            </a>
+            <a href="./inventory/operations/inventory-materi-30/index.html" class="step-card materi-card"
+                id="card-inventory_materi30">
+                <div class="materi-card-header"><span class="badge">Materi 30</span><span class="materi-status"
+                        id="status-inventory_materi30">🔒</span></div>
+                <h2>Operations 2</h2>
+                <p>Product Returns.</p>
+                <div class="materi-progress">
+                    <div class="materi-progress-bar" id="progress-inventory_materi30"></div>
+                </div>
+                <small id="label-inventory_materi30">Terkunci</small>
+            </a>
+            <a href="./inventory/operations/inventory-materi-31/index.html" class="step-card materi-card"
+                id="card-inventory_materi31">
+                <div class="materi-card-header"><span class="badge">Materi 31</span><span class="materi-status"
+                        id="status-inventory_materi31">🔒</span></div>
+                <h2>Operations 3</h2>
+                <p>Batch Picking.</p>
+                <div class="materi-progress">
+                    <div class="materi-progress-bar" id="progress-inventory_materi31"></div>
+                </div>
+                <small id="label-inventory_materi31">Terkunci</small>
+            </a>
+            <a href="./inventory/operations/inventory-materi-32/index.html" class="step-card materi-card"
+                id="card-inventory_materi32">
+                <div class="materi-card-header"><span class="badge">Materi 32</span><span class="materi-status"
+                        id="status-inventory_materi32">🔒</span></div>
+                <h2>Operations 4</h2>
+                <p>Cluster Picking.</p>
+                <div class="materi-progress">
+                    <div class="materi-progress-bar" id="progress-inventory_materi32"></div>
+                </div>
+                <small id="label-inventory_materi32">Terkunci</small>
+            </a>
+            <a href="./inventory/operations/inventory-materi-33/index.html" class="step-card materi-card"
+                id="card-inventory_materi33">
+                <div class="materi-card-header"><span class="badge">Materi 33</span><span class="materi-status"
+                        id="status-inventory_materi33">🔒</span></div>
+                <h2>Operations 5</h2>
+                <p>Shipping Labels.</p>
+                <div class="materi-progress">
+                    <div class="materi-progress-bar" id="progress-inventory_materi33"></div>
+                </div>
+                <small id="label-inventory_materi33">Terkunci</small>
+            </a>
+            <a href="./inventory/operations/inventory-materi-34/index.html" class="step-card materi-card"
+                id="card-inventory_materi34">
+                <div class="materi-card-header"><span class="badge">Materi 34</span><span class="materi-status"
+                        id="status-inventory_materi34">🔒</span></div>
+                <h2>Operations 6</h2>
+                <p>Wave Picking.</p>
+                <div class="materi-progress">
+                    <div class="materi-progress-bar" id="progress-inventory_materi34"></div>
+                </div>
+                <small id="label-inventory_materi34">Terkunci</small>
+            </a>
+        </section>
+    </div>
+
+    <!-- Load JS -->
+    <script src="./assets/js/lms-core.js"></script>
+    <script>
+        const inventoryModules = [];
+        for (let i = 1; i <= 35; i++) {
+            let nextCard = i < 35 ? `card-inventory_materi${i + 1}` : null;
+            let section = "inventory-basics";
+            if (i >= 9 && i <= 12) section = "replenishment";
+            if (i >= 13 && i <= 15) section = "traceability";
+            if (i >= 16 && i <= 20) section = "transfers";
+            if (i >= 21 && i <= 26) section = "reserve";
+            if (i >= 27 && i <= 28) section = "packaging";
+            if (i >= 29 && i <= 34) section = "operations";
+
+            inventoryModules.push({
+                id: `inventory_materi${i}`,
+                uiId: `inventory_materi${i}`,
+                link: `./inventory/${section}/inventory-materi-${i}/index.html`,
+                nextCard: nextCard
+            });
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            initTrackProgress(inventoryModules);
+        });
+
+        function toggleDark() {
+            document.body.classList.toggle("dark");
+            localStorage.setItem("darkMode", document.body.classList.contains("dark"));
+        }
+        if (localStorage.getItem("darkMode") === "true") {
+            document.body.classList.add("dark");
+        }
+    </script>
+</body>
+
+</html>

@@ -18,32 +18,59 @@
     </div>
 
     <main class="container">
+        <button class="lang-toggle">ID</button>
         <button class="dark-toggle" onclick="toggleDark()">🌙</button>
 
         <header class="header">
             <div id="materiBadge" class="materi-badge" style="display: none">
-                🎓 Materi 1 CRM Lulus
+                <span class="lang-id">🎓 Materi 1 CRM Lulus</span>
+                <span class="lang-en">🎓 CRM Module 1 Passed</span>
             </div>
             <span class="badge">CRM - Basics</span>
             <h1>CRM Basics</h1>
             <p class="subtitle">
-                Memahami konsep dasar manajemen hubungan pelanggan.
+                <span class="lang-id">Memahami konsep dasar manajemen hubungan pelanggan.</span>
+                <span class="lang-en">Understanding the basic concepts of Customer Relationship Management.</span>
             </p>
+
+            <div class="image-placeholder">
+                <img src="../../../assets/images/crm/crm-materi-1/infographic.png" alt="crm-materi-1 Infographic"
+                    onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+            </div>
         </header>
 
         <section class="step-card">
-            <h2>1. Apa itu CRM?</h2>
+            <h2>
+                <span class="lang-id">1. Apa itu CRM?</span>
+                <span class="lang-en">1. What is CRM?</span>
+            </h2>
             <div class="content">
-                <p>CRM adalah jantung dari penjualan perusahaan:</p>
+                <p>
+                    <span class="lang-id">CRM adalah jantung dari penjualan perusahaan:</span>
+                    <span class="lang-en">CRM is the heart of company sales:</span>
+                </p>
                 <ul>
-                    <li>Singkatan dari <strong>Customer Relationship Management</strong>.</li>
-                    <li>Bukan "Creative Relationship Mayhem" atau "Crazy Rabbits Moonwalk".</li>
-                    <li>Sistem ini membantu Anda melacak setiap prospek dari kontak awal hingga transaksi berhasil
-                        (Won).</li>
+                    <li>
+                        <span class="lang-id">Singkatan dari <strong>Customer Relationship Management</strong>.</span>
+                        <span class="lang-en">Stands for <strong>Customer Relationship Management</strong>.</span>
+                    </li>
+                    <li>
+                        <span class="lang-id">Bukan "Creative Relationship Mayhem" atau "Crazy Rabbits Moonwalk".</span>
+                        <span class="lang-en">Not "Creative Relationship Mayhem" or "Crazy Rabbits Moonwalk".</span>
+                    </li>
+                    <li>
+                        <span class="lang-id">Sistem ini membantu Anda melacak setiap prospek dari kontak awal hingga
+                            transaksi berhasil (Won).</span>
+                        <span class="lang-en">This system helps you track every lead from initial contact to a
+                            successful deal (Won).</span>
+                    </li>
                 </ul>
             </div>
             <div class="step-footer">
-                <label>Selesai</label>
+                <label>
+                    <span class="lang-id">Selesai</span>
+                    <span class="lang-en">Done</span>
+                </label>
                 <input type="checkbox" class="mark-done" />
             </div>
         </section>
@@ -53,7 +80,10 @@
                 <div class="quiz-progress-bar" id="quizProgressBar"></div>
             </div>
 
-            <h2>📝 Quiz CRM Materi 1</h2>
+            <h2>
+                <span class="lang-id">📝 Quiz CRM Materi 1</span>
+                <span class="lang-en">📝 CRM Quiz Module 1</span>
+            </h2>
 
             <div class="quiz-container">
                 <!-- Quiz akan di-render oleh JS -->
@@ -61,25 +91,33 @@
 
             <div class="step-footer">
                 <button class="quiz-submit-btn" onclick="checkQuiz()">
-                    Periksa Jawaban
+                    <span class="lang-id">Periksa Jawaban</span>
+                    <span class="lang-en">Check Answers</span>
                 </button>
                 <div id="quizResult" style="display: none"></div>
             </div>
         </section>
 
         <div id="nextActionArea" class="next-action-area" style="display: none">
-            <h3>🎉 Materi 1 Selesai!</h3>
+            <h3>
+                <span class="lang-id">🎉 Materi 1 Selesai!</span>
+                <span class="lang-en">🎉 Module 1 Completed!</span>
+            </h3>
             <p>
-                Langkah pertama menjadi master sales telah diambil.
+                <span class="lang-id">Langkah pertama menjadi master sales telah diambil.</span>
+                <span class="lang-en">The first step to becoming a sales master has been taken.</span>
             </p>
             <a href="../../../crm.html" class="btn-next">
-                Kembali ke Dashboard CRM ➔
+                <span class="lang-id">Kembali ke Dashboard CRM ➔</span>
+                <span class="lang-en">Back to CRM Dashboard ➔</span>
             </a>
         </div>
 
         <footer class="footer">
-            <a href="../../../crm.html" style="text-decoration: none; color: #666; font-weight: 600">← Kembali ke Modul
-                CRM</a>
+            <a href="../../../crm.html" style="text-decoration: none; color: #666; font-weight: 600">
+                <span class="lang-id">← Kembali ke Modul CRM</span>
+                <span class="lang-en">← Back to CRM Module</span>
+            </a>
         </footer>
     </main>
 

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Operations 4 | PembelajarBelajar</title>
+    <link rel="stylesheet" href="../../../assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header class="header">
+        <h1>Daily Operations 4</h1>
+        <p class="subtitle">Topik pembahasan Daily Operations</p>
+    </header>
+
+    <main class="container">
+        <section class="step-card">
+            <h2>Materi Pembelajaran</h2>
+            <p>
+                Selamat datang di modul <strong>Daily Operations 4</strong>. 
+                Materi ini adalah bagian dari track Inventory.
+            </p>
+            <p>
+                Silakan pelajari konsep-konsep kunci yang berkaitan dengan Topik pembahasan Daily Operations.
+                Pastikan Anda memahami setiap bagian sebelum melanjutkan ke kuis.
+            </p>
+            <div class="step-footer">
+                <div style="display: flex; gap: 10px; align-items: center;">
+                    <label for="step1-check">Selesai dibaca</label>
+                    <input type="checkbox" id="step1-check" class="mark-done"
+                        onchange="updateProgress('inventory_materi35')">
+                </div>
+            </div>
+        </section>
+
+        <!-- QUIZ SECTION -->
+        <section class="step-card">
+            <h2>Kuis: Daily Operations 4</h2>
+            <p>Uji pemahaman Anda tentang materi ini.</p>
+            <div class="quiz-container">
+                <!-- Quiz will be rendered here -->
+            </div>
+            <div class="step-footer">
+                <button class="quiz-submit-btn" onclick="checkQuiz()">Periksa Jawaban</button>
+                <div id="quizResult" style="display: none;"></div>
+            </div>
+        </section>
+
+        <!-- NAVIGATION -->
+        <div class="next-action-area" id="nextActionArea" style="display: none;">
+            <h3>Luar Biasa! 🎉</h3>
+            <p>Anda telah menyelesaikan materi ini.</p>
+            <a href="../../../inventory.html" class="btn-next">Lanjut ke Materi Berikutnya ➔</a>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <a href="../../../inventory.html">Kembali ke Dashboard Inventory</a>
+    </footer>
+
+    <script src="../../../assets/js/lms-core.js"></script>
+    <script src="../../../assets/js/quiz-bank.js"></script>
+    <script src="../../../assets/js/quiz-engine.js"></script>
+    <script>
+        const PRODUCT_ID = "inventory_materi35"; 
+
+        document.addEventListener("DOMContentLoaded", () => {
+            initMateriProgress(PRODUCT_ID);
+            renderQuiz(PRODUCT_ID, ".quiz-container");
+        });
+    </script>
+</body>
+</html>

@@ -36,6 +36,89 @@ function initMateriProgress(materiId) {
   loadBadgeIfExists(materiId);
 }
 
+/* ===================== DASHBOARD PROGRESS (TRACKS) ===================== */
+
+function initTrackProgress(modules) {
+  let completedCount = 0;
+  const totalModules = modules.length;
+
+  modules.forEach((mod) => {
+    const steps = JSON.parse(localStorage.getItem(`${mod.id}_steps`)) || [];
+    const quiz = JSON.parse(localStorage.getItem(`${mod.id}_quiz`));
+
+    // Calculate Progress
+    const totalSteps = steps.length > 0 ? steps.length : 1;
+    const checkedSteps = steps.filter(Boolean).length;
+    let percent = Math.round((checkedSteps / totalSteps) * 100);
+
+    if (quiz?.passed) {
+      percent = 100;
+      completedCount++;
+    }
+
+    // Update UI
+    updateCardUI(mod.id, percent, quiz?.passed);
+
+    // ALWAYS UNLOCK NEXT CARD (Disabled Locking)
+    if (mod.nextCard) {
+      const nextModuleData = modules.find((m) => `card-${m.id}` === mod.nextCard);
+      const nextLink = nextModuleData ? nextModuleData.link : "#";
+      unlockCard(mod.nextCard, nextLink);
+    }
+  });
+
+  // Global Progress for this Track
+  // Note: Track dashboards might not have the global bar with exact same IDs as index.html
+  // But if they do, this helper can be reused or adapted. 
+  // For now, we won't crash if elements missing.
+}
+
+function updateCardUI(materiId, percent, isPassed) {
+  const bar = qs(`#progress-${materiId}`);
+  const label = qs(`#label-${materiId}`);
+  const status = qs(`#status-${materiId}`);
+
+  if (bar) bar.style.width = percent + "%";
+
+  if (isPassed) {
+    if (label) {
+      label.innerText = "🎓 Lulus Quiz";
+      label.style.color = "var(--success-color)";
+      label.style.fontWeight = "bold";
+    }
+    if (status) status.innerText = "✅";
+  } else {
+    if (label && percent > 0) {
+      label.innerText = `${percent}% Selesai`;
+      label.style.color = "var(--secondary-color)";
+    }
+  }
+}
+
+function unlockCard(cardId, linkUrl) {
+  const card = document.getElementById(cardId);
+  if (!card) return;
+
+  // Always remove lock
+  card.classList.remove("locked");
+  const overlay = card.querySelector(".lock-overlay");
+  if (overlay) overlay.remove();
+
+  const statusIcon = card.querySelector(".materi-status");
+  if (statusIcon) statusIcon.innerText = "🔓";
+
+  const label = card.querySelector("small");
+  if (label && label.innerText === "Terkunci") {
+    label.innerText = "Silakan mulai";
+  }
+
+  // Enable Click
+  card.style.cursor = "pointer";
+  card.onclick = () => {
+    window.location.href = linkUrl;
+  };
+}
+
 /* ---------- Save step checkbox ---------- */
 function saveStepProgress(materiId) {
   const status = Array.from(qsa(".mark-done")).map(cb => cb.checked);
@@ -138,11 +221,11 @@ function loadBadgeIfExists(materiId) {
 /* ===================== LOCK / UNLOCK ===================== */
 
 function unlockNextMateri(materiId) {
-  const currentNumber = extractMateriNumber(materiId);
-  if (!currentNumber) return;
-
-  const nextMateriId = `materi-${currentNumber + 1}`;
-  unlockMateri(nextMateriId);
+  // LOCK SYSTEM DISABLED
+  // const currentNumber = extractMateriNumber(materiId);
+  // if (!currentNumber) return;
+  // const nextMateriId = `materi-${currentNumber + 1}`;
+  // unlockMateri(nextMateriId);
 }
 
 function unlockMateri(elementId) {
@@ -255,6 +338,50 @@ function updateToggleIcon(btn, theme) {
   }
 }
 
+/* ===================== LANGUAGE SYSTEM ===================== */
+
+const LANG = {
+  ID: 'id',
+  EN: 'en'
+};
+
+function initLanguageSystem(toggleSelector) {
+  const toggleBtn = qs(toggleSelector);
+
+  // 1. Load Preference (default: ID)
+  let currentLang = localStorage.getItem("langPreference") || LANG.ID;
+
+  // 2. Apply Initial State
+  updateLangToggleUI(toggleBtn, currentLang);
+  document.body.setAttribute("data-lang", currentLang); // Apply to Body
+
+  // 3. Click Handler
+  if (toggleBtn) {
+    toggleBtn.addEventListener("click", () => {
+      currentLang = currentLang === LANG.ID ? LANG.EN : LANG.ID;
+      localStorage.setItem("langPreference", currentLang);
+
+      updateLangToggleUI(toggleBtn, currentLang);
+      document.body.setAttribute("data-lang", currentLang); // Apply to Body
+
+      // Dispatch Event
+      window.dispatchEvent(new CustomEvent("languageChanged", {
+        detail: { language: currentLang }
+      }));
+    });
+  }
+}
+
+function updateLangToggleUI(btn, lang) {
+  if (!btn) return;
+  btn.innerText = lang.toUpperCase();
+  btn.title = lang === LANG.ID ? "Bahasa: Indonesia" : "Language: English";
+}
+
+function getCurrentLanguage() {
+  return localStorage.getItem("langPreference") || LANG.ID;
+}
+
 /* ===================== HELPERS ===================== */
 
 function extractMateriNumber(materiId) {
@@ -323,6 +450,8 @@ function initImageLightbox() {
 document.addEventListener("DOMContentLoaded", () => {
   // dark mode optional
   initThemeSystem(".dark-toggle");
+  // init language system
+  initLanguageSystem(".lang-toggle");
   // init lightbox
   initImageLightbox();
 

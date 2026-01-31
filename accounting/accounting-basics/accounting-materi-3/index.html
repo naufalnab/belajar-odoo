@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Initial Balances | PembelajarBelajar</title>
+    <link rel="stylesheet" href="../../../assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header class="header">
+        <h1>Initial Balances (Saldo Awal)</h1>
+        <p class="subtitle">Mengatur saldo awal akun bank dan jurnal akuntansi di Odoo.</p>
+
+        <div class="image-placeholder">
+            <img src="../../../assets/images/accounting/accounting-materi-3/infographic.png"
+                alt="accounting-materi-3 Infographic"
+                onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+        </div>
+    </header>
+
+    <main class="container">
+
+        <!-- CONTENT -->
+        <section class="step-card">
+            <h2>Initial Balances & Unneeded Accounts</h2>
+            <p>
+                Saat memulai database baru, Anda mungkin memiliki akun di Chart of Accounts yang tidak diperlukan.
+                Praktik terbaik adalah:
+            </p>
+            <ul>
+                <li><strong>Delete:</strong> Jika akun belum pernah digunakan (tidak ada jurnal), Anda bisa
+                    menghapusnya.</li>
+                <li><strong>Deprecate (Archive):</strong> Jika akun sudah digunakan atau Anda ragu, gunakan fitur
+                    "Deprecated" atau arsipkan. Ini mencegah akun digunakan di masa depan tanpa menghapus riwayat.</li>
+            </ul>
+
+            <h3>Current Year Earnings</h3>
+            <p>
+                Akun <strong>Current Year Earnings</strong> adalah akun khusus di Odoo yang digunakan untuk menghitung
+                laba/rugi tahun berjalan secara otomatis.
+                Akun ini <strong>JANGAN dihapus atau dimodifikasi</strong> karena integral untuk fungsi pelaporan Odoo.
+            </p>
+
+            <div class="step-footer">
+                <div style="display: flex; gap: 10px; align-items: center;">
+                    <label for="step1-check">Selesai dibaca</label>
+                    <input type="checkbox" id="step1-check" class="mark-done"
+                        onchange="updateProgress('accounting_materi3')">
+                </div>
+            </div>
+        </section>
+
+        <!-- QUIZ SECTION -->
+        <section class="step-card">
+            <h2>Kuis: Initial Balances</h2>
+            <p>Uji pemahaman Anda tentang saldo awal dan pengelolaan akun.</p>
+            <div class="quiz-container">
+                <!-- Quiz will be rendered here -->
+            </div>
+            <div class="step-footer">
+                <button class="quiz-submit-btn" onclick="checkQuiz()">Periksa Jawaban</button>
+                <div id="quizResult" style="display: none;"></div>
+            </div>
+        </section>
+
+        <!-- NAVIGATION -->
+        <div class="next-action-area" id="nextActionArea" style="display: none;">
+            <h3>Luar Biasa! 🎉</h3>
+            <p>Anda telah memahami pengelolaan saldo awal.</p>
+            <a href="../accounting-materi-4/index.html" class="btn-next">Lanjut ke Materi 4 ➔</a>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <a href="../../../accounting.html">Kembali ke Dashboard Accounting</a>
+    </footer>
+
+    <script src="../../../assets/js/lms-core.js"></script>
+    <script src="../../../assets/js/quiz-bank.js"></script>
+    <script src="../../../assets/js/quiz-engine.js"></script>
+    <script>
+        const PRODUCT_ID = "accounting_materi3"; // ID unik untuk materi ini
+
+        document.addEventListener("DOMContentLoaded", () => {
+            initMateriProgress(PRODUCT_ID);
+            renderQuiz(PRODUCT_ID, ".quiz-container");
+        });
+    </script>
+</body>
+
+</html>

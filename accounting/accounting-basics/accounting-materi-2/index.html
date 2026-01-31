@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chart of Accounts | PembelajarBelajar</title>
+    <link rel="stylesheet" href="../../../assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header class="header">
+        <h1>Chart of Accounts (COA)</h1>
+        <p class="subtitle">Memahami struktur dan konfigurasi Bagan Akun di Odoo.</p>
+
+        <div class="image-placeholder">
+            <img src="../../../assets/images/accounting/accounting-materi-2/infographic.png"
+                alt="accounting-materi-2 Infographic"
+                onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+        </div>
+    </header>
+
+    <main class="container">
+
+        <!-- STEP 1: Understanding COA -->
+        <section class="step-card">
+            <h2>Langkah 1: Apa itu Chart of Accounts?</h2>
+            <p>
+                <strong>Chart of accounts (COA)</strong> adalah daftar semua akun yang digunakan untuk mencatat
+                transaksi keuangan
+                dalam buku besar organisasi. Anda dapat menemukannya di <strong>Accounting ‣ Configuration ‣ Chart of
+                    Accounts</strong>.
+            </p>
+            <p>
+                Saat menjelajahi COA, Anda dapat mengurutkan akun berdasarkan Kode, Nama Akun, atau Tipe.
+            </p>
+            <div class="deep-dive">
+                <h3>💡 Konfigurasi Akun</h3>
+                <p>
+                    Negara yang dipilih saat pembuatan database menentukan <strong>Paket Lokalisasi Fiskal</strong> yang
+                    diinstal default.
+                    Ini mencakup Bagan Akun standar yang sesuai dengan regulasi negara tersebut.
+                </p>
+                <p>
+                    <strong>Peringatan:</strong> Tidak mungkin mengubah lokalisasi fiskal perusahaan setelah entri
+                    jurnal diposting.
+                </p>
+            </div>
+
+            <div class="step-footer">
+                <div style="display: flex; gap: 10px; align-items: center;">
+                    <label for="step1-check">Selesai dibaca</label>
+                    <input type="checkbox" id="step1-check" class="mark-done"
+                        onchange="updateProgress('accounting_materi2')">
+                </div>
+            </div>
+        </section>
+
+        <!-- STEP 2: Account Types -->
+        <section class="step-card">
+            <h2>Langkah 2: Tipe Akun (Account Types)</h2>
+            <p>
+                Mengonfigurasi tipe akun dengan benar sangat penting karena melayani berbagai tujuan:
+                menghasilkan laporan hukum & keuangan, aturan penutupan tahun fiskal, dan pembuatan entri awal.
+            </p>
+            <p>Beberapa tipe akun utama dalam Odoo:</p>
+
+            <h3>Balance Sheet (Neraca)</h3>
+            <ul>
+                <li><strong>Assets:</strong> Receivable, Bank and Cash, Current Assets, Prepayments, Fixed Assets.</li>
+                <li><strong>Liabilities:</strong> Payable, Credit Card, Current Liabilities, Non-current Liabilities.
+                </li>
+                <li><strong>Equity:</strong> Equity, Current Year Earnings.</li>
+            </ul>
+
+            <h3>Profit & Loss (Laba Rugi)</h3>
+            <ul>
+                <li><strong>Income:</strong> Income, Other Income.</li>
+                <li><strong>Expense:</strong> Expense, Depreciation, Cost of Revenue.</li>
+            </ul>
+
+            <div class="step-footer">
+                <div style="display: flex; gap: 10px; align-items: center;">
+                    <label for="step2-check">Selesai dibaca</label>
+                    <input type="checkbox" id="step2-check" class="mark-done"
+                        onchange="updateProgress('accounting_materi2')">
+                </div>
+            </div>
+        </section>
+
+        <!-- STEP 3: Advanced Configuration -->
+        <section class="step-card">
+            <h2>Langkah 3: Konfigurasi Lanjutan</h2>
+            <ul>
+                <li><strong>Default Taxes:</strong> Pajak default yang diterapkan saat akun ini dipilih.</li>
+                <li><strong>Tags:</strong> Digunakan untuk pelaporan akuntansi tertentu.</li>
+                <li><strong>Account Groups:</strong> Mengelompokkan beberapa akun sebagai sub-akun untuk laporan
+                    terkonsolidasi.</li>
+                <li><strong>Allow Reconciliation:</strong> Mengizinkan pencocokan transaksi (rekonsiliasi) dengan item
+                    jurnal yang ada.</li>
+            </ul>
+            <div class="deep-dive">
+                <h3>Deprecated Accounts</h3>
+                <p>
+                    Anda tidak bisa menghapus akun jika sudah ada transaksi. Gunakan fitur <strong>Deprecated</strong>
+                    untuk membuatnya tidak dapat digunakan lagi.
+                </p>
+            </div>
+
+            <div class="step-footer">
+                <div style="display: flex; gap: 10px; align-items: center;">
+                    <label for="step3-check">Selesai dibaca</label>
+                    <input type="checkbox" id="step3-check" class="mark-done"
+                        onchange="updateProgress('accounting_materi2')">
+                </div>
+            </div>
+        </section>
+
+        <!-- QUIZ SECTION -->
+        <section class="step-card">
+            <h2>Kuis: Chart of Accounts</h2>
+            <p>Uji pemahaman Anda tentang Bagan Akun dan Konfigurasi.</p>
+            <div class="quiz-container">
+                <!-- Quiz will be rendered here -->
+            </div>
+            <div class="step-footer">
+                <button class="quiz-submit-btn" onclick="checkQuiz()">Periksa Jawaban</button>
+                <div id="quizResult" style="display: none;"></div>
+            </div>
+        </section>
+
+        <!-- NAVIGATION -->
+        <div class="next-action-area" id="nextActionArea" style="display: none;">
+            <h3>Luar Biasa! 🎉</h3>
+            <p>Anda telah memahami struktur Chart of Accounts.</p>
+            <a href="../accounting-materi-3/index.html" class="btn-next">Lanjut ke Materi 3 ➔</a>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <a href="../../../accounting.html">Kembali ke Dashboard Accounting</a>
+    </footer>
+
+    <script src="../../../assets/js/lms-core.js"></script>
+    <script src="../../../assets/js/quiz-bank.js"></script>
+    <script src="../../../assets/js/quiz-engine.js"></script>
+    <script>
+        const PRODUCT_ID = "accounting_materi2"; // ID unik untuk materi ini
+
+        document.addEventListener("DOMContentLoaded", () => {
+            initMateriProgress(PRODUCT_ID);
+            renderQuiz(PRODUCT_ID, ".quiz-container");
+        });
+    </script>
+</body>
+
+</html>

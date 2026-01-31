@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory Basics 5: Satuan Ukuran (UoM) - Odoo Learning</title>
+    <link rel="stylesheet" href="../../../assets/css/style.css">
+    <link rel="stylesheet" href="../../../assets/css/dark-mode.css">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo-container">
+            <a href="../../../index.html" style="text-decoration: none;">
+                <h2 class="logo">Odoo<span style="color: var(--accent);">Learning</span></h2>
+            </a>
+        </div>
+        <nav class="nav-links">
+            <a href="../../../index.html" class="nav-item">
+                <span class="icon">🏠</span>
+                Dashboard
+            </a>
+            <a href="../../../accounting.html" class="nav-item">
+                <span class="icon">💰</span>
+                Accounting
+            </a>
+             <a href="../../../inventory.html" class="nav-item active">
+                <span class="icon">📦</span>
+                Inventory
+            </a>
+        </nav>
+    </div>
+
+    <div class="main-content">
+        <header class="top-bar">
+            <div class="breadcrumbs">
+                <a href="../../../index.html">Home</a> &gt; 
+                <a href="../../../inventory.html">Inventory</a> &gt; 
+                <span>Inventory Basics 5: Satuan Ukuran (UoM)</span>
+            </div>
+        </header>
+
+        <div class="module-container">
+            <div class="video-section">
+               <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/7qX2o_-N9j0" title="Odoo Tutorial" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+
+            <div class="content-section">
+                <h1>Inventory Basics 5: Satuan Ukuran (UoM)</h1>
+                <p class="subtitle">Konfigurasi & Konversi Unit</p>
+                
+                <div class="learning-material">
+                    <h3>Mengaktifkan Units of Measure</h3><p>Untuk menggunakan berbagai satuan (seperti pcs, lusin, kg, ton), Anda harus mengaktifkan fiturnya di <strong>Configuration > Settings > Products section > Units of Measure</strong>.</p><h3>Kalkulasi Konversi</h3><p>Saat membuat UoM baru yang lebih besar dari unit referensi (misal: Lusin vs Pcs), kolom 'Contains' biasanya mengharuskan Anda mendefinisikan rasionya. Namun, jika Anda membuat unit yang lebih kecil, prinsipnya mungkin melibatkan pembagian.</p><h3>Penerimaan dengan Unit Berbeda</h3><p>Odoo sangat fleksibel. Jika database Anda melacak stok dalam <strong>Pounds</strong>, tetapi Anda membeli dalam Kilograms, Odoo akan secara otomatis mengonversi dan menyimpan stok dalam unit basis Anda, yaitu <strong>Pounds</strong>, saat penerimaan divalidasi.</p>
+                </div>
+            </div>
+
+            <div class="quiz-section">
+                <h2>Kuis Pengetahuan</h2>
+                <div id="quiz-container" class="quiz-container" data-quiz-id="inventory_materi5">
+                    <!-- Quiz will be rendered here -->
+                </div>
+            </div>
+
+            <div class="navigation-buttons">
+                <a href="../../../inventory/inventory-basics/inventory-materi-4/index.html" class="btn btn-secondary">← Materi Sebelumnya</a>
+                <a href="../../../inventory/inventory-basics/inventory-materi-6/index.html" class="btn btn-primary btn-next">Lanjut ke Materi Berikutnya →</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="../../../assets/js/lms-core.js"></script>
+    <script src="../../../assets/js/quiz-bank.js"></script>
+    <script src="../../../assets/js/quiz-engine.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            if (typeof renderQuiz === 'function') {
+                const quizId = document.getElementById('quiz-container').getAttribute('data-quiz-id');
+                if (window.QUIZ_BANK && window.QUIZ_BANK[quizId]) {
+                    renderQuiz(quizId, '#quiz-container');
+                }
+            }
+        });
+    </script>
+</body>
+</html>
