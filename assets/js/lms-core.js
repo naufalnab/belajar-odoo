@@ -338,6 +338,50 @@ function updateToggleIcon(btn, theme) {
   }
 }
 
+/* ===================== LANGUAGE SYSTEM ===================== */
+
+const LANG = {
+  ID: 'id',
+  EN: 'en'
+};
+
+function initLanguageSystem(toggleSelector) {
+  const toggleBtn = qs(toggleSelector);
+
+  // 1. Load Preference (default: ID)
+  let currentLang = localStorage.getItem("langPreference") || LANG.ID;
+
+  // 2. Apply Initial State
+  updateLangToggleUI(toggleBtn, currentLang);
+  document.body.setAttribute("data-lang", currentLang); // Apply to Body
+
+  // 3. Click Handler
+  if (toggleBtn) {
+    toggleBtn.addEventListener("click", () => {
+      currentLang = currentLang === LANG.ID ? LANG.EN : LANG.ID;
+      localStorage.setItem("langPreference", currentLang);
+
+      updateLangToggleUI(toggleBtn, currentLang);
+      document.body.setAttribute("data-lang", currentLang); // Apply to Body
+
+      // Dispatch Event
+      window.dispatchEvent(new CustomEvent("languageChanged", {
+        detail: { language: currentLang }
+      }));
+    });
+  }
+}
+
+function updateLangToggleUI(btn, lang) {
+  if (!btn) return;
+  btn.innerText = lang.toUpperCase();
+  btn.title = lang === LANG.ID ? "Bahasa: Indonesia" : "Language: English";
+}
+
+function getCurrentLanguage() {
+  return localStorage.getItem("langPreference") || LANG.ID;
+}
+
 /* ===================== HELPERS ===================== */
 
 function extractMateriNumber(materiId) {
@@ -406,6 +450,8 @@ function initImageLightbox() {
 document.addEventListener("DOMContentLoaded", () => {
   // dark mode optional
   initThemeSystem(".dark-toggle");
+  // init language system
+  initLanguageSystem(".lang-toggle");
   // init lightbox
   initImageLightbox();
 

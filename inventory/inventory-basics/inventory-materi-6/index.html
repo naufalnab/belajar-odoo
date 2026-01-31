@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory Basics 6: Penyesuaian Stok - Odoo Learning</title>
+    <link rel="stylesheet" href="../../../assets/css/style.css">
+    <link rel="stylesheet" href="../../../assets/css/dark-mode.css">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo-container">
+            <a href="../../../index.html" style="text-decoration: none;">
+                <h2 class="logo">Odoo<span style="color: var(--accent);">Learning</span></h2>
+            </a>
+        </div>
+        <nav class="nav-links">
+            <a href="../../../index.html" class="nav-item">
+                <span class="icon">🏠</span>
+                Dashboard
+            </a>
+            <a href="../../../accounting.html" class="nav-item">
+                <span class="icon">💰</span>
+                Accounting
+            </a>
+             <a href="../../../inventory.html" class="nav-item active">
+                <span class="icon">📦</span>
+                Inventory
+            </a>
+        </nav>
+    </div>
+
+    <div class="main-content">
+        <header class="top-bar">
+            <div class="breadcrumbs">
+                <a href="../../../index.html">Home</a> &gt; 
+                <a href="../../../inventory.html">Inventory</a> &gt; 
+                <span>Inventory Basics 6: Penyesuaian Stok</span>
+            </div>
+        </header>
+
+        <div class="module-container">
+            <div class="video-section">
+               <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/7qX2o_-N9j0" title="Odoo Tutorial" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+
+            <div class="content-section">
+                <h1>Inventory Basics 6: Penyesuaian Stok</h1>
+                <p class="subtitle">Inventory Adjustments & Frequency</p>
+                
+                <div class="learning-material">
+                    <h3>Rute Penyesuaian Manual</h3><p>Saat Anda melakukan penyesuaian stok manual (menambah stok tiba-tiba), rute pergerakan barang adalah dari lokasi virtual (Virtual Locations/Inventory Adjustment) menuju lokasi stok fisik (WH/Stock). Jadi: <strong>Virtual Locations/Inventory Adjustment → WH/Stock</strong>.</p><h3>Frekuensi Inventaris</h3><p>Anda dapat mengatur seberapa sering opname stok harus dilakukan (Inventory Frequency) melalui menu <strong>Operations > Inventory Adjustments</strong>.</p><h3>Opname Tahunan</h3><p>Untuk kepatuhan akuntansi, banyak perusahaan melakukan opname tahunan. Anda dapat mengatur 'Annual Inventory Day and Month' di <strong>Inventory > Configuration > Settings > Operations Section</strong>.</p>
+                </div>
+            </div>
+
+            <div class="quiz-section">
+                <h2>Kuis Pengetahuan</h2>
+                <div id="quiz-container" class="quiz-container" data-quiz-id="inventory_materi6">
+                    <!-- Quiz will be rendered here -->
+                </div>
+            </div>
+
+            <div class="navigation-buttons">
+                <a href="../../../inventory/inventory-basics/inventory-materi-5/index.html" class="btn btn-secondary">← Materi Sebelumnya</a>
+                <a href="../../../inventory/inventory-basics/inventory-materi-7/index.html" class="btn btn-primary btn-next">Lanjut ke Materi Berikutnya →</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="../../../assets/js/lms-core.js"></script>
+    <script src="../../../assets/js/quiz-bank.js"></script>
+    <script src="../../../assets/js/quiz-engine.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            if (typeof renderQuiz === 'function') {
+                const quizId = document.getElementById('quiz-container').getAttribute('data-quiz-id');
+                if (window.QUIZ_BANK && window.QUIZ_BANK[quizId]) {
+                    renderQuiz(quizId, '#quiz-container');
+                }
+            }
+        });
+    </script>
+</body>
+</html>

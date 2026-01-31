@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Replenishment 2: Kalkulasi Reordering - Odoo Learning</title>
+    <link rel="stylesheet" href="../../../assets/css/style.css">
+    <link rel="stylesheet" href="../../../assets/css/dark-mode.css">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo-container">
+            <a href="../../../index.html" style="text-decoration: none;">
+                <h2 class="logo">Odoo<span style="color: var(--accent);">Learning</span></h2>
+            </a>
+        </div>
+        <nav class="nav-links">
+            <a href="../../../index.html" class="nav-item">
+                <span class="icon">🏠</span>
+                Dashboard
+            </a>
+            <a href="../../../accounting.html" class="nav-item">
+                <span class="icon">💰</span>
+                Accounting
+            </a>
+             <a href="../../../inventory.html" class="nav-item active">
+                <span class="icon">📦</span>
+                Inventory
+            </a>
+        </nav>
+    </div>
+
+    <div class="main-content">
+        <header class="top-bar">
+            <div class="breadcrumbs">
+                <a href="../../../index.html">Home</a> &gt; 
+                <a href="../../../inventory.html">Inventory</a> &gt; 
+                <span>Replenishment 2: Kalkulasi Reordering</span>
+            </div>
+        </header>
+
+        <div class="module-container">
+            <div class="video-section">
+               <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/7qX2o_-N9j0" title="Odoo Tutorial" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+
+            <div class="content-section">
+                <h1>Replenishment 2: Kalkulasi Reordering</h1>
+                <p class="subtitle">Min/Max Rules & Forecast</p>
+                
+                <div class="learning-material">
+                    <h3>Contoh Kasus 1</h3><p>Aturan: Min 20, Max 50.<br/>Stok Forecast: 15 (di bawah Min).<br/>Sistem akan memesan hingga Max.<br/>Jumlah Order = Max - Forecast = 50 - 15 = <strong>35 unit</strong>.</p><h3>Memicu Aturan Otomatis</h3><p>Agar aturan pemesanan ulang otomatis bekerja dengan benar, kondisi kuncinya adalah: <strong>ketika jumlah perkiraan (forecasted quantity) jatuh di bawah minimum yang ditentukan</strong>.</p><h3>Contoh Kasus 2 (Negatif Forecast)</h3><p>Aturan: Min 10, Max 15.<br/>Stok Forecast: -5.<br/>Sistem akan memesan hingga Max.<br/>Jumlah Order = Max - Forecast = 15 - (-5) = <strong>20 unit</strong>.</p>
+                </div>
+            </div>
+
+            <div class="quiz-section">
+                <h2>Kuis Pengetahuan</h2>
+                <div id="quiz-container" class="quiz-container" data-quiz-id="inventory_materi10">
+                    <!-- Quiz will be rendered here -->
+                </div>
+            </div>
+
+            <div class="navigation-buttons">
+                <a href="../../../inventory/replenishment/inventory-materi-9/index.html" class="btn btn-secondary">← Materi Sebelumnya</a>
+                <a href="../../../inventory/replenishment/inventory-materi-11/index.html" class="btn btn-primary btn-next">Lanjut ke Materi Berikutnya →</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="../../../assets/js/lms-core.js"></script>
+    <script src="../../../assets/js/quiz-bank.js"></script>
+    <script src="../../../assets/js/quiz-engine.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            if (typeof renderQuiz === 'function') {
+                const quizId = document.getElementById('quiz-container').getAttribute('data-quiz-id');
+                if (window.QUIZ_BANK && window.QUIZ_BANK[quizId]) {
+                    renderQuiz(quizId, '#quiz-container');
+                }
+            }
+        });
+    </script>
+</body>
+</html>

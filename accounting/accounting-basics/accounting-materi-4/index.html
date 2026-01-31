@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Import Data | PembelajarBelajar</title>
+    <link rel="stylesheet" href="../../../assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header class="header">
+        <h1>Import Data & Opening Balances</h1>
+        <p class="subtitle">Cara mengimpor data akuntansi dan saldo awal ke Odoo.</p>
+
+        <div class="image-placeholder">
+            <img src="../../../assets/images/accounting/accounting-materi-4/infographic.png"
+                alt="accounting-materi-4 Infographic"
+                onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+        </div>
+    </header>
+
+    <main class="container">
+
+        <!-- CONTENT -->
+        <section class="step-card">
+            <h2>Importing Data</h2>
+            <p>
+                Odoo memungkinkan Anda mengimpor data (Contacts, Products, Invoices, Journal Entries) menggunakan file
+                Excel (.xlsx) atau CSV.
+            </p>
+            <h3>Tips Import:</h3>
+            <ul>
+                <li><strong>Templates:</strong> Gunakan template import yang disediakan Odoo untuk memastikan format
+                    kolom benar.</li>
+                <li><strong>One Sheet:</strong> Untuk impor faktur (invoices/bills), disarankan menggabungkan semua line
+                    dalam satu sheet, lalu mengimpornya melalui Import Wizard di Accounting Settings.</li>
+            </ul>
+
+            <h3>Clearing Account</h3>
+            <p>
+                Saat mengimpor saldo awal (Opening Balance), disarankan menggunakan akun sementara atau <strong>Suspense
+                    Account / Clearing Account</strong>.
+            </p>
+            <ul>
+                <li>Ini menghindari duplikasi saldo di akun Receivable/Payable saat mengimpor baik General Ledger maupun
+                    Open Invoices.</li>
+                <li>Ini memberikan entri untuk merekonsiliasi transaksi bank pembuka.</li>
+            </ul>
+
+            <div class="step-footer">
+                <div style="display: flex; gap: 10px; align-items: center;">
+                    <label for="step1-check">Selesai dibaca</label>
+                    <input type="checkbox" id="step1-check" class="mark-done"
+                        onchange="updateProgress('accounting_materi4')">
+                </div>
+            </div>
+        </section>
+
+        <!-- QUIZ SECTION -->
+        <section class="step-card">
+            <h2>Kuis: Import Data</h2>
+            <p>Uji pemahaman Anda tentang proses impor data akuntansi.</p>
+            <div class="quiz-container">
+                <!-- Quiz will be rendered here -->
+            </div>
+            <div class="step-footer">
+                <button class="quiz-submit-btn" onclick="checkQuiz()">Periksa Jawaban</button>
+                <div id="quizResult" style="display: none;"></div>
+            </div>
+        </section>
+
+        <!-- NAVIGATION -->
+        <div class="next-action-area" id="nextActionArea" style="display: none;">
+            <h3>Luar Biasa! 🎉</h3>
+            <p>Anda telah menyelesaikan Fase Basics.</p>
+            <a href="../../invoicing/accounting-materi-5/index.html" class="btn-next">Lanjut ke Fase Invoicing ➔</a>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <a href="../../../accounting.html">Kembali ke Dashboard Accounting</a>
+    </footer>
+
+    <script src="../../../assets/js/lms-core.js"></script>
+    <script src="../../../assets/js/quiz-bank.js"></script>
+    <script src="../../../assets/js/quiz-engine.js"></script>
+    <script>
+        const PRODUCT_ID = "accounting_materi4"; // ID unik untuk materi ini
+
+        document.addEventListener("DOMContentLoaded", () => {
+            initMateriProgress(PRODUCT_ID);
+            renderQuiz(PRODUCT_ID, ".quiz-container");
+        });
+    </script>
+</body>
+
+</html>

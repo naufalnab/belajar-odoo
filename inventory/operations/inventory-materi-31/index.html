@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operations 3: Batch Picking - Odoo Learning</title>
+    <link rel="stylesheet" href="../../../assets/css/style.css">
+    <link rel="stylesheet" href="../../../assets/css/dark-mode.css">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo-container">
+            <a href="../../../index.html" style="text-decoration: none;">
+                <h2 class="logo">Odoo<span style="color: var(--accent);">Learning</span></h2>
+            </a>
+        </div>
+        <nav class="nav-links">
+            <a href="../../../index.html" class="nav-item">
+                <span class="icon">🏠</span>
+                Dashboard
+            </a>
+            <a href="../../../accounting.html" class="nav-item">
+                <span class="icon">💰</span>
+                Accounting
+            </a>
+             <a href="../../../inventory.html" class="nav-item active">
+                <span class="icon">📦</span>
+                Inventory
+            </a>
+        </nav>
+    </div>
+
+    <div class="main-content">
+        <header class="top-bar">
+            <div class="breadcrumbs">
+                <a href="../../../index.html">Home</a> &gt; 
+                <a href="../../../inventory.html">Inventory</a> &gt; 
+                <span>Operations 3: Batch Picking</span>
+            </div>
+        </header>
+
+        <div class="module-container">
+            <div class="video-section">
+               <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/7qX2o_-N9j0" title="Odoo Tutorial" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+
+            <div class="content-section">
+                <h1>Operations 3: Batch Picking</h1>
+                <p class="subtitle">Pengambilan Massal</p>
+                
+                <div class="learning-material">
+                    <h3>Fleksibilitas Langkah</h3><p>Batch picking di Odoo fleksibel. Anda dapat menggunakannya dengan <strong>satu, dua, atau tiga langkah</strong> operasi. Pada alur 2/3 langkah, langkah kedua biasanya digunakan untuk penyortiran/konsolidasi.</p><h3>Otomatisasi</h3><p>Fitur 'Automatic Batches' sangat kuat. Sistem akan <strong>secara otomatis membuat batch</strong> berdasarkan kriteria pengelompokan yang Anda pilih (seperti Pengangkut yang sama, Tujuan yang sama, dll.).</p><h3>Aplikasi Barcode</h3><p>Untuk petugas gudang, batch yang ditugaskan dapat ditemukan dengan mudah: Buka aplikasi Barcode dan klik tombol <strong>'Batch Transfers'</strong>.</p>
+                </div>
+            </div>
+
+            <div class="quiz-section">
+                <h2>Kuis Pengetahuan</h2>
+                <div id="quiz-container" class="quiz-container" data-quiz-id="inventory_materi31">
+                    <!-- Quiz will be rendered here -->
+                </div>
+            </div>
+
+            <div class="navigation-buttons">
+                <a href="../../../inventory/operations/inventory-materi-30/index.html" class="btn btn-secondary">← Materi Sebelumnya</a>
+                <a href="../../../inventory/operations/inventory-materi-32/index.html" class="btn btn-primary btn-next">Lanjut ke Materi Berikutnya →</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="../../../assets/js/lms-core.js"></script>
+    <script src="../../../assets/js/quiz-bank.js"></script>
+    <script src="../../../assets/js/quiz-engine.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            if (typeof renderQuiz === 'function') {
+                const quizId = document.getElementById('quiz-container').getAttribute('data-quiz-id');
+                if (window.QUIZ_BANK && window.QUIZ_BANK[quizId]) {
+                    renderQuiz(quizId, '#quiz-container');
+                }
+            }
+        });
+    </script>
+</body>
+</html>

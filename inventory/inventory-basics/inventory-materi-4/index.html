@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory Basics 4: Lokasi Gudang - Odoo Learning</title>
+    <link rel="stylesheet" href="../../../assets/css/style.css">
+    <link rel="stylesheet" href="../../../assets/css/dark-mode.css">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo-container">
+            <a href="../../../index.html" style="text-decoration: none;">
+                <h2 class="logo">Odoo<span style="color: var(--accent);">Learning</span></h2>
+            </a>
+        </div>
+        <nav class="nav-links">
+            <a href="../../../index.html" class="nav-item">
+                <span class="icon">🏠</span>
+                Dashboard
+            </a>
+            <a href="../../../accounting.html" class="nav-item">
+                <span class="icon">💰</span>
+                Accounting
+            </a>
+             <a href="../../../inventory.html" class="nav-item active">
+                <span class="icon">📦</span>
+                Inventory
+            </a>
+        </nav>
+    </div>
+
+    <div class="main-content">
+        <header class="top-bar">
+            <div class="breadcrumbs">
+                <a href="../../../index.html">Home</a> &gt; 
+                <a href="../../../inventory.html">Inventory</a> &gt; 
+                <span>Inventory Basics 4: Lokasi Gudang</span>
+            </div>
+        </header>
+
+        <div class="module-container">
+            <div class="video-section">
+               <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/7qX2o_-N9j0" title="Odoo Tutorial" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+
+            <div class="content-section">
+                <h1>Inventory Basics 4: Lokasi Gudang</h1>
+                <p class="subtitle">Parent/Child Locations & Valuation</p>
+                
+                <div class="learning-material">
+                    <h3>Hierarki Lokasi: Child Location</h3><p>Di Odoo, 'Child Location' didefinisikan sebagai <strong>node bawahan di bawah lokasi induk (parent location)</strong> dalam struktur hierarki gudang. Ini memungkinkan pengorganisasian stok yang granular (misal: Rak A1 di dalam Baris A).</p><h3>Penilaian Inventaris (Inventory Valuation)</h3><p>Tidak semua jenis lokasi dihitung dalam penilaian inventaris perusahaan. Lokasi yang termasuk dalam perhitungan nilai aset adalah lokasi bertipe <strong>Internal dan Transit</strong>.</p><h3>Lokasi Scrap (Inventory Loss)</h3><p>Memindahkan barang ke lokasi 'Inventory Loss' (Scrap) akan memicu <strong>pergerakan stok yang mengurangi jumlah on-hand</strong>, secara efektif menghapus nilai aset barang tersebut dari pembukuan stok aktif.</p>
+                </div>
+            </div>
+
+            <div class="quiz-section">
+                <h2>Kuis Pengetahuan</h2>
+                <div id="quiz-container" class="quiz-container" data-quiz-id="inventory_materi4">
+                    <!-- Quiz will be rendered here -->
+                </div>
+            </div>
+
+            <div class="navigation-buttons">
+                <a href="../../../inventory/inventory-basics/inventory-materi-3/index.html" class="btn btn-secondary">← Materi Sebelumnya</a>
+                <a href="../../../inventory/inventory-basics/inventory-materi-5/index.html" class="btn btn-primary btn-next">Lanjut ke Materi Berikutnya →</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="../../../assets/js/lms-core.js"></script>
+    <script src="../../../assets/js/quiz-bank.js"></script>
+    <script src="../../../assets/js/quiz-engine.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            if (typeof renderQuiz === 'function') {
+                const quizId = document.getElementById('quiz-container').getAttribute('data-quiz-id');
+                if (window.QUIZ_BANK && window.QUIZ_BANK[quizId]) {
+                    renderQuiz(quizId, '#quiz-container');
+                }
+            }
+        });
+    </script>
+</body>
+</html>

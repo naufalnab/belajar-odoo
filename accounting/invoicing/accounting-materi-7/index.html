@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Credit Notes & Refunds | PembelajarBelajar</title>
+    <link rel="stylesheet" href="../../../assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header class="header">
+        <h1>Credit Notes (Nota Kredit)</h1>
+        <p class="subtitle">Mengelola pengembalian dana dan koreksi faktur di Odoo.</p>
+
+        <div class="image-placeholder">
+            <img src="../../../assets/images/accounting/accounting-materi-7/infographic.png"
+                alt="accounting-materi-7 Infographic"
+                onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+        </div>
+    </header>
+
+    <main class="container">
+
+        <!-- CONTENT -->
+        <section class="step-card">
+            <h2>Membuat Credit Note</h2>
+            <p>
+                <strong>Credit Note</strong> (Nota Kredit) digunakan untuk membatalkan faktur sebagian atau seluruhnya
+                (pengembalian dana).
+                Anda dapat membuatnya langsung dari Faktur Pelanggan dengan mengklik tombol <strong>Add Credit
+                    Note</strong>.
+            </p>
+            <h3>Jurnal Entri</h3>
+            <p>
+                Credit Note membalikkan pencatatan akuntansi dari faktur asli:
+            </p>
+            <ul>
+                <li><strong>Debit:</strong> Akun Pendapatan (Income Account) - mengurangi pendapatan.</li>
+                <li><strong>Kredit:</strong> Akun Piutang (Receivable Account) - mengurangi hutang pelanggan kepada
+                    kita.</li>
+            </ul>
+
+            <h3>Pengembalian Sebagian (Partial Refund)</h3>
+            <p>
+                Jika pelanggan hanya mengembalikan sebagian barang (misal: gelas pecah tapi piring tidak), Anda dapat:
+            </p>
+            <ol>
+                <li>Buat Credit Note dari faktur.</li>
+                <li>Sebelum konfirmasi, hapus baris produk yang tidak dikembalikan (hapus piring).</li>
+                <li>Konfirmasi Credit Note untuk barang yang rusak saja (gelas).</li>
+            </ol>
+
+            <div class="deep-dive">
+                <h3>Rekonsiliasi Otomatis</h3>
+                <p>
+                    Jika Fatur belum dibayar, Credit Note yang dibuat darinya akan secara otomatis
+                    <strong>direkonsiliasi</strong> dengan faktur tersebut,
+                    mengurangi jumlah jatuh tempo faktur (Status: Partially Paid atau Paid).
+                </p>
+            </div>
+
+            <div class="step-footer">
+                <div style="display: flex; gap: 10px; align-items: center;">
+                    <label for="step1-check">Selesai dibaca</label>
+                    <input type="checkbox" id="step1-check" class="mark-done"
+                        onchange="updateProgress('accounting_materi7')">
+                </div>
+            </div>
+        </section>
+
+        <!-- QUIZ SECTION -->
+        <section class="step-card">
+            <h2>Kuis: Credit Notes</h2>
+            <p>Uji pemahaman Anda tentang proses refund.</p>
+            <div class="quiz-container">
+                <!-- Quiz will be rendered here -->
+            </div>
+            <div class="step-footer">
+                <button class="quiz-submit-btn" onclick="checkQuiz()">Periksa Jawaban</button>
+                <div id="quizResult" style="display: none;"></div>
+            </div>
+        </section>
+
+        <!-- NAVIGATION -->
+        <div class="next-action-area" id="nextActionArea" style="display: none;">
+            <h3>Luar Biasa! 🎉</h3>
+            <p>Anda telah memahami cara menangani retur dan kredit.</p>
+            <a href="../accounting-materi-8/index.html" class="btn-next">Lanjut ke Materi 8 ➔</a>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <a href="../../../accounting.html">Kembali ke Dashboard Accounting</a>
+    </footer>
+
+    <script src="../../../assets/js/lms-core.js"></script>
+    <script src="../../../assets/js/quiz-bank.js"></script>
+    <script src="../../../assets/js/quiz-engine.js"></script>
+    <script>
+        const PRODUCT_ID = "accounting_materi7"; // ID unik untuk materi ini
+
+        document.addEventListener("DOMContentLoaded", () => {
+            initMateriProgress(PRODUCT_ID);
+            renderQuiz(PRODUCT_ID, ".quiz-container");
+        });
+    </script>
+</body>
+
+</html>

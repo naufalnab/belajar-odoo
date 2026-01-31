@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoicing from Sales Orders | PembelajarBelajar</title>
+    <link rel="stylesheet" href="../../../assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header class="header">
+        <h1>Invoicing from Sales Orders</h1>
+        <p class="subtitle">Membuat tagihan dari pesanan penjualan (SO) di Odoo.</p>
+
+        <div class="image-placeholder">
+            <img src="../../../assets/images/accounting/accounting-materi-6/infographic.png"
+                alt="accounting-materi-6 Infographic"
+                onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+        </div>
+    </header>
+
+    <main class="container">
+
+        <!-- CONTENT -->
+        <section class="step-card">
+            <h2>Membuat Faktur dari SO</h2>
+            <p>
+                Di aplikasi Sales, Anda dapat memantau status pesanan.
+            </p>
+            <h3>Kode Warna Garis Pesanan (SO Lines)</h3>
+            <ul>
+                <li><strong>Biru:</strong> Baris ini <em>Invoiceable</em> (Siap ditagih). Biasanya karena barang sudah
+                    dikirim (jika kebijakan Delivered Quantities) atau sudah dipesan (Ordered Quantities).</li>
+                <li><strong>Hitam:</strong> Belum siap ditagih atau sudah ditagih sepenuhnya.</li>
+            </ul>
+
+            <h3>Consolidated Billing (Satu Faktur untuk Banyak SO)</h3>
+            <p>
+                Anda dapat menggabungkan beberapa Pesanan Penjualan menjadi satu faktur jika mereka milik pelanggan yang
+                sama:
+            </p>
+            <ol>
+                <li>Buka Sales Order List View.</li>
+                <li>Pilih beberapa SO yang ingin ditagih.</li>
+                <li>Klik <strong>Action ‣ Create Invoices</strong>.</li>
+                <li>Pastikan opsi <strong>Consolidated Billing</strong> dicentang (biasanya otomatis jika pelanggan
+                    sama).</li>
+            </ol>
+
+            <div class="deep-dive">
+                <h3>⚠️ Error: Invalid Operation</h3>
+                <p>
+                    Jika Anda mencoba membuat "Regular Invoice" ketika tidak ada baris yang siap ditagih (misal: belum
+                    ada pengiriman untuk kebijakan "On Delivery"), Odoo akan menampilkan pesan error.
+                </p>
+            </div>
+
+            <div class="step-footer">
+                <div style="display: flex; gap: 10px; align-items: center;">
+                    <label for="step1-check">Selesai dibaca</label>
+                    <input type="checkbox" id="step1-check" class="mark-done"
+                        onchange="updateProgress('accounting_materi6')">
+                </div>
+            </div>
+        </section>
+
+        <!-- QUIZ SECTION -->
+        <section class="step-card">
+            <h2>Kuis: Invoicing from SO</h2>
+            <p>Uji pemahaman Anda tentang integrasi Sales dan Invoicing.</p>
+            <div class="quiz-container">
+                <!-- Quiz will be rendered here -->
+            </div>
+            <div class="step-footer">
+                <button class="quiz-submit-btn" onclick="checkQuiz()">Periksa Jawaban</button>
+                <div id="quizResult" style="display: none;"></div>
+            </div>
+        </section>
+
+        <!-- NAVIGATION -->
+        <div class="next-action-area" id="nextActionArea" style="display: none;">
+            <h3>Luar Biasa! 🎉</h3>
+            <p>Anda telah memahami alur penagihan dari penjualan.</p>
+            <a href="../accounting-materi-7/index.html" class="btn-next">Lanjut ke Materi 7 ➔</a>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <a href="../../../accounting.html">Kembali ke Dashboard Accounting</a>
+    </footer>
+
+    <script src="../../../assets/js/lms-core.js"></script>
+    <script src="../../../assets/js/quiz-bank.js"></script>
+    <script src="../../../assets/js/quiz-engine.js"></script>
+    <script>
+        const PRODUCT_ID = "accounting_materi6"; // ID unik untuk materi ini
+
+        document.addEventListener("DOMContentLoaded", () => {
+            initMateriProgress(PRODUCT_ID);
+            renderQuiz(PRODUCT_ID, ".quiz-container");
+        });
+    </script>
+</body>
+
+</html>

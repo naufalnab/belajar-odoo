@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accounting Dashboard & Onboarding | PembelajarBelajar</title>
+    <link rel="stylesheet" href="../../../assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header class="header">
+        <h1>Accounting Dashboard & Onboarding</h1>
+        <p class="subtitle">Memahami dashboard akuntansi dan langkah awal konfigurasi.</p>
+
+        <div class="image-placeholder">
+            <img src="../../../assets/images/accounting/accounting-materi-1/infographic.png"
+                alt="accounting-materi-1 Infographic"
+                onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
+        </div>
+    </header>
+
+    <main class="container">
+
+        <!-- STEP 1: Onboarding Banner -->
+        <section class="step-card">
+            <h2>Langkah 1: Accounting Onboarding Banner</h2>
+            <p>
+                Saat Anda pertama kali membuka aplikasi Odoo Accounting, Dashboard Akuntansi menyambut Anda dengan
+                banner onboarding langkah-demi-langkah, sebuah wizard yang membantu Anda memulai.
+                Banner ini akan terus ditampilkan sampai Anda memilih untuk menutupnya.
+            </p>
+            <div class="deep-dive">
+                <h3>💡 Catatan</h3>
+                <p>
+                    Odoo Accounting secara otomatis menginstal Paket Lokalisasi Fiskal yang sesuai untuk perusahaan
+                    Anda,
+                    berdasarkan negara yang dipilih saat pembuatan database. Dengan cara ini, akun, laporan, dan pajak
+                    yang tepat
+                    sudah siap digunakan.
+                </p>
+            </div>
+            <p>Banner onboarding terdiri dari empat langkah utama:</p>
+            <ul>
+                <li><strong>Accounting Periods:</strong> Tentukan tanggal pembukaan dan penutupan Tahun Fiskal.</li>
+                <li><strong>Bank Account:</strong> Hubungkan rekening bank Anda ke database Odoo.</li>
+                <li><strong>Taxes:</strong> Buat, nonaktifkan, atau modifikasi pajak yang ada.</li>
+                <li><strong>Chart of Accounts:</strong> Tambahkan akun ke Bagan Akun (COA) dan tentukan saldo awal.</li>
+            </ul>
+
+            <div class="step-footer">
+                <div style="display: flex; gap: 10px; align-items: center;">
+                    <label for="step1-check">Selesai dibaca</label>
+                    <input type="checkbox" id="step1-check" class="mark-done"
+                        onchange="updateProgress('accounting_materi1')">
+                </div>
+            </div>
+        </section>
+
+        <!-- STEP 2: Bank Account & Taxes -->
+        <section class="step-card">
+            <h2>Langkah 2: Bank Account & Taxes</h2>
+            <h3>Bank Account</h3>
+            <p>
+                Anda dapat menghubungkan rekening bank Anda untuk sinkronisasi otomatis. Jika bank Anda tidak dapat
+                disinkronkan,
+                Anda dapat mengonfigurasinya secara manual dengan mengisi:
+            </p>
+            <ul>
+                <li><strong>Name:</strong> Nama rekening bank.</li>
+                <li><strong>Account Number:</strong> Nomor rekening (IBAN di Eropa).</li>
+                <li><strong>Bank:</strong> Detail institusi bank (BIC atau SWIFT).</li>
+                <li><strong>Code:</strong> Kode pendek Jurnal (Short Code).</li>
+                <li><strong>Journal:</strong> Jurnal bank yang digunakan untuk mencatat transaksi.</li>
+            </ul>
+
+            <h3>Taxes</h3>
+            <p>
+                Menu ini memungkinkan Anda mengelola pajak. Tergantung pada paket lokalisasi yang diinstal,
+                pajak yang diperlukan untuk negara Anda biasanya sudah dikonfigurasi otomatis.
+            </p>
+
+            <div class="step-footer">
+                <div style="display: flex; gap: 10px; align-items: center;">
+                    <label for="step2-check">Selesai dibaca</label>
+                    <input type="checkbox" id="step2-check" class="mark-done"
+                        onchange="updateProgress('accounting_materi1')">
+                </div>
+            </div>
+        </section>
+
+        <!-- STEP 3: Invoicing Onboarding -->
+        <section class="step-card">
+            <h2>Langkah 3: Invoicing Onboarding Banner</h2>
+            <p>
+                Jika Anda menggunakan aplikasi Invoicing, terdapat banner onboarding terpisah yang terdiri dari empat
+                langkah:
+            </p>
+            <ol>
+                <li><strong>Company Data:</strong> Tambahkan detail perusahaan (nama, alamat, logo, VAT).</li>
+                <li><strong>Documents Layout:</strong> Sesuaikan tata letak faktur default.</li>
+                <li><strong>Create Invoice:</strong> Buat faktur pertama Anda.</li>
+                <li><strong>Online Payments:</strong> Aktifkan pembayaran kartu kredit/debit (misal: Stripe).</li>
+            </ol>
+            <div class="deep-dive">
+                <h3>💡 Tip</h3>
+                <p>Tambahkan nomor rekening bank dan tautan Syarat & Ketentuan Umum di footer layout dokumen Anda.</p>
+            </div>
+
+            <div class="step-footer">
+                <div style="display: flex; gap: 10px; align-items: center;">
+                    <label for="step3-check">Selesai dibaca</label>
+                    <input type="checkbox" id="step3-check" class="mark-done"
+                        onchange="updateProgress('accounting_materi1')">
+                </div>
+            </div>
+        </section>
+
+        <!-- QUIZ SECTION -->
+        <section class="step-card">
+            <h2>Kuis: Accounting Basics 1</h2>
+            <p>Uji pemahaman Anda tentang Dashboard dan Onboarding Akuntansi.</p>
+            <div class="quiz-container">
+                <!-- Quiz will be rendered here -->
+            </div>
+            <div class="step-footer">
+                <button class="quiz-submit-btn" onclick="checkQuiz()">Periksa Jawaban</button>
+                <div id="quizResult" style="display: none;"></div>
+            </div>
+        </section>
+
+        <!-- NAVIGATION -->
+        <div class="next-action-area" id="nextActionArea" style="display: none;">
+            <h3>Luar Biasa! 🎉</h3>
+            <p>Anda telah menyelesaikan materi dasar Akuntansi bagian pertama.</p>
+            <a href="../accounting-materi-2/index.html" class="btn-next">Lanjut ke Materi 2 ➔</a>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <a href="../../../accounting.html">Kembali ke Dashboard Accounting</a>
+    </footer>
+
+    <script src="../../../assets/js/lms-core.js"></script>
+    <script src="../../../assets/js/quiz-bank.js"></script>
+    <script src="../../../assets/js/quiz-engine.js"></script>
+    <script>
+        const PRODUCT_ID = "accounting_materi1"; // ID unik untuk materi ini
+
+        document.addEventListener("DOMContentLoaded", () => {
+            initMateriProgress(PRODUCT_ID);
+            renderQuiz(PRODUCT_ID, ".quiz-container");
+        });
+    </script>
+</body>
+
+</html>

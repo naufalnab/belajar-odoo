@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reserve Products 4: FEFO Details - Odoo Learning</title>
+    <link rel="stylesheet" href="../../../assets/css/style.css">
+    <link rel="stylesheet" href="../../../assets/css/dark-mode.css">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo-container">
+            <a href="../../../index.html" style="text-decoration: none;">
+                <h2 class="logo">Odoo<span style="color: var(--accent);">Learning</span></h2>
+            </a>
+        </div>
+        <nav class="nav-links">
+            <a href="../../../index.html" class="nav-item">
+                <span class="icon">🏠</span>
+                Dashboard
+            </a>
+            <a href="../../../accounting.html" class="nav-item">
+                <span class="icon">💰</span>
+                Accounting
+            </a>
+             <a href="../../../inventory.html" class="nav-item active">
+                <span class="icon">📦</span>
+                Inventory
+            </a>
+        </nav>
+    </div>
+
+    <div class="main-content">
+        <header class="top-bar">
+            <div class="breadcrumbs">
+                <a href="../../../index.html">Home</a> &gt; 
+                <a href="../../../inventory.html">Inventory</a> &gt; 
+                <span>Reserve Products 4: FEFO Details</span>
+            </div>
+        </header>
+
+        <div class="module-container">
+            <div class="video-section">
+               <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/7qX2o_-N9j0" title="Odoo Tutorial" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+
+            <div class="content-section">
+                <h1>Reserve Products 4: FEFO Details</h1>
+                <p class="subtitle">First Expired First Out Mendalam</p>
+                
+                <div class="learning-material">
+                    <h3>Persyaratan FEFO</h3><p>Untuk menjalankan FEFO, sistem membutuhkan data yang akurat. Anda harus mengaktifkan: <strong>Expiration Date, Lots and Serial Numbers</strong>.</p><h3>Dasar Tanggal</h3><p>Logika FEFO didasarkan pada field <strong>Removal Date</strong> (Tanggal Penghapusan) yang dihitung dari tanggal kedaluwarsa produk.</p><h3>Contoh Kasus</h3><p>Jika Lot 1 (Exp: Nov 2) dan Lot 2 (Exp: Apr 13) tersedia, untuk pesanan di bulan Januari, sistem akan memprioritaskan Lot 2 karena kedaluwarsa lebih dulu (April vs November). Jadi untuk pesanan 20 unit: <strong>Ambil 13 dari Lot 2, lalu 7 dari Lot 1</strong>.</p>
+                </div>
+            </div>
+
+            <div class="quiz-section">
+                <h2>Kuis Pengetahuan</h2>
+                <div id="quiz-container" class="quiz-container" data-quiz-id="inventory_materi24">
+                    <!-- Quiz will be rendered here -->
+                </div>
+            </div>
+
+            <div class="navigation-buttons">
+                <a href="../../../inventory/reserve/inventory-materi-23/index.html" class="btn btn-secondary">← Materi Sebelumnya</a>
+                <a href="../../../inventory/reserve/inventory-materi-25/index.html" class="btn btn-primary btn-next">Lanjut ke Materi Berikutnya →</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="../../../assets/js/lms-core.js"></script>
+    <script src="../../../assets/js/quiz-bank.js"></script>
+    <script src="../../../assets/js/quiz-engine.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            if (typeof renderQuiz === 'function') {
+                const quizId = document.getElementById('quiz-container').getAttribute('data-quiz-id');
+                if (window.QUIZ_BANK && window.QUIZ_BANK[quizId]) {
+                    renderQuiz(quizId, '#quiz-container');
+                }
+            }
+        });
+    </script>
+</body>
+</html>
